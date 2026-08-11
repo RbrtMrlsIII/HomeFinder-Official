@@ -1,0 +1,804 @@
+<!-- ================================ -->
+<!--  HOMEPAGE                      -->
+<!-- ================================ -->
+<!-- Hero, search overlay, live map, featured listings, footer. -->
+<!-- No login required. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+<!-- HF-BUILD-2026-08-11-V13 | file: index.html | DO NOT USE OLD CACHE PATH -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeFinder - Find Your Perfect Space</title>
+
+    <!-- CSS load order = build order: tokens → reset → components
+         (in the order they appear on the page) → responsive last -->
+         
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/transition.css">
+    <link rel="stylesheet" href="css/navbar.css?v=13">
+    <link rel="stylesheet" href="css/home/hero.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/home/property.css">
+    <link rel="stylesheet" href="css/home/footer.css">
+    <link rel="stylesheet" href="css/home/about.css">
+    <link rel="stylesheet" href="css/home/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/customSelect.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="css/viewport/mobile.css?v=1">
+</head>
+<body>
+
+<!-- ================================ -->
+<!--           NAVIGATION             -->
+<!-- ================================ -->
+    
+<header class="header">
+    <nav class="navbar">
+
+        <a href="#home" class="logo">
+            <img src="assets/images/logo.jpeg" alt="HomeFinder logo">
+            <span>HomeFinder</span>
+        </a>
+
+        <!-- horizontally scrollable on narrow screens --
+             swipe sideways to reach Login/Register -->
+        <div class="nav-scroll">
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#properties">Properties</a></li>
+                <li><a href="#map">Map</a></li>
+                <li><a href="#about">About</a>
+            <a href="#credits">Credits</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="login-btn" onclick="location.href='login.html'">Login</button>
+                <button class="register-btn" onclick="location.href='register.html'">Register</button>
+            </div>
+        </div>
+
+        <!-- universal search: properties, users, pages, map --
+             no longer gates login -->
+        <button class="search-toggle" aria-label="Open search" id="universal-search-btn">
+            <i class="bx bx-search"></i>
+        </button>
+
+    </nav>
+
+    <!-- shown on mobile/tablet as a shortcut alongside the
+         scrollable Login/Register -->
+    <a href="register.html" class="floating-register" aria-label="Get started with HomeFinder">
+        Get Started
+        <span class="arrow"><i class='bx bx-chevron-right'></i></span>
+    </a>
+</header>
+
+    <!-- ============================ -->
+    <!-- EVERYTHING BELOW THE NAV     -->
+    <!-- LIVES INSIDE THE MAIN        -->
+    <!-- =============================-->
+    
+    <main>
+
+    <!-- ============================ -->
+    <!--         HERO SECTION         -->
+    <!-- =============================-->
+
+        <section class="hero" id="home">
+            <div class="hero-glow" aria-hidden="true"></div>
+
+            <div class="hero-content">
+                <p class="hero-eyebrow">Philippines · Rentals &amp; spaces</p>
+
+                <h1 class="hero-title">
+                    Find a place that
+                    <span class="hero-title-accent">fits your life</span>
+                </h1>
+
+                <p class="hero-description">
+                    Trusted rentals near you — bedspaces, homes, and commercial spots
+                    you can explore on the map before you decide.
+                </p>
+
+                <p class="hero-subtext">Bedspaces · Apartments · Houses · Retail &amp; offices</p>
+
+                <div class="hero-buttons">
+                    <a href="marketplace.html" class="hero-primary-btn">Explore properties</a>
+                    <a href="register.html" class="hero-secondary-btn">List a property</a>
+                </div>
+
+                <div class="hero-trust" role="list">
+                    <div class="trust-item" role="listitem">
+                        <div class="trust-icon"><i class="bx bx-check-shield"></i></div>
+                        <div class="trust-copy">
+                            <strong>ID-verified users</strong>
+                            <span>Staff-reviewed government ID &amp; PRC for brokers</span>
+                        </div>
+                    </div>
+                    <div class="trust-item" role="listitem">
+                        <div class="trust-icon"><i class="bx bx-map-alt"></i></div>
+                        <div class="trust-copy">
+                            <strong>Map search radius</strong>
+                            <span>See listings inside your tier &amp; boost range</span>
+                        </div>
+                    </div>
+                    <div class="trust-item" role="listitem">
+                        <div class="trust-icon"><i class="bx bx-search-alt"></i></div>
+                        <div class="trust-copy">
+                            <strong>Wanted requests</strong>
+                            <span>Seekers post what they need; owners can match</span>
+                        </div>
+                    </div>
+                    <div class="trust-item" role="listitem">
+                        <div class="trust-icon"><i class="bx bx-badge-check"></i></div>
+                        <div class="trust-copy">
+                            <strong>Tier &amp; boost perks</strong>
+                            <span>More slots, wider radius, faster pin moves</span>
+                        </div>
+                    </div>
+                    <div class="trust-item" role="listitem">
+                        <div class="trust-icon"><i class="bx bx-message-detail"></i></div>
+                        <div class="trust-copy">
+                            <strong>Direct contact path</strong>
+                            <span>Reach owners, brokers, and seekers in-app</span>
+                        </div>
+                    </div>
+                    <div class="trust-item" role="listitem">
+                        <div class="trust-icon"><i class="bx bx-building-house"></i></div>
+                        <div class="trust-copy">
+                            <strong>Homes &amp; business</strong>
+                            <span>Residential, bedspace, retail, and more</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- ============================ -->
+    <!--         MAP SECTION          -->
+    <!-- =============================-->
+    
+
+<section class="about-home-strip" id="about-home">
+  <div class="about-home-inner">
+    <p class="section-eyebrow">Why HomeFinder</p>
+    <h2>Shelter, space, and growth — with people you can trust</h2>
+    <p class="section-lead">
+      We connect property seekers with <strong>verified owners</strong> and <strong>licensed brokers</strong> across the Philippines —
+      bedspaces, homes, retail, warehouses, and more. Map pin search, staff verification, and in-app contracts keep matching clearer.
+    </p>
+    <div class="about-home-grid">
+      <article><i class="bx bx-shield-quarter"></i><strong>Verified parties</strong><span>ID and PRC reviewed by staff</span></article>
+      <article><i class="bx bx-map"></i><strong>Radius search</strong><span>Pin an area; see listings inside your tier range</span></article>
+      <article><i class="bx bx-file"></i><strong>Contract records</strong><span>Propose terms in chat — shared structured history</span></article>
+      <article><i class="bx bx-user-plus"></i><strong>Three roles</strong><span>Seeker, owner, and broker tools in one place</span></article>
+    </div>
+    <p class="about-home-cta"><a href="#about">Full guide: roles, boosts, map &amp; safety →</a></p>
+  </div>
+</section>
+
+<section class="map-section" id="map">
+            <p class="map-demo-banner" id="map-demo-banner" hidden>
+              <strong>Demo:</strong> After you search or tap the map, amber sample pins appear nearby.
+              They are <em>not</em> real listings — sign in for live properties in your radius.
+            </p>
+            <div class="map-intro">
+                <h2>Drop a pin. See what is around you.</h2>
+                <p>
+                    On HomeFinder, seekers place a search pin to reveal listings inside their radius.
+                    <strong>Demo note:</strong> the home map below is a sample preview — sign in to set a real pin and unlock live matches within your tier radius (e.g. about 10 km on higher packs).
+                </p>
+            </div>
+
+    <h2>Explore Properties Near You</h2>
+    <p class="map-sub">Set your radius and filters to find listings around a location.</p>
+
+    <div class="map-layout">
+
+        <!-- FILTER PANEL -->
+        <div class="map-filters">
+
+            <div class="field-group">
+                <label for="map-location">Location</label>
+                <div class="input-wrap">
+                    <i class='bx bx-map-pin'></i>
+                    <input type="text" id="map-location" class="no-icon-override" placeholder="Search a city or address">
+                </div>
+            </div>
+
+            <div class="field-group">
+                <label for="map-radius">Radius: <span id="radius-value">5</span> km</label>
+                <input type="range" id="map-radius" min="1" max="30" value="5">
+            </div>
+
+            <div class="field-group">
+                <label for="map-type">Property Type</label>
+                <select id="map-type" class="no-icon">
+                    <option value="">Any type</option>
+                    <option>Apartment</option>
+                    <option>House</option>
+                    <option>Bed Space</option>
+                    <option>Commercial</option>
+                </select>
+            </div>
+
+            <div class="field-row">
+                <div class="field-group">
+                    <label for="budget-min">Min Budget</label>
+                    <input type="number" id="budget-min" class="no-icon" placeholder="₱0">
+                </div>
+                <div class="field-group">
+                    <label for="budget-max">Max Budget</label>
+                    <input type="number" id="budget-max" class="no-icon" placeholder="₱50,000">
+                </div>
+            </div>
+
+            <button type="button" class="hero-primary-btn u-full-width" id="map-search-btn">
+                Search This Area
+            </button>
+        </div>
+
+        <!-- MAP CANVAS -->
+        <div class="map-canvas-wrap">
+            <!-- Leaflet/Google Maps mounts INTO this div by ID -->
+            <div id="map-canvas" class="map-placeholder">
+                Map will render here
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <!-- ============================ -->
+    <!--     FEATURED PROPERTIES      -->
+    <!-- =============================-->
+    
+        <section class="properties" id="properties">
+            <p class="section-eyebrow">Curated for you</p>
+            <h2>Featured Properties</h2>
+            <p class="section-lead">Spaces worth a second look — verified hosts, clear pricing, and map-ready locations.</p>
+            <p class="section-typing" id="featured-typing" aria-live="polite"></p>
+
+            <!-- NOTE: cards below are static/hardcoded. Live Firestore
+                 listings are rendered dynamically on marketplace.html via
+                 js/marketplace.js — this section is the homepage teaser only. -->
+
+            <div class="property-container">
+
+                <div class="property-card">
+                    <img src="https://via.placeholder.com/400x250" alt="Modern Apartment">
+                    <div class="card-content">
+                        <h3>Modern Apartment</h3>
+                        <p>Quezon City</p>
+                        <strong>₱15,000/month</strong>
+                        <button>View Details</button>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <img src="https://via.placeholder.com/400x250" alt="Family House">
+                    <div class="card-content">
+                        <h3>Family House</h3>
+                        <p>Manila</p>
+                        <strong>₱25,000/month</strong>
+                        <button>View Details</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================ -->
+    <!--       FOOTER SECTION         -->
+    <!-- =============================-->
+    
+<!-- CONTACT -->
+
+    <!-- ABOUT SUMMARY (from about page) — above Contact -->
+    <section class="about-summary-band" id="about" aria-label="About HomeFinder">
+        <div class="about-summary-inner">
+            <p class="section-eyebrow">Philippines · Property matching platform</p>
+            <h2 class="about-summary-title">Shelter, space, and growth — with people <span>you can trust</span></h2>
+            <p class="section-lead about-summary-lead">
+                HomeFinder helps Filipinos find rentals and workspaces from verified property
+                owners and licensed property brokers, while giving owners and brokers a clear way
+                to list, match, and manage demand — from a first bedspace to a warehouse that
+                keeps a business moving.
+            </p>
+        </div>
+    </section>
+
+
+<section class="about-section" id="mission">
+        <h2><i class="bx bx-heart"></i> Our role</h2>
+        <p class="sec-lead">
+            We are not only a listing board. HomeFinder is built so <strong>seekers</strong> can secure
+            safe shelter and suitable space for living or livelihood, and so
+            <strong>owners</strong> and <strong>licensed brokers</strong> can present properties with identity checks,
+            map context, and structured next steps — including contract-aware flows as the platform grows.
+        </p>
+        <p class="sec-lead u-mb-0">
+            Whether someone needs a quiet place to rest, a storefront to open, land to expand,
+            or a logistics node to move goods, the goal is the same:
+            <em>match real need with accountable supply</em> across Philippine cities and communities.
+        </p>
+    </section>
+
+    <!-- Infrastructure / property types -->
+    <section class="about-section" id="spaces">
+        <h2><i class="bx bx-buildings"></i> Spaces we help people find</h2>
+        <p class="sec-lead">
+            Listings and wanted posts cover living spaces and business infrastructure —
+            so seekers can describe what they need, and providers can show what they actually have.
+        </p>
+        <div class="infra-grid">
+            <article class="infra-card">
+                <div class="infra-icon" aria-hidden="true"><i class="bx bx-bed"></i></div>
+                <strong>Bedspaces &amp; dorms</strong>
+                <span>Affordable shared living for students and workers near schools and job hubs.</span>
+            </article>
+            <article class="infra-card">
+                <div class="infra-icon" aria-hidden="true"><i class="bx bx-home-alt"></i></div>
+                <strong>Homes &amp; apartments</strong>
+                <span>Studios, condos, townhouses, and house-and-lot options for families and long stays.</span>
+            </article>
+            <article class="infra-card">
+                <div class="infra-icon" aria-hidden="true"><i class="bx bx-store"></i></div>
+                <strong>Retail &amp; storefronts</strong>
+                <span>Spaces to open or grow a shop, café, or service business with foot-traffic context.</span>
+            </article>
+            <article class="infra-card">
+                <div class="infra-icon" aria-hidden="true"><i class="bx bx-briefcase"></i></div>
+                <strong>Offices &amp; desks</strong>
+                <span>Fitted offices and flexible work spots for teams that need a professional base.</span>
+            </article>
+            <article class="infra-card">
+                <div class="infra-icon" aria-hidden="true"><i class="bx bx-package"></i></div>
+                <strong>Warehouses &amp; logistics</strong>
+                <span>Storage and terminal-style space for inventory, fulfillment, and local distribution.</span>
+            </article>
+            <article class="infra-card">
+                <div class="infra-icon" aria-hidden="true"><i class="bx bx-map"></i></div>
+                <strong>Lots &amp; expansion land</strong>
+                <span>Industrial lots and land options when the next step is to build or expand operations.</span>
+            </article>
+        </div>
+    </section>
+
+    <!-- User types -->
+    <section class="about-section" id="roles">
+        <h2><i class="bx bx-group"></i> Who uses HomeFinder</h2>
+        <p class="sec-lead">
+            One platform, three primary roles. Your account type shapes what you can post, browse, and unlock with tiers and boosts.
+        </p>
+        <div class="role-grid">
+            <article class="role-card">
+                <span class="role-badge">Seeker</span>
+                <h3>Looking for a space</h3>
+                <p>
+                    Individuals, families, and operators searching for a place to live, work, sell, or store.
+                    Seekers can browse listings, use map search within a radius, save properties, and post
+                    <strong>wanted</strong> requests that describe budget, area, and move-in timing.
+                </p>
+                <ul>
+                    <li>Map pin + radius by tier / Seeking Boost</li>
+                    <li>Wanted posts under an active cap</li>
+                    <li>Path toward contracts and reviews as deals complete</li>
+                </ul>
+            </article>
+            <article class="role-card">
+                <span class="role-badge">Owner</span>
+                <h3>Listing your own property</h3>
+                <p>
+                    People who own or control a property and want serious inquiries — not endless spam.
+                    Owners list with photos and details, manage active listings under a free or boosted cap,
+                    and can unlock the Wanted marketplace with higher Listing Boost packs.
+                </p>
+                <ul>
+                    <li>Government ID verification before the first listing</li>
+                    <li>Listing slots via tier defaults + boosts</li>
+                    <li>Reviews and ongoing contract slots as the system matures</li>
+                </ul>
+            </article>
+            <article class="role-card">
+                <span class="role-badge">Broker</span>
+                <h3>Licensed intermediary</h3>
+                <p>
+                    PRC-oriented brokers who represent inventory and clients professionally.
+                    Brokers combine listing tools with wanted browsing, and submit
+                    <strong>PRC / broker certificate</strong> details for staff review so seekers see a licensed badge path.
+                </p>
+                <ul>
+                    <li>ID + PRC / certificate verification</li>
+                    <li>List properties and browse wanted demand</li>
+                    <li>Portfolio, perks, and boosts for reach</li>
+                </ul>
+            </article>
+        </div>
+        <p class="sec-lead u-mt-16">
+            Staff accounts (admin / moderators) review identity documents and payment orders manually —
+            verification is deliberate, not an automatic API rubber-stamp.
+        </p>
+    </section>
+
+<section class="about-section" id="guide">
+        <h2><i class="bx bx-map-alt"></i> From sign-up to a place (and safer deals)</h2>
+        <p class="sec-lead">
+            A practical path through the product. Exact screens vary by role; contract tools continue to expand.
+        </p>
+        <div class="journey">
+            <div class="journey-step">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                    <h3>Create an account</h3>
+                    <p>
+                        Register with email (or supported social login), then confirm your email via the link that opens
+                        our <a href="verify/index.html">verification page</a>. Log in on
+                        <a href="login.html">login.html</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="journey-step">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                    <h3>Choose how you show up</h3>
+                    <p>
+                        Your profile role (seeker, owner, or broker) controls tabs: listing forms, wanted posts,
+                        map search, and perks. Complete profile basics so others know who they are dealing with.
+                    </p>
+                </div>
+            </div>
+            <div class="journey-step">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                    <h3>Verify identity (trust layer)</h3>
+                    <p>
+                        Owners and brokers submit government ID (and brokers, PRC / certificate photos) for
+                        <strong>staff review</strong>. Approval unlocks listing confidence and verified badges.
+                        Clear photos without glare speed up review.
+                    </p>
+                </div>
+            </div>
+            <div class="journey-step">
+                <div class="step-num">4</div>
+                <div class="step-body">
+                    <h3>Discover or publish</h3>
+                    <p>
+                        Seekers explore the <a href="marketplace.html">marketplace</a> and map radius.
+                        Owners/brokers publish listings with location pins and photos.
+                        Seekers/brokers can also post <strong>wanted</strong> requests so supply can find demand.
+                    </p>
+                </div>
+            </div>
+            <div class="journey-step">
+                <div class="step-num">5</div>
+                <div class="step-body">
+                    <h3>Match, message, and document the deal</h3>
+                    <p>
+                        Contact paths and messaging continue to grow. For real-world safety: meet in public when possible,
+                        never pay large sums off-platform without a written agreement, and use HomeFinder’s
+                        contract-oriented features as they become available so both sides share a clear record.
+                        Completing legitimate contracts is also how <strong>tier points</strong> progress over time.
+                    </p>
+                </div>
+            </div>
+            <div class="journey-step">
+                <div class="step-num">6</div>
+                <div class="step-body">
+                    <h3>Grow with perks (optional)</h3>
+                    <p>
+                        Boost packages and extra listing slots are requested in-app and activated by staff after
+                        payment verification (manual BPI / reference flow today). Higher packs expand map radius,
+                        wanted caps, listing capacity, and related perks — without forcing every user to pay to start.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page map -->
+    <section class="about-section" id="pages">
+        <h2><i class="bx bx-grid-alt"></i> What each page is for</h2>
+        <p class="sec-lead">A quick map of the product surface so you always know where to go.</p>
+        <div class="page-map">
+            <div class="page-row">
+                <div class="page-name"><a href="index.html">Home</a></div>
+                <div class="page-desc">Public landing — hero, map teaser, featured properties. No login required to browse the story of the product.</div>
+            </div>
+            <div class="page-row">
+                <div class="page-name"><a href="marketplace.html">Marketplace</a></div>
+                <div class="page-desc">Browse and filter listings, open property detail, and explore the wider inventory beyond the homepage teaser.</div>
+            </div>
+            <div class="page-row">
+                <div class="page-name"><a href="login.html">Login / Register</a></div>
+                <div class="page-desc">Sign in or create an account. Email confirmation uses the dedicated verify flow after registration.</div>
+            </div>
+            <div class="page-row">
+                <div class="page-name"><a href="profile.html">Profile</a></div>
+                <div class="page-desc">Your hub: perks &amp; tiers, list property, post wanted, map search, KYC upload, notifications, and role-specific tabs.</div>
+            </div>
+            <div class="page-row">
+                <div class="page-name"><a href="#about">About</a></div>
+                <div class="page-desc">This guide — mission, roles, safety mindset, and how core features fit together. (You're reading it now, further down the homepage.)</div>
+            </div>
+            <div class="page-row">
+                <div class="page-name">Admin console</div>
+                <div class="page-desc">Staff-only: approve identity documents, review boost payment orders, and moderate queues. Not a public page.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="about-section" id="features">
+        <h2><i class="bx bx-cog"></i> Core functions explained</h2>
+        <p class="sec-lead">These systems work together so reach and trust scale without turning the app into a paywall-only board.</p>
+        <div class="feature-grid">
+            <article class="feature-card">
+                <h3><i class="bx bx-map-pin"></i> Map search &amp; pin</h3>
+                <p>
+                    Seekers and brokers set a search center on the map. Listings are emphasized inside a
+                    <strong>radius</strong> that depends on tier and Seeking Boost. Moving the pin is limited by a
+                    <strong>cooldown</strong> so location cannot be spammed; higher boosts can shorten that wait.
+                </p>
+            </article>
+            <article class="feature-card">
+                <h3><i class="bx bx-time-five"></i> Pin relocation cooldown</h3>
+                <p>
+                    After you confirm a new map center, a cooldown timer starts (stored on your account).
+                    Until it ends, “Move my search spot” stays locked. Status text on the map explains when you can move again.
+                </p>
+            </article>
+            <article class="feature-card">
+                <h3><i class="bx bx-rocket"></i> Boosts &amp; extra slots</h3>
+                <p>
+                    Listing Boost, Seeking Boost, and Extra Listing Slot packages are ordered in-app with a payment reference.
+                    Staff verify payment, then activate perks (more listings, wider radius, wanted caps, and related unlocks).
+                    Nothing auto-charges a card today — activation is manual by design for this phase.
+                </p>
+            </article>
+            <article class="feature-card">
+                <h3><i class="bx bx-search-alt"></i> Wanted marketplace</h3>
+                <p>
+                    Seekers (and brokers) publish what they need. Owners and brokers browse demand.
+                    Active wanted posts are capped by base rules plus Seeking Boost so the feed stays usable.
+                </p>
+            </article>
+            <article class="feature-card">
+                <h3><i class="bx bx-id-card"></i> Verification &amp; badges</h3>
+                <p>
+                    Government ID and broker PRC uploads go to staff queues. Approve / reject can include a reason
+                    shown in notifications. Verified status is a trust signal — not a guarantee of every offline outcome.
+                </p>
+            </article>
+            <article class="feature-card">
+                <h3><i class="bx bx-file"></i> Contracts &amp; tiers</h3>
+                <p>
+                    Tier progress is tied to meaningful completed activity (contracts and related rules in the system design),
+                    not vanity clicks. Always keep your own copies of receipts and agreements; use in-app contract tools
+                    when available so both parties share a timeline.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Safety -->
+    <section class="about-section" id="safety">
+        <h2><i class="bx bx-shield-quarter"></i> Safety mindset</h2>
+        <p class="sec-lead">
+            HomeFinder adds verification, structured listings, and staff review — but real-world caution still matters.
+        </p>
+        <div class="feature-grid">
+            <article class="feature-card">
+                <h3><i class="bx bx-check-circle"></i> Do</h3>
+                <p>
+                    Prefer verified counterparts when possible. Inspect properties in person when you can.
+                    Use written terms for deposits and rent. Keep payment proofs. Report suspicious listings to staff when reporting tools are available.
+                </p>
+            </article>
+            <article class="feature-card">
+                <h3><i class="bx bx-x-circle"></i> Don’t</h3>
+                <p>
+                    Don’t wire large amounts to strangers solely over chat. Don’t ignore mismatched IDs or pressure tactics.
+                    Don’t treat a badge as insurance — it means documents were reviewed, not that every future act is risk-free.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section class="about-cta" id="start">
+        <h2>Ready when you are</h2>
+        <p>Browse publicly first, or create an account to list, post wanted, and use map search with your role.</p>
+        <div class="about-cta-actions">
+            <a class="primary" href="register.html">Create account</a>
+            <a class="ghost" href="marketplace.html">Browse marketplace</a>
+        </div>
+    </section>
+
+    <p class="about-note">
+        HomeFinder is a Philippines-focused matching platform. Educational references to property practice may appear in-app;
+        they are not formal legal advice. Always follow local regulations and, when needed, consult a licensed professional.
+    </p>
+
+
+<section class="contact-section" id="contact">
+    <div class="contact-inner">
+        <p class="section-eyebrow contact-slogan">We are here to help</p>
+        <h2>Contact</h2>
+        <p class="section-lead">Questions about accounts, verification, or the platform? Reach the HomeFinder team using the channels below.</p>
+        <p class="section-typing" id="contact-typing" aria-live="polite"></p>
+        <div class="contact-cards contact-cards--arranged">
+            <a class="contact-card contact-card--link" href="mailto:management.home.finder@gmail.com">
+                <i class="bx bx-envelope" aria-hidden="true"></i>
+                <strong>Email</strong>
+                <span>management.home.finder@gmail.com</span>
+            </a>
+            <a class="contact-card contact-card--link" href="#about">
+                <i class="bx bx-help-circle" aria-hidden="true"></i>
+                <strong>Product guide</strong>
+                <span>Full About page — roles, map, boosts &amp; safety</span>
+            </a>
+            <a class="contact-card contact-card--link" href="privacy.html">
+                <i class="bx bx-file" aria-hidden="true"></i>
+                <strong>Legal</strong>
+                <span>Privacy Policy · Terms of Service</span>
+            </a>
+            <a class="contact-card contact-card--link" href="login.html">
+                <i class="bx bx-message-detail" aria-hidden="true"></i>
+                <strong>In-app support</strong>
+                <span>Sign in → Profile → Contact support (staff tickets)</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="credits-section" id="credits" aria-label="Credits">
+  <div class="credits-inner">
+    <h2>Built with</h2>
+    <p class="credits-lead">HomeFinder runs on these tools and platforms. Logos load from public brand sources when available.</p>
+    <div class="credits-grid" id="credits-grid">
+      <a class="credit-card" href="https://firebase.google.com/" target="_blank" rel="noopener noreferrer" data-brand="Firebase" data-domain="firebase.google.com" data-color="#FFCA28">
+        <span class="credit-logo" aria-hidden="true"><img alt="" loading="lazy" decoding="async"></span>
+        <strong>Firebase</strong>
+        <span>Auth, Firestore, Hosting &amp; Functions</span>
+      </a>
+      <a class="credit-card" href="https://supabase.com/" target="_blank" rel="noopener noreferrer" data-brand="Supabase" data-domain="supabase.com" data-color="#3ECF8E">
+        <span class="credit-logo" aria-hidden="true"><img alt="" loading="lazy" decoding="async"></span>
+        <strong>Supabase</strong>
+        <span>Listing &amp; KYC image storage</span>
+      </a>
+      <a class="credit-card" href="https://leafletjs.com/" target="_blank" rel="noopener noreferrer" data-brand="Leaflet" data-domain="leafletjs.com" data-color="#199900">
+        <span class="credit-logo" aria-hidden="true"><img alt="" loading="lazy" decoding="async"></span>
+        <strong>Leaflet</strong>
+        <span>Interactive maps (OSM tiles)</span>
+      </a>
+      <a class="credit-card" href="https://claude.ai/" target="_blank" rel="noopener noreferrer" data-brand="Claude" data-domain="claude.ai" data-color="#D4A27F" data-simpleicon="anthropic">
+        <span class="credit-logo" aria-hidden="true"><img alt="" loading="lazy" decoding="async"></span>
+        <strong>Claude</strong>
+        <span>AI assistance in product design</span>
+      </a>
+      <a class="credit-card" href="https://x.ai/" target="_blank" rel="noopener noreferrer" data-brand="Grok" data-domain="x.ai" data-color="#111111" data-simpleicon="x">
+        <span class="credit-logo" aria-hidden="true"><img alt="" loading="lazy" decoding="async"></span>
+        <strong>Grok</strong>
+        <span>AI assistance by xAI</span>
+      </a>
+    </div>
+    <p class="credits-note">Logos are trademarks of their respective owners and are shown for attribution only. HomeFinder is not affiliated with or endorsed by these parties unless stated otherwise.</p>
+  </div>
+</section>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h3 class="footer-logo">HomeFinder</h3>
+            <p>Matching property seekers with verified owners and licensed brokers across the Philippines — homes, workspaces, and logistics.</p>
+            <div class="footer-contact-mini">
+                <a href="mailto:management.home.finder@gmail.com">management.home.finder@gmail.com</a>
+            </div>
+        </div>
+
+        <div class="footer-links-group">
+            <h4>Explore</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="#about">About &amp; guide</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-links-group">
+            <h4>Account</h4>
+            <ul>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="profile.html#perks">Perks &amp; boosts</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-links-group">
+            <h4>Legal</h4>
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+            </ul>
+            <div class="footer-socials u-mt-18">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="bx bxl-facebook-circle"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bx bxl-linkedin-square"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 HomeFinder. All rights reserved.</p>
+        <div class="legal-links">
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="#about">About</a>
+            <a href="#credits">Credits</a>
+        </div>
+    </div>
+</footer>
+
+    <!-- ============================ -->
+    <!--       SEARCH-OVERLAY         -->
+    <!-- =============================-->
+   
+<div class="search-overlay" id="search-overlay">
+    <div class="search-overlay-backdrop" id="search-backdrop"></div>
+    <div class="search-modal">
+
+        <div class="search-modal-input">
+            <i class='bx bx-search'></i>
+            <input type="text" id="universal-search-input"
+                   placeholder="Search properties, users, pages, or a location...">
+            <button class="search-close" id="search-close-btn">
+                <i class='bx bx-x'></i>
+            </button>
+        </div>
+
+        <div class="search-tabs">
+            <button class="search-tab active" data-cat="pages">Pages</button>
+            <button class="search-tab" data-cat="properties">Properties</button>
+            <button class="search-tab" data-cat="users">Users</button>
+            <button class="search-tab" data-cat="map">Map</button>
+        </div>
+
+        <div class="search-results" id="search-results"></div>
+
+    </div>
+</div>
+    
+     <script type="module" src="js/home/typing.js"></script>
+    <script type="module" src="js/search.js"></script>
+    <script type="module" src="js/home/navbar.js?v=13"></script>
+    <script src="js/credits-logos.js" defer></script>
+    <script type="module" src="js/transition.js"></script>
+    <script type="module" src="js/home/mapUI.js"></script>
+    <script type="module" src="js/customSelect.js"></script>
+    <script type="module" src="js/home/home-typing-slogans.js"></script>
+</body>
+</html>
