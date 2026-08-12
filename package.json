@@ -1,0 +1,27 @@
+{
+  "name": "homefinder-official",
+  "version": "1.0.0",
+  "description": "HomeFinder - Find Your Perfect Space - A property rental platform for the Philippines",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild speed-insights.js --bundle --outfile=dist/speed-insights.min.js --minify --format=iife",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RbrtMrlsIII/HomeFinder-Official.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RbrtMrlsIII/HomeFinder-Official/issues"
+  },
+  "homepage": "https://github.com/RbrtMrlsIII/HomeFinder-Official#readme",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}
