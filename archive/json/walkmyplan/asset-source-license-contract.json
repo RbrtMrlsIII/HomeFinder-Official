@@ -1,0 +1,22 @@
+{
+  "version": "A4.4C3.13",
+  "required_before_production": true,
+  "fields": [
+    "asset_id",
+    "provider",
+    "source_url_or_internal_id",
+    "license",
+    "attribution",
+    "creation_date",
+    "optimization_toolchain",
+    "checksum_sha256"
+  ],
+  "rules": [
+    "No production asset enters the runtime manifest without source/license metadata.",
+    "No unknown-license downloaded asset is treated as production-ready.",
+    "Generated assets must record their generation source and optimization pass.",
+    "Checksums are recorded only after the final optimized runtime file is produced.",
+    "Assets/ is excluded from portable checkpoints, but this manifest remains included.",
+    "A missing asset never blocks navigation or functional HTML."
+  ]
+}

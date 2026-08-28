@@ -1,0 +1,14 @@
+page_id,dom_id_count,heading_count,tab_controls,headings
+broker-hq,58,6,Desk; Manage pins,Broker HQ; Broker access only; Today’s desk; Requests; Service area; Manage pins
+login,10,3,,Welcome Back; Built with; HomeFinder
+admin,62,12,KYC / Identity 0; KYC Registry; Final order approvals 0; Listing help ₱ 0; Verified; Users; Boosts / Caps; Gov disclaimers; Gov housing posts,Admin · KYC & final approvals; Identity & PRC verification; KYC reference registry; Manually record an entry; Final order / payment approvals; Verified users; Users · spreadsheet; Boosts & capacity; Listing help · payment check; Government housing posts; New program post (free); Government disclaimers
+index,42,37,Pages; Properties; Users; Market,"Find a place that fits your life; Shelter, space, and growth — with people you can trust; Drop a pin. See what is around you.; Featured Properties; Sunlit City Apartment; Modern Studio Near Transit; Family Home with Garden; Government & socialized housing; Shelter, space, and growth — with people you can trust; Our role; Spaces we help people find; Who uses HomeFinder"
+profile,263,20,Perks & Portfolio; Messages; Contracts; Need help; List Property; Wanted form; Saved properties; Saved wanted; Reviews; Gov Housing; Account; Residential 0; Workspace 0; Industrial 0,Loading…; Perks & Portfolio; Need help with property?; Messages; Contracts; List a property; Basics & location; Space & money; Risk & rules; Amenities & media; Review & publish; Post a wanted request
+market,83,3,,Discover around your pin; Cards near your current pin; Contact
+privacy,0,7,,Privacy Policy; Information we may handle; How information is used; Service providers and infrastructure; Security and access; Your choices and requests; Contact
+terms,0,7,,"Terms of Service; Using HomeFinder; Listings and user content; Subscriptions, boosts, and payments; Accounts and roles; Availability and changes; Contact and governing terms"
+moderator,30,6,Listings 0; Payment refs 0; Wanted; Contracts; Verified users,Moderator Console; Listing content verification; Payment reference truth; Wanted posts; Contract investigation; Verified users
+staff,40,7,Support 0; Reports 0; Order refs 0; Listing help ₱ 0; Users lookup; Alerts,Staff Console; Support tickets; Reports; Order / package references; Users · lookup spreadsheet; Staff alerts; Listing help · payment check
+register,16,3,,Create Your Account; Built with; HomeFinder
+financing,1,5,,Government housing guide; What this page is; Typical path; Official links; Coming on HomeFinder
+index,7,1,,Welcome to HomeFinder

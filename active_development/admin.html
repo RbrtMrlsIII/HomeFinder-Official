@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- HF-BUILD-2026-08-13 | admin.html | KYC docs + final approvals ONLY -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Console · HomeFinder (KYC &amp; final approvals)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css?v=57">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/transition.css">
+    <link rel="stylesheet" href="css/admin.css?v=21">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/viewport/mobile.css?v=19">
+  <link rel="stylesheet" href="css/gov-finance.css">
+  <link rel="icon" data-hf-favicon href="assets/images/logo-homefinder.png">
+
+  <link rel="stylesheet" href="css/cinematic-ui.css">
+</head>
+<body class="admin-page" data-ops-role="admin" data-asset="surface_admin">
+
+    <header class="admin-header">
+        <h1><i class="bx bxs-shield-quarter"></i> Admin · KYC &amp; final approvals</h1>
+        <div class="admin-header-actions">
+            <span id="admin-role-chip" class="admin-role-chip is-super">Admin</span>
+            <button type="button" class="admin-btn admin-btn-ghost" id="admin-logout-btn">Log out</button>
+        </div>
+    </header>
+
+    <div class="ops-instructions">
+        <strong>Admin authority:</strong> Identity / PRC verification (you alone see sensitive docs) · final approvals · user management · boosts/caps.
+        <em>Admin is confined to the Admin Console. Moderator and Staff operate only from their own consoles.</em>
+    </div>
+
+    <nav class="admin-tabs" data-asset="surface_admin" role="tablist">
+        <button type="button" class="admin-tab-btn active" data-tab="verifications">
+            KYC / Identity <span class="tab-count" id="verify-pending-count" hidden>0</span>
+        </button>
+        <button type="button" class="admin-tab-btn" data-tab="kyc-registry" data-ops-admin-only>KYC Registry</button>
+        <button type="button" class="admin-tab-btn" data-tab="orders">
+            Final order approvals <span class="tab-count" id="orders-pending-count" hidden>0</span>
+        </button>
+        <button type="button" class="admin-tab-btn" data-tab="listing-help-pay">
+            Listing help ₱ <span class="tab-count" id="listing-help-pay-count" hidden>0</span>
+        </button>
+        <button type="button" class="admin-tab-btn" data-tab="verified">Verified</button>
+        <button type="button" class="admin-tab-btn" data-tab="users">Users</button>
+        <button type="button" class="admin-tab-btn" data-tab="boosts">Boosts / Caps</button>
+        <button type="button" class="admin-tab-btn" data-tab="gov-disclaimers">Gov disclaimers</button>
+        <button type="button" class="admin-tab-btn" data-tab="gov-housing">Gov housing posts</button>
+    </nav>
+
+    <main class="admin-main" data-asset="surface_admin">
+
+        <!-- KYC / IDENTITY — Admin only sensitive docs -->
+        <section class="admin-panel active" id="admin-panel-verifications" data-asset="admin_kyc_verification">
+            <h2 class="admin-panel-title"><i class="bx bx-id-card"></i> Identity &amp; PRC verification</h2>
+            <p class="admin-panel-sub">
+                Highest-security path. Only Admin views government ID and broker PRC against official records.
+                <strong>Decline requires a reason and a severity-based resubmit window</strong> (blurred → short; prohibited content → up to 30 days).
+            </p>
+            <div class="admin-searchbar">
+                <select id="admin-verify-filter">
+                    <option value="pending">Pending only</option>
+                    <option value="all">All submissions</option>
+                    <option value="verified">Verified</option>
+                    <option value="rejected">Rejected</option>
+                </select>
+                <select id="admin-verify-type">
+                    <option value="all">ID + PRC</option>
+                    <option value="id">Government ID only</option>
+                    <option value="broker">Broker PRC / certificate only</option>
+                </select>
+                <input type="search" id="admin-verify-search" class="admin-search-input" placeholder="Name, UID, ID number…">
+                <button type="button" class="admin-btn admin-btn-primary" id="admin-verify-refresh">Refresh queue</button>
+            </div>
+            <div class="admin-verify-grid" id="admin-verify-queue">
+                <p class="admin-loading">Loading queue…</p>
+            </div>
+        </section>
+
+        <!-- KYC REGISTRY -->
+        <section class="admin-panel" id="admin-panel-kyc-registry" data-ops-admin-only data-asset="admin_kyc_registry">
+            <h2 class="admin-panel-title"><i class="bx bx-fingerprint"></i> KYC reference registry</h2>
+            <p class="admin-panel-sub">Search what is on file. Manual entries for investigation. Sensitive files still opened only via signed URL on this console.</p>
+            <div class="admin-searchbar">
+                <input type="search" id="admin-kyc-registry-search" class="admin-search-input" placeholder="ID / license number, name, UID…">
+                <button type="button" class="admin-btn admin-btn-primary" id="admin-kyc-registry-refresh">Search</button>
+            </div>
+            <div class="admin-table-wrap">
+                <table class="admin-table ops-sheet">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Reference</th>
+                            <th>Linked user</th>
+                            <th>Notes</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-kyc-registry-results">
+                        <tr><td colspan="5" class="admin-loading">Search to load…</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3 class="admin-panel-title u-font-size-1rem u-mt-24">Manually record an entry</h3>
+            <div id="admin-kyc-registry-form-host"></div>
+        </section>
+
+        <!-- FINAL ORDER APPROVALS -->
+        <section class="admin-panel" id="admin-panel-orders">
+            <h2 class="admin-panel-title"><i class="bx bx-check-double"></i> Final order / payment approvals</h2>
+            <p class="admin-panel-sub">
+                Items handed off by Staff (package refs) or Moderator (payment truth). You give the <strong>final</strong> approval only.
+            </p>
+            <div class="admin-searchbar">
+                <input type="search" id="admin-order-search" class="admin-search-input" placeholder="UID, reference, package…">
+                <select id="admin-order-filter">
+                    <option value="pending">Awaiting final approval</option>
+                    <option value="all">All</option>
+                    <option value="approved">Approved</option>
+                </select>
+                <button type="button" class="admin-btn admin-btn-primary" id="admin-order-refresh">Refresh</button>
+            </div>
+            <div class="admin-table-wrap">
+                <table class="admin-table ops-sheet">
+                    <thead>
+                        <tr>
+                            <th>When</th>
+                            <th>User</th>
+                            <th>Package / amount</th>
+                            <th>Reference</th>
+                            <th>Hand-off</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-orders-results">
+                        <tr><td colspan="6" class="admin-loading">Loading…</td></tr>
+                    </tbody>
+                </table>
+                <p class="admin-empty" id="admin-orders-empty" hidden>No items awaiting final approval.</p>
+            </div>
+        </section>
+
+        <!-- VERIFIED -->
+        <section class="admin-panel" id="admin-panel-verified">
+            <h2 class="admin-panel-title"><i class="bx bx-badge-check"></i> Verified users</h2>
+            <p class="admin-panel-sub">Users who passed identity verification.</p>
+            <div class="admin-searchbar">
+                <input type="search" id="admin-verified-search" class="admin-search-input" placeholder="Name, UID…">
+                <select id="admin-verified-role">
+                    <option value="all">All roles</option>
+                    <option value="seeker">Seeker</option>
+                    <option value="owner">Owner</option>
+                    <option value="broker">Property Broker</option>
+                </select>
+                <button type="button" class="admin-btn admin-btn-primary" id="admin-verified-refresh">Refresh</button>
+            </div>
+            <div class="admin-table-wrap">
+                <table class="admin-table ops-sheet">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Verified</th>
+                            <th>UID</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-verified-results">
+                        <tr><td colspan="5" class="admin-loading">Loading…</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- USERS -->
+        <section class="admin-panel" id="admin-panel-users" data-asset="admin_users_sheet">
+            <h2 class="admin-panel-title"><i class="bx bx-table"></i> Users · spreadsheet</h2>
+            <p class="admin-panel-sub">Full management view. Open KYC docs only from the KYC tab (signed URL).</p>
+            <div class="admin-searchbar">
+                <input type="search" id="admin-user-search" class="admin-search-input" placeholder="Name, email, UID, phone, ID number…">
+                <select id="admin-user-role-filter">
+                    <option value="all">All roles</option>
+                    <option value="seeker">Seeker</option>
+                    <option value="owner">Owner</option>
+                    <option value="broker">Property Broker</option>
+                </select>
+                <button type="button" class="admin-btn admin-btn-primary" id="admin-user-search-btn">Search</button>
+            </div>
+            <div class="admin-table-wrap">
+                <table class="admin-table ops-sheet">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Verified</th>
+                            <th>UID</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-users-results">
+                        <tr><td colspan="6" class="admin-loading">Search to load users…</td></tr>
+                    </tbody>
+                </table>
+                <p class="admin-empty" id="admin-users-empty" hidden>No users match.</p>
+            </div>
+        </section>
+
+        <!-- BOOSTS / CAPS -->
+        <section class="admin-panel" id="admin-panel-boosts" data-asset="admin_orders">
+            <h2 class="admin-panel-title"><i class="bx bx-crown"></i> Boosts &amp; capacity</h2>
+            <p class="admin-panel-sub">Admin levers for tier/boost/capacity testing and corrections. Prefer Cloud Functions for production writes when possible.</p>
+            <div class="admin-panel-body" id="admin-boosts-body">
+                <p class="field-hint">Use user management actions or dedicated tools when available. Document every override in SESSION_LOG.</p>
+            </div>
+        </section>
+
+
+        <!-- LISTING HELP PAYMENT CHECK (Phase 1 SoT §27) -->
+        <section class="admin-panel" id="admin-panel-listing-help-pay" data-asset="ops-listing-help-pay">
+            <h2 class="admin-panel-title"><i class="bx bx-money-withdraw"></i> Listing help · payment check</h2>
+            <p class="admin-panel-sub">Clients who request broker help when listing pay <strong>₱99.99</strong> at submit. Verify the payment reference before the listing can proceed to live / final approval.</p>
+            <div class="admin-toolbar">
+                <label class="admin-filter-label">Status
+                    <select id="listing-help-pay-filter">
+                        <option value="checking" selected>Checking</option>
+                        <option value="verified">Verified</option>
+                        <option value="rejected">Rejected</option>
+                        <option value="all">All help requests</option>
+                    </select>
+                </label>
+            </div>
+            <div class="admin-table-wrap">
+                <table class="admin-table ops-sheet">
+                    <thead>
+                        <tr>
+                            <th>Submitted</th>
+                            <th>Listing</th>
+                            <th>Owner</th>
+                            <th>Fee</th>
+                            <th>Payment ref</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listing-help-pay-results">
+                        <tr><td colspan="7" class="admin-loading">Open this tab to load…</td></tr>
+                    </tbody>
+                </table>
+                <p class="admin-empty" id="listing-help-pay-empty" hidden>No rows in this filter.</p>
+            </div>
+        </section>
+
+    
+        
+        <section class="admin-panel" id="admin-panel-gov-housing" data-asset="admin-gov-housing-editor">
+            <h2 class="admin-panel-title"><i class="bx bx-building-house"></i> Government housing posts</h2>
+            <p class="admin-panel-sub">Free for admin/staff (SoT §34). Public cards show <strong>image + Details link only</strong> — not full description. Require expiry. Use <em>Expire overdue</em> until a scheduled job exists.</p>
+            <div class="admin-toolbar" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+              <button type="button" class="admin-btn admin-btn-primary" id="gh-expire-overdue">Expire overdue</button>
+              <button type="button" class="admin-btn" id="gh-clear">New blank</button>
+            </div>
+            <div id="gh-posts-list"></div>
+            <div id="gh-editor" class="admin-disclaimer-grid" style="margin-top:20px;">
+              <h3 id="gh-form-title">New program post (free)</h3>
+              <label>Title
+                <input type="text" id="gh-title" maxlength="120" placeholder="e.g. Pag-IBIG-oriented project in Cavite">
+              </label>
+              <label>Sector
+                <select id="gh-sector">
+                  <option value="pagibig">Pag-IBIG</option>
+                  <option value="4ph">4PH / DHSUD</option>
+                  <option value="nha">NHA</option>
+                  <option value="other">Other KSA</option>
+                  <option value="partner">Developer partner</option>
+                </select>
+              </label>
+              <label>Image URL
+                <input type="url" id="gh-image" placeholder="https://…">
+              </label>
+              <label>Details URL (government / official site)
+                <input type="url" id="gh-url" placeholder="https://www.pagibigfund.gov.ph/…">
+              </label>
+              <label>Location text (optional, short)
+                <input type="text" id="gh-location" maxlength="120" placeholder="e.g. Cavite">
+              </label>
+              <label>Price band
+                <select id="gh-band">
+                  <option value="socialized">socialized</option>
+                  <option value="economic">economic</option>
+                  <option value="mid">mid</option>
+                  <option value="open">open</option>
+                  <option value="unknown">unknown</option>
+                </select>
+              </label>
+              <label>Partner name (optional — for developer partner inventory)
+                <input type="text" id="gh-partner" maxlength="80" placeholder="e.g. Amaia / Avida project label">
+              </label>
+              <label class="gh-check-row" style="flex-direction:row;align-items:center;gap:8px;">
+                <input type="checkbox" id="gh-ops-verified">
+                <span>Ops-verified partner link (not a Pag-IBIG approval)</span>
+              </label>
+              <label>Status
+                <select id="gh-status">
+                  <option value="draft">draft</option>
+                  <option value="published">published</option>
+                  <option value="expired">expired</option>
+                  <option value="taken_down">taken_down</option>
+                </select>
+              </label>
+              <label>Expires at (required)
+                <input type="datetime-local" id="gh-expires">
+              </label>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <button type="button" class="admin-btn admin-btn-primary" id="gh-save">Save post</button>
+              </div>
+              <p class="admin-panel-sub" id="gh-status-msg"></p>
+            </div>
+        </section>
+
+        <section class="admin-panel" id="admin-panel-gov-disclaimers" data-asset="admin-gov-disclaimer-editor">
+            <h2 class="admin-panel-title"><i class="bx bx-shield-quarter"></i> Government disclaimers</h2>
+            <p class="admin-panel-sub">Editable templates (SoT §34). Shown as separate chrome on the guide and future gov cards — not as listing body text. Admin/staff only.</p>
+            <div class="admin-disclaimer-grid" id="admin-disclaimer-form"></div>
+            <p class="admin-panel-sub" id="admin-disclaimer-meta"></p>
+            <button type="button" class="admin-btn admin-btn-primary" id="admin-disclaimer-save">Save disclaimers</button>
+            <p class="admin-panel-sub" id="admin-disclaimer-status"></p>
+        </section>
+
+    </main>
+
+    <script type="module">
+        import "./js/admin/core.js";
+        import { adminLogout } from "./js/admin/core.js";
+        import "./js/admin/tabs.js";
+        document.getElementById("admin-logout-btn")?.addEventListener("click", () => adminLogout());
+        const mods = [
+            "./js/admin/verifications.js",
+            "./js/admin/kyc-registry.js",
+            "./js/admin/orders.js",
+            "./js/admin/listing-help-payments.js",
+            "./js/admin/verified-users.js",
+            "./js/admin/users.js",
+            "./js/admin/logout.js"
+        ];
+        for (const m of mods) {
+            try { await import(m); }
+            catch (err) { console.error("Admin module failed:", m, err); }
+        }
+    </script>
+    <script type="module" src="js/transition.js"></script>
+  <script src="js/leave-guard.js" defer></script>
+  <script type="module" src="js/admin-gov-disclaimers.js"></script>
+  <script type="module" src="js/admin-gov-housing.js"></script>
+  <script src="js/brand-logo.js" defer></script>
+
+  <script>fetch('data/cinematic-scenes.json').then(r=>r.json()).then(v=>window.__HF_CINEMATIC_SCENES__=v).catch(()=>{});</script>
+  <script src="js/design-roots.js" defer></script>
+    <script src="js/animation-root.js" defer></script>
+    <script src="js/physical-ui-state.js" defer></script>
+  <!-- M1: production WebGL/Three triad not loaded; see js/reference-3d/ -->
+  <script src="js/cinematic-ui.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{
+  "phase": "Deep Dive 05",
+  "title": "Operations: Admin + Moderator + Staff",
+  "status": "reconciled",
+  "roles": {
+    "admin": {
+      "route": "admin.html",
+      "can_enter": [
+        "admin.html"
+      ],
+      "purpose": "Admin-only console; final approvals and administrative authority",
+      "sensitive_kyc_docs": true
+    },
+    "moderator": {
+      "route": "moderator.html",
+      "can_enter": [
+        "moderator.html"
+      ],
+      "purpose": "content/payment/order/contract moderation",
+      "sensitive_kyc_docs": false
+    },
+    "staff": {
+      "route": "staff.html",
+      "can_enter": [
+        "staff.html"
+      ],
+      "purpose": "support/report intake/orders/user lookup/alerts",
+      "sensitive_kyc_docs": false
+    }
+  },
+  "shared_authority": "js/admin-uid.js + Firebase rules + trusted functions; client gates are navigation only",
+  "spatial": {
+    "room": "OPERATIONS",
+    "zones": [
+      "A-01 Admin",
+      "A-02 Moderator",
+      "A-03 Staff"
+    ],
+    "admin_cross_console": false,
+    "camera_rule": "observe only; never authorize",
+    "door_rule": "door follows canonical role/capability decision"
+  },
+  "important_boundaries": [
+    "Admin is confined to the Admin console.",
+    "Moderator is confined to the Moderator console.",
+    "Staff is confined to the Staff console.",
+    "Operations roles do not enter Profile or Market as product surfaces.",
+    "Admin may inspect application data only through explicitly authorized Admin tools; that does not grant Profile or Market route access."
+  ],
+  "open_items": [
+    "Broker onboarding/approval lifecycle remains DD04 follow-up.",
+    "KYC reviewer authority reconciliation remains partial.",
+    "userReports vs reports bridge remains unresolved.",
+    "government editor capability remains partially documented.",
+    "live Firebase deployment verification is separate from source-level confirmation."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "page": "market",
+  "logicalRoom": "MARKET",
+  "stateContract": "phase12",
+  "securityBoundary": "presentation-only",
+  "objects": [
+    {"id":"market-guide-console","label":"Market Guide Console","selector":"#market-guide","pov":"M-01","kind":"guide","purpose":"orientation and discovery onboarding","responsive":"market-guide","animation":"emphasis"},
+    {"id":"market-search-console","label":"Market Search Console","selector":"#market-map-topbar","pov":"M-01","kind":"search-console","purpose":"search and refinement command bar","responsive":"market-command","animation":"state"},
+    {"id":"market-map-table","label":"Market Map Table","selector":"#market-map-canvas","pov":"M-02","kind":"map","purpose":"interactive discovery map and pin workspace","responsive":"market-map","animation":"cinematic"},
+    {"id":"market-filter-board","label":"Market Filter Board","selector":"#market-filter-panel","pov":"M-03","kind":"filters","purpose":"property and wanted refinement controls","responsive":"market-filters","animation":"state"},
+    {"id":"market-discovery-wall","label":"Market Discovery Wall","selector":"#market-discovery-rail","pov":"M-04","kind":"results","purpose":"interactive listing/result cards","responsive":"market-results","animation":"emphasis"},
+    {"id":"market-inspection-dossier","label":"Market Inspection Dossier","selector":"#market-card-modal","pov":"M-05","kind":"detail-modal","purpose":"expanded property/request dossier","responsive":"market-modal","animation":"cinematic"},
+    {"id":"market-contact-desk","label":"Market Contact Desk","selector":"#market-contact","pov":"M-06","kind":"contact","purpose":"support and contact transition","responsive":"reference-contact","animation":"door"}
+  ],
+  "responsiveModes":["mobile-portrait","mobile-landscape","compact","tablet","desktop","wide-desktop"],
+  "themes":["day","sunset","night","rain","mist"],
+  "states":["idle","hover","focus","interaction-start","ui-open","loading","success","error","empty","disabled"]
+}

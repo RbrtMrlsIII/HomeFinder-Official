@@ -1,0 +1,70 @@
+{
+  "status": "TUNED_VISUAL_REVIEW",
+  "povs": {
+    "H-01": {
+      "position": [
+        300,
+        520,
+        150
+      ],
+      "target": [
+        470,
+        465,
+        85
+      ],
+      "fov": 1.22,
+      "focus": "hero",
+      "anchor": "living-center / corner-sofa approach",
+      "note": "hero focal centered with extra ambient breathing room"
+    },
+    "H-02": {
+      "position": [
+        55,
+        330,
+        150
+      ],
+      "target": [
+        250,
+        440,
+        90
+      ],
+      "fov": 1.18,
+      "focus": "universal-search",
+      "anchor": "corridor-to-living threshold",
+      "note": "wider discovery context; preserve search-safe center"
+    },
+    "H-03": {
+      "position": [
+        350,
+        560,
+        150
+      ],
+      "target": [
+        480,
+        460,
+        85
+      ],
+      "fov": 0.92,
+      "focus": "featured-properties",
+      "anchor": "living-room seating / TV axis",
+      "note": "tighter property focus without corridor pinch"
+    },
+    "H-05": {
+      "position": [
+        55,
+        265,
+        150
+      ],
+      "target": [
+        300,
+        360,
+        90
+      ],
+      "fov": 1.16,
+      "focus": "government-housing",
+      "anchor": "public-service axis / living threshold",
+      "note": "wide reference frame with readable center-safe region"
+    }
+  },
+  "orientation_rule": "Sweet Home 3D yaw forward = (-sin(yaw), cos(yaw)); positive pitch looks downward"
+}

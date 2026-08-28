@@ -1,0 +1,1330 @@
+TAP version 13
+# Subtest: A.2.3 manifest defines the Home World 01 asset contract
+ok 1 - A.2.3 manifest defines the Home World 01 asset contract
+  ---
+  duration_ms: 0.910402
+  type: 'test'
+  ...
+# Subtest: A.2.3 has explicit high and medium performance budgets
+ok 2 - A.2.3 has explicit high and medium performance budgets
+  ---
+  duration_ms: 0.9227
+  type: 'test'
+  ...
+# Subtest: A.2.3 adapter exposes renderer registration and mounting
+ok 3 - A.2.3 adapter exposes renderer registration and mounting
+  ---
+  duration_ms: 0.209829
+  type: 'test'
+  ...
+# Subtest: A.2.3 keeps model sources empty until real assets exist
+ok 4 - A.2.3 keeps model sources empty until real assets exist
+  ---
+  duration_ms: 0.109888
+  type: 'test'
+  ...
+# Subtest: A.2.3 cinematic runtime calls the adapter without owning the renderer
+ok 5 - A.2.3 cinematic runtime calls the adapter without owning the renderer
+  ---
+  duration_ms: 0.107678
+  type: 'test'
+  ...
+# Subtest: Patch 57 A.2.2: Home has one shared cinematic camera loop
+not ok 6 - Patch 57 A.2.2: Home has one shared cinematic camera loop
+  ---
+  duration_ms: 0.714111
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/cinematic-camera-hero.test.mjs:8:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/tests//js/cinematic-ui.js'"
+  code: 'ENOENT'
+  stack: |-
+    Object.readFileSync (node:fs:442:20)
+    read (file:///mnt/data/hf_exec_current/active_development/tests/cinematic-camera-hero.test.mjs:6:27)
+    TestContext.<anonymous> (file:///mnt/data/hf_exec_current/active_development/tests/cinematic-camera-hero.test.mjs:9:14)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: Patch 57 A.2.2: Home hero declares a cinematic focal contract
+not ok 7 - Patch 57 A.2.2: Home hero declares a cinematic focal contract
+  ---
+  duration_ms: 0.170707
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/cinematic-camera-hero.test.mjs:16:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/tests//index.html'"
+  code: 'ENOENT'
+  stack: |-
+    Object.readFileSync (node:fs:442:20)
+    read (file:///mnt/data/hf_exec_current/active_development/tests/cinematic-camera-hero.test.mjs:6:27)
+    TestContext.<anonymous> (file:///mnt/data/hf_exec_current/active_development/tests/cinematic-camera-hero.test.mjs:17:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: Patch 57 A.2.2: Home uses the clean cinematic visual without baked UI
+not ok 8 - Patch 57 A.2.2: Home uses the clean cinematic visual without baked UI
+  ---
+  duration_ms: 0.102384
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/cinematic-camera-hero.test.mjs:23:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/tests//data/cinematic-worlds.json'"
+  code: 'ENOENT'
+  stack: |-
+    Object.readFileSync (node:fs:442:20)
+    read (file:///mnt/data/hf_exec_current/active_development/tests/cinematic-camera-hero.test.mjs:6:27)
+    TestContext.<anonymous> (file:///mnt/data/hf_exec_current/active_development/tests/cinematic-camera-hero.test.mjs:24:17)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: Patch 57 A.2.2: reduced motion and mobile composition are explicit
+not ok 9 - Patch 57 A.2.2: reduced motion and mobile composition are explicit
+  ---
+  duration_ms: 1.177709
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/cinematic-camera-hero.test.mjs:30:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/tests//css/cinematic-ui.css'"
+  code: 'ENOENT'
+  stack: |-
+    Object.readFileSync (node:fs:442:20)
+    read (file:///mnt/data/hf_exec_current/active_development/tests/cinematic-camera-hero.test.mjs:6:27)
+    TestContext.<anonymous> (file:///mnt/data/hf_exec_current/active_development/tests/cinematic-camera-hero.test.mjs:31:15)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# DD04 final authority freeze current-authority reconciliation: PASS
+# Subtest: tests/dd04-final-authority-freeze.test.mjs
+ok 3 - tests/dd04-final-authority-freeze.test.mjs
+  ---
+  duration_ms: 27.020297
+  type: 'test'
+  ...
+# PASS dd05-h04-map-preview
+# Subtest: DD05 H-04 map preview transition contract
+ok 11 - DD05 H-04 map preview transition contract
+  ---
+  duration_ms: 0.526753
+  type: 'test'
+  ...
+# PASS: DD05 H-05 Government Housing response mapping against current authority
+# Subtest: tests/dd05-h05-government-housing.test.mjs
+ok 5 - tests/dd05-h05-government-housing.test.mjs
+  ---
+  duration_ms: 31.080878
+  type: 'test'
+  ...
+# DD05 H-06 Mission/About mapping/current authority: PASS
+# Subtest: tests/dd05-h06-mission.test.mjs
+ok 6 - tests/dd05-h06-mission.test.mjs
+  ---
+  duration_ms: 35.205713
+  type: 'test'
+  ...
+# PASS: DD05 H-09 Start / Contact / Credits / Exit mapping against current authority
+# Subtest: tests/dd05-h09-contact-exit.test.mjs
+ok 7 - tests/dd05-h09-contact-exit.test.mjs
+  ---
+  duration_ms: 40.992747
+  type: 'test'
+  ...
+# PASS: DD05 Main Hall cinematic map/current physical authority
+# Subtest: tests/dd05-main-hall-cinematic-map.test.mjs
+ok 8 - tests/dd05-main-hall-cinematic-map.test.mjs
+  ---
+  duration_ms: 38.134065
+  type: 'test'
+  ...
+# PASS: DD05 Main Hall sequence/current authority reconciliation
+# Subtest: tests/dd05-main-hall-sequence-reconciliation.test.mjs
+ok 9 - tests/dd05-main-hall-sequence-reconciliation.test.mjs
+  ---
+  duration_ms: 45.255164
+  type: 'test'
+  ...
+# PASS dd05-ui-response-mapping/current-authority (37 surfaces, 9 POVs)
+# Subtest: tests/dd05-ui-response-mapping.test.mjs
+ok 10 - tests/dd05-ui-response-mapping.test.mjs
+  ---
+  duration_ms: 33.049542
+  type: 'test'
+  ...
+# Deep Dive 04 Auth/Roles/Permissions current-authority reconciliation: PASS
+# Subtest: tests/deep-dive-04-auth-roles-permissions.test.mjs
+ok 11 - tests/deep-dive-04-auth-roles-permissions.test.mjs
+  ---
+  duration_ms: 30.122594
+  type: 'test'
+  ...
+# Foundation Repair 01 authority contracts: PASS
+# Subtest: tests/foundation-repair-01-authority-contracts.test.mjs
+ok 12 - tests/foundation-repair-01-authority-contracts.test.mjs
+  ---
+  duration_ms: 29.399479
+  type: 'test'
+  ...
+# Foundation Repair 02 points authority: PASS
+# Subtest: tests/foundation-repair-02-points-authority.test.mjs
+ok 13 - tests/foundation-repair-02-points-authority.test.mjs
+  ---
+  duration_ms: 30.991437
+  type: 'test'
+  ...
+# Foundation Repair 03 anti-abuse authority checks: PASS
+# Subtest: tests/foundation-repair-03-points-abuse.test.mjs
+ok 14 - tests/foundation-repair-03-points-abuse.test.mjs
+  ---
+  duration_ms: 53.663002
+  type: 'test'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/core/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/foundation-repair-04-tier-entitlement.test.mjs:11:16
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/core/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/foundation-repair-04-tier-entitlement.test.mjs
+not ok 15 - tests/foundation-repair-04-tier-entitlement.test.mjs
+  ---
+  duration_ms: 32.388149
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/foundation-repair-04-tier-entitlement.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/core/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/foundation-repair-05-subscription-entitlement.test.mjs:13:16
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/core/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/foundation-repair-05-subscription-entitlement.test.mjs
+not ok 16 - tests/foundation-repair-05-subscription-entitlement.test.mjs
+  ---
+  duration_ms: 33.30141
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/foundation-repair-05-subscription-entitlement.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/core/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/foundation-repair-07-admin-capacity-override.test.mjs:8:16
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/core/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/foundation-repair-07-admin-capacity-override.test.mjs
+not ok 17 - tests/foundation-repair-07-admin-capacity-override.test.mjs
+  ---
+  duration_ms: 30.132845
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/foundation-repair-07-admin-capacity-override.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Foundation Repair 08 authority test: PASS
+# Subtest: tests/foundation-repair-08.test.mjs
+ok 18 - tests/foundation-repair-08.test.mjs
+  ---
+  duration_ms: 31.556154
+  type: 'test'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development//docs/core/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_exec_current/active_development/[39mtests/foundation-repair-09-pin-authority.test.mjs:4:22[90m)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/foundation-repair-09-pin-authority.test.mjs:8:13
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development//docs/core/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/foundation-repair-09-pin-authority.test.mjs
+not ok 19 - tests/foundation-repair-09-pin-authority.test.mjs
+  ---
+  duration_ms: 39.08463
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/foundation-repair-09-pin-authority.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/core/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_exec_current/active_development/[39mtests/foundation-repair-10-radius-authority.test.mjs:5:22[90m)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/foundation-repair-10-radius-authority.test.mjs:6:13
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/core/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/foundation-repair-10-radius-authority.test.mjs
+not ok 20 - tests/foundation-repair-10-radius-authority.test.mjs
+  ---
+  duration_ms: 35.294
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/foundation-repair-10-radius-authority.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/core/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_exec_current/active_development/[39mtests/foundation-repair-11-match-notification-dedupe.test.mjs:5:22[90m)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/foundation-repair-11-match-notification-dedupe.test.mjs:8:13
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/core/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/foundation-repair-11-match-notification-dedupe.test.mjs
+not ok 21 - tests/foundation-repair-11-match-notification-dedupe.test.mjs
+  ---
+  duration_ms: 35.045645
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/foundation-repair-11-match-notification-dedupe.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/core/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_exec_current/active_development/[39mtests/foundation-repair-12-stale-match.test.mjs:5:22[90m)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/foundation-repair-12-stale-match.test.mjs:8:13
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/core/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/foundation-repair-12-stale-match.test.mjs
+not ok 22 - tests/foundation-repair-12-stale-match.test.mjs
+  ---
+  duration_ms: 32.026724
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/foundation-repair-12-stale-match.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: A.4.2 defines an architectural house camera rig
+ok 30 - A.4.2 defines an architectural house camera rig
+  ---
+  duration_ms: 1.002087
+  type: 'test'
+  ...
+# Subtest: A.4.2 maps Home sections to architectural anchors
+ok 31 - A.4.2 maps Home sections to architectural anchors
+  ---
+  duration_ms: 1.30684
+  type: 'test'
+  ...
+# Subtest: A.4.2 scroll choreography publishes camera state for the renderer
+ok 32 - A.4.2 scroll choreography publishes camera state for the renderer
+  ---
+  duration_ms: 0.188702
+  type: 'test'
+  ...
+# Subtest: A.4.2 keeps reduced motion and mobile camera scaling explicit
+ok 33 - A.4.2 keeps reduced motion and mobile camera scaling explicit
+  ---
+  duration_ms: 0.119488
+  type: 'test'
+  ...
+# A.4.4-B listings book contract: 4/4
+# Subtest: tests/listings-book-interaction.test.mjs
+ok 24 - tests/listings-book-interaction.test.mjs
+  ---
+  duration_ms: 59.760743
+  type: 'test'
+  ...
+# Subtest: M1: product HTML does not script-load WebGL/Three triad
+ok 35 - M1: product HTML does not script-load WebGL/Three triad
+  ---
+  duration_ms: 4.979415
+  type: 'test'
+  ...
+# Subtest: M1: triad modules live only under js/reference-3d/
+ok 36 - M1: triad modules live only under js/reference-3d/
+  ---
+  duration_ms: 0.286465
+  type: 'test'
+  ...
+# Subtest: M1: cinematic-ui keeps optional mount (no hard dependency)
+ok 37 - M1: cinematic-ui keeps optional mount (no hard dependency)
+  ---
+  duration_ms: 0.413172
+  type: 'test'
+  ...
+# Patch 03 discovery contract tests passed.
+# Subtest: tests/market-discovery-contract.test.mjs
+ok 26 - tests/market-discovery-contract.test.mjs
+  ---
+  duration_ms: 37.360953
+  type: 'test'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development//docs/core/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_exec_current/active_development/[39mtests/market-patch-11a-audit.test.mjs:5:24[90m)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/market-patch-11a-audit.test.mjs:12:13
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development//docs/core/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/market-patch-11a-audit.test.mjs
+not ok 27 - tests/market-patch-11a-audit.test.mjs
+  ---
+  duration_ms: 29.399064
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/market-patch-11a-audit.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# PASS Market/Profile physical UI propagation + root matrix
+# Subtest: tests/market-profile-physical-ui-propagation.test.mjs
+ok 28 - tests/market-profile-physical-ui-propagation.test.mjs
+  ---
+  duration_ms: 37.373762
+  type: 'test'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development//docs/core/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_exec_current/active_development/[39mtests/patch-11c-r7-pin-authority.test.mjs:4:22[90m)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/patch-11c-r7-pin-authority.test.mjs:6:97
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development//docs/core/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-11c-r7-pin-authority.test.mjs
+not ok 29 - tests/patch-11c-r7-pin-authority.test.mjs
+  ---
+  duration_ms: 36.984652
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/patch-11c-r7-pin-authority.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/integrations/cloudflare/PRODUCTION-PAYPAL-CLOUDFLARE-CONTRACT.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/patch-12-integration-hardening.test.mjs:9:21
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/integrations/cloudflare/PRODUCTION-PAYPAL-CLOUDFLARE-CONTRACT.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-12-integration-hardening.test.mjs
+not ok 30 - tests/patch-12-integration-hardening.test.mjs
+  ---
+  duration_ms: 31.887286
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/patch-12-integration-hardening.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/core/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/patch-14-listing-activity.test.mjs:9:16
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/core/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-14-listing-activity.test.mjs
+not ok 31 - tests/patch-14-listing-activity.test.mjs
+  ---
+  duration_ms: 28.656828
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/patch-14-listing-activity.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/patches/PATCH-16-LISTING-ACTIVITY-CONTRACTS.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_exec_current/active_development/[39mtests/patch-16-listing-activity-contracts.test.mjs:6:22[90m)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/patch-16-listing-activity-contracts.test.mjs:8:15
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/patches/PATCH-16-LISTING-ACTIVITY-CONTRACTS.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-16-listing-activity-contracts.test.mjs
+not ok 32 - tests/patch-16-listing-activity-contracts.test.mjs
+  ---
+  duration_ms: 77.739863
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/patch-16-listing-activity-contracts.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/patches/PATCH-17-AUTHORITATIVE-CONTRACT-ACTIVATION.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_exec_current/active_development/[39mtests/patch-17-contract-activation.test.mjs:6:22[90m)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/patch-17-contract-activation.test.mjs:12:15
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/patches/PATCH-17-AUTHORITATIVE-CONTRACT-ACTIVATION.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-17-contract-activation.test.mjs
+not ok 33 - tests/patch-17-contract-activation.test.mjs
+  ---
+  duration_ms: 45.907409
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/patch-17-contract-activation.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/patches/PATCH-18-LISTING-INQUIRY-CONTRACT.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_exec_current/active_development/[39mtests/patch-18-listing-inquiry.test.mjs:6:22[90m)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/patch-18-listing-inquiry.test.mjs:15:15
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/patches/PATCH-18-LISTING-INQUIRY-CONTRACT.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-18-listing-inquiry.test.mjs
+not ok 34 - tests/patch-18-listing-inquiry.test.mjs
+  ---
+  duration_ms: 46.757036
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/patch-18-listing-inquiry.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/core/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/patch-19-discovery-impression.test.mjs:9:16
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/core/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-19-discovery-impression.test.mjs
+not ok 35 - tests/patch-19-discovery-impression.test.mjs
+  ---
+  duration_ms: 47.395279
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/patch-19-discovery-impression.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/patches/PATCH-20-MARKET-BROKER-HQ-STATISTICS-READ-MAP.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/patch-20-statistics-read-map.test.mjs:6:17
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/patches/PATCH-20-MARKET-BROKER-HQ-STATISTICS-READ-MAP.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-20-statistics-read-map.test.mjs
+not ok 36 - tests/patch-20-statistics-read-map.test.mjs
+  ---
+  duration_ms: 53.186935
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/patch-20-statistics-read-map.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Patch 21 role/Need Help contract: PASS
+# Subtest: tests/patch-21-role-need-help.test.mjs
+ok 37 - tests/patch-21-role-need-help.test.mjs
+  ---
+  duration_ms: 75.534375
+  type: 'test'
+  ...
+# Patch 22 Admin/Ops authority matrix contract: PASS
+# Subtest: tests/patch-22-admin-ops-authority.test.mjs
+ok 38 - tests/patch-22-admin-ops-authority.test.mjs
+  ---
+  duration_ms: 75.902015
+  type: 'test'
+  ...
+# Patch 23 Admin User Manage restoration contract: PASS
+# Subtest: tests/patch-23-admin-user-manage.test.mjs
+ok 39 - tests/patch-23-admin-user-manage.test.mjs
+  ---
+  duration_ms: 38.611373
+  type: 'test'
+  ...
+# Patch 24 Admin specific-user boost + Firestore readback contract: PASS
+# Subtest: tests/patch-24-admin-specific-boosts.test.mjs
+ok 40 - tests/patch-24-admin-specific-boosts.test.mjs
+  ---
+  duration_ms: 70.095769
+  type: 'test'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open 'docs/patches/PATCH-25-ADMIN-SUBSCRIPTION-GRANT.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/patch-25-admin-subscription-grant.test.mjs:8:17
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'docs/patches/PATCH-25-ADMIN-SUBSCRIPTION-GRANT.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-25-admin-subscription-grant.test.mjs
+not ok 41 - tests/patch-25-admin-subscription-grant.test.mjs
+  ---
+  duration_ms: 61.501377
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/patch-25-admin-subscription-grant.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open 'docs/integrations/cloudflare/PRODUCTION-PAYPAL-CLOUDFLARE-CONTRACT.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_exec_current/active_development/[39mtests/patch-26-paypal-cloudflare-hardening.test.mjs:4:24[90m)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/patch-26-paypal-cloudflare-hardening.test.mjs:7:18
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'docs/integrations/cloudflare/PRODUCTION-PAYPAL-CLOUDFLARE-CONTRACT.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-26-paypal-cloudflare-hardening.test.mjs
+not ok 42 - tests/patch-26-paypal-cloudflare-hardening.test.mjs
+  ---
+  duration_ms: 68.893069
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/patch-26-paypal-cloudflare-hardening.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/patches/PATCH-27-MARKET-DATA-WIRING-FREEZE.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_exec_current/active_development/[39mtests/patch-27-market-data-wiring.test.mjs:6:24[90m)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/patch-27-market-data-wiring.test.mjs:13:15
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/patches/PATCH-27-MARKET-DATA-WIRING-FREEZE.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-27-market-data-wiring.test.mjs
+not ok 43 - tests/patch-27-market-data-wiring.test.mjs
+  ---
+  duration_ms: 33.973858
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/patch-27-market-data-wiring.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/patches/PATCH-28-BROKER-HQ-DATA-WIRING-FREEZE.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_exec_current/active_development/[39mtests/patch-28-broker-hq-data-wiring.test.mjs:6:24[90m)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/patch-28-broker-hq-data-wiring.test.mjs:12:15
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/patches/PATCH-28-BROKER-HQ-DATA-WIRING-FREEZE.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-28-broker-hq-data-wiring.test.mjs
+not ok 44 - tests/patch-28-broker-hq-data-wiring.test.mjs
+  ---
+  duration_ms: 77.933937
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/patch-28-broker-hq-data-wiring.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/patches/PATCH-29-BROKER-HQ-INTERACTION-SMOKE-FREEZE.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_exec_current/active_development/[39mtests/patch-29-broker-hq-interaction-smoke.test.mjs:6:24[90m)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/patch-29-broker-hq-interaction-smoke.test.mjs:13:15
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/patches/PATCH-29-BROKER-HQ-INTERACTION-SMOKE-FREEZE.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-29-broker-hq-interaction-smoke.test.mjs
+not ok 45 - tests/patch-29-broker-hq-interaction-smoke.test.mjs
+  ---
+  duration_ms: 40.822567
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/patch-29-broker-hq-interaction-smoke.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Patch 33 foundation repair checks passed.
+# Subtest: tests/patch-33-foundation-repair.test.mjs
+ok 46 - tests/patch-33-foundation-repair.test.mjs
+  ---
+  duration_ms: 41.529965
+  type: 'test'
+  ...
+# Patch 34 Market HQ shell checks passed.
+# Subtest: tests/patch-34-market-shell.test.mjs
+ok 47 - tests/patch-34-market-shell.test.mjs
+  ---
+  duration_ms: 34.753476
+  type: 'test'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/dictionary/domains/authority-wiring-audit.dictionary.json'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/patch-38-authority-wiring-audit.test.mjs:14:23
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/dictionary/domains/authority-wiring-audit.dictionary.json'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-38-authority-wiring-audit.test.mjs
+not ok 48 - tests/patch-38-authority-wiring-audit.test.mjs
+  ---
+  duration_ms: 38.727146
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/patch-38-authority-wiring-audit.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/dictionary/domains/capability-boundaries.dictionary.json'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/patch-40-boundary-decision.test.mjs:7:34
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/dictionary/domains/capability-boundaries.dictionary.json'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-40-boundary-decision.test.mjs
+not ok 49 - tests/patch-40-boundary-decision.test.mjs
+  ---
+  duration_ms: 30.933863
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/patch-40-boundary-decision.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/dictionary/domains/compatibility.dictionary.json'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/patch-43-compatibility-inventory.test.mjs:9:32
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/dictionary/domains/compatibility.dictionary.json'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-43-compatibility-inventory.test.mjs
+not ok 50 - tests/patch-43-compatibility-inventory.test.mjs
+  ---
+  duration_ms: 28.57156
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/patch-43-compatibility-inventory.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/dictionary/domains/compatibility.dictionary.json'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/patch-44-boost-compatibility.test.mjs:9:32
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/dictionary/domains/compatibility.dictionary.json'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-44-boost-compatibility.test.mjs
+not ok 51 - tests/patch-44-boost-compatibility.test.mjs
+  ---
+  duration_ms: 32.286339
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/patch-44-boost-compatibility.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Patch 45 boost normalization audit PASS.
+# Subtest: tests/patch-45-boost-normalization.test.mjs
+ok 52 - tests/patch-45-boost-normalization.test.mjs
+  ---
+  duration_ms: 41.011665
+  type: 'test'
+  ...
+# Patch 47 boost migration proof PASS.
+# Subtest: tests/patch-47-boost-migration-proof.test.mjs
+ok 53 - tests/patch-47-boost-migration-proof.test.mjs
+  ---
+  duration_ms: 74.23581
+  type: 'test'
+  ...
+# Patch 48 production boost migration execution gate PASS.
+# Subtest: tests/patch-48-production-boost-migration.test.mjs
+ok 54 - tests/patch-48-production-boost-migration.test.mjs
+  ---
+  duration_ms: 59.900968
+  type: 'test'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/migrations/PATCH-48-PRODUCTION-BOOST-MIGRATION-RECEIPT-TEMPLATE.json'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/patch-49-boost-parser-retirement.test.mjs:9:31
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/migrations/PATCH-48-PRODUCTION-BOOST-MIGRATION-RECEIPT-TEMPLATE.json'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-49-boost-parser-retirement.test.mjs
+not ok 55 - tests/patch-49-boost-parser-retirement.test.mjs
+  ---
+  duration_ms: 34.062142
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/patch-49-boost-parser-retirement.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/dictionary/domains/compatibility.dictionary.json'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/patch-50-boost-parser-retirement.test.mjs:11:32
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/dictionary/domains/compatibility.dictionary.json'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-50-boost-parser-retirement.test.mjs
+not ok 56 - tests/patch-50-boost-parser-retirement.test.mjs
+  ---
+  duration_ms: 30.150406
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/patch-50-boost-parser-retirement.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Patch 51 production retirement audit PASS.
+# Subtest: tests/patch-51-production-retirement-audit.test.mjs
+ok 57 - tests/patch-51-production-retirement-audit.test.mjs
+  ---
+  duration_ms: 39.866703
+  type: 'test'
+  ...
+# node:internal/modules/run_main:123
+#     triggerUncaughtException(
+#     ^
+# AssertionError [ERR_ASSERTION]: AUTH:docs/core/01-SOURCE-OF-TRUTH.md: missing
+# AUTH:docs/dictionary/INDEX.json: missing
+# AUTH:docs/dictionary/CONTRACT-CHANGE-RULE.md: missing
+# AUTH:docs/dictionary/PHASE-ROADMAP.md: missing
+# AUTH:docs/dictionary/domains/authority.dictionary.json: missing
+# AUTH:docs/dictionary/domains/data.dictionary.json: missing
+# AUTH:docs/dictionary/domains/roles.dictionary.json: missing
+# AUTH:docs/dictionary/domains/capabilities.dictionary.json: missing
+# AUTH:docs/dictionary/domains/routes.dictionary.json: missing
+# AUTH:docs/dictionary/domains/integrations.dictionary.json: missing
+# AUTH:docs/dictionary/domains/ui-ownership.dictionary.json: missing
+# AUTH:docs/dictionary/domains/lifecycle.dictionary.json: missing
+# AUTH:docs/dictionary/domains/capability-boundaries.dictionary.json: missing
+# AUTH:docs/dictionary/domains/compatibility.dictionary.json: missing
+# DICT:INDEX: invalid JSON: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/dictionary/INDEX.json'
+# INTEGRATION:docs/integrations/paypal/README.md: missing
+# INTEGRATION:docs/integrations/paypal/06-PAYMENTS.md: missing
+# INTEGRATION:docs/integrations/cloudflare/README.md: missing
+# INTEGRATION:docs/integrations/cloudflare/worker_js.md: missing
+# INTEGRATION:docs/integrations/cloudflare/PRODUCTION-CHECKLIST.md: missing
+# INTEGRATION:docs/integrations/cloudflare/WORKER-RECOVERY-GATE.md: missing
+# WIRING:map: missing
+# 22 !== 0
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/patch-52-multi-check-wiring.test.mjs:10:8
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   generatedMessage: [33mfalse[39m,
+#   code: [32m'ERR_ASSERTION'[39m,
+#   actual: [33m22[39m,
+#   expected: [33m0[39m,
+#   operator: [32m'strictEqual'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-52-multi-check-wiring.test.mjs
+not ok 58 - tests/patch-52-multi-check-wiring.test.mjs
+  ---
+  duration_ms: 69.727033
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/patch-52-multi-check-wiring.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/architecture/PATCH-53-UI-UX-CONTRACT.json'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/patch-53-ui-ux-contract.test.mjs:7:32
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/architecture/PATCH-53-UI-UX-CONTRACT.json'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-53-ui-ux-contract.test.mjs
+not ok 59 - tests/patch-53-ui-ux-contract.test.mjs
+  ---
+  duration_ms: 32.123974
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/patch-53-ui-ux-contract.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: Patch 54 Phase A: cinematic runtime and style foundation exist
+ok 72 - Patch 54 Phase A: cinematic runtime and style foundation exist
+  ---
+  duration_ms: 0.668346
+  type: 'test'
+  ...
+# Subtest: Patch 54 Phase A: every frozen page mounts the same cinematic runtime
+ok 73 - Patch 54 Phase A: every frozen page mounts the same cinematic runtime
+  ---
+  duration_ms: 3.043434
+  type: 'test'
+  ...
+# Subtest: Patch 54 Phase A: legacy transition no longer creates a competing overlay or click router
+ok 74 - Patch 54 Phase A: legacy transition no longer creates a competing overlay or click router
+  ---
+  duration_ms: 0.226311
+  type: 'test'
+  ...
+# Subtest: Patch 54 Phase A: dirty state has one visual confirmation owner
+ok 75 - Patch 54 Phase A: dirty state has one visual confirmation owner
+  ---
+  duration_ms: 0.292823
+  type: 'test'
+  ...
+# Subtest: Patch 54 Phase A: runtime exposes performance tier and ready event
+ok 76 - Patch 54 Phase A: runtime exposes performance tier and ready event
+  ---
+  duration_ms: 0.228024
+  type: 'test'
+  ...
+# Subtest: Patch 54 Phase A: scene catalog remains the page-owned visual source
+ok 77 - Patch 54 Phase A: scene catalog remains the page-owned visual source
+  ---
+  duration_ms: 0.164949
+  type: 'test'
+  ...
+# Subtest: Patch 55 A.1: door routing has explicit enter/exit timing
+ok 78 - Patch 55 A.1: door routing has explicit enter/exit timing
+  ---
+  duration_ms: 0.792386
+  type: 'test'
+  ...
+# Subtest: Patch 55 A.1: exit confirmation is keyboard accessible
+ok 79 - Patch 55 A.1: exit confirmation is keyboard accessible
+  ---
+  duration_ms: 1.207492
+  type: 'test'
+  ...
+# Subtest: Patch 55 A.1: door has atmospheric depth layer
+ok 80 - Patch 55 A.1: door has atmospheric depth layer
+  ---
+  duration_ms: 0.339674
+  type: 'test'
+  ...
+# Subtest: Patch 55 A.1: reduced motion bypasses cinematic movement
+ok 81 - Patch 55 A.1: reduced motion bypasses cinematic movement
+  ---
+  duration_ms: 0.328754
+  type: 'test'
+  ...
+# Subtest: Patch 56 A.2.1: Home has replaceable layered cinematic slots
+ok 82 - Patch 56 A.2.1: Home has replaceable layered cinematic slots
+  ---
+  duration_ms: 2.491858
+  type: 'test'
+  ...
+# Subtest: Patch 56 A.2.1: Home prototype has adaptive and reduced-motion behavior
+ok 83 - Patch 56 A.2.1: Home prototype has adaptive and reduced-motion behavior
+  ---
+  duration_ms: 0.538771
+  type: 'test'
+  ...
+# Subtest: Patch 56 A.2.1: future architectural asset slots remain represented in the world contract
+ok 84 - Patch 56 A.2.1: future architectural asset slots remain represented in the world contract
+  ---
+  duration_ms: 0.322334
+  type: 'test'
+  ...
+# Subtest: Patch 57 A.2.2: Home has one shared cinematic camera loop
+ok 85 - Patch 57 A.2.2: Home has one shared cinematic camera loop
+  ---
+  duration_ms: 0.895901
+  type: 'test'
+  ...
+# Subtest: Patch 57 A.2.2: Home hero declares a cinematic focal contract
+ok 86 - Patch 57 A.2.2: Home hero declares a cinematic focal contract
+  ---
+  duration_ms: 1.23563
+  type: 'test'
+  ...
+# Subtest: Patch 57 A.2.2: Home does not depend on retired generated poster assets
+ok 87 - Patch 57 A.2.2: Home does not depend on retired generated poster assets
+  ---
+  duration_ms: 0.602059
+  type: 'test'
+  ...
+# Subtest: Patch 57 A.2.2: reduced motion and mobile composition are explicit
+ok 88 - Patch 57 A.2.2: reduced motion and mobile composition are explicit
+  ---
+  duration_ms: 0.307443
+  type: 'test'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_exec_current/active_development/docs/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_exec_current/active_development/[39mtests/paypal-cloudflare-contract.test.mjs:6:16
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_exec_current/active_development/docs/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/paypal-cloudflare-contract.test.mjs
+not ok 64 - tests/paypal-cloudflare-contract.test.mjs
+  ---
+  duration_ms: 59.249402
+  type: 'test'
+  location: '/mnt/data/hf_exec_current/active_development/tests/paypal-cloudflare-contract.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# PASS phase12 object state behavior
+# Subtest: state machine follows allowed interaction path and rejects invalid jumps
+ok 90 - state machine follows allowed interaction path and rejects invalid jumps
+  ---
+  duration_ms: 10.402792
+  type: 'test'
+  ...
+# Subtest: responsive transformer distinguishes portrait, landscape, tablet and wide modes
+ok 91 - responsive transformer distinguishes portrait, landscape, tablet and wide modes
+  ---
+  duration_ms: 12.513282
+  type: 'test'
+  ...
+# patch-59 physical UI + environment contract: roots + required camera objects
+# Subtest: tests/physical-ui-object-system.test.mjs
+ok 66 - tests/physical-ui-object-system.test.mjs
+  ---
+  duration_ms: 38.357581
+  type: 'test'
+  ...
+# public-profile-projection: PASS
+# Subtest: tests/public-profile-projection.test.mjs
+ok 67 - tests/public-profile-projection.test.mjs
+  ---
+  duration_ms: 47.683425
+  type: 'test'
+  ...
+# PASS role-contract-subscription-path current-authority reconciliation
+# Subtest: tests/role-contract-subscription-path.test.mjs
+ok 68 - tests/role-contract-subscription-path.test.mjs
+  ---
+  duration_ms: 53.261995
+  type: 'test'
+  ...
+# PASS room-shell/current-physical-ui-mapping (15 Main Hall objects)
+# Subtest: tests/room-shell-physical-ui-mapping.test.mjs
+ok 69 - tests/room-shell-physical-ui-mapping.test.mjs
+  ---
+  duration_ms: 43.221349
+  type: 'test'
+  ...
+1..95
+# tests 95
+# suites 0
+# pass 61
+# fail 34
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3265.680517

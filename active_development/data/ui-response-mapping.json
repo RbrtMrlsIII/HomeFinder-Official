@@ -1,0 +1,1361 @@
+{
+  "version": "DD05-UI-RESPONSE-1.0",
+  "status": "ACTIVE",
+  "authority": "HomeFinder application contracts",
+  "architectural_authority": "SweetHome3D model (master/HomeFinder.sh3d)",
+  "rule": "Physical UI and cameras represent application states; they do not create authority.",
+  "surfaces": [
+    {
+      "surface_id": "main-hall/hero---home-environment",
+      "room": "Main Hall",
+      "zone": "Hero / Home environment",
+      "route": "index.html",
+      "camera_anchor": "H-01",
+      "door": "main-door",
+      "role": "public",
+      "code_owner": "js/home/house-camera-rig.js; js/home/house-world-scroll.js; js/home/physical-ui-objects.js; js/home/environment-modes.js",
+      "response_states": {
+        "loading": [
+          "visible shell / cinematic camera settles"
+        ],
+        "success": [
+          "focus/scroll to section",
+          "navigate to linked route when activated"
+        ],
+        "error": [
+          "inline status/fallback",
+          "retain current room/camera"
+        ],
+        "denied": [
+          "not applicable to public shell; authenticated doors use route guard"
+        ],
+        "empty": [
+          "section-specific empty state"
+        ],
+        "motion": [
+          "smooth camera choreography; reduced-motion short-pan/short-fade"
+        ]
+      },
+      "action_notes": [],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "main-hall/search-console",
+      "room": "Main Hall",
+      "zone": "Search Console",
+      "route": "index.html",
+      "camera_anchor": "H-02",
+      "door": "market-door",
+      "role": "public",
+      "code_owner": "js/search.js",
+      "response_states": {
+        "loading": [
+          "visible shell / cinematic camera settles"
+        ],
+        "success": [
+          "focus/scroll to section",
+          "navigate to linked route when activated"
+        ],
+        "error": [
+          "inline status/fallback",
+          "retain current room/camera"
+        ],
+        "denied": [
+          "not applicable to public shell; authenticated doors use route guard"
+        ],
+        "empty": [
+          "section-specific empty state"
+        ],
+        "motion": [
+          "smooth camera choreography; reduced-motion short-pan/short-fade"
+        ]
+      },
+      "action_notes": [
+        "No-match state displays \"No pages match\"; property/user/market tabs switch result projection"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "main-hall/property-discovery",
+      "room": "Main Hall",
+      "zone": "Property Discovery",
+      "route": "index.html",
+      "camera_anchor": "H-03",
+      "door": "market-door",
+      "role": "public",
+      "code_owner": "js/home/featured-live.js",
+      "response_states": {
+        "loading": [
+          "sample property shell remains visible while live inventory is fetched"
+        ],
+        "success": [
+          "up to 6 active listings replace the sample cards",
+          "selecting a card navigates to market.html#listing-{id}"
+        ],
+        "error": [
+          "retain sample property shell",
+          "log ingestion warning; remain in current room/camera"
+        ],
+        "denied": [
+          "public Home shell remains available; destination Market route applies its own access contract"
+        ],
+        "empty": [
+          "retain sample property cards when no live inventory is available"
+        ],
+        "motion": [
+          "smooth camera settle; reduced-motion short-pan/short-fade"
+        ]
+      },
+      "action_notes": [
+        "Guests retain sample cards; authenticated users receive active propertyListings/properties data when available",
+        "Live ingestion prefers propertyListings and falls back to properties",
+        "Card selection routes to Market listing anchor; destination role/access rules remain authoritative",
+        "No property-detail backend mutation occurs on Home; this surface is discovery/read-only"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "main-hall/map-preview",
+      "room": "Main Hall",
+      "zone": "Map Preview",
+      "route": "index.html",
+      "camera_anchor": "H-04",
+      "door": "market-door",
+      "role": "public",
+      "code_owner": "js/home/map-teaser.js",
+      "response_states": {
+        "loading": [
+          "visible shell / cinematic camera settles"
+        ],
+        "success": [
+          "focus/scroll to section",
+          "navigate to linked route when activated"
+        ],
+        "error": [
+          "inline status/fallback",
+          "retain current room/camera"
+        ],
+        "denied": [
+          "not applicable to public shell; authenticated doors use route guard"
+        ],
+        "empty": [
+          "section-specific empty state"
+        ],
+        "motion": [
+          "smooth camera choreography; reduced-motion short-pan/short-fade"
+        ]
+      },
+      "action_notes": [
+        "Map loads 3D preview; tile/library failure falls back to Market",
+        "Guest pin confirmation routes to login with Market next-state"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "main-hall/government-housing",
+      "room": "Main Hall",
+      "zone": "Government Housing",
+      "route": "index.html",
+      "camera_anchor": "H-05",
+      "door": "gov-door",
+      "role": "public",
+      "code_owner": "js/home-gov-housing.js",
+      "response_states": {
+        "loading": [
+          "visible shell / cinematic camera settles"
+        ],
+        "success": [
+          "focus/scroll to section",
+          "navigate to linked route when activated"
+        ],
+        "error": [
+          "inline status/fallback",
+          "retain current room/camera"
+        ],
+        "denied": [
+          "not applicable to public shell; authenticated doors use route guard"
+        ],
+        "empty": [
+          "section-specific empty state"
+        ],
+        "motion": [
+          "smooth camera choreography; reduced-motion short-pan/short-fade"
+        ]
+      },
+      "action_notes": [
+        "Empty/error state links to financing.html government guide"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "main-hall/about---mission---guide---contact---footer",
+      "room": "Main Hall",
+      "zone": "About / Mission / Guide / Contact / Footer",
+      "route": "index.html",
+      "camera_anchor": "H-06..H-09",
+      "door": "exit/contact doors",
+      "role": "public",
+      "code_owner": "inline Home sections + shared cinematic UI",
+      "response_states": {
+        "loading": [
+          "visible shell / cinematic camera settles"
+        ],
+        "success": [
+          "focus/scroll to requested section",
+          "read static content",
+          "navigate to linked route when activated"
+        ],
+        "error": [
+          "inline status/fallback",
+          "retain current room/camera"
+        ],
+        "denied": [
+          "not applicable to public shell; authenticated doors use route guard"
+        ],
+        "empty": [
+          "static sections remain present; no remote-data empty state"
+        ],
+        "motion": [
+          "smooth camera choreography; reduced-motion short-pan/short-fade"
+        ]
+      },
+      "action_notes": [
+        "About/Mission reading is presentation-only and triggers no backend mutation.",
+        "HTML content remains authoritative if the cinematic layer is unavailable or reduced-motion is enabled."
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "login-room/identity-terminal",
+      "room": "Login Room",
+      "zone": "Identity Terminal",
+      "route": "login.html",
+      "camera_anchor": "L-01",
+      "door": "profile-door",
+      "role": "public",
+      "code_owner": "js/auth.js",
+      "response_states": {
+        "loading": [
+          "submit control disabled",
+          "status text while credentials verify"
+        ],
+        "success": [
+          "success toast/status",
+          "redirect to role destination"
+        ],
+        "error": [
+          "readable auth error toast/status",
+          "submit re-enabled"
+        ],
+        "denied": [
+          "verification-required state when email is unverified"
+        ],
+        "empty": [
+          "validation prevents incomplete submission"
+        ],
+        "motion": [
+          "door transition; reduced-motion short-fade"
+        ]
+      },
+      "action_notes": [],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "register-room/registration-desk",
+      "room": "Register Room",
+      "zone": "Registration Desk",
+      "route": "register.html",
+      "camera_anchor": "R-01",
+      "door": "login-door",
+      "role": "public",
+      "code_owner": "js/auth.js",
+      "response_states": {
+        "loading": [
+          "submit disabled",
+          "progress status: creating/sending/saving"
+        ],
+        "success": [
+          "verification-email success state",
+          "redirect to login"
+        ],
+        "error": [
+          "friendly error toast/status",
+          "submit re-enabled"
+        ],
+        "denied": [
+          "terms consent required"
+        ],
+        "empty": [
+          "field validation"
+        ],
+        "motion": [
+          "door transition; reduced-motion short-fade"
+        ]
+      },
+      "action_notes": [],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "profile-suite/perks---portfolio",
+      "room": "Profile Suite",
+      "zone": "Perks / Portfolio",
+      "route": "profile.html",
+      "camera_anchor": "P-01",
+      "door": "—",
+      "role": "authenticated",
+      "code_owner": "js/profile/perks.js; js/profile/portfolio-assets.js",
+      "response_states": {
+        "loading": [
+          "field/list loading placeholders",
+          "action buttons disabled during writes"
+        ],
+        "success": [
+          "toast/status confirmation",
+          "tab/station remains active"
+        ],
+        "error": [
+          "inline/toast error",
+          "retry control re-enabled"
+        ],
+        "denied": [
+          "role-gated station hidden/disabled; route authority remains application-owned"
+        ],
+        "empty": [
+          "empty-state copy for no records"
+        ],
+        "motion": [
+          "camera focus within suite; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [
+        "Role gate is application-owned; ops roles are excluded from Profile product access",
+        "Station actions retain in-suite response and explicit toast/inline error where implemented"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "profile-suite/messages",
+      "room": "Profile Suite",
+      "zone": "Messages",
+      "route": "profile.html",
+      "camera_anchor": "P-02",
+      "door": "—",
+      "role": "authenticated",
+      "code_owner": "js/profile/messages.js; js/profile/notifications.js",
+      "response_states": {
+        "loading": [
+          "field/list loading placeholders",
+          "action buttons disabled during writes"
+        ],
+        "success": [
+          "toast/status confirmation",
+          "tab/station remains active"
+        ],
+        "error": [
+          "inline/toast error",
+          "retry control re-enabled"
+        ],
+        "denied": [
+          "role-gated station hidden/disabled; route authority remains application-owned"
+        ],
+        "empty": [
+          "empty-state copy for no records"
+        ],
+        "motion": [
+          "camera focus within suite; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [
+        "Role gate is application-owned; ops roles are excluded from Profile product access",
+        "Station actions retain in-suite response and explicit toast/inline error where implemented"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "profile-suite/contracts",
+      "room": "Profile Suite",
+      "zone": "Contracts",
+      "route": "profile.html",
+      "camera_anchor": "P-03",
+      "door": "—",
+      "role": "authenticated",
+      "code_owner": "js/profile/contracts-tab.js; js/profile/ongoing-contracts.js",
+      "response_states": {
+        "loading": [
+          "field/list loading placeholders",
+          "action buttons disabled during writes"
+        ],
+        "success": [
+          "toast/status confirmation",
+          "tab/station remains active"
+        ],
+        "error": [
+          "inline/toast error",
+          "retry control re-enabled"
+        ],
+        "denied": [
+          "role-gated station hidden/disabled; route authority remains application-owned"
+        ],
+        "empty": [
+          "empty-state copy for no records"
+        ],
+        "motion": [
+          "camera focus within suite; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [
+        "Role gate is application-owned; ops roles are excluded from Profile product access",
+        "Station actions retain in-suite response and explicit toast/inline error where implemented"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "profile-suite/need-help",
+      "room": "Profile Suite",
+      "zone": "Need Help",
+      "route": "profile.html",
+      "camera_anchor": "P-04",
+      "door": "—",
+      "role": "authenticated",
+      "code_owner": "js/profile/need-help.js; js/profile/support-boot.js; js/profile/support-ticket.js",
+      "response_states": {
+        "loading": [
+          "field/list loading placeholders",
+          "action buttons disabled during writes"
+        ],
+        "success": [
+          "toast/status confirmation",
+          "tab/station remains active"
+        ],
+        "error": [
+          "inline/toast error",
+          "retry control re-enabled"
+        ],
+        "denied": [
+          "role-gated station hidden/disabled; route authority remains application-owned"
+        ],
+        "empty": [
+          "empty-state copy for no records"
+        ],
+        "motion": [
+          "camera focus within suite; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [
+        "Role gate is application-owned; ops roles are excluded from Profile product access",
+        "Station actions retain in-suite response and explicit toast/inline error where implemented"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "profile-suite/list-property",
+      "room": "Profile Suite",
+      "zone": "List Property",
+      "route": "profile.html",
+      "camera_anchor": "P-05",
+      "door": "market-door",
+      "role": "owner,broker",
+      "code_owner": "js/profile/listing-form.js; js/profile/listing-map.js; js/listing-create-gate.js",
+      "response_states": {
+        "loading": [
+          "field/list loading placeholders",
+          "action buttons disabled during writes"
+        ],
+        "success": [
+          "toast/status confirmation",
+          "tab/station remains active"
+        ],
+        "error": [
+          "inline/toast error",
+          "retry control re-enabled"
+        ],
+        "denied": [
+          "role-gated station hidden/disabled; route authority remains application-owned"
+        ],
+        "empty": [
+          "empty-state copy for no records"
+        ],
+        "motion": [
+          "camera focus within suite; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [
+        "Role gate is application-owned; ops roles are excluded from Profile product access",
+        "Station actions retain in-suite response and explicit toast/inline error where implemented"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "profile-suite/wanted",
+      "room": "Profile Suite",
+      "zone": "Wanted",
+      "route": "profile.html",
+      "camera_anchor": "P-06",
+      "door": "market-door",
+      "role": "seeker,broker",
+      "code_owner": "js/profile/wanted-form.js; js/profile/wanted-map.js; js/profile/wanted-posts-summary.js",
+      "response_states": {
+        "loading": [
+          "field/list loading placeholders",
+          "action buttons disabled during writes"
+        ],
+        "success": [
+          "toast/status confirmation",
+          "tab/station remains active"
+        ],
+        "error": [
+          "inline/toast error",
+          "retry control re-enabled"
+        ],
+        "denied": [
+          "role-gated station hidden/disabled; route authority remains application-owned"
+        ],
+        "empty": [
+          "empty-state copy for no records"
+        ],
+        "motion": [
+          "camera focus within suite; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [
+        "Role gate is application-owned; ops roles are excluded from Profile product access",
+        "Station actions retain in-suite response and explicit toast/inline error where implemented"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "profile-suite/saved-properties",
+      "room": "Profile Suite",
+      "zone": "Saved Properties",
+      "route": "profile.html",
+      "camera_anchor": "P-07",
+      "door": "market-door",
+      "role": "seeker,broker",
+      "code_owner": "js/profile/saved-properties.js",
+      "response_states": {
+        "loading": [
+          "field/list loading placeholders",
+          "action buttons disabled during writes"
+        ],
+        "success": [
+          "toast/status confirmation",
+          "tab/station remains active"
+        ],
+        "error": [
+          "inline/toast error",
+          "retry control re-enabled"
+        ],
+        "denied": [
+          "role-gated station hidden/disabled; route authority remains application-owned"
+        ],
+        "empty": [
+          "empty-state copy for no records"
+        ],
+        "motion": [
+          "camera focus within suite; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [
+        "Role gate is application-owned; ops roles are excluded from Profile product access",
+        "Station actions retain in-suite response and explicit toast/inline error where implemented"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "profile-suite/saved-wanted",
+      "room": "Profile Suite",
+      "zone": "Saved Wanted",
+      "route": "profile.html",
+      "camera_anchor": "P-08",
+      "door": "market-door",
+      "role": "owner,broker",
+      "code_owner": "js/profile/saved-properties.js",
+      "response_states": {
+        "loading": [
+          "field/list loading placeholders",
+          "action buttons disabled during writes"
+        ],
+        "success": [
+          "toast/status confirmation",
+          "tab/station remains active"
+        ],
+        "error": [
+          "inline/toast error",
+          "retry control re-enabled"
+        ],
+        "denied": [
+          "role-gated station hidden/disabled; route authority remains application-owned"
+        ],
+        "empty": [
+          "empty-state copy for no records"
+        ],
+        "motion": [
+          "camera focus within suite; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [
+        "Role gate is application-owned; ops roles are excluded from Profile product access",
+        "Station actions retain in-suite response and explicit toast/inline error where implemented"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "profile-suite/reviews",
+      "room": "Profile Suite",
+      "zone": "Reviews",
+      "route": "profile.html",
+      "camera_anchor": "P-09",
+      "door": "—",
+      "role": "authenticated",
+      "code_owner": "js/profile/reviews-view.js",
+      "response_states": {
+        "loading": [
+          "field/list loading placeholders",
+          "action buttons disabled during writes"
+        ],
+        "success": [
+          "toast/status confirmation",
+          "tab/station remains active"
+        ],
+        "error": [
+          "inline/toast error",
+          "retry control re-enabled"
+        ],
+        "denied": [
+          "role-gated station hidden/disabled; route authority remains application-owned"
+        ],
+        "empty": [
+          "empty-state copy for no records"
+        ],
+        "motion": [
+          "camera focus within suite; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [
+        "Role gate is application-owned; ops roles are excluded from Profile product access",
+        "Station actions retain in-suite response and explicit toast/inline error where implemented"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "profile-suite/government-housing",
+      "room": "Profile Suite",
+      "zone": "Government Housing",
+      "route": "profile.html",
+      "camera_anchor": "P-10",
+      "door": "gov-door",
+      "role": "seeker,owner",
+      "code_owner": "js/profile/gov-housing.js",
+      "response_states": {
+        "loading": [
+          "field/list loading placeholders",
+          "action buttons disabled during writes"
+        ],
+        "success": [
+          "toast/status confirmation",
+          "tab/station remains active"
+        ],
+        "error": [
+          "inline/toast error",
+          "retry control re-enabled"
+        ],
+        "denied": [
+          "role-gated station hidden/disabled; route authority remains application-owned"
+        ],
+        "empty": [
+          "empty-state copy for no records"
+        ],
+        "motion": [
+          "camera focus within suite; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [
+        "Role gate is application-owned; ops roles are excluded from Profile product access",
+        "Station actions retain in-suite response and explicit toast/inline error where implemented"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "profile-suite/account---identity",
+      "room": "Profile Suite",
+      "zone": "Account / Identity",
+      "route": "profile.html",
+      "camera_anchor": "P-11",
+      "door": "—",
+      "role": "authenticated",
+      "code_owner": "js/profile/core.js; js/profile/profile-data.js; js/profile/privacy-settings.js; js/profile/avatar-picker.js",
+      "response_states": {
+        "loading": [
+          "field/list loading placeholders",
+          "action buttons disabled during writes"
+        ],
+        "success": [
+          "toast/status confirmation",
+          "tab/station remains active"
+        ],
+        "error": [
+          "inline/toast error",
+          "retry control re-enabled"
+        ],
+        "denied": [
+          "role-gated station hidden/disabled; route authority remains application-owned"
+        ],
+        "empty": [
+          "empty-state copy for no records"
+        ],
+        "motion": [
+          "camera focus within suite; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [
+        "Role gate is application-owned; ops roles are excluded from Profile product access",
+        "Station actions retain in-suite response and explicit toast/inline error where implemented"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "profile-suite/broker-gate",
+      "room": "Profile Suite",
+      "zone": "Broker Gate",
+      "route": "profile.html",
+      "camera_anchor": "P-12",
+      "door": "broker-hq-door",
+      "role": "broker",
+      "code_owner": "js/profile/broker-assists.js; js/profile/role.js",
+      "response_states": {
+        "loading": [
+          "field/list loading placeholders",
+          "action buttons disabled during writes"
+        ],
+        "success": [
+          "toast/status confirmation",
+          "tab/station remains active"
+        ],
+        "error": [
+          "inline/toast error",
+          "retry control re-enabled"
+        ],
+        "denied": [
+          "role-gated station hidden/disabled; route authority remains application-owned"
+        ],
+        "empty": [
+          "empty-state copy for no records"
+        ],
+        "motion": [
+          "camera focus within suite; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [
+        "Role gate is application-owned; ops roles are excluded from Profile product access",
+        "Station actions retain in-suite response and explicit toast/inline error where implemented"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "market/entrance---directory",
+      "room": "Market",
+      "zone": "Entrance / Directory",
+      "route": "market.html",
+      "camera_anchor": "M-01",
+      "door": "profile-door",
+      "role": "owner,seeker,broker",
+      "code_owner": "js/market.js; js/market-chrome.js",
+      "response_states": {
+        "loading": [
+          "map/discovery loading state",
+          "filters remain usable where possible"
+        ],
+        "success": [
+          "results/discovery refresh",
+          "map/detail focus"
+        ],
+        "error": [
+          "inline map/discovery fallback",
+          "offer full Market retry"
+        ],
+        "denied": [
+          "role-aware data projection; unauthorized capabilities excluded"
+        ],
+        "empty": [
+          "no-results / no-pin / no-discovery state"
+        ],
+        "motion": [
+          "map/section camera focus; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "market/map",
+      "room": "Market",
+      "zone": "Map",
+      "route": "market.html",
+      "camera_anchor": "M-02",
+      "door": "—",
+      "role": "owner,seeker,broker",
+      "code_owner": "js/market.js; js/market-map.js; js/pins-model.js; js/geo.js",
+      "response_states": {
+        "loading": [
+          "map/discovery loading state",
+          "filters remain usable where possible"
+        ],
+        "success": [
+          "results/discovery refresh",
+          "map/detail focus"
+        ],
+        "error": [
+          "inline map/discovery fallback",
+          "offer full Market retry"
+        ],
+        "denied": [
+          "role-aware data projection; unauthorized capabilities excluded"
+        ],
+        "empty": [
+          "no-results / no-pin / no-discovery state"
+        ],
+        "motion": [
+          "map/section camera focus; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "market/filters",
+      "room": "Market",
+      "zone": "Filters",
+      "route": "market.html",
+      "camera_anchor": "M-03",
+      "door": "—",
+      "role": "owner,seeker,broker",
+      "code_owner": "js/market.js; js/listing-catalog.js",
+      "response_states": {
+        "loading": [
+          "map/discovery loading state",
+          "filters remain usable where possible"
+        ],
+        "success": [
+          "results/discovery refresh",
+          "map/detail focus"
+        ],
+        "error": [
+          "inline map/discovery fallback",
+          "offer full Market retry"
+        ],
+        "denied": [
+          "role-aware data projection; unauthorized capabilities excluded"
+        ],
+        "empty": [
+          "no-results / no-pin / no-discovery state"
+        ],
+        "motion": [
+          "map/section camera focus; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "market/discovery",
+      "room": "Market",
+      "zone": "Discovery",
+      "route": "market.html",
+      "camera_anchor": "M-04",
+      "door": "—",
+      "role": "owner,seeker,broker",
+      "code_owner": "js/market.js; js/market-discovery-contract.js; js/market-data-contract.js",
+      "response_states": {
+        "loading": [
+          "map/discovery loading state",
+          "filters remain usable where possible"
+        ],
+        "success": [
+          "results/discovery refresh",
+          "map/detail focus"
+        ],
+        "error": [
+          "inline map/discovery fallback",
+          "offer full Market retry"
+        ],
+        "denied": [
+          "role-aware data projection; unauthorized capabilities excluded"
+        ],
+        "empty": [
+          "no-results / no-pin / no-discovery state"
+        ],
+        "motion": [
+          "map/section camera focus; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "market/property-inspection",
+      "room": "Market",
+      "zone": "Property Inspection",
+      "route": "market.html",
+      "camera_anchor": "M-05",
+      "door": "—",
+      "role": "owner,seeker,broker",
+      "code_owner": "js/market.js; js/listing-catalog.js",
+      "response_states": {
+        "loading": [
+          "map/discovery loading state",
+          "filters remain usable where possible"
+        ],
+        "success": [
+          "results/discovery refresh",
+          "map/detail focus"
+        ],
+        "error": [
+          "inline map/discovery fallback",
+          "offer full Market retry"
+        ],
+        "denied": [
+          "role-aware data projection; unauthorized capabilities excluded"
+        ],
+        "empty": [
+          "no-results / no-pin / no-discovery state"
+        ],
+        "motion": [
+          "map/section camera focus; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "market/contact",
+      "room": "Market",
+      "zone": "Contact",
+      "route": "market.html",
+      "camera_anchor": "M-06",
+      "door": "profile-door",
+      "role": "authenticated",
+      "code_owner": "js/market.js",
+      "response_states": {
+        "loading": [
+          "map/discovery loading state",
+          "filters remain usable where possible"
+        ],
+        "success": [
+          "results/discovery refresh",
+          "map/detail focus"
+        ],
+        "error": [
+          "inline map/discovery fallback",
+          "offer full Market retry"
+        ],
+        "denied": [
+          "role-aware data projection; unauthorized capabilities excluded"
+        ],
+        "empty": [
+          "no-results / no-pin / no-discovery state"
+        ],
+        "motion": [
+          "map/section camera focus; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [
+        "Authenticated contact workflow; role-aware Market projection remains authoritative"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "broker-hq/desk",
+      "room": "Broker HQ",
+      "zone": "Desk",
+      "route": "broker-hq.html",
+      "camera_anchor": "B-01",
+      "door": "profile-door",
+      "role": "broker",
+      "code_owner": "js/broker-hq.js; js/broker-data-contract.js",
+      "response_states": {
+        "loading": [
+          "authorized projection loading",
+          "pin slots/discovery loading"
+        ],
+        "success": [
+          "refresh/update current station",
+          "map/detail focus"
+        ],
+        "error": [
+          "inline status with retry",
+          "unauthorized state when function denies"
+        ],
+        "denied": [
+          "Broker-only gate / sign-in handoff"
+        ],
+        "empty": [
+          "no pin slots / no discovery / empty request queue"
+        ],
+        "motion": [
+          "desk→station camera sequence; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [
+        "Broker-only access gate; unauthorized backend projection becomes explicit unauthorized/error state"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "broker-hq/requests",
+      "room": "Broker HQ",
+      "zone": "Requests",
+      "route": "broker-hq.html",
+      "camera_anchor": "B-02",
+      "door": "—",
+      "role": "broker",
+      "code_owner": "js/broker-hq.js; Firebase functions",
+      "response_states": {
+        "loading": [
+          "authorized projection loading",
+          "pin slots/discovery loading"
+        ],
+        "success": [
+          "refresh/update current station",
+          "map/detail focus"
+        ],
+        "error": [
+          "inline status with retry",
+          "unauthorized state when function denies"
+        ],
+        "denied": [
+          "Broker-only gate / sign-in handoff"
+        ],
+        "empty": [
+          "no pin slots / no discovery / empty request queue"
+        ],
+        "motion": [
+          "desk→station camera sequence; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [
+        "Broker-only access gate; unauthorized backend projection becomes explicit unauthorized/error state"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "broker-hq/service-area",
+      "room": "Broker HQ",
+      "zone": "Service Area",
+      "route": "broker-hq.html",
+      "camera_anchor": "B-03",
+      "door": "—",
+      "role": "broker",
+      "code_owner": "js/broker-hq.js",
+      "response_states": {
+        "loading": [
+          "authorized projection loading",
+          "pin slots/discovery loading"
+        ],
+        "success": [
+          "refresh/update current station",
+          "map/detail focus"
+        ],
+        "error": [
+          "inline status with retry",
+          "unauthorized state when function denies"
+        ],
+        "denied": [
+          "Broker-only gate / sign-in handoff"
+        ],
+        "empty": [
+          "no pin slots / no discovery / empty request queue"
+        ],
+        "motion": [
+          "desk→station camera sequence; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [
+        "Broker-only access gate; unauthorized backend projection becomes explicit unauthorized/error state"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "broker-hq/intelligence-map",
+      "room": "Broker HQ",
+      "zone": "Intelligence Map",
+      "route": "broker-hq.html",
+      "camera_anchor": "B-04",
+      "door": "—",
+      "role": "broker",
+      "code_owner": "js/broker-hq.js; js/geo.js",
+      "response_states": {
+        "loading": [
+          "authorized projection loading",
+          "pin slots/discovery loading"
+        ],
+        "success": [
+          "refresh/update current station",
+          "map/detail focus"
+        ],
+        "error": [
+          "inline status with retry",
+          "unauthorized state when function denies"
+        ],
+        "denied": [
+          "Broker-only gate / sign-in handoff"
+        ],
+        "empty": [
+          "no pin slots / no discovery / empty request queue"
+        ],
+        "motion": [
+          "desk→station camera sequence; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [
+        "Broker-only access gate; unauthorized backend projection becomes explicit unauthorized/error state"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "broker-hq/discovery-wall",
+      "room": "Broker HQ",
+      "zone": "Discovery Wall",
+      "route": "broker-hq.html",
+      "camera_anchor": "B-05",
+      "door": "market-door",
+      "role": "broker",
+      "code_owner": "js/broker-hq.js; js/broker-data-contract.js",
+      "response_states": {
+        "loading": [
+          "authorized projection loading",
+          "pin slots/discovery loading"
+        ],
+        "success": [
+          "refresh/update current station",
+          "map/detail focus"
+        ],
+        "error": [
+          "inline status with retry",
+          "unauthorized state when function denies"
+        ],
+        "denied": [
+          "Broker-only gate / sign-in handoff"
+        ],
+        "empty": [
+          "no pin slots / no discovery / empty request queue"
+        ],
+        "motion": [
+          "desk→station camera sequence; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [
+        "Broker-only access gate; unauthorized backend projection becomes explicit unauthorized/error state"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "broker-hq/service-pins",
+      "room": "Broker HQ",
+      "zone": "Service Pins",
+      "route": "broker-hq.html",
+      "camera_anchor": "B-06",
+      "door": "—",
+      "role": "broker",
+      "code_owner": "js/broker-hq.js; js/pins-model.js",
+      "response_states": {
+        "loading": [
+          "authorized projection loading",
+          "pin slots/discovery loading"
+        ],
+        "success": [
+          "refresh/update current station",
+          "map/detail focus"
+        ],
+        "error": [
+          "inline status with retry",
+          "unauthorized state when function denies"
+        ],
+        "denied": [
+          "Broker-only gate / sign-in handoff"
+        ],
+        "empty": [
+          "no pin slots / no discovery / empty request queue"
+        ],
+        "motion": [
+          "desk→station camera sequence; reduced-motion short-pan/fade"
+        ]
+      },
+      "action_notes": [
+        "Broker-only access gate; unauthorized backend projection becomes explicit unauthorized/error state"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "operations/admin",
+      "room": "Operations",
+      "zone": "Admin",
+      "route": "admin.html",
+      "camera_anchor": "A-01",
+      "door": "—",
+      "role": "admin",
+      "code_owner": "js/admin/core.js + admin modules",
+      "response_states": {
+        "loading": [
+          "table/list loading placeholders"
+        ],
+        "success": [
+          "inline result/status confirmation",
+          "stay in console"
+        ],
+        "error": [
+          "inline error with retry",
+          "action re-enabled"
+        ],
+        "denied": [
+          "console route guard / Access denied"
+        ],
+        "empty": [
+          "queue/table empty state"
+        ],
+        "motion": [
+          "console-local camera focus; reduced-motion short-fade"
+        ]
+      },
+      "action_notes": [
+        "Console remains role-specific: Admin, Moderator, Staff do not use Profile/Market surfaces"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "operations/moderator",
+      "room": "Operations",
+      "zone": "Moderator",
+      "route": "moderator.html",
+      "camera_anchor": "A-02",
+      "door": "—",
+      "role": "moderator",
+      "code_owner": "js/admin/core.js + moderator modules",
+      "response_states": {
+        "loading": [
+          "table/list loading placeholders"
+        ],
+        "success": [
+          "inline result/status confirmation",
+          "stay in console"
+        ],
+        "error": [
+          "inline error with retry",
+          "action re-enabled"
+        ],
+        "denied": [
+          "console route guard / Access denied"
+        ],
+        "empty": [
+          "queue/table empty state"
+        ],
+        "motion": [
+          "console-local camera focus; reduced-motion short-fade"
+        ]
+      },
+      "action_notes": [
+        "Console remains role-specific: Admin, Moderator, Staff do not use Profile/Market surfaces"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "operations/staff",
+      "room": "Operations",
+      "zone": "Staff",
+      "route": "staff.html",
+      "camera_anchor": "A-03",
+      "door": "—",
+      "role": "staff",
+      "code_owner": "js/admin/core.js + staff modules",
+      "response_states": {
+        "loading": [
+          "table/list loading placeholders"
+        ],
+        "success": [
+          "inline result/status confirmation",
+          "stay in console"
+        ],
+        "error": [
+          "inline error with retry",
+          "action re-enabled"
+        ],
+        "denied": [
+          "console route guard / Access denied"
+        ],
+        "empty": [
+          "queue/table empty state"
+        ],
+        "motion": [
+          "console-local camera focus; reduced-motion short-fade"
+        ]
+      },
+      "action_notes": [
+        "Console remains role-specific: Admin, Moderator, Staff do not use Profile/Market surfaces"
+      ],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "reference/government-housing-guide",
+      "room": "Reference",
+      "zone": "Government Housing Guide",
+      "route": "financing.html",
+      "camera_anchor": "G-01",
+      "door": "gov-door",
+      "role": "public",
+      "code_owner": "static HTML + cinematic shell",
+      "response_states": {
+        "loading": [
+          "static shell"
+        ],
+        "success": [
+          "navigate/open reference"
+        ],
+        "error": [
+          "fallback link where available"
+        ],
+        "denied": [
+          "public"
+        ],
+        "empty": [
+          "reference page copy"
+        ],
+        "motion": [
+          "short-fade"
+        ]
+      },
+      "action_notes": [],
+      "mapping_status": "response-mapped"
+    },
+    {
+      "surface_id": "reference/legal-library",
+      "room": "Reference",
+      "zone": "Legal Library",
+      "route": "privacy.html; terms.html",
+      "camera_anchor": "L-GL",
+      "door": "legal-door",
+      "role": "public",
+      "code_owner": "static HTML + cinematic shell",
+      "response_states": {
+        "loading": [
+          "static shell"
+        ],
+        "success": [
+          "navigate/open reference"
+        ],
+        "error": [
+          "fallback link where available"
+        ],
+        "denied": [
+          "public"
+        ],
+        "empty": [
+          "reference page copy"
+        ],
+        "motion": [
+          "short-fade"
+        ]
+      },
+      "action_notes": [],
+      "mapping_status": "response-mapped"
+    }
+  ]
+}

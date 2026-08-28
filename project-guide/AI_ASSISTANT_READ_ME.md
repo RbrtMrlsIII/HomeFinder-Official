@@ -1,0 +1,527 @@
+# IMPORTANT CONTINUATION GUARD
+
+Before changing protected product logic, read `docs/SESSION_CONTINUATION_LOCK.md` and run `verify/contracts/protected-logic-freeze.mjs`.
+
+# AI assistant wiring — HomeFinder package
+
+**Read this first, then `masterplan.md`.**
+
+## Current package (2026-08-27 G-series evidence complete)
+
+On disk under `docs/g1/`: **G1, G1.1, G1.3, G1.4, G1.5, G2** evidence.  
+G2 adjacency graph = **evidence only**, not route authority.  
+**Next:** finish unique door↔space binds (G1.4 ambiguities); do not promote routes yet.  
+Canonical SHA: `0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34`
+
+See `docs/md/g-series-complete-merge-2026-08-27.md`
+
+---
+
+# AI assistant wiring — HomeFinder package
+
+**Read this first, then `masterplan.md`.**
+
+## Current package (2026-08-27 merge)
+
+**G1.4 door-endpoint evidence + G1.5 semantic rooms are both on disk.**  
+G1.1–G1.3: indexed only (see `docs/g1/5.5G1.1-G1.4-continuity-index.json`).  
+**Next:** resolve duplicate room representation / bind uniquely evidenced doors (no route promotion yet).  
+Canonical SHA: `0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34`
+
+Merge note: `docs/md/g1-merge-2026-08-27.md`
+
+---
+
+# AI assistant wiring — HomeFinder package
+
+**Read this first.**
+
+## Root layout
+
+```
+AI_ASSISTANT_READ_ME.md
+README.md
+docs/md|csv|json
+active_development/     # app + firestore.rules + runtime JSON
+master/HomeFinder.sh3d
+```
+
+## Firebase (critical)
+
+| | |
+|--|--|
+| **Project ID** | `homefinder-official` |
+| **Firestore database** | `homefinder` |
+| **Rules file** | `active_development/firebase/firestore.rules` |
+| **Client** | `active_development/js/firebase.js` |
+
+Docs: `docs/md/firebase/`, contracts `docs/json/firebase/`.
+
+## Other integrations
+
+| | Docs | Runtime |
+|--|------|---------|
+| Supabase | `docs/md/supabase/` | `active_development/supabase/`, `js/supabase.js` |
+| PayPal | `docs/md/paypal/` | `js/payment-config.js` |
+| Cloudflare | `docs/md/cloudflare/` | **Human read only** — do not treat as app code |
+
+## SoT priority
+
+1. `master/HomeFinder.sh3d` (hash-verify)
+2. `docs/json/project-authority.json` + `docs/md/project-authority.md`
+3. `docs/md/3d-authority.md`, `camera-and-spatial-authority.md`
+4. Integration folders above
+5. `working-notes/` and `archive/` — not SoT
+
+Not every JSON in the repo is documentation — app `data/*.json` and Firebase/Supabase config stay under `active_development/`.
+
+Expected SH3D SHA-256: `0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34`
+
+## M1 production 3D runtime
+Product HTML must not load `js/reference-3d/cinematic-3d-*`. See `docs/md/m1-runtime-boundary-resolution.md`.
+
+## SPEC-01 status (locked)
+
+- **M0–M5:** complete
+- **M1 runtime boundary:** PASS (triad only in `js/reference-3d/`)
+- **M6 Gate:** PASS — see `docs/md/m6-gate-lock.md` and `docs/md/m0-to-p08-summary.md`
+- **M7:** not started — no SH3D edits
+- Canonical model: `master/HomeFinder.sh3d`
+- SHA-256: `0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34`
+
+
+# SESSION HANDOVER — CRITICAL CURRENT DIRECTION
+
+## Read this before any new work
+
+`masterplan.md` is now the persistent project-wide execution authority and history summary.
+
+### Current architectural truth
+
+HomeFinder has a three-house physical presentation target:
+
+- **House 1:** Public/Hero — `index.html`, H-01…H-09, footer, credits, contact, privacy, terms.
+- **House 2:** Operations + Broker.
+- **House 3:** Seeker + Owner.
+
+`master/HomeFinder.sh3d` remains the **sole canonical SH3D authority**. Do not replace or move the first house. `3d/imports/Additional.sh3d` is staged authoring input.
+
+### Current phase
+
+**PHASE 5.5F.2 — DEEP ADDITIONAL SH3D CENSUS (COMPLETE; MERGE NOT READY)**
+
+The UI/DOM/CSS/JS census and reconciliation gates are retained as accepted history. The current execution branch has reached the read-only Additional SH3D census. Next: 5.5F.3 candidate physical allocation.
+
+The repository already contains substantial census artifacts. Do not recreate them blindly.
+
+The current controlled execution branch verifies the existing census and reconciles the test suite against the current architecture before proceeding to three-house allocation or SH3D merge work.
+
+See `docs/md/architecture-validation-reconciliation.md` and `masterplan.md` §10A.
+
+For each HTML page, establish:
+
+```text
+DOM target
+ → CSS consumers
+ → JS consumers
+ → animations/state
+ → responsive behavior
+ → logical presentation ID
+ → house
+ → room
+ → camera
+ → route/door
+```
+
+The existing CSS and JS are known to target HTML sections/tabs/UI objects and perform animations. These dependencies must be inventoried before physical rearrangement or DOM refactoring.
+
+### Non-negotiable rules
+
+- Do not revive WalkMyPlan to make tests green.
+- Do not blindly delete dead code.
+- Do not broadly rename files during 3D work.
+- Do not let UI code invent camera coordinates.
+- Do not teleport cameras.
+- Do not allow camera wall penetration.
+- Room-to-room transitions require physical routes/openings.
+- Do not merge UI sections solely to reduce room count.
+- High-density UI deserves physical presentation capacity.
+- SH3D is presentation/geometry authority, not security authority.
+- Backend/application contracts remain authoritative for authorization and data.
+- Archive is immutable historical evidence.
+- Active documentation is the current implementation contract.
+- Test failures must be classified as current-contract defects vs obsolete/historical contracts before changes are made.
+
+### Checkpoint discipline
+
+Every checkpoint must contain all previously accepted progress plus the newly applied changes. Never send a checkpoint that silently drops prior work.
+
+### Priority
+
+When uncertain, prefer:
+
+1. preserve canonical authority;
+2. preserve application behavior;
+3. preserve historical evidence;
+4. census dependencies;
+5. reconcile obsolete tests/contracts to current authority, preserving historical evidence;
+6. establish a current validation baseline;
+7. then perform controlled implementation;
+7. only then polish/expand 3D.
+
+See `masterplan.md` for the full chronological plan and target architecture.
+
+
+## SESSION MEMORY — ARCHITECTURE VALIDATION RECONCILIATION
+
+A previous architecture can remain visible in tests after its runtime authority has been retired. Treat this as institutional evidence, not as a reason to restore the old architecture.
+
+The current project direction is to build a **current validation baseline** by comparing existing census evidence and current authority contracts against historical test assumptions.
+
+On 2026-08-26 the baseline was:
+- 106 tests discovered/executed;
+- 46 passed;
+- 60 failed;
+- 14 test files contained explicit `WalkMyPlan` references.
+
+These results are a classification baseline, not a product-quality score.
+
+The next sessions should continue from the controlled reconciliation branch, preserve the canonical `master/HomeFinder.sh3d`, and record why each superseded test is replaced, archived, or retained as evidence.
+
+
+## Architecture Validation Reconciliation — 2026-08-26
+The 14 remaining WalkMyPlan-dependent tests were executed individually and reconciled against the established census/current contracts. Results are recorded in `docs/md/architecture-validation-reconciliation-results.md` and `archive/reconciliation/architecture-validation-reconciliation-results.json`. No WalkMyPlan runtime authority was restored. The branch now distinguishes tests to migrate, tests to split, and historical tests to archive. The master chronological execution remains unchanged; this reconciliation branch is a validation gate before three-house allocation and SH3D reconciliation.
+
+
+## 2026-08-26 Execution Update — First Seven Current-Authority Test Migrations
+
+The first seven tests classified for migration from WalkMyPlan were executed individually and rewritten to consume the current HomeFinder census/contracts. **All 7/7 pass individually.** No WalkMyPlan authority was restored and the canonical `master/HomeFinder.sh3d` was not modified.
+
+The migration deliberately distinguishes current Main Hall physical camera/object authority from logical presentation identities that are still marked `REBUILD_REQUIRED` elsewhere. The response-mapping test now accepts known logical-camera identities outside the current Main Hall physical contract while requiring H-01..H-09 to resolve against the current Main Hall contract. This prevents obsolete authority from returning while also preventing premature invention of spatial authority.
+
+Evidence: `docs/md/architecture-validation-reconciliation-results.md` and `archive/reconciliation/first-seven-migration-execution.json`.
+
+Next execution gate: reconcile the three tests classified SPLIT/MIGRATE, preserving their valid application/security assertions while moving or removing only their obsolete physical-authority dependencies.
+
+
+## SESSION MEMORY — 2026-08-26 THREE SPLIT/MIGRATE TESTS
+
+The three tests that mixed current application/security behavior with retired WalkMyPlan spatial authority have now been reconciled.
+
+### Executed
+
+- `deep-dive-04-auth-roles-permissions.test.mjs` — PASS
+- `dd04-final-authority-freeze.test.mjs` — PASS
+- `role-contract-subscription-path.test.mjs` — PASS
+
+The active versions validate current application contracts only. Historical role-to-room, door-registry, and physical-camera assertions were not silently lost: the original test sources are preserved under `archive/walkmyplan/tests/`, while the underlying WalkMyPlan registries remain under `archive/json/walkmyplan/`.
+
+This is deliberate.
+
+The project must not invent a new physical authority merely to replace a retired registry. Physical role/door/route assertions will return as current tests only after the spatial presentation contract is established against canonical `master/HomeFinder.sh3d`.
+
+### Current branch state
+
+The 14-test WalkMyPlan reconciliation is now:
+
+- 7 migrated and passing;
+- 3 split/migrated and passing;
+- 4 archived as historical/superseded.
+
+No WalkMyPlan runtime authority has been restored.
+
+No canonical SH3D changes have been made.
+
+The next session should establish the current validation baseline and then rejoin the master chronological execution at three-house allocation and UI ↔ 3D presentation-contract reconciliation.
+
+**Checkpoint rule:** the next checkpoint must include all accepted work from the prior reconciliation branch plus these three-test changes and their historical evidence.
+
+
+## 2026-08-26 Session Continuity — Current Authority Validation Baseline
+
+This session completed the controlled 5.5C-V validation reconciliation branch.
+
+The ten migrated/split tests now pass against the current authority (10/10). Four tests that were explicitly tied to superseded WalkMyPlan planning/authority contracts have been archived under `archive/walkmyplan/tests/` rather than deleted.
+
+After archiving, the active test tree contains zero WalkMyPlan references.
+
+The full active suite currently reports 102 tests: 56 passed and 46 failed. These remaining failures are deliberately **unclassified**. Future sessions must classify them against current contracts and repository layout before fixing anything. A failing historical or stale-path test is not automatically a product defect.
+
+The canonical `master/HomeFinder.sh3d` was not modified during this execution.
+
+The next controlled execution is **5.5C-V.1 — Active-suite failure classification**. Preserve the master chronological goal: validation reconciliation is a gate inside the existing sequence, not a replacement for the three-house allocation, UI↔3D presentation contract, and later SH3D reconciliation/merge.
+
+
+## 2026-08-26 — Active-Suite Failure Classification
+
+The current validation checkpoint was executed and its remaining failures were classified rather than blindly repaired. The active suite contains 95 subtests: 53 pass and 42 fail. Of the failures, 11 are stale test-path/execution-context issues, 1 is a Patch 21 assertion lagging behind the canonical-role implementation, and 30 are patch-era documentation/governance dependencies that must be migrated to current authority or archived. No WalkMyPlan authority was restored and canonical SH3D remains unchanged. See `docs/md/active-suite-failure-classification-2026-08-26.md` and its JSON manifest for the evidence and dispositions. The next gate is 5.5C-V.2.
+
+
+## 2026-08-26 — 5.5C-V.2 Current Test Path + Canonical Role Execution
+
+The current test-path and canonical-role remediation gate was executed from the cumulative checkpoint.
+
+Eight previously failing subtests were newly repaired:
+- four Home/house camera rig subtests;
+- one listings physical-object subtest;
+- one Market/Profile physical-object propagation subtest;
+- one physical UI object system subtest;
+- one Patch 21 canonical-role assertion.
+
+The four Patch 57 cinematic camera subtests were already green in the cumulative checkpoint and were revalidated without modification.
+
+All six affected test files pass individually. The active top-level test scope is now 95 subtests with **61 passing and 34 failing**. The remaining 34 failures belong to the previously classified historical/superseded documentation-contract set and must be reconciled individually before they are treated as defects.
+
+The canonical-role migration changed only the test assertion; the runtime implementation remains authoritative. No WalkMyPlan authority was restored. The canonical `master/HomeFinder.sh3d` remains unchanged.
+
+The next controlled gate is **5.5C-V.3 — Historical-contract test reconciliation**. Future sessions should use `docs/md/5.5c-v2-current-test-path-and-role-migration.md` and the verification outputs under `archive/checkpoints/2026-08-26/` as the evidence trail.
+
+Checkpoint rule remains cumulative: every subsequent checkpoint must contain all accepted development from this branch and all earlier checkpoints.
+
+
+## Phase 5.5C-V.3 — Historical-Contract Test Reconciliation
+
+**Status: COMPLETE — 2026-08-26**
+
+The historical-contract test population has been reconciled against the current application/census authority.
+
+- 30 historical-contract failures were individually reconciled.
+- 27 tests were migrated to retain current runtime/backend assertions while removing superseded documentation authority.
+- 3 tests were archived as historical audits: Patch 43 compatibility inventory, Patch 52 multi-check wiring, and Patch 53 UI/UX contract.
+- No WalkMyPlan test dependency remains active.
+- Full active-suite validation after this gate: **92 subtests, 88 passed, 4 failed**.
+- The four remaining failures are Patch 57 cinematic path-resolution failures and form the next controlled repair gate.
+- Canonical `master/HomeFinder.sh3d` remains unchanged.
+
+The migration is recorded in:
+`docs/md/5.5c-v3-historical-contract-reconciliation.md`
+and
+`archive/reconciliation/5.5c-v3-historical-contract-reconciliation-2026-08-26.json`.
+
+The next execution is **5.5C-V.4 — Patch 57 current cinematic test-path reconciliation**, followed by a fresh current validation baseline. Only after that gate is accepted should the project rejoin the master chronology at three-house allocation / UI↔3D presentation-contract work.
+
+
+## 2026-08-26 Session Continuity — 5.5C-V.4
+
+The Patch 57 cinematic test-path reconciliation was completed. The historical claim that four Patch 57 cinematic subtests were failing was reproduced from the cumulative checkpoint and traced to `active_development/tests/cinematic-camera-hero.test.mjs` resolving `new URL('.', import.meta.url)` to the test directory rather than the application root. The test now resolves `new URL('..', import.meta.url)`.
+
+This was a validation-layer repair only. Do not change cinematic runtime or canonical SH3D merely to satisfy this test.
+
+The Patch 57 test passes 4/4 subtests. A related cinematic/3D validation slice covering the cinematic adapter, Patches 54–56, both Patch 57 camera tests, the Main Hall cinematic map, and the physical UI object system also passes.
+
+The full active suite is now 115 subtests: 97 pass, 18 fail. The 18 remaining failures are a new classification population and are not automatically product defects.
+
+Important continuity note: several current tests materially support the 3D development chronology. They validate application-side cinematic/presentation contracts such as camera-loop behavior, hero focal identity, scene/world asset rules, responsive/reduced-motion behavior, cinematic routing, and physical UI/camera-object contracts. These tests are valuable guardrails for later SH3D reconciliation, but they do not themselves grant security or spatial authority to the application.
+
+The canonical `master/HomeFinder.sh3d` remains the physical/presentation authority and was not modified during 5.5C-V.4.
+
+
+## 2026-08-26 Session Continuity — 5.5C-V.5
+
+V5 was executed from the cumulative v4 checkpoint. The prior v4 note claiming 115 active subtests with 18 failures was not reproducible from that checkpoint. The actual repository test set contains 66 active `.mjs` test modules and executes to **92 subtests, 92 passed, 0 failed** from the correct `active_development/` working directory.
+
+This is recorded as a validation-evidence discrepancy, not a product defect and not a reason to modify tests. The 92/92 run is the authoritative baseline for the cumulative V5 checkpoint. Do not recreate the non-reproducible 18-failure population.
+
+V5 also confirms:
+- 0 active WalkMyPlan references.
+- Canonical `master/HomeFinder.sh3d` remains unchanged.
+- SHA-256 remains `0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34`.
+- Cinematic/3D-supporting tests remain active validation guardrails, including cinematic adapter/foundation/routing/home-world/camera, Main Hall cinematic mapping, house camera rig, physical UI object system, and room-shell physical UI mapping.
+- These tests support 3D development but do not become spatial authority.
+
+The next gate is a baseline-integrity/rejoin audit before the project returns to the master chronology for three-house allocation and UI ↔ 3D presentation-contract reconciliation.
+
+
+## 2026-08-26 — 5.5C-V.6 Baseline Integrity / Rejoin
+
+V6 independently reran the cumulative V5 checkpoint from the required `active_development/` working directory. The reproducible active-suite result is **115 subtests / 97 passed / 18 failed**. This supersedes the V5 note claiming 92/92 as the current baseline; preserve the V5 result as historical evidence only.
+
+The 18 failures are not being repaired in V6. They are now the next controlled validation-debt population: retired/missing dictionary paths, stale `tests/`-relative application paths, retired Market source-of-truth documentation, and one Patch 15 listing-activity historical contract.
+
+V6 verified all references in `docs/json/project-authority.json`, confirmed zero active WalkMyPlan test references, and confirmed the canonical `master/HomeFinder.sh3d` SHA-256 remains `0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34`.
+
+The stale Phase 13 active checkpoint manifest was regenerated to match the current cumulative active-development inventory. The root checkpoint manifest remains historical evidence. The active model census has a historical source-model hash that differs from the canonical model hash and therefore requires later census verification.
+
+The validation-reconciliation branch is now closed. The project may return to the master chronology. The next engineering gate is **three-house allocation + UI ↔ 3D presentation-contract reconciliation**, using the existing census rather than recreating it. Do not blindly merge SH3D geometry until logical rooms/cameras, house allocation, doors, routes, and collision requirements are reconciled.
+
+## 5.5D Institutional Memory — Three-House / Physical Travel Contract
+
+The current spatial direction is explicitly three-house: House 1 = Public/Hero (`index.html`, including footer/legal/contact); House 2 = Broker + Operations; House 3 = Seekers + Owners.
+
+Do not invent physical camera coordinates in UI code. A UI destination is logical. The canonical `master/HomeFinder.sh3d` determines the physical camera, door/opening chain, collision-safe route and travel duration.
+
+No teleportation and no wall penetration are permitted. A house transfer must physically exit the current space, perform the authored door animation sequence, traverse the validated route, cross through an authored opening, and settle at the destination hero/Main Hall presentation. If a route is not validated, do not fabricate one.
+
+The 5.5D allocation artifacts are the bridge between the existing DOM/CSS/JS/animation/responsive census and the later SH3D reconciliation/camera-authoring phases.
+
+## 5.5E Institutional Memory — Physical Topology Reconciliation
+
+5.5E proved an important negative result: the canonical HomeFinder.sh3d currently contains one residential structure, not three physically distinct houses. House 1 has substantial physical evidence, but H-04 is currently outside every level-1 room polygon and is not a validated resting camera.
+
+Do not promote Garage/Living room/Bedroom candidates into Broker/Operations or Seeker/Owner houses merely because their semantics look convenient. Those mappings remain candidate-only until physical geometry is reconciled.
+
+Additional.sh3d and the staged merge candidate are authoring inputs, not authority. The canonical model must remain protected until remapping, room/door adjacency, collision-safe routes, door animation bindings, travel durations, and visual inspection are complete.
+
+A route is never inferred just because two logical destinations exist. No teleportation, wall penetration, invented route, or invented duration is permitted.
+
+## 5.5F.1 Institutional Memory — UI → Physical-Room Completeness
+
+The first execution under the expanded merge-readiness ladder compares the actual HTML inventory with the three-house logical allocation before inspecting or merging additional SH3D geometry.
+
+Important rule: **logical allocation is not physical proof.** A destination can be correctly assigned to House 2 or House 3 while still lacking a suitable physical room in the available SH3D material.
+
+H-01…H-09 are working anchors, not final cameras. They can be repositioned after room allocation, physical topology and presentation-object placement are understood.
+
+Dense UI pages must not be compressed merely to reduce the number of physical rooms. A dense page may require multiple physical presentation zones within one logical suite.
+
+5.5F.1 found one contract ambiguity requiring deliberate reconciliation: `financing.html` is House 2 Operations/Finance in the three-house allocation but REFERENCE in the working page-room matrix. Do not silently choose one. Record and resolve it before merge readiness.
+
+The next gate is 5.5F.2: deeply census the additional SH3D authoring inputs to determine whether Houses 2 and 3 can physically satisfy the already-established logical destination inventory.
+
+
+## SESSION MEMORY — 2026-08-26 — 5.5F.2 DEEP ADDITIONAL SH3D CENSUS
+
+5.5F.2 was executed as a read-only census. No SH3D source or canonical model was modified.
+
+### Important correction to the spatial allocation model
+
+Do **not** interpret the UI census as a requirement for one physical object per page, tab, or DOM count.
+
+The correct relationship is many-to-many:
+
+```text
+logical destinations
+    ↕
+presentation identities
+    ↕
+physical zones / objects
+    ↕
+camera states
+    ↕
+routes / doors
+```
+
+A physical presentation object can legitimately represent multiple UI states when CSS/JS/theme/animation roots cooperate. A dense logical destination can also require multiple physical presentation zones.
+
+The UI implementation is still evolving. A physical allocation is therefore a contract candidate, not permission to freeze or casually rename DOM/CSS/JS roots.
+
+### Additional SH3D census
+
+`3d/imports/Additional.sh3d` contains:
+
+- 4 levels;
+- 128 walls;
+- 59 doors/windows;
+- 34 rooms;
+- 179 furniture pieces;
+- 21 shelf units;
+- 25 lights;
+- 38 dimension lines;
+- 5 polylines;
+- 5 labels;
+- 2 furniture groups;
+- 9 stored cameras plus top camera;
+- 142 non-Home.xml resource entries.
+
+The model is spatially separated from House 1. Its approximate x ranges are 2787.68..6256.26 versus House 1's -284.86..1037.50.
+
+### Existing merge candidate
+
+`3d/staging/HomeFinder-merge-candidate-Additional.sh3d` is structurally promising:
+
+- canonical IDs are preserved;
+- Additional element IDs are remapped to `add-...`;
+- no duplicate element IDs were observed;
+- canonical element content is preserved;
+- Additional resource bytes are present under `A_...` names.
+
+But it has a **resource-reference defect**:
+
+- model references resolve;
+- Additional icon/image references in `Home.xml` still point to old numeric resource IDs;
+- 142/142 Additional resource payloads are present, but the Home.xml reference namespace was not fully reconciled.
+
+Therefore this candidate is **not canonical and not merge-ready**.
+
+Do not "fix" it by replacing `master/HomeFinder.sh3d`.
+
+### Page-exit confirmation
+
+Every page exit must eventually confirm both endpoints before physical travel:
+
+```text
+EXITING: [current]
+HEADING TO: [destination]
+
+[Cancel] [Continue]
+```
+
+Confirmation occurs before door/travel animation. The application supplies logical source/destination; the spatial authority supplies route, doors, camera transforms and duration.
+
+This is an application/navigation contract and does not imply one room per page.
+
+### Current next gate
+
+**5.5F.3 — Three-House Candidate Physical Allocation**
+
+Use the Additional inventory to determine which actual rooms/zones can serve House 2 and House 3. Keep resource-reference reconciliation as a separately tracked prerequisite for any eventual canonical merge.
+
+
+## 5.5F.3 continuity note — candidate integrity
+
+The existing merge candidate is now treated as a **repairable working branch**, not as disposable or canonical.
+
+Before future sessions replace it, they must preserve the original candidate as evidence and verify:
+
+- canonical House 1 IDs remain intact;
+- `add-` identities remain unique;
+- all level references resolve;
+- additional geometry remains spatially faithful to its source;
+- all model/icon/image references resolve to actual candidate resources.
+
+A successful repair does not transfer canonical authority. Promotion remains a later, explicit decision.
+
+### One confirmation, many physical doors
+
+A user's page exit is a logical transition. The user confirms the source and destination once. After confirmation, the spatial system may traverse multiple rooms, doors, corridors, or house thresholds without asking again. Intermediate doors are traversal mechanics, not separate navigation decisions.
+
+### Presentation-object reuse
+
+Do not interpret UI census counts as a requirement for one physical object per UI element. A physical presentation anchor may support multiple logical UI states when their DOM roots, themes, animations and responsive behavior can safely cooperate. The reverse is also allowed: a dense logical destination may require multiple physical zones.
+
+## 2026-08-26 — 5.5F.4 Candidate Physical Allocation
+
+The repaired `HomeFinder-merge-candidate-Additional-F3-reconciled.sh3d` is the preferred working merge branch, but it is not canonical.
+
+The current allocation hypothesis uses two spatial clusters in the additional candidate:
+
+- western/left cluster → House 2 (Broker + Operations);
+- eastern/right cluster → House 3 (Seeker + Owner).
+
+This is a working hypothesis only. Do not infer doors, routes, camera positions or house-transfer topology from clustering alone.
+
+**Important:** physical presentation is many-to-many. Do not create one room/object per page or DOM element. Reusable physical anchors may support multiple UI states through cooperating CSS/JS roots, themes, animations and responsive behavior.
+
+A logical exit receives one confirmation for the journey. Intermediate physical doors do not create additional confirmation prompts.
+
+Do not delete historical/current navigation code until its replacement has been reconciled and proven.
+
+Next gate: **5.5F.5 — Allocation Suitability & Capacity Reconciliation.**
+
+## 2026-08-26 — 5.5F.5 Allocation Suitability
+
+The F4 allocation is provisionally suitable for current UI density using reusable physical presentation anchors. Do not equate pages, tabs, or DOM counts with physical room/object counts.
+
+Logical presentation may map `logical_presentation_id → physical_anchor_id → camera_id → validated_route_id`.
+
+Every logical presentation state must eventually provide device/browser-friendly return behavior. Physical return uses the validated reverse route. No user should become trapped in a logical state.
+
+F5 is a capacity gate, not topology proof.
+
+
+
+## G1.5 Continuity Addendum
+
+Room polygons are not automatically route nodes. Named polygons are presentation candidates; unnamed visible polygons remain container/circulation evidence; invisible polygons remain structural evidence. This classification is deliberately conservative and non-destructive. Do not delete unnamed polygons merely to simplify topology.
+
+> Session continuity authority: read `HandOver.md` and `Endorsement.md` before continuing work. Do not create additional handover files.

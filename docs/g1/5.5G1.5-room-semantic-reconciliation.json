@@ -1,0 +1,23 @@
+{
+  "gate": "5.5G.5",
+  "title": "Semantic Room/Container Reconciliation",
+  "status": "RECONCILIATION COMPLETE / ROUTES STILL BLOCKED",
+  "source": "retained F5 checkpoint / F3-reconciled candidate",
+  "counts": {
+    "named-presentation-or-exterior": 29,
+    "small-unnamed-circulation-or-service": 4,
+    "structural-or-hidden-container": 5,
+    "unnamed-container-candidate": 9
+  },
+  "findings": [
+    "47 room polygons are present in the F3-reconciled candidate.",
+    "Named polygons are treated as presentation-room candidates, not automatically as route nodes.",
+    "Unnamed polygons are conservatively retained as container/circulation candidates unless stronger evidence exists.",
+    "Invisible polygons are retained as structural/hidden evidence and excluded from route-node promotion.",
+    "Three strong polygon containment/overlap relationships were detected; these reinforce that polygon count must not be equated with physical room count.",
+    "No room polygon was deleted or modified.",
+    "No physical door was promoted to a validated endpoint pair.",
+    "No route was validated or implemented."
+  ],
+  "next_gate": "Physical door endpoint binding against semantically eligible named/circulation spaces, using wall evidence and existing navigation contracts."
+}

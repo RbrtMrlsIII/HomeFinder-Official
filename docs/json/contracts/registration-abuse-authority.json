@@ -1,0 +1,31 @@
+{
+  "version": "2026-08-23",
+  "canonicalPhone": {
+    "country": "PH",
+    "digits": 12,
+    "pattern": "^63[0-9]{10}$",
+    "example": "639171234567",
+    "normalization": "09XXXXXXXXX -> 63XXXXXXXXXX"
+  },
+  "phoneUniqueness": {
+    "collection": "phoneIndex",
+    "authority": "Firestore security rules",
+    "possessionProof": "Not implied by uniqueness; Firebase Phone Auth verification is required before treating phone as verified identity."
+  },
+  "registrationAbuse": {
+    "sparkBaseline": [
+      "Firebase Authentication built-in abuse protection and quotas",
+      "client re-entrancy guard",
+      "server-side field validation",
+      "no client-trusted phone uniqueness as proof of possession"
+    ],
+    "hardPerIpCap": "Not claimed in Spark-only client code; a true IP account-creation cap requires a server/edge registration gate capable of observing source IP.",
+    "recommendedFutureGate": "Cloudflare/edge or equivalent registration proxy with a risk-based rate limit and CAPTCHA/Turnstile, while retaining Firebase Auth as identity authority."
+  },
+  "accountSuspension": {
+    "firestoreState": "users/{uid}.suspended",
+    "authState": "Firebase Auth disabled",
+    "callableDefense": "requireActiveUser",
+    "sync": "syncUserSuspension"
+  }
+}

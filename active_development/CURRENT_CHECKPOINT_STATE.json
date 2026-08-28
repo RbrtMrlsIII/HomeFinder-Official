@@ -1,0 +1,111 @@
+{
+  "source_checkpoint": "HomeFinder_5_5G6F_xml_aligned.zip",
+  "current_gate": "5.5G.6L — Browser Verification Architecture and Acceptance Gates",
+  "g1_5": {
+    "status": "complete; routes blocked",
+    "room_polygons": 47,
+    "runtime_changed": false,
+    "canonical_changed": false,
+    "f3_candidate_changed": false,
+    "next_allowed_operation": "bind physical doors against semantically eligible spaces and logical navigation contracts"
+  },
+  "previous_gate": "5.5G.6F — SH3D/XML Merge Alignment",
+  "role_visibility_hardening": "frozen",
+  "physical_runtime_routes": 0,
+  "canonical_scene": "master/HomeFinder.sh3d",
+  "next_allowed_operation": "Run the committed Playwright + Chromium suite in the intended CI environment, classify any failures, then close 5.5G.6L or record a blocker.",
+  "5_5G6C": {
+    "status": "applied_and_frozen",
+    "broker_top_level_profile": false,
+    "broker_market_surface": "broker-hq",
+    "government_profile_roles": [
+      "seeker",
+      "owner",
+      "broker"
+    ],
+    "logout_role_cache_clear": true,
+    "wanted_save_callable": "toggleWantedSave",
+    "suspension_reconciliation": "every 15 minutes"
+  },
+  "5_5G6D": {
+    "status": "audit_complete_with_implementation_gaps",
+    "runtime_routes_promoted": 0,
+    "canonical_modified": false
+  },
+  "5_5G6E": {
+    "status": "camera reconciliation implemented and verified",
+    "canonical_cameras": 9,
+    "legacy_cameras": 5,
+    "active_observer": 1,
+    "h04_status": "presentation_only_unanchored",
+    "runtime_physical_routes_promoted": 0,
+    "canonical_modified": false
+  },
+  "5_5G6G": {
+    "status": "canonical_three_house_promoted",
+    "canonical_sha256": "2463bbf41a92012bbd81b66ea957c993075f5a2bf6db8a43e676b0c832b0e58c",
+    "houses_present": [
+      "House 1",
+      "House 2",
+      "House 3"
+    ],
+    "house_2_to_house_3_direct_route": "forbidden",
+    "house_1_to_house_2_route": "not_validated",
+    "house_1_to_house_3_route": "not_validated",
+    "runtime_routes_promoted": 0
+  },
+  "active_sh3d_files": [
+    "master/HomeFinder.sh3d"
+  ],
+  "5_5G6I": {
+    "status": "blocked_pending_owner_architectural_decision",
+    "runtime_routes_promoted": 0,
+    "house_1_to_house_2": "not_validated",
+    "house_1_to_house_3": "not_validated",
+    "house_2_to_house_3": "forbidden_direct",
+    "reconciliation_report": "docs/g1/5.5G6I-physical-portal-route-validation-reconnaissance.md",
+    "canonical_sha256": "2463bbf41a92012bbd81b66ea957c993075f5a2bf6db8a43e676b0c832b0e58c",
+    "model_counts": {
+      "level": 7,
+      "room": 47,
+      "wall": 170,
+      "doorOrWindow": 86,
+      "pieceOfFurniture": 302,
+      "furnitureGroup": 8,
+      "light": 31,
+      "observerCamera": 15,
+      "dimensionLine": 58,
+      "polyline": 7,
+      "label": 7,
+      "text": 7
+    }
+  },
+  "5_5G6L": {
+    "status": "implementation_complete_browser_execution_pending",
+    "approved_stack": "Playwright Test + Chromium + reproducible CI",
+    "browser_targets": [
+      "chromium"
+    ],
+    "critical_scope": "role × house navigation, role preservation, authorization, forbidden direct House 2 ↔ House 3 traversal",
+    "implementation_files": [
+      "active_development/tests/browser/package.json",
+      "active_development/tests/browser/package-lock.json",
+      "active_development/tests/browser/playwright.config.mjs",
+      "active_development/tests/browser/server.mjs",
+      "active_development/tests/browser/specs/browser-health.spec.mjs",
+      "active_development/tests/browser/specs/inter-house-navigation.spec.mjs",
+      ".github/workflows/homefinder-browser.yml"
+    ],
+    "architecture_guide": "project-guide/browser-verification/5.5G6L-browser-verification-architecture.md",
+    "team_guide": "project-guide/browser-verification/5.5G6L-team-implementation-guide.md",
+    "acceptance_gates": "project-guide/browser-verification/5.5G6L-acceptance-gates.md",
+    "evidence_record": "docs/g1/5.5G6L-browser-evidence.md",
+    "implementation_record": "docs/g1/5.5G6L-browser-verification-implementation.md",
+    "continuity_record": "docs/SESSION_CONTINUITY_5.5G6L_IMPLEMENTATION.md",
+    "local_mjs_regression": "4/4 PASS",
+    "local_playwright_execution": "blocked_by_registry_and_browser_environment",
+    "ci_execution": "pending",
+    "production_credentials_used": false,
+    "sh3d_changed": false
+  }
+}

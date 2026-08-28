@@ -1,0 +1,14 @@
+{
+  "phase": 12,
+  "status": "READY_FOR_DEPLOYMENT",
+  "production_deploy": "NOT_EXECUTED",
+  "reason": "Firebase project credentials and deployment authority are not present in this workspace",
+  "public_profile_projection": "hardened",
+  "public_profile_trigger_database": "homefinder",
+  "public_profile_backfill": ["--dry-run", "--prune-orphans"],
+  "config_public_read_allowlist": ["govDisclaimers"],
+  "master_matrix_rows": 49,
+  "camera_security_boundary": "presentation-only",
+  "remaining_privacy_candidate": "userRatings.fromUid",
+  "remaining_browser_gate": "72-case real browser/device execution"
+}

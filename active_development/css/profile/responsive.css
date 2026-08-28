@@ -1,0 +1,94 @@
+/* HF-BUILD-DEDUPE | profile responsive — TOKENS + breakpoints only.
+ * Geometry owner: layout.css
+ * Visual polish: ui-upgrade.css
+ * Theme tokens: variables.css
+ * This file must NOT re-declare full header/avatar/tabs stacks with.
+ */
+
+/* ========== Fluid tokens (single place) ========== */
+body.profile-page,
+body[data-asset="surface_profile"] {
+  --hf-pad-x: clamp(10px, 3.2vw, 28px);
+  --hf-pad-y: clamp(10px, 2.5vw, 24px);
+  /* --hf-avatar → layout.css */
+  /* --hf-avatar-collapsed → layout.css */
+  --hf-gap: clamp(6px, 1.5vw, 14px);
+  --hf-radius: clamp(12px, 2.5vw, 20px);
+  --hf-text: clamp(0.88rem, 0.75rem + 0.45vw, 1.05rem);
+  --hf-title: clamp(1.05rem, 0.9rem + 0.7vw, 1.45rem);
+  /* --hf-action → layout.css */
+  --header-height: clamp(168px, 42vw, 280px);
+}
+
+/* header-height on collapse → JS syncBodyPad only */
+
+@media (max-width: 480px) {
+  body.profile-page,
+  body[data-asset="surface_profile"] {
+  /* --hf-avatar → layout.css */
+  /* --hf-action → layout.css */
+    --hf-pad-x: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  body.profile-page,
+  body[data-asset="surface_profile"] {
+  /* --hf-avatar → layout.css */
+    --hf-pad-x: clamp(16px, 4vw, 32px);
+  }
+}
+
+@media (min-width: 1024px) {
+  body.profile-page,
+  body[data-asset="surface_profile"] {
+  /* --hf-avatar → layout.css */
+  }
+}
+
+/* Avatar size from tokens only (layout owns position) */
+/* header identity sizes/positions → layout.css grid */
+
+/* header-actions position → layout.css */
+/* header action sizes → layout.css .header-actions only */
+
+.profile-tabs {
+  padding-left: var(--hf-pad-x);
+  padding-right: calc(var(--hf-pad-x) + 4px);
+  gap: var(--hf-gap);
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.profile-tabs .profile-tab {
+  flex: 0 0 auto;
+  max-width: 42vw;
+  padding: clamp(6px, 1.5vw, 10px) clamp(10px, 2.5vw, 16px);
+  font-size: clamp(0.72rem, 0.65rem + 0.4vw, 0.92rem);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* panel padding → css/profile/panels.css (#profile-scroll-root) */
+.profile-panel h2,
+.profile-panel .panel-title {
+  font-size: var(--hf-title);
+}
+
+#profile-header {
+  padding-top: env(safe-area-inset-top, 0px);
+  max-width: 100%;
+}
+
+/* Landscape: tighter header */
+@media (max-height: 480px) and (orientation: landscape) {
+  body.profile-page {
+  /* --hf-avatar → layout.css */
+    --header-height: clamp(96px, 40vh, 140px);
+  }
+}
+
+/* Boost under tabs on narrow */
+/* boost geometry owned by layout.css HF-BOOST block */

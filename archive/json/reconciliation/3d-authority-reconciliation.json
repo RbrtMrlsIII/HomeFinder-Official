@@ -1,0 +1,45 @@
+{
+  "status": "reconciled",
+  "canonical": "master/HomeFinder.sh3d",
+  "canonical_sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "canonical_size": 1679042,
+  "comparison": {
+    "architectural_predecessor": {
+      "path": "master/HomeFinder.sh3d",
+      "sha256": "c27a764f2af0ab8ca674871f7ba291febbe94ae4dde11bb6cd0a9e11b593908d",
+      "geometry_counts": {
+        "walls": 42,
+        "doorsWindows": 27,
+        "furniture": 114,
+        "rooms": 13,
+        "lights": 6
+      },
+      "comparison_result": "non-camera Home.xml content identical to canonical; canonical adds HomeFinder observer-camera layer."
+    },
+    "viewer_default": {
+      "path": 
+      "sha256": "6d9190500aabc90478230ade93c3d26af2324ac3ffd99a953d7bbaeef6555f63",
+      "comparison_result": "independent viewer/demo scene; not architectural authority."
+    }
+  },
+  "camera_inventory": {
+    "stored_observer_cameras": 14,
+    "homefinder_canonical_cameras": 9,
+    "legacy_architectural_cameras_retained": 5,
+    "note": "HomeFinder cameras are embedded in the canonical master; no second SH3D remains."
+  },
+  "removed_sh3d": [
+    {
+      "path": "master/HomeFinder.sh3d",
+      "sha256": "c27a764f2af0ab8ca674871f7ba291febbe94ae4dde11bb6cd0a9e11b593908d",
+      "bytes": 1683728,
+      "reason": "Removed per explicit project authority decision: only master/HomeFinder.sh3d may remain."
+    },
+    {
+      "path": 
+      "sha256": "6d9190500aabc90478230ade93c3d26af2324ac3ffd99a953d7bbaeef6555f63",
+      "bytes": 3187777,
+      "reason": "Removed per explicit project authority decision: only master/HomeFinder.sh3d may remain."
+    }
+  ]
+}

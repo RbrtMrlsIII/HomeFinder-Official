@@ -1,0 +1,246 @@
+{
+  "schema": "5.5E-canonical-spatial-topology-v1",
+  "source": "master/HomeFinder.sh3d",
+  "canonical_sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "levels": [
+    {
+      "id": "level0",
+      "name": "Basement",
+      "elevation": "-150",
+      "height": "250"
+    },
+    {
+      "id": "level1",
+      "name": "1st floor",
+      "elevation": "112",
+      "height": "250"
+    },
+    {
+      "id": "level2",
+      "name": "Roof",
+      "elevation": "374",
+      "height": "250"
+    }
+  ],
+  "counts": {
+    "rooms": 13,
+    "named_rooms": 7,
+    "walls": 42,
+    "doors_windows": 27,
+    "doors_detected_by_name_or_catalog": 12,
+    "windows": 15,
+    "observer_cameras": 15,
+    "house1_h_cameras": 9
+  },
+  "named_rooms": [
+    "Terrace",
+    "Garage",
+    "Kitchen",
+    "Living room",
+    "Bedroom #1",
+    "Bedroom #2",
+    "Corridor"
+  ],
+  "door_records": [
+    {
+      "id": "doorOrWindow-50af547e-1477-4ac2-978b-94bafaa4b1f0",
+      "level": "level0",
+      "name": "Door frame",
+      "x": "-4.1046453",
+      "y": "446.74414",
+      "angle": "4.712389",
+      "movable": "false"
+    },
+    {
+      "id": "doorOrWindow-724e7351-4c29-48b3-8190-11a67981880f",
+      "level": "level0",
+      "name": "Door frame",
+      "x": "535.1325",
+      "y": "29.360634",
+      "angle": "4.712389",
+      "movable": "false"
+    },
+    {
+      "id": "doorOrWindow-f5aa788d-fbab-4eaf-902e-1baff5db9af0",
+      "level": "level1",
+      "name": "Door",
+      "x": "310.18668",
+      "y": "221.60619",
+      "angle": "3.1453866999999995",
+      "movable": "false"
+    },
+    {
+      "id": "doorOrWindow-1e0e398a-ad1d-45f5-8435-3b2c2463ef77",
+      "level": "level1",
+      "name": "Door",
+      "x": "649.3702",
+      "y": "222.32921",
+      "angle": "3.1415927000000003",
+      "movable": "false"
+    },
+    {
+      "id": "doorOrWindow-ecde7105-ea92-4996-9804-1bc0587376aa",
+      "level": "level1",
+      "name": "Door",
+      "x": "702.6905",
+      "y": "289.64816",
+      "angle": "4.7127376000000005",
+      "movable": "false"
+    },
+    {
+      "id": "doorOrWindow-938d12b9-1442-450d-a55e-2739784378cd",
+      "level": "level1",
+      "name": "Door",
+      "x": "480.55853",
+      "y": "222.19589",
+      "angle": "3.1438260000000007",
+      "movable": "false"
+    },
+    {
+      "id": "doorOrWindow-d1ae87a8-7c4f-4e34-9956-3f6f257f1cb5",
+      "level": "level1",
+      "name": "Door",
+      "x": "652.0948",
+      "y": "352.6545",
+      "angle": "1.7484554959423804e-7",
+      "movable": "false"
+    },
+    {
+      "id": "doorOrWindow-fde01204-d2ba-4cd8-963d-1eadd829238f",
+      "level": "level1",
+      "name": "Door frame",
+      "x": "194.54688",
+      "y": "350.1545",
+      "angle": "1.7484554959423804e-7",
+      "movable": "false"
+    },
+    {
+      "id": "doorOrWindow-084e4aac-b73a-4e78-a804-ee88ffd4c4d3",
+      "level": "level1",
+      "name": "Front door",
+      "x": "-5.735344",
+      "y": "286.99707",
+      "angle": "4.712389",
+      "movable": null
+    },
+    {
+      "id": "doorOrWindow-94dbaf0a-3933-4ca1-8b26-cc2a4de04938",
+      "level": "level0",
+      "name": "Door",
+      "x": "607.6332",
+      "y": "361.7407",
+      "angle": "4.712389",
+      "movable": "false"
+    },
+    {
+      "id": "doorOrWindow-5a9a4d99-8766-4176-8fa6-68a201410887",
+      "level": "level0",
+      "name": "Door",
+      "x": "659.0513",
+      "y": "296.57333",
+      "angle": "3.1415927000000003",
+      "movable": "false"
+    },
+    {
+      "id": "doorOrWindow-217f13c4-dfdd-4d43-9428-5f495a8d88ed",
+      "level": "level0",
+      "name": "Door",
+      "x": "528.2141",
+      "y": "246.57596",
+      "angle": "1.5707963999999999",
+      "movable": "false"
+    }
+  ],
+  "house1_camera_anchor_validation": [
+    [
+      "HF H-01",
+      "HF H-01 — hero",
+      300.0,
+      520.0,
+      150.0,
+      "Living room",
+      "PASS"
+    ],
+    [
+      "HF H-02",
+      "HF H-02 — discovery",
+      55.0,
+      330.0,
+      150.0,
+      "Corridor",
+      "PASS"
+    ],
+    [
+      "HF H-03",
+      "HF H-03 — property-display",
+      350.0,
+      560.0,
+      150.0,
+      "Living room",
+      "PASS"
+    ],
+    [
+      "HF H-04",
+      "HF H-04 — map",
+      500.0,
+      900.0,
+      300.0,
+      "NONE",
+      "REQUIRES_PHYSICAL_ANCHOR"
+    ],
+    [
+      "HF H-05",
+      "HF H-05 — government-desk",
+      55.0,
+      265.0,
+      150.0,
+      "Corridor",
+      "PASS"
+    ],
+    [
+      "HF H-06",
+      "HF H-06 — mission",
+      520.0,
+      540.0,
+      175.0,
+      "Living room",
+      "PASS"
+    ],
+    [
+      "HF H-07",
+      "HF H-07 — guide",
+      350.0,
+      145.0,
+      170.0,
+      "Kitchen",
+      "PASS"
+    ],
+    [
+      "HF H-08",
+      "HF H-08 — safety",
+      735.0,
+      500.0,
+      175.0,
+      "Bedroom #1",
+      "PASS"
+    ],
+    [
+      "HF H-09",
+      "HF H-09 — contact",
+      300.0,
+      330.0,
+      175.0,
+      "Corridor",
+      "PASS"
+    ]
+  ],
+  "topology_conclusion": {
+    "canonical_model_represents_one_contiguous_residential_model": true,
+    "canonical_model_contains_three_distinct_houses": false,
+    "house2_physical_topology_proven": false,
+    "house3_physical_topology_proven": false,
+    "house1_physical_topology_complete_for_all_H_cameras": false,
+    "h04_anchor_issue": true
+  },
+  "authority_rule": "Additional.sh3d and merge-candidate files remain non-authoritative authoring inputs."
+}

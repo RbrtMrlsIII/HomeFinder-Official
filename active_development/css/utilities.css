@@ -1,0 +1,276 @@
+/* utilities.css — shared state & layout helpers (CSS Policy §2)
+   Prefer these classes over inline style= or element.style in JS.
+*/
+
+.is-hidden { display: none; }
+.is-visible { display: block; }
+.is-flex { display: flex; }
+.is-inline-flex { display: inline-flex; }
+
+.u-full-width { width: 100%; }
+.u-mx-auto { margin-left: auto; margin-right: auto; }
+.u-text-center { text-align: center; }
+.u-mt-0 { margin-top: 0; }
+.u-mb-0 { margin-bottom: 0; }
+.u-mb-8 { margin-bottom: 8px; }
+.u-mb-16 { margin-bottom: 16px; }
+.u-mt-16 { margin-top: 16px; }
+.u-mt-18 { margin-top: 18px; }
+.u-mt-24 { margin-top: 24px; }
+.u-p-0 { padding: 0; }
+.u-px-6pct { padding-left: 6%; padding-right: 6%; }
+
+.u-max-720 { max-width: 720px; }
+.u-max-1100 { max-width: 1100px; }
+
+.u-text-muted { color: #5C5347; }
+.u-text-sm { font-size: 14.5px; line-height: 1.55; }
+.u-text-title-sm { font-size: 1.35rem; margin: 0 0 8px; }
+.u-font-size-1rem { font-size: 1rem; }
+.u-align-self-center { align-self: center; }
+
+html.u-body-lock,
+body.u-body-lock {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+
+/* Map intro on index */
+.map-intro {
+  max-width: 720px;
+  margin: 0 auto 16px;
+  padding: 0 6%;
+  text-align: center;
+}
+.map-intro h2 {
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+  color: #2C2621;
+}
+.map-intro p {
+  margin: 0;
+  color: #5C5347;
+  line-height: 1.55;
+  font-size: 14.5px;
+}
+
+/* Building skyline heights (login/register) — use classes not CSS vars inline when possible */
+.building--h50 { --wall-h: 50px; --roof-h: 14px; }
+.building--h65 { --wall-h: 65px; --roof-h: 16px; }
+.building--h70 { --wall-h: 70px; --roof-h: 18px; }
+.building--h85 { --wall-h: 85px; --roof-h: 20px; }
+.building--h105 { --wall-h: 105px; --roof-h: 24px; }
+.building--h120 { --wall-h: 120px; --roof-h: 28px; }
+
+/* Legal pages header/footer */
+.legal-header {
+  background: rgba(247, 241, 230, 0.92);
+  border-bottom: 1px solid rgba(122, 90, 62, 0.12);
+}
+.legal-header a,
+.legal-brand {
+  color: #2C2621;
+}
+.legal-footer {
+  margin-top: 0;
+}
+.legal-footer-bottom {
+  justify-content: center;
+  padding: 20px;
+}
+.legal-footer-copy {
+  margin: 0;
+  font-size: 13px;
+  color: #5C5347;
+}
+
+.panel-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.btn-compact {
+  padding: 8px 16px;
+  font-size: 13px;
+}
+.field-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.u-max-full { max-width: 100%; }
+.u-span-all { grid-column: 1 / -1; }
+.progress-bar-fill { width: 0%; } /* JS updates via class or CSS variable later */
+
+.building--h55 { --wall-h: 55px; --roof-h: 14px; }
+.building--h90 { --wall-h: 90px; --roof-h: 22px; }
+.label-spaced { margin-bottom: 10px; display: block; }
+
+.u-mt-8 { margin-top: 8px; }
+.u-mt-12 { margin-top: 12px; }
+.u-mt-4 { margin-top: 4px; }
+
+.u-text-right { text-align: right; }
+.link-accent { color: #B49A76; }
+
+.u-mt-14 { margin-top: 14px; }
+.auth-sub.is-hidden, .verify-links.is-hidden, .auth-submit.is-hidden { display: none; }
+
+/* Profile cleanup — replace template inline styles */
+.u-pad-12 { padding: 12px; }
+.u-pad-16 { padding: 16px; }
+.u-pad-30-16 { padding: 30px 16px; }
+.u-pad-6-0 { padding: 6px 0; }
+.u-flex-center { display: flex; align-items: center; justify-content: center; }
+.u-flex-between { display: flex; justify-content: space-between; align-items: flex-start; }
+.u-flex-gap-8 { display: flex; gap: 8px; }
+.u-flex-1 { flex: 1; }
+.u-mt-8 { margin-top: 8px; }
+.u-mt-10 { margin-top: 10px; }
+.u-mb-4 { margin-bottom: 4px; }
+.u-text-13 { font-size: 13px; }
+.u-text-13-5 { font-size: 13.5px; }
+.u-text-12 { font-size: 12px; }
+.u-text-11-5 { font-size: 11.5px; font-weight: 700; }
+.u-text-32 { font-size: 32px; }
+.u-text-muted { color: var(--text-muted); }
+.u-text-secondary { color: var(--text-secondary, var(--text-muted)); }
+.u-span-all { grid-column: 1 / -1; }
+.u-h-100 { height: 100%; }
+.u-reply-box { margin-top: 10px; padding: 10px 12px; background: var(--bg-input); border-radius: 10px; }
+.u-star { color: #F59E0B; font-size: 14px; }
+.u-btn-compact-pad { padding: 8px 14px; font-size: 13px; }
+.u-btn-view { padding: 8px 16px; font-size: 13px; }
+.tag-featured-accent { background: var(--accent); }
+
+
+.u-mb-14 { margin-bottom: 14px; }
+
+/* Role picker overlay */
+.role-picker-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(15, 23, 42, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.role-picker-card {
+  background: var(--bg-surface, #fff);
+  border-radius: 16px;
+  padding: 28px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+.role-picker-card h3 {
+  margin: 0 0 8px;
+  color: var(--text-primary, #0F172A);
+  font-size: 18px;
+}
+.role-picker-card > p {
+  margin: 0 0 18px;
+  font-size: 13px;
+  color: var(--text-muted, #64748B);
+  line-height: 1.45;
+}
+.role-picker-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.role-pick-btn {
+  text-align: left;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color, #E2E8F0);
+  background: var(--bg-input, #F8FAFC);
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-primary, #0F172A);
+}
+.role-pick-btn:hover {
+  border-color: var(--color-brand, #C4A574);
+}
+
+/* Listing form conditional rows */
+.listing-cond-hidden { display: none; }
+.listing-cond-block { display: block; }
+.listing-cond-flex { display: flex; }
+
+/* Privacy row */
+.privacy-toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+.privacy-badge-on,
+.privacy-badge-off {
+  margin-left: auto;
+  font-style: normal;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 999px;
+}
+.privacy-badge-on {
+  background: #2d6a4f;
+  color: #e8f5e9;
+}
+.privacy-badge-off {
+  background: #5c5348;
+  color: #f0ebe3;
+}
+
+/* Boost order */
+.u-text-left { text-align: left; }
+.u-max-280 { max-width: 280px; }
+.u-mx-auto { margin-left: auto; margin-right: auto; }
+.u-mt-8 { margin-top: 8px; }
+.status-ok { color: #10B981; }
+.status-err { color: #ef4444; }
+
+
+/* PayPal boost checkout */
+.paypal-hosted-mount { min-height: 48px; margin-top: 12px; }
+.boost-package-card {
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  background: var(--bg-surface, #fff);
+}
+.boost-package-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+.boost-package-price { font-weight: 700; color: var(--color-brand, #C4A574); }
+.boost-catalog-heading { margin: 18px 0 10px; font-size: 15px; }
+.boost-order-btn.boost-locked { opacity: 0.55; cursor: not-allowed; }
+.law-modal.is-open,
+.law-modal.active { display: flex; }
+
+
+/* Profile modal open — scroll lock without JS element.style */
+html.profile-modal-open,
+html.profile-modal-open body {
+  overflow: hidden;
+}
+
+
+/* Global Clay typography */
+html, body {
+  font-family: var(--font-ui, "DM Sans", system-ui, sans-serif);
+  color: var(--clay-text, #2C2621);
+}
+body {
+  background: var(--clay-bg, #F7F3EC);
+}

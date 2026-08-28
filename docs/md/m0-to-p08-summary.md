@@ -1,0 +1,190 @@
+# HomeFinder SPEC-01 — M0 through M6 P08
+
+**Status:** M6 Gate **PASS** (2026-08-24)  
+**Physical model:** `master/HomeFinder.sh3d`  
+**SHA-256:** `0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34`  
+**SH3D modified during M0–M6:** **NO**  
+**M7:** not started
+
+This is the locked chain from application reality → spatial semantics → presentation strategy → physical model. It does **not** authorize physical SH3D edits.
+
+---
+
+## Sequence (do not invert)
+
+```
+CLEAN → ESTABLISH AUTHORITY → CENSUS → VERIFY → RECONCILE → DESIGN → PROMOTE
+  → PLACE (blocked until authorized) → VALIDATE → RETIRE
+```
+
+Wrong: edit SH3D first, invent justification later.  
+Right: application reality → verified spatial model → strategy → approved Place → SH3D edit.
+
+---
+
+## M0 — Reality frozen — PASS
+
+- Inventory of `.sh3d` files; one operational master.
+- Independent SHA of `HomeFinder.sh3d`.
+- Camera census from `Home.xml` (not from old CSVs).
+- Competing stale master (`2BedroomHouseWithBasement.sh3d`) investigated, not restored.
+
+**Observed physical cameras:** 1 unnamed active observer + **14 named** (5 legacy + HF H-01…H-09).
+
+---
+
+## M1 — Runtime boundary — PASS
+
+**Rule:** production is HTML/CSS/JS (+ MapLibre on market). No Three.js / WebGL / GLTF on product pages.
+
+**Targeted exception (reopened then closed):** triad had returned under `js/` and product HTML still loaded it.
+
+| Artifact | Class |
+|----------|--------|
+| `js/reference-3d/cinematic-3d-*.js` | DEVELOPMENT / REFERENCE |
+| `js/cinematic-ui.js` | PRODUCTION (2D; optional mount is a no-op) |
+| `3d/viewer/**` | DEVELOPMENT / REFERENCE (SH3D viewer) |
+| Product HTML triad `<script>` tags | REMOVED |
+
+**Tests:** `tests/m1-runtime-boundary.test.mjs` — product HTML must not load the triad.
+
+---
+
+## M2 — Physical authority — PASS
+
+- Canonical path (this package): `master/HomeFinder.sh3d`
+- SHA locked: `0e4d75…53cb34`
+- Historical freeze `c27a76…` kept as provenance, **not** operational
+- Exactly one operational `.sh3d`
+
+Older SPEC packages used folder `01_master/`. This package renamed folders (no numbers). Same binary (SHA continuity). See P01.
+
+---
+
+## M3 — WalkMyPlan — PASS (soft-retire)
+
+- Spatial contracts migrated toward HomeFinder-owned / archived evidence
+- Tests were to be repointed; some still name `cinematic/WalkMyPlan/data/` (P07 HOLD)
+- WalkMyPlan **not deleted**; operational folder is a stub README
+- **P07 lock:** archive is historical provenance only — not Physical SoT
+
+---
+
+## M4 — Spatial contracts — PASS
+
+- Contract indexing / categories
+- Disposition: KEEP_ACTIVE / EVIDENCE / REVIEW
+- Machine contracts live under `docs/json/` (and firebase/supabase subfolders)
+
+---
+
+## M5 — Application census — PASS (narrative)
+
+- Census from live HTML + verified SH3D, not old CSVs
+- Product pages: index, login, register, market, profile, broker-hq, admin, staff, moderator, financing, privacy, terms
+- **P02 HOLD:** machine-readable `application-census-m5.json` is not in this zip (packaging/re-export). Does not block authority.
+
+---
+
+## DESIGN / PROMOTE — PASS (strategy, not Place)
+
+- HF H-01…H-09 **already exist** — bind UI, do not recreate
+- ARR-01 **not** a required physical camera
+- R-03 **HOLD** (no register address field)
+- Place list pending explicit authorization — **never executed**
+
+---
+
+## Package hygiene (parallel, not a numbered M-gate)
+
+- Folders without numeric prefixes: `master/`, `active_development/`, `docs/`, `archive/checkpoints/`
+- Docs: `docs/md/`, `docs/csv/`, `docs/json/`
+- Wiring: `project-guide/AI_ASSISTANT_READ_ME.md` at package root
+- Firebase project **`homefinder-official`**, named DB **`homefinder`**
+- `firestore.rules` stays under `active_development/firebase/` (**P03 HOLD:** comment still cites missing `CONTRACT-TIER-SYSTEM.md`)
+- Cloudflare docs: human-read only
+
+---
+
+## M6 — Reconciliation — PASS
+
+Read-only vs physical model. Disagreements classified (RESOLVED / OBSOLETE / INTENTIONAL / HOLD), not force-matched to camera counts.
+
+### P01 Path truth — LOCKED / CONFIRMED
+
+| | |
+|--|--|
+| Actual path | `master/HomeFinder.sh3d` |
+| Declared path | same |
+| SHA | `0e4d75…53cb34` |
+| `01_master/` | absent; historical packaging name only |
+
+### P06 Layer model — LOCKED
+
+| Layer | Authority? | May dictate SH3D? |
+|-------|------------|-------------------|
+| **Physical** | Yes (`HomeFinder.sh3d` / `Home.xml`) | Only after approved strategy |
+| **Logical POV** | No | No |
+| **Presentation bind** | Contract/strategy | No until approved |
+| **Evidence / provenance** | Historical | No |
+
+### P04 Login/register — LOCKED
+
+- L-01…L-05, R-01, R-02, R-04…R-07: **RETAIN_LOGICAL_NO_DEDICATED_CAMERA**
+- **R-03:** **HOLD_PRODUCT** (no address field; do not invent)
+- Dedicated physical-camera demand **retired** independently of logical identity
+
+### P05 ARR-01 — LOCKED
+
+- Logical choreography **retained**
+- Dedicated physical camera **retired**
+- No production JS/HTML consumer of `ARR-01` as camera id
+- Future story (M7/M10, not implemented): backyard → approach → door → Main Hall → HF H-01
+
+### P07 WalkMyPlan copies — LOCKED (decision; no deletes)
+
+| | |
+|--|--|
+| Canonical archive | `archive/json/walkmyplan/` |
+| Recovery duplicates | `archive/reconciliation/cinematic__WalkMyPlan__data__*` |
+| Operational production consumers | **None** |
+| HOLD | stub folder + tests still naming old path |
+
+### P08 Authority/checkpoint — PASS
+
+- **REAL_AUTHORITY_CONFLICT: 0**
+- **HOLD: 2** (P02 M5 JSON; P03 rules comment)
+- Live authority (project-authority, 3d-contract, AD manifests, firebase.js, M1 HTML) is internally coherent
+
+---
+
+## Verified physical camera list (Home.xml)
+
+**Legacy (5):** Living room, Exterior, Corridor, Bedroom #1, Kitchen  
+
+**HF H-series (9):**  
+HF H-01 — hero · H-02 discovery · H-03 property-display · H-04 map · H-05 government-desk · H-06 mission · H-07 guide · H-08 safety · H-09 contact  
+
+Bedroom #2 is a **room**, not a stored camera.
+
+---
+
+## What M7 may do (not started)
+
+Given the real application census and the **14** stored cameras: which logical states should **share**, **bind**, or **eventually** receive physical treatment?
+
+M7 does **not** edit SH3D. Physical promotion is M11, only after M7–M10.
+
+```
+M0–M5  →  M6 PASS  →  M7 POV strategy  →  M8 Gate-04C  →  M9 architecture
+  →  M10 choreography  →  M11 physical promotion (SH3D, if authorized)
+```
+
+---
+
+## HOLDs that survive M6 PASS
+
+1. **P02** — re-export M5 machine census JSON (optional)
+2. **P03** — fix `firestore.rules` comment pointing at missing `docs/CONTRACT-TIER-SYSTEM.md`
+3. **R-03** — product decision on mailing/physical address (no camera)
+4. **P07 execution** — test rewrite / duplicate fold (decision locked; files not moved)

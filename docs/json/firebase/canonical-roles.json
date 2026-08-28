@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "canonicalRoleField": "canonicalRole",
+  "roles": [
+    "owner",
+    "seeker",
+    "broker",
+    "staff",
+    "moderator",
+    "admin"
+  ],
+  "aliases": {
+    "landlord": "owner",
+    "property_owner": "owner",
+    "lessor": "owner",
+    "super": "admin"
+  },
+  "productRoles": [
+    "owner",
+    "seeker",
+    "broker"
+  ],
+  "operationsRoles": [
+    "staff",
+    "moderator",
+    "admin"
+  ],
+  "source": "Firebase Auth identity + authoritative user/operations mapping",
+  "applicationStates": {
+    "brokerApplication": [
+      "none",
+      "pending",
+      "under_review",
+      "approved",
+      "rejected"
+    ],
+    "note": "brokerApplication is workflow state and does not by itself rewrite canonicalRole."
+  }
+}

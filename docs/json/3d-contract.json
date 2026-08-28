@@ -1,0 +1,39 @@
+{
+  "canonicalPath": "master/HomeFinder.sh3d",
+  "status": "canonical-three-house-only-sh3d",
+  "deploymentCopiesAreDerived": true,
+  "securityDependsOn3d": false,
+  "promotionRequires": [
+    "reconciliation evidence",
+    "camera verification",
+    "sha256 update"
+  ],
+  "sha256": "2463bbf41a92012bbd81b66ea957c993075f5a2bf6db8a43e676b0c832b0e58c",
+  "remainingSh3dFiles": 3,
+  "duplicatePolicy": "Only master/HomeFinder.sh3d is physical authority; staging/import SH3D files may remain as reconciliation evidence but must never be treated as runtime authority.",
+  "cameraVerification": "embedded metadata verification passed; independent visual render not claimed",
+  "canonicalSha256": "2463bbf41a92012bbd81b66ea957c993075f5a2bf6db8a43e676b0c832b0e58c",
+  "authorityPolicy": {
+    "canonical": "master/HomeFinder.sh3d",
+    "evidenceOnly": [
+      "3d/imports/*.sh3d",
+      "3d/staging/*.sh3d"
+    ],
+    "runtimeMayLoad": [
+      "master/HomeFinder.sh3d"
+    ],
+    "evidenceFilesMayNotBecomeRuntimeAuthority": true
+  },
+  "canonicalComposition": [
+    "House 1",
+    "House 2",
+    "House 3"
+  ],
+  "promotionGate": "5.5G.6G",
+  "promotionEvidence": "docs/g1/5.5G6G-final-three-house-physical-validation.md",
+  "activeSh3d": "master/HomeFinder.sh3d",
+  "retainedSh3dFiles": [
+    "master/HomeFinder.sh3d"
+  ],
+  "cleanupGate": "5.5G.6H"
+}

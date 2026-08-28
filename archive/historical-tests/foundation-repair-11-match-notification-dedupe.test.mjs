@@ -1,0 +1,23 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import path from 'node:path';
+const root = path.resolve(new URL('..', import.meta.url).pathname);
+const read = p => fs.readFileSync(path.join(root, p), 'utf8');
+const fn = read('firebase/functions/index.js');
+const client = read('js/profile/match-notify.js');
+const sot = read('docs/core/01-SOURCE-OF-TRUTH.md');
+
+assert.match(fn, /exports\.notifyListingMatches = onCall/);
+assert.match(fn, /Only the listing owner can request match notification delivery/);
+assert.match(fn, /listing_match_notice:\$\{uid\}:\$\{listingId\}/);
+assert.match(fn, /eventType: "listing_match_notice"/);
+assert.match(fn, /listingActivity/);
+assert.match(fn, /notifications.*items.*doc\(eventRef\.id\)/s);
+assert.match(fn, /Math\.min\(50, Math\.max\(0\.5, Number\(service\.preferredRadiusKm\) \|\| 50\)\)/);
+assert.match(fn, /tiers\.radiusForTier\(tierIndex, seekerPackageId\)/);
+assert.doesNotMatch(client, /addDoc\(collection\(db, "notifications"/);
+assert.match(client, /httpsCallable\(functions, "notifyListingMatches"\)/);
+assert.match(sot, /server-authoritative and deduplicated by `\(recipientUid, listingId\)`/);
+assert.match(sot, /radius only determines whether a canonical listing qualifies/);
+assert.match(sot, /must never mutate, hide, delete, or mark the listing as revealed/);
+console.log('Foundation Repair 11 match-notification dedupe assertions passed.');

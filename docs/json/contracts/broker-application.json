@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "role": "broker",
+  "principle": "Broker application is a workflow state, not an automatic canonicalRole promotion.",
+  "applicationStates": [
+    "none",
+    "pending",
+    "under_review",
+    "approved",
+    "rejected"
+  ],
+  "submission": {
+    "allowedCanonicalRoles": [
+      "owner",
+      "seeker"
+    ],
+    "writes": [
+      "brokerLicense",
+      "brokerApplication"
+    ],
+    "applicationStatus": "pending"
+  },
+  "review": {
+    "authority": [
+      "admin"
+    ],
+    "writes": [
+      "brokerLicense.status",
+      "brokerApplication.status",
+      "brokerApplication.reviewedAt",
+      "brokerApplication.reviewedBy"
+    ],
+    "automaticRolePromotion": false
+  },
+  "roleAuthority": "canonicalRole",
+  "legacy": "accountType may be read only at the normalization boundary during migration."
+}

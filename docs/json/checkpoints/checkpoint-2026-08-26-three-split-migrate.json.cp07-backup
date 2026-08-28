@@ -1,0 +1,39 @@
+{
+  "checkpoint": "2026-08-26-three-split-migrate",
+  "date": "2026-08-26",
+  "purpose": "Cumulative checkpoint after three SPLIT/MIGRATE test executions",
+  "cumulative": true,
+  "previous_accepted_work_preserved": true,
+  "canonical_sh3d": {
+    "path": "master/HomeFinder.sh3d",
+    "sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+    "modified": false
+  },
+  "tests": {
+    "migrated_or_split_current_authority": 10,
+    "passed_individually": 10,
+    "failed_individually": 0
+  },
+  "walkmyplan": {
+    "current_active_dependencies_from_migrated_or_split_tests": 0,
+    "original_split_tests_preserved": [
+      "archive/walkmyplan/tests/deep-dive-04-auth-roles-permissions.test.mjs",
+      "archive/walkmyplan/tests/dd04-final-authority-freeze.test.mjs",
+      "archive/walkmyplan/tests/role-contract-subscription-path.test.mjs"
+    ],
+    "remaining_classified_archive_tests": [
+      "theme-lighting-performance-budget.test.mjs",
+      "asset-integration-planning.test.mjs",
+      "canonical-room-camera-door-graph.test.mjs",
+      "hero-world-environment-shell.test.mjs"
+    ]
+  },
+  "next_master_chronology": "current validation baseline, then three-house room allocation / UI \u2194 3D presentation-contract reconciliation",
+  "key_files_sha256": {
+    "project-guide/masterplan.md": "bc5ae39866d690f9187f1c32087496d0f73732230449abc1f2503d8f6b930138",
+    "project-guide/AI_ASSISTANT_READ_ME.md": "d419949c56adebaf2eeb9ca3a963b265d11cf1bc39fa72a76b6b15db47970542",
+    "master/HomeFinder.sh3d": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+    "docs/md/architecture-validation-reconciliation-results.md": "c9a26c00e98b634ddc3a37bfa9989f93cf55ecc95a032c742c67477b34d813bb",
+    "docs/json/reconciliation/architecture-validation-reconciliation-results.json": "a3e7880fb85f7532a0940957d10d1cb1ce8b44e48e491138801fcd84b233869c"
+  }
+}

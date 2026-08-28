@@ -1,0 +1,35 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const root = new URL('../', import.meta.url).pathname;
+const mapping = JSON.parse(fs.readFileSync(path.join(root, 'data/ui-response-mapping.json'), 'utf8'));
+const matrix = JSON.parse(fs.readFileSync(path.join(root, 'data/feature-wiring-matrix.json'), 'utf8'));
+const routeReality = JSON.parse(fs.readFileSync(path.join(root, 'data/house-ui-ux-code-reality-map.json'), 'utf8'));
+const contract = JSON.parse(fs.readFileSync(path.join(root, 'data/main-hall-camera-object-contract.json'), 'utf8'));
+
+assert.equal(mapping.status, 'ACTIVE');
+assert.equal(mapping.surfaces.length, matrix.length);
+assert.equal(contract.status, 'LIVING / CAMERA-READY CONTRACT');
+
+const cameraIds = new Set(Object.keys(contract.povs));
+const cameraAnchors = new Set(Object.values(contract.povs).map(p => p.camera_anchor));
+const logicalCsv = fs.readFileSync(path.join(root, '..', 'archive/csv-reconciliation/logical-camera-reconciliation.csv'), 'utf8');
+const logicalIds = new Set(logicalCsv.split(/\r?\n/).slice(1).map(r => r.split(',')[0]).filter(Boolean));
+for (const surface of mapping.surfaces) {
+  assert.equal(surface.mapping_status, 'response-mapped');
+  for (const state of ['loading', 'success', 'error', 'denied', 'empty', 'motion']) {
+    assert.ok(Array.isArray(surface.response_states[state]), `${surface.room}/${surface.zone}: missing ${state}`);
+    assert.ok(surface.response_states[state].length > 0, `${surface.room}/${surface.zone}: empty ${state}`);
+  }
+  for (const id of String(surface.camera_anchor).split('..').map(s => s.trim()).filter(Boolean)) {
+    const currentMainHall = cameraIds.has(id) || cameraAnchors.has(id);
+    const logicalKnown = logicalIds.has(id);
+    assert.ok(currentMainHall || logicalKnown, `${surface.room}/${surface.zone}: camera ${id} missing from current logical-camera reconciliation`);
+    if (!currentMainHall && /^H-0[1-9]$/.test(id)) assert.fail(`${surface.room}/${surface.zone}: Main Hall camera ${id} is missing from current camera contract`);
+  }
+}
+assert.deepEqual(routeReality.role_routing.admin, ['admin-console']);
+assert.deepEqual(routeReality.role_routing.moderator, ['moderator-console']);
+assert.deepEqual(routeReality.role_routing.staff, ['staff-console']);
+console.log(`PASS dd05-ui-response-mapping/current-authority (${mapping.surfaces.length} surfaces, ${contract.povs ? Object.keys(contract.povs).length : 0} POVs)`);

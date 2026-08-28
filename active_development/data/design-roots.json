@@ -1,0 +1,99 @@
+{
+  "version": 2,
+  "status": "LIVING / ADJUSTABLE",
+  "themeRoot": "css/variables.css",
+  "runtimeRoot": "js/design-roots.js",
+  "environmentRoot": "data/environment-modes.json",
+  "roots": {
+    "surface": [
+      "page",
+      "panel",
+      "card",
+      "input",
+      "overlay",
+      "glass"
+    ],
+    "typography": [
+      "display",
+      "ui",
+      "mono",
+      "size",
+      "weight",
+      "line"
+    ],
+    "geometry": [
+      "radius",
+      "hit-target"
+    ],
+    "spacing": [
+      "scale-1..8",
+      "content-max",
+      "gutter",
+      "section-gap"
+    ],
+    "elevation": [
+      "card",
+      "floating",
+      "focus"
+    ],
+    "responsive": [
+      "ui-scale",
+      "density",
+      "gutter",
+      "content-max",
+      "mode: mobile-portrait/mobile-landscape/compact/tablet/desktop/wide-desktop",
+      "semantic-invariant"
+    ],
+    "animation": [
+      "enabled",
+      "intensity",
+      "duration",
+      "easing",
+      "profiles: micro/state/emphasis/cinematic/door"
+    ],
+    "camera": [
+      "transition-duration",
+      "transition-ease",
+      "scale",
+      "offset-x",
+      "offset-y"
+    ],
+    "uiObject": [
+      "surface",
+      "ink",
+      "muted",
+      "border",
+      "radius",
+      "shadow",
+      "gap",
+      "motion",
+      "ease",
+      "state-machine",
+      "responsive-contract",
+      "theme-inherit"
+    ]
+  },
+  "environmentThemes": [
+    "day",
+    "sunset",
+    "night",
+    "rain",
+    "mist",
+    "storm"
+  ],
+  "uiThemeMode": "environment-driven",
+  "legacyBinaryThemeMode": "removed",
+  "rules": [
+    "New components consume root tokens and do not invent page-wide theme state.",
+    "New animations consume animation-root duration/easing tokens and honor reduced motion.",
+    "Camera transitions consume the camera-root timing contract.",
+    "Physical UI objects consume the UI-object root and map to semantic object IDs.",
+    "Theme changes cannot change roles, permissions, routes, business logic, payment state, data authority, or security.",
+    "Responsive behavior changes layout density and composition, never semantic identity or access policy.",
+    "Physical object state transitions are explicit and invalid transitions retain current state.",
+    "Responsive transformation changes layout/presentation only and preserves semantic object identity.",
+    "Animation timing comes from the animation root; components do not invent page-local timing contracts."
+  ],
+  "runtimeStateMachine": "js/physical-ui-state.js",
+  "animationRuntime": "js/animation-root.js"
+}

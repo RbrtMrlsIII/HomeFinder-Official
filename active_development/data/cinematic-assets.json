@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "principle": "One world contract, replaceable 3D slots, zero page-specific renderer code.",
+  "worlds": {
+    "world-01-home": {
+      "page": "home",
+      "renderer": "three-compatible-adapter",
+      "defaultMode": "layered-poster-depth",
+      "slots": {
+        "skyline": {
+          "id": "home-skyline",
+          "kind": "environment",
+          "priority": "high",
+          "format": ["glb"],
+          "lod": ["high", "medium", "low"],
+          "fallback": "hf-home-skyline",
+          "source": null,
+          "targetTriangles": {"high": 900000, "medium": 420000, "low": 0}
+        },
+        "residential-district": {
+          "id": "home-residential-district",
+          "kind": "environment",
+          "priority": "high",
+          "format": ["glb"],
+          "lod": ["high", "medium", "low"],
+          "fallback": "hf-home-residential",
+          "source": null,
+          "targetTriangles": {"high": 650000, "medium": 300000, "low": 0}
+        },
+        "hero-residence": {
+          "id": "home-hero-residence",
+          "kind": "hero",
+          "priority": "critical",
+          "format": ["glb"],
+          "lod": ["high", "medium", "low"],
+          "fallback": "hf-home-residence",
+          "source": null,
+          "targetTriangles": {"high": 700000, "medium": 360000, "low": 0}
+        },
+        "vehicles": {
+          "id": "home-vehicles",
+          "kind": "prop",
+          "priority": "deferred",
+          "format": ["glb"],
+          "lod": ["high", "medium"],
+          "fallback": null,
+          "source": null,
+          "targetTriangles": {"high": 180000, "medium": 80000, "low": 0}
+        },
+        "vegetation": {
+          "id": "home-vegetation",
+          "kind": "prop",
+          "priority": "deferred",
+          "format": ["glb"],
+          "lod": ["high", "medium"],
+          "fallback": null,
+          "source": null,
+          "targetTriangles": {"high": 220000, "medium": 90000, "low": 0}
+        },
+        "architectural-props": {
+          "id": "home-architectural-props",
+          "kind": "prop",
+          "priority": "deferred",
+          "format": ["glb"],
+          "lod": ["high", "medium"],
+          "fallback": null,
+          "source": null,
+          "targetTriangles": {"high": 150000, "medium": 60000, "low": 0}
+        }
+      },
+      "budgets": {
+        "high": {"maxTriangles": 2800000, "maxTextureMB": 72, "maxDrawCalls": 80},
+        "medium": {"maxTriangles": 1010000, "maxTextureMB": 36, "maxDrawCalls": 48},
+        "low": {"maxTriangles": 0, "maxTextureMB": 0, "maxDrawCalls": 0}
+      }
+    }
+  }
+}

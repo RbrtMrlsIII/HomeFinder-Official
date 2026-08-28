@@ -1,0 +1,48 @@
+/* HF-BUILD-2026-08-11-V13 | file: transition.css | DO NOT USE OLD CACHE PATH */
+/* ==================================== */
+/*  PAGE TRANSITION (shared)            */
+/* ==================================== */
+/* Styles the overlay js/transition.js injects into every page. Split */
+/* out on its own because transition.js runs site-wide, but this was  */
+/* previously only defined inside css/home/style.css -- an index.html-*/
+/* only file -- so every other page rendered it fully visible and     */
+/* unstyled ("Redirecting..." as plain inline text) instead of hidden.*/
+
+.page-transition{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    background:var(--dark);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .3s ease;
+}
+
+.page-transition.active{
+    opacity:1;
+    pointer-events:all;
+}
+
+.page-transition .spinner-ring{
+    width:44px;
+    height:44px;
+    border:3px solid rgba(255,255,255,.15);
+    border-top-color:var(--primary);
+    border-radius:50%;
+    animation:spin .7s linear infinite;
+}
+
+.page-transition p{
+    color:white;
+    font-size:15px;
+    font-weight:600;
+}
+
+@keyframes spin{
+    to{ transform:rotate(360deg); }
+}

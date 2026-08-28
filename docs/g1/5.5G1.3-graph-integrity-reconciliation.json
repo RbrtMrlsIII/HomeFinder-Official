@@ -1,0 +1,74 @@
+{
+  "gate": "5.5G.3",
+  "title": "Adjacency Graph Integrity & Required-Transition Readiness",
+  "status": "CORRECTED EVIDENCE GRAPH / ROUTES NOT VALIDATED",
+  "predecessor": "HomeFinder-G1.2.zip",
+  "finding": "G1.2 stable graph was too permissive: it reintroduced previously excluded door IDs and retained multi-endpoint doors as if they were stable edges.",
+  "original_g2_edges": 29,
+  "corrected_stable_edges": 16,
+  "original_unique_door_ids": 23,
+  "excluded_or_ambiguous_door_ids": 8,
+  "corrected_nodes": 21,
+  "corrected_components": 5,
+  "house_boundaries": {
+    "HOUSE1": "candidate exterior boundary; no interior transfer binding",
+    "HOUSE2": "candidate exterior boundary; no interior transfer binding",
+    "HOUSE3": "unproven exterior boundary; no interior transfer binding"
+  },
+  "critical_conclusion": "No required cross-house transition can be declared physically reachable from the current evidence graph. The application contracts imply logical door transitions, but no physical door is yet bound to those logical doors.",
+  "route_status": "NOT_VALIDATED",
+  "runtime_changed": false,
+  "canonical_mutated": false,
+  "f3_candidate_mutated": false,
+  "unsafe_door_ids": [
+    {
+      "door_id": "add-doorOrWindow-16d223b7-d35a-4665-837a-ed5b4bd8097c",
+      "edge_count": 2,
+      "classification": "UNSAFE_FOR_ROUTE_GRAPH",
+      "reason": "G1.2 graph contains multiple adjacency edges for one physical door ID; endpoint resolution is not unique"
+    },
+    {
+      "door_id": "add-doorOrWindow-236b4260-cf0f-4f5c-a237-0ae033c4a8c0",
+      "edge_count": 2,
+      "classification": "UNSAFE_FOR_ROUTE_GRAPH",
+      "reason": "G1.2 graph contains multiple adjacency edges for one physical door ID; endpoint resolution is not unique"
+    },
+    {
+      "door_id": "add-doorOrWindow-590b0303-c14e-4aa1-ba49-c0b3c60981a0",
+      "edge_count": 0,
+      "classification": "UNSAFE_FOR_ROUTE_GRAPH",
+      "reason": "previous G1 problematic-door resolution excluded this door from topology"
+    },
+    {
+      "door_id": "add-doorOrWindow-6ecf091c-549e-4dfa-9716-1a8a5b6b15c3",
+      "edge_count": 1,
+      "classification": "UNSAFE_FOR_ROUTE_GRAPH",
+      "reason": "previous G1 problematic-door resolution excluded this door from topology"
+    },
+    {
+      "door_id": "add-doorOrWindow-9df41ae2-c632-4510-a40d-f15c0a40fb83",
+      "edge_count": 2,
+      "classification": "UNSAFE_FOR_ROUTE_GRAPH",
+      "reason": "G1.2 graph contains multiple adjacency edges for one physical door ID; endpoint resolution is not unique"
+    },
+    {
+      "door_id": "add-doorOrWindow-b783d1fa-2085-4d12-84fd-1ae71ba4dcf2",
+      "edge_count": 2,
+      "classification": "UNSAFE_FOR_ROUTE_GRAPH",
+      "reason": "G1.2 graph contains multiple adjacency edges for one physical door ID; endpoint resolution is not unique"
+    },
+    {
+      "door_id": "add-doorOrWindow-c7805654-0e93-4b58-9a34-5ee1ad3f5183",
+      "edge_count": 2,
+      "classification": "UNSAFE_FOR_ROUTE_GRAPH",
+      "reason": "previous G1 problematic-door resolution excluded this door from topology; G1.2 graph contains multiple adjacency edges for one physical door ID; endpoint resolution is not unique"
+    },
+    {
+      "door_id": "add-doorOrWindow-ff66e0d4-90dc-4ab6-b304-7a99091ce63a",
+      "edge_count": 2,
+      "classification": "UNSAFE_FOR_ROUTE_GRAPH",
+      "reason": "G1.2 graph contains multiple adjacency edges for one physical door ID; endpoint resolution is not unique"
+    }
+  ],
+  "next_gate": "Resolve the 6 multi-endpoint door records and establish logical-door-to-physical-door bindings before route validation."
+}

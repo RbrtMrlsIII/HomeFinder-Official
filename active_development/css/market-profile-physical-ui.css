@@ -1,0 +1,31 @@
+/* Shared physical UI root treatment for Market/Profile. Values come from variables.css. */
+[data-hf-physical-object-id] {
+  --hf-object-transform-origin: center;
+  transition-property: opacity, transform, box-shadow, filter;
+  transition-duration: var(--hf-duration-base, 220ms);
+  transition-timing-function: var(--hf-ease-standard, cubic-bezier(.22,.61,.36,1));
+}
+[data-hf-physical-object-id].is-active {
+  transform: translateZ(0) scale(calc(1 + (var(--hf-ui-scale, 1) - 1) * .18));
+}
+[data-hf-physical-object-id].is-busy {
+  filter: saturate(.88);
+}
+[data-hf-physical-object-id].is-disabled {
+  opacity: .62;
+  pointer-events: none;
+}
+html[data-hf-motion="reduced"] [data-hf-physical-object-id] {
+  transition-duration: 1ms;
+  animation-duration: 1ms !important;
+}
+/* Semantic responsive roots. Components retain identity; only composition/density shifts. */
+[data-hf-responsive-root="market-command"],
+[data-hf-responsive-root="market-filters"],
+[data-hf-responsive-root="market-results"],
+[data-hf-responsive-root="profile-panel"],
+[data-hf-responsive-root="profile-form"],
+[data-hf-responsive-root="profile-cards"] {
+  --hf-local-density: var(--hf-density, 1);
+  --hf-local-ui-scale: var(--hf-ui-scale, 1);
+}

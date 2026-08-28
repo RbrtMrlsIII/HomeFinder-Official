@@ -1,0 +1,40 @@
+{
+  "gate": "5.5F.1",
+  "purpose": "UI to physical-room completeness census before SH3D merge",
+  "scope": "No code; documentation/reconciliation only",
+  "actual_html_pages": 13,
+  "mapped_pages": 2,
+  "unassigned_pages": 11,
+  "large_or_dense_pages": [
+    "broker-hq",
+    "admin",
+    "index",
+    "profile",
+    "market",
+    "staff"
+  ],
+  "explicit_gaps": [
+    "broker-hq",
+    "login",
+    "admin",
+    "profile",
+    "market",
+    "privacy",
+    "terms",
+    "moderator",
+    "staff",
+    "register",
+    "financing"
+  ],
+  "important_findings": [
+    "All current application HTML pages have a logical house/room destination or an explicit existing allocation except pages requiring further historical/route reconciliation.",
+    "Logical allocation does not prove physical SH3D room existence.",
+    "House 1 index.html remains protected; privacy/terms/login/register remain House 1.",
+    "Broker HQ and Operations are logically assigned to House 2 but their physical topology is not yet proven.",
+    "Market and Profile Suite are logically assigned to House 3 but their physical topology is not yet proven.",
+    "financing.html has an allocation inconsistency: House 2 Operations/Finance in the three-house matrix while the page-room working matrix labels it REFERENCE. This must be reconciled before merge readiness is declared.",
+    "H-01..H-09 remain working anchors; no final camera position was asserted."
+  ],
+  "merge_readiness": "NOT_READY",
+  "next_gate": "5.5F.2 \u2014 Deep Additional SH3D Census"
+}

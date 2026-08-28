@@ -1,0 +1,17 @@
+TAP version 13
+# A.4.4-B listings book contract: 4/4
+# Subtest: tests/listings-book-interaction.test.mjs
+ok 1 - tests/listings-book-interaction.test.mjs
+  ---
+  duration_ms: 36.737571
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 45.182321

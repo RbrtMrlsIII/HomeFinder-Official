@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "canonicalCollections": {
+    "propertyListings": {
+      "purpose": "property inventory",
+      "listingRole": [
+        "owner",
+        "broker"
+      ]
+    },
+    "wantedListings": {
+      "purpose": "wanted inventory",
+      "listingRole": [
+        "seeker",
+        "broker"
+      ]
+    },
+    "users": {
+      "purpose": "private authoritative user profile"
+    },
+    "publicProfiles": {
+      "purpose": "public discovery projection",
+      "writes": "trusted backend only"
+    }
+  },
+  "retiredCollections": {
+    "properties": {
+      "status": "retired",
+      "activeReads": false,
+      "activeWrites": false
+    }
+  },
+  "listingAuthority": "propertyListings and wantedListings are the only canonical listing collections."
+}

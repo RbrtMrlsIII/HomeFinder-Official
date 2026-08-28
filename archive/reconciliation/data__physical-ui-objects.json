@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "world": "homefinder-house",
+  "room": "main-hall",
+  "objects": [
+    {
+      "id": "listings-book",
+      "label": "Listings Book",
+      "kind": "book",
+      "icon": "bx-book-open",
+      "description": "Open the property catalogue and listing workspace.",
+      "action": "navigate",
+      "href": "market.html",
+      "cameraAnchor": "living"
+    },
+    {
+      "id": "property-map",
+      "label": "Property Map",
+      "kind": "map",
+      "icon": "bx-map-alt",
+      "description": "Focus the house map and nearby property discovery.",
+      "action": "scroll",
+      "target": "map",
+      "cameraAnchor": "window"
+    },
+    {
+      "id": "property-catalogue",
+      "label": "Property Catalogue",
+      "kind": "catalogue",
+      "icon": "bx-buildings",
+      "description": "Open featured property discovery and inspect available listings.",
+      "action": "scroll",
+      "target": "properties",
+      "cameraAnchor": "H-03"
+    },
+    {
+      "id": "listing-form",
+      "label": "List a Property",
+      "kind": "document",
+      "icon": "bx-note",
+      "description": "Open the listing document and fill it in.",
+      "action": "navigate",
+      "href": "profile.html#listing",
+      "cameraAnchor": "library"
+    },
+    {
+      "id": "navigation-console",
+      "label": "Navigation Console",
+      "kind": "console",
+      "icon": "bx-compass",
+      "description": "Move to the major rooms of HomeFinder.",
+      "action": "console",
+      "cameraAnchor": "center"
+    }
+  ]
+}

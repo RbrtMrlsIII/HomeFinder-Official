@@ -1,0 +1,41 @@
+{
+  "phase": 12,
+  "name": "Animation Root + Physical UI Object State Machine + Responsive Transformation",
+  "status": "ACTIVE / ADJUSTABLE",
+  "scope": "Main Hall foundation reusable by other pages",
+  "roots": {
+    "animation": "js/animation-root.js",
+    "objectState": "js/physical-ui-state.js",
+    "design": "js/design-roots.js",
+    "tokens": "css/variables.css"
+  },
+  "states": [
+    "idle",
+    "hover",
+    "focus",
+    "interaction-start",
+    "ui-open",
+    "loading",
+    "success",
+    "error",
+    "empty",
+    "disabled"
+  ],
+  "responsiveModes": [
+    "mobile-portrait",
+    "mobile-landscape",
+    "compact",
+    "tablet",
+    "desktop",
+    "wide-desktop"
+  ],
+  "reducedMotion": "Immediate state presentation; no lift/scale/camera interpolation.",
+  "securityBoundary": "presentation-only",
+  "semanticInvariant": true,
+  "nextPropagation": "Apply this contract to Login/Register, then Market/Profile before the next major camera generation.",
+  "masterMatrixColumns": [
+    "animation_profile",
+    "object_state_contract",
+    "responsive_transform_root"
+  ]
+}

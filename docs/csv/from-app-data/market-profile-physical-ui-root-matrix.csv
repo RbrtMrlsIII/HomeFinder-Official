@@ -1,0 +1,20 @@
+page,logical_room,pov,object_id,selector,animation_profile,responsive_root,theme_root,security_boundary,state_contract
+market,MARKET,M-01,market-guide-console,#market-guide,emphasis,market-guide,environment,presentation-only,phase12
+market,MARKET,M-01,market-search-console,#market-map-topbar,state,market-command,environment,presentation-only,phase12
+market,MARKET,M-02,market-map-table,#market-map-canvas,cinematic,market-map,environment,presentation-only,phase12
+market,MARKET,M-03,market-filter-board,#market-filter-panel,state,market-filters,environment,presentation-only,phase12
+market,MARKET,M-04,market-discovery-wall,#market-discovery-rail,emphasis,market-results,environment,presentation-only,phase12
+market,MARKET,M-05,market-inspection-dossier,#market-card-modal,cinematic,market-modal,environment,presentation-only,phase12
+market,MARKET,M-06,market-contact-desk,#market-contact,door,reference-contact,environment,presentation-only,phase12
+profile,PROFILE SUITE,P-01,profile-perks-portfolio,#panel-perks,emphasis,profile-panel,environment,presentation-only,phase12
+profile,PROFILE SUITE,P-02,profile-message-terminal,#panel-messages,state,profile-messages,environment,presentation-only,phase12
+profile,PROFILE SUITE,P-03,profile-contracts-folder,#panel-contracts,state,profile-panel,environment,presentation-only,phase12
+profile,PROFILE SUITE,P-04,profile-help-desk,#panel-need-help,state,profile-form,environment,presentation-only,phase12
+profile,PROFILE SUITE,P-05,profile-listing-dossier,#panel-listing,emphasis,profile-form,environment,presentation-only,phase12
+profile,PROFILE SUITE,P-06,profile-saved-searches,#panel-wanted,state,profile-form,environment,presentation-only,phase12
+profile,PROFILE SUITE,P-07,profile-alert-console,#panel-saved,state,profile-cards,environment,presentation-only,phase12
+profile,PROFILE SUITE,P-08,profile-identity-console,#profile-header,emphasis,profile-header,environment,presentation-only,phase12
+profile,PROFILE SUITE,P-09,profile-documents-archive,#panel-contracts,state,profile-panel,environment,presentation-only,phase12
+profile,PROFILE SUITE,P-10,profile-preferences-console,#panel-edit-fields,state,profile-form,environment,presentation-only,phase12
+profile,PROFILE SUITE,P-11,profile-privacy-console,#panel-edit-fields,state,profile-form,environment,presentation-only,phase12
+profile,PROFILE SUITE,P-12,profile-broker-gate,#profile-tabs,door,profile-nav,environment,presentation-only,phase12

@@ -1,0 +1,77 @@
+{
+  "gate": "5.5E",
+  "items": [
+    {
+      "check": "Accepted three-house architecture: House 1 public/hero; House 2 broker+operations; House 3 seekers+owners",
+      "status": "RECORDED/APPLIED"
+    },
+    {
+      "check": "House 1 index.html remains protected in its original location, including footer/contact/privacy/terms",
+      "status": "RECORDED/APPLIED"
+    },
+    {
+      "check": "WalkMyPlan retired; no active tests reference WalkMyPlan",
+      "status": "RECORDED/APPLIED"
+    },
+    {
+      "check": "14 WalkMyPlan-dependent tests reconciled; 7 migrated, 3 split/migrated, 4 archived",
+      "status": "RECORDED/APPLIED"
+    },
+    {
+      "check": "Historical-contract tests reconciled; retained behavior migrated and obsolete tests archived",
+      "status": "RECORDED/APPLIED"
+    },
+    {
+      "check": "Objective test-path repairs and canonical-role migration recorded",
+      "status": "RECORDED/APPLIED"
+    },
+    {
+      "check": "Patch 57 cinematic test path reconciled; cinematic/3D support tests retained",
+      "status": "RECORDED/APPLIED"
+    },
+    {
+      "check": "5.5C-V.6 baseline integrity audit and evidence correction recorded",
+      "status": "RECORDED/APPLIED"
+    },
+    {
+      "check": "5.5D three-house allocation and UI\u21943D presentation contract recorded",
+      "status": "RECORDED/APPLIED"
+    },
+    {
+      "check": "No UI-generated physical camera coordinates",
+      "status": "RECORDED/APPLIED"
+    },
+    {
+      "check": "No teleportation or wall penetration",
+      "status": "RECORDED/APPLIED"
+    },
+    {
+      "check": "Physical transfers require authored doors/openings, validated route and authored travel duration",
+      "status": "RECORDED/APPLIED"
+    },
+    {
+      "check": "Canonical HomeFinder.sh3d protected and unchanged",
+      "status": "RECORDED/APPLIED"
+    },
+    {
+      "check": "Additional.sh3d and merge candidate remain non-authoritative",
+      "status": "RECORDED/APPLIED"
+    },
+    {
+      "check": "5.5E canonical topology independently inspected",
+      "status": "RECORDED/APPLIED"
+    },
+    {
+      "check": "Canonical model found to be one residential structure; House 2/3 physical topology not yet proven",
+      "status": "RECORDED/APPLIED"
+    },
+    {
+      "check": "H-04 physical anchor flagged for correction",
+      "status": "RECORDED/APPLIED"
+    },
+    {
+      "check": "Canonical model census corrected from stale observer-camera count to actual current XML count",
+      "status": "RECORDED/APPLIED"
+    }
+  ]
+}

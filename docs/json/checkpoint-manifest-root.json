@@ -1,0 +1,134 @@
+{
+  "checkpoint": "HomeFinder",
+  "phase": 13,
+  "master_scene": "master/HomeFinder.sh3d",
+  "master_sha256": "c27a764f2af0ab8ca674871f7ba291febbe94ae4dde11bb6cd0a9e11b593908d",
+  "active_theme_mode": "environment-driven",
+  "environment_themes": [
+    "day",
+    "sunset",
+    "night",
+    "rain",
+    "mist",
+    "storm"
+  ],
+  "legacy_binary_theme_mode": "removed",
+  "design_root_files": [
+    "active_development/css/variables.css",
+    "active_development/data/design-roots.json",
+    "active_development/js/design-roots.js"
+  ],
+  "verification": [
+    "active_development/verify/design-roots-contract.test.mjs",
+    "active_development/verify/master-matrix-contract.test.mjs",
+    "active_development/verify/public-profile-read-surface.test.mjs",
+    "active_development/verify/public-profile-migration.test.mjs",
+    "active_development/verify/phase11-deploy-readiness.test.mjs"
+  ],
+  "nested_zip_count": 0,
+  "file_count": 567,
+  "animation_object_responsive_files": [
+    "active_development/js/animation-root.js",
+    "active_development/js/physical-ui-state.js",
+    "active_development/js/design-roots.js",
+    "active_development/data/phase12-animation-object-responsive.json",
+    "active_development/docs/39-ANIMATION-OBJECT-RESPONSIVE-CONTRACT.md",
+    "active_development/docs/40-PHASE12-ANIMATION-OBJECT-RESPONSIVE.md",
+    "active_development/tests/phase12-animation-object-state.test.mjs"
+  ],
+  "current_focus": "Firebase/Supabase authority hardening and canonical role boundary",
+  "latest_verification": {
+    "phase13_auth_propagation": "PASS",
+    "syntax_files": 244,
+    "syntax_failures": 0,
+    "canonical_authority_checks": "PASS",
+    "canonical_route_checks": "PASS",
+    "canonical_role_checks": "PASS",
+    "canonical_data_checks": "PASS",
+    "kyc_contract_checks": "PASS",
+    "canonical_backend_authority_checks": "PASS",
+    "supabase_storage_authority_checks": "PASS",
+    "kyc_self_escalation_boundary": "PASS",
+    "canonical_role_runtime_boundary": "PASS",
+    "canonical_verification_suite": "10/10 PASS",
+    "supabase_function_structure": "PASS",
+    "storage_migration_structure": "PASS"
+  },
+  "checkpoint_phase": "PHASE14_MARKET_PROFILE_PROPAGATION",
+  "nested_zip_policy": "ZERO_NESTED_ZIPS",
+  "preview": "active_development/archive/checkpoints/market_profile_preview/Market_Profile_physical_UI_root_preview.png",
+  "market_profile_objects": 19,
+  "market_povs": [
+    "M-01",
+    "M-02",
+    "M-03",
+    "M-04",
+    "M-05",
+    "M-06"
+  ],
+  "profile_povs": [
+    "P-01",
+    "P-02",
+    "P-03",
+    "P-04",
+    "P-05",
+    "P-06",
+    "P-07",
+    "P-08",
+    "P-09",
+    "P-10",
+    "P-11",
+    "P-12"
+  ],
+  "authority_manifest": "PROJECT_AUTHORITY.json",
+  "documentation_authority": {
+    "canonical": "docs/canonical/",
+    "contracts": "docs/contracts/",
+    "reconciliation": "docs/reconciliation/",
+    "evidence": "docs/evidence/",
+    "archive": "archive/"
+  },
+  "canonical_verification_root": "verify/",
+  "canonical_roles": [
+    "owner",
+    "seeker",
+    "broker",
+    "staff",
+    "moderator",
+    "admin"
+  ],
+  "canonical_listings": [
+    "propertyListings",
+    "wantedListings"
+  ],
+  "retired_collections": [
+    "properties"
+  ],
+  "canonical_firebase_database": "homefinder",
+  "canonical_3d_model": "master/HomeFinder.sh3d",
+  "authority_migration_status": "Phase 2 hardened: Firebase/Supabase KYC parity, canonicalRole enforcement, KYC self-escalation prevention, repository-controlled Supabase storage authority, and canonical backend endpoint reuse.",
+  "canonical_authority_checkpoint": {
+    "firebaseDatabase": "homefinder",
+    "canonicalRole": "docs/contracts/roles/canonical-roles.json",
+    "backendAuthority": "docs/contracts/integrations/backend-authority.json",
+    "storageAuthority": "docs/contracts/integrations/storage-authority.json",
+    "kycAuthority": "docs/contracts/kyc/kyc-authorization.json",
+    "canonicalListings": [
+      "propertyListings",
+      "wantedListings"
+    ],
+    "retiredCollections": [
+      "properties"
+    ],
+    "canonical3DModel": "master/HomeFinder.sh3d",
+    "verificationRoot": "verify/",
+    "status": "verified",
+    "liveSupabasePolicyVerification": "pending"
+  },
+  "security_hardening_2026_08_23": {
+    "phone": "PH canonical 12-digit 639XXXXXXXXX",
+    "suspension": "Firestore + Firebase Auth disabled sync + callable guard",
+    "registration_abuse": "Spark-safe baseline documented; hard per-IP cap explicitly not claimed without edge/server gate"
+  },
+  "firebase_project_id": "homefinder-official"
+}

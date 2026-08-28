@@ -1,0 +1,31 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+const root = path.resolve(new URL('..', import.meta.url).pathname);
+const read = (p) => fs.readFileSync(path.join(root,p),'utf8');
+const roots = read('js/design-roots.js');
+const animation = read('js/animation-root.js');
+const state = read('js/physical-ui-state.js');
+const objects = JSON.parse(read('data/physical-ui-objects.json'));
+const vars = read('css/variables.css');
+const html = read('index.html');
+const contract = read('docs/39-ANIMATION-OBJECT-RESPONSIVE-CONTRACT.md');
+assert.match(roots,/subscribe/);
+assert.match(animation,/hfAnimationRoot/);
+assert.match(animation,/prefers-reduced-motion/);
+for (const required of ['idle','hover','focus','interaction-start','ui-open','loading','success','error','empty','disabled']) assert.match(state,new RegExp(required.replace('-','\\-')));
+assert.match(state,/applyResponsive/);
+assert.match(state,/mobile-portrait/);
+assert.match(state,/mobile-landscape/);
+assert.match(vars,/--hf-duration-cinematic/);
+assert.match(vars,/--hf-state-duration/);
+assert.match(contract,/presentation-only/);
+for (const o of objects.objects) {
+  assert.ok(o.responsive, `${o.id}: missing responsive root`);
+  assert.ok(o.motion === 'root' || o.id === 'home-hero-focal', `${o.id}: motion must use root`);
+  if (o.rootContract === 'ui-object') assert.ok(o.responsiveContract?.semanticInvariant, `${o.id}: responsive semantic invariant missing`);
+}
+assert.deepEqual(objects.stateMachineContract.states, ['idle','hover','focus','interaction-start','ui-open','loading','success','error','empty','disabled']);
+assert.equal(objects.stateMachineContract.invalidTransitionPolicy,'retain-current-state');
+for (const mode of ['mobile-portrait','mobile-landscape','compact','tablet','desktop','wide-desktop']) assert.ok(objects.responsiveRootContract[mode], `${mode}: responsive root missing`);
+console.log(`PASS animation + object state + responsive roots (${objects.objects.length} objects)`);

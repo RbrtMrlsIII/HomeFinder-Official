@@ -1,0 +1,203 @@
+{
+  "version": "A4.4C3.10",
+  "status": "CANONICAL / ADJUSTABLE",
+  "authority": "verified application routes + current SoT + SweetHome3D model; WalkMyPlan mapping derived",
+  "rooms": [
+    {
+      "room_id": "BACKYARD",
+      "route": "public-arrival",
+      "purpose": "Public cinematic arrival prelude",
+      "zones": [
+        "ARRIVAL"
+      ],
+      "entry": "url",
+      "primary_door": "main-door",
+      "entry_camera": "ARR-01",
+      "allowed_roles": [
+        "guest",
+        "seeker",
+        "owner",
+        "broker",
+        "staff",
+        "moderator",
+        "admin"
+      ]
+    },
+    {
+      "room_id": "MAIN HALL",
+      "route": "index.html",
+      "purpose": "Public Home environment; sections are camera zones",
+      "zones": [
+        "H-01 Hero",
+        "H-02 Discovery",
+        "H-03 Property Discovery",
+        "H-04 Map",
+        "H-05 Government",
+        "H-06 Mission",
+        "H-07 Guide",
+        "H-08 Safety",
+        "H-09 Contact"
+      ],
+      "entry": "main-door",
+      "primary_door": "main-door",
+      "entry_camera": "H-01",
+      "allowed_roles": [
+        "guest",
+        "seeker",
+        "owner",
+        "broker",
+        "staff",
+        "moderator",
+        "admin"
+      ]
+    },
+    {
+      "room_id": "LOGIN ROOM",
+      "route": "login.html",
+      "purpose": "Authentication",
+      "zones": [
+        "L-01 Identity"
+      ],
+      "entry": "login-door",
+      "primary_door": "login-door",
+      "entry_camera": "L-01",
+      "allowed_roles": [
+        "guest",
+        "seeker",
+        "owner",
+        "broker",
+        "staff",
+        "moderator",
+        "admin"
+      ]
+    },
+    {
+      "room_id": "REGISTER ROOM",
+      "route": "register.html",
+      "purpose": "Registration",
+      "zones": [
+        "R-01 Registration"
+      ],
+      "entry": "register-door",
+      "primary_door": "register-door",
+      "entry_camera": "R-01",
+      "allowed_roles": [
+        "guest",
+        "seeker",
+        "owner",
+        "broker",
+        "staff",
+        "moderator",
+        "admin"
+      ]
+    },
+    {
+      "room_id": "MARKET",
+      "route": "market.html",
+      "purpose": "One role-aware Market environment",
+      "zones": [
+        "M-01 Entrance",
+        "M-02 Map",
+        "M-03 Filters",
+        "M-04 Discovery",
+        "M-05 Inspection",
+        "M-06 Contact"
+      ],
+      "entry": "market-door",
+      "primary_door": "market-door",
+      "entry_camera": "M-01",
+      "allowed_roles": [
+        "guest",
+        "seeker",
+        "owner"
+      ]
+    },
+    {
+      "room_id": "PROFILE SUITE",
+      "route": "profile.html",
+      "purpose": "Private authenticated suite with stations, not separate rooms per tab",
+      "zones": [
+        "P-01 Perks",
+        "P-02 Messages",
+        "P-03 Contracts",
+        "P-04 Help",
+        "P-05 List Property",
+        "P-06 Wanted",
+        "P-07 Saved Properties",
+        "P-08 Saved Wanted",
+        "P-09 Reviews",
+        "P-10 Government",
+        "P-11 Account",
+        "P-12 Broker Gate"
+      ],
+      "entry": "profile-door",
+      "primary_door": "profile-door",
+      "entry_camera": "P-01",
+      "allowed_roles": [
+        "seeker",
+        "owner",
+        "broker"
+      ]
+    },
+    {
+      "room_id": "BROKER HQ",
+      "route": "broker-hq.html",
+      "purpose": "Dedicated broker workspace",
+      "zones": [
+        "B-01 Desk",
+        "B-02 Requests",
+        "B-03 Service Area",
+        "B-04 Intelligence Map",
+        "B-05 Discovery",
+        "B-06 Service Pins"
+      ],
+      "entry": "broker-hq-door",
+      "primary_door": "broker-hq-door",
+      "entry_camera": "B-01",
+      "allowed_roles": [
+        "broker",
+        "admin"
+      ]
+    },
+    {
+      "room_id": "OPERATIONS",
+      "route": "admin.html|moderator.html|staff.html",
+      "purpose": "Protected operational wing; Admin zone is A-01, Moderator zone A-02, Staff zone A-03; each route remains role-gated.",
+      "zones": [
+        "A-01 Admin",
+        "A-02 Moderator",
+        "A-03 Staff"
+      ],
+      "entry": "operations doors",
+      "primary_door": "admin-door|moderator-door|staff-door",
+      "entry_camera": "A-01",
+      "allowed_roles": [
+        "staff",
+        "moderator",
+        "admin"
+      ]
+    },
+    {
+      "room_id": "REFERENCE",
+      "route": "financing.html|privacy.html|terms.html",
+      "purpose": "Public reference wing",
+      "zones": [
+        "G-01 Government",
+        "LGL-01 Privacy",
+        "LGL-02 Terms"
+      ],
+      "entry": "government-door|legal-door",
+      "primary_door": "government-door|legal-door",
+      "entry_camera": "G-01",
+      "allowed_roles": [
+        "guest",
+        "seeker",
+        "owner",
+        "broker",
+        "staff",
+        "moderator",
+        "admin"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const summary = JSON.parse(fs.readFileSync(new URL('../data/phase11-final-audit.json', import.meta.url),'utf8'));
+assert.equal(summary.public_profile_projection,'READY');
+assert.equal(summary.public_profile_trigger_database,'homefinder');
+assert.equal(summary.static_projection_test,'PASS');
+assert.equal(summary.static_rules_check,'PASS');
+assert.equal(summary.syntax_failures.length,0);
+assert.equal(summary.browser_cases,72);
+console.log('phase11-deploy-readiness: PASS');

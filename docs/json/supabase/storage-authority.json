@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "buckets": {
+    "listing-images": {
+      "visibility": "public-read",
+      "clientUpload": "edge-function-only",
+      "purpose": "public listing media",
+      "uploadFunction": "upload-listing-image",
+      "uploadPath": "{uid}/{listingIdOrTemp}/{index}.jpg",
+      "acceptedUploadFormat": "JPEG/JPG"
+    },
+    "kyc-documents": {
+      "visibility": "private",
+      "clientUpload": "forbidden-direct",
+      "uploadPath": "{uid}/{kind}-{timestamp}.jpg",
+      "signedRead": "admin-only",
+      "uploadFunction": "upload-kyc-document",
+      "signedReadFunction": "get-kyc-signed-url",
+      "acceptedUploadFormat": "JPEG/JPG"
+    }
+  },
+  "rule": "Bucket names and visibility are canonical here; live Supabase policies must be verified against this contract before deployment.",
+  "notes": [
+    "Browser listing source images may be PNG/WebP because the client re-encodes them to JPEG before upload.",
+    "Edge Functions verify JPEG magic bytes; Content-Type and filename are not trusted as file-type proof.",
+    "KYC uploads remain private and are not antivirus-scanned by this repository contract."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "gate": "5.5G.6D",
+  "title": "3D Runtime Audit",
+  "status": "PASS_WITH_IMPLEMENTATION_GAPS",
+  "canonical_model": "master/HomeFinder.sh3d",
+  "canonical_sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "canonical_census": {
+    "levels": 3,
+    "rooms": 13,
+    "named_rooms": 7,
+    "walls": 42,
+    "doors_windows": 27,
+    "observer_cameras": 15
+  },
+  "runtime": {
+    "standalone_sh3d_viewer": "present_and_canonical",
+    "viewer_camera_selector_count": 5,
+    "cinematic_webgl_proxy": "present_but_not_canonical_sh3d_runtime",
+    "house_camera_state_bridge": "present",
+    "physical_ui_object_bridge": "presentation_only",
+    "validated_runtime_physical_routes": 0
+  },
+  "topology": {
+    "house_1_to_2": "candidate_pending_validation",
+    "house_2_to_1": "candidate_pending_validation",
+    "house_1_to_3": "candidate_pending_validation",
+    "house_3_to_1": "candidate_pending_validation",
+    "house_2_to_3": "forbidden",
+    "house_3_to_2": "forbidden"
+  },
+  "canonical_modified": false,
+  "firebase_deployed": false,
+  "next_implementation": "single canonical application 3D runtime + camera reconciliation + validated portal graph"
+}

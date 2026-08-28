@@ -1,0 +1,26 @@
+{
+  "id": "cinematic-route-v1",
+  "sequence": [
+    "intent",
+    "exit-confirmation-if-required",
+    "freeze-nonessential-interaction",
+    "exit-camera",
+    "exit-door-open",
+    "route-preparation",
+    "destination-load",
+    "destination-door-open",
+    "entry-camera",
+    "hero-settle",
+    "restore-interaction"
+  ],
+  "fallback": "short-fade",
+  "reducedMotion": "short-fade",
+  "rules": [
+    "Do not block navigation on nonessential 3D asset failure.",
+    "Do not duplicate the existing cinematic router.",
+    "Destination authorization is decided by application logic before camera entry.",
+    "Door animation must not own routing or permissions.",
+    "Preload only the destination room/hero assets needed for the transition.",
+    "Abort safely if navigation is interrupted."
+  ]
+}

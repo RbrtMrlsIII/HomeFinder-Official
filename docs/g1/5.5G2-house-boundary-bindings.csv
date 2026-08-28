@@ -1,0 +1,4 @@
+binding_id,boundary_node,physical_node,basis,status
+B1-EXT-H1,HOUSE1::BOUNDARY,level1::EXTERIOR,canonical Front door exterior candidate,CANDIDATE_NOT_BOUND
+B2-EXT-H2,HOUSE2::BOUNDARY,EXTERIOR::add-level0,additional Front door exterior candidate,CANDIDATE_NOT_BOUND
+B3-EXT-H3,HOUSE3::BOUNDARY,EXTERIOR::add-level1,no proven exterior door; placeholder boundary node only,UNPROVEN

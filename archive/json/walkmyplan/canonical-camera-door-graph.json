@@ -1,0 +1,152 @@
+{
+  "version": "A4.4C3.10",
+  "status": "CANONICAL / ADJUSTABLE",
+  "rule": "door is choreography; router/backend are authority",
+  "edges": [
+    {
+      "door": "main-door",
+      "from": "BACKYARD",
+      "to": "MAIN HALL",
+      "route": "index.html",
+      "roles": "public",
+      "entry_camera": "ARR-01",
+      "destination_camera": "H-01",
+      "fallback": "application route + safe role destination",
+      "reduced_motion": "short-fade"
+    },
+    {
+      "door": "login-door",
+      "from": "MAIN HALL",
+      "to": "LOGIN ROOM",
+      "route": "login.html",
+      "roles": [
+        "public"
+      ],
+      "entry_camera": "H-01",
+      "destination_camera": "L-01",
+      "fallback": "application route + safe role destination",
+      "reduced_motion": "short-fade"
+    },
+    {
+      "door": "register-door",
+      "from": "LOGIN ROOM",
+      "to": "REGISTER ROOM",
+      "route": "register.html",
+      "roles": [
+        "public"
+      ],
+      "entry_camera": "L-01",
+      "destination_camera": "R-01",
+      "fallback": "application route + safe role destination",
+      "reduced_motion": "short-fade"
+    },
+    {
+      "door": "profile-door",
+      "from": "MAIN HALL",
+      "to": "PROFILE SUITE",
+      "route": "profile.html",
+      "roles": [
+        "seeker",
+        "owner",
+        "broker"
+      ],
+      "entry_camera": "H-01",
+      "destination_camera": "P-01",
+      "fallback": "application route + safe role destination",
+      "reduced_motion": "short-fade"
+    },
+    {
+      "door": "market-door",
+      "from": "MAIN HALL",
+      "to": "MARKET",
+      "route": "market.html",
+      "roles": [
+        "guest",
+        "seeker",
+        "owner"
+      ],
+      "entry_camera": "H-01",
+      "destination_camera": "M-01",
+      "fallback": "application route + safe role destination",
+      "reduced_motion": "short-fade"
+    },
+    {
+      "door": "broker-hq-door",
+      "from": "PROFILE SUITE",
+      "to": "BROKER HQ",
+      "route": "broker-hq.html",
+      "roles": [
+        "broker"
+      ],
+      "entry_camera": "P-12",
+      "destination_camera": "B-01",
+      "fallback": "application route + safe role destination",
+      "reduced_motion": "short-fade"
+    },
+    {
+      "door": "government-door",
+      "from": "MAIN HALL",
+      "to": "REFERENCE",
+      "route": "financing.html",
+      "roles": [
+        "public"
+      ],
+      "entry_camera": "H-05",
+      "destination_camera": "G-01",
+      "fallback": "application route + safe role destination",
+      "reduced_motion": "short-fade"
+    },
+    {
+      "door": "legal-door",
+      "from": "MAIN HALL",
+      "to": "REFERENCE",
+      "route": "privacy.html|terms.html",
+      "roles": [
+        "public"
+      ],
+      "entry_camera": "H-09",
+      "destination_camera": "LGL-01",
+      "fallback": "application route + safe role destination",
+      "reduced_motion": "short-fade"
+    },
+    {
+      "door": "admin-door",
+      "from": "MAIN HALL",
+      "to": "OPERATIONS",
+      "route": "admin.html",
+      "roles": [
+        "admin"
+      ],
+      "entry_camera": "H-01",
+      "destination_camera": "A-01",
+      "fallback": "application route + safe role destination",
+      "reduced_motion": "short-fade"
+    },
+    {
+      "door": "moderator-door",
+      "from": "MAIN HALL",
+      "to": "OPERATIONS",
+      "route": "moderator.html",
+      "roles": [
+        "moderator"
+      ],
+      "entry_camera": "H-01",
+      "destination_camera": "A-02",
+      "fallback": "application route + safe role destination",
+      "reduced_motion": "short-fade"
+    },
+    {
+      "door": "staff-door",
+      "from": "MAIN HALL",
+      "to": "OPERATIONS",
+      "route": "staff.html",
+      "roles": [
+        "staff"
+      ],
+      "entry_camera": "H-01",
+      "destination_camera": "A-03",
+      "fallback": "application route + safe role destination",
+      "reduced_motion": "short-fade"
+    }
+  ]
+}

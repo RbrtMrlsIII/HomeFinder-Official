@@ -1,0 +1,8 @@
+id,severity,area,finding,repair,status
+D-001,High,Security,users/{uid} public read exposes more fields than public profile requires,Create publicProfiles projection and migrate visitor/search reads,OPEN / REBUILD
+D-002,Medium,Security,config/{docId} public read is broad,Split public reference config from operational config,OPEN / REVIEW
+D-003,High,Responsive,12-route browser matrix remains NOT_RUN,Execute browser/device matrix,OPEN / QA
+D-004,Medium,Assets,14 hero records planned; no production media payloads,Supply source/license/checksum manifests or retain proxy strategy,OPEN / ASSET
+D-005,Medium,Cameras,Current camera derivatives are TUNED_SEED,Render/visually review after theme + responsive QA,OPEN / VISUAL
+D-006,Low,Documentation,Historical snapshot contains superseded binary UI theme material,Keep under 05_source_review only; active source has no binary theme branch,RESOLVED / ARCHIVED
+D-007,Low,Documentation,Legacy tests referenced docs/core and NEXT_PATCH paths,Tests now point to canonical docs/ paths,RESOLVED / REPAIRED

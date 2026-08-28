@@ -1,0 +1,175 @@
+[
+  {
+    "id": "main-door",
+    "from": "BACKYARD",
+    "to": "MAIN HALL",
+    "route": "index.html",
+    "requiresAuth": false,
+    "role": "public",
+    "entryCamera": "ARR-01",
+    "destinationCamera": "H-01",
+    "animation": "door-open-enter",
+    "exitAnimation": "door-open-exit",
+    "status": "PLANNED"
+  },
+  {
+    "id": "login-door",
+    "from": "MAIN HALL",
+    "to": "LOGIN ROOM",
+    "route": "login.html",
+    "requiresAuth": false,
+    "role": [
+      "public"
+    ],
+    "entryCamera": "H-01",
+    "destinationCamera": "L-01",
+    "animation": "door-open-enter",
+    "exitAnimation": "door-open-exit",
+    "status": "PLANNED"
+  },
+  {
+    "id": "register-door",
+    "from": "LOGIN ROOM",
+    "to": "REGISTER ROOM",
+    "route": "register.html",
+    "requiresAuth": false,
+    "role": [
+      "public"
+    ],
+    "entryCamera": "L-01",
+    "destinationCamera": "R-01",
+    "animation": "door-open-enter",
+    "exitAnimation": "door-open-exit",
+    "status": "PLANNED"
+  },
+  {
+    "id": "profile-door",
+    "from": "MAIN HALL",
+    "to": "PROFILE SUITE",
+    "route": "profile.html",
+    "requiresAuth": true,
+    "role": [
+      "seeker",
+      "owner",
+      "broker"
+    ],
+    "entryCamera": "H-01",
+    "destinationCamera": "P-01",
+    "animation": "door-open-enter",
+    "exitAnimation": "door-open-exit",
+    "status": "PLANNED",
+    "accessPolicy": "authenticated product roles only; Operations roles do not enter Profile"
+  },
+  {
+    "id": "market-door",
+    "from": "MAIN HALL",
+    "to": "MARKET",
+    "route": "market.html",
+    "requiresAuth": false,
+    "role": [
+      "guest",
+      "seeker",
+      "owner"
+    ],
+    "entryCamera": "H-01",
+    "destinationCamera": "M-01",
+    "animation": "door-open-enter",
+    "exitAnimation": "door-open-exit",
+    "status": "PLANNED",
+    "accessPolicy": "guest shell+guide+pin-intent only; seeker propertyListings; owner wantedListings; broker redirects to Broker HQ; Operations roles do not enter Market as a product surface"
+  },
+  {
+    "id": "broker-hq-door",
+    "from": "PROFILE SUITE",
+    "to": "BROKER HQ",
+    "route": "broker-hq.html",
+    "requiresAuth": true,
+    "role": [
+      "broker"
+    ],
+    "entryCamera": "P-12",
+    "destinationCamera": "B-01",
+    "animation": "door-open-enter",
+    "exitAnimation": "door-open-exit",
+    "status": "PLANNED",
+    "accessPolicy": "broker production access only; Admin does not enter this product surface through the route gate"
+  },
+  {
+    "id": "government-door",
+    "from": "MAIN HALL",
+    "to": "REFERENCE",
+    "route": "financing.html",
+    "requiresAuth": false,
+    "role": [
+      "public"
+    ],
+    "entryCamera": "H-05",
+    "destinationCamera": "G-01",
+    "animation": "door-open-enter",
+    "exitAnimation": "door-open-exit",
+    "status": "PLANNED"
+  },
+  {
+    "id": "legal-door",
+    "from": "MAIN HALL",
+    "to": "REFERENCE",
+    "route": "privacy.html|terms.html",
+    "requiresAuth": false,
+    "role": [
+      "public"
+    ],
+    "entryCamera": "H-09",
+    "destinationCamera": "LGL-01",
+    "animation": "door-open-enter",
+    "exitAnimation": "door-open-exit",
+    "status": "PLANNED"
+  },
+  {
+    "id": "admin-door",
+    "from": "MAIN HALL",
+    "to": "OPERATIONS",
+    "route": "admin.html",
+    "requiresAuth": true,
+    "role": [
+      "admin"
+    ],
+    "entryCamera": "H-01",
+    "destinationCamera": "A-01",
+    "animation": "door-open-enter",
+    "exitAnimation": "door-open-exit",
+    "status": "PLANNED",
+    "accessPolicy": "admin-only Admin Console entry"
+  },
+  {
+    "id": "moderator-door",
+    "from": "MAIN HALL",
+    "to": "OPERATIONS",
+    "route": "moderator.html",
+    "requiresAuth": true,
+    "role": [
+      "moderator"
+    ],
+    "entryCamera": "H-01",
+    "destinationCamera": "A-02",
+    "animation": "door-open-enter",
+    "exitAnimation": "door-open-exit",
+    "status": "PLANNED",
+    "accessPolicy": "moderator-only Moderator Console entry"
+  },
+  {
+    "id": "staff-door",
+    "from": "MAIN HALL",
+    "to": "OPERATIONS",
+    "route": "staff.html",
+    "requiresAuth": true,
+    "role": [
+      "staff"
+    ],
+    "entryCamera": "H-01",
+    "destinationCamera": "A-03",
+    "animation": "door-open-enter",
+    "exitAnimation": "door-open-exit",
+    "status": "PLANNED",
+    "accessPolicy": "staff-only Staff Console entry"
+  }
+]

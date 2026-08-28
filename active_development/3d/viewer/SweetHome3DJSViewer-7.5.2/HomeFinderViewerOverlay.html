@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HomeFinder — 3D Home Overlay</title>
+
+  <!-- Sweet Home 3D JS Viewer 7.5.2 runtime -->
+  <script src="lib/big.min.js"></script>
+  <script src="lib/gl-matrix-min.js"></script>
+  <script src="lib/jszip.min.js"></script>
+  <script src="lib/core.min.js"></script>
+  <script src="lib/geom.min.js"></script>
+  <script src="lib/stroke.min.js"></script>
+  <script src="lib/batik-svgpathparser.min.js"></script>
+  <script src="lib/jsXmlSaxParser.min.js"></script>
+  <script src="lib/triangulator.min.js"></script>
+  <script src="lib/viewmodel.min.js"></script>
+  <script src="lib/viewhome.min.js"></script>
+
+  <link rel="stylesheet" href="../../app/homefinder-viewer.css">
+  <script src="../../app/homefinder-viewer.js"></script>
+</head>
+<body>
+  <main class="homefinderShell">
+    <header class="homefinderHeader">
+      <h1>HomeFinder 3D Home</h1>
+      <p>Open the interactive Sweet Home 3D model in an overlay.</p>
+    </header>
+
+    <button class="homefinderOverlayLauncher" type="button" onclick="HomeFinderViewer.openOverlay()">
+      Explore the 3D home
+    </button>
+  </main>
+
+  <footer class="homefinderCredits" aria-label="Credits">
+    <strong>Credits</strong>
+    <span><a href="https://openai.com/" target="_blank" rel="noopener noreferrer">OpenAI</a> — AI-assisted project development and engineering.</span>
+    <span><a href="https://www.sweethome3d.com/" target="_blank" rel="noopener noreferrer">Sweet Home 3D</a> — architectural modeling and 3D viewer technology.</span>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Government housing guide · HomeFinder</title>
+  <link rel="stylesheet" href="css/variables.css?v=57">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/transition.css">
+  <link rel="stylesheet" href="css/navbar.css?v=57">
+  <link rel="stylesheet" href="css/gov-finance.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/viewport/mobile.css?v=19">
+  <link rel="icon" data-hf-favicon href="assets/images/logo-homefinder.png">
+
+  <link rel="stylesheet" href="css/cinematic-ui.css">
+</head>
+<body class="gov-finance-page" data-asset="surface_financing_guide">
+  <header class="gov-fin-top">
+    <a class="gov-fin-back" href="index.html"><i class="bx bx-arrow-back"></i> Home</a>
+    <div>
+      <p class="gov-fin-kicker">HomeFinder · Resources</p>
+      <h1>Government housing guide</h1>
+    </div>
+    <a class="gov-fin-link" href="market.html">Market</a>
+  </header>
+
+  <main class="gov-fin-main">
+    <section class="gov-fin-card">
+      <h2>What this page is</h2>
+      <p>HomeFinder helps you <strong>discover private listings</strong> and, separately, learn about <strong>public housing finance programs</strong> in the Philippines (Pag-IBIG, Expanded 4PH, and related agencies).</p>
+      <p>We do <strong>not</strong> approve loans, collect eligibility documents for government programs, or replace Pag-IBIG / DHSUD.</p>
+    </section>
+
+    <section class="gov-fin-card">
+      <h2>Typical path</h2>
+      <ol class="gov-fin-steps">
+        <li>Confirm active <strong>Pag-IBIG</strong> membership and contribution rules on official channels.</li>
+        <li>Read <strong>Expanded 4PH / DHSUD</strong> program pages if you are exploring socialized or subsidized options.</li>
+        <li>Use official portals or branches to <strong>check eligibility and apply</strong>.</li>
+        <li>Use HomeFinder <strong>Market</strong> for private rentals/sales and <strong>Contracts</strong> for deals between users.</li>
+      </ol>
+    </section>
+
+    <section class="gov-fin-card">
+      <h2>Official links</h2>
+      <ul class="gov-fin-links">
+        <li><a href="https://www.pagibigfund.gov.ph" target="_blank" rel="noopener noreferrer">Pag-IBIG Fund</a></li>
+        <li><a href="https://www.dhsud.gov.ph" target="_blank" rel="noopener noreferrer">DHSUD</a></li>
+        <li><a href="https://www.pagibigfund.gov.ph" target="_blank" rel="noopener noreferrer">Housing loan &amp; membership info (Pag-IBIG)</a></li>
+      </ul>
+      <p class="field-hint">URLs can change — if a link fails, search the agency name on the official .gov.ph domain.</p>
+    </section>
+
+    <div id="gov-disclaimer-host" class="gov-disclaimer-host" data-asset="gov-disclaimer-block"></div>
+
+    <section class="gov-fin-card gov-fin-muted">
+      <h2>Coming on HomeFinder</h2>
+      <p>Admin-curated government program cards on Home (under Featured) and a Profile <strong>Gov Housing</strong> tab — image + Details to official sites only. Still no eligibility file uploads on HomeFinder.</p>
+    </section>
+  </main>
+
+  <script type="module">
+    import { loadDisclaimers, paintDisclaimerSection } from "./js/gov-disclaimers.js";
+    const host = document.getElementById("gov-disclaimer-host");
+    loadDisclaimers().then((d) => {
+      paintDisclaimerSection(host, d, {
+        title: "Disclaimers",
+        sectors: ["global", "pagibig", "4ph", "nha", "other", "partner"]
+      });
+    });
+  </script>
+  <script src="js/brand-logo.js" defer></script>
+
+  <script>fetch('data/cinematic-scenes.json').then(r=>r.json()).then(v=>window.__HF_CINEMATIC_SCENES__=v).catch(()=>{});</script>
+  <script src="js/design-roots.js" defer></script>
+    <script src="js/animation-root.js" defer></script>
+    <script src="js/physical-ui-state.js" defer></script>
+  <!-- M1: production WebGL/Three triad not loaded; see js/reference-3d/ -->
+  <script src="js/cinematic-ui.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "version": "A4.4C3.12",
+  "status": "PLANNING / NO PRODUCTION ASSETS",
+  "principle": "Build environment shells and camera compositions before importing heavy production media.",
+  "asset_rule": "No .glb/.gltf/.mp4/.webm production dependency is required at this phase.",
+  "loading_order": ["global-house-shell", "current-room-shell", "current-hero", "next-likely-room", "secondary-objects-on-demand"],
+  "device_tiers": {
+    "tier0": "2D/fallback",
+    "tier1": "lightweight 3D/mobile",
+    "tier2": "standard desktop",
+    "tier3": "high-fidelity desktop"
+  },
+  "rooms": [
+    {"room":"BACKYARD","hero":"Arrival Cinema","camera":"ARR-01","focal":"front path + main door","shell":"estate exterior / arrival path","theme":"day/sunset/mist","motion":"slow atmosphere","tiers":"0-3"},
+    {"room":"MAIN HALL","hero":"Main Hero","camera":"H-01","focal":"main hall axis","shell":"grand central hall","theme":"all","motion":"subtle dust/light","tiers":"0-3","section_camera_chain":"H-01→H-02→H-04→H-03→H-05→H-06→H-07→H-08→H-09"},
+    {"room":"LOGIN ROOM","hero":"Identity Hero","camera":"L-01","focal":"login terminal","shell":"private study / identity desk","theme":"day/night","motion":"lamp/environment","tiers":"0-2"},
+    {"room":"REGISTER ROOM","hero":"Registration Hero","camera":"R-01","focal":"registration desk","shell":"writing desk / account room","theme":"day","motion":"paper/light","tiers":"0-2"},
+    {"room":"MARKET","hero":"Marketplace Hero","camera":"M-01","focal":"market focal wall","shell":"large property exhibition gallery","theme":"day/sunset","motion":"subtle moving light","tiers":"0-3","section_camera_chain":"M-01→M-02→M-04→M-06"},
+    {"room":"PROFILE SUITE","hero":"Profile Hero","camera":"P-01","focal":"personal desk","shell":"private personal study / workspace","theme":"adaptive","motion":"curtain/light/environment","tiers":"0-2","section_camera_chain":"P-01→P-02→P-03→P-04→P-05→P-06→P-07→P-08→P-09→P-10→P-11→P-12"},
+    {"room":"BROKER HQ","hero":"Broker Hero","camera":"B-01","focal":"broker desk","shell":"executive intelligence office","theme":"premium/day/night","motion":"city/window ambience","tiers":"0-3","section_camera_chain":"B-01→B-02→B-03→B-04→B-06"},
+    {"room":"OPERATIONS","hero":"Operations Hero","camera":"A-01/A-02/A-03","focal":"operations console","shell":"controlled command wing","theme":"cool controlled","motion":"status lights","tiers":"0-2","section_camera_chain":"A-01/A-02/A-03 per role surface"},
+    {"room":"REFERENCE","hero":"Reference Hero","camera":"G-01/LGL-01","focal":"reference desk / archive","shell":"civic library + legal archive","theme":"day/neutral","motion":"dust/light","tiers":"0-2"}
+  ],
+  "environment_shell_contract": {
+    "must_include": ["architecture silhouette", "focal object anchor", "camera anchor", "lighting placeholder", "fallback background", "UI overlay boundary", "loading boundary"],
+    "must_not_include": ["business logic", "authorization", "data ownership", "route ownership", "mandatory high-resolution assets"],
+    "camera_scroll_rule": "A section transition changes the camera composition within the same room; it does not replace the environment with another scene."
+  }
+}

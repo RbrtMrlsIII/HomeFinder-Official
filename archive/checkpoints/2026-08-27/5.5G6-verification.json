@@ -1,0 +1,7 @@
+{
+  "gate": "5.5G.6",
+  "status": "PASS",
+  "canonical_model_unchanged": true,
+  "runtime_routes_promoted": 0,
+  "evidence_report": "docs/g1/5.5G6-targeted-physical-evidence-enhancement.md"
+}

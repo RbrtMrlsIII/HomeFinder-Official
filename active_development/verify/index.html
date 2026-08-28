@@ -1,0 +1,170 @@
+  <!-- M1: production WebGL/Three triad not loaded; see js/reference-3d/ -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email confirmation · HomeFinder</title>
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/transition.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+      .verify-links {
+        margin-top: 18px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 16px;
+        justify-content: center;
+        font-size: 13px;
+      }
+      .verify-links a {
+        color: var(--color-brand, #7A5A3E);
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .verify-links a:hover { text-decoration: underline; }
+      #action-btn {
+        width: 100%;
+        max-width: 280px;
+        margin: 8px auto 0;
+      }
+    </style>
+  <link rel="stylesheet" href="../css/utilities.css">
+  <link rel="stylesheet" href="../css/cinematic-ui.css">
+</head>
+<body class="auth-page" data-asset="surface_verify_email">
+
+    <div class="auth-bg"></div>
+    <div class="auth-overlay"></div>
+
+    <div class="action-brand">
+        <img data-hf-logo data-hf-logo-base="../" src="../assets/images/logo-homefinder.png" alt="HomeFinder logo">
+        <span>HomeFinder</span>
+    </div>
+
+    <div class="auth-wrapper">
+        <div class="auth-card login-card" id="action-card" data-asset="surface_verify_email">
+
+            <div class="action-icon" id="action-icon">
+                <i class="bx bx-loader-alt bx-spin"></i>
+            </div>
+
+            <h1 id="action-title" data-asset="surface_verify_email">Welcome to HomeFinder</h1>
+            <p class="auth-sub" id="action-message">Finishing your email confirmation…</p>
+
+            <button type="button" class="auth-submit is-hidden" id="action-btn" data-asset="surface_verify_email">
+                <span class="btn-label">Continue to login</span>
+            </button>
+
+            <div class="verify-links is-hidden" id="action-links">
+                <a href="../login.html" data-no-transition="1">Login</a>
+                <a href="../index.html" data-no-transition="1">Back to home</a>
+                <a href="../register.html" data-no-transition="1">Create account</a>
+            </div>
+
+            <p class="auth-sub is-hidden u-mt-14" id="action-hint">
+                Opened this page by mistake? Use the links above. Verification links from email are single-use and expire.
+            </p>
+
+        </div>
+    </div>
+
+    <script type="module">
+        import { auth } from "../js/firebase.js";
+        import { applyActionCode }
+        from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+        const params = new URLSearchParams(window.location.search);
+        const mode = params.get("mode");
+        const oobCode = params.get("oobCode");
+
+        const iconEl = document.getElementById("action-icon");
+        const titleEl = document.getElementById("action-title");
+        const messageEl = document.getElementById("action-message");
+        const btnEl = document.getElementById("action-btn");
+        const linksEl = document.getElementById("action-links");
+        const hintEl = document.getElementById("action-hint");
+
+        function showResult(success, title, message, btnLabel, btnHref) {
+            iconEl.innerHTML = success
+                ? "<i class='bx bx-check-circle'></i>"
+                : "<i class='bx bx-envelope'></i>";
+            iconEl.classList.toggle("success", success);
+            iconEl.classList.toggle("error", !success && !!oobCode);
+            iconEl.classList.toggle("info", !success && !oobCode);
+            titleEl.textContent = title;
+            messageEl.textContent = message;
+            btnEl.classList.remove("is-hidden");
+            if (btnLabel) btnEl.querySelector(".btn-label").textContent = btnLabel;
+            if (linksEl) linksEl.classList.remove("is-hidden");
+            if (hintEl) hintEl.classList.remove("is-hidden");
+            const href = btnHref || (success ? "../login.html" : "../login.html");
+            btnEl.onclick = (e) => {
+                e.preventDefault();
+                window.location.href = href;
+            };
+        }
+
+        async function handleAction() {
+            const welcomeFlag = params.get("welcome") === "1" || params.get("status") === "verified";
+
+            // 1) Full custom handler: link has mode + oobCode
+            if (mode === "verifyEmail" && oobCode) {
+                try {
+                    await applyActionCode(auth, oobCode);
+                    showResult(
+                        true,
+                        "Welcome to HomeFinder",
+                        "Your email is verified. Log in to finish your profile and start exploring listings.",
+                        "Continue to login",
+                        "../login.html"
+                    );
+                } catch (error) {
+                    // Code already used (e.g. opened twice) — still welcome them
+                    const used = /invalid|expired|already/i.test(String(error && error.code || error && error.message || ""));
+                    showResult(
+                        used,
+                        used ? "Welcome to HomeFinder" : "Link expired or already used",
+                        used
+                            ? "Your email is already verified. Log in to continue."
+                            : "This link is no longer valid. Request a new one from login, or sign in if you already verified.",
+                        "Continue to login",
+                        "../login.html"
+                    );
+                }
+                return;
+            }
+
+            // 2) Came from Firebase default CONTINUE button (continueUrl)
+            //    Email was already verified on firebaseapp.com — show welcome.
+            if (welcomeFlag || mode === "verifyEmail") {
+                showResult(
+                    true,
+                    "Welcome to HomeFinder",
+                    "Your email is verified. Log in to finish your profile and start exploring listings.",
+                    "Continue to login",
+                    "../login.html"
+                );
+                return;
+            }
+
+            // 3) Bare /verify visit with no context
+            showResult(
+                false,
+                "Welcome to HomeFinder",
+                "If you just signed up, open the confirmation link in your email. Already verified? Log in below.",
+                "Go to login",
+                "../login.html"
+            );
+        }
+
+        handleAction();
+    </script>
+    <script type="module" src="../js/transition.js"></script>
+  <script src="../js/brand-logo.js" defer></script>
+  <script src="../js/cinematic-ui.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+# Dead files, duplicates, and structure cleanup
+
+**Date:** 2026-08-24
+
+## Folder renames
+
+- `01_master` → `master`
+- `02_reconciliation` → `reconciliation`
+- `05_verification` → `verification`
+- `06_active_development` → `active_development`
+- Nested `audit_phase*` → `audits/legacy-phase-*`
+- `04_recovery_PROVENANCE.md` → `recovery-provenance.md`
+
+## Test consolidation
+
+Root `patch-*.test.mjs` moved to `active_development/tests/` with descriptive names (e.g. `cinematic-3d-adapter.test.mjs`).
+
+## Inventory
+
+- `active_development/tests/from-verify/cinematic-3d-adapter.test.mjs` — Duplicate of tests/cinematic-3d-adapter.test.mjs after consolidation — *moved to docs/archive/dead-or-superseded/*
+- `active_development/css/home/style.css` — empty file 0 bytes — *candidate delete*
+- `reconciliation/master-model-census.csv (camera rows)` — Camera counts superseded by Home.xml census (1+14) — *KEEP as historical evidence; do not treat as authority*
+- `active_development/verify/*.test.mjs (former)` — Consolidated into tests/ and tests/from-verify/ — *moved*
+- `Numbered folders 01_master, 02_*, 05_*, 06_*` — Renamed to master, reconciliation, verification, active_development — *renamed*
+
+## 2026-08-24 archive pass
+See docs/SOT_CHECKUP.md and docs/archive/ARCHIVE_LOG.md.

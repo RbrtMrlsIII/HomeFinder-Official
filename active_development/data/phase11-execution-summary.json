@@ -1,0 +1,13 @@
+{
+  "routes": 12,
+  "browser_cases": 72,
+  "browser_status": "BLOCKED_BY_EXECUTION_ENVIRONMENT",
+  "legacy_active_theme_trace_files": [
+    "audits/legacy-phase-ten/37_PHASE10_PUBLIC_PROFILE_RESPONSIVE_AUDIT.md"
+  ],
+  "js_mjs_syntax": "PASS",
+  "projection_module_pure_logic": "PASS",
+  "public_profile_read_path": "PASS",
+  "conversation_peer_authorization_path": "PASS_SOURCE_CHECK",
+  "production_deploy": "NOT_EXECUTED_NO_FIREBASE_CLI_OR_CREDENTIALS"
+}

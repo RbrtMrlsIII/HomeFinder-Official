@@ -1,0 +1,14 @@
+{
+  "name": "homefinder-browser-verification",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.0"
+  },
+  "version": "1.0.0"
+}

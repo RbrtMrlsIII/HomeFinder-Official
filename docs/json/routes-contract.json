@@ -1,0 +1,26 @@
+{
+  "classes": [
+    "public",
+    "product",
+    "operations",
+    "verification",
+    "development",
+    "vendor"
+  ],
+  "filenameIsRouteAuthority": false,
+  "brokerPolicy": {
+    "topLevelRoute": "broker-hq.html",
+    "profileRoute": "broker-denied",
+    "marketRoute": "broker-denied",
+    "brokerProfileWorkspace": "broker-hq.html#profile",
+    "discovery": "Broker HQ owns broker discovery/market and service map"
+  },
+  "governmentHousing": {
+    "publicHomeReference": true,
+    "profileRoles": [
+      "seeker",
+      "owner",
+      "broker"
+    ]
+  }
+}

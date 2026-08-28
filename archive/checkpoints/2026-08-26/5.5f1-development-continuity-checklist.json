@@ -1,0 +1,114 @@
+{
+  "gate": "5.5F.1",
+  "status": "COMPLETE",
+  "items": [
+    {
+      "check": "Protected House 1 public/hero architecture with index.html, Main Hall, public sections, Contact, Footer/Credits, Privacy and Terms",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "House 2 reserved for Broker + Operations",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "House 3 reserved for Seekers + Owners",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "Application/backend remains authority for auth, authorization, security, user data and business rules",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "HomeFinder.sh3d remains canonical physical/presentation authoring authority and never a security boundary",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "WalkMyPlan retired; obsolete WalkMyPlan tests/contracts reconciled rather than restored",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "Historical-contract tests classified/reconciled and obsolete material preserved as evidence where appropriate",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "Objecting-path repairs and canonical-role migration recorded",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "5.5C UI/DOM/CSS/JS spatial census established/reconciled",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "5.5C-V.4/V.5/V.6 foundational reconciliation gates recorded",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "5.5D three-house allocation and UI\u21943D presentation contract recorded",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "Physical travel law recorded: no teleportation, no wall penetration, no invented routes",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "Physical traversal requires authored doors/openings, validated routes and authored travel durations",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "House transfers must physically exit, traverse, cross threshold and settle at destination hero/presentation area",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "Canonical SH3D protected; no blind overwrite",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "Additional SH3D files remain staged/non-authoritative until census/remap/reconciliation",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "5.5E canonical topology inspected; canonical model does not yet prove three distinct houses",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "H-04 was identified as requiring a physical anchor but H cameras remain movable working anchors",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "Canonical model census corrected from stale camera count to actual Home.xml evidence",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "Expanded spatial development ladder recorded in masterplan and AI_ASSISTANT_READ_ME",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "Authoring vs runtime boundary recorded; SH3D-derived runtime contract remains lightweight",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "Existing cinematic-scenes/house-camera-rig/house-world-scroll systems retained as fallback/presentation infrastructure",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "5.5F.1 actual HTML/page inventory compared against three-house logical allocation",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "5.5F.1 dense UI pages flagged for physical density review",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "5.5F.1 financing.html allocation ambiguity explicitly recorded for later reconciliation",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "No merge performed during 5.5F.1",
+      "status": "APPLIED_OR_RECORDED"
+    },
+    {
+      "check": "No final camera positions asserted during 5.5F.1",
+      "status": "APPLIED_OR_RECORDED"
+    }
+  ]
+}

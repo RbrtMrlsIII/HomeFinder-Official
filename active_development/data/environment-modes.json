@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "default": "day",
+  "modes": {
+    "day": {"label":"Day","icon":"bx-sun","ui":"day","sky":"day","ambient":1,"interior":0.28,"rain":0},
+    "sunset": {"label":"Sunset","icon":"bx-sunset","ui":"sunset","sky":"sunset","ambient":0.72,"interior":0.48,"rain":0},
+    "night": {"label":"Night","icon":"bx-moon","ui":"night","sky":"night","ambient":0.28,"interior":0.92,"rain":0},
+    "rain": {"label":"Rain","icon":"bx-cloud-rain","ui":"rain","sky":"rain","ambient":0.46,"interior":0.76,"rain":1},
+    "mist": {"label":"Mist","icon":"bx-cloud","ui":"mist","sky":"mist","ambient":0.62,"interior":0.42,"rain":0},
+    "storm": {"label":"Storm","icon":"bx-cloud-lightning","ui":"storm","sky":"storm","ambient":0.32,"interior":0.82,"rain":0.65}
+  }
+}

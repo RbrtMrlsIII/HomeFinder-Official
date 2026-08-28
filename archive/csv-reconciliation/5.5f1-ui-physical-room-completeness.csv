@@ -1,0 +1,14 @@
+page,house,logical_room,candidate_physical_zone,logical_povs,census_sections,physical_ui_objects,dom_ids,headings,tab_controls,completeness_status,notes
+broker-hq,UNASSIGNED,UNASSIGNED,UNASSIGNED,,,,58,6,Desk; Manage pins,GAP,House 2 Broker HQ logical destination exists; physical candidate not yet proven in canonical model.
+login,UNASSIGNED,LOGIN ROOM,LOGIN ROOM,L-01,3.0,3.0,10,3,,GAP,House 1 legal/identity destinations; retain House 1 allocation.
+admin,UNASSIGNED,UNASSIGNED,UNASSIGNED,,,,62,12,KYC / Identity 0; KYC Registry; Final order approvals 0; Listing help ₱ 0; Verified; Users; Boosts / Caps; Gov disclaimers; Gov housing posts,GAP,House 2 Operations allocation exists logically; physical room in canonical SH3D not yet proven.
+index,House 1,Main Hall / Contact,Main Hall / Contact,H-09,,,42,37,Pages; Properties; Users; Market,IDENTIFIED_BUT_REQUIRES_ROOM_DENSITY_REVIEW,House 1 protected; Main Hall hosts public arrival/presentation; H-01..H-09 are working anchors only.
+profile,UNASSIGNED,PROFILE SUITE,PROFILE SUITE,P-01;P-05;P-12;P-02;P-03;P-04;P-06;P-07;P-08;P-09;P-10;P-11,4.0,13.0,263,20,Perks & Portfolio; Messages; Contracts; Need help; List Property; Wanted form; Saved properties; Saved wanted; Reviews; Gov Housing; Account; Residential 0; Workspace 0; Industrial 0,GAP,House 3 Market/Profile Suite logical destinations exist; physical candidates not yet proven in canonical model.
+market,UNASSIGNED,UNASSIGNED,UNASSIGNED,,,,83,3,,GAP,House 3 Market/Profile Suite logical destinations exist; physical candidates not yet proven in canonical model.
+privacy,UNASSIGNED,UNASSIGNED,UNASSIGNED,,,,0,7,,GAP,House 1 legal/identity destinations; retain House 1 allocation.
+terms,UNASSIGNED,UNASSIGNED,UNASSIGNED,,,,0,7,,GAP,House 1 legal/identity destinations; retain House 1 allocation.
+moderator,UNASSIGNED,UNASSIGNED,UNASSIGNED,,,,30,6,Listings 0; Payment refs 0; Wanted; Contracts; Verified users,GAP,House 2 Operations allocation exists logically; physical room in canonical SH3D not yet proven.
+staff,UNASSIGNED,UNASSIGNED,UNASSIGNED,,,,40,7,Support 0; Reports 0; Order refs 0; Listing help ₱ 0; Users lookup; Alerts,GAP,House 2 Operations allocation exists logically; physical room in canonical SH3D not yet proven.
+register,UNASSIGNED,REGISTER ROOM,REGISTER ROOM,R-01,3.0,2.0,16,3,,GAP,House 1 legal/identity destinations; retain House 1 allocation.
+financing,UNASSIGNED,UNASSIGNED,UNASSIGNED,,,,1,5,,GAP,Currently allocated to House 2 Operations/Finance but matrix classifies it as REFERENCE; requires explicit role/house reconciliation before physical merge.
+index,House 1,Main Hall / Contact,Main Hall / Contact,H-09,,,7,1,,IDENTIFIED_BUT_REQUIRES_ROOM_DENSITY_REVIEW,House 1 protected; Main Hall hosts public arrival/presentation; H-01..H-09 are working anchors only.

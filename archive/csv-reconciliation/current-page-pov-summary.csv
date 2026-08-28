@@ -1,0 +1,13 @@
+page_id,route,logical_room,section_count,distinct_logical_povs,logical_povs,master_camera_bases,wiring_rule
+main-hall,index.html,MAIN HALL,17,9,H-01;H-02;H-04;H-03;H-05;H-06;H-07;H-08;H-09,Corridor;Living room;Exterior;Kitchen;Bedroom #1,section follows logical POV; camera interpolates within same room; native scroll/tab remains HTML authority
+login,login.html,LOGIN ROOM,6,5,L-01;L-02;L-03;L-04;L-05,Bedroom #1,section follows logical POV; camera interpolates within same room; native scroll/tab remains HTML authority
+register,register.html,REGISTER ROOM,8,7,R-01;R-02;R-03;R-04;R-05;R-06;R-07,Bedroom #2,section follows logical POV; camera interpolates within same room; native scroll/tab remains HTML authority
+market,market.html,MARKET,5,4,M-01;M-02;M-04;M-06,Living room;Corridor,section follows logical POV; camera interpolates within same room; native scroll/tab remains HTML authority
+profile,profile.html,PROFILE SUITE,13,12,P-01;P-02;P-03;P-04;P-05;P-06;P-07;P-08;P-09;P-10;P-11;P-12,Bedroom #2,section follows logical POV; camera interpolates within same room; native scroll/tab remains HTML authority
+broker-hq,broker-hq.html,BROKER HQ,7,5,B-01;B-02;B-03;B-04;B-06,Garage,section follows logical POV; camera interpolates within same room; native scroll/tab remains HTML authority
+admin,admin.html,OPERATIONS,10,1,A-01,Garage,section follows logical POV; camera interpolates within same room; native scroll/tab remains HTML authority
+moderator,moderator.html,OPERATIONS,6,1,A-02,Garage,section follows logical POV; camera interpolates within same room; native scroll/tab remains HTML authority
+staff,staff.html,OPERATIONS,7,1,A-03,Garage,section follows logical POV; camera interpolates within same room; native scroll/tab remains HTML authority
+financing-guide,financing.html,REFERENCE,5,1,G-01,Kitchen,section follows logical POV; camera interpolates within same room; native scroll/tab remains HTML authority
+legal-privacy,privacy.html,REFERENCE,3,1,LGL-01,Kitchen,section follows logical POV; camera interpolates within same room; native scroll/tab remains HTML authority
+legal-terms,terms.html,REFERENCE,3,1,LGL-02,Kitchen,section follows logical POV; camera interpolates within same room; native scroll/tab remains HTML authority

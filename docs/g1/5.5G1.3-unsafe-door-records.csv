@@ -1,0 +1,9 @@
+door_id,edge_count,classification,reason
+add-doorOrWindow-16d223b7-d35a-4665-837a-ed5b4bd8097c,2,UNSAFE_FOR_ROUTE_GRAPH,G1.2 graph contains multiple adjacency edges for one physical door ID; endpoint resolution is not unique
+add-doorOrWindow-236b4260-cf0f-4f5c-a237-0ae033c4a8c0,2,UNSAFE_FOR_ROUTE_GRAPH,G1.2 graph contains multiple adjacency edges for one physical door ID; endpoint resolution is not unique
+add-doorOrWindow-590b0303-c14e-4aa1-ba49-c0b3c60981a0,0,UNSAFE_FOR_ROUTE_GRAPH,previous G1 problematic-door resolution excluded this door from topology
+add-doorOrWindow-6ecf091c-549e-4dfa-9716-1a8a5b6b15c3,1,UNSAFE_FOR_ROUTE_GRAPH,previous G1 problematic-door resolution excluded this door from topology
+add-doorOrWindow-9df41ae2-c632-4510-a40d-f15c0a40fb83,2,UNSAFE_FOR_ROUTE_GRAPH,G1.2 graph contains multiple adjacency edges for one physical door ID; endpoint resolution is not unique
+add-doorOrWindow-b783d1fa-2085-4d12-84fd-1ae71ba4dcf2,2,UNSAFE_FOR_ROUTE_GRAPH,G1.2 graph contains multiple adjacency edges for one physical door ID; endpoint resolution is not unique
+add-doorOrWindow-c7805654-0e93-4b58-9a34-5ee1ad3f5183,2,UNSAFE_FOR_ROUTE_GRAPH,previous G1 problematic-door resolution excluded this door from topology; G1.2 graph contains multiple adjacency edges for one physical door ID; endpoint resolution is not unique
+add-doorOrWindow-ff66e0d4-90dc-4ab6-b304-7a99091ce63a,2,UNSAFE_FOR_ROUTE_GRAPH,G1.2 graph contains multiple adjacency edges for one physical door ID; endpoint resolution is not unique

@@ -1,0 +1,38 @@
+room,zone,route,code_owner,role,camera_anchor,door,status,notes
+Main Hall,Hero / Home environment,index.html,js/home/house-camera-rig.js; js/home/house-world-scroll.js; js/home/physical-ui-objects.js; js/home/environment-modes.js,public,H-01,main-door,CONFIRMED/PLANNED,"Home sections remain one room; camera zones, not separate scenes"
+Main Hall,Search Console,index.html,js/search.js,public,H-02,market-door,CONFIRMED/PLANNED,Search is application UI; spatial object is presentation
+Main Hall,Property Discovery,index.html,js/home/featured-live.js,public,H-03,market-door,RESPONSE-MAPPED,"Feature display is Home read-only discovery; live data loads when available; sample cards remain the guest/empty/error fallback | Selection hands off to Market, where destination access remains authoritative."
+Main Hall,Map Preview,index.html,js/home/map-teaser.js,public,H-04,market-door,CONFIRMED/PLANNED,Home map preview is distinct from Market map
+Main Hall,Government Housing,index.html,js/home-gov-housing.js,public,H-05,gov-door,CONFIRMED/PLANNED,Reference feature; full workspace remains financing.html
+Main Hall,About / Mission / Guide / Contact / Footer,index.html,inline Home sections + shared cinematic UI,public,H-06..H-09,exit/contact doors,CONFIRMED/PLANNED,One Main Hall camera choreography
+Login Room,Identity Terminal,login.html,js/auth.js,public,L-01,profile-door,CONFIRMED/PLANNED,Firebase Auth remains functional authority
+Register Room,Registration Desk,register.html,js/auth.js,public,R-01,login-door,CONFIRMED/PLANNED,Owner and Seeker account types confirmed
+Profile Suite,Perks / Portfolio,profile.html,js/profile/perks.js; js/profile/portfolio-assets.js,authenticated,P-01,—,CONFIRMED/PLANNED,Station inside one Profile suite
+Profile Suite,Messages,profile.html,js/profile/messages.js; js/profile/notifications.js,authenticated,P-02,—,CONFIRMED/PLANNED,Station inside one Profile suite
+Profile Suite,Contracts,profile.html,js/profile/contracts-tab.js; js/profile/ongoing-contracts.js,authenticated,P-03,—,CONFIRMED/PLANNED,Ongoing-contracts module appears legacy/unmounted; retain pending evidence
+Profile Suite,Need Help,profile.html,js/profile/need-help.js; js/profile/support-boot.js; js/profile/support-ticket.js,authenticated,P-04,—,CONFIRMED/PLANNED,Support flow remains application-owned
+Profile Suite,List Property,profile.html,js/profile/listing-form.js; js/profile/listing-map.js; js/listing-create-gate.js,"owner,broker",P-05,market-door,CONFIRMED/PLANNED,Listing workflow
+Profile Suite,Wanted,profile.html,js/profile/wanted-form.js; js/profile/wanted-map.js; js/profile/wanted-posts-summary.js,"seeker,broker",P-06,market-door,CONFIRMED/PLANNED,Wanted workflow
+Profile Suite,Saved Properties,profile.html,js/profile/saved-properties.js,"seeker,broker",P-07,market-door,CONFIRMED/PLANNED,Saved station
+Profile Suite,Saved Wanted,profile.html,js/profile/saved-properties.js,"owner,broker",P-08,market-door,CONFIRMED/PLANNED,Role-aware station
+Profile Suite,Reviews,profile.html,js/profile/reviews-view.js,authenticated,P-09,—,CONFIRMED/PLANNED,Review UI
+Profile Suite,Government Housing,profile.html,js/profile/gov-housing.js,"seeker,owner",P-10,gov-door,CONFIRMED/PLANNED,Reference/data station
+Profile Suite,Account / Identity,profile.html,js/profile/core.js; js/profile/profile-data.js; js/profile/privacy-settings.js; js/profile/avatar-picker.js,authenticated,P-11,—,CONFIRMED/PLANNED,Profile remains under development
+Profile Suite,Broker Gate,profile.html,js/profile/broker-assists.js; js/profile/role.js,broker,P-12,broker-hq-door,CONFIRMED/PLANNED,Role gate stays application logic
+Market,Entrance / Directory,market.html,js/market.js; js/market-chrome.js,"owner,seeker,broker",M-01,profile-door,CONFIRMED/PLANNED,One Market environment
+Market,Map,market.html,js/market.js; js/market-map.js; js/pins-model.js; js/geo.js,"owner,seeker,broker",M-02,—,CONFIRMED/PLANNED,Map UI owns data; 3D object is presentation
+Market,Filters,market.html,js/market.js; js/listing-catalog.js,"owner,seeker,broker",M-03,—,CONFIRMED/PLANNED,Filter controls
+Market,Discovery,market.html,js/market.js; js/market-discovery-contract.js; js/market-data-contract.js,"owner,seeker,broker",M-04,—,CONFIRMED/PLANNED,Role-aware discovery
+Market,Property Inspection,market.html,js/market.js; js/listing-catalog.js,"owner,seeker,broker",M-05,—,CONFIRMED/PLANNED,No standalone property route without evidence
+Market,Contact,market.html,js/market.js,authenticated,M-06,profile-door,CONFIRMED/PLANNED,Contact stays within Market workflow
+Broker HQ,Desk,broker-hq.html,js/broker-hq.js; js/broker-data-contract.js,broker,B-01,profile-door,CONFIRMED/PLANNED,Dedicated room
+Broker HQ,Requests,broker-hq.html,js/broker-hq.js; Firebase functions,broker,B-02,—,CONFIRMED/PLANNED,Request queue
+Broker HQ,Service Area,broker-hq.html,js/broker-hq.js,broker,B-03,—,CONFIRMED/PLANNED,Service workflow
+Broker HQ,Intelligence Map,broker-hq.html,js/broker-hq.js; js/geo.js,broker,B-04,—,CONFIRMED/PLANNED,Broker-specific map
+Broker HQ,Discovery Wall,broker-hq.html,js/broker-hq.js; js/broker-data-contract.js,broker,B-05,market-door,CONFIRMED/PLANNED,Discovery cards
+Broker HQ,Service Pins,broker-hq.html,js/broker-hq.js; js/pins-model.js,broker,B-06,—,CONFIRMED/PLANNED,Pin management
+Operations,Admin,admin.html,js/admin/core.js + admin modules,admin,A-01,—,CONFIRMED/PLANNED,KYC/approval/users/orders/boosts
+Operations,Moderator,moderator.html,js/admin/core.js + moderator modules,moderator,A-02,—,CONFIRMED/PLANNED,Properties/orders/wanted/contracts/verified
+Operations,Staff,staff.html,js/admin/core.js + staff modules,staff,A-03,—,CONFIRMED/PLANNED,Support/reports/orders/users/alerts
+Reference,Government Housing Guide,financing.html,static HTML + cinematic shell,public,G-01,gov-door,CONFIRMED/PLANNED,"Reference page, not financing workspace"
+Reference,Legal Library,privacy.html; terms.html,static HTML + cinematic shell,public,L-GL,legal-door,CONFIRMED/PLANNED,Quiet reference room

@@ -1,0 +1,42 @@
+{
+  "gate": "5.5G.2",
+  "title": "Stable Candidate Adjacency Graph",
+  "status": "GRAPH BUILT / ROUTES NOT VALIDATED",
+  "source_checkpoint": "HomeFinder-G1.1.zip",
+  "physical_edges": 29,
+  "physical_nodes": 29,
+  "explicit_house_boundary_nodes": 3,
+  "connected_components": 7,
+  "house_boundary_bindings": [
+    {
+      "binding_id": "B1-EXT-H1",
+      "boundary_node": "HOUSE1::BOUNDARY",
+      "physical_node": "level1::EXTERIOR",
+      "basis": "canonical Front door exterior candidate",
+      "status": "CANDIDATE_NOT_BOUND"
+    },
+    {
+      "binding_id": "B2-EXT-H2",
+      "boundary_node": "HOUSE2::BOUNDARY",
+      "physical_node": "EXTERIOR::add-level0",
+      "basis": "additional Front door exterior candidate",
+      "status": "CANDIDATE_NOT_BOUND"
+    },
+    {
+      "binding_id": "B3-EXT-H3",
+      "boundary_node": "HOUSE3::BOUNDARY",
+      "physical_node": "EXTERIOR::add-level1",
+      "basis": "no proven exterior door; placeholder boundary node only",
+      "status": "UNPROVEN"
+    }
+  ],
+  "critical_findings": [
+    "The candidate graph can now represent room-to-room adjacency without treating adjacency as a validated travel route.",
+    "Exterior is explicit as a node rather than being silently represented by an empty room side.",
+    "House 1 and House 2 have exterior-door candidates; House 3 has no proven exterior door in the current census.",
+    "No physical edge is bound to a logical application door contract yet.",
+    "No route is validated, no runtime navigation is changed, and no camera is finalized.",
+    "The graph contains disconnected/ambiguous physical regions; those are evidence, not defects to be repaired by invented edges."
+  ],
+  "next_gate": "Compare only required logical transitions against graph reachability and identify exact missing physical bindings."
+}

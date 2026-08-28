@@ -1,0 +1,25 @@
+{
+  "gate": "5.5G.6H",
+  "status": "PASS",
+  "pre_delete_checks": {
+    "canonical_exists": true,
+    "canonical_resources_resolve": true,
+    "canonical_ids_unique": true,
+    "canonical_expected_counts": true,
+    "canonical_h_series_cameras": true,
+    "no_runtime_dependency_on_noncanonical_sh3d": true,
+    "protected_logic_intact": true
+  },
+  "deleted_sh3d_files": [
+    "3d/imports/Additional.sh3d",
+    "3d/staging/HomeFinder-merge-candidate-Additional-reconciled.sh3d",
+    "docs/archive/5.5G6G-pre-promotion/HomeFinder_master_pre_5_5G6G.sh3d"
+  ],
+  "remaining_sh3d_files": [
+    "master/HomeFinder.sh3d"
+  ],
+  "canonical_sha256": "2463bbf41a92012bbd81b66ea957c993075f5a2bf6db8a43e676b0c832b0e58c",
+  "runtime_routes_promoted": 0,
+  "firebase_deployed": false,
+  "next_gate": "5.5G.6I"
+}

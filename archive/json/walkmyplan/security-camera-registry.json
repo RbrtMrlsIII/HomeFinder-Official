@@ -1,0 +1,96 @@
+{
+  "version": "A4.4C3.10",
+  "purpose": "Architectural security/wayfinding coverage. Cameras observe thresholds and protected corridors; they never grant permission or replace application authorization.",
+  "coverage": [
+    {
+      "id": "SEC-01",
+      "zone": "MAIN DOOR",
+      "covers": [
+        "backyard",
+        "main-hall-threshold"
+      ],
+      "roles": "guest,owner,seeker,broker,ops",
+      "action": "observe-entry"
+    },
+    {
+      "id": "SEC-02",
+      "zone": "LOGIN THRESHOLD",
+      "covers": [
+        "main-hall",
+        "login-room"
+      ],
+      "roles": "guest",
+      "action": "observe-auth-path"
+    },
+    {
+      "id": "SEC-03",
+      "zone": "PROFILE THRESHOLD",
+      "covers": [
+        "main-hall",
+        "profile-suite"
+      ],
+      "roles": "owner,seeker,broker",
+      "action": "observe-authenticated-entry"
+    },
+    {
+      "id": "SEC-04",
+      "zone": "MARKET THRESHOLD",
+      "covers": [
+        "main-hall",
+        "market"
+      ],
+      "roles": "guest,owner,seeker",
+      "action": "observe-discovery-path"
+    },
+    {
+      "id": "SEC-05",
+      "zone": "BROKER GATE",
+      "covers": [
+        "profile-suite",
+        "broker-hq"
+      ],
+      "roles": "broker",
+      "action": "observe-role-gated-entry"
+    },
+    {
+      "id": "SEC-06",
+      "zone": "OPERATIONS CORRIDOR",
+      "covers": [
+        "main-hall",
+        "operations-wing"
+      ],
+      "roles": "staff,moderator,admin",
+      "action": "observe-ops-threshold"
+    },
+    {
+      "id": "SEC-07",
+      "zone": "ADMIN OPERATIONS HUB",
+      "covers": [
+        "operations[A-01]",
+        "operations[A-02]",
+        "operations[A-03]"
+      ],
+      "roles": "admin",
+      "action": "observe-supervisory-ops-path"
+    },
+    {
+      "id": "SEC-08",
+      "zone": "BROKER / OPERATIONS CORRIDOR",
+      "covers": [
+        "profile-suite",
+        "broker-hq",
+        "operations-wing"
+      ],
+      "roles": "admin",
+      "action": "observe-supervisory-cross-wing-path"
+    }
+  ],
+  "securityLaw": [
+    "Camera visibility is presentation/observability only.",
+    "Role gates remain application/backend authority.",
+    "A guest must never gain operations access through a spatial shortcut.",
+    "A broker must enter Broker HQ through the broker gate, not Market discovery.",
+    "Cameras may be increased without increasing role permissions.",
+    "Admin camera scope is confined to A-01 Admin; cameras never grant route access or create a Broker capability."
+  ]
+}

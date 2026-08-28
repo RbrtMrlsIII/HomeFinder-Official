@@ -1,0 +1,23 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const root = process.cwd();
+const tiers = fs.readFileSync(path.join(root, 'js/tiers.js'), 'utf8');
+const admin = fs.readFileSync(path.join(root, 'js/admin/users.js'), 'utf8');
+const cloudTiers = fs.readFileSync(path.join(root, 'firebase/functions/tiers.js'), 'utf8');
+const cloudIndex = fs.readFileSync(path.join(root, 'firebase/functions/index.js'), 'utf8');
+const rules = fs.readFileSync(path.join(root, 'firebase/firestore.rules'), 'utf8');
+assert.doesNotMatch(tiers, /legacy seeker used `level`/);
+assert.doesNotMatch(tiers, /const legacy\s*=\s*\{\s*I:/);
+assert.doesNotMatch(tiers, /roleBoost\.level/);
+assert.doesNotMatch(tiers, /legacy\s*=\s*resolveBoostPackageId/);
+assert.doesNotMatch(admin, /\{ I:1, II:2, III:3, IV:4, V:5 \}/);
+assert.doesNotMatch(admin, /entry\.level/);
+assert.doesNotMatch(cloudTiers, /roleBoost\.level/);
+assert.doesNotMatch(cloudTiers, /normalizeBoostPackageValue/);
+assert.doesNotMatch(cloudIndex, /const legacy = tiers\.resolveBoostPackageId/);
+assert.doesNotMatch(rules, /legacy level/);
+assert.doesNotMatch(rules, /package == 'I'/);
+assert.doesNotMatch(rules, /hasAny\(\['level'\]\)/);
+console.log('Patch 50 boost parser retirement PASS.');

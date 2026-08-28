@@ -1,0 +1,1927 @@
+TAP version 13
+# Subtest: A.2.3 manifest defines the Home World 01 asset contract
+ok 1 - A.2.3 manifest defines the Home World 01 asset contract
+  ---
+  duration_ms: 5.134974
+  type: 'test'
+  ...
+# Subtest: A.2.3 has explicit high and medium performance budgets
+ok 2 - A.2.3 has explicit high and medium performance budgets
+  ---
+  duration_ms: 1.474956
+  type: 'test'
+  ...
+# Subtest: A.2.3 adapter exposes renderer registration and mounting
+ok 3 - A.2.3 adapter exposes renderer registration and mounting
+  ---
+  duration_ms: 0.287337
+  type: 'test'
+  ...
+# Subtest: A.2.3 keeps model sources empty until real assets exist
+ok 4 - A.2.3 keeps model sources empty until real assets exist
+  ---
+  duration_ms: 0.438587
+  type: 'test'
+  ...
+# Subtest: A.2.3 cinematic runtime calls the adapter without owning the renderer
+ok 5 - A.2.3 cinematic runtime calls the adapter without owning the renderer
+  ---
+  duration_ms: 0.189133
+  type: 'test'
+  ...
+# Subtest: Patch 57 A.2.2: Home has one shared cinematic camera loop
+not ok 6 - Patch 57 A.2.2: Home has one shared cinematic camera loop
+  ---
+  duration_ms: 0.70711
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/cinematic-camera-hero.test.mjs:8:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/tests//js/cinematic-ui.js'"
+  code: 'ENOENT'
+  stack: |-
+    Object.readFileSync (node:fs:442:20)
+    read (file:///mnt/data/hf_classify/active_development/tests/cinematic-camera-hero.test.mjs:6:27)
+    TestContext.<anonymous> (file:///mnt/data/hf_classify/active_development/tests/cinematic-camera-hero.test.mjs:9:14)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: Patch 57 A.2.2: Home hero declares a cinematic focal contract
+not ok 7 - Patch 57 A.2.2: Home hero declares a cinematic focal contract
+  ---
+  duration_ms: 0.131763
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/cinematic-camera-hero.test.mjs:16:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/tests//index.html'"
+  code: 'ENOENT'
+  stack: |-
+    Object.readFileSync (node:fs:442:20)
+    read (file:///mnt/data/hf_classify/active_development/tests/cinematic-camera-hero.test.mjs:6:27)
+    TestContext.<anonymous> (file:///mnt/data/hf_classify/active_development/tests/cinematic-camera-hero.test.mjs:17:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: Patch 57 A.2.2: Home uses the clean cinematic visual without baked UI
+not ok 8 - Patch 57 A.2.2: Home uses the clean cinematic visual without baked UI
+  ---
+  duration_ms: 0.106666
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/cinematic-camera-hero.test.mjs:23:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/tests//data/cinematic-worlds.json'"
+  code: 'ENOENT'
+  stack: |-
+    Object.readFileSync (node:fs:442:20)
+    read (file:///mnt/data/hf_classify/active_development/tests/cinematic-camera-hero.test.mjs:6:27)
+    TestContext.<anonymous> (file:///mnt/data/hf_classify/active_development/tests/cinematic-camera-hero.test.mjs:24:17)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: Patch 57 A.2.2: reduced motion and mobile composition are explicit
+not ok 9 - Patch 57 A.2.2: reduced motion and mobile composition are explicit
+  ---
+  duration_ms: 1.205107
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/cinematic-camera-hero.test.mjs:30:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/tests//css/cinematic-ui.css'"
+  code: 'ENOENT'
+  stack: |-
+    Object.readFileSync (node:fs:442:20)
+    read (file:///mnt/data/hf_classify/active_development/tests/cinematic-camera-hero.test.mjs:6:27)
+    TestContext.<anonymous> (file:///mnt/data/hf_classify/active_development/tests/cinematic-camera-hero.test.mjs:31:15)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# DD04 final authority freeze current-authority reconciliation: PASS
+# Subtest: tests/dd04-final-authority-freeze.test.mjs
+ok 3 - tests/dd04-final-authority-freeze.test.mjs
+  ---
+  duration_ms: 55.024764
+  type: 'test'
+  ...
+# PASS dd05-h04-map-preview
+# Subtest: DD05 H-04 map preview transition contract
+ok 11 - DD05 H-04 map preview transition contract
+  ---
+  duration_ms: 0.57815
+  type: 'test'
+  ...
+# PASS: DD05 H-05 Government Housing response mapping against current authority
+# Subtest: tests/dd05-h05-government-housing.test.mjs
+ok 5 - tests/dd05-h05-government-housing.test.mjs
+  ---
+  duration_ms: 57.578538
+  type: 'test'
+  ...
+# DD05 H-06 Mission/About mapping/current authority: PASS
+# Subtest: tests/dd05-h06-mission.test.mjs
+ok 6 - tests/dd05-h06-mission.test.mjs
+  ---
+  duration_ms: 65.365681
+  type: 'test'
+  ...
+# PASS: DD05 H-09 Start / Contact / Credits / Exit mapping against current authority
+# Subtest: tests/dd05-h09-contact-exit.test.mjs
+ok 7 - tests/dd05-h09-contact-exit.test.mjs
+  ---
+  duration_ms: 67.364274
+  type: 'test'
+  ...
+# PASS: DD05 Main Hall cinematic map/current physical authority
+# Subtest: tests/dd05-main-hall-cinematic-map.test.mjs
+ok 8 - tests/dd05-main-hall-cinematic-map.test.mjs
+  ---
+  duration_ms: 59.744118
+  type: 'test'
+  ...
+# PASS: DD05 Main Hall sequence/current authority reconciliation
+# Subtest: tests/dd05-main-hall-sequence-reconciliation.test.mjs
+ok 9 - tests/dd05-main-hall-sequence-reconciliation.test.mjs
+  ---
+  duration_ms: 68.976776
+  type: 'test'
+  ...
+# PASS dd05-ui-response-mapping/current-authority (37 surfaces, 9 POVs)
+# Subtest: tests/dd05-ui-response-mapping.test.mjs
+ok 10 - tests/dd05-ui-response-mapping.test.mjs
+  ---
+  duration_ms: 48.862961
+  type: 'test'
+  ...
+# Deep Dive 04 Auth/Roles/Permissions current-authority reconciliation: PASS
+# Subtest: tests/deep-dive-04-auth-roles-permissions.test.mjs
+ok 11 - tests/deep-dive-04-auth-roles-permissions.test.mjs
+  ---
+  duration_ms: 37.754806
+  type: 'test'
+  ...
+# Foundation Repair 01 authority contracts: PASS
+# Subtest: tests/foundation-repair-01-authority-contracts.test.mjs
+ok 12 - tests/foundation-repair-01-authority-contracts.test.mjs
+  ---
+  duration_ms: 94.151274
+  type: 'test'
+  ...
+# Foundation Repair 02 points authority: PASS
+# Subtest: tests/foundation-repair-02-points-authority.test.mjs
+ok 13 - tests/foundation-repair-02-points-authority.test.mjs
+  ---
+  duration_ms: 40.087787
+  type: 'test'
+  ...
+# Foundation Repair 03 anti-abuse authority checks: PASS
+# Subtest: tests/foundation-repair-03-points-abuse.test.mjs
+ok 14 - tests/foundation-repair-03-points-abuse.test.mjs
+  ---
+  duration_ms: 53.786407
+  type: 'test'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/core/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/foundation-repair-04-tier-entitlement.test.mjs:11:16
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/core/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/foundation-repair-04-tier-entitlement.test.mjs
+not ok 15 - tests/foundation-repair-04-tier-entitlement.test.mjs
+  ---
+  duration_ms: 68.866783
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/foundation-repair-04-tier-entitlement.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/core/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/foundation-repair-05-subscription-entitlement.test.mjs:13:16
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/core/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/foundation-repair-05-subscription-entitlement.test.mjs
+not ok 16 - tests/foundation-repair-05-subscription-entitlement.test.mjs
+  ---
+  duration_ms: 37.863039
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/foundation-repair-05-subscription-entitlement.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/core/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/foundation-repair-07-admin-capacity-override.test.mjs:8:16
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/core/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/foundation-repair-07-admin-capacity-override.test.mjs
+not ok 17 - tests/foundation-repair-07-admin-capacity-override.test.mjs
+  ---
+  duration_ms: 39.581881
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/foundation-repair-07-admin-capacity-override.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Foundation Repair 08 authority test: PASS
+# Subtest: tests/foundation-repair-08.test.mjs
+ok 18 - tests/foundation-repair-08.test.mjs
+  ---
+  duration_ms: 48.836508
+  type: 'test'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development//docs/core/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_classify/active_development/[39mtests/foundation-repair-09-pin-authority.test.mjs:4:22[90m)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/foundation-repair-09-pin-authority.test.mjs:8:13
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development//docs/core/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/foundation-repair-09-pin-authority.test.mjs
+not ok 19 - tests/foundation-repair-09-pin-authority.test.mjs
+  ---
+  duration_ms: 44.730702
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/foundation-repair-09-pin-authority.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/core/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_classify/active_development/[39mtests/foundation-repair-10-radius-authority.test.mjs:5:22[90m)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/foundation-repair-10-radius-authority.test.mjs:6:13
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/core/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/foundation-repair-10-radius-authority.test.mjs
+not ok 20 - tests/foundation-repair-10-radius-authority.test.mjs
+  ---
+  duration_ms: 35.354347
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/foundation-repair-10-radius-authority.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/core/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_classify/active_development/[39mtests/foundation-repair-11-match-notification-dedupe.test.mjs:5:22[90m)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/foundation-repair-11-match-notification-dedupe.test.mjs:8:13
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/core/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/foundation-repair-11-match-notification-dedupe.test.mjs
+not ok 21 - tests/foundation-repair-11-match-notification-dedupe.test.mjs
+  ---
+  duration_ms: 37.786748
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/foundation-repair-11-match-notification-dedupe.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/core/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_classify/active_development/[39mtests/foundation-repair-12-stale-match.test.mjs:5:22[90m)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/foundation-repair-12-stale-match.test.mjs:8:13
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/core/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/foundation-repair-12-stale-match.test.mjs
+not ok 22 - tests/foundation-repair-12-stale-match.test.mjs
+  ---
+  duration_ms: 35.67628
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/foundation-repair-12-stale-match.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: A.4.2 defines an architectural house camera rig
+not ok 30 - A.4.2 defines an architectural house camera rig
+  ---
+  duration_ms: 1.969444
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/house-camera-rig.test.mjs:8:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/tests//data/house-camera-rig.json'"
+  code: 'ENOENT'
+  stack: |-
+    Object.readFileSync (node:fs:442:20)
+    read (file:///mnt/data/hf_classify/active_development/tests/house-camera-rig.test.mjs:6:27)
+    TestContext.<anonymous> (file:///mnt/data/hf_classify/active_development/tests/house-camera-rig.test.mjs:9:26)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: A.4.2 maps Home sections to architectural anchors
+not ok 31 - A.4.2 maps Home sections to architectural anchors
+  ---
+  duration_ms: 0.217684
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/house-camera-rig.test.mjs:19:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/tests//index.html'"
+  code: 'ENOENT'
+  stack: |-
+    Object.readFileSync (node:fs:442:20)
+    read (file:///mnt/data/hf_classify/active_development/tests/house-camera-rig.test.mjs:6:27)
+    TestContext.<anonymous> (file:///mnt/data/hf_classify/active_development/tests/house-camera-rig.test.mjs:20:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: A.4.2 scroll choreography publishes camera state for the renderer
+not ok 32 - A.4.2 scroll choreography publishes camera state for the renderer
+  ---
+  duration_ms: 0.111811
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/house-camera-rig.test.mjs:28:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/tests//js/home/house-world-scroll.js'"
+  code: 'ENOENT'
+  stack: |-
+    Object.readFileSync (node:fs:442:20)
+    read (file:///mnt/data/hf_classify/active_development/tests/house-camera-rig.test.mjs:6:27)
+    TestContext.<anonymous> (file:///mnt/data/hf_classify/active_development/tests/house-camera-rig.test.mjs:29:18)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: A.4.2 keeps reduced motion and mobile camera scaling explicit
+not ok 33 - A.4.2 keeps reduced motion and mobile camera scaling explicit
+  ---
+  duration_ms: 2.01024
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/house-camera-rig.test.mjs:40:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/tests//js/home/house-world-scroll.js'"
+  code: 'ENOENT'
+  stack: |-
+    Object.readFileSync (node:fs:442:20)
+    read (file:///mnt/data/hf_classify/active_development/tests/house-camera-rig.test.mjs:6:27)
+    TestContext.<anonymous> (file:///mnt/data/hf_classify/active_development/tests/house-camera-rig.test.mjs:41:18)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/tests/js/home/physical-ui-objects.js'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_classify/active_development/[39mtests/listings-book-interaction.test.mjs:6:25[90m)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/listings-book-interaction.test.mjs:8:12
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/tests/js/home/physical-ui-objects.js'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/listings-book-interaction.test.mjs
+not ok 24 - tests/listings-book-interaction.test.mjs
+  ---
+  duration_ms: 72.510671
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/listings-book-interaction.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: M1: product HTML does not script-load WebGL/Three triad
+ok 35 - M1: product HTML does not script-load WebGL/Three triad
+  ---
+  duration_ms: 2.87282
+  type: 'test'
+  ...
+# Subtest: M1: triad modules live only under js/reference-3d/
+ok 36 - M1: triad modules live only under js/reference-3d/
+  ---
+  duration_ms: 0.253856
+  type: 'test'
+  ...
+# Subtest: M1: cinematic-ui keeps optional mount (no hard dependency)
+ok 37 - M1: cinematic-ui keeps optional mount (no hard dependency)
+  ---
+  duration_ms: 2.734808
+  type: 'test'
+  ...
+# Patch 03 discovery contract tests passed.
+# Subtest: tests/market-discovery-contract.test.mjs
+ok 26 - tests/market-discovery-contract.test.mjs
+  ---
+  duration_ms: 38.288771
+  type: 'test'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development//docs/core/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_classify/active_development/[39mtests/market-patch-11a-audit.test.mjs:5:24[90m)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/market-patch-11a-audit.test.mjs:12:13
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development//docs/core/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/market-patch-11a-audit.test.mjs
+not ok 27 - tests/market-patch-11a-audit.test.mjs
+  ---
+  duration_ms: 32.945739
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/market-patch-11a-audit.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/data/market-profile-physical-ui-root-matrix.csv'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/market-profile-physical-ui-propagation.test.mjs:28:19
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/data/market-profile-physical-ui-root-matrix.csv'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/market-profile-physical-ui-propagation.test.mjs
+not ok 28 - tests/market-profile-physical-ui-propagation.test.mjs
+  ---
+  duration_ms: 63.405506
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/market-profile-physical-ui-propagation.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development//docs/core/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_classify/active_development/[39mtests/patch-11c-r7-pin-authority.test.mjs:4:22[90m)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/patch-11c-r7-pin-authority.test.mjs:6:97
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development//docs/core/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-11c-r7-pin-authority.test.mjs
+not ok 29 - tests/patch-11c-r7-pin-authority.test.mjs
+  ---
+  duration_ms: 41.189428
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/patch-11c-r7-pin-authority.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/integrations/cloudflare/PRODUCTION-PAYPAL-CLOUDFLARE-CONTRACT.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/patch-12-integration-hardening.test.mjs:9:21
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/integrations/cloudflare/PRODUCTION-PAYPAL-CLOUDFLARE-CONTRACT.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-12-integration-hardening.test.mjs
+not ok 30 - tests/patch-12-integration-hardening.test.mjs
+  ---
+  duration_ms: 69.195555
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/patch-12-integration-hardening.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/core/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/patch-14-listing-activity.test.mjs:9:16
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/core/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-14-listing-activity.test.mjs
+not ok 31 - tests/patch-14-listing-activity.test.mjs
+  ---
+  duration_ms: 47.900231
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/patch-14-listing-activity.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/patches/PATCH-16-LISTING-ACTIVITY-CONTRACTS.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_classify/active_development/[39mtests/patch-16-listing-activity-contracts.test.mjs:6:22[90m)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/patch-16-listing-activity-contracts.test.mjs:8:15
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/patches/PATCH-16-LISTING-ACTIVITY-CONTRACTS.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-16-listing-activity-contracts.test.mjs
+not ok 32 - tests/patch-16-listing-activity-contracts.test.mjs
+  ---
+  duration_ms: 52.701315
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/patch-16-listing-activity-contracts.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/patches/PATCH-17-AUTHORITATIVE-CONTRACT-ACTIVATION.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_classify/active_development/[39mtests/patch-17-contract-activation.test.mjs:6:22[90m)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/patch-17-contract-activation.test.mjs:12:15
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/patches/PATCH-17-AUTHORITATIVE-CONTRACT-ACTIVATION.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-17-contract-activation.test.mjs
+not ok 33 - tests/patch-17-contract-activation.test.mjs
+  ---
+  duration_ms: 41.913098
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/patch-17-contract-activation.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/patches/PATCH-18-LISTING-INQUIRY-CONTRACT.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_classify/active_development/[39mtests/patch-18-listing-inquiry.test.mjs:6:22[90m)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/patch-18-listing-inquiry.test.mjs:15:15
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/patches/PATCH-18-LISTING-INQUIRY-CONTRACT.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-18-listing-inquiry.test.mjs
+not ok 34 - tests/patch-18-listing-inquiry.test.mjs
+  ---
+  duration_ms: 52.750624
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/patch-18-listing-inquiry.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/core/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/patch-19-discovery-impression.test.mjs:9:16
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/core/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-19-discovery-impression.test.mjs
+not ok 35 - tests/patch-19-discovery-impression.test.mjs
+  ---
+  duration_ms: 33.316206
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/patch-19-discovery-impression.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/patches/PATCH-20-MARKET-BROKER-HQ-STATISTICS-READ-MAP.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/patch-20-statistics-read-map.test.mjs:6:17
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/patches/PATCH-20-MARKET-BROKER-HQ-STATISTICS-READ-MAP.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-20-statistics-read-map.test.mjs
+not ok 36 - tests/patch-20-statistics-read-map.test.mjs
+  ---
+  duration_ms: 54.532768
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/patch-20-statistics-read-map.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:internal/modules/run_main:123
+#     triggerUncaughtException(
+#     ^
+# AssertionError [ERR_ASSERTION]: The input did not match the regular expression /data\\.accountType === "broker" && !isOpsUid\\(user\\.uid\\)/. Input:
+# '\\n' +
+#   'function setProfileNameLetters(el, text) {\\n' +
+#   '  if (!el) return;\\n' +
+#   '  const raw = String(text || "").trim() || "HomeFinder User";\\n' +
+#   '  el.textContent = "";\\n' +
+#   '  el.setAttribute("aria-label", raw);\\n' +
+#   '  const frag = document.createDocumentFragment();\\n' +
+#   '  [...raw].forEach((ch, i) => {\\n' +
+#   '    const s = document.createElement("span");\\n' +
+#   '    s.className = "hf-letter";\\n' +
+#   '    s.style.setProperty("--i", String(i));\\n' +
+#   '    s.textContent = ch === " " ? "\\\\u00a0" : ch;\\n' +
+#   '    frag.appendChild(s);\\n' +
+#   '  });\\n' +
+#   '  el.appendChild(frag);\\n' +
+#   '}\\n' +
+#   '\\n' +
+#   '/* HF-BUILD-2026-08-11-V13 | file: profile-data.js | DO NOT USE OLD CACHE PATH */\\n' +
+#   '/* ==================================== */\\n' +
+#   '/*  PROFILE DATA                        */\\n' +
+#   '/* ==================================== */\\n' +
+#   "/* Loads the user's profile doc into the header + edit fields,  */\\n" +
+#   '/* and saves changes back to Firestore.                          */\\n' +
+#   '\\n' +
+#   'import { user, db } from "./core.js";\\n' +
+#   'import { isVisiting as urlVisit, visitUid as urlVisitUid } from "./visit-mode.js";\\n' +
+#   'import { applyRoleVisibility } from "./tabs.js";\\n' +
+#   'import { setRole } from "./role.js";\\n' +
+#   'import { normalizeCanonicalRole, canonicalRoleFromData } from "../canonical-role.js";\\n' +
+#   'import { doc, getDoc, setDoc }\\n' +
+#   'from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";\\n' +
+#   'import { hasVerifiedId, hasBrokerLicense } from "../tiers.js";\\n' +
+#   'import { refreshPerks } from "./perks.js";\\n' +
+#   'import { isOpsUid } from "../admin-uid.js";\\n' +
+#   '\\n' +
+#   '\\n' +
+#   '(function earlyName(){\\n' +
+#   '    try {\\n' +
+#   '        const el = document.getElementById("profile-name");\\n' +
+#   '        if (el && /^Loading/i.test(el.textContent || "")) {\\n' +
+#   '            const n = (user && user.displayName || "").trim();\\n' +
+#   '            const e = (user && user.email || "").split("@")[0] || "";\\n' +
+#   '            if (n || e) setProfileNameLetters(el, n || e);\\n' +
+#   '        }\\n' +
+#   '        const emailEl = document.getElementById("profile-email");\\n' +
+#   '        if (emailEl && !emailEl.textContent && user && user.email) emailEl.textContent = user.email;\\n' +
+#   '    } catch (_) {}\\n' +
+#   '})();\\n' +
+#   '\\n' +
+#   'const accountTypeLabels = {\\n' +
+#   '    owner: "Property Owner",\\n' +
+#   '    seeker: "Home Seeker",\\n' +
+#   '    broker: "Property Broker"\\n' +
+#   '};\\n' +
+#   '\\n' +
+#   'function showLoadError(message){\\n' +
+#   '    const nameEl = document.getElementById("profile-name");\\n' +
+#   '    if(nameEl) setProfileNameLetters(nameEl, "HomeFinder User");\\n' +
+#   '\\n' +
+#   '    const container = document.getElementById("toast-container");\\n' +
+#   '    if(!container) return;\\n' +
+#   '    const toast = document.createElement("div");\\n' +
+#   '    toast.className = "toast error";\\n' +
+#   "    toast.innerHTML = `<i class='bx bx-error-circle'></i><div><strong>Profile</strong><p>${message}</p></div>`;\\n" +
+#   '    container.appendChild(toast);\\n' +
+#   '    setTimeout(()=>{ toast.classList.add("leaving"); setTimeout(()=> toast.remove(), 300); }, 4500);\\n' +
+#   '}\\n' +
+#   '\\n' +
+#   '\\n' +
+#   '/* -------- ROLE PICKER (social / incomplete profiles) -------- */\\n' +
+#   '\\n' +
+#   'function promptForAccountType(){\\n' +
+#   '    if(document.getElementById("role-picker-overlay")) return;\\n' +
+#   '\\n' +
+#   '    const overlay = document.createElement("div");\\n' +
+#   '    overlay.id = "role-picker-overlay";\\n' +
+#   '    overlay.className = "role-picker-overlay";\\n' +
+#   '    overlay.innerHTML = `\\n' +
+#   '        <div class="role-picker-card">\\n' +
+#   '            <h3>Choose your account type</h3>\\n' +
+#   '            <p>\\n' +
+#   '                We need this to show the right dashboard. Broker access is granted later after ID verification and license approval.\\n' +
+#   '            </p>\\n' +
+#   '            <div class="role-picker-actions">\\n' +
+#   '                <button type="button" data-role="seeker" class="role-pick-btn">\\n' +
+#   '                    🔍 Home Seeker — find a place to rent\\n' +
+#   '                </button>\\n' +
+#   '                <button type="button" data-role="owner" class="role-pick-btn">\\n' +
+#   '                    🏠 Property Owner — list and manage units\\n' +
+#   '                </button>\\n' +
+#   '            </div>\\n' +
+#   '        </div>\\n' +
+#   '    `;\\n' +
+#   '    document.body.appendChild(overlay);\\n' +
+#   '\\n' +
+#   '    overlay.querySelectorAll(".role-pick-btn").forEach(btn => {\\n' +
+#   '        btn.addEventListener("click", async () => {\\n' +
+#   '            const accountType = btn.dataset.role;\\n' +
+#   '                if (!["owner", "seeker"].includes(accountType)) return;\\n' +
+#   '            overlay.querySelectorAll(".role-pick-btn").forEach(b => b.disabled = true);\\n' +
+#   '            try {\\n' +
+#   '                await setDoc(doc(db, "users", user.uid), { accountType, canonicalRole: normalizeCanonicalRole(accountType) }, { merge: true });\\n' +
+#   '                const _role = setRole(accountType);\\n' +
+#   '                applyRoleVisibility(_role);\\n' +
+#   '                const typeEl = document.getElementById("profile-account-type");\\n' +
+#   '                if(typeEl){ typeEl.textContent = ""; typeEl.classList.add("is-hidden"); }\\n' +
+#   '                overlay.remove();\\n' +
+#   '                // Reload perks / role-gated panels with the real role\\n' +
+#   '                window.location.hash = "perks";\\n' +
+#   '                window.location.reload();\\n' +
+#   '            } catch(error){\\n' +
+#   '                console.error("Failed to save account type:", error);\\n' +
+#   `                alert("Couldn't save your account type. Please try again.");\\n` +
+#   '                overlay.querySelectorAll(".role-pick-btn").forEach(b => b.disabled = false);\\n' +
+#   '            }\\n' +
+#   '        });\\n' +
+#   '    });\\n' +
+#   '}\\n' +
+#   '\\n' +
+#   '/* -------- LOAD -------- */\\n' +
+#   '\\n' +
+#   'async function loadProfile(){\\n' +
+#   '    // Visitor viewing someone else — visitor-profile.js owns the header\\n' +
+#   '    const visitUid = urlVisitUid || new URLSearchParams(location.search).get("uid");\\n' +
+#   '    if (visitUid && user?.uid && visitUid !== user.uid) {\\n' +
+#   '        document.body.classList.add("visitor-mode");\\n' +
+#   '        return;\\n' +
+#   '    }\\n' +
+#   '    if (visitUid && !user?.uid) {\\n' +
+#   '        // Should not happen (requireAuth), but never load a random profile\\n' +
+#   '        return;\\n' +
+#   '    }\\n' +
+#   '\\n' +
+#   '    let snap;\\n' +
+#   '    try {\\n' +
+#   '        const docRef = doc(db, "users", user.uid);\\n' +
+#   '        snap = await Promise.race([\\n' +
+#   '            getDoc(docRef),\\n' +
+#   '            new Promise(function(_, rej){ setTimeout(function(){ rej(new Error("profile-read-timeout")); }, 6000); })\\n' +
+#   '        ]);\\n' +
+#   '    } catch(error){\\n' +
+#   '        console.error("Failed to load profile document:", error);\\n' +
+#   '        try { applyNameFailsafe(); } catch(_){}\\n' +
+#   '        // Self-heal: ensure a users/{uid} doc exists, then one short retry\\n' +
+#   '        try {\\n' +
+#   '            await setDoc(doc(db, "users", user.uid), {\\n' +
+#   '                firstName: (user.displayName || "").split(" ")[0] || "",\\n' +
+#   '                surname: (user.displayName || "").split(" ").slice(1).join(" ") || "",\\n' +
+#   '                email: user.email || "",\\n' +
+#   '                accountType: "seeker",\\n' +
+#   '                canonicalRole: "seeker",\\n' +
+#   '                createdAt: new Date().toISOString()\\n' +
+#   '            }, { merge: true });\\n' +
+#   '            snap = await Promise.race([\\n' +
+#   '                getDoc(doc(db, "users", user.uid)),\\n' +
+#   '                new Promise(function(_, rej){ setTimeout(function(){ rej(new Error("profile-retry-timeout")); }, 4000); })\\n' +
+#   '            ]);\\n' +
+#   '            if (snap && snap.exists()) {\\n' +
+#   '                // fall through to normal fill by re-entering via data path below\\n' +
+#   '                const data = snap.data();\\n' +
+#   '                applyRoleVisibility(setRole(canonicalRoleFromData(data)));\\n' +
+#   '                const nameEl = document.getElementById("profile-name");\\n' +
+#   '                if (nameEl) setProfileNameLetters(nameEl, `${data.firstName || ""} ${data.surname || ""}`.trim() || user.displayName || user.email || "HomeFinder User");\\n' +
+#   '                const emailEl = document.getElementById("profile-email");\\n' +
+#   '                if (emailEl) emailEl.textContent = data.email || user.email || "";\\n' +
+#   '                try { refreshSetupBanner(data); } catch (_) {}\\n' +
+#   '                try { await refreshPerks(); } catch(_){}\\n' +
+#   '                return;\\n' +
+#   '            }\\n' +
+#   '        } catch (e2) {\\n' +
+#   '            console.error("profile self-heal failed:", e2);\\n' +
+#   '        }\\n' +
+#   '        showLoadError("We couldn\\'t reach your profile data. Check your connection and refresh. Confirm the named Firestore database `homefinder` is available and deployed correctly.");\\n' +
+#   '        applyRoleVisibility(setRole(undefined));\\n' +
+#   '        try { await refreshPerks(); } catch(_){}\\n' +
+#   '        return;\\n' +
+#   '    }\\n' +
+#   '\\n' +
+#   '    if(!snap.exists()){\\n' +
+#   '        // Firebase Auth account exists but its matching Firestore\\n' +
+#   '        // "users/{uid}" doc was never written (e.g. the profile-save\\n' +
+#   '        // step failed during registration). Self-heal by creating a\\n' +
+#   '        // minimal doc so the page has something to show.\\n' +
+#   '        const fallbackProfile = {\\n' +
+#   '            firstName: "",\\n' +
+#   '            surname: "",\\n' +
+#   '            email: user.email || "",\\n' +
+#   '            accountType: "seeker",\\n' +
+#   '            canonicalRole: "seeker",\\n' +
+#   '            createdAt: new Date().toISOString()\\n' +
+#   '        };\\n' +
+#   '\\n' +
+#   '        try {\\n' +
+#   '            await setDoc(doc(db, "users", user.uid), fallbackProfile, { merge: true });\\n' +
+#   '            snap = await getDoc(doc(db, "users", user.uid));\\n' +
+#   '        } catch(error){\\n' +
+#   '            console.error("Failed to create fallback profile document:", error);\\n' +
+#   `            showLoadError("Your profile hasn't been set up yet. Please fill in your details below.");\\n` +
+#   '            const nameEl = document.getElementById("profile-name");\\n' +
+#   '            if(nameEl) setProfileNameLetters(nameEl, "HomeFinder User");\\n' +
+#   '            // Same reasoning as the read-failure branch above -- resolve\\n' +
+#   "            // getRole() so dependent modules don't hang.\\n" +
+#   '            applyRoleVisibility(setRole(undefined));\\n' +
+#   '            return;\\n' +
+#   '        }\\n' +
+#   '    }\\n' +
+#   '\\n' +
+#   '    const data = snap.data();\\n' +
+#   '\\n' +
+#   '    // Patch 21: standalone brokers no longer use profile.html.\\n' +
+#   '    // Ops identities may retain broker accountType and are explicitly allowed.\\n' +
+#   '    if (canonicalRoleFromData(data) === "broker" && !isOpsUid(user.uid)) {\\n' +
+#   '        window.location.replace("broker-hq.html");\\n' +
+#   '        return;\\n' +
+#   '    }\\n' +
+#   '\\n' +
+#   '    const initialsEl = document.getElementById("avatar-initials");\\n' +
+#   '    if (initialsEl) {\\n' +
+#   '        const a = String(data.firstName || "").trim();\\n' +
+#   '        const b = String(data.surname || "").trim();\\n' +
+#   '        let initials = ((a[0] || "") + (b[0] || "")).toUpperCase();\\n' +
+#   '        if (!initials) {\\n' +
+#   '            const local = String(data.email || (user && user.email) || "").split("@")[0];\\n' +
+#   '            initials = local ? local.slice(0, 2).toUpperCase() : "HF";\\n' +
+#   '        }\\n' +
+#   '        initialsEl.textContent = initials.slice(0, 2);\\n' +
+#   '    }\\n' +
+#   '\\n' +
+#   '    const nameEl = document.getElementById("profile-name");\\n' +
+#   '    if (nameEl) {\\n' +
+#   '        const full = `${data.firstNa'... 15285 more characters
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/patch-21-role-need-help.test.mjs:17:8
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   generatedMessage: [33mtrue[39m,
+#   code: [32m'ERR_ASSERTION'[39m,
+#   actual: [32m'\\n'[39m +
+#     [32m'function setProfileNameLetters(el, text) {\\n'[39m +
+#     [32m'  if (!el) return;\\n'[39m +
+#     [32m'  const raw = String(text || "").trim() || "HomeFinder User";\\n'[39m +
+#     [32m'  el.textContent = "";\\n'[39m +
+#     [32m'  el.setAttribute("aria-label", raw);\\n'[39m +
+#     [32m'  const frag = document.createDocumentFragment();\\n'[39m +
+#     [32m'  [...raw].forEach((ch, i) => {\\n'[39m +
+#     [32m'    const s = document.createElement("span");\\n'[39m +
+#     [32m'    s.className = "hf-letter";\\n'[39m +
+#     [32m'    s.style.setProperty("--i", String(i));\\n'[39m +
+#     [32m'    s.textContent = ch === " " ? "\\\\u00a0" : ch;\\n'[39m +
+#     [32m'    frag.appendChild(s);\\n'[39m +
+#     [32m'  });\\n'[39m +
+#     [32m'  el.appendChild(frag);\\n'[39m +
+#     [32m'}\\n'[39m +
+#     [32m'\\n'[39m +
+#     [32m'/* HF-BUILD-2026-08-11-V13 | file: profile-data.js | DO NOT USE OLD CACHE PATH */\\n'[39m +
+#     [32m'/* ==================================== */\\n'[39m +
+#     [32m'/*  PROFILE DATA                        */\\n'[39m +
+#     [32m'/* ==================================== */\\n'[39m +
+#     [32m"/* Loads the user's profile doc into the header + edit fields,  */\\n"[39m +
+#     [32m'/* and saves changes back to Firestore.                          */\\n'[39m +
+#     [32m'\\n'[39m +
+#     [32m'import { user, db } from "./core.js";\\n'[39m +
+#     [32m'import { isVisiting as urlVisit, visitUid as urlVisitUid } from "./visit-mode.js";\\n'[39m +
+#     [32m'import { applyRoleVisibility } from "./tabs.js";\\n'[39m +
+#     [32m'import { setRole } from "./role.js";\\n'[39m +
+#     [32m'import { normalizeCanonicalRole, canonicalRoleFromData } from "../canonical-role.js";\\n'[39m +
+#     [32m'import { doc, getDoc, setDoc }\\n'[39m +
+#     [32m'from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";\\n'[39m +
+#     [32m'import { hasVerifiedId, hasBrokerLicense } from "../tiers.js";\\n'[39m +
+#     [32m'import { refreshPerks } from "./perks.js";\\n'[39m +
+#     [32m'import { isOpsUid } from "../admin-uid.js";\\n'[39m +
+#     [32m'\\n'[39m +
+#     [32m'\\n'[39m +
+#     [32m'(function earlyName(){\\n'[39m +
+#     [32m'    try {\\n'[39m +
+#     [32m'        const el = document.getElementById("profile-name");\\n'[39m +
+#     [32m'        if (el && /^Loading/i.test(el.textContent || "")) {\\n'[39m +
+#     [32m'            const n = (user && user.displayName || "").trim();\\n'[39m +
+#     [32m'            const e = (user && user.email || "").split("@")[0] || "";\\n'[39m +
+#     [32m'            if (n || e) setProfileNameLetters(el, n || e);\\n'[39m +
+#     [32m'        }\\n'[39m +
+#     [32m'        const emailEl = document.getElementById("profile-email");\\n'[39m +
+#     [32m'        if (emailEl && !emailEl.textContent && user && user.email) emailEl.textContent = user.email;\\n'[39m +
+#     [32m'    } catch (_) {}\\n'[39m +
+#     [32m'})();\\n'[39m +
+#     [32m'\\n'[39m +
+#     [32m'const accountTypeLabels = {\\n'[39m +
+#     [32m'    owner: "Property Owner",\\n'[39m +
+#     [32m'    seeker: "Home Seeker",\\n'[39m +
+#     [32m'    broker: "Property Broker"\\n'[39m +
+#     [32m'};\\n'[39m +
+#     [32m'\\n'[39m +
+#     [32m'function showLoadError(message){\\n'[39m +
+#     [32m'    const nameEl = document.getElementById("profile-name");\\n'[39m +
+#     [32m'    if(nameEl) setProfileNameLetters(nameEl, "HomeFinder User");\\n'[39m +
+#     [32m'\\n'[39m +
+#     [32m'    const container = document.getElementById("toast-container");\\n'[39m +
+#     [32m'    if(!container) return;\\n'[39m +
+#     [32m'    const toast = document.createElement("div");\\n'[39m +
+#     [32m'    toast.className = "toast error";\\n'[39m +
+#     [32m"    toast.innerHTML = `<i class='bx bx-error-circle'></i><div><strong>Profile</strong><p>${message}</p></div>`;\\n"[39m +
+#     [32m'    container.appendChild(toast);\\n'[39m +
+#     [32m'    setTimeout(()=>{ toast.classList.add("leaving"); setTimeout(()=> toast.remove(), 300); }, 4500);\\n'[39m +
+#     [32m'}\\n'[39m +
+#     [32m'\\n'[39m +
+#     [32m'\\n'[39m +
+#     [32m'/* -------- ROLE PICKER (social / incomplete profiles) -------- */\\n'[39m +
+#     [32m'\\n'[39m +
+#     [32m'function promptForAccountType(){\\n'[39m +
+#     [32m'    if(document.getElementById("role-picker-overlay")) return;\\n'[39m +
+#     [32m'\\n'[39m +
+#     [32m'    const overlay = document.createElement("div");\\n'[39m +
+#     [32m'    overlay.id = "role-picker-overlay";\\n'[39m +
+#     [32m'    overlay.className = "role-picker-overlay";\\n'[39m +
+#     [32m'    overlay.innerHTML = `\\n'[39m +
+#     [32m'        <div class="role-picker-card">\\n'[39m +
+#     [32m'            <h3>Choose your account type</h3>\\n'[39m +
+#     [32m'            <p>\\n'[39m +
+#     [32m'                We need this to show the right dashboard. Broker access is granted later after ID verification and license approval.\\n'[39m +
+#     [32m'            </p>\\n'[39m +
+#     [32m'            <div class="role-picker-actions">\\n'[39m +
+#     [32m'                <button type="button" data-role="seeker" class="role-pick-btn">\\n'[39m +
+#     [32m'                    🔍 Home Seeker — find a place to rent\\n'[39m +
+#     [32m'                </button>\\n'[39m +
+#     [32m'                <button type="button" data-role="owner" class="role-pick-btn">\\n'[39m +
+#     [32m'                    🏠 Property Owner — list and manage units\\n'[39m +
+#     [32m'                </button>\\n'[39m +
+#     [32m'            </div>\\n'[39m +
+#     [32m'        </div>\\n'[39m +
+#     [32m'    `;\\n'[39m +
+#     [32m'    document.body.appendChild(overlay);\\n'[39m +
+#     [32m'\\n'[39m +
+#     [32m'    overlay.querySelectorAll(".role-pick-btn").forEach(btn => {\\n'[39m +
+#     [32m'        btn.addEventListener("click", async () => {\\n'[39m +
+#     [32m'            const accountType = btn.dataset.role;\\n'[39m +
+#     [32m'                if (!["owner", "seeker"].includes(accountType)) return;\\n'[39m +
+#     [32m'            overlay.querySelectorAll(".role-pick-btn").forEach(b => b.disabled = true);\\n'[39m +
+#     [32m'            try {\\n'[39m +
+#     [32m'                await setDoc(doc(db, "users", user.uid), { accountType, canonicalRole: normalizeCanonicalRole(accountType) }, { merge: true });\\n'[39m +
+#     [32m'                const _role = setRole(accountType);\\n'[39m +
+#     [32m'                applyRoleVisibility(_role);\\n'[39m +
+#     [32m'                const typeEl = document.getElementById("profile-account-type");\\n'[39m +
+#     [32m'                if(typeEl){ typeEl.textContent = ""; typeEl.classList.add("is-hidden"); }\\n'[39m +
+#     [32m'                overlay.remove();\\n'[39m +
+#     [32m'                // Reload perks / role-gated panels with the real role\\n'[39m +
+#     [32m'                window.location.hash = "perks";\\n'[39m +
+#     [32m'                window.location.reload();\\n'[39m +
+#     [32m'            } catch(error){\\n'[39m +
+#     [32m'                console.error("Failed to save account type:", error);\\n'[39m +
+#     [32m`                alert("Couldn't save your account type. Please try again.");\\n`[39m +
+#     [32m'                overlay.querySelectorAll(".role-pick-btn").forEach(b => b.disabled = false);\\n'[39m +
+#     [32m'            }\\n'[39m +
+#     [32m'        });\\n'[39m +
+#     [32m'    });\\n'[39m +
+#     [32m'}\\n'[39m +
+#     [32m'\\n'[39m +
+#     [32m'/* -------- LOAD -------- */\\n'[39m +
+#     [32m'\\n'[39m +
+#     [32m'async function loadProfile(){\\n'[39m +
+#     [32m'    // Visitor viewing someone else — visitor-profile.js owns the header\\n'[39m +
+#     [32m'    const visitUid = urlVisitUid || new URLSearchParams(location.search).get("uid");\\n'[39m +
+#     [32m'    if (visitUid && user?.uid && visitUid !== user.uid) {\\n'[39m +
+#     [32m'        document.body.classList.add("visitor-mode");\\n'[39m +
+#     [32m'        return;\\n'[39m +
+#     [32m'    }\\n'[39m +
+#     [32m'    if (visitUid && !user?.uid) {\\n'[39m +
+#     [32m'        // Should not happen (requireAuth), but never load a random profile\\n'[39m +
+#     [32m'        return;\\n'[39m +
+#     [32m'    }\\n'[39m +
+#     [32m'\\n'[39m +
+#     [32m'    let snap;\\n'[39m +
+#     [32m'    try {\\n'[39m +
+#     [32m'        const docRef = doc(db, "users", user.uid);\\n'[39m +
+#     [32m'        snap = await Promise.race([\\n'[39m +
+#     [32m'            getDoc(docRef),\\n'[39m +
+#     [32m'            new Promise(function(_, rej){ setTimeout(function(){ rej(new Error("profile-read-timeout")); }, 6000); })\\n'[39m +
+#     [32m'        ]);\\n'[39m +
+#     [32m'    } catch(error){\\n'[39m +
+#     [32m'        console.error("Failed to load profile document:", error);\\n'[39m +
+#     [32m'        try { applyNameFailsafe(); } catch(_){}\\n'[39m +
+#     [32m'        // Self-heal: ensure a users/{uid} doc exists, then one short retry\\n'[39m +
+#     [32m'        try {\\n'[39m +
+#     [32m'            await setDoc(doc(db, "users", user.uid), {\\n'[39m +
+#     [32m'                firstName: (user.displayName || "").split(" ")[0] || "",\\n'[39m +
+#     [32m'                surname: (user.displayName || "").split(" ").slice(1).join(" ") || "",\\n'[39m +
+#     [32m'                email: user.email || "",\\n'[39m +
+#     [32m'                accountType: "seeker",\\n'[39m +
+#     [32m'                canonicalRole: "seeker",\\n'[39m +
+#     [32m'                createdAt: new Date().toISOString()\\n'[39m +
+#     [32m'            }, { merge: true });\\n'[39m +
+#     [32m'            snap = await Promise.race([\\n'[39m +
+#     [32m'                getDoc(doc(db, "users", user.uid)),\\n'[39m +
+#     [32m'                new Promise(function(_, rej){ setTimeout(function(){ rej(new Error("profile-retry-timeout")); }, 4000); })\\n'[39m +
+#     [32m'            ]);\\n'[39m +
+#     [32m'            if (snap && snap.exists()) {\\n'[39m +
+#     [32m'                // fall through to normal fill by re-entering via data path below\\n'[39m +
+#     [32m'                const data = snap.data();\\n'[39m +
+#     [32m'                applyRoleVisibility(setRole(canonicalRoleFromData(data)));\\n'[39m +
+#     [32m'                const nameEl = document.getElementById("profile-name");\\n'[39m +
+#     [32m'                if (nameEl) setProfileNameLetters(nameEl, `${data.firstName || ""} ${data.surname || ""}`.trim() || user.displayName || user.email || "HomeFinder User");\\n'[39m +
+#     [32m'                const emailEl = document.getElementById("profile-email");\\n'[39m +
+#     [32m'                if (emailEl) emailEl.textContent = data.email || user.email || "";\\n'[39m +
+#     [32m'                try { refreshSetupBanner(data); } catch (_) {}\\n'[39m +
+#     [32m'                try { await refreshPerks(); } catch(_){}\\n'[39m +
+#     [32m'                return;\\n'[39m +
+#     [32m'            }\\n'[39m +
+#     [32m'        } catch (e2) {\\n'[39m +
+#     [32m'            console.error("profile self-heal failed:", e2);\\n'[39m +
+#     [32m'        }\\n'[39m +
+#     [32m'        showLoadError("We couldn\\'t reach your profile data. Check your connection and refresh. Confirm the named Firestore database `homefinder` is available and deployed correctly.");\\n'[39m +
+#     [32m'        applyRoleVisibility(setRole(undefined));\\n'[39m +
+#     [32m'        try { await refreshPerks(); } catch(_){}\\n'[39m +
+#     [32m'        return;\\n'[39m +
+#     [32m'    }\\n'[39m +
+#     [32m'\\n'[39m +
+#     [32m'    if(!snap.exists()){\\n'[39m +
+#     [32m'        // Firebase Auth account exists but its matching Firestore\\n'[39m +
+#     [32m'        // "users/{uid}" doc was never written (e.g. the profile-save\\n'[39m +
+#     [32m'        // step failed during registration). Self-heal by creating a\\n'[39m +
+#     [32m'        // minimal doc so the page has something to show.\\n'[39m +
+#     [32m'        const fallbackProfile = {\\n'[39m +
+#     [32m'            firstName: "",\\n'[39m +
+#     [32m'            surname: "",\\n'[39m +
+#     [32m'            email: user.email || "",\\n'[39m +
+#     [32m'            accountType: "seeker",\\n'[39m +
+#     [32m'            canonicalRole: "seeker",\\n'[39m +
+#     [32m'            createdAt: new Date().toISOString()\\n'[39m +
+#     [32m'        };\\n'[39m +
+#     [32m'\\n'[39m +
+#     [32m'        try {\\n'[39m +
+#     [32m'            await setDoc(doc(db, "users", user.uid), fallbackProfile, { merge: true });\\n'[39m +
+#     [32m'            snap = await getDoc(doc(db, "users", user.uid));\\n'[39m +
+#     [32m'        } catch(error){\\n'[39m +
+#     [32m'            console.error("Failed to create fallback profile document:", error);\\n'[39m +
+#     [32m`            showLoadError("Your profile hasn't been set up yet. Please fill in your details below.");\\n`[39m +
+#     [32m'            const nameEl = document.getElementById("profile-name");\\n'[39m +
+#     [32m'            if(nameEl) setProfileNameLetters(nameEl, "HomeFinder User");\\n'[39m +
+#     [32m'            // Same reasoning as the read-failure branch above -- resolve\\n'[39m +
+#     [32m"            // getRole() so dependent modules don't hang.\\n"[39m +
+#     [32m'            applyRoleVisibility(setRole(undefined));\\n'[39m +
+#     [32m'            return;\\n'[39m +
+#     [32m'        }\\n'[39m +
+#     [32m'    }\\n'[39m +
+#     [32m'\\n'[39m +
+#     [32m'    const data = snap.data();\\n'[39m +
+#     [32m'\\n'[39m +
+#     [32m'    // Patch 21: standalone brokers no longer use profile.html.\\n'[39m +
+#     [32m'    // Ops identities may retain broker accountType and are explicitly allowed.\\n'[39m +
+#     [32m'    if (canonicalRoleFromData(data) === "broker" && !isOpsUid(user.uid)) {\\n'[39m +
+#     [32m'        window.location.replace("broker-hq.html");\\n'[39m +
+#     [32m'        return;\\n'[39m +
+#     [32m'    }\\n'[39m +
+#     [32m'\\n'[39m +
+#     [32m'    const initialsEl = document.getElementById("avatar-initials");\\n'[39m +
+#     [32m'    if (initialsEl) {\\n'[39m +
+#     [32m'        const a = String(data.firstName || "").trim();\\n'[39m +
+#     [32m'        const b = String(data.surname || "").trim();\\n'[39m +
+#     [32m'        let initials = ((a[0] || "") + (b[0] || "")).toUpperCase();\\n'[39m +
+#     [32m'        if (!initials) {\\n'[39m +
+#     [32m'            const local = String(data.email || (user && user.email) || "").split("@")[0];\\n'[39m +
+#     [32m'            initials = local ? local.slice(0, 2).toUpperCase() : "HF";\\n'[39m +
+#     [32m'        }\\n'[39m +
+#     [32m'        initialsEl.textContent = initials.slice(0, 2);\\n'[39m +
+#     [32m'    }\\n'[39m +
+#     [32m'\\n'[39m +
+#     [32m'    const nameEl = document.getElementById("profile-name");\\n'[39m +
+#     [32m'    if (nameEl) {\\n'[39m +
+#     [32m'        const full = `${data.firstNa'[39m... 15285 more characters,
+#   expected: [31m/data\\.accountType === "broker" && !isOpsUid\\(user\\.uid\\)/[39m,
+#   operator: [32m'match'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-21-role-need-help.test.mjs
+not ok 37 - tests/patch-21-role-need-help.test.mjs
+  ---
+  duration_ms: 52.652636
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/patch-21-role-need-help.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Patch 22 Admin/Ops authority matrix contract: PASS
+# Subtest: tests/patch-22-admin-ops-authority.test.mjs
+ok 38 - tests/patch-22-admin-ops-authority.test.mjs
+  ---
+  duration_ms: 71.915115
+  type: 'test'
+  ...
+# Patch 23 Admin User Manage restoration contract: PASS
+# Subtest: tests/patch-23-admin-user-manage.test.mjs
+ok 39 - tests/patch-23-admin-user-manage.test.mjs
+  ---
+  duration_ms: 29.358465
+  type: 'test'
+  ...
+# Patch 24 Admin specific-user boost + Firestore readback contract: PASS
+# Subtest: tests/patch-24-admin-specific-boosts.test.mjs
+ok 40 - tests/patch-24-admin-specific-boosts.test.mjs
+  ---
+  duration_ms: 28.821028
+  type: 'test'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open 'docs/patches/PATCH-25-ADMIN-SUBSCRIPTION-GRANT.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/patch-25-admin-subscription-grant.test.mjs:8:17
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'docs/patches/PATCH-25-ADMIN-SUBSCRIPTION-GRANT.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-25-admin-subscription-grant.test.mjs
+not ok 41 - tests/patch-25-admin-subscription-grant.test.mjs
+  ---
+  duration_ms: 60.166266
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/patch-25-admin-subscription-grant.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open 'docs/integrations/cloudflare/PRODUCTION-PAYPAL-CLOUDFLARE-CONTRACT.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_classify/active_development/[39mtests/patch-26-paypal-cloudflare-hardening.test.mjs:4:24[90m)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/patch-26-paypal-cloudflare-hardening.test.mjs:7:18
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'docs/integrations/cloudflare/PRODUCTION-PAYPAL-CLOUDFLARE-CONTRACT.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-26-paypal-cloudflare-hardening.test.mjs
+not ok 42 - tests/patch-26-paypal-cloudflare-hardening.test.mjs
+  ---
+  duration_ms: 38.870895
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/patch-26-paypal-cloudflare-hardening.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/patches/PATCH-27-MARKET-DATA-WIRING-FREEZE.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_classify/active_development/[39mtests/patch-27-market-data-wiring.test.mjs:6:24[90m)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/patch-27-market-data-wiring.test.mjs:13:15
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/patches/PATCH-27-MARKET-DATA-WIRING-FREEZE.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-27-market-data-wiring.test.mjs
+not ok 43 - tests/patch-27-market-data-wiring.test.mjs
+  ---
+  duration_ms: 27.112899
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/patch-27-market-data-wiring.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/patches/PATCH-28-BROKER-HQ-DATA-WIRING-FREEZE.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_classify/active_development/[39mtests/patch-28-broker-hq-data-wiring.test.mjs:6:24[90m)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/patch-28-broker-hq-data-wiring.test.mjs:12:15
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/patches/PATCH-28-BROKER-HQ-DATA-WIRING-FREEZE.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-28-broker-hq-data-wiring.test.mjs
+not ok 44 - tests/patch-28-broker-hq-data-wiring.test.mjs
+  ---
+  duration_ms: 28.161054
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/patch-28-broker-hq-data-wiring.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/patches/PATCH-29-BROKER-HQ-INTERACTION-SMOKE-FREEZE.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_classify/active_development/[39mtests/patch-29-broker-hq-interaction-smoke.test.mjs:6:24[90m)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/patch-29-broker-hq-interaction-smoke.test.mjs:13:15
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/patches/PATCH-29-BROKER-HQ-INTERACTION-SMOKE-FREEZE.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-29-broker-hq-interaction-smoke.test.mjs
+not ok 45 - tests/patch-29-broker-hq-interaction-smoke.test.mjs
+  ---
+  duration_ms: 28.027415
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/patch-29-broker-hq-interaction-smoke.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Patch 33 foundation repair checks passed.
+# Subtest: tests/patch-33-foundation-repair.test.mjs
+ok 46 - tests/patch-33-foundation-repair.test.mjs
+  ---
+  duration_ms: 41.146756
+  type: 'test'
+  ...
+# Patch 34 Market HQ shell checks passed.
+# Subtest: tests/patch-34-market-shell.test.mjs
+ok 47 - tests/patch-34-market-shell.test.mjs
+  ---
+  duration_ms: 26.476308
+  type: 'test'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/dictionary/domains/authority-wiring-audit.dictionary.json'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/patch-38-authority-wiring-audit.test.mjs:14:23
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/dictionary/domains/authority-wiring-audit.dictionary.json'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-38-authority-wiring-audit.test.mjs
+not ok 48 - tests/patch-38-authority-wiring-audit.test.mjs
+  ---
+  duration_ms: 27.239808
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/patch-38-authority-wiring-audit.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/dictionary/domains/capability-boundaries.dictionary.json'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/patch-40-boundary-decision.test.mjs:7:34
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/dictionary/domains/capability-boundaries.dictionary.json'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-40-boundary-decision.test.mjs
+not ok 49 - tests/patch-40-boundary-decision.test.mjs
+  ---
+  duration_ms: 26.200277
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/patch-40-boundary-decision.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/dictionary/domains/compatibility.dictionary.json'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/patch-43-compatibility-inventory.test.mjs:9:32
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/dictionary/domains/compatibility.dictionary.json'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-43-compatibility-inventory.test.mjs
+not ok 50 - tests/patch-43-compatibility-inventory.test.mjs
+  ---
+  duration_ms: 32.577314
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/patch-43-compatibility-inventory.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/dictionary/domains/compatibility.dictionary.json'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/patch-44-boost-compatibility.test.mjs:9:32
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/dictionary/domains/compatibility.dictionary.json'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-44-boost-compatibility.test.mjs
+not ok 51 - tests/patch-44-boost-compatibility.test.mjs
+  ---
+  duration_ms: 34.630278
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/patch-44-boost-compatibility.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Patch 45 boost normalization audit PASS.
+# Subtest: tests/patch-45-boost-normalization.test.mjs
+ok 52 - tests/patch-45-boost-normalization.test.mjs
+  ---
+  duration_ms: 41.725774
+  type: 'test'
+  ...
+# Patch 47 boost migration proof PASS.
+# Subtest: tests/patch-47-boost-migration-proof.test.mjs
+ok 53 - tests/patch-47-boost-migration-proof.test.mjs
+  ---
+  duration_ms: 32.888146
+  type: 'test'
+  ...
+# Patch 48 production boost migration execution gate PASS.
+# Subtest: tests/patch-48-production-boost-migration.test.mjs
+ok 54 - tests/patch-48-production-boost-migration.test.mjs
+  ---
+  duration_ms: 41.393115
+  type: 'test'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/migrations/PATCH-48-PRODUCTION-BOOST-MIGRATION-RECEIPT-TEMPLATE.json'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/patch-49-boost-parser-retirement.test.mjs:9:31
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/migrations/PATCH-48-PRODUCTION-BOOST-MIGRATION-RECEIPT-TEMPLATE.json'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-49-boost-parser-retirement.test.mjs
+not ok 55 - tests/patch-49-boost-parser-retirement.test.mjs
+  ---
+  duration_ms: 36.697465
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/patch-49-boost-parser-retirement.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/dictionary/domains/compatibility.dictionary.json'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/patch-50-boost-parser-retirement.test.mjs:11:32
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/dictionary/domains/compatibility.dictionary.json'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-50-boost-parser-retirement.test.mjs
+not ok 56 - tests/patch-50-boost-parser-retirement.test.mjs
+  ---
+  duration_ms: 28.492254
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/patch-50-boost-parser-retirement.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Patch 51 production retirement audit PASS.
+# Subtest: tests/patch-51-production-retirement-audit.test.mjs
+ok 57 - tests/patch-51-production-retirement-audit.test.mjs
+  ---
+  duration_ms: 32.479696
+  type: 'test'
+  ...
+# node:internal/modules/run_main:123
+#     triggerUncaughtException(
+#     ^
+# AssertionError [ERR_ASSERTION]: AUTH:docs/core/01-SOURCE-OF-TRUTH.md: missing
+# AUTH:docs/dictionary/INDEX.json: missing
+# AUTH:docs/dictionary/CONTRACT-CHANGE-RULE.md: missing
+# AUTH:docs/dictionary/PHASE-ROADMAP.md: missing
+# AUTH:docs/dictionary/domains/authority.dictionary.json: missing
+# AUTH:docs/dictionary/domains/data.dictionary.json: missing
+# AUTH:docs/dictionary/domains/roles.dictionary.json: missing
+# AUTH:docs/dictionary/domains/capabilities.dictionary.json: missing
+# AUTH:docs/dictionary/domains/routes.dictionary.json: missing
+# AUTH:docs/dictionary/domains/integrations.dictionary.json: missing
+# AUTH:docs/dictionary/domains/ui-ownership.dictionary.json: missing
+# AUTH:docs/dictionary/domains/lifecycle.dictionary.json: missing
+# AUTH:docs/dictionary/domains/capability-boundaries.dictionary.json: missing
+# AUTH:docs/dictionary/domains/compatibility.dictionary.json: missing
+# DICT:INDEX: invalid JSON: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/dictionary/INDEX.json'
+# INTEGRATION:docs/integrations/paypal/README.md: missing
+# INTEGRATION:docs/integrations/paypal/06-PAYMENTS.md: missing
+# INTEGRATION:docs/integrations/cloudflare/README.md: missing
+# INTEGRATION:docs/integrations/cloudflare/worker_js.md: missing
+# INTEGRATION:docs/integrations/cloudflare/PRODUCTION-CHECKLIST.md: missing
+# INTEGRATION:docs/integrations/cloudflare/WORKER-RECOVERY-GATE.md: missing
+# WIRING:map: missing
+# 22 !== 0
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/patch-52-multi-check-wiring.test.mjs:10:8
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   generatedMessage: [33mfalse[39m,
+#   code: [32m'ERR_ASSERTION'[39m,
+#   actual: [33m22[39m,
+#   expected: [33m0[39m,
+#   operator: [32m'strictEqual'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-52-multi-check-wiring.test.mjs
+not ok 58 - tests/patch-52-multi-check-wiring.test.mjs
+  ---
+  duration_ms: 75.628573
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/patch-52-multi-check-wiring.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/architecture/PATCH-53-UI-UX-CONTRACT.json'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/patch-53-ui-ux-contract.test.mjs:7:32
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/architecture/PATCH-53-UI-UX-CONTRACT.json'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/patch-53-ui-ux-contract.test.mjs
+not ok 59 - tests/patch-53-ui-ux-contract.test.mjs
+  ---
+  duration_ms: 41.171054
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/patch-53-ui-ux-contract.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: Patch 54 Phase A: cinematic runtime and style foundation exist
+ok 72 - Patch 54 Phase A: cinematic runtime and style foundation exist
+  ---
+  duration_ms: 0.881077
+  type: 'test'
+  ...
+# Subtest: Patch 54 Phase A: every frozen page mounts the same cinematic runtime
+ok 73 - Patch 54 Phase A: every frozen page mounts the same cinematic runtime
+  ---
+  duration_ms: 3.391936
+  type: 'test'
+  ...
+# Subtest: Patch 54 Phase A: legacy transition no longer creates a competing overlay or click router
+ok 74 - Patch 54 Phase A: legacy transition no longer creates a competing overlay or click router
+  ---
+  duration_ms: 0.276075
+  type: 'test'
+  ...
+# Subtest: Patch 54 Phase A: dirty state has one visual confirmation owner
+ok 75 - Patch 54 Phase A: dirty state has one visual confirmation owner
+  ---
+  duration_ms: 0.197289
+  type: 'test'
+  ...
+# Subtest: Patch 54 Phase A: runtime exposes performance tier and ready event
+ok 76 - Patch 54 Phase A: runtime exposes performance tier and ready event
+  ---
+  duration_ms: 0.243458
+  type: 'test'
+  ...
+# Subtest: Patch 54 Phase A: scene catalog remains the page-owned visual source
+ok 77 - Patch 54 Phase A: scene catalog remains the page-owned visual source
+  ---
+  duration_ms: 0.183923
+  type: 'test'
+  ...
+# Subtest: Patch 55 A.1: door routing has explicit enter/exit timing
+ok 78 - Patch 55 A.1: door routing has explicit enter/exit timing
+  ---
+  duration_ms: 0.7543
+  type: 'test'
+  ...
+# Subtest: Patch 55 A.1: exit confirmation is keyboard accessible
+ok 79 - Patch 55 A.1: exit confirmation is keyboard accessible
+  ---
+  duration_ms: 1.123447
+  type: 'test'
+  ...
+# Subtest: Patch 55 A.1: door has atmospheric depth layer
+ok 80 - Patch 55 A.1: door has atmospheric depth layer
+  ---
+  duration_ms: 0.303797
+  type: 'test'
+  ...
+# Subtest: Patch 55 A.1: reduced motion bypasses cinematic movement
+ok 81 - Patch 55 A.1: reduced motion bypasses cinematic movement
+  ---
+  duration_ms: 0.43511
+  type: 'test'
+  ...
+# Subtest: Patch 56 A.2.1: Home has replaceable layered cinematic slots
+ok 82 - Patch 56 A.2.1: Home has replaceable layered cinematic slots
+  ---
+  duration_ms: 2.201666
+  type: 'test'
+  ...
+# Subtest: Patch 56 A.2.1: Home prototype has adaptive and reduced-motion behavior
+ok 83 - Patch 56 A.2.1: Home prototype has adaptive and reduced-motion behavior
+  ---
+  duration_ms: 0.55758
+  type: 'test'
+  ...
+# Subtest: Patch 56 A.2.1: future architectural asset slots remain represented in the world contract
+ok 84 - Patch 56 A.2.1: future architectural asset slots remain represented in the world contract
+  ---
+  duration_ms: 0.270506
+  type: 'test'
+  ...
+# Subtest: Patch 57 A.2.2: Home has one shared cinematic camera loop
+ok 85 - Patch 57 A.2.2: Home has one shared cinematic camera loop
+  ---
+  duration_ms: 1.180493
+  type: 'test'
+  ...
+# Subtest: Patch 57 A.2.2: Home hero declares a cinematic focal contract
+ok 86 - Patch 57 A.2.2: Home hero declares a cinematic focal contract
+  ---
+  duration_ms: 1.213335
+  type: 'test'
+  ...
+# Subtest: Patch 57 A.2.2: Home does not depend on retired generated poster assets
+ok 87 - Patch 57 A.2.2: Home does not depend on retired generated poster assets
+  ---
+  duration_ms: 0.293986
+  type: 'test'
+  ...
+# Subtest: Patch 57 A.2.2: reduced motion and mobile composition are explicit
+ok 88 - Patch 57 A.2.2: reduced motion and mobile composition are explicit
+  ---
+  duration_ms: 0.326089
+  type: 'test'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/docs/01-SOURCE-OF-TRUTH.md'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/paypal-cloudflare-contract.test.mjs:6:16
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/docs/01-SOURCE-OF-TRUTH.md'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/paypal-cloudflare-contract.test.mjs
+not ok 64 - tests/paypal-cloudflare-contract.test.mjs
+  ---
+  duration_ms: 29.08206
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/paypal-cloudflare-contract.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# PASS phase12 object state behavior
+# Subtest: state machine follows allowed interaction path and rejects invalid jumps
+ok 90 - state machine follows allowed interaction path and rejects invalid jumps
+  ---
+  duration_ms: 1.6084
+  type: 'test'
+  ...
+# Subtest: responsive transformer distinguishes portrait, landscape, tablet and wide modes
+ok 91 - responsive transformer distinguishes portrait, landscape, tablet and wide modes
+  ---
+  duration_ms: 1.465374
+  type: 'test'
+  ...
+# node:fs:442
+#     return binding.readFileUtf8(path, stringToFlags(options.flag));
+#                    ^
+# Error: ENOENT: no such file or directory, open '/mnt/data/hf_classify/active_development/tests/index.html'
+# [90m    at Object.readFileSync (node:fs:442:20)[39m
+#     at read [90m(file:///mnt/data/hf_classify/active_development/[39mtests/physical-ui-object-system.test.mjs:5:25[90m)[39m
+#     at [90mfile:///mnt/data/hf_classify/active_development/[39mtests/physical-ui-object-system.test.mjs:6:12
+# [90m    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)[39m
+# [90m    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)[39m
+# [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m {
+#   errno: [33m-2[39m,
+#   code: [32m'ENOENT'[39m,
+#   syscall: [32m'open'[39m,
+#   path: [32m'/mnt/data/hf_classify/active_development/tests/index.html'[39m
+# }
+# Node.js v22.16.0
+# Subtest: tests/physical-ui-object-system.test.mjs
+not ok 66 - tests/physical-ui-object-system.test.mjs
+  ---
+  duration_ms: 26.746447
+  type: 'test'
+  location: '/mnt/data/hf_classify/active_development/tests/physical-ui-object-system.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# public-profile-projection: PASS
+# Subtest: tests/public-profile-projection.test.mjs
+ok 67 - tests/public-profile-projection.test.mjs
+  ---
+  duration_ms: 32.67983
+  type: 'test'
+  ...
+# PASS role-contract-subscription-path current-authority reconciliation
+# Subtest: tests/role-contract-subscription-path.test.mjs
+ok 68 - tests/role-contract-subscription-path.test.mjs
+  ---
+  duration_ms: 26.001245
+  type: 'test'
+  ...
+# PASS room-shell/current-physical-ui-mapping (15 Main Hall objects)
+# Subtest: tests/room-shell-physical-ui-mapping.test.mjs
+ok 69 - tests/room-shell-physical-ui-mapping.test.mjs
+  ---
+  duration_ms: 26.020432
+  type: 'test'
+  ...
+1..95
+# tests 95
+# suites 0
+# pass 53
+# fail 42
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3324.026094

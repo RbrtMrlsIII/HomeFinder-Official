@@ -1,0 +1,13 @@
+page_id,route,access_policy,camera_family,camera_may_present,camera_may_authorize,backend_authority_required,notes
+home,index.html,public,H-01..H-09,YES,NO,Public/read-authority; route remains client accessible where intended,Camera is presentation state only; denied state must come from app/backend authority.
+login,login.html,public/authentication,L-01..L-05,YES,NO,Public/read-authority; route remains client accessible where intended,Camera is presentation state only; denied state must come from app/backend authority.
+register,register.html,public/authentication,R-01..R-07,YES,NO,Public/read-authority; route remains client accessible where intended,Camera is presentation state only; denied state must come from app/backend authority.
+market,market.html,public discovery,"M-01,M-02,M-04,M-06",YES,NO,Public/read-authority; route remains client accessible where intended,Camera is presentation state only; denied state must come from app/backend authority.
+profile,profile.html,authenticated,P-01..P-12,YES,NO,Firebase auth + authorized profile/data rules,Camera is presentation state only; denied state must come from app/backend authority.
+broker-hq,broker-hq.html,broker,B-01..B-06,YES,NO,Firestore rules/callables + broker-owned projections,Camera is presentation state only; denied state must come from app/backend authority.
+admin,admin.html,admin,A-01,YES,NO,Firestore rules + authoritative Admin operations,Camera is presentation state only; denied state must come from app/backend authority.
+moderator,moderator.html,moderator,A-02,YES,NO,Firestore rules + Moderator capability authority,Camera is presentation state only; denied state must come from app/backend authority.
+staff,staff.html,staff,A-03,YES,NO,Firestore rules + Staff capability authority,Camera is presentation state only; denied state must come from app/backend authority.
+financing-guide,financing.html,public reference,G-01,YES,NO,Public/read-authority; route remains client accessible where intended,Camera is presentation state only; denied state must come from app/backend authority.
+legal-privacy,privacy.html,public legal,LGL-01,YES,NO,Public/read-authority; route remains client accessible where intended,Camera is presentation state only; denied state must come from app/backend authority.
+legal-terms,terms.html,public legal,LGL-02,YES,NO,Public/read-authority; route remains client accessible where intended,Camera is presentation state only; denied state must come from app/backend authority.

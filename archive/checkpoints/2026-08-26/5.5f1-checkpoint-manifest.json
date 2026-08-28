@@ -1,0 +1,85 @@
+{
+  "checkpoint": "5.5F.1-ui-physical-room-completeness",
+  "source": "HomeFinder_checkpoint_2026-08-26_5_5E-spatial-reconciliation.zip",
+  "canonical_sh3d_sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "canonical_modified": false,
+  "required_artifacts_missing": [],
+  "continuity_checklist": "verification/2026-08-26/5.5f1-development-continuity-checklist.json",
+  "findings": {
+    "gate": "5.5F.1",
+    "purpose": "UI to physical-room completeness census before SH3D merge",
+    "scope": "No code; documentation/reconciliation only",
+    "actual_html_pages": 13,
+    "mapped_pages": 2,
+    "unassigned_pages": 11,
+    "large_or_dense_pages": [
+      "broker-hq",
+      "admin",
+      "index",
+      "profile",
+      "market",
+      "staff"
+    ],
+    "explicit_gaps": [
+      "broker-hq",
+      "login",
+      "admin",
+      "profile",
+      "market",
+      "privacy",
+      "terms",
+      "moderator",
+      "staff",
+      "register",
+      "financing"
+    ],
+    "important_findings": [
+      "All current application HTML pages have a logical house/room destination or an explicit existing allocation except pages requiring further historical/route reconciliation.",
+      "Logical allocation does not prove physical SH3D room existence.",
+      "House 1 index.html remains protected; privacy/terms/login/register remain House 1.",
+      "Broker HQ and Operations are logically assigned to House 2 but their physical topology is not yet proven.",
+      "Market and Profile Suite are logically assigned to House 3 but their physical topology is not yet proven.",
+      "financing.html has an allocation inconsistency: House 2 Operations/Finance in the three-house matrix while the page-room working matrix labels it REFERENCE. This must be reconciled before merge readiness is declared.",
+      "H-01..H-09 remain working anchors; no final camera position was asserted."
+    ],
+    "merge_readiness": "NOT_READY",
+    "next_gate": "5.5F.2 \u2014 Deep Additional SH3D Census"
+  },
+  "artifacts": [
+    {
+      "path": "archive/csv-reconciliation/5.5f1-ui-physical-room-completeness.csv",
+      "sha256": "74c94f661f8345b464b6777e5d80f795a274822141abbc8d52199013b5250f33",
+      "size": 2802
+    },
+    {
+      "path": "archive/csv-reconciliation/5.5f1-actual-html-page-census.csv",
+      "sha256": "9c03d9e9f6f665f008eb3a6519d7071d6afbc736606712eefc13c0cee654d910",
+      "size": 2581
+    },
+    {
+      "path": "archive/reconciliation/5.5f1-ui-physical-room-completeness.json",
+      "sha256": "cacce87988acea66941ea8e75b1bffeaae5a8ab03842f774ff01eb614d5bb467",
+      "size": 1528
+    },
+    {
+      "path": "docs/md/5.5f1-ui-physical-room-completeness.md",
+      "sha256": "6ab88cb9cbc63521b74d33aa648af42568088ca6308bd89d28c385bf987102c7",
+      "size": 2939
+    },
+    {
+      "path": "verification/2026-08-26/5.5f1-development-continuity-checklist.json",
+      "sha256": "650ac9b0682859a9d0c24310ec806c00d1d0cdc127015bf6db343cb7247e7bf9",
+      "size": 4105
+    },
+    {
+      "path": "masterplan.md",
+      "sha256": "a083decc550a463acfe79646fa06f194c7538e369c829f0287874e93cfca4509",
+      "size": 37400
+    },
+    {
+      "path": "AI_ASSISTANT_READ_ME.md",
+      "sha256": "bc8ec13e03303fb0633ddca20698ba975e4aa57cf13699ace7d83f2e324afa5e",
+      "size": 21730
+    }
+  ]
+}

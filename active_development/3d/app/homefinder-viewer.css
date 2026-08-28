@@ -1,0 +1,198 @@
+/*
+ * HomeFinder viewer shell.
+ * HomeFinder-owned presentation layer; Sweet Home 3D runtime remains vendor-owned.
+ */
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #1f2937;
+  background: #f3f4f6;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.homefinderShell {
+  width: min(1400px, 100%);
+  margin: 0 auto;
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.homefinderHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.homefinderHeader h1 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.homefinderHeader p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.homefinderViewer {
+  position: relative;
+  flex: 1;
+  min-height: min(78vh, 760px);
+  overflow: hidden;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  background: #d1d5db;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+}
+
+#viewerCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: min(78vh, 760px);
+  background: #cccccc;
+  outline: none;
+  touch-action: none;
+}
+
+.homefinderControls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem;
+  background: rgba(255, 255, 255, 0.96);
+  border-top: 1px solid #d1d5db;
+}
+
+.homefinderControls label {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.homefinderControls select,
+.homefinderControls button {
+  min-height: 2.2rem;
+  border: 1px solid #9ca3af;
+  border-radius: 7px;
+  background: white;
+  padding: 0.35rem 0.65rem;
+  font: inherit;
+}
+
+.homefinderMode {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.homefinderProgress {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(420px, calc(100% - 2rem));
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(32, 32, 32, 0.78);
+  color: white;
+  z-index: 2;
+}
+
+.homefinderProgress progress {
+  width: 100%;
+}
+
+.homefinderProgress[hidden] {
+  display: none;
+}
+
+.homefinderCredits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #4b5563;
+  text-align: center;
+}
+
+.homefinderCredits span { white-space: nowrap; }
+.homefinderCredits a { color: inherit; }
+
+.homefinderOverlayLauncher {
+  align-self: flex-start;
+  padding: 0.7rem 1rem;
+  border: 1px solid #9ca3af;
+  border-radius: 8px;
+  background: white;
+  font: inherit;
+  cursor: pointer;
+}
+
+.homefinderOverlayLauncher:hover {
+  background: #f9fafb;
+}
+
+@media (max-width: 700px) {
+  .homefinderShell { padding: 0.6rem; }
+  .homefinderHeader { display: block; }
+  .homefinderHeader p { margin-top: 0.25rem; }
+  .homefinderViewer,
+  #viewerCanvas { min-height: 68vh; }
+  .homefinderCredits span { white-space: normal; }
+}
+
+
+.homefinderHouseNav {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-right: auto;
+}
+
+.homefinderHouseLabel {
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.homefinderHouseButton {
+  cursor: pointer;
+}
+
+.homefinderHouseButton[aria-pressed="true"] {
+  font-weight: 700;
+  outline: 2px solid currentColor;
+  outline-offset: 1px;
+}
+
+.homefinderHouseStatus {
+  font-size: 0.78rem;
+  color: #4b5563;
+  min-width: 12rem;
+}
+
+@media (max-width: 700px) {
+  .homefinderHouseNav { width: 100%; margin-right: 0; }
+  .homefinderHouseStatus { min-width: 0; flex-basis: 100%; }
+}

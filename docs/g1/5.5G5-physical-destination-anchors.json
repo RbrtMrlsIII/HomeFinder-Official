@@ -1,0 +1,81 @@
+{
+  "gate": "5.5G.5",
+  "anchors": [
+    {
+      "anchor_id": "A-MARKET",
+      "destination": "Market",
+      "source_evidence": "Logical Market destination is present in application contracts.",
+      "physical_evidence": "No uniquely named/identified physical Market room is proven in the current reconciled graph.",
+      "action": "KEEP_BLOCKED",
+      "reason": "A semantic label alone is insufficient to bind a physical route."
+    },
+    {
+      "anchor_id": "A-GOV",
+      "destination": "Government Housing",
+      "source_evidence": "Logical Government Housing destination is present in application contracts.",
+      "physical_evidence": "No uniquely identified physical Government Housing endpoint is proven.",
+      "action": "KEEP_BLOCKED",
+      "reason": "Avoid assigning an arbitrary room based on proximity or naming similarity."
+    },
+    {
+      "anchor_id": "A-LOGIN-PROFILE",
+      "destination": "Login/Profile",
+      "source_evidence": "Login and Profile surfaces exist logically.",
+      "physical_evidence": "No unique physical room pair and connecting door are established.",
+      "action": "KEEP_BLOCKED",
+      "reason": "Both endpoints need unique physical anchors before route authorization."
+    },
+    {
+      "anchor_id": "A-BROKER-HQ",
+      "destination": "Broker HQ",
+      "source_evidence": "Broker HQ is a logical role-gated destination.",
+      "physical_evidence": "House 2 exists physically, but no proven physical route from the relevant source zone to Broker HQ exists.",
+      "action": "KEEP_BLOCKED",
+      "reason": "Inter-house routing cannot be inferred from house existence alone."
+    },
+    {
+      "anchor_id": "A-H1-EXTERIOR",
+      "destination": "House 1 Exterior",
+      "source_evidence": "Canonical front-door candidate is present.",
+      "physical_evidence": "Corridor-to-exterior front-door candidate is present.",
+      "action": "CANDIDATE_ONLY",
+      "reason": "Boundary edge still requires route-level validation."
+    },
+    {
+      "anchor_id": "A-H2-EXTERIOR",
+      "destination": "House 2 Exterior",
+      "source_evidence": "House 2 physical structure exists.",
+      "physical_evidence": "Exterior entrance is candidate-only.",
+      "action": "CANDIDATE_ONLY",
+      "reason": "No runtime transfer should be enabled from an unvalidated boundary."
+    },
+    {
+      "anchor_id": "A-H3-EXTERIOR",
+      "destination": "House 3 Exterior",
+      "source_evidence": "No sufficient logical/physical entrance binding established.",
+      "physical_evidence": "No proven exterior door.",
+      "action": "BLOCKED",
+      "reason": "No physical evidence for an entrance."
+    }
+  ],
+  "report": {
+    "gate": "5.5G.5",
+    "title": "Minimum Physical Destination Anchor Resolution",
+    "status": "COMPLETE \u2014 NO NEW PHYSICAL AUTHORITY PROMOTED",
+    "date": "2026-08-27",
+    "principle": "When geometry cannot uniquely establish an endpoint, preserve the unresolved state instead of inventing a binding.",
+    "resolved": [],
+    "candidate_only": [
+      "A-H1-EXTERIOR",
+      "A-H2-EXTERIOR"
+    ],
+    "blocked": [
+      "A-MARKET",
+      "A-GOV",
+      "A-LOGIN-PROFILE",
+      "A-BROKER-HQ",
+      "A-H3-EXTERIOR"
+    ],
+    "next_gate": "5.5G.6 \u2014 physical evidence enhancement/reconciliation, only where required to unlock the highest-value journeys."
+  }
+}

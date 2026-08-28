@@ -1,0 +1,2985 @@
+{
+  "purpose": "HomeFinder operating/canonical checkpoint manifest",
+  "files": [
+    {
+      "path": "master/HomeFinder.sh3d",
+      "sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+      "bytes": 1679042
+    },
+    {
+      "path": "reconciliation/master_model_census.csv",
+      "sha256": "5031ac50d1e5dcac0d66fcc8860f8320327037b88c61dc9acde86ebe00f064c3",
+      "bytes": 268
+    },
+    {
+      "path": "reconciliation/02_logical_camera_reconciliation.csv",
+      "sha256": "660759a2ce25e7ce4daea0319979cd4ba903040a8b0ec2616f5a9ed54a5497be",
+      "bytes": 2821
+    },
+    {
+      "path": "reconciliation/03_physical_ui_object_reconciliation.csv",
+      "sha256": "61c49561a0576c8c07215b365739c8aa28d1563d1e72ec468243050ac28846ee",
+      "bytes": 7183
+    },
+    {
+      "path": "reconciliation/04_logical_room_reconciliation.csv",
+      "sha256": "cab0ee70efd10474be92ec0f41021498fd491e6787a59e619e53908e85836031",
+      "bytes": 1167
+    },
+    {
+      "path": "reconciliation/05_recovered_page_census.csv",
+      "sha256": "a5567f0f7816169be59dd65579748f4bd14410c01f28692d04434a36cb36ab75",
+      "bytes": 768
+    },
+    {
+      "path": "reconciliation/06_master_named_rooms.csv",
+      "sha256": "a4d9ec1c2eb7e25bf0a382f7caee96031bc155bc4053d290f57b0bd1ae0d3428",
+      "bytes": 480
+    },
+    {
+      "path": "reconciliation/07_master_named_cameras.csv",
+      "sha256": "0e7bb26684170bcf2fbba4a39bdffa7c6f35f9ad74e27235c716ce987919db20",
+      "bytes": 648
+    },
+    {
+      "path": "reconciliation/08_master_furniture_name_counts.csv",
+      "sha256": "3b2b70e70273fe0768a4672463e4cb290c44b83a58703ff5618f18717f46d7e3",
+      "bytes": 398
+    },
+    {
+      "path": "reconciliation/09_FREEZE_MANIFEST.json",
+      "sha256": "b742dd70917d9aa3ca47e49c1067de2c7cc7dbdb11ddb8ffb6924d762b172254",
+      "bytes": 1538
+    },
+    {
+      "path": "reconciliation/10_MIGRATION_RECONCILIATION_REPORT.md",
+      "sha256": "4d9a48f1c01506b4f32969dc8527ccfbb96d6b4de3c545de43291f565cd3c1cc",
+      "bytes": 4536
+    },
+    {
+      "path": "reconciliation/11_logical_room_anchor_candidates.csv",
+      "sha256": "0bf41117fc3536af01e20a493fd34f56a5ab54fed0d6a2c93a4a8f8c6a23f44f",
+      "bytes": 1048
+    },
+    {
+      "path": "reconciliation/12_page_room_mapping_candidates.csv",
+      "sha256": "9c8e98cc05841bdd172422268a96a03a5053a9369780a5951f9500e458c3e648",
+      "bytes": 1564
+    },
+    {
+      "path": "reconciliation/13_main_hall_section_camera_seed_candidates.csv",
+      "sha256": "1e867055937d124a9ea0fdd6d19557a0cf5c2a34689ae8eb217e534761984ee7",
+      "bytes": 1799
+    },
+    {
+      "path": "reconciliation/14_logical_camera_master_binding_candidates.csv",
+      "sha256": "19350843a067805d5cb675d924f83dabd71b4c50296e89a7dd6c3a0775457c13",
+      "bytes": 6135
+    },
+    {
+      "path": "reconciliation/15_LIVING_AUTHORITY_AND_NEXT_RECONCILIATION.md",
+      "sha256": "ac2cbd26b281fc5f37b0a5d8bafec01f55ea0222c18c35643ab3d05de957c2db",
+      "bytes": 4190
+    },
+    {
+      "path": "reconciliation/16_page_room_pov_object_working_matrix.csv",
+      "sha256": "e68ec15cf801c5111224b7be0a83c2f90b5cf5baa63f5d3b21b31555bb529394",
+      "bytes": 5155
+    },
+    {
+      "path": "reconciliation/17_12_PAGE_BINDING_WORKPLAN.md",
+      "sha256": "3e2c0c9df3d92422e47ec29a16907cbbe121fbca98e6a821eca730d94cdae020",
+      "bytes": 4723
+    },
+    {
+      "path": "reconciliation/17_page_section_pov_wiring.csv",
+      "sha256": "d68ff3a3b4e9942dfb1e39af24d669fb71dfc7d02ba81ed9555079109b0e0df1",
+      "bytes": 13267
+    },
+    {
+      "path": "reconciliation/18_sweet_home_camera_creation_manifest.csv",
+      "sha256": "06ff4562a7ef6b810e4e8456cfd026b6d2ebb957e79f902b4aa7b0caed490324",
+      "bytes": 9158
+    },
+    {
+      "path": "reconciliation/19_current_12_page_pov_summary.csv",
+      "sha256": "c887d533024fb30328b9e237a47928f90ca86e059c677c2a79958e4934cfdf73",
+      "bytes": 2263
+    },
+    {
+      "path": "reconciliation/20_POV_WIRING_PHASE1.md",
+      "sha256": "f5b9c7dca20ba830f23e1f269aada38b66a3dd909d0d9338ab247a4ccc69d6ff",
+      "bytes": 2406
+    },
+    {
+      "path": "reconciliation/21_POV_WIRING_PHASE1_LIVING_NOTE.md",
+      "sha256": "c2f4b8f3cf55229276f428aa7035e8ac88c22e0ef601d473b1504e4686cee612",
+      "bytes": 1526
+    },
+    {
+      "path": "reconciliation/MASTER_SCENE_REFERENCE.md",
+      "sha256": "8377f5ef7dcc6d701dd0fe848a42f26cad26660cfed9b4565c7bee192658db60",
+      "bytes": 262
+    },
+    {
+      "path": "reconciliation/README.md",
+      "sha256": "af261149d3bcba0bc943f1c26afe7e26f1f4644741f2dbd0c15a07b653ed8426",
+      "bytes": 243
+    },
+    {
+      "path": "reconciliation/recovered-source-records/3d__docs__model-census.json",
+      "sha256": "d5f5e628a4dceb0e541cdc181ddbc4bf585094f6d1464a3afe8b898a8b91ac14",
+      "bytes": 577
+    },
+    {
+      "path": "reconciliation/recovered-source-records/cinematic__WalkMyPlan__data__camera-registry.json",
+      "sha256": "8922a7ed2f8d6b4452422df62342730f3e6eea702a6755da97d6fde06c953a25",
+      "bytes": 9286
+    },
+    {
+      "path": "reconciliation/recovered-source-records/cinematic__WalkMyPlan__data__physical-ui-object-registry.json",
+      "sha256": "ff09635fa9d13112798fbe8502d623158e5a03d2c444a0b2345fd80e99bc69d7",
+      "bytes": 33521
+    },
+    {
+      "path": "reconciliation/recovered-source-records/cinematic__WalkMyPlan__data__room-shell-registry.json",
+      "sha256": "44abd96f6d7ee42708d600b15876d931ad676eaf0f2ba3f7a2756578b6b09857",
+      "bytes": 4770
+    },
+    {
+      "path": "reconciliation/recovered-source-records/cinematic__WalkMyPlan__data__room-zone-registry.json",
+      "sha256": "fe1f428b3a50ecdb1c7418533e8c837b01cdb89d17128b83c5df2c8527b77708",
+      "bytes": 4803
+    },
+    {
+      "path": "reconciliation/recovered-source-records/cinematic__WalkMyPlan__data__section-camera-choreography.json",
+      "sha256": "40f84b8ce733db15fffa644d2f9522c0c14c3716f6421ef9398b9d5b24585302",
+      "bytes": 14938
+    },
+    {
+      "path": "reconciliation/recovered-source-records/cinematic__WalkMyPlan__data__spatial-reconciliation.json",
+      "sha256": "dfb3f97f37716ab61f421ad27bf71e7a764d27833d694a622a0daef516f0ccd5",
+      "bytes": 12197
+    },
+    {
+      "path": "reconciliation/recovered-source-records/data__house-camera-rig.json",
+      "sha256": "7dc0b14b77ab70baecbcba5d7383747a31d2b23df89c14cc5308b0edd8edd0c1",
+      "bytes": 2026
+    },
+    {
+      "path": "reconciliation/recovered-source-records/data__house-ui-map.json",
+      "sha256": "5e02d080b77e029f9c9c3ba33aa496eefa24f18a59229fe6bb82bdca757b44aa",
+      "bytes": 2804
+    },
+    {
+      "path": "reconciliation/recovered-source-records/data__house-ui-ux-code-reality-map.json",
+      "sha256": "b310368309b49fa242980c78fdc87a045ceb8809d6711c850f3d7912fa7dbca0",
+      "bytes": 9598
+    },
+    {
+      "path": "reconciliation/recovered-source-records/data__physical-ui-objects.json",
+      "sha256": "d2dc962201a805b33047d6b3b5f9cfc5c2956b412bdf641ecceff88942fe8e53",
+      "bytes": 1520
+    },
+    {
+      "path": "reconciliation/recovered-source-records/data__ui-response-mapping.json",
+      "sha256": "1566bb9aa4677bf37a9ffde89379d1bd0cb0389fa0d731165604bdd674fd824c",
+      "bytes": 42021
+    },
+    {
+      "path": "recovery-provenance.md",
+      "sha256": "b821f82bc1d913e85e33c8565c28fc66c18d7edcd7b7b11eb1804557a8fcbd65",
+      "bytes": 613
+    },
+    {
+      "path": "archive/checkpoints/00-ARCHIVE-AND-EVIDENCE-POLICY.md",
+      "sha256": "23420cb3d5488d31799e7b88e1367768f44e590022839fb9d46b27811c5c66ab",
+      "bytes": 666
+    },
+    {
+      "path": "archive/checkpoints/README.md",
+      "sha256": "021b4dcac89606f6a596a15a9fd8ea2b674fa5c26bd171a54fa8f5249155cdef",
+      "bytes": 302
+    },
+    {
+      "path": "archive/checkpoints/audits/legacy-phase-eight/31_responsive_qa_matrix.csv",
+      "sha256": "417854b542ceaf95e41bb88cc15980d2661815611aa5ea88c07e3b77510ee019",
+      "bytes": 9769
+    },
+    {
+      "path": "archive/checkpoints/audits/legacy-phase-eight/32_resilience_fallback_matrix.csv",
+      "sha256": "9740cb2a2db55558e598807ee4223ada2d0d17d9f61b5d7d1d4caf43bc807e69",
+      "bytes": 5613
+    },
+    {
+      "path": "archive/checkpoints/audits/legacy-phase-eight/33_role_camera_security_matrix.csv",
+      "sha256": "f775e9767d50f7b5e072e2795a0286164974275f2c5e06de474c1027f050109e",
+      "bytes": 2502
+    },
+    {
+      "path": "archive/checkpoints/audits/legacy-phase-eight/34_feature_wiring_route_coverage.csv",
+      "sha256": "58c5329c113deef9c30d83bf978b590c62e317ae1cfd5c285e98431ff5a2e13b",
+      "bytes": 1037
+    },
+    {
+      "path": "archive/checkpoints/audits/legacy-phase-eight/35_security_and_wiring_test_status.csv",
+      "sha256": "e845866c209195cb3186d12c6fb6fa07abdd625091f732a1391ba524fa168165",
+      "bytes": 507
+    },
+    {
+      "path": "archive/checkpoints/audits/legacy-phase-eight/36_PHASE8_INTEGRATION_AUDIT.md",
+      "sha256": "9011a5cbaf594d8cfc518c2aa66413980211cd794f6e40b2a01db24d6f044000",
+      "bytes": 2376
+    },
+    {
+      "path": "archive/checkpoints/audits/legacy-phase-nine/37_theme_token_audit.csv",
+      "sha256": "d5d1bad33b053331bcb080fdf4e81515fd8346b5fbcb27fa9a56f3f0812dcb9c",
+      "bytes": 1166
+    },
+    {
+      "path": "archive/checkpoints/audits/legacy-phase-nine/38_security_leak_scan.csv",
+      "sha256": "cf1cf9b1ebf74bfe8e72a4d53e1e2ab92430c1f40a5217d1ad7ef8c0938dab3d",
+      "bytes": 445
+    },
+    {
+      "path": "archive/checkpoints/audits/legacy-phase-nine/39_discrepancy_ledger.csv",
+      "sha256": "4470f95eac58a1225d03c6cda74f657a7b4ed3133d9088283c349c20682eaad9",
+      "bytes": 1054
+    },
+    {
+      "path": "archive/checkpoints/audits/legacy-phase-nine/40_PHASE9_THEME_SECURITY_REPAIR.md",
+      "sha256": "ef8cf4c25e45db74234a939d49cc25717e5a0f60f298e8cd98283dcb0f25dab6",
+      "bytes": 939
+    },
+    {
+      "path": "archive/checkpoints/audits/legacy-phase-nine/41_phase9_summary.json",
+      "sha256": "1b943431dcc6104f2a6ab6b17be1abaa0319347fdfaa1e9865cbe98f2d0bb08a",
+      "bytes": 171
+    },
+    {
+      "path": "archive/checkpoints/camera_visual_tuning/37-MAIN-HALL-VISUAL-TUNING-REVIEW.md",
+      "sha256": "6ec11c2e53bdeb81f698d5a15b7ca698b4ec1eb789d2169f64487ab6ee2e90cb",
+      "bytes": 1330
+    },
+    {
+      "path": "archive/checkpoints/camera_visual_tuning/MainHall_day_visual_tuned_contact_sheet.png",
+      "sha256": "d538aa0b070e5f0d3794eff99bbd079ebac8708eb840fe38879b9a14bc980e53",
+      "bytes": 136149
+    },
+    {
+      "path": "archive/checkpoints/camera_visual_tuning/MainHall_night_visual_tuned_contact_sheet.png",
+      "sha256": "ca74cce3a0d61094e3c03fd752391ebb845a23221e5a2c4342f304d51351ef24",
+      "bytes": 75952
+    },
+    {
+      "path": "archive/checkpoints/camera_visual_tuning/h01-h02-h03-h05/H01_H02_H03_H05_refined_day.png",
+      "sha256": "78557b33c684da4be0b91675c203da8728da24b06df5c3aa1d5f8317a91d8d99",
+      "bytes": 129845
+    },
+    {
+      "path": "archive/checkpoints/camera_visual_tuning/h01-h02-h03-h05/H01_H02_H03_H05_refined_night.png",
+      "sha256": "57f5dfc550c20a0574bbb8891e4163baeab241c94a924e3b7950e0ebb8f1946e",
+      "bytes": 73369
+    },
+    {
+      "path": "archive/checkpoints/camera_visual_tuning/h01-h02-h03-h05/refinement-manifest.json",
+      "sha256": "51dae12ba9ff44ce9fffa22b3149a9fa1e0aaab65d78fd4d4622484dde38b22b",
+      "bytes": 1456
+    },
+    {
+      "path": "archive/checkpoints/camera_visual_tuning/main-hall-visual-tuning.csv",
+      "sha256": "8307fb2177bea0dee8eb00a01155a057c73d086c6fe76039d8a7bb242c8eced6",
+      "bytes": 1079
+    },
+    {
+      "path": "active_development/archive/checkpoints/market_profile_preview/Market_Profile_physical_UI_root_preview.png",
+      "sha256": "b4bcb5af36b1f38612f340e0dd6af01a84193020b54da20e4a38be8ca894b663",
+      "bytes": 80637
+    },
+    {
+      "path": "active_development/archive/checkpoints/market_profile_preview/preview-manifest.json",
+      "sha256": "a4bd95f002b6f255686b8f4a237d7e48af6e564ffb23f935881bf01baacbcd6d",
+      "bytes": 435
+    },
+    {
+      "path": "active_development/3d/app/homefinder-viewer.css",
+      "sha256": "765555ca4335c22834d009fb0bd7c81266b9b32cd9a7352f64bac7ddf1a51e87",
+      "bytes": 2972
+    },
+    {
+      "path": "active_development/3d/app/homefinder-viewer.js",
+      "sha256": "fee7443759227190dd13a3b1d00564df8a6863750a9c92117bd4f322016654c7",
+      "bytes": 2942
+    },
+    {
+      "path": "active_development/3d/docs/model-census.json",
+      "sha256": "d5f5e628a4dceb0e541cdc181ddbc4bf585094f6d1464a3afe8b898a8b91ac14",
+      "bytes": 577
+    },
+    {
+      "path": "active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/HomeFinderViewer.html",
+      "sha256": "11de03d3b8f3e4218746faf7c145872a54e41e5d1061825b939d7d290ef02f58",
+      "bytes": 2656
+    },
+    {
+      "path": "active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/HomeFinderViewerOverlay.html",
+      "sha256": "a46b6f6e3e0949f03f85dfcf9f4baf926fbc2e948bffc9e1a36c7488c093deec",
+      "bytes": 1662
+    },
+    {
+      "path": "active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/batik-svgpathparser.min.js",
+      "sha256": "91fb06a1bdbaf8b96f0c5cb74681b902f436516b48cddb204c9e21e4af74cded",
+      "bytes": 83194
+    },
+    {
+      "path": "active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/big.min.js",
+      "sha256": "76f91cda46aaeec826dd708affdb007fc93a6b2f739255511fd31844ebfa9621",
+      "bytes": 7582
+    },
+    {
+      "path": "active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/close.png",
+      "sha256": "a79d6abc4add16040d15c9dab9635893a84dd2b9ec82a18c659fd16d84a4a88d",
+      "bytes": 597
+    },
+    {
+      "path": "active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/core.min.js",
+      "sha256": "657d5f2d0999337834ceb35be974662736017f07c5a46996bc4b2731ad883718",
+      "bytes": 15387
+    },
+    {
+      "path": "active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/geom.min.js",
+      "sha256": "cc38c89cb45b15d5b2a651e8bbc8bf9b42daba73ce8d884037c2cfde64a1557e",
+      "bytes": 346778
+    },
+    {
+      "path": "active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/gl-matrix-min.js",
+      "sha256": "925243236f89bce15faac8d46279f74b190b000997a22d10300e9a96822fc334",
+      "bytes": 54213
+    },
+    {
+      "path": "active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/jsXmlSaxParser.min.js",
+      "sha256": "29234c3fab3d58fd25c93f5191615e67b08231aea3321a20fea715d9b89b8b26",
+      "bytes": 67547
+    },
+    {
+      "path": "active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/jszip.min.js",
+      "sha256": "1780b6a8f6b8ecaadcd00cf199ecba026e0c262b10791aabf0c4892804f7abc4",
+      "bytes": 80025
+    },
+    {
+      "path": "active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/navigationPanel.png",
+      "sha256": "7d3d3c8caa7d04d91f53f12179c0b283ceaffbed6354aa0784ecb79755f08496",
+      "bytes": 2992
+    },
+    {
+      "path": "active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/stroke.min.js",
+      "sha256": "5613061d7622d80325d7f6f9a8a393c698bd01ff81faaadde2624e6a9c9f1642",
+      "bytes": 65252
+    },
+    {
+      "path": "active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/triangulator.min.js",
+      "sha256": "d146d5770dd0b56a293d3802c58e03868c99632f5de6a06bd3a9d0f7b774606b",
+      "bytes": 34324
+    },
+    {
+      "path": "active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/viewhome.min.js",
+      "sha256": "e8b51168e806874d743989dc5626e25812313042d29d851541e98ea887f1ff28",
+      "bytes": 953191
+    },
+    {
+      "path": "active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/viewmodel.min.js",
+      "sha256": "4142ef3719865f6ce9ba4e7d6a5320a9a69c4c539a5fbb5982400edb5608ec7f",
+      "bytes": 163441
+    },
+    {
+      "path": "active_development/ACTIVE_DEVELOPMENT_MANIFEST.json",
+      "sha256": "46234df3c721923fb7330f05e5ca4bc6473d01c78a5cf6d0a2f939016a3cadb6",
+      "bytes": 907
+    },
+    {
+      "path": "active_development/CHECKPOINT_MANIFEST.json",
+      "sha256": "89b9f53c977681b8c35d9fc13f90e969ea915df084254c99e109dfaa5c2bcb0f",
+      "bytes": 73388
+    },
+    {
+      "path": "active_development/admin.html",
+      "sha256": "50742b3d87588661565b54e3f971d756ed2951732a59e83b81fbffa778459c83",
+      "bytes": 20345
+    },
+    {
+      "path": "active_development/assets/User Avatars/image_5547e4a1.webp",
+      "sha256": "dcb9e387ee7a15dabbe86e13af00e3f7ba96692746df9451d8681f67e71ac0d4",
+      "bytes": 51356
+    },
+    {
+      "path": "active_development/assets/User Avatars/image_75f53a8b.webp",
+      "sha256": "742b3465413697ea87e3982e490e4a9e2c4433656e2aaa7ea264dc88352e3d5e",
+      "bytes": 43148
+    },
+    {
+      "path": "active_development/assets/User Avatars/image_78423f51.webp",
+      "sha256": "29e85162d4620fa854384088c4e9989c646bc3e8899fdd36c0e3d8863adc7dd8",
+      "bytes": 47068
+    },
+    {
+      "path": "active_development/assets/User Avatars/image_7b08ec7c.webp",
+      "sha256": "81c835b7d12218ca3957d61b20f10a0f017d6531a6358846e3fe787ec059c6d6",
+      "bytes": 76288
+    },
+    {
+      "path": "active_development/assets/User Avatars/image_85396f8c.webp",
+      "sha256": "6f7a28a2ed7ed34addd0512bba8a8ebf872b2ff0d56d8f1c2faf417677d8a88f",
+      "bytes": 44330
+    },
+    {
+      "path": "active_development/assets/User Avatars/image_9fc3978b.webp",
+      "sha256": "25048cc19194797e2c7f84f970cfc57fc4cc6001cf83815309d878e6c71b1214",
+      "bytes": 48514
+    },
+    {
+      "path": "active_development/assets/User Avatars/image_a48e5b59.webp",
+      "sha256": "0862b0f197a9a6fce2a1408d17d2e9a7710eafe3e57b41c77085e66f18c4937d",
+      "bytes": 41114
+    },
+    {
+      "path": "active_development/assets/User Avatars/image_ab3b5fdb.webp",
+      "sha256": "b611efaace9f24f7016601b37a20742061401115817b62c620ad698d2c6d7764",
+      "bytes": 43888
+    },
+    {
+      "path": "active_development/assets/User Avatars/image_cb7ef1d4.webp",
+      "sha256": "296325f13e2869a3b68f47c1d6e9eab2267ce23021e184625dd193da21a5f17f",
+      "bytes": 42696
+    },
+    {
+      "path": "active_development/assets/User Avatars/image_d052ef90.webp",
+      "sha256": "fb26ba3e9f33cdad3ef66fcca7a9ab00b5f5d1833debb0500ae5a10f82921165",
+      "bytes": 262368
+    },
+    {
+      "path": "active_development/assets/User Avatars/image_d89bb40d.webp",
+      "sha256": "8a96c793a0d11f0125f83e45da1506c0f0a1002c35e9e48707b76c325bddb568",
+      "bytes": 82582
+    },
+    {
+      "path": "active_development/assets/User Avatars/image_d9cbc399.webp",
+      "sha256": "f2d98186b7920b8fb13fdcd0ca1a82a44cabc6b2368c694099f5cf91a3bc32d8",
+      "bytes": 43332
+    },
+    {
+      "path": "active_development/assets/User Avatars/image_edf294ba.webp",
+      "sha256": "7312c1e23a1d09f2ecb774d1f60895c646df24e5d06c8fc0095c5af80efaa8e0",
+      "bytes": 47064
+    },
+    {
+      "path": "active_development/assets/User Avatars/image_fd906f9a.webp",
+      "sha256": "55c1a15febd343c1d49cfeabbb49d6a5899bd77c6cab31504462431ab41d2d00",
+      "bytes": 41896
+    },
+    {
+      "path": "active_development/assets/images/logo-homefinder.png",
+      "sha256": "71c6162658f9cddd88af12bc26938746f092f4502b9271bafbea8692e6e55205",
+      "bytes": 101867
+    },
+    {
+      "path": "active_development/audits/legacy-phase-ten/36-responsive-qa-execution.csv",
+      "sha256": "8a38ea95292468c10d62d00285c0e556fbcf1409b1f7c102495fb129873bf68a",
+      "bytes": 7620
+    },
+    {
+      "path": "active_development/audits/legacy-phase-ten/37_PHASE10_PUBLIC_PROFILE_RESPONSIVE_AUDIT.md",
+      "sha256": "22a30b70303791d716182258b5b08631881ad5eb9f55c8931dec5b89af9a6e94",
+      "bytes": 2794
+    },
+    {
+      "path": "active_development/broker-hq.html",
+      "sha256": "56d54fed19226150332b53d24a937f1aafaafc3200ac1667f9a6e0474ded0df0",
+      "bytes": 12804
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/MANIFEST.json",
+      "sha256": "8f8902b23a18e524978649c70ce620440694507347606caec664ee7f8363c124",
+      "bytes": 1839
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/asset-integration-manifest.json",
+      "sha256": "e66ba726f0eb1a5b55d7310d01af2968295d705aaeb338e0142d6180b7270d5f",
+      "bytes": 17042
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/asset-loading-graph.json",
+      "sha256": "caac53821eca0714d9f3b5d644ea08ef73db84db8c0079491a667f474cc4e0cd",
+      "bytes": 1686
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/asset-readiness-matrix.csv",
+      "sha256": "e9b8da05a8708f0a08f3f2ed79b8fb1f3b8622f76adde8d2c22e03f471bcbd2b",
+      "bytes": 5411
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/asset-source-license-contract.json",
+      "sha256": "00eb76248f2bc6ecf8229354ff150f65a705568f42b9e7f2b4bd0814a81bbafa",
+      "bytes": 765
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/auth-identity-route-capability-matrix.json",
+      "sha256": "1eb0ac9b9d47cba75624b163c0a630d69a0536b2cb9f4a50c06d982194efac1f",
+      "bytes": 4215
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/camera-door-graph.csv",
+      "sha256": "8430cb6abf1c585d14d7a81a0f9b9993952d03a595c385747b5b3b1a14c09598",
+      "bytes": 901
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/camera-registry.json",
+      "sha256": "8922a7ed2f8d6b4452422df62342730f3e6eea702a6755da97d6fde06c953a25",
+      "bytes": 9286
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/canonical-camera-door-graph.json",
+      "sha256": "d9dc4306a4916186f809fd45e4be1495c7883fef9fab2e2c79957a5262d426a5",
+      "bytes": 3907
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/cinematic-transition-contract.json",
+      "sha256": "1f3e8dd5893dadd191278e597b0b7b140856779e98b440db935d6a4a25cc1fb2",
+      "bytes": 800
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/door-registry.json",
+      "sha256": "7ff7ead376ad8627a7df143c8f4ac764e012736a563250c8d18f0aaf387b99a8",
+      "bytes": 4320
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/environment-shell-registry.json",
+      "sha256": "14dacb281fe267cff9622133085a65fec97855cd88b2295181db48e37c1d05c2",
+      "bytes": 1299
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/hero-asset-contract.json",
+      "sha256": "a0ef02f46ad3c9b39569572ca50e956daa58df5760196ccfa0bb4077b9be5d34",
+      "bytes": 920
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/hero-composition-matrix.csv",
+      "sha256": "8820c5010aa4a726674e4118428fb3510e4456f2429781540db388fe28200c47",
+      "bytes": 2840
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/hero-composition-matrix.json",
+      "sha256": "9ed116cbfdd654e1aa788ffb1950a48b23c131ed4611df694902642a9658b3db",
+      "bytes": 6013
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/hero-world-shell-registry.json",
+      "sha256": "46599db4f5654727f5f5704c8c621eea97f681d7c53d2ee5aadac42702c86662",
+      "bytes": 3240
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/main-hall-zone-object-map.json",
+      "sha256": "a1b6621a957b071f8138193c1ff85ecaede45e2c1dc937f397d0d92cb6ee4440",
+      "bytes": 2213
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/operations-role-surface-matrix.csv",
+      "sha256": "205d845c41cf5196d217fda4693af41846e5cd2604fd3121f404f1f94a6a99e8",
+      "bytes": 487
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/operations-role-surface-matrix.json",
+      "sha256": "bfae3a9e1bbee25bc4bcf037d50f7d7bfca22960186619fdd6d68fdff44fd451",
+      "bytes": 1918
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/performance-budget-matrix.json",
+      "sha256": "83af39303117484f9dc106ec16f2bdda9e913f48d976dabde38e0db7cf570a06",
+      "bytes": 2207
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/physical-ui-object-contract.csv",
+      "sha256": "49b6f71744271597f07a5c1981fb5af230a032b7a36cae83e5a3d5e8d40569d8",
+      "bytes": 13289
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/physical-ui-object-contract.json",
+      "sha256": "e9832697957a151c91bdc3e6e99670c5d4fc8eaf2abd0310fa43ae64f4d30aae",
+      "bytes": 1054
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/physical-ui-object-registry.json",
+      "sha256": "ff09635fa9d13112798fbe8502d623158e5a03d2c444a0b2345fd80e99bc69d7",
+      "bytes": 33521
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/role-path-matrix.json",
+      "sha256": "3a693deb6c052b9a37716069e67edb69b7029ec17c023329326ecea63d1dad33",
+      "bytes": 3391
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/room-shell-registry.json",
+      "sha256": "44abd96f6d7ee42708d600b15876d931ad676eaf0f2ba3f7a2756578b6b09857",
+      "bytes": 4770
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/room-theme-performance-map.json",
+      "sha256": "fd4e993d648d423f7da235c40abca98ea36bf59aa589e0181ccebfe7a9e87458",
+      "bytes": 2528
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/room-zone-registry.json",
+      "sha256": "fe1f428b3a50ecdb1c7418533e8c837b01cdb89d17128b83c5df2c8527b77708",
+      "bytes": 4803
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/route-registry.json",
+      "sha256": "81884da0648dfe289c0af01e72e7365abdcc7cf5790a540add1a581149cd4238",
+      "bytes": 2263
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/section-asset-binding.csv",
+      "sha256": "bdba54cabeecebeeef39973dd84790bebaf303c709bbc507e52d1d16ff8e0cd7",
+      "bytes": 12563
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/section-camera-choreography.json",
+      "sha256": "40f84b8ce733db15fffa644d2f9522c0c14c3716f6421ef9398b9d5b24585302",
+      "bytes": 14938
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/security-camera-registry.json",
+      "sha256": "a5743f0b0805b644908abe61ef939b95c9e3b96352253978f0b52195ca73137d",
+      "bytes": 2510
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/spatial-reconciliation.csv",
+      "sha256": "dff67c4bdbcaf4ad97fc0ef4a46c7f2d7b1e1441ff9c604f2cfa36113d506876",
+      "bytes": 4484
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/spatial-reconciliation.json",
+      "sha256": "dfb3f97f37716ab61f421ad27bf71e7a764d27833d694a622a0daef516f0ccd5",
+      "bytes": 12197
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/theme-lighting-contract.json",
+      "sha256": "fd1ce146b78cd97a6f8b514927791b1ec7b09e4eb7f70157e3e85151b456684c",
+      "bytes": 1782
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/data/visibility-performance-policy.json",
+      "sha256": "081cb17507cb8d1164f9b09c1aad9b305aca92fccf38ddef47205cc2b5a3dc4d",
+      "bytes": 821
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/docs/A4.4C3.3_Camera_Door_Graph_Printable.pdf",
+      "sha256": "b0c9be46f59a2cc4fa146143ebe4e54c83ac3f3f384042bb70680ac259ac5acd",
+      "bytes": 3932
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/docs/A4.4C3.4_Hero_Composition_Printable.pdf",
+      "sha256": "973cd91915f5ff9a7659f4010424d3bb0e4892bd81805aae6e394abf5a13bd66",
+      "bytes": 4559
+    },
+    {
+      "path": "active_development/cinematic/WalkMyPlan/docs/A4.4C3.5_Physical_UI_Object_Printable.pdf",
+      "sha256": "1d9681eb487d90b10521e6bcd032132f2b7c50381e71fd88595773dc0be0ebde",
+      "bytes": 4937
+    },
+    {
+      "path": "active_development/css/admin.css",
+      "sha256": "31369da13d050031cefff79d51835d8a236855e55aab5c68d9645dc9e3b3b689",
+      "bytes": 20568
+    },
+    {
+      "path": "active_development/css/auth.css",
+      "sha256": "21405265e8ef94b6e14aac9b325fd05b4a51cca5e518efde9d6f1b20e3fe1bb5",
+      "bytes": 16190
+    },
+    {
+      "path": "active_development/css/broker-hq.css",
+      "sha256": "b6b5f1c8f6693220fb54e4ae54783b35dfe961d940868c9fb4960ac234c94a76",
+      "bytes": 20904
+    },
+    {
+      "path": "active_development/css/cinematic-ui.css",
+      "sha256": "024f110609e179c77c0042dcd7bf5c188cbeeb29d04dd44a5e8c625dc900e3ab",
+      "bytes": 40914
+    },
+    {
+      "path": "active_development/css/customSelect.css",
+      "sha256": "d9df3a2e253b214541fd73439712ec21aa9dd300fceb5a30ee5b9e4f263ece64",
+      "bytes": 2558
+    },
+    {
+      "path": "active_development/css/gov-finance.css",
+      "sha256": "c7e039ad4bb436fdae7136ab22508044d0267db2c2aecfa455ebca7b0d3c0013",
+      "bytes": 11367
+    },
+    {
+      "path": "active_development/css/home/about.css",
+      "sha256": "44a4bfc3c72af0fb2541e32f8c951fd984bbd4877300c2f0a3d2ab72aff36507",
+      "bytes": 9764
+    },
+    {
+      "path": "active_development/css/home/footer.css",
+      "sha256": "a2cdb776765161849d2151c08ad91a06d7cd931c1f67874c50c70f2df47f0b33",
+      "bytes": 7208
+    },
+    {
+      "path": "active_development/css/home/hero.css",
+      "sha256": "7db7ada424f9a1c27a1d70a9716ffa42564f2cd4c058c16ccd6baab77014ff98",
+      "bytes": 7882
+    },
+    {
+      "path": "active_development/css/home/house-world.css",
+      "sha256": "c4361da1b6c3365be61425780549b2b2d6da62da65960d9ed285d283a4431ead",
+      "bytes": 4676
+    },
+    {
+      "path": "active_development/css/home/property.css",
+      "sha256": "59d83195fc0aaf94dc8f1be8252d203c8c6e9f1d228f11084372080cf698af71",
+      "bytes": 3662
+    },
+    {
+      "path": "active_development/css/home/style.css",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "active_development/css/market-profile-physical-ui.css",
+      "sha256": "031f5b0f9b4b3a7b2735e6c33d1b8771da1fa0854e8c060eabcb15da2e92836a",
+      "bytes": 1217
+    },
+    {
+      "path": "active_development/css/market.css",
+      "sha256": "8523887669b1f33077eaa64093301ed2c2b2d14c4c1fa79498b60c0e74fc5289",
+      "bytes": 26248
+    },
+    {
+      "path": "active_development/css/navbar.css",
+      "sha256": "e77e4ccf3ab4871b032f34e84d3021edc7388929e8a312e2a1a7c2a0083bb37b",
+      "bytes": 9854
+    },
+    {
+      "path": "active_development/css/profile/forms.css",
+      "sha256": "232e9de7671258be0ced1708e0bfeb46fb64f78ce6dc7423ceaf2611160ef4fe",
+      "bytes": 7280
+    },
+    {
+      "path": "active_development/css/profile/kyc.css",
+      "sha256": "dee41d4b55500040c2314cd3ccb6d3eedf1d9ae2c9de58ef29b3e88dd6c24f02",
+      "bytes": 7738
+    },
+    {
+      "path": "active_development/css/profile/layout.css",
+      "sha256": "62182cadf3b4110fc6e2a31eb0e71eb005818ed921d90ba50eb2ecaa0f526a91",
+      "bytes": 44440
+    },
+    {
+      "path": "active_development/css/profile/listing-form.css",
+      "sha256": "d20c33dd38e5aa18a832a92dc2f9c6f9002077c44d6151faa270b9042cdd1022",
+      "bytes": 31608
+    },
+    {
+      "path": "active_development/css/profile/panels.css",
+      "sha256": "f89188f083797d344f157acd8d5a8d6c7adcf57271dcab105c1390a53b5a9375",
+      "bytes": 35459
+    },
+    {
+      "path": "active_development/css/profile/perks-showcase.css",
+      "sha256": "c0a2f5941d1539da4ca2c4251d024a6822d0d57473fefd89984b10aaab786e0c",
+      "bytes": 5870
+    },
+    {
+      "path": "active_development/css/profile/responsive.css",
+      "sha256": "eeaca85154b98e84c225fda543b0716c222a5ad0f446833a3afaade4cf7b77f1",
+      "bytes": 2555
+    },
+    {
+      "path": "active_development/css/profile/subscription.css",
+      "sha256": "7047c2d31e8e39e44fc5d787b004b6732f61a474a1e7b0c06bad35c9ed0c2711",
+      "bytes": 588
+    },
+    {
+      "path": "active_development/css/profile/ui-upgrade.css",
+      "sha256": "5e131124fde58bf7d9daafb4f2f331c78b777e110d48f5e8930fb5ab23a1ed71",
+      "bytes": 8593
+    },
+    {
+      "path": "active_development/css/profile/visitor.css",
+      "sha256": "2cd6ecb78cef4d179988bfff6d87b474df98811a7ebe6dcbc40aadaff69b9bb8",
+      "bytes": 4868
+    },
+    {
+      "path": "active_development/css/reset.css",
+      "sha256": "6cd12e0e8d253a8fb88b043c86fad73d475f81d26f28bd5232542b7dafcbeaac",
+      "bytes": 752
+    },
+    {
+      "path": "active_development/css/responsive.css",
+      "sha256": "105b5fd0118f9fb621b3954feaa3ef82fc0e4f43e615045c6ca7c5523a7d2262",
+      "bytes": 1703
+    },
+    {
+      "path": "active_development/css/search.css",
+      "sha256": "fcba282b6cf6ba45d0f4dd910a6dad093e7214e9b4a9b851a88b52c8f0dd6104",
+      "bytes": 2713
+    },
+    {
+      "path": "active_development/css/toast.css",
+      "sha256": "ed4918a667c97057cf0cde12b0793453d62193ccd5dedd4ff60384075937cc2f",
+      "bytes": 2340
+    },
+    {
+      "path": "active_development/css/transition.css",
+      "sha256": "0293e97c46c8b9dda287571c85efc4e2aa2ea551a69752f72735d9fc8fe0cc7f",
+      "bytes": 1276
+    },
+    {
+      "path": "active_development/css/utilities.css",
+      "sha256": "51bab3bf918c3d2228a467b2b87c90a604f81615a8fa4cfc4e6d3741bbb711fb",
+      "bytes": 7068
+    },
+    {
+      "path": "active_development/css/variables.css",
+      "sha256": "d1f388e3415bcb3a84462a279c94a7f0f797219942198b146beb26e6ef397eb4",
+      "bytes": 14501
+    },
+    {
+      "path": "active_development/css/viewport/mobile.css",
+      "sha256": "5b2d277c7fc8cfc633c2343e2dea4210c31f2a21c820e80bc01772925c42da86",
+      "bytes": 4417
+    },
+    {
+      "path": "active_development/data/cinematic-assets.json",
+      "sha256": "5da9d55f67686b7a8488d4eae70ae61e38280ceb192c5ca08d419239d31ac28d",
+      "bytes": 2616
+    },
+    {
+      "path": "active_development/data/cinematic-scenes.json",
+      "sha256": "29a328e179f3f27318bff780561d1c16463f9238e06e82f75a72facad6e5168f",
+      "bytes": 1460
+    },
+    {
+      "path": "active_development/data/cinematic-worlds.json",
+      "sha256": "2e1db9383a06583031aa0aa1c8367015f0a14d45a1429bec135457d0cb878c5a",
+      "bytes": 1666
+    },
+    {
+      "path": "active_development/data/design-roots.json",
+      "sha256": "f90b5d9acb6257fad720dde6ecd299bbb94c56ee67eef7b4f11763b2e66e51b9",
+      "bytes": 2552
+    },
+    {
+      "path": "active_development/data/dictionary.json",
+      "sha256": "07d7b31a56c9ab9a234e0e138dd74c633c018a713e7bb7cb1e083f584c43f0a6",
+      "bytes": 17055
+    },
+    {
+      "path": "active_development/data/environment-modes.json",
+      "sha256": "da82ac4eab83e021be15da2dcf641c90dbbc498d87a2e63ba580a02e1b5bcda6",
+      "bytes": 759
+    },
+    {
+      "path": "active_development/data/feature-wiring-matrix.csv",
+      "sha256": "c5fd225284d7d3a825affbe4e589182b182201b5365d3f700be9a4435bd3de81",
+      "bytes": 6050
+    },
+    {
+      "path": "active_development/data/feature-wiring-matrix.json",
+      "sha256": "778f38939c64b28be7ff21c4be3c403a48c736cf2eda48ef76f091c99937b8e0",
+      "bytes": 19820
+    },
+    {
+      "path": "active_development/data/house-camera-rig.json",
+      "sha256": "7dc0b14b77ab70baecbcba5d7383747a31d2b23df89c14cc5308b0edd8edd0c1",
+      "bytes": 2026
+    },
+    {
+      "path": "active_development/data/house-ui-map.json",
+      "sha256": "5e02d080b77e029f9c9c3ba33aa496eefa24f18a59229fe6bb82bdca757b44aa",
+      "bytes": 2804
+    },
+    {
+      "path": "active_development/data/house-ui-ux-code-reality-map.json",
+      "sha256": "b310368309b49fa242980c78fdc87a045ceb8809d6711c850f3d7912fa7dbca0",
+      "bytes": 9598
+    },
+    {
+      "path": "active_development/data/login-physical-ui-objects.json",
+      "sha256": "ccb3ecc3018aa77c23eb24286572b0ea0c859211b5e5742f5878e1c807725dd0",
+      "bytes": 1945
+    },
+    {
+      "path": "active_development/data/main-hall-camera-contract-phase13.json",
+      "sha256": "a8468c39197ad4fc4ba3610360537e022cad930a32c18f7518215f8b530ab404",
+      "bytes": 2469
+    },
+    {
+      "path": "active_development/data/main-hall-camera-object-contract-summary.json",
+      "sha256": "e1f75067a4ff07546265af7277a2e5cf0e75c9a0044dbdc3368f93f053a5d888",
+      "bytes": 319
+    },
+    {
+      "path": "active_development/data/main-hall-camera-object-contract.csv",
+      "sha256": "c75110b11bc5c705bd9f0804fc01284bb09a00ae456a19f7cc8cbc55876a0786",
+      "bytes": 12896
+    },
+    {
+      "path": "active_development/data/main-hall-camera-object-contract.json",
+      "sha256": "ef27a3dda2a5fa689b795c801e5862dbbe140a1f595def3772969d2b62493d79",
+      "bytes": 7177
+    },
+    {
+      "path": "active_development/data/main-hall-camera-phase13-summary.json",
+      "sha256": "586deec8c24ebf0f7af5bd41114f2e8b4e8c6833cd29351eabf1154d0098e2f6",
+      "bytes": 615
+    },
+    {
+      "path": "active_development/data/main-hall-camera-refinement-h01-h02-h03-h05.csv",
+      "sha256": "de0bbb979b02386fd49c8f32abe13c066a932ce75919850617b897d5818cfb4f",
+      "bytes": 1141
+    },
+    {
+      "path": "active_development/data/main-hall-cinematic-ui-map.json",
+      "sha256": "54139ed98951cebc04027cd4d23a16e998495382d449e796627c03402280de13",
+      "bytes": 6386
+    },
+    {
+      "path": "active_development/data/market-physical-ui-objects.json",
+      "sha256": "658a239818a3fb5cbbe3a0716ecca021b9aa37f39faa5f6baaf7b078374cac34",
+      "bytes": 2024
+    },
+    {
+      "path": "active_development/data/market-profile-physical-ui-root-matrix.csv",
+      "sha256": "f553e381606c08d587b4ecd363a7ec2d5298d242d53bc4e86c68a03e28dd65e6",
+      "bytes": 2451
+    },
+    {
+      "path": "active_development/data/master-page-room-pov-theme-role-object-responsive.csv",
+      "sha256": "0afc734cf5f912cdadadd66abe0b30dc3511aceb20263c7e2b8b4b702b7184f8",
+      "bytes": 42703
+    },
+    {
+      "path": "active_development/data/phase10-final-audit.json",
+      "sha256": "67f7782e95e254c31ebe891659ab77a937f47cae158cf71efb5a61fd46142866",
+      "bytes": 571
+    },
+    {
+      "path": "active_development/data/phase11-execution-summary.json",
+      "sha256": "2436a4f1007ca464a804192d4d8a2af12a8cbb2aae119f8974822efa875de0ec",
+      "bytes": 447
+    },
+    {
+      "path": "active_development/data/phase11-final-audit.json",
+      "sha256": "3cf3fad0280d2243821b31e78388c855c9c2796a47cc9fb172141a63ef969afa",
+      "bytes": 1238
+    },
+    {
+      "path": "active_development/data/phase11-secret-scan.json",
+      "sha256": "2f624d989280b61bffae63efde232adf7bece0045434a920542907cb92e03172",
+      "bytes": 746
+    },
+    {
+      "path": "active_development/data/phase12-animation-object-responsive.json",
+      "sha256": "cf5eb62c1bd09a01e99f1249878fd25a45f0d88d473ecd439dafc2a4587f4404",
+      "bytes": 1086
+    },
+    {
+      "path": "active_development/data/phase12-read-surface-summary.json",
+      "sha256": "66fecf7a14a00f2dbb8d1985dfaa91a6c445566e0856c18b93741632c24d3aed",
+      "bytes": 611
+    },
+    {
+      "path": "active_development/data/phase13-auth-propagation.json",
+      "sha256": "47ed6af9609a299e3fb1fa241ca1570708af50f3c252657c936b8c618f84f37d",
+      "bytes": 783
+    },
+    {
+      "path": "active_development/data/physical-ui-objects.json",
+      "sha256": "594e746becc356afac8124afb15b8eefa526090556f0f38a17d8232e358bfd50",
+      "bytes": 14292
+    },
+    {
+      "path": "active_development/data/profile-physical-ui-objects.json",
+      "sha256": "2472f101b3163e862e1e5c9663f85e8bf4993a3d31a498f7c9a043d7763c2283",
+      "bytes": 3199
+    },
+    {
+      "path": "active_development/data/register-physical-ui-objects.json",
+      "sha256": "0ff72b13643566e64152492bd01587734b9042adc2acbb14f48e6b808574c3ee",
+      "bytes": 2582
+    },
+    {
+      "path": "active_development/data/responsive-browser-execution.csv",
+      "sha256": "1537f241049d73867959eadadbbc09e9feee85bf5416fd8ad5d6437a4452be15",
+      "bytes": 12448
+    },
+    {
+      "path": "active_development/data/responsive-qa-execution.csv",
+      "sha256": "8152212f8573c590df1b6119fbe4470ad2f2851b9a6b8dba2d4e968259d6c158",
+      "bytes": 7693
+    },
+    {
+      "path": "active_development/data/security-leak-audit.json",
+      "sha256": "6d4c5ce3c28972978094e0645260c9984b36925f523007d7f7ebe4c3119e8df4",
+      "bytes": 405
+    },
+    {
+      "path": "active_development/data/security-read-surface-matrix.csv",
+      "sha256": "110c4501caea3d0fe4ebced13e07a8c47f398628441a5dc20c50661f658495ed",
+      "bytes": 1742
+    },
+    {
+      "path": "active_development/data/syntax-audit.json",
+      "sha256": "c0498c527e5f9bff2326803f4f62970c62a4f54dc6ac570d7d986f8d13d5b0f7",
+      "bytes": 44
+    },
+    {
+      "path": "active_development/data/theme-room-compatibility.csv",
+      "sha256": "20f2c0d15f00676db9310ef694eeb5702e02c1b6cd4b70304d1ad3ec558caab9",
+      "bytes": 1059
+    },
+    {
+      "path": "active_development/data/theme-system.json",
+      "sha256": "0044ca6289ef1cc65955866b03dd3b2c8db05719876f8a46a33cf275237c1d8c",
+      "bytes": 1005
+    },
+    {
+      "path": "active_development/data/ui-response-mapping.json",
+      "sha256": "1566bb9aa4677bf37a9ffde89379d1bd0cb0389fa0d731165604bdd674fd824c",
+      "bytes": 42021
+    },
+    {
+      "path": "active_development/docs/01-SOURCE-OF-TRUTH.md",
+      "sha256": "fda9c8607ea648f91c7b23db8cbb33adaa7f07ce8cc363d0c45056791f5d4542",
+      "bytes": 506
+    },
+    {
+      "path": "active_development/docs/02-PROJECT-MAP.md",
+      "sha256": "f24a97d03837bf595e099c713faad06a89a5c8e55386f240cce29f739b6022ad",
+      "bytes": 2492
+    },
+    {
+      "path": "active_development/docs/03-PRODUCT-ROUTES-ROLES.md",
+      "sha256": "0cf6c94678cb8b079f77806b3bc8e236fc54ce733fe42f90d5e0c30114ed54c0",
+      "bytes": 511
+    },
+    {
+      "path": "active_development/docs/04-DATA-BACKEND-AUTHORITY.md",
+      "sha256": "670d83dbf3f92fded2519a0ed20648895dcfb61dc17e23d150f040f56662a789",
+      "bytes": 513
+    },
+    {
+      "path": "active_development/docs/05-DOMAIN-DICTIONARY.md",
+      "sha256": "8ad23691837be32fea49f5ddbb539900e092210fa3613cf0294c3747385a72e9",
+      "bytes": 1942
+    },
+    {
+      "path": "active_development/docs/06-UI-OWNERSHIP.md",
+      "sha256": "1db299801cdafd0959b4650f3028882cc5f089d622c493d930235ee942cfd678",
+      "bytes": 1625
+    },
+    {
+      "path": "active_development/docs/07-INTEGRATIONS-PAYMENTS-EDGE.md",
+      "sha256": "7529c1719a16bbf934516a6e8029a95f5decf5bb30988b72999ef2f69768cb81",
+      "bytes": 1761
+    },
+    {
+      "path": "active_development/docs/08-CINEMATIC-PRINCIPLES.md",
+      "sha256": "06263570b67431303cf1b78283782729b3ac97bf81253346744a2d5ef3ee22f3",
+      "bytes": 1854
+    },
+    {
+      "path": "active_development/docs/09-SWEETHOME3D-SOT.md",
+      "sha256": "55fe4925206d7d18baa0c858cd5b564f04ac4e2bed5f30b34275097da77936a0",
+      "bytes": 506
+    },
+    {
+      "path": "active_development/docs/10-SWEETHOME3D-MODEL-CENSUS.md",
+      "sha256": "5f0f4b359a1f6fa1e78b96f44b2cbecc28ad2654a0cf41601a85e8aa5567fcce",
+      "bytes": 1277
+    },
+    {
+      "path": "active_development/docs/11-ANIMATION-CAMERA-DOOR-CONTRACT.md",
+      "sha256": "1c8079d65d57e0eaffd7ddf1a9113a7811ddf845ddec7887bb1f469915bd958d",
+      "bytes": 1669
+    },
+    {
+      "path": "active_development/docs/12-PHYSICAL-UI-OBJECTS.md",
+      "sha256": "20e89fce44d75936d9052c090ea1df8d092ba57202b3279f65bf4c5339a53cfe",
+      "bytes": 1584
+    },
+    {
+      "path": "active_development/docs/13-SPATIAL-RECONCILIATION.md",
+      "sha256": "9d6fdeead0c798980daca4c68accc3c73eb6f38431a0d96a3f963f4c204959de",
+      "bytes": 2344
+    },
+    {
+      "path": "active_development/docs/14-PERFORMANCE-ACCESSIBILITY.md",
+      "sha256": "2c04a3e2191aa924cd23f455bf1fcf9962bdf66d337ca44e3d09fdf648ae6a4c",
+      "bytes": 1434
+    },
+    {
+      "path": "active_development/docs/15-CHANGE-CONTROL.md",
+      "sha256": "6bf4660c334609fc67292021feff79d2f7020432ef13acf720b656672e2638a7",
+      "bytes": 1409
+    },
+    {
+      "path": "active_development/docs/16-LEGACY-COMPATIBILITY-RETIREMENT.md",
+      "sha256": "429a01c74821d50a06138c9b3a3f60107576e6d7bd34ddb782f3196c5602c2b0",
+      "bytes": 1572
+    },
+    {
+      "path": "active_development/docs/17-VERIFICATION-TESTING.md",
+      "sha256": "182534855ae90b1a5e8bf9dfb693c0c7fe1eedbd728e299c11a6d25447626ced",
+      "bytes": 511
+    },
+    {
+      "path": "active_development/docs/18-ROADMAP.md",
+      "sha256": "dabf54b099856a5dbf2ed9ac93497b40acefb3e61dc1026bc36da46405160407",
+      "bytes": 498
+    },
+    {
+      "path": "active_development/docs/19-LANDMINES-OPEN-ISSUES.md",
+      "sha256": "47aaa20d091eb70e89cf59084b851da47a7e723fea2cf4b64a46a6648dec68a4",
+      "bytes": 1869
+    },
+    {
+      "path": "active_development/docs/20-THIRD-PARTY-NOTICES.md",
+      "sha256": "6d0eef11f58dbce27cf2504907f5661c9864c0e8a4f76f245315adba227b5e1d",
+      "bytes": 59454
+    },
+    {
+      "path": "active_development/docs/21-THEME-AND-ANIMATION-ROOT.md",
+      "sha256": "3f994a2e8dd6f9a5d5d59b1c00e65376ccb812eb60e5f9c235a672be3372dd91",
+      "bytes": 1783
+    },
+    {
+      "path": "active_development/docs/22-MASTER-CROSS-SYSTEM-MATRIX.md",
+      "sha256": "c131692c3ea7486a2390f2b7d4fe2356dbee2d87f3a89590bda82bbc1db64623",
+      "bytes": 800
+    },
+    {
+      "path": "active_development/docs/23-DOCUMENT-ORGANIZATION-AND-REPAIR.md",
+      "sha256": "6c975f4f4449973d77a17d3f7bc40eec2a6c85a76f2c9ce47fd2c4c377133312",
+      "bytes": 1174
+    },
+    {
+      "path": "active_development/docs/24-SECURITY-DRAINAGE-AND-HARDENING.md",
+      "sha256": "3c0e64fba942c64ea56ebbab79f077c648a4312be01685b37e152e2494a5b1c9",
+      "bytes": 2199
+    },
+    {
+      "path": "active_development/docs/25-PUBLIC-PROFILE-PROJECTION.md",
+      "sha256": "4a3cda7dd5a6afa135e6cf9e3a8bc9250cf05b3a020e5ca4d9f46a1f5183979c",
+      "bytes": 1501
+    },
+    {
+      "path": "active_development/docs/26-RESPONSIVE-QA-EXECUTION.md",
+      "sha256": "6039d52639535cb692c1fb4d6365c3fd5d6ddee0993c2e57b0894a5dacbd5901",
+      "bytes": 1109
+    },
+    {
+      "path": "active_development/docs/27-CHECKPOINT-STRUCTURE.md",
+      "sha256": "7d14c939fb202740ccdafe336bbe18ef6392380b069fdda0826a544de8dd6ecb",
+      "bytes": 630
+    },
+    {
+      "path": "active_development/docs/28-PUBLIC-PROFILE-DEPLOYMENT-RUNBOOK.md",
+      "sha256": "3eb18496c5e069a3936965c87c5e80e0ccb4f03a8513d6263b33e0aae9537b5f",
+      "bytes": 1794
+    },
+    {
+      "path": "active_development/docs/29-RESPONSIVE-BROWSER-EXECUTION-2026-08-23.md",
+      "sha256": "4007130613bdda4278e4423a4d7a04f996c2f39862177cbfc630a6ee3a1dbf7a",
+      "bytes": 560
+    },
+    {
+      "path": "active_development/docs/30-PHASE11-DEPLOY-AND-BROWSER-GATE.md",
+      "sha256": "60205add3b054a8102a0ccff360b2621f858c73f2e55f885e6e70c4732092ee6",
+      "bytes": 1264
+    },
+    {
+      "path": "active_development/docs/31-MASTER-CAMERA-CONTRACT.md",
+      "sha256": "1c83b93bb9b9fee65b3abab948344ffc68d80dc2421953ab5598d9d2736da37a",
+      "bytes": 1266
+    },
+    {
+      "path": "active_development/docs/32-PUBLIC-PROFILE-READ-SURFACE-GATE.md",
+      "sha256": "d8564db252fb2808b9c5357e444d0c5338e8285533ae0a9fec94ca15710d0592",
+      "bytes": 1088
+    },
+    {
+      "path": "active_development/docs/33-PUBLIC-READ-SURFACE-HARDENING.md",
+      "sha256": "e1a9dadd9b859924e30e8564ba6ba01dc0741c42919af53f462cf5a6591bcc8d",
+      "bytes": 1285
+    },
+    {
+      "path": "active_development/docs/34-DESIGN-ROOTS-IMPLEMENTATION.md",
+      "sha256": "ba9380508a8e22e73162c315f4346ec948cbf21bd43f9c3e3780c68c0d121c2c",
+      "bytes": 1379
+    },
+    {
+      "path": "active_development/docs/35-MAIN-HALL-PHYSICAL-UI-CONTRACT.md",
+      "sha256": "cae0f7212f8d2c996b39e759e07ced6b9fe54da60ec71dfd76ff39f8d2f322ce",
+      "bytes": 1244
+    },
+    {
+      "path": "active_development/docs/36-MAIN-HALL-CAMERA-OBJECT-CONTRACT.md",
+      "sha256": "a49b97a5ac57012976a3fda9078b8dbf610f4f632761f2b2e2be4b18e0ae0bdd",
+      "bytes": 1477
+    },
+    {
+      "path": "active_development/docs/37-MAIN-HALL-CAMERA-TUNING-PHASE13.md",
+      "sha256": "14470b33a1d583087134d9e3b6ad9c2d09f42af51c7df9f414902139da03217c",
+      "bytes": 587
+    },
+    {
+      "path": "active_development/docs/38-MAIN-HALL-H01-H02-H03-H05-REFINEMENT.md",
+      "sha256": "761ea6c2a1a1c69669f4c705259f717ef1916b818e91c6dd56b93d20b9897538",
+      "bytes": 1817
+    },
+    {
+      "path": "active_development/docs/39-ANIMATION-OBJECT-RESPONSIVE-CONTRACT.md",
+      "sha256": "72294d3c03d0a4ce49f1ddaae6ff7af15dfcd3c9f60cc13657924dec1346c6db",
+      "bytes": 1636
+    },
+    {
+      "path": "active_development/docs/40-PHASE12-ANIMATION-OBJECT-RESPONSIVE.md",
+      "sha256": "be6066bf44ccaacf8da8ffbddf69c91360aa7111cbe04689bc40c9057bca35e5",
+      "bytes": 2077
+    },
+    {
+      "path": "active_development/docs/41-AUTH-PHYSICAL-UI-PROPAGATION.md",
+      "sha256": "69dbf48c582d37ab6f5ced7f8dee33e3ddb048a356eb44b1f25500fd013ef72f",
+      "bytes": 1232
+    },
+    {
+      "path": "active_development/docs/42-PHASE13-AUTH-PROPAGATION.md",
+      "sha256": "b8e33332602c4dc41d32b1b27f4d08ead64f8ff45e2d6446ac272cbfbe7abadc",
+      "bytes": 1530
+    },
+    {
+      "path": "active_development/docs/43-MARKET-PROFILE-PHYSICAL-UI-PROPAGATION.md",
+      "sha256": "2abf505fe8804e529ab39a6d814b10eb994747c922d81b986312e745ffc9b6a0",
+      "bytes": 1358
+    },
+    {
+      "path": "active_development/docs/44-MARKET-PROFILE-PREVIEW-NOTE.md",
+      "sha256": "03e20b78225387e350d3d3e6ea1fcce9eaa0d0a4c13828ae7304a7f645f2c36e",
+      "bytes": 441
+    },
+    {
+      "path": "active_development/docs/README.md",
+      "sha256": "2298556149e99a9bc7f0eaa665a7b5c1bf25d5e43190c68c57a28574d2cb1a99",
+      "bytes": 554
+    },
+    {
+      "path": "active_development/docs/_archive/NEXT_PATCH-legacy.md",
+      "sha256": "14bb2b0ce6d7aab9593929d6e0c571107f65513794e90faa7f5542764a88ffbd",
+      "bytes": 214
+    },
+    {
+      "path": "active_development/docs/architecture/PATCH-53-UI-UX-CONTRACT.json",
+      "sha256": "a2213eb2c4a00cbe94f45400a173b1e58c542bfa52b86d3b3b89828bbf30505b",
+      "bytes": 7102
+    },
+    {
+      "path": "active_development/docs/dictionary/INDEX.json",
+      "sha256": "d41dc337353c77518fc428829398f008dc4f53550234acc98bcaff5a7c094c00",
+      "bytes": 1090
+    },
+    {
+      "path": "active_development/docs/dictionary/domains/routes.dictionary.json",
+      "sha256": "c5bce7652b28bdcdaa9e05d72fb5894f654f730ad8fcbfe55c5e93bf3b684d05",
+      "bytes": 3058
+    },
+    {
+      "path": "active_development/docs/dictionary/domains/ui-ownership.dictionary.json",
+      "sha256": "eeb1c6f7b2d6d485d89ef05a44db422248ea6c77095c80cd115693abe20485bd",
+      "bytes": 2291
+    },
+    {
+      "path": "active_development/docs/integrations/cloudflare/PRODUCTION-CHECKLIST.md",
+      "sha256": "05898b7a7084ee210b7c9d6524030b279972cfa01e6b174e5d6ec6d9c1f5a652",
+      "bytes": 1754
+    },
+    {
+      "path": "active_development/docs/integrations/cloudflare/PRODUCTION-PAYPAL-CLOUDFLARE-CONTRACT.md",
+      "sha256": "4258f4334e634f392dd5152d54c26cfd53244ffcce2133a1b62a16adefeb3f01",
+      "bytes": 7728
+    },
+    {
+      "path": "active_development/docs/patches/PATCH-25-ADMIN-SUBSCRIPTION-GRANT.md",
+      "sha256": "409399871533fdef48790e15d3b1ebc465c8fd9ca3f01fc80b6a9609ae644abd",
+      "bytes": 2181
+    },
+    {
+      "path": "active_development/docs/patches/PATCH-26-PAYPAL-CLOUDFLARE-HARDENING.md",
+      "sha256": "920045b701f24f4dd55cbed5510d43f1bc64819b17155f801a0bef370663da87",
+      "bytes": 2141
+    },
+    {
+      "path": "active_development/financing.html",
+      "sha256": "e783ce5686149f4b7c1e6226016a9c1cb59edcfe072d1b306c2780b0684a8b98",
+      "bytes": 4306
+    },
+    {
+      "path": "active_development/firebase/firestore.indexes.json",
+      "sha256": "51aefc7fbad86afef84ff7eef182bc38c7d02efb645930aebfdced5afdd3b63e",
+      "bytes": 743
+    },
+    {
+      "path": "active_development/firebase/firestore.rules",
+      "sha256": "6e4c68e3885608acfb48893b483263c699b0308d72ce63f7825053232544494f",
+      "bytes": 52939
+    },
+    {
+      "path": "active_development/firebase/functions/backfillPublicProfiles.js",
+      "sha256": "2fb1997ba1aa95630bc0176ae7445fe662a1f362848c020d587d9f3e5637360f",
+      "bytes": 1748
+    },
+    {
+      "path": "active_development/firebase/functions/brokerHQDiscoveryProjection.js",
+      "sha256": "d07b97d6d635ee0f8a5052147abf869d41878767a098787fc419335ed6356bd6",
+      "bytes": 5386
+    },
+    {
+      "path": "active_development/firebase/functions/canonical-authority.js",
+      "sha256": "9a459bfa7232fb8749645fb1dccc6a89d48a090f6be02059c6e301b62b50469e",
+      "bytes": 740
+    },
+    {
+      "path": "active_development/firebase/functions/contracts/kyc-authorization.json",
+      "sha256": "dddfd46d6010cec98192516b568c324bd0cc8641504e63a62721cb2b23b0f340",
+      "bytes": 1694
+    },
+    {
+      "path": "active_development/firebase/functions/index.js",
+      "sha256": "d437e684caa363537414c947f3d8a75d96a0e2d6a03e910c57c10b25ec6168f9",
+      "bytes": 129957
+    },
+    {
+      "path": "active_development/firebase/functions/package.json",
+      "sha256": "6082118a7964f2d23711172119a6d2052254b65d780e1304218208d663f2cf4c",
+      "bytes": 315
+    },
+    {
+      "path": "active_development/firebase/functions/publicProfileProjection.js",
+      "sha256": "38a232006475af0a88816a6574527f011322e43b9be8b9a90c5f5f7403877780",
+      "bytes": 1214
+    },
+    {
+      "path": "active_development/firebase/functions/tiers.js",
+      "sha256": "13324a15c1f3ba6556df1997aeaf1aafca46bf02c3e7a958bc46bcb51cd17545",
+      "bytes": 26676
+    },
+    {
+      "path": "active_development/firebase.json",
+      "sha256": "d303fca60079dca465ebafe0a7703255b79d63c503454b429d0395d07f637ca7",
+      "bytes": 809
+    },
+    {
+      "path": "active_development/house-world.css",
+      "sha256": "d4e346bd5c233d5ae96eb2d47ac53919773a829281ea4f76a686d2022c8b6b79",
+      "bytes": 5343
+    },
+    {
+      "path": "active_development/index.html",
+      "sha256": "95cbd3ea6dbc33434a74dc8f27c5207d1c35a1e9fc568767ac11d50c118b0f15",
+      "bytes": 50390
+    },
+    {
+      "path": "active_development/js/admin/contracts.js",
+      "sha256": "8382ab8709f1ad1a5455cc1aa8627c0e0bd05a841cda150ee21e26f5320fb9b5",
+      "bytes": 2716
+    },
+    {
+      "path": "active_development/js/admin/core.js",
+      "sha256": "d6ffaa9f66a2d8cdd916f83cd4f2881cbb9c51b70fe637b7fe067ef9f2adf182",
+      "bytes": 4004
+    },
+    {
+      "path": "active_development/js/admin/kyc-registry.js",
+      "sha256": "f9f2b91c87d0e06f23b23b508cee299e60c186d70658ac31ad28a20fcd138701",
+      "bytes": 7852
+    },
+    {
+      "path": "active_development/js/admin/listing-help-payments.js",
+      "sha256": "d0fac3d20c77c1021e80444345dc4973942d26fcda68ba567be5e560be7dc437",
+      "bytes": 6958
+    },
+    {
+      "path": "active_development/js/admin/logout.js",
+      "sha256": "d44f013d6114090105302e93d1f62df641a6e42e38dd24f9af3158316528a336",
+      "bytes": 134
+    },
+    {
+      "path": "active_development/js/admin/orders.js",
+      "sha256": "3825d27670dc2f930d1679c57dcb2d9ea9890cf63e915f57da1cb69574fda8e8",
+      "bytes": 9207
+    },
+    {
+      "path": "active_development/js/admin/prompt.js",
+      "sha256": "26854a79300d0184ad9b6b1cbdb102046d57690e91816570e0283c8c1faadbaa",
+      "bytes": 7679
+    },
+    {
+      "path": "active_development/js/admin/properties.js",
+      "sha256": "411eca448e91aefe3088e2e6e6b1c575eb5c969e105b3779e54cee99dedfe000",
+      "bytes": 8353
+    },
+    {
+      "path": "active_development/js/admin/reports.js",
+      "sha256": "aad9698ba0e11f13ce9a7822d2621e71a2696add0e931c93815c98aab9c0cdd7",
+      "bytes": 8496
+    },
+    {
+      "path": "active_development/js/admin/staff-alerts.js",
+      "sha256": "dabc70419febb20f5a8539e4c4893708d693add62a8180fd4426d56c256b16e9",
+      "bytes": 2260
+    },
+    {
+      "path": "active_development/js/admin/support-tickets.js",
+      "sha256": "08791b8b23a4d259f6ab097e26ee61f5517c3b279b543d15985d38987ba4d98f",
+      "bytes": 16567
+    },
+    {
+      "path": "active_development/js/admin/tabs.js",
+      "sha256": "6a556c592ba7415a7c595ae94b1eb8114f7043ed411ef4a7cf35be51bdad5578",
+      "bytes": 1447
+    },
+    {
+      "path": "active_development/js/admin/users.js",
+      "sha256": "d74a30a5a0ff4362b9697c590e2bf85cdfcecc2f5275467eeaeb6dfa378c266f",
+      "bytes": 50081
+    },
+    {
+      "path": "active_development/js/admin/verifications.js",
+      "sha256": "1dfd130d47b43d01c9cb5e2bcd53f2c0aca21a54db93a553d3cfe1dfaf4f9ebe",
+      "bytes": 14523
+    },
+    {
+      "path": "active_development/js/admin/verified-users.js",
+      "sha256": "77e68b4a53da76cae6af9e6444e7934362b8bb05fb17c0d1121057302efcc79f",
+      "bytes": 3983
+    },
+    {
+      "path": "active_development/js/admin/wanted.js",
+      "sha256": "6a45b3388345ff1468f8ceabb45e74284ae142fc843b46fe6a74eafef89e27ea",
+      "bytes": 6491
+    },
+    {
+      "path": "active_development/js/admin-gov-disclaimers.js",
+      "sha256": "366de03b3c8ae162e3eb4071f9bbd078bd949146ae069d58a557dc98cf338311",
+      "bytes": 2215
+    },
+    {
+      "path": "active_development/js/admin-gov-housing.js",
+      "sha256": "d4c98913277b52e5bd007990faedc442cdaa5630fb636b1217577eb1948631fc",
+      "bytes": 7037
+    },
+    {
+      "path": "active_development/js/admin-uid.js",
+      "sha256": "c3f53a10cb43309d218c18c95c231b00b77dd13f9471519d4a8afa71ed8a780d",
+      "bytes": 2733
+    },
+    {
+      "path": "active_development/js/animation-root.js",
+      "sha256": "b53a9ba80a7b05c4b4a5281a3faef04f5e521d00c4fc1e19cbfdd590839df3d5",
+      "bytes": 2338
+    },
+    {
+      "path": "active_development/js/auth-physical-ui.js",
+      "sha256": "b067c84a088cf3c8df05185581d36d36a6e02b8e66c025139ecaf2238ffa8207",
+      "bytes": 2746
+    },
+    {
+      "path": "active_development/js/auth.js",
+      "sha256": "04969b33145f79cd37cfb7601291f55ec44bdfd77b12a5564bba164907691940",
+      "bytes": 23823
+    },
+    {
+      "path": "active_development/js/authority-contract.js",
+      "sha256": "edf8bdf4bac73001715059bf65d7e266250d9dee61e4be9ea8ce68bdfd3e6488",
+      "bytes": 2759
+    },
+    {
+      "path": "active_development/js/brand-logo.js",
+      "sha256": "4097faac8bc1418fd9ad15e798d456eeb5bc427af257d83b39a7ca442171a8de",
+      "bytes": 842
+    },
+    {
+      "path": "active_development/js/broker-data-contract.js",
+      "sha256": "61a447847aab770f639336537d96dc8a96f13d7ddaf951d2a43f6f65cd085530",
+      "bytes": 1840
+    },
+    {
+      "path": "active_development/js/broker-hq.js",
+      "sha256": "ae31e3300bade5b519be802d59072a01e9f80dbcd4b824d44112f3b7e086fa75",
+      "bytes": 43988
+    },
+    {
+      "path": "active_development/js/canonical-role.js",
+      "sha256": "dd53f9f84e14ebb0dfdaaaeb5077b5e35b93691f20a2a1083d3b97dd3836e9eb",
+      "bytes": 1171
+    },
+    {
+      "path": "active_development/js/reference-3d/cinematic-3d-adapter.js",
+      "sha256": "ed8249f6ab4d13e9e76a45b2d140526b446d75325168bba0707bdee0fd23070b",
+      "bytes": 4346
+    },
+    {
+      "path": "active_development/js/cinematic-3d-asset-loader.js",
+      "sha256": "d1821d8ddf46136bcd56cda041d719f0699f5a2807a637c3303cc0961317c7ed",
+      "bytes": 4777
+    },
+    {
+      "path": "active_development/js/cinematic-3d-renderer.js",
+      "sha256": "bd0e071f09c469e3be36b9a1cb72ca8151dc7dfa1c79c0a184149a19ab655a28",
+      "bytes": 10221
+    },
+    {
+      "path": "active_development/js/cinematic-ui.js",
+      "sha256": "6bb623763bd3bcfcf3d14d38efe2d28707e16173aeb03ea7af526fdeae04fe0f",
+      "bytes": 16213
+    },
+    {
+      "path": "active_development/js/collections.js",
+      "sha256": "d98ca0da11bb1d8e2dc9961e655d037f027e563318602a1b2a20359331d29066",
+      "bytes": 1959
+    },
+    {
+      "path": "active_development/js/credits-logos.js",
+      "sha256": "a43fed10942ccff36c973cc757179ce9ef8fe6192444351f5c7157cfad4dd608",
+      "bytes": 2342
+    },
+    {
+      "path": "active_development/js/customSelect.js",
+      "sha256": "c4a87c89b2ee6c21288bbfdd50f035f6ca128811e8a75d54a40437e41e0b011e",
+      "bytes": 2764
+    },
+    {
+      "path": "active_development/js/design-roots.js",
+      "sha256": "fd272fa3fcc0f1d9c6b5b0dc4c3d609be6ecbd0b411ac7062cb8c7445a8832df",
+      "bytes": 2689
+    },
+    {
+      "path": "active_development/js/firebase.js",
+      "sha256": "f367581bf28df097e191c79a3b9dea8a7d0e577df538a5daa9950a2355a6f7bf",
+      "bytes": 2264
+    },
+    {
+      "path": "active_development/js/geo.js",
+      "sha256": "e214c8f0a9d1b4c24b985f53e18390cfbcd2e5784618604891a27c57f8c0dbce",
+      "bytes": 844
+    },
+    {
+      "path": "active_development/js/gov-disclaimers.js",
+      "sha256": "db276f9c35d55f03bf390e8ccb96a673e0731caf65de29682958e0202407dec2",
+      "bytes": 4084
+    },
+    {
+      "path": "active_development/js/gov-housing-posts.js",
+      "sha256": "e0732ceb4792710fcea489002b94ebbf395d1e62045f78fada8d43761b31fa22",
+      "bytes": 5260
+    },
+    {
+      "path": "active_development/js/home/environment-modes.js",
+      "sha256": "0ee7d0fdd2e442e1f052f11046af985b1e71f6df1b0b98212e55b20c1ec8b407",
+      "bytes": 2480
+    },
+    {
+      "path": "active_development/js/home/featured-live.js",
+      "sha256": "14b661e1fa4cd7788055f35c7581ff63cce9ecbf8efa4d73516ed78004e1f8da",
+      "bytes": 2898
+    },
+    {
+      "path": "active_development/js/home/home-typing-slogans.js",
+      "sha256": "aea508c4efa415f84406f9e406edb4ec5e0443295a5d388752509cf6b9114579",
+      "bytes": 875
+    },
+    {
+      "path": "active_development/js/home/house-camera-rig.js",
+      "sha256": "4adf5b8760a6a601c263dbae793397d5b7d42dc4662c3855c74cf8f10d70f27f",
+      "bytes": 2500
+    },
+    {
+      "path": "active_development/js/home/house-world-scroll.js",
+      "sha256": "aa68107b483fc189e819cf3b797c1ae730eea41f6db33903b09c8169bc0349f2",
+      "bytes": 3475
+    },
+    {
+      "path": "active_development/js/home/map-teaser.js",
+      "sha256": "bcb10acbafb609767d05fd069efc5bdb40a6c493d26ea6e5c42284695b265aff",
+      "bytes": 4171
+    },
+    {
+      "path": "active_development/js/home/navbar.js",
+      "sha256": "d0171f704df7b8788feeeb39682fda1710d5e566634359aa86a74372d98884bc",
+      "bytes": 3384
+    },
+    {
+      "path": "active_development/js/home/physical-ui-objects.js",
+      "sha256": "15d63309a45d0a10f457a30bb3343b975697bef5059861b30573ed13b05f24f6",
+      "bytes": 4725
+    },
+    {
+      "path": "active_development/js/home/typing.js",
+      "sha256": "a526de2b480c44c645eff4807d9960d4e03897fba51ba03f7e3a9c3679c2f439",
+      "bytes": 1151
+    },
+    {
+      "path": "active_development/js/home-gov-housing.js",
+      "sha256": "fcdd034b994ac7b23a9f1eeb630f619db8a1778a3e1dd6c7a9a89f097aa58908",
+      "bytes": 3980
+    },
+    {
+      "path": "active_development/js/kyc-reference.js",
+      "sha256": "ad98e18546fd3c865fd10aeddabbd1218cf538c0cff12411bf7ed35abc155250",
+      "bytes": 1899
+    },
+    {
+      "path": "active_development/js/leave-guard.js",
+      "sha256": "663c7b6783a9887ff53141ab555722bc726de28a04788b7ace2fcaa345a9c164",
+      "bytes": 1691
+    },
+    {
+      "path": "active_development/js/listing-catalog.js",
+      "sha256": "0693985d97e21ff3e51f887c73b4f5de98b7f4804c127bc2027f15f960502414",
+      "bytes": 5679
+    },
+    {
+      "path": "active_development/js/listing-create-gate.js",
+      "sha256": "18f71f88230b42be023b7d833423aea38e7f239f719244a04e784aa0d86f4880",
+      "bytes": 3323
+    },
+    {
+      "path": "active_development/js/market-chrome.js",
+      "sha256": "a4fa381a1c5e6a582b2e6a38879e5a4f9dc0b9738c33a729dbf2c82846075cf5",
+      "bytes": 7871
+    },
+    {
+      "path": "active_development/js/market-data-contract.js",
+      "sha256": "ae97ddac7d964174f751ec5b626da6897b81247d86c211668609fe29dd124575",
+      "bytes": 3442
+    },
+    {
+      "path": "active_development/js/market-discovery-contract.js",
+      "sha256": "7e6960a80eeb78d00255facf9352f83b9aa3c94b0534574a02ccce53788db5df",
+      "bytes": 4080
+    },
+    {
+      "path": "active_development/js/market-map.js",
+      "sha256": "19be661f22a533b50e68a129529f97829378f093dc5577f08070d961b748a0c5",
+      "bytes": 51704
+    },
+    {
+      "path": "active_development/js/market-profile-physical-ui.js",
+      "sha256": "be68a956e0ebe6dd36706670fe7dcd1d0fb5111100fe39e36a8d3d8fee6c8ec5",
+      "bytes": 1942
+    },
+    {
+      "path": "active_development/js/market.js",
+      "sha256": "7cc7a64855d26c3ce82f6b8727693ee60d5a510ad86d15aa38266a0545ae34a6",
+      "bytes": 27876
+    },
+    {
+      "path": "active_development/js/payment-config.js",
+      "sha256": "87b4cfd9a5011ab1a8c37b56aa6806666dac99daef9e8255d24adb94fc59fe45",
+      "bytes": 4058
+    },
+    {
+      "path": "active_development/js/physical-ui-state.js",
+      "sha256": "51a0efc2e505b05d4d584f8f1f774324a0fe0718309e455f6b88f7b73f444cd4",
+      "bytes": 3914
+    },
+    {
+      "path": "active_development/js/pins-model.js",
+      "sha256": "123f002856c133729337ce706ef111faa14ef7b236295d382f86c5522de8a1f2",
+      "bytes": 6083
+    },
+    {
+      "path": "active_development/js/points-ledger.js",
+      "sha256": "ce293d7a50ad603b3b99a788b8d63ebdafd454f694aa834adddd0223bad11f6c",
+      "bytes": 2777
+    },
+    {
+      "path": "active_development/js/preferred-radius.js",
+      "sha256": "7fa8926ff1dc26eb5286ec0e860a189005439d33e828c7cd1062fc53fc9a15c3",
+      "bytes": 4757
+    },
+    {
+      "path": "active_development/js/profile/active-listings.js",
+      "sha256": "42b7132e363899daebf51e082664640566419432f06246742422d207008efb07",
+      "bytes": 10411
+    },
+    {
+      "path": "active_development/js/profile/admin-link.js",
+      "sha256": "3dddd8e005308e70c418633aa4acd8ec0d4ba637c6ff3a89fce1d2d092727150",
+      "bytes": 212
+    },
+    {
+      "path": "active_development/js/profile/amenities-ui.js",
+      "sha256": "03471cd1fd9e4a3c4e1af8bb8c074ca9ed3aa11dfa8c2215cede87e820726dcc",
+      "bytes": 2693
+    },
+    {
+      "path": "active_development/js/profile/avatar-picker.js",
+      "sha256": "5a8f8d552e70d5fcdc062d9eaad083a94a6fd03066bd8b13eef19cefef5b2a80",
+      "bytes": 4112
+    },
+    {
+      "path": "active_development/js/profile/body-scroll-lock.js",
+      "sha256": "a8ff578a75a1aa41e087a5eaa451b8747528ce45f75b31799fb0baf032f77e64",
+      "bytes": 2017
+    },
+    {
+      "path": "active_development/js/profile/boost-order.js",
+      "sha256": "5330b50e8d5d7ffcba41a3c463e6fd796d1d48da9de832b87692023e2a28733d",
+      "bytes": 15512
+    },
+    {
+      "path": "active_development/js/profile/broker-assists.js",
+      "sha256": "2d699fe6bdc85818fa81b77013146fd991e9e2e6d45359d2d87d600ef9ac61fe",
+      "bytes": 6727
+    },
+    {
+      "path": "active_development/js/profile/contract-chat.js",
+      "sha256": "2825bf49324c0a0a223bf111ec4b2384425a4c1d6cde59a88606138364de81dc",
+      "bytes": 9444
+    },
+    {
+      "path": "active_development/js/profile/contract-dictionary.js",
+      "sha256": "48b41eb2afcd06c465a834cc61b944eeeefc9668bcd7bd3a821ca37fbdcdf58e",
+      "bytes": 3187
+    },
+    {
+      "path": "active_development/js/profile/contracts-tab.js",
+      "sha256": "41b7868ae37528c2f7cf6cf7cb0f2752f1032b357c6e35314e3f003e3c27c439",
+      "bytes": 16992
+    },
+    {
+      "path": "active_development/js/profile/core.js",
+      "sha256": "5fa74991cc17ae3d9bebd1f265e69db5b7447c0155f7fb4423bcae7d1de38c71",
+      "bytes": 449
+    },
+    {
+      "path": "active_development/js/profile/delete-account.js",
+      "sha256": "669caf221536a131fe79482b073b705ef63f2faed75dc2e9f194c3fb20683c25",
+      "bytes": 2539
+    },
+    {
+      "path": "active_development/js/profile/gov-housing.js",
+      "sha256": "784ff3d3e14541d44f47a15e0d213acfd227ec437c87fc1da5d2c5413730142c",
+      "bytes": 4388
+    },
+    {
+      "path": "active_development/js/profile/header-scroll.js",
+      "sha256": "283acd4a9296e7cf191e8dfcf2a7a18651f3c9c147defd4c5bbf76570a85fe48",
+      "bytes": 8701
+    },
+    {
+      "path": "active_development/js/profile/kyc-form.js",
+      "sha256": "74edfd5d2916f8ddd4c8006883dc84ef4360fcd90547d8db734384c45169dc0d",
+      "bytes": 24229
+    },
+    {
+      "path": "active_development/js/profile/law-dictionary.js",
+      "sha256": "3379cb60f7b957d193843e690683fab6b284f30335437d3f8dd19ef3860cd699",
+      "bytes": 7814
+    },
+    {
+      "path": "active_development/js/profile/listing-form.js",
+      "sha256": "ffed7ea414173a5bb6f0acf22b4bff1a38cb4449893333c62a820dddcf35b92e",
+      "bytes": 76975
+    },
+    {
+      "path": "active_development/js/profile/listing-lock.js",
+      "sha256": "7cc09940a0c88941818d784eb6037ede7c3b3bc59c7b44c9f188d65caa33d587",
+      "bytes": 1182
+    },
+    {
+      "path": "active_development/js/profile/listing-map.js",
+      "sha256": "a7d07b17ee8f2a4a10dc63d9f3ef6491cbeec6c675c0023db0c370a35b591cea",
+      "bytes": 7269
+    },
+    {
+      "path": "active_development/js/profile/logout.js",
+      "sha256": "51781334064cfb10327e6927e4400744ad305966d5054c995d962b8c46ed0143",
+      "bytes": 3458
+    },
+    {
+      "path": "active_development/js/profile/match-notify.js",
+      "sha256": "15ab77e509b3cdd5fe6b57a877e66bb63056d9d2dbe9c2d2ab09ee4aab9af951",
+      "bytes": 586
+    },
+    {
+      "path": "active_development/js/profile/messages.js",
+      "sha256": "285bd845ad3a6c523bbde0c95b65b7362264f42df1c07b94685bfa199de3475a",
+      "bytes": 21583
+    },
+    {
+      "path": "active_development/js/profile/need-help.js",
+      "sha256": "87759048513bdf20fd36cd795a68dc986bd9a7d10df8b5c789cb863c0cd963e0",
+      "bytes": 16073
+    },
+    {
+      "path": "active_development/js/profile/notifications.js",
+      "sha256": "2a4abdf446a2ac75efef492adadb2c03a4c36c2b71b6df172354cc98a888abd7",
+      "bytes": 15028
+    },
+    {
+      "path": "active_development/js/profile/ongoing-contracts.js",
+      "sha256": "86e3da4ca6da8a76e4a37910b62c64cb212c66d9c3289af94eaa53c79787c1e5",
+      "bytes": 5193
+    },
+    {
+      "path": "active_development/js/profile/perks.js",
+      "sha256": "53678e55b1dc5f1a45f56624bc2d52850b7be4e1001fd9ff0db32eaef3354936",
+      "bytes": 39871
+    },
+    {
+      "path": "active_development/js/profile/portfolio-assets.js",
+      "sha256": "0a4c513c990b51ea03d4025b8bb7377a4aeba19b31b9f3748ea643f73b53b19f",
+      "bytes": 3766
+    },
+    {
+      "path": "active_development/js/profile/privacy-settings.js",
+      "sha256": "edd78cf3d97199561f81c99aca5e18b8f08775cc9ed054ab4e071443592d0b01",
+      "bytes": 3308
+    },
+    {
+      "path": "active_development/js/profile/profile-cooldown.js",
+      "sha256": "a34f8e6f7c8ff4dc91681ab1cf21de6033eb607db42c95d2ad87c8e6e31b48c0",
+      "bytes": 10779
+    },
+    {
+      "path": "active_development/js/profile/profile-data.js",
+      "sha256": "f6f74b70f58bab3765b10433675210e922cf0b2278384e0d4ff430d61044ecdc",
+      "bytes": 25311
+    },
+    {
+      "path": "active_development/js/profile/profile-scale.js",
+      "sha256": "52949c8973af974253b882dd313e380f3e547f825a271cba3b06a1350c2bfa5f",
+      "bytes": 1784
+    },
+    {
+      "path": "active_development/js/profile/pull-refresh.js",
+      "sha256": "2515f72f0a902e8d35f2f5c62ced6b05304f86d2a502bd730a506ae025de7867",
+      "bytes": 31
+    },
+    {
+      "path": "active_development/js/profile/reviews-view.js",
+      "sha256": "6d5b31107225ac04879462aa312c8cde34d25f75064d657e468e185de018fd08",
+      "bytes": 8695
+    },
+    {
+      "path": "active_development/js/profile/role.js",
+      "sha256": "8b8be9657f348cdac5bdd87b39ad734a1b25ca8943b02f5eb57183d36c282048",
+      "bytes": 977
+    },
+    {
+      "path": "active_development/js/profile/saved-properties.js",
+      "sha256": "6cc6ce957d4e21e82a7764103a6c9c5d4dc4fb8b47747148c28f80e3520953bd",
+      "bytes": 5357
+    },
+    {
+      "path": "active_development/js/profile/settings-dropdown.js",
+      "sha256": "2dc02e23f6089b4abf4e3aba2b449f7534f545d79617a8ba978905009f5c3f61",
+      "bytes": 7641
+    },
+    {
+      "path": "active_development/js/profile/subscription-boot.js",
+      "sha256": "df5d12e2b0d472646e555efc053f48b00ad2cd80e2c2eab8027eadbb6daff526",
+      "bytes": 1306
+    },
+    {
+      "path": "active_development/js/profile/support-boot.js",
+      "sha256": "b942d8f8d4ead5f93c75745e88501c54a4ae60e88ac6029d77ac5775337b5a56",
+      "bytes": 167
+    },
+    {
+      "path": "active_development/js/profile/support-ticket.js",
+      "sha256": "740ef7a2b842360f7adef2a73081e52de6dd795cfed3420017fdfd4d304203e6",
+      "bytes": 10272
+    },
+    {
+      "path": "active_development/js/profile/tabs.js",
+      "sha256": "636db7c48d611560b4456a49260a21b1fe1172810ba15e34268b376bde54cded",
+      "bytes": 5670
+    },
+    {
+      "path": "active_development/js/profile/tier-progress-modal.js",
+      "sha256": "4aa68c9e68555b6db0ae5d49cc6a25ee29faf8bf4cffe3c28f06e4c9726bd443",
+      "bytes": 3357
+    },
+    {
+      "path": "active_development/js/profile/ui-dialog.js",
+      "sha256": "60794bdc62a14e0a06d984e48ab8cf992758a1351119a1432794bb384c0a4226",
+      "bytes": 5287
+    },
+    {
+      "path": "active_development/js/profile/user-search.js",
+      "sha256": "421969749542b2ba0541f3d9ad8b3ee10d74c5f6b256421b9f956bf2f8ddfbc7",
+      "bytes": 7309
+    },
+    {
+      "path": "active_development/js/profile/visit-mode.js",
+      "sha256": "49b07ced80dfb93c82902eabd73bc94637076be5ffd7dfd59f1a8293d1734173",
+      "bytes": 208
+    },
+    {
+      "path": "active_development/js/profile/visitor-profile.js",
+      "sha256": "274e0aeaf72732de3559a4396d138167c882a51ee6b40b972b9b10eed29a0469",
+      "bytes": 30861
+    },
+    {
+      "path": "active_development/js/profile/wanted-form.js",
+      "sha256": "af9f190984b8b374f96fe35a62ea0c1370cb234a368954c625996da197fae285",
+      "bytes": 15025
+    },
+    {
+      "path": "active_development/js/profile/wanted-map.js",
+      "sha256": "ec3f1e3f984df66dfafca50ca9b541c8ce9165704e6bdff36bea507f1aff056b",
+      "bytes": 4706
+    },
+    {
+      "path": "active_development/js/profile/wanted-posts-summary.js",
+      "sha256": "e9074ae6e28b02047300dbb25673e70fe8d8cc15cef84bb860d2897e7e89592c",
+      "bytes": 8618
+    },
+    {
+      "path": "active_development/js/radius-cooldown.js",
+      "sha256": "10bda289931a94e4a2836615411a7b31465117816844d99d5428de9a3a795d70",
+      "bytes": 5073
+    },
+    {
+      "path": "active_development/js/route-access-contract.js",
+      "sha256": "a4b4f9a94529d1a41941af3dd3c69bf8195619000ef9c09edb1b2d7a3af03c2d",
+      "bytes": 3148
+    },
+    {
+      "path": "active_development/js/route-authority.js",
+      "sha256": "563b1dcffc4642753fe5a484db750acc14d7b029b84e85cfafc89f850b9fae79",
+      "bytes": 838
+    },
+    {
+      "path": "active_development/js/search.js",
+      "sha256": "9b2667a0b53d0e315613f428e657e569a6caa36643a6a062d36e2a2454a51582",
+      "bytes": 5516
+    },
+    {
+      "path": "active_development/js/session.js",
+      "sha256": "0c2a67e29aff4962c16f617e8c8f9f13d7a18ec46ab4b636553249e03e5298f2",
+      "bytes": 1335
+    },
+    {
+      "path": "active_development/js/subscription.js",
+      "sha256": "d44d0fdc81b13c19984617bdd930824feeafea4376465a5fd8040abda427f94e",
+      "bytes": 2728
+    },
+    {
+      "path": "active_development/js/supabase.js",
+      "sha256": "848d2a672ea3f7a3ef9365f92a635c040e83ac04aeed64a079681395c500cc1a",
+      "bytes": 6136
+    },
+    {
+      "path": "active_development/js/tiers.js",
+      "sha256": "16134d6c5fc85439524e6dabbdd01c24cdd984917536297e03d1c31edd338447",
+      "bytes": 26285
+    },
+    {
+      "path": "active_development/js/transition.js",
+      "sha256": "4c013b8136627adca4b6bbd74b0dd4e314ad3b94ce91197eebe727f68c3b1761",
+      "bytes": 634
+    },
+    {
+      "path": "active_development/login.html",
+      "sha256": "c0f547b2140fa785a96fe61c7ac985d77c448ffb4bcd723217d3f0614240c3c3",
+      "bytes": 9186
+    },
+    {
+      "path": "active_development/market.html",
+      "sha256": "0dddb493c96f4d937c94369c57313aa4a15dadaf8c3cc654852b94e9ccff8adb",
+      "bytes": 15994
+    },
+    {
+      "path": "active_development/moderator.html",
+      "sha256": "d600b619fa97bec94d7c5020c5ac542db3e86e6cbe9a48c02714306123db9a36",
+      "bytes": 11802
+    },
+    {
+      "path": "active_development/patch-57-cinematic-3d-adapter.test.mjs",
+      "sha256": "253682eea947e170f20499bfb344dbfc06a95dc9d698b811d5a83caf181e5a40",
+      "bytes": 1594
+    },
+    {
+      "path": "active_development/patch-57-cinematic-camera-hero.test.mjs",
+      "sha256": "09881c569ebaaeff5614c419c2a27b92179415a081e6578abbd25e2341f09a09",
+      "bytes": 1457
+    },
+    {
+      "path": "active_development/patch-58-house-camera-rig.test.mjs",
+      "sha256": "aff03cec6d630dc0553ccf90e17e185e0dc2d0ea9ee5ba467f63b83eb9b97445",
+      "bytes": 2034
+    },
+    {
+      "path": "active_development/patch-59-physical-ui-object-system.test.mjs",
+      "sha256": "1e804f58b8fee0e64f7b49e13bbdc271639f957d22ccfecc587cea10deb01b3a",
+      "bytes": 1102
+    },
+    {
+      "path": "active_development/patch-60-listings-book-interaction.test.mjs",
+      "sha256": "dc564c7c6efbb11548a43d5efeaaecebd151faa13a5ffb89c3a3b6f5821e43fc",
+      "bytes": 786
+    },
+    {
+      "path": "active_development/privacy.html",
+      "sha256": "dc81451e495ac0402c015e5cd7fb276d9770467ee8e36789f4215374a7608e60",
+      "bytes": 3832
+    },
+    {
+      "path": "active_development/profile.html",
+      "sha256": "0a85ab6fb747745cfdb365f25e6da4eacdbba2e221b9b9140e0fb1d7300cf0ee",
+      "bytes": 96166
+    },
+    {
+      "path": "active_development/register.html",
+      "sha256": "73a185f92aed7e91e2bd87f2f03f603b3adb662e23e6a9f26b6450841083fa84",
+      "bytes": 10949
+    },
+    {
+      "path": "active_development/staff.html",
+      "sha256": "c92233d0c9f2e0539e5a8f97d9bbfb4578769b0ded4af98bb3d7b8777a59fcaf",
+      "bytes": 13911
+    },
+    {
+      "path": "active_development/supabase/README.md",
+      "sha256": "f70266c7ba2fbdd3081b1732eb1e9e53b3cb572a55525b6a2c89743203981a68",
+      "bytes": 810
+    },
+    {
+      "path": "active_development/supabase/config.toml",
+      "sha256": "dd1a9c1fea5985f31cff9baa8a11b9fb9337e9bea7800c78a376f351fc5bb596",
+      "bytes": 358
+    },
+    {
+      "path": "active_development/supabase/functions/_shared/firebase-auth.ts",
+      "sha256": "240432a80d6f985bf244cd0f132d12221688ef566ba4a9df885e0ccb081e13a2",
+      "bytes": 952
+    },
+    {
+      "path": "active_development/supabase/functions/_shared/firestore-rest.ts",
+      "sha256": "e52088fc8b5e2953dc2a5755d0b0aba2f3c477fa4a69d0e86dec4f68c0fa0c31",
+      "bytes": 2562
+    },
+    {
+      "path": "active_development/supabase/functions/_shared/jpeg.ts",
+      "sha256": "f827ffb5594035a5c6a46aece2e20d28267e7d6e64c3520e06f4a037afc4571e",
+      "bytes": 163
+    },
+    {
+      "path": "active_development/supabase/functions/_shared/kyc-authorization.json",
+      "sha256": "dddfd46d6010cec98192516b568c324bd0cc8641504e63a62721cb2b23b0f340",
+      "bytes": 1694
+    },
+    {
+      "path": "active_development/supabase/functions/_shared/supabase-config.ts",
+      "sha256": "99277a2550b9b9c4f542b6d5e721f9e0ca5632cc6ac41e4e963307f89feb711d",
+      "bytes": 226
+    },
+    {
+      "path": "active_development/supabase/functions/get-kyc-signed-url/index.ts",
+      "sha256": "a5cc66ee132a79202e08088ce15f26406e93bbf63e4f9aa80526570846642b1c",
+      "bytes": 4608
+    },
+    {
+      "path": "active_development/supabase/functions/upload-kyc-document/index.ts",
+      "sha256": "744a39b81414be8260bc0af8b6ca02b9cbbceb767ac29b0e00fe5b9fd4450f1c",
+      "bytes": 4451
+    },
+    {
+      "path": "active_development/supabase/functions/upload-listing-image/index.ts",
+      "sha256": "7e5c2f1accfbc5d446c254803f059223ac8c2c29812b4ced326261a2c4a14d07",
+      "bytes": 3679
+    },
+    {
+      "path": "active_development/supabase/migrations/0001_homefinder_storage_authority.sql",
+      "sha256": "9305cf9869ffe9e5ca94308c5ce462ccff5c9f8751a97ca03e4388e14f69aff2",
+      "bytes": 1008
+    },
+    {
+      "path": "active_development/terms.html",
+      "sha256": "e5325b8df1d185d01c567f3278c075f181126b0326f806260b928bd11f1128a8",
+      "bytes": 3872
+    },
+    {
+      "path": "active_development/tests/asset-integration-planning.test.mjs",
+      "sha256": "1bd6bb3bb8c4a61b2806a7912fea9b7d9290fa7d5aba2e5dc5a1ee1da9502a6b",
+      "bytes": 2312
+    },
+    {
+      "path": "active_development/tests/authority/patch-37-authority-vocabulary.test.mjs",
+      "sha256": "fb93461335c307f888f518a0d1eb760f1111538bab941a524a2589a3d6047450",
+      "bytes": 2280
+    },
+    {
+      "path": "active_development/tests/authority/patch-39-capability-boundary-matrix.test.mjs",
+      "sha256": "2a08cf203842739d33c7c43dc957fda62ec04b6fa50c270157a4f27c2dc2a442",
+      "bytes": 2859
+    },
+    {
+      "path": "active_development/tests/authority/patch-41-capability-migration.test.mjs",
+      "sha256": "f895c32461e317043f449264614bedc4240c9d6010b3155dc4c804d0ada7b702",
+      "bytes": 3235
+    },
+    {
+      "path": "active_development/tests/authority/patch-42-legacy-guard-inventory.test.mjs",
+      "sha256": "4e0de4177a4027aaaa75a5bd6f8b18dc6f66814677eec9e95b6b445271190489",
+      "bytes": 1239
+    },
+    {
+      "path": "active_development/tests/authority/patch-54-retire-ambiguous-staff-alias.test.mjs",
+      "sha256": "f530f4a245c8767656e506a1137279d2ad7ba384ad8bdfb4e6ea7fe8b3873a14",
+      "bytes": 751
+    },
+    {
+      "path": "active_development/tests/canonical-room-camera-door-graph.test.mjs",
+      "sha256": "ab8141080b977a51fbbc84ea88ba1462b602997ac1d8695c8a871cbd8f9899b9",
+      "bytes": 1459
+    },
+    {
+      "path": "active_development/tests/dd04-final-authority-freeze.test.mjs",
+      "sha256": "5d9463c89079ff73973bb90ee49c3b704816e7bb53657a7abdf29e03413a3411",
+      "bytes": 2483
+    },
+    {
+      "path": "active_development/tests/dd05-h04-map-preview.test.mjs",
+      "sha256": "cb777c43a274e2d1fa5da76c924a2d73bbaba9548df176728cdd775185c49179",
+      "bytes": 881
+    },
+    {
+      "path": "active_development/tests/dd05-h05-government-housing.test.mjs",
+      "sha256": "491e303d9a592ac3f75890d2f831eff98f2a99060fb13374eafa109f4dcc575e",
+      "bytes": 1178
+    },
+    {
+      "path": "active_development/tests/dd05-h06-mission.test.mjs",
+      "sha256": "c5ed4074e7f956358e5b47c1413c6a3f505b14d4d3381c40798bcea378b09b08",
+      "bytes": 1719
+    },
+    {
+      "path": "active_development/tests/dd05-h09-contact-exit.test.mjs",
+      "sha256": "d3c5184cf98a9345b028c13419706cd576d6a2d621917d0b273d1b5e9b873b6a",
+      "bytes": 1889
+    },
+    {
+      "path": "active_development/tests/dd05-main-hall-cinematic-map.test.mjs",
+      "sha256": "6dfd1a73473fd0bc8886e393cb39e2a0119c535e8fba475429aac90f77ae1dbe",
+      "bytes": 1407
+    },
+    {
+      "path": "active_development/tests/dd05-main-hall-sequence-reconciliation.test.mjs",
+      "sha256": "2fa0d79b19d531d5222ee9027b6cced9967c2974eb043666d21f719610fa3285",
+      "bytes": 1694
+    },
+    {
+      "path": "active_development/tests/dd05-ui-response-mapping.test.mjs",
+      "sha256": "fd7d7d99ce225db2d65fc86c0d00ba0dc881a0c331173baa898c6810abf17e26",
+      "bytes": 2218
+    },
+    {
+      "path": "active_development/tests/deep-dive-04-auth-roles-permissions.test.mjs",
+      "sha256": "8c5491157bb723995714d72c6c9a9e2803bb0683c686d9da45e7a0be4392a092",
+      "bytes": 2248
+    },
+    {
+      "path": "active_development/tests/dictionary/patch-35-dictionary-foundation.test.mjs",
+      "sha256": "c7e3132420a69cda9d42260fdc3daa215a7b8dc7fc2f4960f7f64792c52e38c8",
+      "bytes": 1746
+    },
+    {
+      "path": "active_development/tests/foundation-repair-01-authority-contracts.test.mjs",
+      "sha256": "10faaf07c676eff51a91c38df70d06e4a94450dc1147df42ef51de46d625a443",
+      "bytes": 1179
+    },
+    {
+      "path": "active_development/tests/foundation-repair-02-points-authority.test.mjs",
+      "sha256": "c00d5912ea285451cb78b5ad7ba04586c7e0ab4416181ad7b1698e0aa9fc4662",
+      "bytes": 1273
+    },
+    {
+      "path": "active_development/tests/foundation-repair-03-points-abuse.test.mjs",
+      "sha256": "f3b43fb36e8d07c362447463601fcc9b47b73f780cb9b9852913e68f6a87807a",
+      "bytes": 1399
+    },
+    {
+      "path": "active_development/tests/foundation-repair-04-tier-entitlement.test.mjs",
+      "sha256": "d9a16a7e844c8cd97ce3e491041e5c8120ee65ea09c979202ce81a9ff1fd9c79",
+      "bytes": 2285
+    },
+    {
+      "path": "active_development/tests/foundation-repair-05-subscription-entitlement.test.mjs",
+      "sha256": "7119d2b756fa338190bdfd07a3a40780216d8be65c90c6aa5fe9d674454e65ef",
+      "bytes": 2242
+    },
+    {
+      "path": "active_development/tests/foundation-repair-06-image-cap.test.js",
+      "sha256": "e49231fc778bf734ae25e18c20358a3712d0da1b4fcc3a58bc838e110d60c090",
+      "bytes": 594
+    },
+    {
+      "path": "active_development/tests/foundation-repair-07-admin-capacity-override.test.mjs",
+      "sha256": "38840d690f6a790591c9174a33e17eaa1a9c4b03ba4521d1e1a9006e17243e51",
+      "bytes": 1059
+    },
+    {
+      "path": "active_development/tests/foundation-repair-08.test.mjs",
+      "sha256": "f99b8c80f72f0c2e0819781fd143774567bebe5cf07d0209b3d847faac1f0ea5",
+      "bytes": 625
+    },
+    {
+      "path": "active_development/tests/foundation-repair-09-pin-authority.test.mjs",
+      "sha256": "a55b13a458a9be1e902ac539fecfdb90ed3249ce4dd846828372fc5af5b99d23",
+      "bytes": 1356
+    },
+    {
+      "path": "active_development/tests/foundation-repair-10-radius-authority.test.mjs",
+      "sha256": "a85168885ee88df14e0f778e665466a5a9249a2646752b75eab5052aeed74352",
+      "bytes": 1900
+    },
+    {
+      "path": "active_development/tests/foundation-repair-11-match-notification-dedupe.test.mjs",
+      "sha256": "f5c6044577235a797c1d18586cc2a8830cb8dec843d8770f4cea0271aee5049e",
+      "bytes": 1416
+    },
+    {
+      "path": "active_development/tests/foundation-repair-12-stale-match.test.mjs",
+      "sha256": "75356445cc69237d1d0e627645851f6e56e8bce858fc254368f65535a238c9d2",
+      "bytes": 1283
+    },
+    {
+      "path": "active_development/tests/hero-world-environment-shell.test.mjs",
+      "sha256": "5e928337de2fc8fe82639a5bf2e91ae313d2db3f7271b29fcde59396be98fb75",
+      "bytes": 2178
+    },
+    {
+      "path": "active_development/tests/market-discovery-contract.test.mjs",
+      "sha256": "d11e8c398c29102b13a7ea53e3211e92b72fd8a3847227efe24b36fe2ce4ed16",
+      "bytes": 1412
+    },
+    {
+      "path": "active_development/tests/market-patch-07.test.js",
+      "sha256": "2787be5949343daf95665dae69706de3b56e205e1afde578647312a6bb4dd4e7",
+      "bytes": 1850
+    },
+    {
+      "path": "active_development/tests/market-patch-08.test.js",
+      "sha256": "d4072b7c95ca66a3b28ca9f07b2eecc25e4ccfd571516aca2c5777f2f4eb0991",
+      "bytes": 1410
+    },
+    {
+      "path": "active_development/tests/market-patch-09.test.js",
+      "sha256": "f321ff2b7eb583ab2cea67107cc6d4304685528ec973c1fc5e0fc9739c98f323",
+      "bytes": 749
+    },
+    {
+      "path": "active_development/tests/market-patch-10.test.js",
+      "sha256": "fcc89d7885fc74d73564c54b5373aebaab4b3a338f9ab8c2193a895094bd3eeb",
+      "bytes": 2438
+    },
+    {
+      "path": "active_development/tests/market-patch-11a-audit.test.mjs",
+      "sha256": "29520b6a79046b589d6fa5f200cc645322cca6da80ddd6ea4061aaeac6cba896",
+      "bytes": 1540
+    },
+    {
+      "path": "active_development/tests/market-presentation.test.js",
+      "sha256": "6f9479117cc98250bd034876f6518b3a8ccd9b0b02a0820756305f99bee6c156",
+      "bytes": 932
+    },
+    {
+      "path": "active_development/tests/market-profile-physical-ui-propagation.test.mjs",
+      "sha256": "db5a593a750708bd3ca96950517be16a101dc41fafb403385206aae56b92d00b",
+      "bytes": 1457
+    },
+    {
+      "path": "active_development/tests/patch-11c-r7-pin-authority.test.mjs",
+      "sha256": "2124e9c2cc9da6b29c592ebd99f48710c0233d7e77353e22c02ea4907a421809",
+      "bytes": 1569
+    },
+    {
+      "path": "active_development/tests/patch-12-integration-hardening.test.mjs",
+      "sha256": "db255ee2f94e141d5141b67441e83ac7dc6d0bc6f25d131e8a209896f29f6765",
+      "bytes": 2552
+    },
+    {
+      "path": "active_development/tests/patch-14-listing-activity.test.mjs",
+      "sha256": "32b248d7f6d21b1b559e10bb7246b6f3bb4c5d9e9d3d70e53783128bff622ab2",
+      "bytes": 1776
+    },
+    {
+      "path": "active_development/tests/patch-15-listing-activity.test.js",
+      "sha256": "64d342339d72f803d862b0654f8699d837f8be2f4934e5a5e91e1a5f0ea10849",
+      "bytes": 1655
+    },
+    {
+      "path": "active_development/tests/patch-16-listing-activity-contracts.test.mjs",
+      "sha256": "abc6cdf598c63d7ad7fd5e8750487d822a09e27f5ee45c08b1160d1861038acc",
+      "bytes": 1834
+    },
+    {
+      "path": "active_development/tests/patch-17-contract-activation.test.mjs",
+      "sha256": "2bfd8e402702954932cd66a87ab4165055a6a7b637d8ec7f55c0ccd19aca7752",
+      "bytes": 1932
+    },
+    {
+      "path": "active_development/tests/patch-18-listing-inquiry.test.mjs",
+      "sha256": "266b5647d9b92c64dc7f18a1e0f0a63816833e201e114de4356fcab74678646e",
+      "bytes": 2744
+    },
+    {
+      "path": "active_development/tests/patch-19-discovery-impression.test.mjs",
+      "sha256": "d40e76dfde40949b0bc77839b4713cf773e444407911b20a58240cfbe2b6e675",
+      "bytes": 1745
+    },
+    {
+      "path": "active_development/tests/patch-20-statistics-read-map.test.mjs",
+      "sha256": "7300f9da629202b247f931843917a78e68723076addd8a33e9b1fb68f4fa9a98",
+      "bytes": 1024
+    },
+    {
+      "path": "active_development/tests/patch-21-role-need-help.test.mjs",
+      "sha256": "bb23042b3d80961b2f11db2c1dc51ab7012ba1153d993315c5d0767fb130a511",
+      "bytes": 1145
+    },
+    {
+      "path": "active_development/tests/patch-22-admin-ops-authority.test.mjs",
+      "sha256": "c4c087637dce92adedf3b6ef74779dde50809ac63acec69a648ffd7f49300878",
+      "bytes": 1675
+    },
+    {
+      "path": "active_development/tests/patch-23-admin-user-manage.test.mjs",
+      "sha256": "bc8b54f525d5e223899cd0e467e63ec97b0dd0ab726f2df09bf049b7d472a1d1",
+      "bytes": 1205
+    },
+    {
+      "path": "active_development/tests/patch-24-admin-specific-boosts.test.mjs",
+      "sha256": "1d6e91a8af920121d17378ae6fb72d968ecba4bb134c2c325214a873f206e42c",
+      "bytes": 1838
+    },
+    {
+      "path": "active_development/tests/patch-25-admin-subscription-grant.test.mjs",
+      "sha256": "9618b7516070d450332f71c057e71263391b47dd47f461febc9eccbd03948f48",
+      "bytes": 1297
+    },
+    {
+      "path": "active_development/tests/patch-26-paypal-cloudflare-hardening.test.mjs",
+      "sha256": "5b23ca5698213323c6e4255e2d94b788090f3951701567625d7cb3f7883b91d6",
+      "bytes": 1791
+    },
+    {
+      "path": "active_development/tests/patch-27-market-data-wiring.test.mjs",
+      "sha256": "d1c80a787d76e3f03303e2e2822e3736ce48743bffd7fbda06b88236e4ff0732",
+      "bytes": 2168
+    },
+    {
+      "path": "active_development/tests/patch-28-broker-hq-data-wiring.test.mjs",
+      "sha256": "61f098b929c0c4bb881e2efe9f6a5cdcd99ba402af55a43460ee9ccbbee7ff24",
+      "bytes": 2103
+    },
+    {
+      "path": "active_development/tests/patch-29-broker-hq-interaction-smoke.test.mjs",
+      "sha256": "12aa2281eff34324e2eba2053f0718b1f5e5801ccfb8d467cb4de9cf7d041a31",
+      "bytes": 2317
+    },
+    {
+      "path": "active_development/tests/patch-33-foundation-repair.test.mjs",
+      "sha256": "3931d2e434c04742ad64f578e6a67366984d5722a953816d28e92a5aaaabbbd3",
+      "bytes": 1172
+    },
+    {
+      "path": "active_development/tests/patch-34-market-shell.test.mjs",
+      "sha256": "8a3469819a0d1e60d7b9a93e9d984a97734741544c7c39f72bd01054e97c5b81",
+      "bytes": 1246
+    },
+    {
+      "path": "active_development/tests/patch-38-authority-wiring-audit.test.mjs",
+      "sha256": "37890da3290191f38056676bf1a3bcaa4f2f572a1b9ffa7ebcf4019308968e2a",
+      "bytes": 3046
+    },
+    {
+      "path": "active_development/tests/patch-40-boundary-decision.test.mjs",
+      "sha256": "6c2f87339deb89e1dad0c8837beffcacbc5c0e3c0af89aedfcac5593d3ed76b1",
+      "bytes": 2149
+    },
+    {
+      "path": "active_development/tests/patch-43-compatibility-inventory.test.mjs",
+      "sha256": "10f5a58a90a30ca71616dbda1994828da730db8dd6da19a5b2e07c2d334ff30e",
+      "bytes": 2669
+    },
+    {
+      "path": "active_development/tests/patch-44-boost-compatibility.test.mjs",
+      "sha256": "98092e59d26c5cbaa285fa333d01892ed1ee2e39406dd3d6fe5494ce5f5d4656",
+      "bytes": 1585
+    },
+    {
+      "path": "active_development/tests/patch-45-boost-normalization.test.mjs",
+      "sha256": "28d13e8a7946c997329017b9ea97b490f367513aa41cf2a2a6f2d384ce15d39d",
+      "bytes": 1160
+    },
+    {
+      "path": "active_development/tests/patch-47-boost-migration-proof.test.mjs",
+      "sha256": "0c144b387e044ffbca47676a5681b0a53252efc890b3b31d2c7b72d87a990bfe",
+      "bytes": 1452
+    },
+    {
+      "path": "active_development/tests/patch-48-production-boost-migration.test.mjs",
+      "sha256": "2fbb2bceefc9c7fea3feacc5b455d068fcbfe9186b4b40516910cdf4fe7200ab",
+      "bytes": 2434
+    },
+    {
+      "path": "active_development/tests/patch-49-boost-parser-retirement.test.mjs",
+      "sha256": "47e7b0fbec7562396bb3f46fbe6ae32f07be2b3eb4223aca39954f131023b25d",
+      "bytes": 1848
+    },
+    {
+      "path": "active_development/tests/patch-50-boost-parser-retirement.test.mjs",
+      "sha256": "2ba383d5f3572ab601955ea46b9d1b95a2244ae1c3739c1848a718292bd642d5",
+      "bytes": 1825
+    },
+    {
+      "path": "active_development/tests/patch-51-production-retirement-audit.test.mjs",
+      "sha256": "9c73b9594eb71c53765afdd9098167d5b564bfecd5c90fdee6181180afb92e94",
+      "bytes": 2297
+    },
+    {
+      "path": "active_development/tests/patch-52-multi-check-wiring.test.mjs",
+      "sha256": "525f2c5e5890e91de14fa2cb6444d87cf2ce73664148338137898747c0f17a1e",
+      "bytes": 617
+    },
+    {
+      "path": "active_development/tests/patch-53-ui-ux-contract.test.mjs",
+      "sha256": "e8a4e4113a60b685a55aa18880516e8c63fc3f9d9cabdc7184a59ad0b95c3b86",
+      "bytes": 2652
+    },
+    {
+      "path": "active_development/tests/patch-54-cinematic-foundation.test.mjs",
+      "sha256": "143861b4b3925eabf84d0137f105663a1e04283e18a9655825fbe7b28b054f91",
+      "bytes": 2554
+    },
+    {
+      "path": "active_development/tests/patch-55-cinematic-routing-a1.test.mjs",
+      "sha256": "36e3fed585410497c82f76ad4a85caa5ccc542aa4dfe3eca7510e108eaa8864b",
+      "bytes": 1384
+    },
+    {
+      "path": "active_development/tests/patch-56-cinematic-home-world.test.mjs",
+      "sha256": "dbefb985ab9366522a25276e75f0be090dc74079d58a38e611b4cb0549ceb638",
+      "bytes": 1549
+    },
+    {
+      "path": "active_development/tests/patch-57-cinematic-camera-hero.test.mjs",
+      "sha256": "75441b9ebe7acf4cbb9ccd27c0f966bdf06921d62139a93976846442a6c05281",
+      "bytes": 1495
+    },
+    {
+      "path": "active_development/tests/paypal-cloudflare-contract.test.mjs",
+      "sha256": "143ebc3d6c35ac6813681125afe7ee78bd017e23358fb8221624ec71d7cc3c2a",
+      "bytes": 1253
+    },
+    {
+      "path": "active_development/tests/phase12-animation-object-state.test.mjs",
+      "sha256": "862a792ab77c64def2b40da602b5f5be233262798f384e001371ecb7a9baf9fd",
+      "bytes": 2182
+    },
+    {
+      "path": "active_development/tests/public-profile-projection.test.mjs",
+      "sha256": "2ed51fbfdc684b1eb1c900d9417853f1caf079562093141cb54a5f2a3ba9e9a8",
+      "bytes": 1414
+    },
+    {
+      "path": "active_development/tests/role-contract-subscription-path.test.mjs",
+      "sha256": "c89714c3da17ae91d6e92fe1ddd28523633352fdab29a7917d9e5e3fd7c8def5",
+      "bytes": 1408
+    },
+    {
+      "path": "active_development/tests/room-shell-physical-ui-mapping.test.mjs",
+      "sha256": "0885312fc9afb3c44e960ebaa007e9efa21173b70f122130695b8fb77fd513cc",
+      "bytes": 1956
+    },
+    {
+      "path": "active_development/tests/theme-lighting-performance-budget.test.mjs",
+      "sha256": "814243e05ad135077bd2c6f3c44a9fe78db7ee9f0131344f40df9d02d6cd18a0",
+      "bytes": 1757
+    },
+    {
+      "path": "active_development/tools/adapters/firebase-admin-production-adapter.mjs",
+      "sha256": "2581fa669b20d95f44dccfaa1346f8d4220eb421e991a8ec46d6455cc2e213a9",
+      "bytes": 1925
+    },
+    {
+      "path": "active_development/tools/adapters/json-production-adapter.mjs",
+      "sha256": "caa2790f8e6fb6c761d511ed7c5406efbeaeff1062a68a63f8df3b72cd5b1be6",
+      "bytes": 875
+    },
+    {
+      "path": "active_development/tools/boost-migration-executor.mjs",
+      "sha256": "0f1d7355bdc519fd07f7126415ebd9309c3a860779887a6e4b9d554686b197e5",
+      "bytes": 4938
+    },
+    {
+      "path": "active_development/tools/boost-migration-proof.mjs",
+      "sha256": "711a9adca77c08658b1ea271ae8fcfdd6a9d80fca30f7463791f37813cc83eb5",
+      "bytes": 3580
+    },
+    {
+      "path": "active_development/tools/boost-normalization.mjs",
+      "sha256": "320b13c8b1de63ccc98e811f450396e1c3ae6392fc0eebf0b95572d942771690",
+      "bytes": 2859
+    },
+    {
+      "path": "active_development/tools/boost-parser-retirement-gate.mjs",
+      "sha256": "4a5fb197225b39a1c82d01efc31e77f08a0577ce9779fd936996ba5cf093cd31",
+      "bytes": 1924
+    },
+    {
+      "path": "active_development/tools/patch-51-production-retirement-audit.mjs",
+      "sha256": "1a13dd4d64a101d51c0e14ac1d2a06d170d3624a588bcc840efd4eddf316b717",
+      "bytes": 6009
+    },
+    {
+      "path": "active_development/tools/patch-52-multi-check-audit.mjs",
+      "sha256": "e09d861d3f89759280680a4dcd2d7812370a1395dd755309c839e5e4dd195180",
+      "bytes": 6686
+    },
+    {
+      "path": "active_development/tools/run-boost-migration-production.mjs",
+      "sha256": "250c16fe8c5d3a5c88dbb6de570153bc5fd52eb2b5cedc00a723c651a624dcc7",
+      "bytes": 2217
+    },
+    {
+      "path": "active_development/verify/animation-object-responsive-root.test.mjs",
+      "sha256": "0d89c0702e2d51828e27c302030cbc8e296d767a441cf6d8968456d6c151e4f0",
+      "bytes": 2017
+    },
+    {
+      "path": "active_development/verify/auth-physical-ui-propagation.test.mjs",
+      "sha256": "3e0b9617cdc4c331005f38b335d869dd9a19c873302dac32ad09ce54ca0e6572",
+      "bytes": 1065
+    },
+    {
+      "path": "active_development/verify/design-roots-contract.test.mjs",
+      "sha256": "706d48198866c8ce49e3a5d234ab9f875fbd36fad8ca3ee3322c7201620b1dc8",
+      "bytes": 1682
+    },
+    {
+      "path": "active_development/verify/fixtures/boost-after-p47-clean.json",
+      "sha256": "86aafd0fcb32f83b892261ff62bb06b79fdcf0cfcac50a87cc91b4efe30acdf7",
+      "bytes": 369
+    },
+    {
+      "path": "active_development/verify/fixtures/boost-after-p47.json",
+      "sha256": "40973c060b8efdcdb63907a7535b6bf8c8e43bdbcac623c561bde7eff7893de7",
+      "bytes": 345
+    },
+    {
+      "path": "active_development/verify/fixtures/boost-before-p47.json",
+      "sha256": "e760772a482a60d60f340fd76fb91000aa3280ff1e520b2229c616f4bfac4c22",
+      "bytes": 352
+    },
+    {
+      "path": "active_development/verify/fixtures/boost-export.sample.json",
+      "sha256": "73d3e36863b2b5a119b37de4e3d83e55dc5cd97bc79765dff817d6e53609a67b",
+      "bytes": 457
+    },
+    {
+      "path": "active_development/verify/index.html",
+      "sha256": "90ca4d79db23b110d639a97036b2dc69f6f486596ad0e1aabe9e864ea25ec100",
+      "bytes": 7089
+    },
+    {
+      "path": "active_development/verify/main-hall-camera-object-contract.test.mjs",
+      "sha256": "d6c44a6cf5c3992eaec57d38e02fa8a3d8fb9ddf7ac88696fc13f97d6f4ef718",
+      "bytes": 1113
+    },
+    {
+      "path": "active_development/verify/main-hall-physical-ui-roots.test.mjs",
+      "sha256": "fe96b5dcb860ee7297d125a1b7f6dc08c33e99ddd2394a5fea427559ab3902b3",
+      "bytes": 1066
+    },
+    {
+      "path": "active_development/verify/master-matrix-contract.test.mjs",
+      "sha256": "84c7944b6bd44d16b06185557692d3a47992a1c1f2ee64f2b8df280ae1ea967a",
+      "bytes": 964
+    },
+    {
+      "path": "active_development/verify/patch-36-data-vocabulary.test.mjs",
+      "sha256": "02f70c7e2ff121358c7dfb7d53dd0d0b5e21a4a984452b8f71570c17aa53026d",
+      "bytes": 2075
+    },
+    {
+      "path": "active_development/verify/patch-57-cinematic-3d-adapter.test.mjs",
+      "sha256": "253682eea947e170f20499bfb344dbfc06a95dc9d698b811d5a83caf181e5a40",
+      "bytes": 1594
+    },
+    {
+      "path": "active_development/verify/phase11-deploy-readiness.test.mjs",
+      "sha256": "4ac6aa6fed67431c7e8a55e699abf5ce781cefd2ba5ac17da611026a9eda4a1b",
+      "bytes": 543
+    },
+    {
+      "path": "active_development/verify/public-profile-migration.test.mjs",
+      "sha256": "13529bff25e2a390067d4e1af7d076613ead2e1ed05a94f15a978198fdce19bc",
+      "bytes": 1732
+    },
+    {
+      "path": "active_development/verify/public-profile-read-surface.test.mjs",
+      "sha256": "4704139022fc76d8e1e881939ef15879d6ad8f674c0c064b5b40345b66576c09",
+      "bytes": 1436
+    },
+    {
+      "path": "active_development/verify/security/registration-suspension-boundary.mjs",
+      "sha256": "b30c0a497703c25ea1dbc35c92dafad718003b02aa6f51acb517df774c0c72d6",
+      "bytes": 1390
+    },
+    {
+      "path": "CHECKPOINT_MANIFEST.json",
+      "sha256": "ab795baa6ce352c1f02f423dd2d65c9b4fab33381d1caf7a058a5d529a47b89e",
+      "bytes": 4550
+    },
+    {
+      "path": "CHECKPOINT_POLICY.md",
+      "sha256": "ea9df253190d23a55bea320d8fd886bc19e3f4729d742934ba80ed5fb955254a",
+      "bytes": 906
+    },
+    {
+      "path": "PROJECT_AUTHORITY.json",
+      "sha256": "27b68465821be4f2b8dd93f68f1bcd40608881bf40f5f57d00957f329af33599",
+      "bytes": 1327
+    },
+    {
+      "path": "README.md",
+      "sha256": "9f96ca1ab7e176289e526f5e1e13f580f6998503f1ffb9e35e5b4f4c322acecb",
+      "bytes": 2277
+    },
+    {
+      "path": "docs/OPERATING_GUIDE.md",
+      "sha256": "ccb02f27df1acc09d650afc169b2776d53952e74f0d709d167e3bedbbd3ae18f",
+      "bytes": 3034
+    },
+    {
+      "path": "archive/README.md",
+      "sha256": "956125495c053199c84710cec7fb84ec58fce3747c3771627c0fa7386b73568c",
+      "bytes": 327
+    },
+    {
+      "path": "archive/historical/legacy-source/01-SOURCE-OF-TRUTH.md",
+      "sha256": "dbd576e13e8896a97d66eab4d948290db5d558ab0dfe414457ef8cac10952602",
+      "bytes": 4249
+    },
+    {
+      "path": "archive/historical/legacy-source/03-PRODUCT-ROUTES-ROLES.md",
+      "sha256": "e17437daaa75c444b6b6df60813f106147eb7ae42b0ab980614649bf3557ffd2",
+      "bytes": 2215
+    },
+    {
+      "path": "archive/historical/legacy-source/04-DATA-BACKEND-AUTHORITY.md",
+      "sha256": "875345d117abf14e30e026127bc58e1d33a9590a29a8fcbd9be340f14ddaec86",
+      "bytes": 1759
+    },
+    {
+      "path": "archive/historical/legacy-source/09-SWEETHOME3D-SOT.md",
+      "sha256": "d790d6e2e09fca7bf3443332b71943dfba0417962a040fa35ac05a08e1463bbf",
+      "bytes": 1979
+    },
+    {
+      "path": "archive/historical/legacy-source/17-VERIFICATION-TESTING.md",
+      "sha256": "8b717bb39ee945417892e50411b98f95dd1fc07c0d93446cbb75b79811465dd3",
+      "bytes": 1652
+    },
+    {
+      "path": "archive/historical/legacy-source/18-ROADMAP.md",
+      "sha256": "db6e0c9f4b017404dc862af99c845c6f9026cb50dbd5eb8d58fc52a0dca118eb",
+      "bytes": 2064
+    },
+    {
+      "path": "docs/canonical/3d-authority.md",
+      "sha256": "4d4adca92f826cdce31e014dcaf1ad8974e0b72a40460481b09bd4bba26bbaad",
+      "bytes": 1087
+    },
+    {
+      "path": "docs/canonical/authority-model.md",
+      "sha256": "ad40259ef9871004f648634fda02710a7d391a4283a4d15388409ca9f5b37546",
+      "bytes": 905
+    },
+    {
+      "path": "docs/canonical/data-authority.md",
+      "sha256": "af5736ececd8491cd3c97de56de3d5cffc00b91510f500ff240021c62a2062f2",
+      "bytes": 521
+    },
+    {
+      "path": "docs/canonical/project-authority.md",
+      "sha256": "f456070ae1de4bf0cddd6eee807d8b9d71f2f03b915b7e20c9ea2df06c45ef2d",
+      "bytes": 551
+    },
+    {
+      "path": "docs/canonical/project-state.md",
+      "sha256": "1b75fac242742c6748df09eb53c52ec5492dd2bc7aa93b779bdd371ca0b41cfa",
+      "bytes": 348
+    },
+    {
+      "path": "docs/canonical/role-authority.md",
+      "sha256": "81d9d6374d4833525877a946d262bf831af7e75b2fe213b8edb14a592b7ef249",
+      "bytes": 306
+    },
+    {
+      "path": "docs/canonical/route-authority.md",
+      "sha256": "4d883b0d510dc86315b55becd32490735116653aa098fd69c48d24b3472b2d3d",
+      "bytes": 317
+    },
+    {
+      "path": "docs/canonical/verification-model.md",
+      "sha256": "21bb501d9ab19f661d2dfb6413afde1042b0460839b5d93e4d64609f934aeec5",
+      "bytes": 292
+    },
+    {
+      "path": "docs/contracts/3d/authority.md",
+      "sha256": "edd1b3cbceb2fb06132de68fde432f22b1c77720db92998cf3fcfb34f44b5945",
+      "bytes": 421
+    },
+    {
+      "path": "docs/contracts/3d.json",
+      "sha256": "72ce0569fb539ffb7ec192b866040a86f0664c13e3ace2e790c20b891658d4dd",
+      "bytes": 558
+    },
+    {
+      "path": "docs/contracts/auth.json",
+      "sha256": "6168c4944a489528e15730ea2719565ebc5ffb600dbf9bd0a1f2cbddf9faa359",
+      "bytes": 302
+    },
+    {
+      "path": "docs/contracts/data/canonical-data.json",
+      "sha256": "084757342b5970513c70f2caddeb8d4a607b6a30480109e7dd45dffdd96f4ab1",
+      "bytes": 761
+    },
+    {
+      "path": "docs/contracts/data/user-authority.json",
+      "sha256": "1d84237316f3d40929ff6ced6db26f1f703fd313f389356e35e2d28af5a0ad14",
+      "bytes": 1154
+    },
+    {
+      "path": "docs/contracts/data.json",
+      "sha256": "d869230d735f4c457cbce63a36616bcebe68601cd41bfa64bd7b2f23731a79f5",
+      "bytes": 217
+    },
+    {
+      "path": "docs/contracts/firebase/authority.md",
+      "sha256": "ea9f7553a1655ee1bbfd6fe01818e49b21f9ea7e8f26de56420410fc7a50e702",
+      "bytes": 402
+    },
+    {
+      "path": "docs/contracts/integrations/README.md",
+      "sha256": "955bc70d3293b47d977461aa0a7506cc6f0b6c520025740cadb00ebe79bf58c0",
+      "bytes": 618
+    },
+    {
+      "path": "docs/contracts/integrations/backend-authority.json",
+      "sha256": "88baf0e4aa1e250238014ebdbedaf440fa4880066493664aeeda1db43117f70a",
+      "bytes": 861
+    },
+    {
+      "path": "docs/contracts/integrations/storage-authority.json",
+      "sha256": "a83003c33a6078d9f5ec032e57830d12a993a4b2d5721ce0e213026e2ce5350c",
+      "bytes": 1136
+    },
+    {
+      "path": "docs/contracts/kyc/kyc-authorization.json",
+      "sha256": "ae142c57c6a9376d0878a23c4f92c8bc903d278da742fe5c9bd6ea0cde540176",
+      "bytes": 1539
+    },
+    {
+      "path": "docs/contracts/roles/broker-application.json",
+      "sha256": "48d8385d1c064d14557c18254c60de3821cf45aa926868455c819f4ddd9733a3",
+      "bytes": 830
+    },
+    {
+      "path": "docs/contracts/roles/canonical-roles.json",
+      "sha256": "691b08f171c22211fe32d244149f6efc0ca3eb5bef77d3af84fdab8bd47e35bc",
+      "bytes": 742
+    },
+    {
+      "path": "docs/contracts/roles.json",
+      "sha256": "31c4791825a3145b0b1f7e8da39495235799c15d23acfb61f720777d3bbb5e10",
+      "bytes": 184
+    },
+    {
+      "path": "docs/contracts/routes/route-authority.json",
+      "sha256": "3ebdf18a09c92db1015c49bc29bd90c960b43ee06f3afd31304124e0a6d653cb",
+      "bytes": 2797
+    },
+    {
+      "path": "docs/contracts/routes.json",
+      "sha256": "73066fea1e8ebf47edefc1fff1f762c463c6d19221204cd3922d79910b7cb020",
+      "bytes": 131
+    },
+    {
+      "path": "docs/contracts/security/registration-abuse-authority.json",
+      "sha256": "8cfb976460c6dc03a686f5921a6943764be27f0b89aa1640ff8a8be46e9ed9cd",
+      "bytes": 1271
+    },
+    {
+      "path": "docs/contracts/storage.json",
+      "sha256": "61a99701a10eab22c5dfdefd3e6ffc0c6ddc27e8ce70f982ebdaf7395e6c45c8",
+      "bytes": 218
+    },
+    {
+      "path": "docs/contracts/supabase/SUPABASE_OPERATOR_PLAYBOOK.md",
+      "sha256": "249f2a51a24b62b42cb73393a83dc95b3b02622363092cc226d7bf9441008cbe",
+      "bytes": 11850
+    },
+    {
+      "path": "docs/contracts/supabase/architecture.md",
+      "sha256": "627a371173ca462e409942b08a0a1c44d9bd93906289579673d81b4e47461ca3",
+      "bytes": 960
+    },
+    {
+      "path": "docs/contracts/support/support-ticket-authority.json",
+      "sha256": "60b4172184611fe4014850efb3a0e5575c6de8648a1b4d6473a4cf8f21b83dd5",
+      "bytes": 1600
+    },
+    {
+      "path": "docs/evidence/archive/checkpoints/2026-08-23-attacker-capability-inventory.md",
+      "sha256": "6006399e8df1870f3642401ab8333779e3c2e353e4b2e45dbf784b37785b93e6",
+      "bytes": 6000
+    },
+    {
+      "path": "docs/evidence/archive/checkpoints/2026-08-23-authority-audit.md",
+      "sha256": "1af4c334194dca4a43698d612f4adbbab120fa0d9f90b7633eb0d4af727ede9c",
+      "bytes": 1579
+    },
+    {
+      "path": "docs/evidence/archive/checkpoints/2026-08-23-firebase-supabase-deep-dive.md",
+      "sha256": "e6bc732c4d86f8f31bd98f27f79f5ea3b731f7614d736396b0875bbebd6200cd",
+      "bytes": 2593
+    },
+    {
+      "path": "docs/evidence/archive/checkpoints/2026-08-23-firestore-ticket-notification-graph.md",
+      "sha256": "47bdff9dbf75e9f04819618c9c38e3c83ed80d0ed376524f8c5ba4f22e435f01",
+      "bytes": 3395
+    },
+    {
+      "path": "docs/evidence/archive/checkpoints/2026-08-23-input-upload-hardening.md",
+      "sha256": "55e9449902e64497134594f8bd077cd3c16b54088ed12b250fe3f71667beaf8b",
+      "bytes": 3644
+    },
+    {
+      "path": "docs/evidence/archive/checkpoints/2026-08-23-registration-suspension-hardening.md",
+      "sha256": "7d0528396b92d5efe4d42169398a6d969c6df6077b4c4cd86329547870309028",
+      "bytes": 2164
+    },
+    {
+      "path": "docs/evidence/archive/checkpoints/2026-08-23-support-ticket-and-role-dive.md",
+      "sha256": "50966dc9e2f5fce832f6e174d9fd3019fe69d7c14db15025eeb64499ef1d23c0",
+      "bytes": 2059
+    },
+    {
+      "path": "docs/evidence/archive/checkpoints/2026-08-23-user-authority-data-graph.md",
+      "sha256": "27b561558234d3e5e64d572c80cce581474d23ba5db061639d55eba5b714af4a",
+      "bytes": 3097
+    },
+    {
+      "path": "docs/reconciliation/3d-authority-reconciliation.json",
+      "sha256": "4d65b91da8e5fa3fc3dfc351c83e77c1223ffadfcc3262c44cf43f3fe58f159c",
+      "bytes": 1673
+    },
+    {
+      "path": "docs/reconciliation/3d-authority-reconciliation.md",
+      "sha256": "980c22f0fff348c4e632576e01f2591e4b3231e221d0e3f4c5809a3582c4ebac",
+      "bytes": 1292
+    },
+    {
+      "path": "docs/reconciliation/active/2026-08-23-authority-migration.md",
+      "sha256": "c64c660e3523bdd9092569e870a64fcfb3daa358877f9cdc9e6290358aed2a8b",
+      "bytes": 1991
+    },
+    {
+      "path": "docs/reconciliation/active/firebase-supabase-authority.md",
+      "sha256": "ded0e87f3bd66f935626ad9d8424b5012190485a9cdc8da20c025abd1a4af7ff",
+      "bytes": 2084
+    },
+    {
+      "path": "verify/3d/canonical-homefinder-sh3d.mjs",
+      "sha256": "f9670fd7c46416fafbd3d8701edca623b5cafbed48ecfdb6e9ed6915d7a2c53f",
+      "bytes": 1210
+    },
+    {
+      "path": "verify/contracts/authority-invariants.mjs",
+      "sha256": "c88587ffb8901e1254933964c1b73a23dd18e65b8e3cff3dfb51732cea48f23c",
+      "bytes": 479
+    },
+    {
+      "path": "verify/data/canonical-listings.mjs",
+      "sha256": "4cfa8e843c8d7e5a701f9b2d307d5e8368ac3bb52f6e531a54b0766391155ae7",
+      "bytes": 438
+    },
+    {
+      "path": "verify/integrations/backend-authority.mjs",
+      "sha256": "0be80ea3637d3eb26f18a78dc1f31c619420ff797ce5d6b5791f3b85dc9bdd6e",
+      "bytes": 1356
+    },
+    {
+      "path": "verify/integrations/kyc-contract-consistency.mjs",
+      "sha256": "1e6447433c78393bd60ba9702b6f1515f2d564acf19a9396e3850e2f4fba40ee",
+      "bytes": 980
+    },
+    {
+      "path": "verify/integrations/supabase-security-boundary.mjs",
+      "sha256": "e1dcb4e3d8fbf42528634a10b8d81c11de80d642cc642346e0ddd9f070c6ec7c",
+      "bytes": 1359
+    },
+    {
+      "path": "verify/integrations/supabase-structure.mjs",
+      "sha256": "34b1bccb63c2aa0ae16c0d0a03b99102970f05ccc7a67f6634247dbe951a4fa3",
+      "bytes": 1190
+    },
+    {
+      "path": "verify/routes/route-authority.mjs",
+      "sha256": "368ee58aa2c8dbf115eff0a5d7f82990ced7b8fea0df5d0f95dded79beffe8b7",
+      "bytes": 888
+    },
+    {
+      "path": "verify/security/broker-application-authority.mjs",
+      "sha256": "f75710b6228711a4ccca393525393f46415a29d6ff58daef1e1446409438d207",
+      "bytes": 881
+    },
+    {
+      "path": "verify/security/canonical-role-authority.mjs",
+      "sha256": "d7eb7ea5952df666d2dab5a11c5a0701df425bf6483d8c1852c97240e6901f03",
+      "bytes": 1585
+    },
+    {
+      "path": "verify/security/canonical-roles.mjs",
+      "sha256": "a6dbc6320ea5096d2a33e8c6ce2cb3a0d49b7be18bac88cc912a767ae976f820",
+      "bytes": 374
+    },
+    {
+      "path": "verify/security/kyc-self-escalation.mjs",
+      "sha256": "af32ab057c64633a0648727f18178b2643f5946084c5b34d3218025ea361a7c8",
+      "bytes": 1297
+    },
+    {
+      "path": "verify/security/support-ticket-authority.mjs",
+      "sha256": "643899496fdb1df71937764eec5e79b783158929b8897d0c2e63007fe3dbe362",
+      "bytes": 1469
+    },
+    {
+      "path": "verify/security/user-authority.mjs",
+      "sha256": "e683d3c1f6bee0cce9ea825c6f2551af6a90c18e461cfb76e94da82cd114afda",
+      "bytes": 1613
+    }
+  ]
+}

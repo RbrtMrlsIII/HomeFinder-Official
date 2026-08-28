@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- HF-BUILD-2026-08-13 | moderator.html | listing content + payment reference truth -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moderator Console · HomeFinder</title>
+    <link rel="stylesheet" href="css/variables.css?v=57">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/transition.css">
+    <link rel="stylesheet" href="css/admin.css?v=21">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/viewport/mobile.css?v=19">
+  <link rel="icon" data-hf-favicon href="assets/images/logo-homefinder.png">
+
+  <link rel="stylesheet" href="css/cinematic-ui.css">
+</head>
+<body class="admin-page moderator-page" data-ops-role="moderator" data-asset="surface_moderator">
+
+    <header class="admin-header">
+        <h1><i class="bx bx-check-shield"></i> Moderator Console</h1>
+        <div class="admin-header-actions">
+            <span id="admin-role-chip" class="admin-role-chip is-mod">Moderator</span>
+            <button type="button" class="admin-btn admin-btn-ghost" id="admin-logout-btn">Log out</button>
+        </div>
+    </header>
+
+    <div class="ops-instructions">
+        <strong>Your tools:</strong> Listing content (friendly / not scam) · Payment reference truth → hand off to Admin · Wanted · Contracts · Verified users (no sensitive docs).
+        <em>Decline listing = mandatory reason → user notification (user may reply; dispute escalates to Admin). You never open KYC files.</em>
+    </div>
+
+    <nav class="admin-tabs" role="tablist" data-asset="surface_moderator">
+        <button type="button" class="admin-tab-btn active" data-tab="properties">
+            Listings <span class="tab-count" id="properties-pending-count" hidden>0</span>
+        </button>
+        <button type="button" class="admin-tab-btn" data-tab="orders">
+            Payment refs <span class="tab-count" id="orders-pending-count" hidden>0</span>
+        </button>
+        <button type="button" class="admin-tab-btn" data-tab="wanted">Wanted</button>
+        <button type="button" class="admin-tab-btn" data-tab="contracts">Contracts</button>
+        <button type="button" class="admin-tab-btn" data-tab="verified">Verified users</button>
+    </nav>
+
+    <main class="admin-main" data-asset="surface_moderator">
+
+        <!-- LISTINGS -->
+        <section class="admin-panel active" id="admin-panel-properties">
+            <h2 class="admin-panel-title"><i class="bx bx-home"></i> Listing content verification</h2>
+            <p class="admin-panel-sub">
+                Check for malicious content, scammer patterns, fake accounts, fake addresses.
+                <strong>Decline requires a written reason</strong> — owner is notified and may reply. Disputes escalate to Admin.
+            </p>
+            <div class="admin-searchbar">
+                <input type="search" id="admin-property-search" class="admin-search-input" placeholder="Title, address, owner UID, id…">
+                <select id="admin-property-filter">
+                    <option value="pending">Pending approval</option>
+                    <option value="active">Active</option>
+                    <option value="rejected">Declined</option>
+                    <option value="all">All</option>
+                </select>
+                <button type="button" class="admin-btn admin-btn-primary" id="admin-property-search-btn">Search</button>
+            </div>
+            <div class="admin-table-wrap">
+                <table class="admin-table ops-sheet">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Address</th>
+                            <th>Owner</th>
+                            <th>Status</th>
+                            <th>Type</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-properties-results">
+                        <tr><td colspan="7" class="admin-loading">Loading…</td></tr>
+                    </tbody>
+                </table>
+                <p class="admin-empty" id="admin-properties-empty" hidden>No listings match.</p>
+            </div>
+            <span class="tab-count" id="admin-properties-pending-count" hidden>0</span>
+        </section>
+
+        <!-- PAYMENT REFERENCES -->
+        <section class="admin-panel" id="admin-panel-orders">
+            <h2 class="admin-panel-title"><i class="bx bx-money"></i> Payment reference truth</h2>
+            <p class="admin-panel-sub">
+                Confirm the payment reference is true. After your check, <strong>hand off to Admin</strong> for final approval.
+                Staff do not handle payment references.
+            </p>
+            <div class="admin-searchbar">
+                <input type="search" id="admin-order-search" class="admin-search-input" placeholder="UID, reference code, amount…">
+                <select id="admin-order-filter">
+                    <option value="pending">Needs Mod check</option>
+                    <option value="all">All</option>
+                    <option value="verified_ref">Ref verified → Admin</option>
+                </select>
+                <button type="button" class="admin-btn admin-btn-primary" id="admin-order-refresh">Refresh</button>
+            </div>
+            <div class="admin-table-wrap">
+                <table class="admin-table ops-sheet">
+                    <thead>
+                        <tr>
+                            <th>When</th>
+                            <th>User</th>
+                            <th>Amount / package</th>
+                            <th>Reference</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-orders-results">
+                        <tr><td colspan="6" class="admin-loading">Loading…</td></tr>
+                    </tbody>
+                </table>
+                <p class="admin-empty" id="admin-orders-empty" hidden>No payment refs match.</p>
+            </div>
+        </section>
+
+        <!-- WANTED -->
+        <section class="admin-panel" id="admin-panel-wanted">
+            <h2 class="admin-panel-title"><i class="bx bx-search-alt"></i> Wanted posts</h2>
+            <p class="admin-panel-sub">Content check for wanted posts. Decline requires a reason (user notification).</p>
+            <div class="admin-searchbar">
+                <input type="search" id="admin-wanted-search" class="admin-search-input" placeholder="Search wanted…">
+                <select id="admin-wanted-filter">
+                    <option value="pending">Pending approval</option>
+                    <option value="active">Active / live</option>
+                    <option value="rejected">Rejected</option>
+                    <option value="all">All</option>
+                </select>
+                <button type="button" class="admin-btn admin-btn-primary" id="admin-wanted-refresh">Refresh</button>
+            </div>
+            <div class="admin-table-wrap">
+                <table class="admin-table ops-sheet">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>User</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-wanted-results">
+                        <tr><td colspan="4" class="admin-loading">Loading…</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- CONTRACTS -->
+        <section class="admin-panel" id="admin-panel-contracts">
+            <h2 class="admin-panel-title"><i class="bx bx-file"></i> Contract investigation</h2>
+            <p class="admin-panel-sub">Operational review. Escalate sensitive disputes to Admin.</p>
+            <div class="admin-searchbar">
+                <input type="search" id="admin-contract-search" class="admin-search-input" placeholder="Contract id, parties…">
+                <button type="button" class="admin-btn admin-btn-primary" id="admin-contract-refresh">Refresh</button>
+            </div>
+            <div class="admin-table-wrap">
+                <table class="admin-table ops-sheet">
+                    <thead>
+                        <tr>
+                            <th>Contract</th>
+                            <th>Parties</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-contracts-results">
+                        <tr><td colspan="5" class="admin-loading">Loading…</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- VERIFIED USERS -->
+        <section class="admin-panel" id="admin-panel-verified">
+            <h2 class="admin-panel-title"><i class="bx bx-badge-check"></i> Verified users</h2>
+            <p class="admin-panel-sub">Operational list only. Sensitive KYC documents remain Admin-only.</p>
+            <div class="admin-searchbar">
+                <input type="search" id="admin-verified-search" class="admin-search-input" placeholder="Name, UID…">
+                <button type="button" class="admin-btn admin-btn-primary" id="admin-verified-refresh">Refresh</button>
+            </div>
+            <div class="admin-table-wrap">
+                <table class="admin-table ops-sheet">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Verified</th>
+                            <th>UID</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-verified-results">
+                        <tr><td colspan="4" class="admin-loading">Loading…</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script type="module">
+        import "./js/admin/core.js";
+        import { adminLogout } from "./js/admin/core.js";
+        import "./js/admin/tabs.js";
+        document.getElementById("admin-logout-btn")?.addEventListener("click", () => adminLogout());
+        const mods = [
+            "./js/admin/properties.js",
+            "./js/admin/orders.js",
+            "./js/admin/wanted.js",
+            "./js/admin/contracts.js",
+            "./js/admin/verified-users.js",
+            "./js/admin/logout.js"
+        ];
+        for (const m of mods) {
+            try { await import(m); }
+            catch (err) { console.error("Moderator module failed:", m, err); }
+        }
+    </script>
+    <script type="module" src="js/transition.js"></script>
+  <script src="js/brand-logo.js" defer></script>
+
+  <script>fetch('data/cinematic-scenes.json').then(r=>r.json()).then(v=>window.__HF_CINEMATIC_SCENES__=v).catch(()=>{});</script>
+  <script src="js/design-roots.js" defer></script>
+    <script src="js/animation-root.js" defer></script>
+    <script src="js/physical-ui-state.js" defer></script>
+  <!-- M1: production WebGL/Three triad not loaded; see js/reference-3d/ -->
+  <script src="js/cinematic-ui.js" defer></script>
+</body>
+</html>

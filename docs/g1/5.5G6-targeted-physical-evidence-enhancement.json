@@ -1,0 +1,29 @@
+{
+  "gate": "5.5G.6",
+  "title": "Targeted Physical Evidence Enhancement",
+  "status": "COMPLETE — NO CANONICAL SH3D MODIFICATION",
+  "date": "2026-08-27",
+  "input_checkpoint": "HomeFinder_proceeded_5_5G5.zip",
+  "canonical_model": "master/HomeFinder.sh3d",
+  "runtime_routes_promoted": 0,
+  "resolved": [],
+  "candidate_only": [
+    "House 1 exterior",
+    "House 2 exterior",
+    "House 3 exterior"
+  ],
+  "blocked": [
+    "Market",
+    "Government Housing",
+    "Login/Profile",
+    "Broker HQ runtime transfer"
+  ],
+  "strengthened_candidate_evidence": [
+    "House 2 Office as Broker HQ anchor candidate in noncanonical staging model",
+    "House 2 Hall and explicit Front door in noncanonical staging model",
+    "House 3 explicit Front door in noncanonical staging model"
+  ],
+  "geometry_modified": false,
+  "application_navigation_modified": false,
+  "next_step": "Do not promote runtime routes. If topology work proceeds, prove House 1↔House 2 transfer and then validate any destination-specific portals."
+}

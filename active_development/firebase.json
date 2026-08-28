@@ -1,0 +1,40 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      ".firebaserc",
+      "**/.*",
+      "**/node_modules/**",
+      "bin/**",
+      "supabase/**",
+      "functions/**",
+      "docs/**",
+      "skills/**",
+      "*.md",
+      "*.txt",
+      "firestore.rules",
+      "firestore.indexes.json",
+      "package.json",
+      "package-lock.json",
+      "**/package.json",
+      "**/package-lock.json",
+      "**/*.map",
+      "CHANGES.txt",
+      "PROJECT_MAP.txt",
+      "project-guide/AI_ASSISTANT_READ_ME.md",
+      "READ_FIRST_BEFORE_INITIATE.md",
+      "firebase/**"
+    ]
+  },
+  "firestore": [
+    {
+      "database": "homefinder",
+      "rules": "firebase/firestore.rules",
+      "indexes": "firebase/firestore.indexes.json"
+    }
+  ],
+  "functions": {
+    "source": "firebase/functions"
+  }
+}

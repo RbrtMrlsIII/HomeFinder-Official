@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "homefinder.dictionary.index",
+  "title": "HomeFinder Project Dictionary Index",
+  "version": 2,
+  "status": "authoritative-foundation",
+  "authority": "docs/core/01-SOURCE-OF-TRUTH.md",
+  "changeRule": "docs/dictionary/CONTRACT-CHANGE-RULE.md",
+  "roadmap": "docs/dictionary/PHASE-ROADMAP.md",
+  "domains": [
+    "domains/authority.dictionary.json",
+    "domains/data.dictionary.json",
+    "domains/roles.dictionary.json",
+    "domains/capabilities.dictionary.json",
+    "domains/routes.dictionary.json",
+    "domains/integrations.dictionary.json",
+    "domains/ui-ownership.dictionary.json",
+    "domains/lifecycle.dictionary.json",
+    "domains/capability-boundaries.dictionary.json",
+    "domains/compatibility.dictionary.json"
+  ],
+  "legacySources": [
+    "data/dictionary.json"
+  ],
+  "canonicalRule": "New contract vocabulary must be registered here or in a referenced domain registry before active code consumes it. Existing legacy vocabulary remains valid only until reconciliation assigns canonical IDs."
+}

@@ -1,0 +1,15 @@
+room,hero_id,environment,camera,focal_anchor,hero_asset_role,lighting,loop_motion,quality_tiers,reduced_motion,status
+BACKYARD,Arrival Cinema,Estate exterior / backyard approach,ARR-01,Front path + main door,Cinematic environment,Warm architectural practicals + sky,Slow atmospheric loop,Tier 1: still/fade; Tier 2: light motion; Tier 3: full loop,Reduced motion: fade,PLANNED
+MAIN HALL,Main Hero,Grand hall / central architecture,H-01,Main hall focal axis,Main Hall hero environment,Daylight skylight + practicals,Subtle dust/light/ambient motion,Tier 1-3,Reduced motion: still + fade,PLANNED
+MAIN HALL,Discovery Hero,Search console / property wall,H-02,Discovery console,Search/discovery environment,Directional daylight,Slow parallax,Tier 1-2,Reduced motion: static,PLANNED
+MAIN HALL,Map Hero,Architectural map wall,H-04,Map surface,Map environment,Neutral daylight,Very subtle map/glow motion,Tier 1-3,Reduced motion: static,PLANNED
+LOGIN ROOM,Identity Hero,Private study / identity terminal,L-01,Login desk,Identity-room environment,Controlled warm practicals,Slow lamp/environment loop,Tier 1-2,Reduced motion: fade,PLANNED
+REGISTER ROOM,Registration Hero,Writing desk / registration room,R-01,Registration desk,Registration-room environment,Soft daylight,Paper/light movement,Tier 1-2,Reduced motion: static,PLANNED
+PROFILE SUITE,Profile Hero,Personal study / profile desk,P-01,Personal desk,Profile environment,Adaptive day/night lighting,Curtain/light/environment loop,Tier 1-2,Reduced motion: static,PLANNED
+MARKET,Marketplace Hero,Large market gallery / property exhibition,M-01,Marketplace focal wall,Marketplace environment,Bright neutral architectural lighting,Subtle moving light + environment,Tier 1-3,Reduced motion: static,PLANNED
+MARKET,Map Hero,Large physical map table,M-02,Map table,Market-map environment,Neutral daylight,Map interaction glow only,Tier 1-3,Reduced motion: static,PLANNED
+BROKER HQ,Broker Hero,Executive office / intelligence room,B-01,Broker desk,Broker HQ environment,Premium controlled lighting,Slow city/window ambience,Tier 1-3,Reduced motion: fade,PLANNED
+BROKER HQ,Intelligence Hero,Large intelligence map,B-04,Intelligence map,Broker map environment,Dark/premium lighting option,Map glow + restrained data motion,Tier 1-3,Reduced motion: static,PLANNED
+OPERATIONS,Operations Hero,Control room,A-01,Operations console,Operations environment,Cool controlled lighting,Status-light loop,Tier 1-2,Reduced motion: static,PLANNED
+REFERENCE,Government Hero,Library / civic reference room,G-01,Reference desk,Government reference environment,Natural daylight,Dust/light movement,Tier 1-2,Reduced motion: static,PLANNED
+REFERENCE,Legal Hero,Archive / document room,LGL-01,Document archive,Legal environment,Soft neutral lighting,Minimal ambient loop,Tier 1,Reduced motion: static,PLANNED

@@ -1,0 +1,37 @@
+{
+  "gate": "5.5C-V.4",
+  "date": "2026-08-26",
+  "status": "complete",
+  "change": {
+    "file": "active_development/tests/cinematic-camera-hero.test.mjs",
+    "from": "new URL('.', import.meta.url).pathname",
+    "to": "new URL('..', import.meta.url).pathname",
+    "reason": "application assets are rooted one level above tests directory"
+  },
+  "target_test": {
+    "tests": 4,
+    "passed": 4,
+    "failed": 0
+  },
+  "cinematic_3d_slice": {
+    "files": [
+      "tests/cinematic-3d-adapter.test.mjs",
+      "tests/patch-54-cinematic-foundation.test.mjs",
+      "tests/patch-55-cinematic-routing-a1.test.mjs",
+      "tests/patch-56-cinematic-home-world.test.mjs",
+      "tests/cinematic-camera-hero.test.mjs",
+      "tests/patch-57-cinematic-camera-hero.test.mjs",
+      "tests/dd05-main-hall-cinematic-map.test.mjs",
+      "tests/physical-ui-object-system.test.mjs"
+    ],
+    "all_passed": true
+  },
+  "full_active_suite": {
+    "tests": 115,
+    "passed": 97,
+    "failed": 18
+  },
+  "walkmyplan_active_references": 0,
+  "canonical_sh3d_sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "next_gate": "5.5C-V.5"
+}

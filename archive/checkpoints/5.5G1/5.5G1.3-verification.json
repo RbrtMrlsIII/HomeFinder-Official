@@ -1,0 +1,13 @@
+{
+  "gate": "5.5G.3",
+  "canonical_sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "expected_canonical": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "f3_candidate_sha256": "21309c26ac11728180402b0ee94f97eab9f2c3ba6e9093ed071c955eb89ab5c5",
+  "expected_f3": "21309c26ac11728180402b0ee94f97eab9f2c3ba6e9093ed071c955eb89ab5c5",
+  "g1_2_edges": 29,
+  "g1_3_stable_edges": 16,
+  "unsafe_ids": 9,
+  "runtime_code_changed": false,
+  "canonical_mutated": false,
+  "f3_candidate_mutated": false
+}

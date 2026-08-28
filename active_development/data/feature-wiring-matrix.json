@@ -1,0 +1,514 @@
+[
+  {
+    "room": "Main Hall",
+    "zone": "Hero / Home environment",
+    "route": "index.html",
+    "code_owner": "js/home/house-camera-rig.js; js/home/house-world-scroll.js; js/home/physical-ui-objects.js; js/home/environment-modes.js",
+    "role": "public",
+    "camera_anchor": "H-01",
+    "door": "main-door",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Home sections remain one room; camera zones, not separate scenes | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": []
+  },
+  {
+    "room": "Main Hall",
+    "zone": "Search Console",
+    "route": "index.html",
+    "code_owner": "js/search.js",
+    "role": "public",
+    "camera_anchor": "H-02",
+    "door": "market-door",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Search is application UI; spatial object is presentation | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "No-match state displays \"No pages match\"; property/user/market tabs switch result projection"
+    ]
+  },
+  {
+    "room": "Main Hall",
+    "zone": "Property Discovery",
+    "route": "index.html",
+    "code_owner": "js/home/featured-live.js",
+    "role": "public",
+    "camera_anchor": "H-03",
+    "door": "market-door",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Feature display is Home read-only discovery; live data loads for authenticated users when available; sample cards remain the guest/empty/error fallback | Selection hands off to Market, where destination access remains authoritative.",
+    "response_notes": [
+      "Guest/unauthenticated: sample property cards remain visible",
+      "Authenticated success: up to six active property listings replace samples",
+      "Empty/error: retain sample shell; no destructive mutation occurs on Home",
+      "Selection: market.html#listing-{propertyId}; Market role/access contract controls destination behavior"
+    ]
+  },
+  {
+    "room": "Main Hall",
+    "zone": "Map Preview",
+    "route": "index.html",
+    "code_owner": "js/home/map-teaser.js",
+    "role": "public",
+    "camera_anchor": "H-04",
+    "door": "market-door",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Home map preview is distinct from Market map | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Map loads 3D preview; tile/library failure falls back to Market",
+      "Guest pin confirmation routes to login with Market next-state"
+    ]
+  },
+  {
+    "room": "Main Hall",
+    "zone": "Government Housing",
+    "route": "index.html",
+    "code_owner": "js/home-gov-housing.js",
+    "role": "public",
+    "camera_anchor": "H-05",
+    "door": "gov-door",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Reference feature; full workspace remains financing.html | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Empty/error state links to financing.html government guide"
+    ]
+  },
+  {
+    "room": "Main Hall",
+    "zone": "About / Mission / Guide / Contact / Footer",
+    "route": "index.html",
+    "code_owner": "inline Home sections + shared cinematic UI",
+    "role": "public",
+    "camera_anchor": "H-06..H-09",
+    "door": "exit/contact doors",
+    "status": "RESPONSE-MAPPED",
+    "notes": "One Main Hall camera choreography | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": []
+  },
+  {
+    "room": "Login Room",
+    "zone": "Identity Terminal",
+    "route": "login.html",
+    "code_owner": "js/auth.js",
+    "role": "public",
+    "camera_anchor": "L-01",
+    "door": "profile-door",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Firebase Auth remains functional authority | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": []
+  },
+  {
+    "room": "Register Room",
+    "zone": "Registration Desk",
+    "route": "register.html",
+    "code_owner": "js/auth.js",
+    "role": "public",
+    "camera_anchor": "R-01",
+    "door": "login-door",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Owner and Seeker account types confirmed | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": []
+  },
+  {
+    "room": "Profile Suite",
+    "zone": "Perks / Portfolio",
+    "route": "profile.html",
+    "code_owner": "js/profile/perks.js; js/profile/portfolio-assets.js",
+    "role": "authenticated",
+    "camera_anchor": "P-01",
+    "door": "—",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Station inside one Profile suite | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Role gate is application-owned; ops roles are excluded from Profile product access",
+      "Station actions retain in-suite response and explicit toast/inline error where implemented"
+    ]
+  },
+  {
+    "room": "Profile Suite",
+    "zone": "Messages",
+    "route": "profile.html",
+    "code_owner": "js/profile/messages.js; js/profile/notifications.js",
+    "role": "authenticated",
+    "camera_anchor": "P-02",
+    "door": "—",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Station inside one Profile suite | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Role gate is application-owned; ops roles are excluded from Profile product access",
+      "Station actions retain in-suite response and explicit toast/inline error where implemented"
+    ]
+  },
+  {
+    "room": "Profile Suite",
+    "zone": "Contracts",
+    "route": "profile.html",
+    "code_owner": "js/profile/contracts-tab.js; js/profile/ongoing-contracts.js",
+    "role": "authenticated",
+    "camera_anchor": "P-03",
+    "door": "—",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Ongoing-contracts module appears legacy/unmounted; retain pending evidence | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Role gate is application-owned; ops roles are excluded from Profile product access",
+      "Station actions retain in-suite response and explicit toast/inline error where implemented"
+    ]
+  },
+  {
+    "room": "Profile Suite",
+    "zone": "Need Help",
+    "route": "profile.html",
+    "code_owner": "js/profile/need-help.js; js/profile/support-boot.js; js/profile/support-ticket.js",
+    "role": "authenticated",
+    "camera_anchor": "P-04",
+    "door": "—",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Support flow remains application-owned | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Role gate is application-owned; ops roles are excluded from Profile product access",
+      "Station actions retain in-suite response and explicit toast/inline error where implemented"
+    ]
+  },
+  {
+    "room": "Profile Suite",
+    "zone": "List Property",
+    "route": "profile.html",
+    "code_owner": "js/profile/listing-form.js; js/profile/listing-map.js; js/listing-create-gate.js",
+    "role": "owner,broker",
+    "camera_anchor": "P-05",
+    "door": "market-door",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Listing workflow | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Role gate is application-owned; ops roles are excluded from Profile product access",
+      "Station actions retain in-suite response and explicit toast/inline error where implemented"
+    ]
+  },
+  {
+    "room": "Profile Suite",
+    "zone": "Wanted",
+    "route": "profile.html",
+    "code_owner": "js/profile/wanted-form.js; js/profile/wanted-map.js; js/profile/wanted-posts-summary.js",
+    "role": "seeker,broker",
+    "camera_anchor": "P-06",
+    "door": "market-door",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Wanted workflow | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Role gate is application-owned; ops roles are excluded from Profile product access",
+      "Station actions retain in-suite response and explicit toast/inline error where implemented"
+    ]
+  },
+  {
+    "room": "Profile Suite",
+    "zone": "Saved Properties",
+    "route": "profile.html",
+    "code_owner": "js/profile/saved-properties.js",
+    "role": "seeker,broker",
+    "camera_anchor": "P-07",
+    "door": "market-door",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Saved station | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Role gate is application-owned; ops roles are excluded from Profile product access",
+      "Station actions retain in-suite response and explicit toast/inline error where implemented"
+    ]
+  },
+  {
+    "room": "Profile Suite",
+    "zone": "Saved Wanted",
+    "route": "profile.html",
+    "code_owner": "js/profile/saved-properties.js",
+    "role": "owner,broker",
+    "camera_anchor": "P-08",
+    "door": "market-door",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Role-aware station | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Role gate is application-owned; ops roles are excluded from Profile product access",
+      "Station actions retain in-suite response and explicit toast/inline error where implemented"
+    ]
+  },
+  {
+    "room": "Profile Suite",
+    "zone": "Reviews",
+    "route": "profile.html",
+    "code_owner": "js/profile/reviews-view.js",
+    "role": "authenticated",
+    "camera_anchor": "P-09",
+    "door": "—",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Review UI | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Role gate is application-owned; ops roles are excluded from Profile product access",
+      "Station actions retain in-suite response and explicit toast/inline error where implemented"
+    ]
+  },
+  {
+    "room": "Profile Suite",
+    "zone": "Government Housing",
+    "route": "profile.html",
+    "code_owner": "js/profile/gov-housing.js",
+    "role": "seeker,owner",
+    "camera_anchor": "P-10",
+    "door": "gov-door",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Reference/data station | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Role gate is application-owned; ops roles are excluded from Profile product access",
+      "Station actions retain in-suite response and explicit toast/inline error where implemented"
+    ]
+  },
+  {
+    "room": "Profile Suite",
+    "zone": "Account / Identity",
+    "route": "profile.html",
+    "code_owner": "js/profile/core.js; js/profile/profile-data.js; js/profile/privacy-settings.js; js/profile/avatar-picker.js",
+    "role": "authenticated",
+    "camera_anchor": "P-11",
+    "door": "—",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Profile remains under development | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Role gate is application-owned; ops roles are excluded from Profile product access",
+      "Station actions retain in-suite response and explicit toast/inline error where implemented"
+    ]
+  },
+  {
+    "room": "Profile Suite",
+    "zone": "Broker Gate",
+    "route": "profile.html",
+    "code_owner": "js/profile/broker-assists.js; js/profile/role.js",
+    "role": "broker",
+    "camera_anchor": "P-12",
+    "door": "broker-hq-door",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Role gate stays application logic | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Role gate is application-owned; ops roles are excluded from Profile product access",
+      "Station actions retain in-suite response and explicit toast/inline error where implemented"
+    ]
+  },
+  {
+    "room": "Market",
+    "zone": "Entrance / Directory",
+    "route": "market.html",
+    "code_owner": "js/market.js; js/market-chrome.js",
+    "role": "owner,seeker,broker",
+    "camera_anchor": "M-01",
+    "door": "profile-door",
+    "status": "RESPONSE-MAPPED",
+    "notes": "One Market environment | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": []
+  },
+  {
+    "room": "Market",
+    "zone": "Map",
+    "route": "market.html",
+    "code_owner": "js/market.js; js/market-map.js; js/pins-model.js; js/geo.js",
+    "role": "owner,seeker,broker",
+    "camera_anchor": "M-02",
+    "door": "—",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Map UI owns data; 3D object is presentation | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": []
+  },
+  {
+    "room": "Market",
+    "zone": "Filters",
+    "route": "market.html",
+    "code_owner": "js/market.js; js/listing-catalog.js",
+    "role": "owner,seeker,broker",
+    "camera_anchor": "M-03",
+    "door": "—",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Filter controls | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": []
+  },
+  {
+    "room": "Market",
+    "zone": "Discovery",
+    "route": "market.html",
+    "code_owner": "js/market.js; js/market-discovery-contract.js; js/market-data-contract.js",
+    "role": "owner,seeker,broker",
+    "camera_anchor": "M-04",
+    "door": "—",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Role-aware discovery | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": []
+  },
+  {
+    "room": "Market",
+    "zone": "Property Inspection",
+    "route": "market.html",
+    "code_owner": "js/market.js; js/listing-catalog.js",
+    "role": "owner,seeker,broker",
+    "camera_anchor": "M-05",
+    "door": "—",
+    "status": "RESPONSE-MAPPED",
+    "notes": "No standalone property route without evidence | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": []
+  },
+  {
+    "room": "Market",
+    "zone": "Contact",
+    "route": "market.html",
+    "code_owner": "js/market.js",
+    "role": "authenticated",
+    "camera_anchor": "M-06",
+    "door": "profile-door",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Contact stays within Market workflow | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Authenticated contact workflow; role-aware Market projection remains authoritative"
+    ]
+  },
+  {
+    "room": "Broker HQ",
+    "zone": "Desk",
+    "route": "broker-hq.html",
+    "code_owner": "js/broker-hq.js; js/broker-data-contract.js",
+    "role": "broker",
+    "camera_anchor": "B-01",
+    "door": "profile-door",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Dedicated room | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Broker-only access gate; unauthorized backend projection becomes explicit unauthorized/error state"
+    ]
+  },
+  {
+    "room": "Broker HQ",
+    "zone": "Requests",
+    "route": "broker-hq.html",
+    "code_owner": "js/broker-hq.js; Firebase functions",
+    "role": "broker",
+    "camera_anchor": "B-02",
+    "door": "—",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Request queue | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Broker-only access gate; unauthorized backend projection becomes explicit unauthorized/error state"
+    ]
+  },
+  {
+    "room": "Broker HQ",
+    "zone": "Service Area",
+    "route": "broker-hq.html",
+    "code_owner": "js/broker-hq.js",
+    "role": "broker",
+    "camera_anchor": "B-03",
+    "door": "—",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Service workflow | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Broker-only access gate; unauthorized backend projection becomes explicit unauthorized/error state"
+    ]
+  },
+  {
+    "room": "Broker HQ",
+    "zone": "Intelligence Map",
+    "route": "broker-hq.html",
+    "code_owner": "js/broker-hq.js; js/geo.js",
+    "role": "broker",
+    "camera_anchor": "B-04",
+    "door": "—",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Broker-specific map | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Broker-only access gate; unauthorized backend projection becomes explicit unauthorized/error state"
+    ]
+  },
+  {
+    "room": "Broker HQ",
+    "zone": "Discovery Wall",
+    "route": "broker-hq.html",
+    "code_owner": "js/broker-hq.js; js/broker-data-contract.js",
+    "role": "broker",
+    "camera_anchor": "B-05",
+    "door": "market-door",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Discovery cards | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Broker-only access gate; unauthorized backend projection becomes explicit unauthorized/error state"
+    ]
+  },
+  {
+    "room": "Broker HQ",
+    "zone": "Service Pins",
+    "route": "broker-hq.html",
+    "code_owner": "js/broker-hq.js; js/pins-model.js",
+    "role": "broker",
+    "camera_anchor": "B-06",
+    "door": "—",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Pin management | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Broker-only access gate; unauthorized backend projection becomes explicit unauthorized/error state"
+    ]
+  },
+  {
+    "room": "Operations",
+    "zone": "Admin",
+    "route": "admin.html",
+    "code_owner": "js/admin/core.js + admin modules",
+    "role": "admin",
+    "camera_anchor": "A-01",
+    "door": "—",
+    "status": "RESPONSE-MAPPED",
+    "notes": "KYC/approval/users/orders/boosts | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Console remains role-specific: Admin, Moderator, Staff do not use Profile/Market surfaces"
+    ]
+  },
+  {
+    "room": "Operations",
+    "zone": "Moderator",
+    "route": "moderator.html",
+    "code_owner": "js/admin/core.js + moderator modules",
+    "role": "moderator",
+    "camera_anchor": "A-02",
+    "door": "—",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Properties/orders/wanted/contracts/verified | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Console remains role-specific: Admin, Moderator, Staff do not use Profile/Market surfaces"
+    ]
+  },
+  {
+    "room": "Operations",
+    "zone": "Staff",
+    "route": "staff.html",
+    "code_owner": "js/admin/core.js + staff modules",
+    "role": "staff",
+    "camera_anchor": "A-03",
+    "door": "—",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Support/reports/orders/users/alerts | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": [
+      "Console remains role-specific: Admin, Moderator, Staff do not use Profile/Market surfaces"
+    ]
+  },
+  {
+    "room": "Reference",
+    "zone": "Government Housing Guide",
+    "route": "financing.html",
+    "code_owner": "static HTML + cinematic shell",
+    "role": "public",
+    "camera_anchor": "G-01",
+    "door": "gov-door",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Reference page, not financing workspace | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": []
+  },
+  {
+    "room": "Reference",
+    "zone": "Legal Library",
+    "route": "privacy.html; terms.html",
+    "code_owner": "static HTML + cinematic shell",
+    "role": "public",
+    "camera_anchor": "L-GL",
+    "door": "legal-door",
+    "status": "RESPONSE-MAPPED",
+    "notes": "Quiet reference room | Response states mapped: loading/success/error/denied/empty + motion fallback.",
+    "response_notes": []
+  }
+]

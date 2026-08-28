@@ -1,0 +1,56 @@
+{
+  "date": "2026-08-26",
+  "phase": "5.5C-V.3",
+  "title": "Historical-contract test reconciliation",
+  "input_checkpoint": "HomeFinder_checkpoint_2026-08-26_v2-path-role-migration.zip",
+  "historical_tests_classified": 30,
+  "migrated": 27,
+  "archived": 3,
+  "archived_tests": [
+    "patch-43-compatibility-inventory.test.mjs",
+    "patch-52-multi-check-wiring.test.mjs",
+    "patch-53-ui-ux-contract.test.mjs"
+  ],
+  "migrated_tests": [
+    "foundation-repair-04-tier-entitlement.test.mjs",
+    "foundation-repair-05-subscription-entitlement.test.mjs",
+    "foundation-repair-07-admin-capacity-override.test.mjs",
+    "foundation-repair-09-pin-authority.test.mjs",
+    "foundation-repair-10-radius-authority.test.mjs",
+    "foundation-repair-11-match-notification-dedupe.test.mjs",
+    "foundation-repair-12-stale-match.test.mjs",
+    "market-patch-11a-audit.test.mjs",
+    "patch-11c-r7-pin-authority.test.mjs",
+    "patch-12-integration-hardening.test.mjs",
+    "patch-14-listing-activity.test.mjs",
+    "patch-16-listing-activity-contracts.test.mjs",
+    "patch-17-contract-activation.test.mjs",
+    "patch-18-listing-inquiry.test.mjs",
+    "patch-19-discovery-impression.test.mjs",
+    "patch-20-statistics-read-map.test.mjs",
+    "patch-25-admin-subscription-grant.test.mjs",
+    "patch-26-paypal-cloudflare-hardening.test.mjs",
+    "patch-27-market-data-wiring.test.mjs",
+    "patch-28-broker-hq-data-wiring.test.mjs",
+    "patch-29-broker-hq-interaction-smoke.test.mjs",
+    "patch-38-authority-wiring-audit.test.mjs",
+    "patch-40-boundary-decision.test.mjs",
+    "patch-44-boost-compatibility.test.mjs",
+    "patch-49-boost-parser-retirement.test.mjs",
+    "patch-50-boost-parser-retirement.test.mjs",
+    "paypal-cloudflare-contract.test.mjs"
+  ],
+  "validation": {
+    "active_subtests": 92,
+    "passed": 88,
+    "failed": 4
+  },
+  "remaining_failures": [
+    "Patch 57 A.2.2: Home has one shared cinematic camera loop",
+    "Patch 57 A.2.2: Home hero declares a cinematic focal contract",
+    "Patch 57 A.2.2: Home uses the clean cinematic visual without baked UI",
+    "Patch 57 A.2.2: reduced motion and mobile composition are explicit"
+  ],
+  "authority_statement": "No active test references WalkMyPlan. Historical patch/documentation artifacts were not restored as current authority.",
+  "canonical_sh3d_sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34"
+}

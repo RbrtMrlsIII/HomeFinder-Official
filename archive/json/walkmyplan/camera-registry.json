@@ -1,0 +1,422 @@
+[
+  {
+    "id": "ARR-01",
+    "room": "BACKYARD",
+    "zone": "Arrival",
+    "purpose": "Establish property and approach main door",
+    "entryFrom": "url",
+    "exitTo": "main-door",
+    "hero": true,
+    "reducedMotion": "short-fade"
+  },
+  {
+    "id": "H-01",
+    "room": "MAIN HALL",
+    "zone": "Hero",
+    "purpose": "Main Hall hero composition",
+    "entryFrom": "main-door",
+    "exitTo": "H-02",
+    "hero": true,
+    "reducedMotion": "short-fade"
+  },
+  {
+    "id": "H-02",
+    "room": "MAIN HALL",
+    "zone": "Discovery",
+    "purpose": "Search/discovery console",
+    "entryFrom": "H-01",
+    "exitTo": "H-04",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "H-03",
+    "room": "MAIN HALL",
+    "zone": "Property Discovery",
+    "purpose": "Property catalogue",
+    "entryFrom": "H-02",
+    "exitTo": "H-05",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "H-04",
+    "room": "MAIN HALL",
+    "zone": "Map",
+    "purpose": "Home map preview",
+    "entryFrom": "H-03",
+    "exitTo": "H-03",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "H-05",
+    "room": "MAIN HALL",
+    "zone": "Government",
+    "purpose": "Government housing reference",
+    "entryFrom": "H-04",
+    "exitTo": "H-06",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "H-06",
+    "room": "MAIN HALL",
+    "zone": "Mission",
+    "purpose": "About/mission",
+    "entryFrom": "H-05",
+    "exitTo": "H-07",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "H-07",
+    "room": "MAIN HALL",
+    "zone": "Guide",
+    "purpose": "Roles/features guide",
+    "entryFrom": "H-06",
+    "exitTo": "H-08",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "H-08",
+    "room": "MAIN HALL",
+    "zone": "Safety",
+    "purpose": "Features/safety",
+    "entryFrom": "H-07",
+    "exitTo": "H-09",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "H-09",
+    "room": "MAIN HALL",
+    "zone": "Contact",
+    "purpose": "Contact desk",
+    "entryFrom": "H-08",
+    "exitTo": "main-hall-exit",
+    "hero": false,
+    "reducedMotion": "short-fade"
+  },
+  {
+    "id": "L-01",
+    "room": "LOGIN ROOM",
+    "zone": "Identity",
+    "purpose": "Login terminal",
+    "entryFrom": "login-door",
+    "exitTo": "profile-door",
+    "hero": true,
+    "reducedMotion": "short-fade"
+  },
+  {
+    "id": "R-01",
+    "room": "REGISTER ROOM",
+    "zone": "Registration",
+    "purpose": "Registration desk",
+    "entryFrom": "register-door",
+    "exitTo": "login-door",
+    "hero": true,
+    "reducedMotion": "short-fade"
+  },
+  {
+    "id": "P-01",
+    "room": "PROFILE SUITE",
+    "zone": "Perks",
+    "purpose": "Profile foyer",
+    "entryFrom": "profile-door",
+    "exitTo": "P-02",
+    "hero": true,
+    "reducedMotion": "short-fade"
+  },
+  {
+    "id": "P-05",
+    "room": "PROFILE SUITE",
+    "zone": "List Property",
+    "purpose": "Listing dossier/book",
+    "entryFrom": "profile-door",
+    "exitTo": "market-door",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "P-12",
+    "room": "PROFILE SUITE",
+    "zone": "Broker Gate",
+    "purpose": "Broker HQ threshold",
+    "entryFrom": "broker-gate",
+    "exitTo": "broker-hq-door",
+    "hero": false,
+    "reducedMotion": "short-fade"
+  },
+  {
+    "id": "M-01",
+    "room": "MARKET",
+    "zone": "Entrance",
+    "purpose": "Marketplace orientation",
+    "entryFrom": "market-door",
+    "exitTo": "M-02",
+    "hero": true,
+    "reducedMotion": "short-fade"
+  },
+  {
+    "id": "M-02",
+    "room": "MARKET",
+    "zone": "Map",
+    "purpose": "Marketplace map",
+    "entryFrom": "M-01",
+    "exitTo": "M-03",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "M-03",
+    "room": "MARKET",
+    "zone": "Filters",
+    "purpose": "Filter controls",
+    "entryFrom": "M-02",
+    "exitTo": "M-04",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "M-04",
+    "room": "MARKET",
+    "zone": "Discovery",
+    "purpose": "Property/wanted discovery",
+    "entryFrom": "M-03",
+    "exitTo": "M-05",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "M-05",
+    "room": "MARKET",
+    "zone": "Inspection",
+    "purpose": "Expanded property dossier",
+    "entryFrom": "M-04",
+    "exitTo": "M-06",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "B-01",
+    "room": "BROKER HQ",
+    "zone": "Desk",
+    "purpose": "Broker workspace",
+    "entryFrom": "broker-hq-door",
+    "exitTo": "B-02",
+    "hero": true,
+    "reducedMotion": "short-fade"
+  },
+  {
+    "id": "B-04",
+    "room": "BROKER HQ",
+    "zone": "Intelligence Map",
+    "purpose": "Broker-specific map",
+    "entryFrom": "B-03",
+    "exitTo": "B-05",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "A-01",
+    "room": "OPERATIONS",
+    "zone": "Admin",
+    "purpose": "Verification/KYC",
+    "entryFrom": "admin-door",
+    "exitTo": "operations-exit",
+    "hero": true,
+    "reducedMotion": "short-fade"
+  },
+  {
+    "id": "G-01",
+    "room": "REFERENCE",
+    "zone": "Government",
+    "purpose": "Government housing guide",
+    "entryFrom": "government-door",
+    "exitTo": "reference-exit",
+    "hero": true,
+    "reducedMotion": "short-fade"
+  },
+  {
+    "id": "LGL-01",
+    "room": "REFERENCE",
+    "zone": "Privacy",
+    "purpose": "Privacy archive",
+    "entryFrom": "legal-door",
+    "exitTo": "reference-exit",
+    "hero": false,
+    "reducedMotion": "short-fade"
+  },
+  {
+    "id": "A-02",
+    "room": "OPERATIONS",
+    "zone": "Moderator",
+    "purpose": "Moderator operations hero",
+    "entryFrom": "moderator-door",
+    "exitTo": "operations-exit",
+    "hero": true,
+    "reducedMotion": "short-fade"
+  },
+  {
+    "id": "A-03",
+    "room": "OPERATIONS",
+    "zone": "Staff",
+    "purpose": "Staff operations hero",
+    "entryFrom": "staff-door",
+    "exitTo": "operations-exit",
+    "hero": true,
+    "reducedMotion": "short-fade"
+  },
+  {
+    "id": "P-02",
+    "room": "PROFILE SUITE",
+    "zone": "Messages",
+    "purpose": "Messages station",
+    "entryFrom": "P-01",
+    "exitTo": "P-03",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "P-03",
+    "room": "PROFILE SUITE",
+    "zone": "Contracts",
+    "purpose": "Contracts station",
+    "entryFrom": "P-02",
+    "exitTo": "P-04",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "P-04",
+    "room": "PROFILE SUITE",
+    "zone": "Need Help",
+    "purpose": "Support station",
+    "entryFrom": "P-03",
+    "exitTo": "P-05",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "P-06",
+    "room": "PROFILE SUITE",
+    "zone": "Wanted",
+    "purpose": "Wanted station",
+    "entryFrom": "P-05",
+    "exitTo": "P-07",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "P-07",
+    "room": "PROFILE SUITE",
+    "zone": "Saved Properties",
+    "purpose": "Saved properties station",
+    "entryFrom": "P-06",
+    "exitTo": "P-08",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "P-08",
+    "room": "PROFILE SUITE",
+    "zone": "Saved Wanted",
+    "purpose": "Saved wanted station",
+    "entryFrom": "P-07",
+    "exitTo": "P-09",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "P-09",
+    "room": "PROFILE SUITE",
+    "zone": "Reviews",
+    "purpose": "Reviews station",
+    "entryFrom": "P-08",
+    "exitTo": "P-10",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "P-10",
+    "room": "PROFILE SUITE",
+    "zone": "Government Housing",
+    "purpose": "Government housing station",
+    "entryFrom": "P-09",
+    "exitTo": "P-11",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "P-11",
+    "room": "PROFILE SUITE",
+    "zone": "Account / Identity",
+    "purpose": "Account identity console",
+    "entryFrom": "P-10",
+    "exitTo": "P-12",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "M-06",
+    "room": "MARKET",
+    "zone": "Contact",
+    "purpose": "Market contact desk",
+    "entryFrom": "M-05",
+    "exitTo": "market-exit",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "B-02",
+    "room": "BROKER HQ",
+    "zone": "Requests",
+    "purpose": "Request queue",
+    "entryFrom": "B-01",
+    "exitTo": "B-03",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "B-03",
+    "room": "BROKER HQ",
+    "zone": "Service Area",
+    "purpose": "Service workflow",
+    "entryFrom": "B-02",
+    "exitTo": "B-04",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "B-05",
+    "room": "BROKER HQ",
+    "zone": "Discovery Wall",
+    "purpose": "Discovery wall",
+    "entryFrom": "B-04",
+    "exitTo": "B-06",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "B-06",
+    "room": "BROKER HQ",
+    "zone": "Service Pins",
+    "purpose": "Service pin management",
+    "entryFrom": "B-05",
+    "exitTo": "broker-hq-exit",
+    "hero": false,
+    "reducedMotion": "short-pan"
+  },
+  {
+    "id": "L-GL",
+    "room": "REFERENCE",
+    "zone": "Legal",
+    "purpose": "Privacy and terms reference",
+    "entryFrom": "legal-door",
+    "exitTo": "reference-exit",
+    "hero": false,
+    "reducedMotion": "short-fade"
+  }
+]

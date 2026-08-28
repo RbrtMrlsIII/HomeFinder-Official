@@ -1,0 +1,11 @@
+# Archive and Evidence Policy
+
+- `HomeFinder.zip` is the only project ZIP.
+- No `.zip` files are stored inside this checkpoint.
+- `master/` contains the single canonical master scene.
+- `reconciliation/` contains recovered census and mapping evidence.
+- `03_authority_docs/` contains current/restored authority documents and provenance.
+- `04_recovery_archives/` contains flattened historical recovery contents only.
+- `verification/` contains verification and audit evidence.
+- `active_development/` contains the current editable system and active camera work.
+- `07_historical_source_review/` is forensic reference only and never the active authority.

@@ -1,0 +1,11 @@
+{
+  "authenticationAuthority": "firebaseAuth",
+  "roleField": "canonicalRole",
+  "canonicalRoles": ["owner", "seeker", "broker", "staff", "moderator", "admin"],
+  "phone": {
+    "country": "PH",
+    "canonicalFormat": "639XXXXXXXXX",
+    "digits": 12,
+    "verifiedBeforeTrustedPhoneClaim": true
+  }
+}

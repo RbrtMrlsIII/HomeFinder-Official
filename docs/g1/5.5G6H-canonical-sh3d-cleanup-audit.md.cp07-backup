@@ -1,0 +1,69 @@
+# 5.5G.6H — Canonical SH3D Cleanup Audit
+
+## Final verdict
+
+**PASS — noncanonical SH3D files were deleted only after the canonical model and dependency checks passed.**
+
+### Pre-cleanup inventory
+
+- `3d/imports/Additional.sh3d`
+- `3d/staging/HomeFinder-merge-candidate-Additional-reconciled.sh3d`
+- `docs/archive/5.5G6G-pre-promotion/HomeFinder_master_pre_5_5G6G.sh3d`
+- `master/HomeFinder.sh3d`
+
+### Evidence checks
+
+- Canonical `master/HomeFinder.sh3d`: PASS
+- Canonical XML/resource references: PASS
+- Unique XML IDs: PASS
+- 7 levels: PASS
+- 47 rooms: PASS
+- 170 walls: PASS
+- 86 door/window objects: PASS
+- 15 observer cameras: PASS
+- 9 H-series cameras: PASS
+- Protected role/session logic hashes: PASS
+- Runtime source/config dependency on noncanonical SH3Ds: **0**
+- Canonical model remains the three-house authority: PASS
+- House 2 ↔ House 3 direct route remains forbidden: PASS
+- Physical runtime routes promoted: **0**
+
+### Deletion
+
+The following noncanonical SH3D binaries were deleted:
+
+- `3d/imports/Additional.sh3d`
+- `3d/staging/HomeFinder-merge-candidate-Additional-reconciled.sh3d`
+- `docs/archive/5.5G6G-pre-promotion/HomeFinder_master_pre_5_5G6G.sh3d`
+
+No SH3D rollback binary was retained.
+
+The textual reconciliation history remains in `docs/`, `archive/checkpoints/`, and checkpoint reports so the project retains its findings and lineage without retaining redundant model binaries.
+
+### Post-cleanup authority
+
+Exactly one SH3D remains:
+
+`master/HomeFinder.sh3d`
+
+### Rules carried forward
+
+- House 1 = common/transit environment.
+- House 2 = Broker/Operations.
+- House 3 = Seeker/Owner.
+- House 2 ↔ House 3 direct physical traversal is forbidden.
+- Physical travel does not change authenticated identity or role.
+- Broker-specific workspace/profile/market/map remains in Broker HQ.
+- Government visibility and save-role rules from the protected logic remain frozen.
+- Firebase Hosting remains undeployed.
+- Physical runtime routes remain at 0.
+
+## Next gate
+
+`5.5G.6I — Physical Portal / Route Validation`
+
+Prove independently:
+1. House 1 ↔ House 2
+2. House 1 ↔ House 3
+
+Do not author a House 2 ↔ House 3 direct route.

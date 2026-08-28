@@ -1,0 +1,236 @@
+{
+  "version": "A4.4C3.15-DD04",
+  "authority": "HomeFinder application + Firebase backend",
+  "spatial_role": "presentation only",
+  "product_roles": [
+    "owner",
+    "seeker",
+    "broker"
+  ],
+  "operations_roles": [
+    "staff",
+    "moderator",
+    "admin"
+  ],
+  "admin_cross_console_smoke_access": false,
+  "admin_broker_hq_access": false,
+  "routes": {
+    "index.html": [
+      "guest",
+      "owner",
+      "seeker",
+      "broker",
+      "staff",
+      "moderator",
+      "admin"
+    ],
+    "login.html": [
+      "guest",
+      "owner",
+      "seeker",
+      "broker",
+      "staff",
+      "moderator",
+      "admin"
+    ],
+    "register.html": [
+      "guest",
+      "owner",
+      "seeker",
+      "broker",
+      "staff",
+      "moderator",
+      "admin"
+    ],
+    "market.html": [
+      "guest",
+      "owner",
+      "seeker"
+    ],
+    "profile.html": [
+      "owner",
+      "seeker",
+      "broker"
+    ],
+    "broker-hq.html": [
+      "broker"
+    ],
+    "admin.html": [
+      "admin"
+    ],
+    "moderator.html": [
+      "moderator"
+    ],
+    "staff.html": [
+      "staff"
+    ],
+    "financing.html": [
+      "guest",
+      "owner",
+      "seeker",
+      "broker",
+      "staff",
+      "moderator",
+      "admin"
+    ],
+    "privacy.html": [
+      "guest",
+      "owner",
+      "seeker",
+      "broker",
+      "staff",
+      "moderator",
+      "admin"
+    ],
+    "terms.html": [
+      "guest",
+      "owner",
+      "seeker",
+      "broker",
+      "staff",
+      "moderator",
+      "admin"
+    ]
+  },
+  "capabilities": {
+    "ops.staffTasks": [
+      "staff"
+    ],
+    "ops.moderatorTasks": [
+      "moderator"
+    ],
+    "ops.adminTasks": [
+      "admin"
+    ],
+    "admin.manageUser": [
+      "admin"
+    ],
+    "admin.grantBoost": [
+      "admin"
+    ],
+    "admin.grantSubscription": [
+      "admin"
+    ],
+    "ops.supportTicketManagement": [
+      "staff",
+      "moderator",
+      "admin"
+    ],
+    "ops.boostOrderReview": [
+      "staff",
+      "moderator",
+      "admin"
+    ],
+    "ops.assistanceRequestRead": [
+      "staff",
+      "moderator",
+      "admin"
+    ],
+    "ops.reportModeration": [
+      "staff",
+      "moderator",
+      "admin"
+    ],
+    "ops.kycReferenceInspection": [
+      "admin"
+    ],
+    "ops.boostInspection": [
+      "staff",
+      "moderator",
+      "admin"
+    ],
+    "ops.contractRead": [
+      "staff",
+      "moderator",
+      "admin"
+    ],
+    "ops.notificationResolution": [
+      "staff",
+      "moderator",
+      "admin"
+    ],
+    "broker.hq": [
+      "broker"
+    ]
+  },
+  "spatial_rules": {
+    "guest": [
+      "BACKYARD",
+      "MAIN HALL",
+      "LOGIN ROOM",
+      "REGISTER ROOM",
+      "MARKET",
+      "REFERENCE"
+    ],
+    "seeker": [
+      "BACKYARD",
+      "MAIN HALL",
+      "LOGIN ROOM",
+      "REGISTER ROOM",
+      "MARKET",
+      "PROFILE SUITE",
+      "REFERENCE"
+    ],
+    "owner": [
+      "BACKYARD",
+      "MAIN HALL",
+      "LOGIN ROOM",
+      "REGISTER ROOM",
+      "MARKET",
+      "PROFILE SUITE",
+      "REFERENCE"
+    ],
+    "broker": [
+      "BACKYARD",
+      "MAIN HALL",
+      "LOGIN ROOM",
+      "REGISTER ROOM",
+      "PROFILE SUITE",
+      "BROKER HQ",
+      "REFERENCE"
+    ],
+    "staff": [
+      "BACKYARD",
+      "MAIN HALL",
+      "LOGIN ROOM",
+      "REGISTER ROOM",
+      "REFERENCE",
+      "OPERATIONS[A-03]"
+    ],
+    "moderator": [
+      "BACKYARD",
+      "MAIN HALL",
+      "LOGIN ROOM",
+      "REGISTER ROOM",
+      "REFERENCE",
+      "OPERATIONS[A-02]"
+    ],
+    "admin": [
+      "BACKYARD",
+      "MAIN HALL",
+      "LOGIN ROOM",
+      "REGISTER ROOM",
+      "REFERENCE",
+      "OPERATIONS[A-01]"
+    ]
+  },
+  "auth_flow": [
+    "Firebase Auth",
+    "identity/session",
+    "role/capability",
+    "client route/UI visibility",
+    "trusted backend",
+    "Firestore rules/callables"
+  ],
+  "known_landmines": [
+    "Each Operations role enters only its own console; cross-console smoke access is retired",
+    "Ops roles do not enter Profile or Market as product surfaces"
+  ],
+  "unresolved": [
+    "broker onboarding",
+    "single role authority SoT map",
+    "full capability-to-rule matrix",
+    "full auth UX failure-state matrix",
+    "deployment-level Firebase config verification"
+  ]
+}

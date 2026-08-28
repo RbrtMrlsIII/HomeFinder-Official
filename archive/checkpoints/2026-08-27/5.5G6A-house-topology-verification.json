@@ -1,0 +1,14 @@
+{
+  "gate": "5.5G.6A",
+  "status": "PASS",
+  "purpose": "Clarify inter-house topology from project contracts and code",
+  "house2_house3_direct_connection": "PROHIBITED / NOT ACCEPTED",
+  "inter_house_hub": "House 1",
+  "physical_route_promotion": 0,
+  "canonical_sh3d_modified": false,
+  "runtime_code_modified": false,
+  "next_focus": [
+    "House 1\u2194House 2 evidence",
+    "House 1\u2194House 3 evidence"
+  ]
+}

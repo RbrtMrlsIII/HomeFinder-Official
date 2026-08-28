@@ -1,0 +1,9 @@
+{
+  "main_hall_povs": 9,
+  "camera_object_contract_rows": 22,
+  "active_js_mjs": 233,
+  "master_scene": "master/HomeFinder.sh3d",
+  "opera_connector": "UNAVAILABLE_IN_SESSION",
+  "browser_validation": "NOT_RUN_HERE",
+  "main_hall_contract_sha256": "ef27a3dda2a5fa689b795c801e5862dbbe140a1f595def3772969d2b62493d79"
+}

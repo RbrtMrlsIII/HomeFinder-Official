@@ -1,0 +1,14 @@
+{
+  "execution": "5.5G.1.4",
+  "canonical_sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "canonical_expected": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "f3_candidate_sha256": "21309c26ac11728180402b0ee94f97eab9f2c3ba6e9093ed071c955eb89ab5c5",
+  "f3_expected": "21309c26ac11728180402b0ee94f97eab9f2c3ba6e9093ed071c955eb89ab5c5",
+  "problematic_door_records": 6,
+  "resolved_candidate": 2,
+  "remaining_ambiguous": 4,
+  "runtime_changed": false,
+  "canonical_changed": false,
+  "f3_candidate_changed": false,
+  "g1_continuity_index_present": true
+}

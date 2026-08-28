@@ -1,0 +1,37 @@
+{
+  "canonicalRole": [
+    "owner",
+    "seeker",
+    "broker",
+    "staff",
+    "moderator",
+    "admin"
+  ],
+  "legacyVocabulary": [
+    "accountType",
+    "role",
+    "agent"
+  ],
+  "legacyVocabularyIsAuthorization": false,
+  "productRoleVisibility": {
+    "broker": {
+      "primarySurface": "broker-hq.html",
+      "topLevelProfile": false,
+      "publicMarket": false,
+      "hqProfileWorkspace": true,
+      "governmentHousing": true
+    },
+    "seeker": {
+      "primarySurface": "profile.html",
+      "market": "property-discovery",
+      "wantedPost": true,
+      "governmentHousing": true
+    },
+    "owner": {
+      "primarySurface": "profile.html",
+      "market": "wanted-discovery",
+      "wantedPost": false,
+      "governmentHousing": true
+    }
+  }
+}

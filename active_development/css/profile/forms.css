@@ -1,0 +1,325 @@
+/* HF-BUILD-2026-08-11-V13 | file: forms.css | DO NOT USE OLD CACHE PATH */
+/* ==================================== */
+/*  FORMS                             */
+/* ==================================== */
+/* Shared input/field styling used across all profile forms. */
+
+/* ==================================== */
+/*  INTERACTIVE INPUT FORMS & ELEMENTS*/
+/* ==================================== */
+.field-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 650;
+    color: var(--text-secondary);
+}
+fieldset.field-group {
+    border: none;
+    margin: 0 0 18px;
+    padding: 0;
+    min-inline-size: 0;
+}
+fieldset.field-group legend {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    padding: 0;
+}
+.na-toggle-label {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.field-group input,
+.field-group select,
+.field-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-input);
+    color: var(--text-primary);
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.field-group input:focus,
+.field-group select:focus,
+.field-group textarea:focus {
+    border-color: var(--color-brand);
+    background: var(--bg-surface);
+    box-shadow: 0 0 0 3px rgba(122, 90, 62, 0.12);
+}
+
+.primary-btn {
+    background: var(--clay-cta, #3D2A1F);
+    color: var(--clay-on-cta, #F7F3EC);
+    border: 1px solid transparent;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    min-height: var(--clay-hit, 44px);
+    transition: background var(--clay-ease, 160ms ease), transform var(--clay-ease, 160ms ease), box-shadow var(--clay-ease, 160ms ease), filter var(--clay-ease, 160ms ease);
+    box-shadow: 0 4px 12px rgba(61, 42, 31, 0.22);
+}
+
+.primary-btn:hover {
+    background: var(--clay-primary, #5B4030);
+    box-shadow: 0 6px 16px rgba(91, 64, 48, 0.28);
+}
+
+.primary-btn:active {
+    transform: scale(0.98);
+}
+
+.primary-btn:focus-visible {
+    outline: 2px solid var(--clay-secondary, #C4A574);
+    outline-offset: 2px;
+}
+
+.primary-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.secondary-btn {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--clay-border, var(--border-color));
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 650;
+    cursor: pointer;
+    min-height: var(--clay-hit, 44px);
+    transition: background var(--clay-ease, 160ms ease), transform var(--clay-ease, 160ms ease), border-color var(--clay-ease, 160ms ease), color var(--clay-ease, 160ms ease);
+}
+
+.secondary-btn:hover {
+    background: var(--bg-input);
+    border-color: var(--clay-secondary, #C4A574);
+    color: var(--clay-primary, #5B4030);
+}
+
+.secondary-btn:active {
+    transform: scale(0.98);
+}
+
+.secondary-btn:focus-visible {
+    outline: 2px solid var(--clay-secondary, #C4A574);
+    outline-offset: 2px;
+}
+
+.field-hint {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    line-height: 1.4;
+}
+
+
+
+/* Per-field account detail saves */
+.detail-block {
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-color);
+}
+.detail-block:last-of-type {
+  border-bottom: none;
+  margin-bottom: 8px;
+}
+.detail-block-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.detail-block-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.detail-save-btn {
+  flex-shrink: 0;
+  min-height: 36px;
+  padding: 0 14px;
+  font-size: 12.5px;
+}
+
+
+/* Listing help — ₱99.99 pay at submit (Phase 1) */
+.listing-help-block {
+  margin-top: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(196, 165, 116, 0.35);
+  background: rgba(196, 165, 116, 0.08);
+}
+.listing-help-toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.listing-help-pay-panel {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(0,0,0,0.12);
+}
+.listing-help-fee-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+.listing-help-steps {
+  margin: 0 0 12px;
+  padding-left: 1.2em;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text-secondary, #555);
+}
+.listing-help-pay-panel input[type="text"] {
+  width: 100%;
+}
+
+
+
+
+.listing-help-paypal {
+  margin: 10px 0 14px;
+  min-height: 48px;
+}
+
+
+/* Independent identity field cooldowns */
+.identity-cooldown-intro {
+  margin: 0 0 12px;
+  font-size: 0.82rem;
+}
+.identity-field-block.is-cooldown-locked .identity-field-edit {
+  display: none;
+}
+.identity-cooldown-card {
+  margin: 0 0 8px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(196, 165, 116, 0.35);
+  background: rgba(0, 0, 0, 0.14);
+}
+
+.identity-cooldown-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.identity-cooldown-head strong {
+  font-size: 0.9rem;
+}
+.identity-cooldown-value {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  font-weight: 700;
+  word-break: break-word;
+}
+.identity-cooldown-timing {
+  margin: 0 0 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #C4A574;
+}
+.identity-cooldown-card .kyc-status-pill[data-state="locked"] {
+  background: rgba(251, 191, 36, 0.18);
+  color: #FBBF24;
+  margin-left: 0;
+}
+input.is-cooldown-locked {
+  opacity: 0.75;
+}
+
+.need-help-tile[hidden],
+.need-help-tile.is-role-hidden {
+  display: none;
+}
+
+.nh-asset-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+  max-height: 240px;
+  overflow-y: auto;
+}
+.nh-asset-card {
+  text-align: left;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--clay-border, #E8E0D4);
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.nh-asset-card.is-selected {
+  border-color: var(--clay-secondary, #C4A574);
+  box-shadow: 0 0 0 2px rgba(196, 165, 116, 0.35);
+}
+.nh-asset-card.has-help-request {
+  border-color: #5B4030;
+  border-width: 2px;
+}
+.nh-asset-title { font-weight: 700; color: var(--clay-primary, #5B4030); }
+.nh-asset-meta { font-size: 0.8rem; color: #6b635a; }
+.listing-manage-card.has-help-request,
+.property-feed-card.has-help-request {
+  border: 2px solid var(--clay-primary, #5B4030);
+  box-shadow: 0 0 0 1px rgba(91, 64, 48, 0.15);
+}
+
+
+/* Boost package catalog (Phase B copy) */
+.boost-pkg-badge {
+  display: inline-block;
+  margin: 6px 0 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: rgba(196, 165, 116, 0.25);
+  color: var(--clay-primary, #5B4030);
+  border: 1px solid rgba(196, 165, 116, 0.45);
+}
+.boost-catalog-lead {
+  margin: 0 0 12px;
+  max-width: 40rem;
+}
+.boost-package-card .field-hint {
+  line-height: 1.45;
+}

@@ -1,0 +1,11 @@
+route_id,surface,page,logical_door,source,destination,physical_evidence,route_status,reason
+R1,main-hall/hero,index.html,main-door,Main Hall,Exterior,CANDIDATE,blocked,"House 1 front-door candidate exists, but boundary binding remains candidate-only."
+R2,main-hall/search-console,index.html,market-door,Main Hall,Market,BLOCKED,blocked,No uniquely proven physical Market destination.
+R3,main-hall/government-housing,index.html,gov-door,Main Hall,Government Housing,BLOCKED,blocked,No uniquely proven physical Government Housing destination.
+R4,login-room/identity-terminal,login.html,profile-door,Login Room,Profile Suite,BLOCKED,blocked,No unique physical Login → Profile endpoint.
+R5,register-room/registration-desk,register.html,login-door,Register Room,Login Room,BLOCKED,blocked,No unique physical Register → Login endpoint.
+R6,profile-suite/broker-gate,profile.html,broker-hq-door,Profile Suite,Broker HQ,BLOCKED,blocked,No proven inter-house/physical Broker HQ route.
+R7,profile-suite/list-property,profile.html,market-door,Profile Suite,Market,BLOCKED,blocked,"Logical reuse of market-door is valid, but physical Market endpoint is unresolved."
+R8,profile-suite/government-housing,profile.html,gov-door,Profile Suite,Government Housing,BLOCKED,blocked,"Logical reuse is valid, but physical Government Housing endpoint is unresolved."
+R9,market/entrance-directory,market.html,profile-door,Market,Profile Suite,BLOCKED,blocked,Reverse logical transition has no unique physical binding.
+R10,broker-hq/desk,broker-hq.html,profile-door,Broker HQ,Profile Suite,BLOCKED,blocked,Reverse transition has no proven physical inter-house binding.

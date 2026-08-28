@@ -1,0 +1,127 @@
+# Architecture Validation Reconciliation — Controlled Execution Branch
+
+**Date opened:** 2026-08-26  
+**Parent chronology:** `project-guide/masterplan.md` §10 — Chronological Execution Plan  
+**Branch section:** `project-guide/masterplan.md` §10A  
+**Purpose:** reconcile the existing test suite with the current HomeFinder architecture before three-house allocation and SH3D merge work.
+
+## Baseline
+
+Executed from `active_development/`:
+
+```text
+node --test tests/*.test.mjs tests/*.test.js
+```
+
+Result:
+
+| Metric | Result |
+|---|---:|
+| Tests | 106 |
+| Passed | 46 |
+| Failed | 60 |
+
+These failures are classification evidence, not automatically product defects.
+
+## Existing census evidence
+
+The branch adopts these existing artifacts as the baseline rather than creating a competing census:
+
+- `docs/csv/reconciliation/recovered-page-census.csv`
+- `active_development/data/feature-wiring-matrix.json`
+- `active_development/data/house-ui-ux-code-reality-map.json`
+- `active_development/data/ui-response-mapping.json`
+- `docs/audit/phase5.5c-ui-spatial-census-initiation.md`
+- `active_development/3d/docs/model-census.json`
+- `docs/md/3d-model-census-verified.md`
+- `docs/md/camera-and-spatial-authority.md`
+- `docs/md/route-authority.md`
+
+## WalkMyPlan test inventory
+
+A repository scan found 14 test files containing explicit `WalkMyPlan` references:
+
+- `dd05-ui-response-mapping.test.mjs`
+- `dd05-h09-contact-exit.test.mjs`
+- `room-shell-physical-ui-mapping.test.mjs`
+- `theme-lighting-performance-budget.test.mjs`
+- `deep-dive-04-auth-roles-permissions.test.mjs`
+- `dd05-h05-government-housing.test.mjs`
+- `asset-integration-planning.test.mjs`
+- `dd04-final-authority-freeze.test.mjs`
+- `role-contract-subscription-path.test.mjs`
+- `dd05-main-hall-cinematic-map.test.mjs`
+- `dd05-h06-mission.test.mjs`
+- `dd05-main-hall-sequence-reconciliation.test.mjs`
+- `canonical-room-camera-door-graph.test.mjs`
+- `hero-world-environment-shell.test.mjs`
+
+These are migration candidates. WalkMyPlan must not be restored to satisfy them.
+
+## Current replacement authority
+
+Candidate/current authority sources include:
+
+- `docs/json/project-authority.json`
+- `docs/md/project-authority.md`
+- `docs/md/3d-authority.md`
+- `docs/md/camera-and-spatial-authority.md`
+- `docs/md/route-authority.md`
+- `active_development/data/house-camera-rig.json`
+- `active_development/data/main-hall-camera-object-contract.json`
+- `active_development/data/ui-response-mapping.json`
+- `active_development/data/feature-wiring-matrix.json`
+
+Historical WalkMyPlan evidence remains under:
+
+- `docs/json/archive/walkmyplan/`
+- `docs/csv/archive/walkmyplan/`
+
+## Failure classification
+
+Every failing test must receive one disposition:
+
+1. **CURRENT CONTRACT** — genuine current defect candidate.
+2. **SUPERSEDED WALKMYPLAN CONTRACT** — rewrite or archive against current authority.
+3. **STALE REPOSITORY PATH** — repair only when the assertion itself remains current.
+4. **HISTORICAL EVIDENCE** — preserve as immutable evidence.
+5. **UNCERTAIN** — investigate before changing.
+
+## First execution finding
+
+The baseline confirms that the repository test suite still contains historical authority assumptions. In particular, 14 test files reference the retired WalkMyPlan tree. The repository simultaneously contains current camera, route, UI-response and project-authority contracts that provide the basis for reconciliation.
+
+The correct action is therefore **test reconciliation**, not WalkMyPlan restoration.
+
+## Rejoin gate
+
+Before this branch rejoins the master chronology:
+
+- existing census artifacts are verified as the baseline;
+- every WalkMyPlan-dependent test has an explicit disposition;
+- stale-path failures are separated from architectural failures;
+- current-contract defects are isolated;
+- canonical SH3D remains unchanged;
+- accepted project progress remains cumulative;
+- a current validation baseline is recorded.
+
+Then proceed to the master chronology's three-house room allocation and UI ↔ 3D presentation contract.
+
+## Preliminary 14-test reconciliation matrix
+
+| Test | Preliminary disposition | Retired dependency | Current evidence | Proposed action |
+|---|---|---|---|---|
+| dd05-ui-response-mapping.test.mjs | SUPERSEDED WALKMYPLAN CONTRACT | camera-registry.json | ui-response-mapping.json + house-camera-rig.json + camera/spatial authority | Replace camera lookup with current logical presentation/camera contract. |
+| dd05-h09-contact-exit.test.mjs | SUPERSEDED WALKMYPLAN CONTRACT | physical-ui-object-registry.json | main-hall-cinematic-ui-map.json + house-camera-rig.json | Reconcile H-09 physical object mapping to current authority. |
+| room-shell-physical-ui-mapping.test.mjs | SUPERSEDED WALKMYPLAN CONTRACT | room-shell/physical UI registry | house-ui-ux-code-reality-map.json + current spatial contracts | Rewrite against current room/presentation evidence. |
+| theme-lighting-performance-budget.test.mjs | SUPERSEDED WALKMYPLAN CONTRACT | theme-lighting-contract.json | current active cinematic/runtime contract if still required | Determine whether assertion is current or historical; preserve lighting evidence. |
+| deep-dive-04-auth-roles-permissions.test.mjs | MIXED: CURRENT + SUPERSEDED | role-path/auth-identity matrices | route-access-contract.js + authority-contract.js + backend authority | Keep security assertions; remove spatial authority dependency. |
+| dd05-h05-government-housing.test.mjs | SUPERSEDED WALKMYPLAN CONTRACT | physical-ui-object-registry.json | main-hall-cinematic-ui-map.json + current presentation contract | Rewrite Government physical mapping. |
+| asset-integration-planning.test.mjs | SUPERSEDED WALKMYPLAN CONTRACT | WalkMyPlan assets/manifest | current runtime/asset contract | Retain only assertions that still describe current runtime. |
+| dd04-final-authority-freeze.test.mjs | MIXED: CURRENT + SUPERSEDED | auth/path/door registries | authority-contract + route authority + current spatial contracts | Preserve security/authority invariants; replace retired spatial registries. |
+| role-contract-subscription-path.test.mjs | MIXED: CURRENT + SUPERSEDED | door/security camera registries | route-access-contract + application authority + current spatial contracts | Separate role/subscription behavior from retired spatial authority. |
+| dd05-main-hall-cinematic-map.test.mjs | SUPERSEDED WALKMYPLAN CONTRACT | physical-ui-object + zone maps | main-hall-cinematic-ui-map.json + current spatial contract | Rewrite main-hall mapping against current evidence. |
+| dd05-h06-mission.test.mjs | SUPERSEDED WALKMYPLAN CONTRACT | physical-ui-object-registry.json | ui-response-mapping.json + current presentation contract | Rewrite Mission presentation mapping. |
+| dd05-main-hall-sequence-reconciliation.test.mjs | SUPERSEDED WALKMYPLAN CONTRACT | camera/choreography registries | main-hall camera contracts + logical camera reconciliation | Replace old choreography authority with current camera contract. |
+| canonical-room-camera-door-graph.test.mjs | SUPERSEDED WALKMYPLAN CONTRACT | entire WalkMyPlan data directory | canonical SH3D + camera/route/door authority contracts | Rebuild graph validation from canonical/current sources. |
+| hero-world-environment-shell.test.mjs | SUPERSEDED WALKMYPLAN CONTRACT | hero/environment shell registries | current cinematic runtime/world contract | Determine surviving current contract; archive obsolete shell assertions. |

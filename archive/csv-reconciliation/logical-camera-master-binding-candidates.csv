@@ -1,0 +1,43 @@
+logical_camera_id,logical_room,zone,purpose,master_named_camera,status,candidate_master_camera,binding_confidence,reconciliation_state,reconciliation_note
+ARR-01,BACKYARD,Arrival,Establish property and approach main door,,REBUILD_REQUIRED,Exterior,MEDIUM,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+H-01,MAIN HALL,Hero,Main Hall hero composition,,REBUILD_REQUIRED,Corridor,MEDIUM,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+H-02,MAIN HALL,Discovery,Search/discovery console,,REBUILD_REQUIRED,Living room,MEDIUM,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+H-03,MAIN HALL,Property Discovery,Property catalogue,,REBUILD_REQUIRED,Living room,MEDIUM,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+H-04,MAIN HALL,Map,Home map preview,,REBUILD_REQUIRED,Exterior,MEDIUM,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+H-05,MAIN HALL,Government,Government housing reference,,REBUILD_REQUIRED,Corridor,MEDIUM,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+H-06,MAIN HALL,Mission,About/mission,,REBUILD_REQUIRED,Living room,MEDIUM,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+H-07,MAIN HALL,Guide,Roles/features guide,,REBUILD_REQUIRED,Kitchen,MEDIUM,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+H-08,MAIN HALL,Safety,Features/safety,,REBUILD_REQUIRED,Bedroom #1,MEDIUM,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+H-09,MAIN HALL,Contact,Contact desk,,REBUILD_REQUIRED,Corridor,MEDIUM,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+L-01,LOGIN ROOM,Identity,Login terminal,,REBUILD_REQUIRED,Bedroom #1,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+R-01,REGISTER ROOM,Registration,Registration desk,,REBUILD_REQUIRED,Bedroom #2,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+P-01,PROFILE SUITE,Perks,Profile foyer,,REBUILD_REQUIRED,Bedroom #2,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+P-05,PROFILE SUITE,List Property,Listing dossier/book,,REBUILD_REQUIRED,Bedroom #2,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+P-12,PROFILE SUITE,Broker Gate,Broker HQ threshold,,REBUILD_REQUIRED,Bedroom #2,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+M-01,MARKET,Entrance,Marketplace orientation,,REBUILD_REQUIRED,Living room,MEDIUM,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+M-02,MARKET,Map,Marketplace map,,REBUILD_REQUIRED,Living room,MEDIUM,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+M-03,MARKET,Filters,Filter controls,,REBUILD_REQUIRED,Living room,MEDIUM,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+M-04,MARKET,Discovery,Property/wanted discovery,,REBUILD_REQUIRED,Living room,MEDIUM,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+M-05,MARKET,Inspection,Expanded property dossier,,REBUILD_REQUIRED,Living room,MEDIUM,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+B-01,BROKER HQ,Desk,Broker workspace,,REBUILD_REQUIRED,Garage,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+B-04,BROKER HQ,Intelligence Map,Broker-specific map,,REBUILD_REQUIRED,Garage,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+A-01,OPERATIONS,Admin,Verification/KYC,,REBUILD_REQUIRED,Garage,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+G-01,REFERENCE,Government,Government housing guide,,REBUILD_REQUIRED,Kitchen,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+LGL-01,REFERENCE,Privacy,Privacy archive,,REBUILD_REQUIRED,Kitchen,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+A-02,OPERATIONS,Moderator,Moderator operations hero,,REBUILD_REQUIRED,Garage,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+A-03,OPERATIONS,Staff,Staff operations hero,,REBUILD_REQUIRED,Garage,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+P-02,PROFILE SUITE,Messages,Messages station,,REBUILD_REQUIRED,Bedroom #2,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+P-03,PROFILE SUITE,Contracts,Contracts station,,REBUILD_REQUIRED,Bedroom #2,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+P-04,PROFILE SUITE,Need Help,Support station,,REBUILD_REQUIRED,Bedroom #2,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+P-06,PROFILE SUITE,Wanted,Wanted station,,REBUILD_REQUIRED,Bedroom #2,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+P-07,PROFILE SUITE,Saved Properties,Saved properties station,,REBUILD_REQUIRED,Bedroom #2,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+P-08,PROFILE SUITE,Saved Wanted,Saved wanted station,,REBUILD_REQUIRED,Bedroom #2,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+P-09,PROFILE SUITE,Reviews,Reviews station,,REBUILD_REQUIRED,Bedroom #2,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+P-10,PROFILE SUITE,Government Housing,Government housing station,,REBUILD_REQUIRED,Bedroom #2,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+P-11,PROFILE SUITE,Account / Identity,Account identity console,,REBUILD_REQUIRED,Bedroom #2,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+M-06,MARKET,Contact,Market contact desk,,REBUILD_REQUIRED,Corridor,MEDIUM,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+B-02,BROKER HQ,Requests,Request queue,,REBUILD_REQUIRED,Garage,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+B-03,BROKER HQ,Service Area,Service workflow,,REBUILD_REQUIRED,Garage,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+B-05,BROKER HQ,Discovery Wall,Discovery wall,,REBUILD_REQUIRED,Garage,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+B-06,BROKER HQ,Service Pins,Service pin management,,REBUILD_REQUIRED,Garage,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.
+L-GL,REFERENCE,Legal,Privacy and terms reference,,REBUILD_REQUIRED,Kitchen,LOW,CANDIDATE_BINDING,No direct model-camera identity exists yet.

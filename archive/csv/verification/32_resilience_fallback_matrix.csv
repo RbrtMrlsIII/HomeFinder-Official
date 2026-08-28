@@ -1,0 +1,49 @@
+page_id,route,logical_room,camera_family,scenario,required_behavior,pass_status
+home,index.html,MAIN HALL,H-01..H-09,slow-network,"fallback-first loading, no blocking business UI",NOT_RUN
+home,index.html,MAIN HALL,H-01..H-09,3d-load-failure,2D/static fallback; HTML remains usable,NOT_RUN
+home,index.html,MAIN HALL,H-01..H-09,hidden-tab,pause/minimize animation/render work; preserve state,NOT_RUN
+home,index.html,MAIN HALL,H-01..H-09,interrupted-navigation,restore normal route state; no orphaned camera lock,NOT_RUN
+login,login.html,LOGIN ROOM,L-01..L-05,slow-network,"fallback-first loading, no blocking business UI",NOT_RUN
+login,login.html,LOGIN ROOM,L-01..L-05,3d-load-failure,2D/static fallback; HTML remains usable,NOT_RUN
+login,login.html,LOGIN ROOM,L-01..L-05,hidden-tab,pause/minimize animation/render work; preserve state,NOT_RUN
+login,login.html,LOGIN ROOM,L-01..L-05,interrupted-navigation,restore normal route state; no orphaned camera lock,NOT_RUN
+register,register.html,REGISTER ROOM,R-01..R-07,slow-network,"fallback-first loading, no blocking business UI",NOT_RUN
+register,register.html,REGISTER ROOM,R-01..R-07,3d-load-failure,2D/static fallback; HTML remains usable,NOT_RUN
+register,register.html,REGISTER ROOM,R-01..R-07,hidden-tab,pause/minimize animation/render work; preserve state,NOT_RUN
+register,register.html,REGISTER ROOM,R-01..R-07,interrupted-navigation,restore normal route state; no orphaned camera lock,NOT_RUN
+market,market.html,MARKET,"M-01,M-02,M-04,M-06",slow-network,"fallback-first loading, no blocking business UI",NOT_RUN
+market,market.html,MARKET,"M-01,M-02,M-04,M-06",3d-load-failure,2D/static fallback; HTML remains usable,NOT_RUN
+market,market.html,MARKET,"M-01,M-02,M-04,M-06",hidden-tab,pause/minimize animation/render work; preserve state,NOT_RUN
+market,market.html,MARKET,"M-01,M-02,M-04,M-06",interrupted-navigation,restore normal route state; no orphaned camera lock,NOT_RUN
+profile,profile.html,PROFILE SUITE,P-01..P-12,slow-network,"fallback-first loading, no blocking business UI",NOT_RUN
+profile,profile.html,PROFILE SUITE,P-01..P-12,3d-load-failure,2D/static fallback; HTML remains usable,NOT_RUN
+profile,profile.html,PROFILE SUITE,P-01..P-12,hidden-tab,pause/minimize animation/render work; preserve state,NOT_RUN
+profile,profile.html,PROFILE SUITE,P-01..P-12,interrupted-navigation,restore normal route state; no orphaned camera lock,NOT_RUN
+broker-hq,broker-hq.html,BROKER HQ,B-01..B-06,slow-network,"fallback-first loading, no blocking business UI",NOT_RUN
+broker-hq,broker-hq.html,BROKER HQ,B-01..B-06,3d-load-failure,2D/static fallback; HTML remains usable,NOT_RUN
+broker-hq,broker-hq.html,BROKER HQ,B-01..B-06,hidden-tab,pause/minimize animation/render work; preserve state,NOT_RUN
+broker-hq,broker-hq.html,BROKER HQ,B-01..B-06,interrupted-navigation,restore normal route state; no orphaned camera lock,NOT_RUN
+admin,admin.html,OPERATIONS,A-01,slow-network,"fallback-first loading, no blocking business UI",NOT_RUN
+admin,admin.html,OPERATIONS,A-01,3d-load-failure,2D/static fallback; HTML remains usable,NOT_RUN
+admin,admin.html,OPERATIONS,A-01,hidden-tab,pause/minimize animation/render work; preserve state,NOT_RUN
+admin,admin.html,OPERATIONS,A-01,interrupted-navigation,restore normal route state; no orphaned camera lock,NOT_RUN
+moderator,moderator.html,OPERATIONS,A-02,slow-network,"fallback-first loading, no blocking business UI",NOT_RUN
+moderator,moderator.html,OPERATIONS,A-02,3d-load-failure,2D/static fallback; HTML remains usable,NOT_RUN
+moderator,moderator.html,OPERATIONS,A-02,hidden-tab,pause/minimize animation/render work; preserve state,NOT_RUN
+moderator,moderator.html,OPERATIONS,A-02,interrupted-navigation,restore normal route state; no orphaned camera lock,NOT_RUN
+staff,staff.html,OPERATIONS,A-03,slow-network,"fallback-first loading, no blocking business UI",NOT_RUN
+staff,staff.html,OPERATIONS,A-03,3d-load-failure,2D/static fallback; HTML remains usable,NOT_RUN
+staff,staff.html,OPERATIONS,A-03,hidden-tab,pause/minimize animation/render work; preserve state,NOT_RUN
+staff,staff.html,OPERATIONS,A-03,interrupted-navigation,restore normal route state; no orphaned camera lock,NOT_RUN
+financing-guide,financing.html,REFERENCE,G-01,slow-network,"fallback-first loading, no blocking business UI",NOT_RUN
+financing-guide,financing.html,REFERENCE,G-01,3d-load-failure,2D/static fallback; HTML remains usable,NOT_RUN
+financing-guide,financing.html,REFERENCE,G-01,hidden-tab,pause/minimize animation/render work; preserve state,NOT_RUN
+financing-guide,financing.html,REFERENCE,G-01,interrupted-navigation,restore normal route state; no orphaned camera lock,NOT_RUN
+legal-privacy,privacy.html,REFERENCE,LGL-01,slow-network,"fallback-first loading, no blocking business UI",NOT_RUN
+legal-privacy,privacy.html,REFERENCE,LGL-01,3d-load-failure,2D/static fallback; HTML remains usable,NOT_RUN
+legal-privacy,privacy.html,REFERENCE,LGL-01,hidden-tab,pause/minimize animation/render work; preserve state,NOT_RUN
+legal-privacy,privacy.html,REFERENCE,LGL-01,interrupted-navigation,restore normal route state; no orphaned camera lock,NOT_RUN
+legal-terms,terms.html,REFERENCE,LGL-02,slow-network,"fallback-first loading, no blocking business UI",NOT_RUN
+legal-terms,terms.html,REFERENCE,LGL-02,3d-load-failure,2D/static fallback; HTML remains usable,NOT_RUN
+legal-terms,terms.html,REFERENCE,LGL-02,hidden-tab,pause/minimize animation/render work; preserve state,NOT_RUN
+legal-terms,terms.html,REFERENCE,LGL-02,interrupted-navigation,restore normal route state; no orphaned camera lock,NOT_RUN

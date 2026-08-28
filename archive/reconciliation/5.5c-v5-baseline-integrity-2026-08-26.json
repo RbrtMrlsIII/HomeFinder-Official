@@ -1,0 +1,28 @@
+{
+  "gate": "5.5C-V.5",
+  "date": "2026-08-26",
+  "execution_context": "active_development",
+  "test_modules": 66,
+  "subtests": 92,
+  "passed": 92,
+  "failed": 0,
+  "skipped": 0,
+  "walkmyplan_active_references": 0,
+  "canonical_sh3d_sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "prior_reported_115_97_18_reproducible": false,
+  "decision": "CLOSE_NON_REPRODUCIBLE_FAILURE_POPULATION",
+  "three_d_supporting_tests": [
+    "cinematic-camera-hero.test.mjs",
+    "room-shell-physical-ui-mapping.test.mjs",
+    "house-camera-rig.test.mjs",
+    "patch-56-cinematic-home-world.test.mjs",
+    "patch-57-cinematic-camera-hero.test.mjs",
+    "cinematic-3d-adapter.test.mjs",
+    "patch-54-cinematic-foundation.test.mjs",
+    "dd05-main-hall-cinematic-map.test.mjs",
+    "patch-55-cinematic-routing-a1.test.mjs",
+    "physical-ui-object-system.test.mjs",
+    "market-profile-physical-ui-propagation.test.mjs"
+  ],
+  "next_gate": "5.5C-V.6"
+}

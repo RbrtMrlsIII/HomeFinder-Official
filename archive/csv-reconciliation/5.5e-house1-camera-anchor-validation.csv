@@ -1,0 +1,10 @@
+logical_pov,authored_name,x,y,z,containing_level1_room,result
+HF H-01,HF H-01 — hero,300.0,520.0,150.0,Living room,PASS
+HF H-02,HF H-02 — discovery,55.0,330.0,150.0,Corridor,PASS
+HF H-03,HF H-03 — property-display,350.0,560.0,150.0,Living room,PASS
+HF H-04,HF H-04 — map,500.0,900.0,300.0,NONE,REQUIRES_PHYSICAL_ANCHOR
+HF H-05,HF H-05 — government-desk,55.0,265.0,150.0,Corridor,PASS
+HF H-06,HF H-06 — mission,520.0,540.0,175.0,Living room,PASS
+HF H-07,HF H-07 — guide,350.0,145.0,170.0,Kitchen,PASS
+HF H-08,HF H-08 — safety,735.0,500.0,175.0,Bedroom #1,PASS
+HF H-09,HF H-09 — contact,300.0,330.0,175.0,Corridor,PASS

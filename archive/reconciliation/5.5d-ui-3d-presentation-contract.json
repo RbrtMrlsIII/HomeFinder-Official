@@ -1,0 +1,116 @@
+{
+  "version": "5.5D-1",
+  "status": "authoritative-planning-contract",
+  "authority": {
+    "application": "authentication, authorization, role/security, data, business rules, logical presentation destination",
+    "canonical_sh3d": "geometry, rooms, doors/openings, authored physical cameras, spatial routes, physical presentation"
+  },
+  "houses": {
+    "house_1": {
+      "name": "Public / Hero House",
+      "root": "active_development/index.html",
+      "must_remain_original_location": true,
+      "includes": [
+        "Main Hall",
+        "H-01..H-09",
+        "Hero",
+        "Discovery",
+        "Property",
+        "Map",
+        "Government",
+        "Mission",
+        "Guide",
+        "Safety",
+        "Contact",
+        "Footer",
+        "Credits",
+        "Privacy Policy",
+        "Terms & Conditions",
+        "Login",
+        "Register"
+      ],
+      "transfer_rule": "House 1 remains the public arrival/home; legal/footer routes do not require physical house transfer."
+    },
+    "house_2": {
+      "name": "Operations + Broker",
+      "roots": [
+        "broker-hq.html",
+        "admin.html",
+        "moderator.html",
+        "staff.html",
+        "financing.html"
+      ],
+      "logical_povs": [
+        "B-01",
+        "B-02",
+        "B-03",
+        "B-04",
+        "B-05",
+        "B-06",
+        "A-01",
+        "A-02",
+        "A-03"
+      ],
+      "transfer_rule": "Enter through an authored House 2 opening; no teleport into a role room."
+    },
+    "house_3": {
+      "name": "Seekers + Owners",
+      "roots": [
+        "market.html",
+        "profile.html"
+      ],
+      "logical_povs": [
+        "M-01",
+        "M-02",
+        "M-03",
+        "M-04",
+        "M-05",
+        "M-06",
+        "P-01",
+        "P-02",
+        "P-03",
+        "P-04",
+        "P-05",
+        "P-06",
+        "P-07",
+        "P-08",
+        "P-09",
+        "P-10",
+        "P-11",
+        "P-12"
+      ],
+      "transfer_rule": "Enter through an authored House 3 opening; seeker/owner pages remain application-authorized."
+    }
+  },
+  "navigation_rules": [
+    "UI requests a logical presentation destination; UI never supplies or invents physical camera coordinates.",
+    "A route may cross rooms/houses only through an authored door/opening chain.",
+    "Camera motion must not pass through walls or closed geometry.",
+    "No teleportation between physical destinations.",
+    "For each transfer, animate exit from the current hero/room, traverse the validated route, animate each required door open/close, cross the threshold, then settle at the destination hero camera.",
+    "Travel duration is route-authored and must be preserved; it is not replaced by a zero-duration camera jump.",
+    "Door animations are part of the route contract, not decorative UI-only effects.",
+    "A destination hero is a physical resting state; intermediate route cameras are not arbitrary UI targets.",
+    "If no validated physical route exists, the application must not fabricate one; the destination remains logically requested but physically unresolved until spatial authority is authored."
+  ],
+  "ui_dependencies": {
+    "contract_roots": [
+      "HTML sections/tabs/navigation",
+      "CSS selectors and responsive transforms",
+      "JavaScript selectors/state transitions",
+      "animation profiles",
+      "theme/environment handling",
+      "reduced-motion behavior",
+      "physical UI object bindings"
+    ],
+    "change_policy": "Do not rename, merge, split, or relocate DOM targets during 3D work without reconciling CSS/JS/animation/responsive consumers."
+  },
+  "spatial_status": {
+    "logical_cameras": 42,
+    "logical_camera_status": "REBUILD_REQUIRED",
+    "logical_rooms": 9,
+    "logical_room_status": "VIRTUAL_APP_ROOM_REQUIRES_MAPPING",
+    "canonical_sh3d_is_authority": true,
+    "additional_sh3d_inputs_are_non_authoritative": true
+  }
+}

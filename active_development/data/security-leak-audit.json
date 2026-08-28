@@ -1,0 +1,22 @@
+{
+  "secret_hits": [
+    [
+      "js/supabase.js",
+      "service_role"
+    ],
+    [
+      "js/admin/verifications.js",
+      "service_role"
+    ],
+    [
+      "firebase/functions/index.js",
+      "service_role"
+    ]
+  ],
+  "legacy_ui_theme_trace_files": [
+    "css/admin.css"
+  ],
+  "users_rule": "owner_or_admin",
+  "publicProfiles_rule": "public_read_server_write",
+  "phoneIndex_rule": "owner_read"
+}

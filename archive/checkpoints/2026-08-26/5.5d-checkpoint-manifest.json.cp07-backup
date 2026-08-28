@@ -1,0 +1,42 @@
+{
+  "checkpoint": "5.5D-three-house-presentation-contract",
+  "source_checkpoint": "HomeFinder_checkpoint_2026-08-26_v6-baseline-integrity-rejoin.zip",
+  "canonical_sh3d_sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "artifacts": [
+    {
+      "path": "docs/csv/reconciliation/5.5d-three-house-allocation.csv",
+      "sha256": "cac331f7981190e9fd1d5d1fed4e5714161dc512e1c2377770cca896b4aa1073",
+      "size": 3703
+    },
+    {
+      "path": "docs/json/reconciliation/5.5d-ui-3d-presentation-contract.json",
+      "sha256": "3251da4ae1d47fc2865ccfc59f6f68cde64bb0ecc5bf50cee8010610fba90c52",
+      "size": 3878
+    },
+    {
+      "path": "docs/json/reconciliation/5.5d-physical-travel-contract.json",
+      "sha256": "fc25aac6531a30ac2202995b1f150180def48109501cf10581a797266f2084e6",
+      "size": 1372
+    },
+    {
+      "path": "docs/plantuml/5.5d-three-house-presentation-travel.puml",
+      "sha256": "457a5abe0cedec5eb3134e104b9c0f2944552131b1379520f348cc2497eb3c7e",
+      "size": 1243
+    },
+    {
+      "path": "docs/md/5.5d-three-house-allocation-presentation-contract.md",
+      "sha256": "ee4a2ce3a891a909a1edb9624f771a6e83b0092dc29f92351ca2bb9db5123012",
+      "size": 2427
+    },
+    {
+      "path": "masterplan.md",
+      "sha256": "494ad9fb4f9034170ca0c43f23c3b9dd15ef8915458a3ffe16ace8df218b1f24",
+      "size": 34953
+    },
+    {
+      "path": "AI_ASSISTANT_READ_ME.md",
+      "sha256": "77552f64b6c5b01ed337ab80878ddb6e73978f98e72d58bdef5bbc71c6d1c2cc",
+      "size": 19446
+    }
+  ]
+}

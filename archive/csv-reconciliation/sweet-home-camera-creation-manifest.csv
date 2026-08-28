@@ -1,0 +1,49 @@
+logical_pov_id,room,purpose,derived_from_master_camera,candidate_confidence,recommended_stored_camera_name,camera_action,notes
+H-01,MAIN HALL,Main Hall hero composition,Corridor,MEDIUM,HF H-01 — hero,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+H-02,MAIN HALL,Search/discovery console,Living room,MEDIUM,HF H-02 — discovery,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+H-03,MAIN HALL,Property catalogue,Living room,MEDIUM,HF H-03 — property-display,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+H-04,MAIN HALL,Home map preview,Exterior,MEDIUM,HF H-04 — map,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+H-05,MAIN HALL,Government housing reference,Corridor,MEDIUM,HF H-05 — government-desk,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+H-06,MAIN HALL,About/mission,Living room,MEDIUM,HF H-06 — mission,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+H-07,MAIN HALL,Roles/features guide,Kitchen,MEDIUM,HF H-07 — guide,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+H-08,MAIN HALL,Features/safety,Bedroom #1,MEDIUM,HF H-08 — safety,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+H-09,MAIN HALL,Contact desk,Corridor,MEDIUM,HF H-09 — start,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+L-01,LOGIN ROOM,Login terminal,Bedroom #1,LOW,HF L-01 — login-terminal,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+L-02,LOGIN ROOM,recovery-control,,,HF L-02 — recovery-control,CREATE_AND_VISUALLY_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+L-03,LOGIN ROOM,social-auth,,,HF L-03 — social-auth,CREATE_AND_VISUALLY_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+L-04,LOGIN ROOM,registration-doorway,,,HF L-04 — registration-doorway,CREATE_AND_VISUALLY_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+L-05,LOGIN ROOM,credits,,,HF L-05 — credits,CREATE_AND_VISUALLY_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+R-01,REGISTER ROOM,Registration desk,Bedroom #2,LOW,HF R-01 — identity,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+R-02,REGISTER ROOM,contact,,,HF R-02 — contact,CREATE_AND_VISUALLY_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+R-03,REGISTER ROOM,address,,,HF R-03 — address,CREATE_AND_VISUALLY_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+R-04,REGISTER ROOM,account-type,,,HF R-04 — account-type,CREATE_AND_VISUALLY_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+R-05,REGISTER ROOM,password,,,HF R-05 — password,CREATE_AND_VISUALLY_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+R-06,REGISTER ROOM,social-registration,,,HF R-06 — social-registration,CREATE_AND_VISUALLY_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+R-07,REGISTER ROOM,login-doorway,,,HF R-07 — login-doorway,CREATE_AND_VISUALLY_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+M-01,MARKET,Marketplace orientation,Living room,MEDIUM,HF M-01 — market-directory,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+M-02,MARKET,Marketplace map,Living room,MEDIUM,HF M-02 — market-map-table,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+M-04,MARKET,Property/wanted discovery,Living room,MEDIUM,HF M-04 — property-display-wall,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+M-06,MARKET,Market contact desk,Corridor,MEDIUM,HF M-06 — contact-desk,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+P-01,PROFILE SUITE,Profile foyer,Bedroom #2,LOW,HF P-01 — perk-portfolio,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+P-02,PROFILE SUITE,Messages station,Bedroom #2,LOW,HF P-02 — message-terminal,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+P-03,PROFILE SUITE,Contracts station,Bedroom #2,LOW,HF P-03 — contracts-folder,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+P-04,PROFILE SUITE,Support station,Bedroom #2,LOW,HF P-04 — help-desk,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+P-05,PROFILE SUITE,Listing dossier/book,Bedroom #2,LOW,HF P-05 — listing-book,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+P-06,PROFILE SUITE,Wanted station,Bedroom #2,LOW,HF P-06 — wanted-notebook,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+P-07,PROFILE SUITE,Saved properties station,Bedroom #2,LOW,HF P-07 — saved-properties-cabinet,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+P-08,PROFILE SUITE,Saved wanted station,Bedroom #2,LOW,HF P-08 — saved-wanted-cabinet,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+P-09,PROFILE SUITE,Reviews station,Bedroom #2,LOW,HF P-09 — review-ledger,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+P-10,PROFILE SUITE,Government housing station,Bedroom #2,LOW,HF P-10 — government-housing-desk,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+P-11,PROFILE SUITE,Account identity console,Bedroom #2,LOW,HF P-11 — account-console,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+P-12,PROFILE SUITE,Broker HQ threshold,Bedroom #2,LOW,HF P-12 — broker-gate,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+LGL-01,REFERENCE,Privacy archive,Kitchen,LOW,HF LGL-01 — legal-library,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+LGL-02,REFERENCE,legal-terms,Kitchen,LOW,HF LGL-02 — legal-terms,CREATE_AND_VISUALLY_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+G-01,REFERENCE,Government housing guide,Kitchen,LOW,HF G-01 — government-info-desk,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+B-01,BROKER HQ,Broker workspace,Garage,LOW,HF B-01 — broker-desk,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+B-02,BROKER HQ,Request queue,Garage,LOW,HF B-02 — request-board,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+B-03,BROKER HQ,Service workflow,Garage,LOW,HF B-03 — service-board,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+B-04,BROKER HQ,Broker-specific map,Garage,LOW,HF B-04 — intelligence-wall,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+B-06,BROKER HQ,Service pin management,Garage,LOW,HF B-06 — service-pin-console,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+A-01,OPERATIONS,Verification/KYC,Garage,LOW,HF A-01 — approval-desk,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+A-02,OPERATIONS,Moderator operations hero,Garage,LOW,HF A-02 — moderation-board,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.
+A-03,OPERATIONS,Staff operations hero,Garage,LOW,HF A-03 — support-desk,DUPLICATE_MASTER_CAMERA_AND_TUNE,Logical POV is authoritative; Sweet Home 3D camera is the physical implementation.

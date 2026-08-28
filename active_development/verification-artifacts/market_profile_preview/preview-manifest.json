@@ -1,0 +1,25 @@
+{
+  "preview": "/mnt/data/market_profile_preview/Market_Profile_physical_UI_root_preview.png",
+  "market_povs": [
+    "M-01",
+    "M-02",
+    "M-04",
+    "M-06"
+  ],
+  "profile_povs": [
+    "P-01",
+    "P-02",
+    "P-03",
+    "P-04",
+    "P-05",
+    "P-06",
+    "P-07",
+    "P-08",
+    "P-09",
+    "P-10",
+    "P-11",
+    "P-12"
+  ],
+  "scene": "/mnt/data/phase12prop/master/HomeFinder.sh3d",
+  "status": "diagnostic_plan_preview"
+}

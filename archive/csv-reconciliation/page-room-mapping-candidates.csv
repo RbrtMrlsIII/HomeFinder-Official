@@ -1,0 +1,13 @@
+page_id,logical_room,mapping_state,notes
+main-hall,MAIN HALL,SEMANTIC_BINDING_RECOVERED,Recovered page census; physical room binding remains semantic until validated.
+login,LOGIN ROOM,SEMANTIC_BINDING_RECOVERED,Recovered page census; physical room binding remains semantic until validated.
+register,REGISTER ROOM,SEMANTIC_BINDING_RECOVERED,Recovered page census; physical room binding remains semantic until validated.
+listings,MARKET,SEMANTIC_BINDING_RECOVERED,Recovered page census; physical room binding remains semantic until validated.
+property-gallery,MARKET,SEMANTIC_BINDING_RECOVERED,Recovered page census; physical room binding remains semantic until validated.
+map,MARKET,SEMANTIC_BINDING_RECOVERED,Recovered page census; physical room binding remains semantic until validated.
+profile,PROFILE SUITE,SEMANTIC_BINDING_RECOVERED,Recovered page census; physical room binding remains semantic until validated.
+finance,REFERENCE,SEMANTIC_BINDING_RECOVERED,Recovered page census; physical room binding remains semantic until validated.
+messages,PROFILE SUITE,SEMANTIC_BINDING_RECOVERED,Recovered page census; physical room binding remains semantic until validated.
+favorites,PROFILE SUITE,SEMANTIC_BINDING_RECOVERED,Recovered page census; physical room binding remains semantic until validated.
+broker,BROKER HQ,SEMANTIC_BINDING_RECOVERED,Recovered page census; physical room binding remains semantic until validated.
+settings,PROFILE SUITE,SEMANTIC_BINDING_RECOVERED,Recovered page census; physical room binding remains semantic until validated.

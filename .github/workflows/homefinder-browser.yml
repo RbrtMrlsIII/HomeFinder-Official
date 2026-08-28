@@ -1,0 +1,42 @@
+name: HomeFinder Browser Verification
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    container:
+      image: mcr.microsoft.com/playwright:v1.62.0-noble
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Install browser-test dependencies
+        working-directory: active_development/tests/browser
+        run: npm ci --ignore-scripts
+
+      - name: Install Chromium browser and system dependencies
+        working-directory: active_development/tests/browser
+        run: npx playwright install chromium --with-deps
+
+      - name: Run Chromium browser verification
+        working-directory: active_development/tests/browser
+        env:
+          CI: 'true'
+        run: npx playwright test --project=chromium
+
+      - name: Upload Playwright report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v5
+        with:
+          name: homefinder-playwright-report
+          path: active_development/tests/browser/playwright-report/
+          retention-days: 14

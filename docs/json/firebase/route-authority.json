@@ -1,0 +1,162 @@
+{
+  "version": 1,
+  "authority": "HomeFinder route authority",
+  "classes": {
+    "public": {
+      "authentication": "none"
+    },
+    "product": {
+      "authentication": "route-defined",
+      "roles": [
+        "owner",
+        "seeker",
+        "broker"
+      ]
+    },
+    "operations": {
+      "authentication": "required",
+      "roles": [
+        "staff",
+        "moderator",
+        "admin"
+      ]
+    },
+    "verification": {
+      "authentication": "required",
+      "roles": [
+        "admin"
+      ]
+    },
+    "development": {
+      "authentication": "environment-gated"
+    },
+    "vendor": {
+      "authentication": "none",
+      "authority": "third-party/vendor surface"
+    }
+  },
+  "routes": {
+    "index.html": {
+      "class": "public",
+      "roles": [
+        "guest",
+        "owner",
+        "seeker",
+        "broker",
+        "staff",
+        "moderator",
+        "admin"
+      ]
+    },
+    "login.html": {
+      "class": "public",
+      "roles": [
+        "guest",
+        "owner",
+        "seeker",
+        "broker",
+        "staff",
+        "moderator",
+        "admin"
+      ]
+    },
+    "register.html": {
+      "class": "public",
+      "roles": [
+        "guest",
+        "owner",
+        "seeker",
+        "broker",
+        "staff",
+        "moderator",
+        "admin"
+      ]
+    },
+    "market.html": {
+      "class": "product",
+      "roles": [
+        "guest",
+        "owner",
+        "seeker"
+      ]
+    },
+    "profile.html": {
+      "class": "product",
+      "roles": [
+        "owner",
+        "seeker",
+        "broker"
+      ]
+    },
+    "broker-hq.html": {
+      "class": "product",
+      "roles": [
+        "broker"
+      ]
+    },
+    "admin.html": {
+      "class": "operations",
+      "roles": [
+        "admin"
+      ]
+    },
+    "moderator.html": {
+      "class": "operations",
+      "roles": [
+        "moderator"
+      ]
+    },
+    "staff.html": {
+      "class": "operations",
+      "roles": [
+        "staff"
+      ]
+    },
+    "financing.html": {
+      "class": "public",
+      "roles": [
+        "guest",
+        "owner",
+        "seeker",
+        "broker",
+        "staff",
+        "moderator",
+        "admin"
+      ]
+    },
+    "privacy.html": {
+      "class": "public",
+      "roles": [
+        "guest",
+        "owner",
+        "seeker",
+        "broker",
+        "staff",
+        "moderator",
+        "admin"
+      ]
+    },
+    "terms.html": {
+      "class": "public",
+      "roles": [
+        "guest",
+        "owner",
+        "seeker",
+        "broker",
+        "staff",
+        "moderator",
+        "admin"
+      ]
+    },
+    "verify/index.html": {
+      "class": "verification",
+      "roles": [
+        "admin"
+      ]
+    },
+    "3d/viewer/SweetHome3DJSViewer-7.5.2/": {
+      "class": "vendor",
+      "roles": []
+    }
+  }
+}

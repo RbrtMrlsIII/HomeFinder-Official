@@ -1,0 +1,22 @@
+import fs from "fs";
+import assert from "assert";
+const base=new URL("../cinematic/WalkMyPlan/data/", import.meta.url);
+const read=n=>JSON.parse(fs.readFileSync(new URL(n,base),"utf8"));
+const rooms=read("room-zone-registry.json").rooms;
+const doors=read("door-registry.json");
+const cams=read("camera-registry.json");
+const routes=read("route-registry.json");
+const paths=read("role-path-matrix.json").roles;
+const cameraIds=new Set(cams.map(c=>c.id));
+const roomIds=new Set(rooms.map(r=>r.room_id));
+for(const d of doors){ assert.ok(cameraIds.has(d.entryCamera),`missing entry camera ${d.id}`); assert.ok(cameraIds.has(d.destinationCamera),`missing destination camera ${d.id}`); assert.ok(d.role,`missing roles ${d.id}`); }
+assert.ok(paths.admin.allowed_rooms.some(x=>x.includes("A-01")));
+assert.ok(paths.admin.blocked_rooms.some(x=>x.includes("A-02")));
+assert.ok(paths.admin.blocked_rooms.some(x=>x.includes("A-03")));
+assert.ok(paths.guest.blocked_rooms.includes("OPERATIONS"));
+assert.ok(paths.broker.blocked_rooms.includes("OPERATIONS"));
+assert.ok(!doors.find(d=>d.id==="admin-to-moderator-door"));
+assert.ok(!doors.find(d=>d.id==="admin-to-staff-door"));
+assert.ok(!doors.find(d=>d.id==="broker-hq-door"&&Array.isArray(d.role)&&d.role.includes("admin")));
+for(const r of Object.keys(routes)) assert.ok(rooms.some(x=>String(x.route).split("|").includes(r)||x.route===r),`route lacks room ${r}`);
+console.log("PASS canonical-room-camera-door-graph");

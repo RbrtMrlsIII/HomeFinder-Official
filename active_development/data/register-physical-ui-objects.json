@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "page": "register",
+  "root": "ui-object",
+  "objects": [
+    {
+      "id": "register-account-type-station",
+      "label": "Register Account Type Station",
+      "selector": ".account-type",
+      "kind": "account-type",
+      "pov": "R-04",
+      "purpose": "account type decision",
+      "responsive": "auth-choice",
+      "animation": "emphasis"
+    },
+    {
+      "id": "register-contact-station",
+      "label": "Register Contact Station",
+      "selector": "#register-form .field-group:nth-of-type(1)",
+      "kind": "auth-field-group",
+      "pov": "R-02",
+      "purpose": "email/contact entry",
+      "responsive": "auth-field",
+      "animation": "state"
+    },
+    {
+      "id": "register-password-station",
+      "label": "Register Password Station",
+      "selector": "#register-form .field-group:nth-of-type(2)",
+      "kind": "auth-field-group",
+      "pov": "R-05",
+      "purpose": "password entry",
+      "responsive": "auth-field",
+      "animation": "state"
+    },
+    {
+      "id": "register-confirmation-station",
+      "label": "Register Confirmation Station",
+      "selector": "#register-form .field-group:nth-of-type(3)",
+      "kind": "auth-field-group",
+      "pov": "R-05",
+      "purpose": "password confirmation",
+      "responsive": "auth-field",
+      "animation": "state"
+    },
+    {
+      "id": "register-submit-console",
+      "label": "Register Submit Console",
+      "selector": "#register-submit",
+      "kind": "auth-submit",
+      "pov": "R-01",
+      "purpose": "primary registration submission",
+      "responsive": "auth-action",
+      "animation": "emphasis"
+    },
+    {
+      "id": "register-social-terminal",
+      "label": "Register Social Terminal",
+      "selector": ".social-login",
+      "kind": "auth-social",
+      "pov": "R-06",
+      "purpose": "social registration choices",
+      "responsive": "auth-social",
+      "animation": "state"
+    },
+    {
+      "id": "register-login-doorway",
+      "label": "Register Login Doorway",
+      "selector": ".auth-footer a[href=\"login.html\"]",
+      "kind": "auth-route",
+      "pov": "R-07",
+      "purpose": "return to login",
+      "responsive": "auth-route",
+      "animation": "door"
+    },
+    {
+      "id": "register-credits-wall",
+      "label": "Register Credits Wall",
+      "selector": "#credits",
+      "kind": "credits",
+      "pov": "R-07",
+      "purpose": "supporting information and credits",
+      "responsive": "auth-secondary",
+      "animation": "micro"
+    }
+  ],
+  "stateContract": "phase12",
+  "securityBoundary": "presentation-only"
+}

@@ -1,0 +1,45 @@
+# Patch 25 — Admin Subscription Grant Lab
+
+## Status
+COMPLETE
+
+## Purpose
+Create a controlled smoke-testing entitlement path before PayPal + Cloudflare hardening. Admin can grant/revoke a subscription entitlement for one selected user without manufacturing a PayPal transaction.
+
+## Canonical separation
+
+### Real provider state
+- `paypalSubscriptions/{subscriptionId}` — PayPal verification/mapping.
+- `users/{uid}.subscription` — existing PayPal provider state written by server functions.
+- `paypalWebhookEvents/{eventId}` — idempotent provider event ledger.
+
+### Admin smoke-test state
+- `subscriptionAdminGrants/{uid}` — explicit Admin grant/revoke state.
+- `subscriptionEntitlements/{uid}` — canonical smoke-test entitlement record for premium feature testing.
+- `adminSubscriptionAudit/{auditId}` — immutable audit events for Admin grant/revoke actions.
+
+An Admin grant is never written into `paypalSubscriptions` and is never labeled as a PayPal payment.
+
+## Workflow
+1. Admin opens a specific user through **Admin → Users → Manage**.
+2. Admin supplies duration and a required reason.
+3. `grantAdminSubscription` validates Admin authority and the target user.
+4. The function atomically writes the grant, entitlement, and audit record.
+5. Admin UI reads the same Firestore documents back before displaying success.
+6. Revoke follows the same server-authoritative path and readback verification.
+
+## Security boundary
+- Only the HomeFinder Admin callable authority may grant/revoke.
+- Client writes to the three Patch 25 collections are denied by Firestore rules.
+- The target user may read their own grant/entitlement for diagnostics.
+- Admin may read the records for smoke testing.
+
+## Deliberate non-goals
+- No PayPal webhook behavior was changed.
+- No Cloudflare behavior was changed.
+- No production payment is simulated.
+- No new subscription price or PayPal plan was created.
+- No major UI redesign was introduced.
+
+## Next
+Patch 26 should harden PayPal + Cloudflare against the current SoT and explicitly define how PayPal provider state and admin smoke-test entitlement interact before production premium gates consume `subscriptionEntitlements`.

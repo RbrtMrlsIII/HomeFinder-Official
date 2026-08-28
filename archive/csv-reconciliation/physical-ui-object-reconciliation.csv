@@ -1,0 +1,58 @@
+object_id,physical_object,logical_room,zone,route,ui_mount,best_model_furniture,match_score,status
+home-hero-focal,🏠 Home Hero Focal,MAIN HALL,H-01,index.html,home-hero,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+main-search-console,Search Console,MAIN HALL,H-02,index.html,universal-search,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+property-catalogue,Property Catalogue,MAIN HALL,H-03,index.html,home-properties,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+home-map-table,Home Map Table,MAIN HALL,H-04,index.html,home-map-preview,Square table; Round table,0.333,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+government-info-desk,Government Information Desk,MAIN HALL,H-05,index.html,home-government,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+mission-wall,Mission Plaque,MAIN HALL,H-06,index.html,home-mission,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+guide-book,Guide Book,MAIN HALL,H-07,index.html,home-guide,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+safety-board,Safety Board,MAIN HALL,H-08,index.html,home-safety,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+start-cta,Start Console,MAIN HALL,H-09,index.html,home-start-cta,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+contact-desk,Contact Desk,MAIN HALL,H-09,index.html,contact-ui,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+credits-wall,Credits Wall,MAIN HALL,H-09,index.html,credits-ui,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+identity-desk,Identity Desk,LOGIN ROOM,L-01,login.html,login-form,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+login-terminal,Login Terminal,LOGIN ROOM,L-01,login.html,login-form,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+registration-doorway,Registration Doorway,LOGIN ROOM,L-01,register.html,register-link,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+registration-desk,Registration Desk,REGISTER ROOM,R-01,register.html,register-form,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+account-type-selector,Account Type Selector,REGISTER ROOM,R-01,register.html,type-owner/type-seeker,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+profile-console,Profile Console,PROFILE SUITE,P-01/P-11,profile.html,profile-header/settings,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+perk-portfolio-display,Perks & Portfolio Display,PROFILE SUITE,P-01,profile.html,profile-perks,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+paypal-subscription-console,PayPal Subscription Console,PROFILE SUITE,P-01,profile.html,paypal-subscription-mount,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+message-terminal,Message Terminal,PROFILE SUITE,P-02,profile.html,messages-ui,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+contracts-folder,Contracts Folder,PROFILE SUITE,P-03,profile.html,contracts-ui,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+help-desk,Help Desk,PROFILE SUITE,P-04,profile.html,need-help-ui,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+listing-book,Listing Book,PROFILE SUITE,P-05,profile.html,listing-form-ui,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+wanted-notebook,Wanted Notebook,PROFILE SUITE,P-06,profile.html,wanted-form-ui,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+saved-properties-cabinet,Saved Properties Cabinet,PROFILE SUITE,P-07,profile.html,saved-properties-ui,Kitchen cabinet; Washbasin with cabinet; Kitchen upper cabinet,0.333,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+saved-wanted-cabinet,Saved Wanted Cabinet,PROFILE SUITE,P-08,profile.html,saved-wanted-ui,Kitchen cabinet; Washbasin with cabinet; Kitchen upper cabinet,0.333,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+review-ledger,Review Ledger,PROFILE SUITE,P-09,profile.html,reviews-ui,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+government-housing-desk,Government Housing Desk,PROFILE SUITE,P-10,profile.html,profile-gov-housing,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+broker-gate,Broker Gate,PROFILE SUITE,P-12,profile.html,broker-door-control,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+market-directory,Market Directory,MARKET,M-01,market.html,market-guide,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+market-map-table,Market Map Table,MARKET,M-02,market.html,market-map-ui,Square table; Round table,0.333,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+filter-cabinet,Filter Cabinet,MARKET,M-03,market.html,market-filter-ui,Kitchen cabinet,0.5,POSSIBLE_MODEL_MATCH
+property-display-wall,Property Display Wall,MARKET,M-04,market.html,market-discovery-rail,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+wanted-display-wall,Wanted Display Wall,MARKET,M-04,market.html,market-discovery-rail,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+property-dossier,Property Dossier,MARKET,M-05,market.html,market-expanded-card,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+market-contact-desk,Market Contact Desk,MARKET,M-06,market.html,market-contact-ui,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+broker-desk,Broker Desk,BROKER HQ,B-01,broker-hq.html,bhq-home,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+broker-request-board,Broker Request Board,BROKER HQ,B-02,broker-hq.html,bhq-btn-new,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+broker-service-board,Broker Service Board,BROKER HQ,B-03/B-06,broker-hq.html,bhq-tab-pins,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+broker-intelligence-map,Broker Intelligence Map,BROKER HQ,B-04,broker-hq.html,bhq-map,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+broker-discovery-wall,Broker Discovery Wall,BROKER HQ,B-05,broker-hq.html,bhq-discovery,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+admin-approval-desk,Admin Approval Desk,OPERATIONS,A-01,admin.html,admin-panel-verifications,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+admin-kyc-lockbox,KYC Registry Lockbox,OPERATIONS,A-01,admin.html,admin-panel-kyc-registry,Box,0.8,LIKELY_MODEL_MATCH
+admin-orders-ledger,Admin Orders Ledger,OPERATIONS,A-01,admin.html,admin-panel-orders,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+admin-user-registry,User Registry,OPERATIONS,A-01,admin.html,admin-user-management,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+admin-boost-console,Boost Console,OPERATIONS,A-01,admin.html,admin-boosts,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+moderation-board,Moderation Board,OPERATIONS,A-02,moderator.html,admin-panel-properties,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+moderator-payment-ledger,Moderator Payment Ledger,OPERATIONS,A-02,moderator.html,admin-panel-orders,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+moderator-wanted-board,Moderator Wanted Board,OPERATIONS,A-02,moderator.html,admin-panel-wanted,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+moderator-contracts-desk,Moderator Contracts Desk,OPERATIONS,A-02,moderator.html,admin-panel-contracts,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+staff-support-desk,Staff Support Desk,OPERATIONS,A-03,staff.html,admin-panel-support,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+staff-reports-board,Staff Reports Board,OPERATIONS,A-03,staff.html,admin-panel-reports,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+staff-orders-ledger,Staff Orders Ledger,OPERATIONS,A-03,staff.html,admin-panel-orders,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+staff-user-lookup,Staff User Lookup,OPERATIONS,A-03,staff.html,staff-user-lookup,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+staff-alerts-console,Staff Alerts Console,OPERATIONS,A-03,staff.html,staff-alerts,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+government-reference-desk,Government Reference Desk,REFERENCE,G-01,financing.html,gov-finance-page,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED
+legal-library,Legal Archive,REFERENCE,LGL-01/LGL-02,privacy.html|terms.html,legal-card,,0,NO_NAME_MATCH_REBUILD_TAG_REQUIRED

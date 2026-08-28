@@ -1,0 +1,190 @@
+/* HF-DEDUPE-PROFILE-OWNED — profile geometry lives in css/profile/* */
+/* ============================================================
+   HomeFinder — mobile viewport (css/viewport/mobile.css)
+   Load last for panel density. Avatar size: layout.css CANONICAL only.
+   ============================================================ */
+
+@media (max-width: 768px) {
+  html { font-size: 76%; }
+
+  /* moved to profile responsive/layout */
+  /* moved to profile responsive/layout */
+  .profile-tabs .profile-tab i { font-size: 14px; }
+  .account-completion-alert-banner {
+    margin: 8px 10px 0;
+    padding: 10px 12px;
+  }
+  .account-completion-alert-banner .btn-get-started {
+    min-width: 132px;
+    height: 40px;
+    font-size: 13px;
+  }
+  /* moved to profile responsive/layout */
+  #profile-email { font-size: 0.75rem; }
+  /* profile-header.collapsed geometry → layout.css only */
+
+/* ----- Panels / cards ----- */
+  /* panel/card padding → panels.css */
+  .profile-panel .panel-card > h3:first-child,
+  .panel-card > h3:first-child {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+  }
+  .field-hint,
+  .profile-panel .field-hint {
+    font-size: 11px;
+    line-height: 1.35;
+  }
+  .field-group label {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+  /* Profile panels only — do NOT override body.auth-page .field-group inputs */
+  .profile-panel .field-group input,
+  .profile-panel .field-group select,
+  .profile-panel .field-group textarea,
+  .panel-card input,
+  .panel-card select,
+  .panel-card textarea {
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: 10px;
+  }
+  .primary-btn,
+  .secondary-btn,
+  button.primary-btn,
+  button.secondary-btn {
+    font-size: 12.5px;
+    padding: 8px 12px;
+  }
+
+  /* Perks grid denser */
+  #panel-perks .perk-grid,
+  .perks-stat-grid {
+    gap: 8px;
+  }
+  .perk-stat-card,
+  .tier-card {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  /* Marketplace cards */
+  .wanted-card,
+  .listing-card,
+  .marketplace-card {
+    border-radius: 12px;
+    padding: 10px;
+  }
+  .wanted-card h4,
+  .listing-card h4 {
+    font-size: 0.9rem;
+  }
+
+  /* Messages */
+  #panel-messages .chat-list-item {
+    padding: 8px 10px;
+  }
+  .contact-name {
+    font-size: 0.8rem;
+  }
+  .contact-preview {
+    font-size: 0.7rem;
+  }
+  .chat-bubble {
+    font-size: 12.5px;
+    padding: 8px 10px;
+  }
+  .chat-safety-notice,
+  .chat-contract-notice {
+    font-size: 10.5px;
+    padding: 8px 10px;
+    margin: 6px 8px;
+  }
+  #panel-messages .chat-list {
+    max-height: 34vh;
+  }
+  #panel-messages .chat-window {
+    min-height: 40vh;
+  }
+
+  /* Map */
+  #property-map-canvas {
+    min-height: 200px;
+    height: 36vh;
+    max-height: 300px;
+  }
+
+  /* Forms listing */
+  .listing-grid-2col {
+    gap: 10px;
+  }
+}
+
+/* Extra-tight phones */
+@media (max-width: 400px) {
+  html {
+    font-size: 74%;
+  }
+  .profile-tab {
+    padding: 6px 7px;
+    font-size: 10.5px;
+  }
+  /* header-actions sizes: layout.css only */
+}
+
+
+/* Notification scale on mobile */
+@media (max-width: 768px) {
+  .notif-dropdown {
+    width: min(300px, 94vw);
+    max-height: min(52vh, 380px);
+  }
+  .notif-item-card {
+    padding: 8px;
+    gap: 6px;
+  }
+  .notif-item-body p {
+    font-size: 11.5px;
+  }
+  .notif-item-icon {
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
+  }
+  .notif-item-actions button {
+    min-height: 26px;
+    font-size: 10.5px;
+    padding: 0 8px;
+  }
+}
+
+/* ============================================================
+   MOBILE VIEWPORT SCALE (exact, mobile only)
+   Desktop / wide screens stay at 100%.
+   Only home + profile zoom; all other surfaces = normal (1).
+   Updated 2026-08-13 night.
+   ============================================================ */
+@media (max-width: 768px) {
+  /* Home — 67% */
+  body[data-asset="surface_home"] {
+    zoom: 0.67;
+  }
+
+  /* Profile zoom: owned ONLY by js/profile/profile-scale.js (hf_profile_scale).
+     Default 67% is applied in JS on narrow viewports — do not set zoom here
+     or user scale and this rule will fight (multiple owners). */
+  /* body.profile-page zoom removed on purpose */
+
+  /* Marketplace, auth, ops — normal scale */
+  body[data-asset="surface_marketplace"],
+  body.auth-page,
+  body[data-asset="surface_login"],
+  body[data-asset="surface_register"],
+  body.admin-page,
+  body[data-asset="surface_admin"],
+  body[data-asset="surface_moderator"],
+  body[data-asset="surface_staff"] {
+    zoom: 1;
+  }
+}

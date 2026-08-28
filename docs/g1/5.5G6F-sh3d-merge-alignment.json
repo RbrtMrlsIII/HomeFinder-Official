@@ -1,0 +1,21 @@
+{
+  "gate": "5.5G.6F",
+  "status": "PASS",
+  "canonical_authority": "master/HomeFinder.sh3d",
+  "merge_candidate": "3d/staging/HomeFinder-merge-candidate-Additional-reconciled.sh3d",
+  "merge_candidate_status": "STRUCTURALLY_MERGE_READY_PENDING_FINAL_PHYSICAL_VALIDATION",
+  "source_models": [
+    "master/HomeFinder.sh3d",
+    "3d/imports/Additional.sh3d"
+  ],
+  "resource_namespace_rule": "Additional N/file \u2192 A_N/file; Additional icon/image N \u2192 A_N",
+  "canonical_modified": false,
+  "runtime_routes_promoted": 0,
+  "topology": {
+    "house_1": "common transit",
+    "house_2": "broker operations",
+    "house_3": "seeker owner",
+    "house_2_to_house_3": "forbidden_direct_connection"
+  },
+  "next_gate": "final three-house physical merge validation and controlled canonical promotion"
+}

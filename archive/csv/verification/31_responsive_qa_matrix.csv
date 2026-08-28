@@ -1,0 +1,73 @@
+page_id,route,logical_room,access_policy,camera_family,viewport_state,viewport_hint,expected_behavior,pass_status
+home,index.html,MAIN HALL,public,H-01..H-09,mobile-portrait,390x844,"reflow UI, camera overlay compact, touch targets",NOT_RUN
+home,index.html,MAIN HALL,public,H-01..H-09,mobile-landscape,844x390,"reflow, preserve focus anchor, avoid clipped panels",NOT_RUN
+home,index.html,MAIN HALL,public,H-01..H-09,tablet,1024x768,"adaptive layout, readable overlays, touch + keyboard",NOT_RUN
+home,index.html,MAIN HALL,public,H-01..H-09,desktop,1440x900,full cinematic + HTML authority,NOT_RUN
+home,index.html,MAIN HALL,public,H-01..H-09,wide-desktop,1920x1080,"full composition, no unnecessary scale-up",NOT_RUN
+home,index.html,MAIN HALL,public,H-01..H-09,reduced-motion,any,no animated camera interpolation; instantaneous/fallback focus,NOT_RUN
+login,login.html,LOGIN ROOM,public/authentication,L-01..L-05,mobile-portrait,390x844,"reflow UI, camera overlay compact, touch targets",NOT_RUN
+login,login.html,LOGIN ROOM,public/authentication,L-01..L-05,mobile-landscape,844x390,"reflow, preserve focus anchor, avoid clipped panels",NOT_RUN
+login,login.html,LOGIN ROOM,public/authentication,L-01..L-05,tablet,1024x768,"adaptive layout, readable overlays, touch + keyboard",NOT_RUN
+login,login.html,LOGIN ROOM,public/authentication,L-01..L-05,desktop,1440x900,full cinematic + HTML authority,NOT_RUN
+login,login.html,LOGIN ROOM,public/authentication,L-01..L-05,wide-desktop,1920x1080,"full composition, no unnecessary scale-up",NOT_RUN
+login,login.html,LOGIN ROOM,public/authentication,L-01..L-05,reduced-motion,any,no animated camera interpolation; instantaneous/fallback focus,NOT_RUN
+register,register.html,REGISTER ROOM,public/authentication,R-01..R-07,mobile-portrait,390x844,"reflow UI, camera overlay compact, touch targets",NOT_RUN
+register,register.html,REGISTER ROOM,public/authentication,R-01..R-07,mobile-landscape,844x390,"reflow, preserve focus anchor, avoid clipped panels",NOT_RUN
+register,register.html,REGISTER ROOM,public/authentication,R-01..R-07,tablet,1024x768,"adaptive layout, readable overlays, touch + keyboard",NOT_RUN
+register,register.html,REGISTER ROOM,public/authentication,R-01..R-07,desktop,1440x900,full cinematic + HTML authority,NOT_RUN
+register,register.html,REGISTER ROOM,public/authentication,R-01..R-07,wide-desktop,1920x1080,"full composition, no unnecessary scale-up",NOT_RUN
+register,register.html,REGISTER ROOM,public/authentication,R-01..R-07,reduced-motion,any,no animated camera interpolation; instantaneous/fallback focus,NOT_RUN
+market,market.html,MARKET,public discovery,"M-01,M-02,M-04,M-06",mobile-portrait,390x844,"reflow UI, camera overlay compact, touch targets",NOT_RUN
+market,market.html,MARKET,public discovery,"M-01,M-02,M-04,M-06",mobile-landscape,844x390,"reflow, preserve focus anchor, avoid clipped panels",NOT_RUN
+market,market.html,MARKET,public discovery,"M-01,M-02,M-04,M-06",tablet,1024x768,"adaptive layout, readable overlays, touch + keyboard",NOT_RUN
+market,market.html,MARKET,public discovery,"M-01,M-02,M-04,M-06",desktop,1440x900,full cinematic + HTML authority,NOT_RUN
+market,market.html,MARKET,public discovery,"M-01,M-02,M-04,M-06",wide-desktop,1920x1080,"full composition, no unnecessary scale-up",NOT_RUN
+market,market.html,MARKET,public discovery,"M-01,M-02,M-04,M-06",reduced-motion,any,no animated camera interpolation; instantaneous/fallback focus,NOT_RUN
+profile,profile.html,PROFILE SUITE,authenticated,P-01..P-12,mobile-portrait,390x844,"reflow UI, camera overlay compact, touch targets",NOT_RUN
+profile,profile.html,PROFILE SUITE,authenticated,P-01..P-12,mobile-landscape,844x390,"reflow, preserve focus anchor, avoid clipped panels",NOT_RUN
+profile,profile.html,PROFILE SUITE,authenticated,P-01..P-12,tablet,1024x768,"adaptive layout, readable overlays, touch + keyboard",NOT_RUN
+profile,profile.html,PROFILE SUITE,authenticated,P-01..P-12,desktop,1440x900,full cinematic + HTML authority,NOT_RUN
+profile,profile.html,PROFILE SUITE,authenticated,P-01..P-12,wide-desktop,1920x1080,"full composition, no unnecessary scale-up",NOT_RUN
+profile,profile.html,PROFILE SUITE,authenticated,P-01..P-12,reduced-motion,any,no animated camera interpolation; instantaneous/fallback focus,NOT_RUN
+broker-hq,broker-hq.html,BROKER HQ,broker,B-01..B-06,mobile-portrait,390x844,"reflow UI, camera overlay compact, touch targets",NOT_RUN
+broker-hq,broker-hq.html,BROKER HQ,broker,B-01..B-06,mobile-landscape,844x390,"reflow, preserve focus anchor, avoid clipped panels",NOT_RUN
+broker-hq,broker-hq.html,BROKER HQ,broker,B-01..B-06,tablet,1024x768,"adaptive layout, readable overlays, touch + keyboard",NOT_RUN
+broker-hq,broker-hq.html,BROKER HQ,broker,B-01..B-06,desktop,1440x900,full cinematic + HTML authority,NOT_RUN
+broker-hq,broker-hq.html,BROKER HQ,broker,B-01..B-06,wide-desktop,1920x1080,"full composition, no unnecessary scale-up",NOT_RUN
+broker-hq,broker-hq.html,BROKER HQ,broker,B-01..B-06,reduced-motion,any,no animated camera interpolation; instantaneous/fallback focus,NOT_RUN
+admin,admin.html,OPERATIONS,admin,A-01,mobile-portrait,390x844,"reflow UI, camera overlay compact, touch targets",NOT_RUN
+admin,admin.html,OPERATIONS,admin,A-01,mobile-landscape,844x390,"reflow, preserve focus anchor, avoid clipped panels",NOT_RUN
+admin,admin.html,OPERATIONS,admin,A-01,tablet,1024x768,"adaptive layout, readable overlays, touch + keyboard",NOT_RUN
+admin,admin.html,OPERATIONS,admin,A-01,desktop,1440x900,full cinematic + HTML authority,NOT_RUN
+admin,admin.html,OPERATIONS,admin,A-01,wide-desktop,1920x1080,"full composition, no unnecessary scale-up",NOT_RUN
+admin,admin.html,OPERATIONS,admin,A-01,reduced-motion,any,no animated camera interpolation; instantaneous/fallback focus,NOT_RUN
+moderator,moderator.html,OPERATIONS,moderator,A-02,mobile-portrait,390x844,"reflow UI, camera overlay compact, touch targets",NOT_RUN
+moderator,moderator.html,OPERATIONS,moderator,A-02,mobile-landscape,844x390,"reflow, preserve focus anchor, avoid clipped panels",NOT_RUN
+moderator,moderator.html,OPERATIONS,moderator,A-02,tablet,1024x768,"adaptive layout, readable overlays, touch + keyboard",NOT_RUN
+moderator,moderator.html,OPERATIONS,moderator,A-02,desktop,1440x900,full cinematic + HTML authority,NOT_RUN
+moderator,moderator.html,OPERATIONS,moderator,A-02,wide-desktop,1920x1080,"full composition, no unnecessary scale-up",NOT_RUN
+moderator,moderator.html,OPERATIONS,moderator,A-02,reduced-motion,any,no animated camera interpolation; instantaneous/fallback focus,NOT_RUN
+staff,staff.html,OPERATIONS,staff,A-03,mobile-portrait,390x844,"reflow UI, camera overlay compact, touch targets",NOT_RUN
+staff,staff.html,OPERATIONS,staff,A-03,mobile-landscape,844x390,"reflow, preserve focus anchor, avoid clipped panels",NOT_RUN
+staff,staff.html,OPERATIONS,staff,A-03,tablet,1024x768,"adaptive layout, readable overlays, touch + keyboard",NOT_RUN
+staff,staff.html,OPERATIONS,staff,A-03,desktop,1440x900,full cinematic + HTML authority,NOT_RUN
+staff,staff.html,OPERATIONS,staff,A-03,wide-desktop,1920x1080,"full composition, no unnecessary scale-up",NOT_RUN
+staff,staff.html,OPERATIONS,staff,A-03,reduced-motion,any,no animated camera interpolation; instantaneous/fallback focus,NOT_RUN
+financing-guide,financing.html,REFERENCE,public reference,G-01,mobile-portrait,390x844,"reflow UI, camera overlay compact, touch targets",NOT_RUN
+financing-guide,financing.html,REFERENCE,public reference,G-01,mobile-landscape,844x390,"reflow, preserve focus anchor, avoid clipped panels",NOT_RUN
+financing-guide,financing.html,REFERENCE,public reference,G-01,tablet,1024x768,"adaptive layout, readable overlays, touch + keyboard",NOT_RUN
+financing-guide,financing.html,REFERENCE,public reference,G-01,desktop,1440x900,full cinematic + HTML authority,NOT_RUN
+financing-guide,financing.html,REFERENCE,public reference,G-01,wide-desktop,1920x1080,"full composition, no unnecessary scale-up",NOT_RUN
+financing-guide,financing.html,REFERENCE,public reference,G-01,reduced-motion,any,no animated camera interpolation; instantaneous/fallback focus,NOT_RUN
+legal-privacy,privacy.html,REFERENCE,public legal,LGL-01,mobile-portrait,390x844,"reflow UI, camera overlay compact, touch targets",NOT_RUN
+legal-privacy,privacy.html,REFERENCE,public legal,LGL-01,mobile-landscape,844x390,"reflow, preserve focus anchor, avoid clipped panels",NOT_RUN
+legal-privacy,privacy.html,REFERENCE,public legal,LGL-01,tablet,1024x768,"adaptive layout, readable overlays, touch + keyboard",NOT_RUN
+legal-privacy,privacy.html,REFERENCE,public legal,LGL-01,desktop,1440x900,full cinematic + HTML authority,NOT_RUN
+legal-privacy,privacy.html,REFERENCE,public legal,LGL-01,wide-desktop,1920x1080,"full composition, no unnecessary scale-up",NOT_RUN
+legal-privacy,privacy.html,REFERENCE,public legal,LGL-01,reduced-motion,any,no animated camera interpolation; instantaneous/fallback focus,NOT_RUN
+legal-terms,terms.html,REFERENCE,public legal,LGL-02,mobile-portrait,390x844,"reflow UI, camera overlay compact, touch targets",NOT_RUN
+legal-terms,terms.html,REFERENCE,public legal,LGL-02,mobile-landscape,844x390,"reflow, preserve focus anchor, avoid clipped panels",NOT_RUN
+legal-terms,terms.html,REFERENCE,public legal,LGL-02,tablet,1024x768,"adaptive layout, readable overlays, touch + keyboard",NOT_RUN
+legal-terms,terms.html,REFERENCE,public legal,LGL-02,desktop,1440x900,full cinematic + HTML authority,NOT_RUN
+legal-terms,terms.html,REFERENCE,public legal,LGL-02,wide-desktop,1920x1080,"full composition, no unnecessary scale-up",NOT_RUN
+legal-terms,terms.html,REFERENCE,public legal,LGL-02,reduced-motion,any,no animated camera interpolation; instantaneous/fallback focus,NOT_RUN

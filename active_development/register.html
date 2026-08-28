@@ -1,0 +1,231 @@
+<!-- ================================ -->
+<!--  REGISTER                      -->
+<!-- ================================ -->
+<!-- New account form. Sends a verification email on success. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - HomeFinder</title>
+
+    <link rel="stylesheet" href="css/variables.css?v=57">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/transition.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="css/auth.css?v=57">
+    <link rel="stylesheet" href="css/home/footer.css">
+    <link rel="stylesheet" href="css/responsive.css?v=57">
+    <link rel="stylesheet" href="css/customSelect.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/viewport/mobile.css?v=19">
+  <link rel="icon" data-hf-favicon href="assets/images/logo-homefinder.png">
+
+  <link rel="stylesheet" href="css/cinematic-ui.css">
+</head>
+<body class="auth-page" data-asset="surface_register">
+
+    <div class="toast-container" id="toast-container"></div>
+
+    <div class="auth-bg"></div>
+    <div class="auth-skyline" aria-hidden="true">
+        <div class="building building--h50"></div>
+        <div class="building building--h85"></div>
+        <div class="building building--h65"></div>
+        <div class="building building--h105"></div>
+        <div class="building building--h70"></div>
+        <div class="building building--h90"></div>
+        <div class="building building--h55"></div>
+    </div>
+    <div class="auth-overlay"></div>
+
+    <div class="auth-icons">
+        <i class='bx bx-home-heart'></i>
+        <i class='bx bx-key'></i>
+        <i class='bx bx-map'></i>
+        <i class='bx bx-buildings'></i>
+        <i class='bx bx-search'></i>
+        <i class='bx bx-shield-quarter'></i>
+    </div>
+
+    <a href="index.html" class="auth-back">
+        <i class='bx bx-arrow-back'></i> Back to Home
+    </a>
+
+    <a href="mailto:support@homefinder.com" class="support-btn">
+        <i class='bx bx-headphone'></i> <span>Contact Support</span>
+    </a>
+
+    <div class="auth-wrapper">
+        <div class="auth-card register-card" data-hf-auth-shell="register">
+            <div class="auth-brand-mark">
+              <img data-hf-logo src="assets/images/logo-homefinder.png" alt="HomeFinder logo" width="72" height="72">
+            </div>
+
+
+            <h1>Create Your Account</h1>
+            <p class="auth-sub">Pick your role, set email &amp; password. Finish your profile after you sign in.</p>
+
+            <p class="auth-status" id="register-status"></p>
+
+            <form id="register-form" data-asset="surface_register" data-hf-auth-root="register">
+
+                <!-- ===== ACCOUNT TYPE ===== -->
+                <label class="label-spaced">I am signing up as a...</label>
+                <p class="field-hint" id="register-role-hint">Choose Seeker or Owner. Broker access is granted later after ID verification and license approval.</p>
+                <div class="account-type" data-asset="auth_role_choice">
+                    <input type="radio" name="account-type" id="type-owner" value="owner" checked>
+                    <label for="type-owner">
+                        <i class='bx bx-buildings'></i>
+                        <strong>Property Owner</strong>
+                        <span>List &amp; manage properties</span>
+                    </label>
+
+                    <input type="radio" name="account-type" id="type-seeker" value="seeker">
+                    <label for="type-seeker">
+                        <i class='bx bx-search-alt'></i>
+                        <strong>Property Seeker</strong>
+                        <span>Browse, rent, or buy</span>
+                    </label>
+                </div>
+
+                <!-- ===== EMAIL ===== -->
+                <div class="field-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-wrap">
+                        <i class='bx bx-envelope'></i>
+                        <input type="email" id="email" data-asset="auth_email" placeholder="you@example.com" required autocomplete="email">
+                    </div>
+                </div>
+
+                <!-- ===== PASSWORD ===== -->
+                <div class="field-group">
+                    <label for="reg-password">Password</label>
+                    <div class="input-wrap">
+                        <i class='bx bx-lock-alt'></i>
+                        <input type="password" id="reg-password" data-asset="auth_password" placeholder="At least 8 characters" required minlength="8" autocomplete="new-password">
+                        <button type="button" class="pass-toggle" data-target="reg-password" aria-label="Show password">
+                            <i class='bx bx-hide'></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <div class="input-wrap">
+                        <i class='bx bx-lock-alt'></i>
+                        <input type="password" id="confirm-password" placeholder="Re-enter password" required minlength="8" autocomplete="new-password">
+                        <button type="button" class="pass-toggle" data-target="confirm-password" aria-label="Show password">
+                            <i class='bx bx-hide'></i>
+                        </button>
+                    </div>
+                    <p class="field-hint" id="password-match-hint"></p>
+                </div>
+
+                <label class="auth-terms">
+                    <input type="checkbox" id="register-agree" data-asset="auth_terms_check" name="agree" required>
+                    <span>I agree to the <a href="terms.html" target="_blank" rel="noopener">Terms of Service</a>
+                    and <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+                </label>
+
+                <button type="submit" class="auth-submit" id="register-submit">
+                    <span class="spinner"></span>
+                    <span class="btn-label">Create Account</span>
+                </button>
+
+            </form>
+
+            <div class="auth-divider">or continue with</div>
+
+            <div class="social-login">
+                <button type="button" class="social-btn google" id="google-register" data-asset="auth_social_google">
+                    <i class='bx bxl-google'></i> Google
+                </button>
+                <button type="button" class="social-btn facebook" id="facebook-register" data-asset="auth_social_facebook">
+                    <i class='bx bxl-facebook-circle'></i> Facebook
+                </button>
+            </div>
+
+            <p class="auth-footer">
+                Already have an account? <a href="login.html">Log in</a>
+            </p>
+
+        </div>
+    </div>
+
+    <script type="module" src="js/auth.js?v=37"></script>
+    <script type="module" src="js/transition.js"></script>
+  <script src="js/leave-guard.js" defer></script>
+    <script type="module" src="js/customSelect.js"></script>
+
+<section class="credits-section" id="credits" aria-label="Credits" data-hf-ui-zone="credits">
+  <div class="credits-inner">
+    <h2>Built with</h2>
+    <p class="credits-lead">HomeFinder runs on these tools and platforms.</p>
+    <div class="credits-grid" id="credits-grid">
+      <a class="credit-card" href="https://firebase.google.com/" target="_blank" rel="noopener" data-brand="Firebase" data-domain="firebase.google.com" data-color="#FFCA28"><span class="credit-logo"><img alt="" loading="lazy"></span><strong>Firebase</strong><span>Auth &amp; data</span></a>
+      <a class="credit-card" href="https://supabase.com/" target="_blank" rel="noopener" data-brand="Supabase" data-domain="supabase.com" data-color="#3ECF8E"><span class="credit-logo"><img alt="" loading="lazy"></span><strong>Supabase</strong><span>Image storage</span></a>
+<a class="credit-card" href="https://claude.ai/" target="_blank" rel="noopener" data-brand="Claude" data-domain="claude.ai" data-color="#D4A27F" data-simpleicon="anthropic"><span class="credit-logo"><img alt="" loading="lazy"></span><strong>Claude</strong><span>AI design help</span></a>
+      <a class="credit-card" href="https://x.ai/" target="_blank" rel="noopener" data-brand="Grok" data-domain="x.ai" data-color="#111111" data-simpleicon="x"><span class="credit-logo"><img alt="" loading="lazy"></span><strong>Grok</strong><span>AI by xAI</span></a>
+    </div>
+  </div>
+</section>
+<footer class="main-footer" data-asset="home_footer">
+  <div class="footer-container" data-asset="home_footer">
+    <div class="footer-brand">
+      <div class="footer-brand-row">
+        <img data-hf-logo src="assets/images/logo-homefinder.png" alt="" width="36" height="36">
+        <h3 class="footer-logo">HomeFinder</h3>
+      </div>
+      <p>Verified owners &amp; licensed brokers across the Philippines.</p>
+    </div>
+    <div class="footer-links-group">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="market.html">Market</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-links-group">
+      <h4>Account</h4>
+      <ul>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+    </div>
+    <div class="footer-links-group">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 HomeFinder</p>
+    <div class="legal-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="index.html#about">About</a>
+    </div>
+  </div>
+</footer>
+<script src="js/credits-logos.js" defer></script>
+
+  <script src="js/brand-logo.js" defer></script>
+
+  <script>fetch('data/cinematic-scenes.json').then(r=>r.json()).then(v=>window.__HF_CINEMATIC_SCENES__=v).catch(()=>{});</script>
+  <script src="js/design-roots.js" defer></script>
+    <script src="js/animation-root.js" defer></script>
+    <script src="js/physical-ui-state.js" defer></script>
+    <script src="js/auth-physical-ui.js" defer></script>
+  <!-- M1: production WebGL/Three triad not loaded; see js/reference-3d/ -->
+  <script src="js/cinematic-ui.js" defer></script>
+</body>
+</html>

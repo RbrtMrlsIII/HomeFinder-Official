@@ -1,0 +1,46 @@
+{
+  "phase": 13,
+  "scope": [
+    "login",
+    "register"
+  ],
+  "objects": {
+    "login": 6,
+    "register": 8
+  },
+  "povs": {
+    "login": [
+      "L-01",
+      "L-02",
+      "L-03",
+      "L-04",
+      "L-05"
+    ],
+    "register": [
+      "R-01",
+      "R-02",
+      "R-03",
+      "R-04",
+      "R-05",
+      "R-06",
+      "R-07"
+    ]
+  },
+  "roots": [
+    "animation",
+    "physical-object-state",
+    "responsive-transformation",
+    "design"
+  ],
+  "verification": {
+    "auth-propagation": "PASS",
+    "animation-object-responsive": "PASS",
+    "design-roots": "PASS",
+    "master-matrix": "PASS",
+    "public-profile-read-surface": "PASS",
+    "main-hall-camera-object": "PASS",
+    "main-hall-physical-ui": "PASS",
+    "syntax_files": 239,
+    "syntax_failures": 0
+  }
+}

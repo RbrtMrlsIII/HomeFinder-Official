@@ -1,0 +1,23 @@
+{
+  "phase": 13,
+  "status": "MAIN HALL CAMERA / PHYSICAL UI CONTRACT BINDING",
+  "master_scene": "master/HomeFinder.sh3d",
+  "active_scene": "master/HomeFinder.sh3d",
+  "pov_count": 9,
+  "povs": [
+    "H-01",
+    "H-02",
+    "H-03",
+    "H-04",
+    "H-05",
+    "H-06",
+    "H-07",
+    "H-08",
+    "H-09"
+  ],
+  "scene_sha256": "110b3573ad5d8a2d57716e92d2965c3f9e509bbbf87532da7a176957b0cb4b8e",
+  "theme_mode": "environment-driven",
+  "responsive_root": "main-hall-root",
+  "security": "presentation-only",
+  "note": "TUNED_SEED pending rendered Sweet Home 3D visual approval and browser/device validation"
+}

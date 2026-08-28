@@ -1,0 +1,84 @@
+{
+  "schema": "5.5G6E-canonical-camera-binding-v1",
+  "source": "master/HomeFinder.sh3d",
+  "canonicalSha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "authority": "presentation-only",
+  "counts": {
+    "activeObserver": 1,
+    "legacyStoredCameras": 5,
+    "homefinderCameras": 9,
+    "totalObserverCameraElements": 15
+  },
+  "rules": [
+    "HF H-01 through HF H-09 are existing canonical cameras and are bound by name; they are not recreated.",
+    "Camera selection never grants authentication, role, KYC, payment, or route authority.",
+    "Map behavior remains application-owned; H-04 is a presentation anchor and does not establish physical map traversal.",
+    "Legacy named cameras remain available as compatibility views but are not semantic HomeFinder POV authority.",
+    "Only master/HomeFinder.sh3d is runtime physical authority."
+  ],
+  "bindings": [
+    {
+      "logicalPov": "H-01",
+      "cameraName": "HF H-01 \u2014 hero",
+      "physicalAnchor": "Living room",
+      "status": "BOUND",
+      "appSurface": "Home hero"
+    },
+    {
+      "logicalPov": "H-02",
+      "cameraName": "HF H-02 \u2014 discovery",
+      "physicalAnchor": "Corridor",
+      "status": "BOUND",
+      "appSurface": "Home discovery"
+    },
+    {
+      "logicalPov": "H-03",
+      "cameraName": "HF H-03 \u2014 property-display",
+      "physicalAnchor": "Living room",
+      "status": "BOUND",
+      "appSurface": "Featured listings"
+    },
+    {
+      "logicalPov": "H-04",
+      "cameraName": "HF H-04 \u2014 map",
+      "physicalAnchor": "NONE_PROVEN",
+      "status": "PRESENTATION_ONLY_UNANCHORED",
+      "appSurface": "Home map preview / MapLibre gateway"
+    },
+    {
+      "logicalPov": "H-05",
+      "cameraName": "HF H-05 \u2014 government-desk",
+      "physicalAnchor": "Corridor",
+      "status": "BOUND",
+      "appSurface": "Government reference"
+    },
+    {
+      "logicalPov": "H-06",
+      "cameraName": "HF H-06 \u2014 mission",
+      "physicalAnchor": "Living room",
+      "status": "BOUND",
+      "appSurface": "Mission"
+    },
+    {
+      "logicalPov": "H-07",
+      "cameraName": "HF H-07 \u2014 guide",
+      "physicalAnchor": "Kitchen",
+      "status": "BOUND",
+      "appSurface": "Guide"
+    },
+    {
+      "logicalPov": "H-08",
+      "cameraName": "HF H-08 \u2014 safety",
+      "physicalAnchor": "Bedroom #1",
+      "status": "BOUND",
+      "appSurface": "Safety/KYC"
+    },
+    {
+      "logicalPov": "H-09",
+      "cameraName": "HF H-09 \u2014 contact",
+      "physicalAnchor": "Corridor",
+      "status": "BOUND",
+      "appSurface": "Contact/legal"
+    }
+  ]
+}

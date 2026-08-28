@@ -1,0 +1,4 @@
+role,route,identity,functional_scope,canonical_console,access_path,authority_boundary
+admin,admin.html,admin,Admin Console only,admin.html,Admin-only operations,Admin console only; no cross-console access
+moderator,moderator.html,moderator,Moderator Console only,moderator.html,Moderator-only operations,Moderator console only; no Staff/Admin console access
+staff,staff.html,staff,Staff Console only,staff.html,Staff-only operations,Staff console only; no Moderator/Admin console access

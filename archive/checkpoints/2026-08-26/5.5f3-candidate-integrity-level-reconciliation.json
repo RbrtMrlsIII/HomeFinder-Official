@@ -1,0 +1,29 @@
+{
+  "gate": "5.5F.3",
+  "status": "COMPLETE",
+  "timestamp": "2026-08-26T20:46:00+08:00",
+  "canonical_sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "canonical_expected": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "repaired_candidate": "HomeFinder-merge-candidate-Additional-F3-reconciled.sh3d",
+  "repaired_candidate_sha256": "21309c26ac11728180402b0ee94f97eab9f2c3ba6e9093ed071c955eb89ab5c5",
+  "canonical_ids": 249,
+  "canonical_ids_missing_from_candidate": 0,
+  "candidate_duplicate_ids": 0,
+  "additional_namespaced_ids": 509,
+  "level_ids": [
+    "level0",
+    "level1",
+    "level2",
+    "add-level0",
+    "add-level1",
+    "add-level2",
+    "add-level3"
+  ],
+  "dangling_level_refs": [],
+  "missing_resource_references": 0,
+  "spatial_attribute_differences_vs_additional": 0,
+  "authority_transfer": false,
+  "canonical_model_modified": false,
+  "original_candidate_preserved": true,
+  "next_gate": "5.5F.4 \u2014 Three-House Candidate Physical Allocation"
+}

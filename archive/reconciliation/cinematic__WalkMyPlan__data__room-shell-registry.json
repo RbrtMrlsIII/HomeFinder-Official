@@ -1,0 +1,189 @@
+{
+  "version": "A4.4C3.11",
+  "status": "CANONICAL / ADJUSTABLE",
+  "rooms": [
+    {
+      "room_id": "BACKYARD",
+      "route": "public-arrival",
+      "purpose": "Arrival Prelude",
+      "zones": "ARRIVAL",
+      "object_ids": [],
+      "roles": [],
+      "shell_status": "MAPPED",
+      "fallback": "route remains fully usable without 3D"
+    },
+    {
+      "room_id": "MAIN HALL",
+      "route": "index.html",
+      "purpose": "Public Home environment",
+      "zones": "H-01..H-09",
+      "object_ids": [
+        "main-search-console",
+        "property-catalogue",
+        "home-map-table",
+        "government-info-desk",
+        "mission-wall",
+        "guide-book",
+        "safety-board",
+        "contact-desk",
+        "start-cta",
+        "credits-wall"
+      ],
+      "roles": [
+        "admin",
+        "broker",
+        "guest",
+        "moderator",
+        "owner",
+        "public",
+        "seeker",
+        "staff"
+      ],
+      "shell_status": "MAPPED",
+      "fallback": "route remains fully usable without 3D"
+    },
+    {
+      "room_id": "LOGIN ROOM",
+      "route": "login.html",
+      "purpose": "Authentication room",
+      "zones": "L-01",
+      "object_ids": [
+        "identity-desk",
+        "login-terminal",
+        "registration-doorway"
+      ],
+      "roles": [
+        "guest"
+      ],
+      "shell_status": "MAPPED",
+      "fallback": "route remains fully usable without 3D"
+    },
+    {
+      "room_id": "REGISTER ROOM",
+      "route": "register.html",
+      "purpose": "Account creation room",
+      "zones": "R-01",
+      "object_ids": [
+        "registration-desk",
+        "account-type-selector"
+      ],
+      "roles": [
+        "guest"
+      ],
+      "shell_status": "MAPPED",
+      "fallback": "route remains fully usable without 3D"
+    },
+    {
+      "room_id": "MARKET",
+      "route": "market.html",
+      "purpose": "Role-aware Market environment",
+      "zones": "M-01..M-06",
+      "object_ids": [
+        "market-directory",
+        "market-map-table",
+        "filter-cabinet",
+        "property-display-wall",
+        "wanted-display-wall",
+        "property-dossier",
+        "market-contact-desk"
+      ],
+      "roles": [
+        "guest",
+        "owner",
+        "seeker"
+      ],
+      "shell_status": "MAPPED",
+      "fallback": "route remains fully usable without 3D"
+    },
+    {
+      "room_id": "PROFILE SUITE",
+      "route": "profile.html",
+      "purpose": "Private authenticated workspace",
+      "zones": "P-01..P-12",
+      "object_ids": [
+        "profile-console",
+        "perk-portfolio-display",
+        "paypal-subscription-console",
+        "message-terminal",
+        "contracts-folder",
+        "help-desk",
+        "listing-book",
+        "wanted-notebook",
+        "saved-properties-cabinet",
+        "saved-wanted-cabinet",
+        "review-ledger",
+        "government-housing-desk",
+        "broker-gate"
+      ],
+      "roles": [
+        "broker",
+        "owner",
+        "seeker"
+      ],
+      "shell_status": "MAPPED",
+      "fallback": "route remains fully usable without 3D"
+    },
+    {
+      "room_id": "BROKER HQ",
+      "route": "broker-hq.html",
+      "purpose": "Dedicated broker workspace",
+      "zones": "B-01..B-06",
+      "object_ids": [
+        "broker-desk",
+        "broker-request-board",
+        "broker-service-board",
+        "broker-intelligence-map",
+        "broker-discovery-wall"
+      ],
+      "roles": [
+        "broker"
+      ],
+      "shell_status": "MAPPED",
+      "fallback": "route remains fully usable without 3D"
+    },
+    {
+      "room_id": "OPERATIONS",
+      "route": "admin.html|moderator.html|staff.html",
+      "purpose": "Protected operational wing",
+      "zones": "A-01..A-03",
+      "object_ids": [
+        "admin-approval-desk",
+        "admin-kyc-lockbox",
+        "admin-orders-ledger",
+        "admin-user-registry",
+        "admin-boost-console",
+        "moderation-board",
+        "moderator-payment-ledger",
+        "moderator-wanted-board",
+        "moderator-contracts-desk",
+        "staff-support-desk",
+        "staff-reports-board",
+        "staff-orders-ledger",
+        "staff-user-lookup",
+        "staff-alerts-console"
+      ],
+      "roles": [
+        "admin",
+        "moderator",
+        "staff"
+      ],
+      "shell_status": "MAPPED",
+      "fallback": "route remains fully usable without 3D"
+    },
+    {
+      "room_id": "REFERENCE",
+      "route": "financing.html|privacy.html|terms.html",
+      "purpose": "Public reference wing",
+      "zones": "G-01/LGL-01/LGL-02",
+      "object_ids": [
+        "government-reference-desk",
+        "legal-library"
+      ],
+      "roles": [
+        "public"
+      ],
+      "shell_status": "MAPPED",
+      "fallback": "route remains fully usable without 3D"
+    }
+  ]
+}

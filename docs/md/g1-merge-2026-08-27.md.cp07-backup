@@ -1,0 +1,19 @@
+# G1.4 + G1.5 merge — 2026-08-27
+
+## Sources
+- Base: prior G1.5 package (`docs/g1/5.5G1.5-*`, F3–F5, app tree)
+- Overlay: `HomeFinder-G1.4(1).zip` census files
+
+## Added
+- `docs/g1/5.5G1.1-G1.4-continuity-index.json`
+- `docs/g1/5.5G1.4-physical-door-endpoint-reconciliation.md`
+- `docs/g1/5.5G1.4-problematic-door-endpoint-reconciliation.csv`
+- `verification/2026-08-27/5.5G1.4-verification.json`
+
+## Unchanged
+- `master/HomeFinder.sh3d` SHA `0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34`
+- F3 candidate SHA `21309c26ac11728180402b0ee94f97eab9f2c3ba6e9093ed071c955eb89ab5c5`
+- No runtime code edits in this merge
+
+## Still NOT AVAILABLE as full file trees
+G1.1, G1.2, G1.3 standalone census packages (indexed only in continuity index).

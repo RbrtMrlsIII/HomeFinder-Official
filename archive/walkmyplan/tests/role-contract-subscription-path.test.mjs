@@ -1,0 +1,10 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import path from "node:path";
+const root=path.resolve(process.cwd());
+const html=fs.readFileSync(path.join(root,"profile.html"),"utf8");
+const auth=fs.readFileSync(path.join(root,"js/auth.js"),"utf8");
+const route=fs.readFileSync(path.join(root,"js/route-access-contract.js"),"utf8");
+const doors=JSON.parse(fs.readFileSync(path.join(root,"cinematic/WalkMyPlan/data/door-registry.json"),"utf8"));
+const cameras=JSON.parse(fs.readFileSync(path.join(root,"cinematic/WalkMyPlan/data/security-camera-registry.json"),"utf8"));
+assert.match(html,/paypal-subscription-mount/);assert.match(html,/js\/profile\/subscription-boot\.js/);assert.match(html,/ongoing-contracts-list/);assert.match(html,/js\/profile\/ongoing-contracts\.js/);assert.match(auth,/routeAccess/);assert.match(route,/broker-hq\.html/);assert.ok(doors.some(d=>d.id==='broker-hq-door'&&(Array.isArray(d.role)?d.role.includes('broker'):d.role==='broker')));assert.ok(doors.some(d=>d.id==='moderator-door'&&(Array.isArray(d.role)?d.role.includes('moderator'):d.role==='moderator')));assert.ok(doors.some(d=>d.id==='staff-door'&&(Array.isArray(d.role)?d.role.includes('staff'):d.role==='staff')));assert.ok(doors.some(d=>d.id==='market-door'&&d.requiresAuth===false&&d.role.includes('guest')));assert.ok(cameras.coverage.length>=6);console.log('PASS role-contract-subscription-path');

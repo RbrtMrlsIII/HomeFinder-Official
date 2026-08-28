@@ -1,0 +1,18 @@
+{
+  "uid-canonical": {
+    "seeker": { "active": true, "package": 3 },
+    "owner": { "active": false, "package": 0 }
+  },
+  "uid-roman": {
+    "seeker": { "active": true, "package": "III" },
+    "owner": { "active": false }
+  },
+  "uid-level": {
+    "seeker": { "active": true, "level": "IV" },
+    "owner": { "active": false }
+  },
+  "uid-conflict": {
+    "seeker": { "active": true, "package": 2, "level": "III" },
+    "owner": { "active": false }
+  }
+}

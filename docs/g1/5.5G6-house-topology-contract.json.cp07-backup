@@ -1,0 +1,162 @@
+{
+  "version": "5.5G6G-1",
+  "authority": "House topology contract for physical navigation reconciliation",
+  "status": "DESIGN/RECONCILIATION CONTRACT — NOT PHYSICAL ROUTE PROOF",
+  "principle": "House identity, role ownership, logical destination, and physical connectivity are separate authorities.",
+  "houses": {
+    "House 1": {
+      "purpose": "Public / Hero House",
+      "role_surfaces": [
+        "public",
+        "shared arrival"
+      ]
+    },
+    "House 2": {
+      "purpose": "Broker + Operations",
+      "role_surfaces": [
+        "broker",
+        "operations"
+      ]
+    },
+    "House 3": {
+      "purpose": "Seekers + Owners",
+      "role_surfaces": [
+        "seeker",
+        "owner"
+      ]
+    }
+  },
+  "topology": {
+    "model": "House 1 is the only inter-house transit hub.",
+    "allowed_inter_house_pairs": [
+      {
+        "from": "House 1",
+        "to": "House 2",
+        "status": "candidate_only"
+      },
+      {
+        "from": "House 2",
+        "to": "House 1",
+        "status": "candidate_only"
+      },
+      {
+        "from": "House 1",
+        "to": "House 3",
+        "status": "candidate_only"
+      },
+      {
+        "from": "House 3",
+        "to": "House 1",
+        "status": "candidate_only"
+      }
+    ],
+    "forbidden_direct_pairs": [
+      {
+        "from": "House 2",
+        "to": "House 3",
+        "status": "NO_DIRECT_CONNECTION"
+      },
+      {
+        "from": "House 3",
+        "to": "House 2",
+        "status": "NO_DIRECT_CONNECTION"
+      }
+    ],
+    "route_rule": "A journey between House 2 and House 3, when logically authorized, must return through House 1; no direct House 2↔House 3 physical route may be authored."
+  },
+  "logical_vs_physical": {
+    "logical_authority": "Application routes and role/access contracts define user intent and authorization.",
+    "physical_authority": "Canonical SH3D and validated portal/route evidence define actual traversability.",
+    "important": "Logical access between destinations does not imply a direct physical connection between their houses."
+  },
+  "role_surface_mapping": {
+    "House 1": [
+      "public/home",
+      "login",
+      "register",
+      "public reference surfaces"
+    ],
+    "House 2": [
+      "broker-hq",
+      "broker profile workspace",
+      "broker discovery/market",
+      "broker service map",
+      "admin",
+      "moderator",
+      "staff",
+      "operations"
+    ],
+    "House 3": [
+      "market property discovery",
+      "profile",
+      "seeker",
+      "owner",
+      "saved properties",
+      "saved wanted",
+      "government housing reference"
+    ]
+  },
+  "validation_requirements": [
+    "Prove a physical portal from House 1 into House 2 before enabling House 1↔House 2 physical travel.",
+    "Prove a physical portal from House 1 into House 3 before enabling House 1↔House 3 physical travel.",
+    "Never create a House 2↔House 3 portal solely because both houses have logical destinations.",
+    "For any House 2↔House 3 logical journey, resolve it as House 2→House 1→House 3 or House 3→House 1→House 2 once each physical leg is proven.",
+    "Keep role authorization independent from spatial routing."
+  ],
+  "current_evidence": {
+    "House 1": "canonical physical structure exists; exterior transfer remains candidate-only",
+    "House 2": "candidate geometry exists in noncanonical staging; transfer to House 1 unproven",
+    "House 3": "candidate geometry exists in noncanonical staging; transfer to House 1 unproven",
+    "House 2↔House 3": "no significant/proven physical connection; direct connection prohibited by this topology contract"
+  },
+  "role_transition": {
+    "physical_travel_never_changes_role": true,
+    "house_2_broker_to_house_3": "must_return_via_house_1; broker session remains broker",
+    "house_3_to_house_2": "must_return_via_house_1; seeker/owner session does not gain broker capabilities",
+    "cross_role_operation": "requires explicit authentication identity transition"
+  },
+  "canonical_model_status": "three-house-canonical-promoted",
+  "canonical_model": "master/HomeFinder.sh3d",
+  "house_presence": {
+    "house_1": {
+      "status": "canonical",
+      "extent": {
+        "min_x": -187.50002,
+        "max_x": 1035.4973,
+        "min_y": -10.200001,
+        "max_y": 815.3157
+      }
+    },
+    "house_2": {
+      "status": "canonical",
+      "extent": {
+        "min_x": 2800.6812096176254,
+        "max_x": 4197.519027617625,
+        "min_y": -51.403565819953045,
+        "max_y": 1299.0945241800468
+      }
+    },
+    "house_3": {
+      "status": "canonical",
+      "extent": {
+        "min_x": 5107.830864040103,
+        "max_x": 6248.2560640401025,
+        "min_y": -26.743775819953044,
+        "max_y": 553.514154180047
+      }
+    }
+  },
+  "physical_topology": {
+    "house_1_to_house_2": "not_yet_route_validated",
+    "house_2_to_house_1": "not_yet_route_validated",
+    "house_1_to_house_3": "not_yet_route_validated",
+    "house_3_to_house_1": "not_yet_route_validated",
+    "house_2_to_house_3": "forbidden_direct",
+    "house_3_to_house_2": "forbidden_direct"
+  },
+  "canonical_promotion": {
+    "source_candidate": "3d/staging/HomeFinder-merge-candidate-Additional-reconciled.sh3d",
+    "pre_promotion_master_archived": "docs/archive/5.5G6G-pre-promotion/HomeFinder_master_pre_5_5G6G.sh3d",
+    "runtime_routes_promoted": 0
+  }
+}

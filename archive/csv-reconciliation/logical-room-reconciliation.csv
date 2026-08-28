@@ -1,0 +1,10 @@
+logical_room,exact_master_room_name,master_named_rooms,status
+BACKYARD,NO,"Bedroom #1, Bedroom #2, Corridor, Garage, Kitchen, Living room, Terrace",VIRTUAL_APP_ROOM_REQUIRES_MAPPING
+BROKER HQ,NO,"Bedroom #1, Bedroom #2, Corridor, Garage, Kitchen, Living room, Terrace",VIRTUAL_APP_ROOM_REQUIRES_MAPPING
+LOGIN ROOM,NO,"Bedroom #1, Bedroom #2, Corridor, Garage, Kitchen, Living room, Terrace",VIRTUAL_APP_ROOM_REQUIRES_MAPPING
+MAIN HALL,NO,"Bedroom #1, Bedroom #2, Corridor, Garage, Kitchen, Living room, Terrace",VIRTUAL_APP_ROOM_REQUIRES_MAPPING
+MARKET,NO,"Bedroom #1, Bedroom #2, Corridor, Garage, Kitchen, Living room, Terrace",VIRTUAL_APP_ROOM_REQUIRES_MAPPING
+OPERATIONS,NO,"Bedroom #1, Bedroom #2, Corridor, Garage, Kitchen, Living room, Terrace",VIRTUAL_APP_ROOM_REQUIRES_MAPPING
+PROFILE SUITE,NO,"Bedroom #1, Bedroom #2, Corridor, Garage, Kitchen, Living room, Terrace",VIRTUAL_APP_ROOM_REQUIRES_MAPPING
+REFERENCE,NO,"Bedroom #1, Bedroom #2, Corridor, Garage, Kitchen, Living room, Terrace",VIRTUAL_APP_ROOM_REQUIRES_MAPPING
+REGISTER ROOM,NO,"Bedroom #1, Bedroom #2, Corridor, Garage, Kitchen, Living room, Terrace",VIRTUAL_APP_ROOM_REQUIRES_MAPPING

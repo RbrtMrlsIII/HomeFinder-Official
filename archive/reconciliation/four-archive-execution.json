@@ -1,0 +1,14 @@
+{
+  "date": "2026-08-26",
+  "phase": "5.5C-V",
+  "action": "archive-four-superseded-walkmyplan-tests",
+  "reason": "These tests encode planning/authority contracts whose active authority is retired WalkMyPlan and whose current replacements belong to later spatial-authority gates.",
+  "tests": [
+    "theme-lighting-performance-budget.test.mjs",
+    "asset-integration-planning.test.mjs",
+    "canonical-room-camera-door-graph.test.mjs",
+    "hero-world-environment-shell.test.mjs"
+  ],
+  "active_walkmyplan_test_references_after_archive": 0,
+  "canonical_sh3d_modified": false
+}

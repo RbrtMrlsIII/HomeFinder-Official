@@ -1,0 +1,32 @@
+{
+  "gate": "5.5G.1.1",
+  "title": "Adjacency \u2194 Existing Navigation Contract Reconciliation",
+  "status": "RECONCILED / ROUTES NOT IMPLEMENTED",
+  "source_checkpoint": "user-held HomeFinder-G1.1 predecessor checkpoint",
+  "physical_candidates_total": 23,
+  "application_route_edges_observed": 34,
+  "logical_door_contracts_observed": 37,
+  "classification_counts": {
+    "boundary_candidate": 1,
+    "excluded_or_ambiguous": 4,
+    "physical_candidate_unbound": 9,
+    "physical_only_candidate": 13
+  },
+  "findings": [
+    "The application already expresses logical destinations and route transitions through HTML anchors and JavaScript navigation.",
+    "The UI-response mapping explicitly separates application authority from physical authority and names logical door contracts such as main-door, market-door, gov-door, broker-hq-door and profile-door.",
+    "No current application contract binds the census door object IDs to those logical door names. Therefore physical adjacency candidates must not yet be promoted into runtime routes.",
+    "Additional-model adjacency candidates are currently physical-only evidence. This is expected at this stage and preserves the candidate/non-canonical boundary.",
+    "The canonical public Front door is a strong exterior-boundary candidate, but its physical object ID is not yet bound to the logical main-door contract.",
+    "Existing route behavior remains application-owned: navigation can transition between HTML pages without implying that a physically validated path has already been implemented.",
+    "The current camera rig provides logical section-to-camera mappings, while the UI-response mapping provides logical surface-to-camera/door contracts. This is useful evidence for a future physical binding layer.",
+    "No runtime code, canonical SH3D, or F3 candidate was modified by this reconciliation."
+  ],
+  "negative_findings": [
+    "No evidence currently proves House 1 \u2192 House 2 physical transfer.",
+    "No evidence currently proves House 2 \u2192 House 3 physical transfer.",
+    "No route is declared physically validated.",
+    "No camera is finalized from this operation."
+  ],
+  "next_gate": "Physical route validation preparation: construct a candidate adjacency graph with stable physical node IDs and explicit exterior/house boundary nodes, then compare only the logically required transitions."
+}

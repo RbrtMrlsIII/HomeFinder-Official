@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>HomeFinder 5.5G.6K Runtime Smoke</title></head>
+<body>
+<h1>HomeFinder 5.5G.6K Browser Runtime Smoke</h1>
+<pre id="result">RUNNING</pre>
+<script type="module">
+import { planJourney, planInterHouseTransition, destinationFor } from "../../js/inter-house-navigation.js";
+
+const roles = ["guest", "owner", "seeker", "broker", "admin", "moderator", "staff"];
+const houses = ["house-1", "house-2", "house-3"];
+const result = document.getElementById("result");
+const failures = [];
+const checks = [];
+function check(name, condition, detail="") {
+  checks.push(name);
+  if (!condition) failures.push(`${name}${detail ? ` — ${detail}` : ""}`);
+}
+
+// Browser/runtime contract matrix.
+for (const role of roles) {
+  for (const from of houses) {
+    for (const to of houses) {
+      const plan = planJourney(from, to, role);
+      if (from === to) {
+        check(`${role} ${from}->${to} same-house`, plan.allowed && plan.mode === "same-house");
+        continue;
+      }
+      if ((from === "house-2" && to === "house-3") || (from === "house-3" && to === "house-2")) {
+        check(`${role} ${from}->${to} hub route`, plan.allowed && plan.mode === "hub-routed" && plan.legs.length === 2);
+        check(`${role} ${from}->${to} preserves role`, plan.legs.every(leg => leg.role === role));
+        check(`${role} ${from}->${to} routes via house-1`, plan.legs[0]?.toHouse === "house-1" && plan.legs[1]?.fromHouse === "house-1");
+      } else {
+        check(`${role} ${from}->${to} controlled route`, plan.mode === "controlled-transport" || plan.mode === "access-denied");
+        check(`${role} ${from}->${to} preserves role`, plan.role === role);
+      }
+    }
+  }
+}
+
+// Destination/route boundary checks for every role and destination house.
+for (const role of roles) {
+  for (const house of houses) {
+    const destination = destinationFor(house, role);
+    const plan = planInterHouseTransition("house-1", house, role);
+    check(`${role} destination ${house} defined`, typeof destination === "string" && destination.length > 0);
+    check(`${role} destination ${house} route decision`, plan.allowed || Boolean(plan.access));
+  }
+}
+
+// Browser DOM journey-state simulation, using the same runtime module.
+const nav = document.createElement("nav");
+nav.innerHTML = houses.map(h => `<button data-house="${h}" aria-pressed="false">${h}</button>`).join("");
+const status = document.createElement("span");
+status.id = "navigationStatus";
+document.body.append(nav, status);
+const buttons = [...nav.querySelectorAll("button")];
+let currentHouse = "house-2";
+let pendingDestination = null;
+let role = "broker";
+function clickHouse(destination) {
+  const plan = planJourney(currentHouse, destination, role);
+  if (!plan.allowed) return plan;
+  if (plan.mode === "hub-routed") {
+    pendingDestination = destination;
+    currentHouse = "house-1";
+    status.textContent = `House 1 · transit hub · continue to ${destination}`;
+    return plan;
+  }
+  currentHouse = destination;
+  pendingDestination = null;
+  status.textContent = destination;
+  return plan;
+}
+
+let p = clickHouse("house-3");
+check("broker House 2->House 3 first leg enters hub", p.mode === "hub-routed" && currentHouse === "house-1" && pendingDestination === "house-3");
+p = clickHouse("house-3");
+check("broker House 1->House 3 completes pending journey", p.allowed && currentHouse === "house-3" && pendingDestination === null);
+
+// Ensure direct House 2<->House 3 remains blocked at the primitive level.
+check("direct primitive House 2->House 3 blocked", !planInterHouseTransition("house-2", "house-3", "broker").allowed);
+check("direct primitive House 3->House 2 blocked", !planInterHouseTransition("house-3", "house-2", "broker").allowed);
+
+result.textContent = JSON.stringify({
+  phase: "5.5G.6K",
+  status: failures.length ? "FAIL" : "PASS",
+  checks: checks.length,
+  failures,
+  browser: navigator.userAgent
+}, null, 2);
+</script>
+</body>
+</html>

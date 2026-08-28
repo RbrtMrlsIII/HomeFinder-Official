@@ -1,0 +1,5 @@
+finding_type,file,evidence
+firestore_public_users_read,firebase/firestore.rules,users/{uid} allow read: if true
+firestore_public_users_read,js/profile/user-search.js,queries up to 400 users and reads email/idVerification/brokerLicense/tier
+firestore_public_config_read,firebase/firestore.rules,config/{docId} allow read: if true
+firebase_client_config,js/firebase.js,Firebase web apiKey is client-visible by design; protected by Auth/Rules

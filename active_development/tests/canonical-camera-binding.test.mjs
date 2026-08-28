@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import test from 'node:test';
+
+const root = new URL('../', import.meta.url).pathname;
+const read = file => fs.readFileSync(`${root}/${file}`, 'utf8');
+
+test('5.5G.6E canonical camera binding exposes all nine HF cameras', () => {
+  const registry = JSON.parse(read('../archive/reconciliation/5.5G6E-canonical-camera-binding.json'));
+  assert.equal(registry.counts.homefinderCameras, 9);
+  assert.deepEqual(registry.bindings.map(x => x.logicalPov), ['H-01','H-02','H-03','H-04','H-05','H-06','H-07','H-08','H-09']);
+  assert.equal(registry.bindings.find(x => x.logicalPov === 'H-04').status, 'PRESENTATION_ONLY_UNANCHORED');
+});
+
+test('5.5G.6E viewer selects canonical HF cameras before legacy compatibility cameras', () => {
+  const js = read('3d/app/homefinder-viewer.js');
+  assert.match(js, /var HF_CAMERAS = \[/);
+  assert.match(js, /camera: "HF H-01 — hero"/);
+  assert.match(js, /var CAMERAS = HF_CAMERAS\.concat\(LEGACY_CAMERAS\)/);
+});
+
+console.log('5.5G.6E canonical camera binding: PASS');

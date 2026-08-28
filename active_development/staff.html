@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- HF-BUILD-2026-08-13 | staff.html | customer service + order reference review -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Console · HomeFinder</title>
+    <link rel="stylesheet" href="css/variables.css?v=57">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/transition.css">
+    <link rel="stylesheet" href="css/admin.css?v=21">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/viewport/mobile.css?v=19">
+  <link rel="icon" data-hf-favicon href="assets/images/logo-homefinder.png">
+
+  <link rel="stylesheet" href="css/cinematic-ui.css">
+</head>
+<body class="admin-page staff-page" data-ops-role="staff" data-asset="surface_staff">
+
+    <header class="admin-header">
+        <h1><i class="bx bx-support"></i> Staff Console</h1>
+        <div class="admin-header-actions">
+            <span id="admin-role-chip" class="admin-role-chip is-staff">Staff</span>
+            <button type="button" class="admin-btn admin-btn-ghost" id="admin-logout-btn">Log out</button>
+        </div>
+    </header>
+
+    <div class="ops-instructions">
+        <strong>Your tools:</strong> Support tickets (read + update status) · Reports intake · Order/package reference review → hand off to Admin · User lookup (metadata only) · Staff alerts.
+        <em>Listing-help ₱99.99 payment check: yes (verify reference). Final KYC approval: Admin only. ID queue: read/assist only — Admin approves. License: not Staff.</em>
+    </div>
+
+    <nav class="admin-tabs" role="tablist" data-asset="surface_staff">
+        <button type="button" class="admin-tab-btn active" data-tab="support">
+            Support <span class="tab-count" id="support-tab-count" hidden>0</span>
+        </button>
+        <button type="button" class="admin-tab-btn" data-tab="reports">
+            Reports <span class="tab-count" id="reports-tab-count" hidden>0</span>
+        </button>
+        <button type="button" class="admin-tab-btn" data-tab="orders">
+            Order refs <span class="tab-count" id="orders-pending-count" hidden>0</span>
+        </button>
+        <button type="button" class="admin-tab-btn" data-tab="listing-help-pay">
+            Listing help ₱ <span class="tab-count" id="listing-help-pay-count" hidden>0</span>
+        </button>
+        <button type="button" class="admin-tab-btn" data-tab="users">Users lookup</button>
+        <button type="button" class="admin-tab-btn" data-tab="alerts">Alerts</button>
+    </nav>
+
+    <main class="admin-main" data-asset="surface_staff">
+
+        <!-- SUPPORT -->
+        <section class="admin-panel active" id="admin-panel-support">
+            <h2 class="admin-panel-title"><i class="bx bx-message-detail"></i> Support tickets</h2>
+            <p class="admin-panel-sub">Customer-related services. Reply, resolve, or escalate. Closing a ticket should leave a clear note for the user.</p>
+            <div class="admin-searchbar">
+                <input type="search" id="admin-support-search" class="admin-search-input" placeholder="Search tickets by UID, email, subject…">
+                <select id="admin-support-status">
+                    <option value="open">Open</option>
+                    <option value="all">All</option>
+                    <option value="resolved">Resolved</option>
+                </select>
+                <button type="button" class="admin-btn admin-btn-primary" id="admin-support-refresh">Refresh</button>
+            </div>
+            <div class="admin-table-wrap" id="staff-support-table-wrap" hidden>
+                <table class="admin-table ops-sheet" id="admin-support-table">
+                    <thead>
+                        <tr>
+                            <th>When</th>
+                            <th>User</th>
+                            <th>Subject</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-support-results">
+                        <tr><td colspan="5" class="admin-loading">Loading…</td></tr>
+                    </tbody>
+                </table>
+                <p class="admin-empty" id="admin-support-empty" hidden>No tickets match.</p>
+            </div>
+            <div class="admin-panel-body" id="staff-support-body"></div>
+        </section>
+
+        <!-- REPORTS -->
+        <section class="admin-panel" id="admin-panel-reports">
+            <h2 class="admin-panel-title"><i class="bx bx-flag"></i> Reports</h2>
+            <p class="admin-panel-sub">
+                Intake and first response. <strong>Resolve or dismiss requires a reason</strong> sent to <strong>both</strong> the reporter and the reported user.
+                You may continue conversation with the reported user.
+            </p>
+            <div class="admin-searchbar">
+                <input type="search" id="admin-report-search" class="admin-search-input" placeholder="Search by target, reporter, reason…">
+                <select id="admin-report-status">
+                    <option value="open">Open</option>
+                    <option value="all">All</option>
+                    <option value="resolved">Resolved</option>
+                    <option value="dismissed">Dismissed</option>
+                </select>
+                <button type="button" class="admin-btn admin-btn-primary" id="admin-report-refresh">Refresh</button>
+            </div>
+            <div class="admin-table-wrap">
+                <table class="admin-table ops-sheet">
+                    <thead>
+                        <tr>
+                            <th>Target</th>
+                            <th>Reporter</th>
+                            <th>Reason</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-reports-results">
+                        <tr><td colspan="5" class="admin-loading">Loading…</td></tr>
+                    </tbody>
+                </table>
+                <p class="admin-empty" id="admin-reports-empty" hidden>No reports match.</p>
+            </div>
+            <span class="tab-count" id="reports-open-count" hidden>0</span>
+        </section>
+
+        <!-- ORDER REFERENCES -->
+        <section class="admin-panel" id="admin-panel-orders">
+            <h2 class="admin-panel-title"><i class="bx bx-receipt"></i> Order / package references</h2>
+            <p class="admin-panel-sub">
+                Review customer package/order references. Mark reviewed, then <strong>hand off to Admin</strong> for final approval.
+                Payment reference <em>truth</em> is Moderator work — not Staff.
+            </p>
+            <div class="admin-searchbar">
+                <input type="search" id="admin-order-search" class="admin-search-input" placeholder="Search by UID, reference, package…">
+                <select id="admin-order-filter">
+                    <option value="pending">Needs Staff review</option>
+                    <option value="all">All</option>
+                    <option value="handed_off">Handed to Admin</option>
+                </select>
+                <button type="button" class="admin-btn admin-btn-primary" id="admin-order-refresh">Refresh</button>
+            </div>
+            <div class="admin-table-wrap">
+                <table class="admin-table ops-sheet">
+                    <thead>
+                        <tr>
+                            <th>When</th>
+                            <th>User</th>
+                            <th>Package</th>
+                            <th>Reference</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-orders-results">
+                        <tr><td colspan="6" class="admin-loading">Loading…</td></tr>
+                    </tbody>
+                </table>
+                <p class="admin-empty" id="admin-orders-empty" hidden>No orders match.</p>
+            </div>
+        </section>
+
+        <!-- USERS LOOKUP -->
+        <section class="admin-panel" id="admin-panel-users">
+            <h2 class="admin-panel-title"><i class="bx bx-group"></i> Users · lookup spreadsheet</h2>
+            <p class="admin-panel-sub">Search non-sensitive profile data. <strong>Sensitive KYC documents are Admin-only</strong> and never shown here.</p>
+            <div class="admin-searchbar">
+                <input type="search" id="admin-user-search" class="admin-search-input" placeholder="Name, email, UID, phone…">
+                <select id="admin-user-role-filter">
+                    <option value="all">All roles</option>
+                    <option value="seeker">Seeker</option>
+                    <option value="owner">Owner</option>
+                    <option value="agent">Agent / Broker</option>
+                </select>
+                <button type="button" class="admin-btn admin-btn-primary" id="admin-user-search-btn">Search</button>
+            </div>
+            <div class="admin-table-wrap">
+                <table class="admin-table ops-sheet">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Verified</th>
+                            <th>UID</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-users-results">
+                        <tr><td colspan="6" class="admin-loading">Search to load users…</td></tr>
+                    </tbody>
+                </table>
+                <p class="admin-empty" id="admin-users-empty" hidden>No users match.</p>
+            </div>
+        </section>
+
+        <!-- ALERTS -->
+        <section class="admin-panel" id="admin-panel-alerts">
+            <h2 class="admin-panel-title"><i class="bx bx-bell"></i> Staff alerts</h2>
+            <p class="admin-panel-sub">Pending work that needs Staff attention (tickets, reports, order refs waiting).</p>
+            <div class="admin-panel-body" id="staff-alerts-body">
+                <p class="admin-loading">Loading alerts…</p>
+            </div>
+        </section>
+
+
+        <!-- LISTING HELP PAYMENT CHECK (Phase 1 SoT §27) -->
+        <section class="admin-panel" id="admin-panel-listing-help-pay" data-asset="ops-listing-help-pay">
+            <h2 class="admin-panel-title"><i class="bx bx-money-withdraw"></i> Listing help · payment check</h2>
+            <p class="admin-panel-sub">Clients who request broker help when listing pay <strong>₱99.99</strong> at submit. Verify the payment reference before the listing can proceed to live / final approval.</p>
+            <div class="admin-toolbar">
+                <label class="admin-filter-label">Status
+                    <select id="listing-help-pay-filter">
+                        <option value="checking" selected>Checking</option>
+                        <option value="verified">Verified</option>
+                        <option value="rejected">Rejected</option>
+                        <option value="all">All help requests</option>
+                    </select>
+                </label>
+            </div>
+            <div class="admin-table-wrap">
+                <table class="admin-table ops-sheet">
+                    <thead>
+                        <tr>
+                            <th>Submitted</th>
+                            <th>Listing</th>
+                            <th>Owner</th>
+                            <th>Fee</th>
+                            <th>Payment ref</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listing-help-pay-results">
+                        <tr><td colspan="7" class="admin-loading">Open this tab to load…</td></tr>
+                    </tbody>
+                </table>
+                <p class="admin-empty" id="listing-help-pay-empty" hidden>No rows in this filter.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script type="module">
+        import "./js/admin/core.js";
+        import { adminLogout } from "./js/admin/core.js";
+        import "./js/admin/tabs.js";
+        document.getElementById("admin-logout-btn")?.addEventListener("click", () => adminLogout());
+        const mods = [
+            "./js/admin/support-tickets.js",
+            "./js/admin/reports.js",
+            "./js/admin/orders.js",
+            "./js/admin/listing-help-payments.js",
+            "./js/admin/users.js",
+            "./js/admin/staff-alerts.js",
+            "./js/admin/logout.js"
+        ];
+        for (const m of mods) {
+            try { await import(m); }
+            catch (err) { console.error("Staff module failed:", m, err); }
+        }
+    </script>
+    <script type="module" src="js/transition.js"></script>
+  <script src="js/brand-logo.js" defer></script>
+
+  <script>fetch('data/cinematic-scenes.json').then(r=>r.json()).then(v=>window.__HF_CINEMATIC_SCENES__=v).catch(()=>{});</script>
+  <script src="js/design-roots.js" defer></script>
+    <script src="js/animation-root.js" defer></script>
+    <script src="js/physical-ui-state.js" defer></script>
+  <!-- M1: production WebGL/Three triad not loaded; see js/reference-3d/ -->
+  <script src="js/cinematic-ui.js" defer></script>
+</body>
+</html>

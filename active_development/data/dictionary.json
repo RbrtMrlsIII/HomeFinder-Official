@@ -1,0 +1,532 @@
+{
+  "version": 2,
+  "updated": "2026-08-21",
+  "entries": [
+    {
+      "id": "pin-cooldown",
+      "term": "Pin relocate cooldown",
+      "aliases": [
+        "cooldown",
+        "move pin",
+        "redrop",
+        "antay pin",
+        "pin wait"
+      ],
+      "kind": "dictionary",
+      "tags": [
+        "map",
+        "pin",
+        "radius"
+      ],
+      "roles": [
+        "all",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "definition": "A short wait before you can move your Market search pin again. Duration depends on tier and optional Seeking Boost. It limits rapid radius hopping; it does not block browsing listings already loaded.",
+      "customer_script": "Your search pin can only be moved again after a short cooldown. That wait is based on your tier and any Seeking Boost — it keeps radius search fair. You can still browse results inside the current pin area while you wait.",
+      "system": "SoT §12 · market-map attemptRelocate / canRelocate · independent of listing filters · not a paywall.",
+      "links": [
+        {
+          "label": "Market",
+          "href": "market.html"
+        },
+        {
+          "label": "UI map",
+          "href": "docs/ui-ux/04-market.md"
+        }
+      ],
+      "canonicalRegistry": "docs/dictionary/INDEX.json",
+      "authorityClass": "lexical"
+    },
+    {
+      "id": "search-pin",
+      "term": "Search pin (discovery pin)",
+      "aliases": [
+        "discovery pin",
+        "map pin",
+        "search pin"
+      ],
+      "kind": "dictionary",
+      "tags": [
+        "map",
+        "pin"
+      ],
+      "roles": [
+        "all",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "definition": "The pin on Market that defines where your discovery radius is centered. Confirm to lock it; relocate may require cooldown.",
+      "customer_script": "Drop and confirm a pin on Market so we know where to search. Listings and wanted posts show inside that circle — not the whole country at once.",
+      "system": "activePinKind discovery · mapState · SoT §8–§12",
+      "links": [
+        {
+          "label": "Market",
+          "href": "market.html"
+        }
+      ],
+      "canonicalRegistry": "docs/dictionary/INDEX.json",
+      "authorityClass": "lexical"
+    },
+    {
+      "id": "discovery-radius",
+      "term": "Discovery radius",
+      "aliases": [
+        "radius",
+        "search radius",
+        "km radius"
+      ],
+      "kind": "dictionary",
+      "tags": [
+        "map",
+        "radius",
+        "boost"
+      ],
+      "roles": [
+        "all",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "definition": "Distance from your search pin inside which Market shows property or wanted results. Grows with reputation tier and optional Seeking Boost.",
+      "customer_script": "We only show places near your pin. Level up or use Seeking Boost if you need a wider circle — Market itself stays free to open.",
+      "system": "getRadiusKm · tier + boost · filters apply after radius",
+      "links": [
+        {
+          "label": "Market",
+          "href": "market.html"
+        }
+      ],
+      "canonicalRegistry": "docs/dictionary/INDEX.json",
+      "authorityClass": "lexical"
+    },
+    {
+      "id": "listing-cap",
+      "term": "Listing capacity (cap)",
+      "aliases": [
+        "listing limit",
+        "how many listings",
+        "slot",
+        "cap"
+      ],
+      "kind": "dictionary",
+      "tags": [
+        "listing",
+        "quota",
+        "boost"
+      ],
+      "roles": [
+        "all",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "definition": "How many open property listings you may hold at once (concurrent), not a lifetime or monthly post counter. Closing a listing frees a slot (after any lock).",
+      "customer_script": "You can only have a set number of open listings at the same time. That number comes from your tier and any Listing Boost. Close or wait out an old listing to free a slot.",
+      "system": "SoT §15 · totalListingCap · BASE_OWNER_LISTING_CAP · active contracts may consume slots",
+      "links": [
+        {
+          "label": "Profile listing",
+          "href": "profile.html"
+        }
+      ],
+      "canonicalRegistry": "docs/dictionary/INDEX.json",
+      "authorityClass": "lexical"
+    },
+    {
+      "id": "boost-capacity",
+      "term": "Boost (capacity only)",
+      "aliases": [
+        "boost",
+        "perk boost",
+        "pay to unlock"
+      ],
+      "kind": "dictionary",
+      "tags": [
+        "boost",
+        "payments"
+      ],
+      "roles": [
+        "all",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "definition": "Optional paid packages that add capacity only: radius, listing/wanted slots, photos, shorter pin cooldown, and on packages 4–5 an extra map pin slot. Market browsing stays free; boost is never required to open Market or see results inside your free radius.",
+      "customer_script": "Boosts add extra capacity — wider radius, more listings or wanted posts, more photos, and on higher packages an extra map pin (max three pins with tier). You do not need a boost just to open Market or browse near your free pin.",
+      "system": "SoT §16 · payment ≠ instant unlock · pending until verified",
+      "links": [
+        {
+          "label": "Profile boosts",
+          "href": "profile.html"
+        }
+      ],
+      "canonicalRegistry": "docs/dictionary/INDEX.json",
+      "authorityClass": "lexical"
+    },
+    {
+      "id": "payment-pending",
+      "term": "Payment pending verification",
+      "aliases": [
+        "boost pending",
+        "paypal pending",
+        "not unlocked"
+      ],
+      "kind": "dictionary",
+      "tags": [
+        "boost",
+        "payments",
+        "ops"
+      ],
+      "roles": [
+        "all",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "definition": "After PayPal payment, a boost order stays pending until HomeFinder verifies it. Entitlement starts from approval, not from the click.",
+      "customer_script": "We received your payment flow, but the boost turns on only after verification. You will see it active once staff or automated checks approve the order.",
+      "system": "boostOrders · staff/mod payment check · admin as needed · duration from approval",
+      "links": [
+        {
+          "label": "Payments manual",
+          "href": "docs/Payments_Manual_PayPal.md"
+        }
+      ],
+      "canonicalRegistry": "docs/dictionary/INDEX.json",
+      "authorityClass": "lexical"
+    },
+    {
+      "id": "guest-market-cards",
+      "term": "Guest Market cards",
+      "aliases": [
+        "guest no listings",
+        "not signed in market"
+      ],
+      "kind": "dictionary",
+      "tags": [
+        "market",
+        "auth"
+      ],
+      "roles": [
+        "all",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "definition": "Guests can learn the map and place a provisional pin, but live listing/wanted cards appear only after sign-in.",
+      "customer_script": "You can explore the map as a guest. To see live properties or wanted posts near your pin, please sign in.",
+      "system": "SoT Market guest rules · D1",
+      "links": [
+        {
+          "label": "Market",
+          "href": "market.html"
+        },
+        {
+          "label": "Login",
+          "href": "login.html"
+        }
+      ],
+      "canonicalRegistry": "docs/dictionary/INDEX.json",
+      "authorityClass": "lexical"
+    },
+    {
+      "id": "listing-lock-48h",
+      "term": "48-hour listing management lock",
+      "aliases": [
+        "48h lock",
+        "cannot edit listing",
+        "locked listing"
+      ],
+      "kind": "dictionary",
+      "tags": [
+        "listing",
+        "trust"
+      ],
+      "roles": [
+        "all",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "definition": "After a listing goes live, the owner cannot edit or delete it for about 48 hours. After that, management unlocks on Profile.",
+      "customer_script": "New live listings stay locked for two days so the marketplace stays stable. After that you can edit or remove them from your profile.",
+      "system": "SoT §13 · Firestore time rule on update/delete",
+      "links": [
+        {
+          "label": "Profile",
+          "href": "profile.html"
+        }
+      ],
+      "canonicalRegistry": "docs/dictionary/INDEX.json",
+      "authorityClass": "lexical"
+    },
+    {
+      "id": "kyc-admin-only",
+      "term": "KYC documents (Admin only)",
+      "aliases": [
+        "kyc",
+        "id upload",
+        "government id"
+      ],
+      "kind": "dictionary",
+      "tags": [
+        "trust",
+        "ops"
+      ],
+      "roles": [
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "definition": "Identity and license document review is an Admin-sensitive path. Staff assist customers; Moderators handle related queues; only Admin handles sensitive document approval surfaces.",
+      "customer_script": "Your ID is reviewed by authorized HomeFinder administrators. Other officers can guide you but do not process the sensitive files themselves.",
+      "system": "SoT KYC · admin.html · staff must not see sensitive doc binaries",
+      "links": [
+        {
+          "label": "Admin",
+          "href": "admin.html"
+        }
+      ],
+      "canonicalRegistry": "docs/dictionary/INDEX.json",
+      "authorityClass": "lexical"
+    },
+    {
+      "id": "market-vs-profile",
+      "term": "Market vs Profile",
+      "aliases": [
+        "marketplace",
+        "where to search",
+        "profile search"
+      ],
+      "kind": "dictionary",
+      "tags": [
+        "market",
+        "profile"
+      ],
+      "roles": [
+        "all",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "definition": "Market is for pin + radius discovery of others’ listings and wanted posts. Profile is for your account, creating listings/wanted, and contracts — not the global discovery map.",
+      "customer_script": "To search homes or wanted posts near a pin, use Market. Profile is where you manage your own listings, boosts, and messages.",
+      "system": "SoT discovery ≠ profile search · visitor portfolio is not Market",
+      "links": [
+        {
+          "label": "Market",
+          "href": "market.html"
+        },
+        {
+          "label": "Profile",
+          "href": "profile.html"
+        }
+      ],
+      "canonicalRegistry": "docs/dictionary/INDEX.json",
+      "authorityClass": "lexical"
+    },
+    {
+      "id": "visitor-near-you",
+      "term": "Visitor “Near you” listings",
+      "aliases": [
+        "near you",
+        "visitor radius",
+        "portfolio near"
+      ],
+      "kind": "dictionary",
+      "tags": [
+        "profile",
+        "visitor",
+        "radius"
+      ],
+      "roles": [
+        "all",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "definition": "On someone else’s profile, Near you highlights their active listings inside your Market pin radius. All active shows their full active portfolio. This is relevance, not a security rule.",
+      "customer_script": "On a member’s profile you can focus on what they offer near your Market pin, or see all their active listings. Full map search stays on Market.",
+      "system": "visitor-profile fillListings · filterIdsInRadius · SoT §20",
+      "links": [
+        {
+          "label": "UI visitor",
+          "href": "docs/ui-ux/06-profile-visitor.md"
+        }
+      ],
+      "canonicalRegistry": "docs/dictionary/INDEX.json",
+      "authorityClass": "lexical"
+    },
+    {
+      "id": "guide-market-map",
+      "term": "Market map guide",
+      "aliases": [
+        "map guide",
+        "how to use map"
+      ],
+      "kind": "guide",
+      "tags": [
+        "map",
+        "guide"
+      ],
+      "roles": [
+        "all",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "definition": "In-app step guide on Market: open map, drop pin, confirm, understand radius, sign in for live cards, relocate with cooldown.",
+      "customer_script": "Open Market and follow the map guide once — pin, confirm, then browse inside your circle.",
+      "system": "market.html guide panel · hf_market_guide_dismissed",
+      "links": [
+        {
+          "label": "Market",
+          "href": "market.html"
+        },
+        {
+          "label": "UI",
+          "href": "docs/ui-ux/04-market.md"
+        }
+      ],
+      "canonicalRegistry": "docs/dictionary/INDEX.json",
+      "authorityClass": "lexical"
+    },
+    {
+      "id": "guide-visitor",
+      "term": "Visitor profile guide",
+      "aliases": [
+        "visitor guide"
+      ],
+      "kind": "guide",
+      "tags": [
+        "profile",
+        "guide"
+      ],
+      "roles": [
+        "all",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "definition": "Checklist on another user’s profile: portfolio only, active listings, Near you uses your Market pin, actions Message/Report/Rate/Block, discovery stays on Market.",
+      "customer_script": "When you open someone else’s profile you’re viewing their public portfolio — use Message to talk, and Market for map search.",
+      "system": "visitor-guide · hf_visitor_guide_open",
+      "links": [
+        {
+          "label": "UI",
+          "href": "docs/ui-ux/06-profile-visitor.md"
+        }
+      ],
+      "canonicalRegistry": "docs/dictionary/INDEX.json",
+      "authorityClass": "lexical"
+    },
+    {
+      "id": "product-seeker-boost",
+      "term": "Seeker boost packages",
+      "aliases": [
+        "seeking boost",
+        "seeker package"
+      ],
+      "kind": "product",
+      "tags": [
+        "boost",
+        "product",
+        "seeker"
+      ],
+      "roles": [
+        "all",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "definition": "Optional Seeker packages that increase wanted capacity, discovery radius, and related limits. See Profile boost packages for current price tiers; payment stays pending until verified.",
+      "customer_script": "Seeker boosts expand how far you can search and how many wanted posts you can keep active — they don’t gate opening Market.",
+      "system": "js/tiers.js seeker packages · SoT §16",
+      "links": [
+        {
+          "label": "Profile",
+          "href": "profile.html"
+        }
+      ],
+      "canonicalRegistry": "docs/dictionary/INDEX.json",
+      "authorityClass": "lexical"
+    },
+    {
+      "id": "product-owner-boost",
+      "term": "Owner boost packages",
+      "aliases": [
+        "listing boost",
+        "owner package",
+        "extra slots"
+      ],
+      "kind": "product",
+      "tags": [
+        "boost",
+        "product",
+        "owner"
+      ],
+      "roles": [
+        "all",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "definition": "Optional Owner packages that add listing slots and image capacity (and higher tiers may add notify options). Market access remains free.",
+      "customer_script": "Owner boosts give more listing slots and photos. You can still list within your free tier without buying a boost.",
+      "system": "js/tiers.js owner packages · listingCapForBoostPackage",
+      "links": [
+        {
+          "label": "Profile",
+          "href": "profile.html"
+        }
+      ],
+      "canonicalRegistry": "docs/dictionary/INDEX.json",
+      "authorityClass": "lexical"
+    },
+    {
+      "id": "pin-slot-capacity",
+      "title": "Map pin slots",
+      "aliases": [
+        "pin capacity",
+        "extra pin",
+        "pinBonus",
+        "multiple pins"
+      ],
+      "audience": [
+        "customer",
+        "staff",
+        "moderator"
+      ],
+      "tags": [
+        "map",
+        "pin",
+        "boost",
+        "tier"
+      ],
+      "definition": "How many Market search pins you can keep. Everyone starts with 1. Reputation tier 3+ grants +1. Seeking or Listing Boost packages 4 and 5 each grant +1 pinBonus. Total is clamped at 3. Expired boosts stop counting.",
+      "customer_script": "You always have at least one pin. Higher reputation and Boost packages 4–5 can add more pins (up to three). Use the pin menu on Drop pin to switch which pin you place or move.",
+      "system": "maxPinsForAccount · tiers.js pinBonus · users.mapState / mapStateOwner / pins",
+      "links": [
+        {
+          "label": "Market",
+          "href": "market.html"
+        },
+        {
+          "label": "Boosts",
+          "href": "profile.html"
+        }
+      ],
+      "canonicalRegistry": "docs/dictionary/INDEX.json",
+      "authorityClass": "lexical"
+    }
+  ],
+  "status": "legacy-lexical-dictionary",
+  "authorityNote": "Customer-facing terminology only. Data schemas and Firestore vocabulary are authoritative in docs/dictionary/domains/data.dictionary.json.",
+  "canonicalRegistry": "docs/dictionary/INDEX.json",
+  "dataVocabularyRegistry": "docs/dictionary/domains/data.dictionary.json",
+  "reconciledInPatch": 36
+}

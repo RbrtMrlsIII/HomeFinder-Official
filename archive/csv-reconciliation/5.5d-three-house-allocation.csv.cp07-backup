@@ -1,0 +1,20 @@
+house,house_purpose,route_or_surface,physical_zone,logical_pov,entry_sequence,ui_density_and_content,navigation_legal_note,role_state
+House 1,Public / Hero,index.html,Main Hall,H-01..H-09,Arrival → front door → Main Hall,"Public landing, discovery, property, map, government, mission, guide, safety, contact, footer/credits",Privacy + Terms remain House 1 footer/legal destinations,public
+House 1,Public / Hero,login.html,Identity / Login,L-01,House 1 front door / identity door,Login,Back to Main Hall,public->authenticated
+House 1,Public / Hero,register.html,Identity / Register,R-01,House 1 front door / registration door,Registration + consent,Back to Main Hall,public
+House 1,Public / Hero,privacy.html,Legal / Privacy,LGL-01,House 1 legal route,Privacy Policy,Footer/legal navigation; no house transfer,public
+House 1,Public / Hero,terms.html,Legal / Terms,L-GL,House 1 legal route,Terms & Conditions,Footer/legal navigation; no house transfer,public
+House 1,Public / Hero,index.html#contact,Main Hall / Contact,H-09,Main Hall contact desk,Contact,Footer/contact navigation,public
+House 2,Operations + Broker,broker-hq.html,Broker HQ,B-01..B-06,House 2 entrance → Broker HQ hero,"Broker dashboard, clients/listings, documents, service area, intelligence/discovery",Broker role gate enforced by application/backend,broker
+House 2,Operations + Broker,admin.html,Operations,A-01,House 2 entrance → Operations hero,Admin/verification/KYC,Operations role gate,operations
+House 2,Operations + Broker,moderator.html,Operations,A-02,House 2 entrance → Moderator hero,Moderator operations,Operations role gate,operations
+House 2,Operations + Broker,staff.html,Operations,A-03,House 2 entrance → Staff hero,Staff operations,Operations role gate,operations
+House 2,Operations + Broker,financing.html,Operations/Finance,(logical finance/reference),House 2 Operations route,"Finance overview, calculators/forms, documents, actions",Authenticated role/access contract,operations/broker
+House 3,Seekers + Owners,market.html,Market,M-01..M-06,House 3 entrance → Market hero,"Search, filters, results, property/wanted discovery, property dossier, contact",Seeker/owner application contracts govern mutations,seeker/owner
+House 3,Seekers + Owners,profile.html,Profile Suite,P-01..P-12,House 3 entrance → Profile hero,"Profile, messages, contracts, support, list property, wanted, saved properties/wanted, reviews, government housing, broker gate",Authenticated user/role contracts,seeker/owner
+House 3,Seekers + Owners,logical: property-gallery,Market / Property Dossier,M-05,Market hero → dossier,"Gallery, facts, description, location/map, contact/actions",Listing ownership/access remains backend authoritative,seeker/owner
+House 3,Seekers + Owners,logical: map,Market / Map,M-02,Market hero → map,"Interactive map, search, filters, result details",Read/query contract,seeker/owner
+House 3,Seekers + Owners,logical: favorites,Profile / Saved Properties,P-07,Profile hero → saved-properties station,"Saved properties, collections, sorting/filtering",Authenticated owner of data,seeker/owner
+House 3,Seekers + Owners,logical: messages,Profile / Messages,P-02,Profile hero → messages station,"Conversation list, active conversation, compose/reply",Authenticated participant contract,seeker/owner
+House 3,Seekers + Owners,logical: settings,Profile / Account Identity,P-11,Profile hero → account console,"Account, preferences, appearance/environment, privacy, security",Auth/security backend contract,seeker/owner
+House 3,Seekers + Owners,logical: listing,Profile / List Property,P-05,Profile hero → listing dossier,Listing workflow,Owner/broker authority,owner/broker

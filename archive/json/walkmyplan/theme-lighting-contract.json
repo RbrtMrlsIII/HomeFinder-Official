@@ -1,0 +1,16 @@
+{
+  "version": "A4.4C3.14",
+  "status": "PLANNED / ADJUSTABLE",
+  "authority": "presentation-only",
+  "themes": {
+    "day": {"sky":"clear-day","ambient":"high","directional":"natural-key","interior":"practical-low","reflection":"soft","weather":"none","atmosphere":"clear","uiAccent":"warm-neutral","animationIntensity":1.0},
+    "sunset": {"sky":"golden-hour","ambient":"medium","directional":"warm-key","interior":"practical-medium","reflection":"warm-soft","weather":"none","atmosphere":"haze-light","uiAccent":"beige-champagne","animationIntensity":0.9},
+    "night": {"sky":"moonlit","ambient":"low","directional":"cool-rim","interior":"practical-high","reflection":"controlled","weather":"none","atmosphere":"night-clear","uiAccent":"dark","animationIntensity":0.7},
+    "rain": {"sky":"overcast","ambient":"medium-low","directional":"diffuse","interior":"practical-medium","reflection":"wet-controlled","weather":"rain","atmosphere":"humid","uiAccent":"premium-navy","animationIntensity":0.7},
+    "mist": {"sky":"diffuse-morning","ambient":"medium","directional":"soft","interior":"practical-low","reflection":"muted","weather":"mist","atmosphere":"diffuse","uiAccent":"warm-neutral","animationIntensity":0.5},
+    "storm": {"sky":"deep-slate","ambient":"low","directional":"dramatic-controlled","interior":"practical-high","reflection":"limited","weather":"storm","atmosphere":"dramatic","uiAccent":"deep-slate","animationIntensity":0.45}
+  },
+  "transition": {"mode":"interpolated","routeBlocking":false,"reducedMotion":"short-fade","maxVisualTransitionMs":900},
+  "independence": ["roles","permissions","routes","business_logic","data_authority","authentication"],
+  "accessibilityOverrides": {"reducedMotion":true,"contrast":true,"keyboard":true,"screenReader":true}
+}

@@ -1,0 +1,36 @@
+{
+  "date": "2026-08-26",
+  "gate": "5.5C-V.2",
+  "purpose": "Repair objectively stale test paths and migrate the single current canonical-role assertion.",
+  "individual_execution": {
+    "test_files": 6,
+    "subtests": 12,
+    "passed": 12,
+    "failed": 0
+  },
+  "changed_files": [
+    "active_development/tests/house-camera-rig.test.mjs",
+    "active_development/tests/listings-book-interaction.test.mjs",
+    "active_development/tests/market-profile-physical-ui-propagation.test.mjs",
+    "active_development/tests/physical-ui-object-system.test.mjs",
+    "active_development/tests/patch-21-role-need-help.test.mjs"
+  ],
+  "already_correct_and_revalidated": [
+    "active_development/tests/patch-57-cinematic-camera-hero.test.mjs"
+  ],
+  "active_suite": {
+    "scope": "active_development/tests/*.mjs",
+    "subtests": 95,
+    "passed": 61,
+    "failed": 34
+  },
+  "previous_classification": {
+    "path_subtests": 11,
+    "canonical_role_assertion": 1,
+    "historical_documentation_contract_failures": 30
+  },
+  "newly_repaired_subtests": 8,
+  "walkmyplan_active_test_references": 0,
+  "canonical_sh3d_sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "next_gate": "5.5C-V.3 \u2014 Historical-contract test reconciliation"
+}

@@ -1,0 +1,33 @@
+# Phase 14 — Market/Profile Physical UI Propagation
+
+Market and Profile now consume the same Animation Root, Physical UI State Machine, and Responsive Transformation subsystem previously established for Main Hall and Auth.
+
+## Market POV bridge
+- M-01 → guide/search console
+- M-02 → map/table
+- M-03 → filters refinement anchor
+- M-04 → discovery card rail
+- M-05 → expanded inspection dossier
+- M-06 → contact/service transition
+
+## Profile POV bridge
+- P-01 → perks/portfolio
+- P-02 → messages
+- P-03 → contracts
+- P-04 → help
+- P-05 → listing dossier
+- P-06 → wanted/saved-search workflow
+- P-07 → saved/alert surface
+- P-08 → identity
+- P-09 → documents
+- P-10 → preferences
+- P-11 → privacy
+- P-12 → broker gate / exit context
+
+The DOM remains authoritative for forms, tabs, authentication, data, navigation, and role behavior. The physical-object layer owns semantic identity, state presentation, motion profile, responsive transformation, and POV association only.
+
+## Theme contract
+Environment-driven only. No light/dark UI branch.
+
+## Preview
+`archive/checkpoints/market_profile_preview/Market_Profile_physical_UI_root_preview.png` is a diagnostic plan preview derived from the current Sweet Home 3D scene camera positions and wall geometry. It is not a native Sweet Home 3D render and is not final art approval.

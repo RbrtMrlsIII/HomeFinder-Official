@@ -1,0 +1,48 @@
+id,level,name,area,visible,semantic
+room-8447231e-8800-422e-8258-993c3818c55c,level1,Terrace,218268.86179252987,true,named-presentation-or-exterior
+room-ba3cfd49-a545-4f2a-9a19-73cb10cb7f60,level0,Garage,165045.17896951002,true,named-presentation-or-exterior
+room-06eb2ac4-2276-41f1-9991-070a76a486ee,level0,,110014.69615749999,true,unnamed-container-candidate
+room-7731d0c9-4005-44ef-815d-f38969e4f269,level1,Kitchen,96796.57880533555,true,named-presentation-or-exterior
+room-827607f6-2341-4fed-b6e2-d6114aa32093,level0,,146438.78084546086,true,unnamed-container-candidate
+room-1b7f36f8-0b17-4dbd-abc6-5ce93d426c81,level0,,139300.95704384623,true,unnamed-container-candidate
+room-f7418681-094a-400a-9858-b6dedb3e0ef5,level1,Living room,136411.28125507865,true,named-presentation-or-exterior
+room-48f42ffe-7f73-44f3-a3e2-090c678f636e,level1,,52145.18199831202,true,unnamed-container-candidate
+room-575fc1c0-b03a-403b-b9f5-d777fc71d8a2,level1,Bedroom #1,93830.95246049298,true,named-presentation-or-exterior
+room-b9071fc4-c684-4eab-a6cd-64259683ec05,level1,Bedroom #2,93294.95144683591,true,named-presentation-or-exterior
+room-b437b24d-c9c1-47e0-aafd-aba247c86e34,level1,,54825.0049250001,true,unnamed-container-candidate
+room-29eb6f38-c84e-4801-bc43-7d77beba3f57,level1,Corridor,85019.76231658434,true,named-presentation-or-exterior
+room-e1d0d157-20db-46b0-85f5-2d8b47e8f42e,level1,,21306.370723031447,false,structural-or-hidden-container
+add-room-b782b02d-4ff3-45dc-af27-f2d63241bf17,add-level1,Bathroom,59599.751991184574,true,named-presentation-or-exterior
+add-room-8827c14a-c022-4d56-af87-13c17c63234a,add-level0,Garage,148060.2051184061,true,named-presentation-or-exterior
+add-room-26c168c0-6605-4c50-9f6d-52960ec6f184,add-level1,Bedrom #3,90021.69423115213,true,named-presentation-or-exterior
+add-room-67c8e765-f65f-4a1f-844a-6fb298aa3d72,add-level1,Bedroom #1,106187.83079056547,true,named-presentation-or-exterior
+add-room-ad6fe449-b3fa-4f15-968e-df704d0177fd,add-level1,Bedroom #2,97447.31116055744,true,named-presentation-or-exterior
+add-room-857f2dcd-e10c-4914-bcc2-6f90198cdfb4,add-level1,,10274.611376947374,true,small-unnamed-circulation-or-service
+add-room-cb653607-5fd1-48ab-a0da-b4f960d3dcd0,add-level2,Attic,445606.08566468983,true,named-presentation-or-exterior
+add-room-bb173adc-2bce-4d81-a5c7-78f7fccb437f,add-level0,Kitchen,204806.15362979725,true,named-presentation-or-exterior
+add-room-3e5e5680-c98b-41df-bfa3-af4ff6cb9e44,add-level0,Living Room,249139.89431742975,true,named-presentation-or-exterior
+add-room-10c9a782-d624-4ff8-a57c-a9e7d57944e3,add-level1,,73791.95849843993,true,unnamed-container-candidate
+add-room-0a1ad566-5f81-45cd-bb67-9f6eb4500a6f,add-level0,,10636.023655818659,true,small-unnamed-circulation-or-service
+add-room-76793eb2-7e23-4c58-bf1b-7b69874e8fed,add-level0,Kitchen,224065.04089165994,true,named-presentation-or-exterior
+add-room-c2c4647b-7c30-4db6-b549-4bc6c2a8fb38,add-level0,,184105.20231119322,false,structural-or-hidden-container
+add-room-4d9459c1-0143-4d9d-a353-3a8beb959a78,add-level0,Office,287027.7364962803,true,named-presentation-or-exterior
+add-room-c7481146-baa3-4706-b8ca-85c6bb7d1201,add-level0,Terrace,418484.41562853055,true,named-presentation-or-exterior
+add-room-6530c4e3-46ae-4540-8450-058d3e106505,add-level0,,354405.1716190043,false,structural-or-hidden-container
+add-room-66035ea2-1de4-44b8-8ef2-0242ef84887d,add-level0,,22047.12592035212,true,small-unnamed-circulation-or-service
+add-room-ced5384e-1aa3-4c9e-9b11-8d6121d3d3fc,add-level0,,103981.65796161868,true,unnamed-container-candidate
+add-room-99f984e8-2050-422a-a6da-40fd6226fbdd,add-level0,,285804.8036955476,false,structural-or-hidden-container
+add-room-158b9d7d-c9b2-4942-9746-4f62dc161be4,add-level0,Living room,473669.0244920418,true,named-presentation-or-exterior
+add-room-77fa9dd9-7174-4e1c-9dda-79ef068a1462,add-level0,Hall,238543.3591039629,true,named-presentation-or-exterior
+add-room-699e0b87-0a34-4208-8905-9b3bb84e868a,add-level1,Terrace,172025.39536343305,true,named-presentation-or-exterior
+add-room-6f505a63-50ca-4435-9766-a62e54e958c1,add-level1,,34939.12178325467,true,unnamed-container-candidate
+add-room-2e5dd7d2-836f-400e-b40e-bf54d5882dd0,add-level1,,406791.6166934794,true,unnamed-container-candidate
+add-room-d459f24e-bbca-48ff-ad88-c50674e50e39,add-level1,,580982.4783785535,false,structural-or-hidden-container
+add-room-6f79bf57-f4f5-4c84-933d-a5e7ca5d26b5,add-level1,Bedroom #2,259079.0759130473,true,named-presentation-or-exterior
+add-room-58f3c3ca-277f-41ed-831a-e1426d8b60e0,add-level1,Roof,44047.21682500071,true,named-presentation-or-exterior
+add-room-6863208d-813d-43d1-abc8-57a25ee05cbc,add-level1,Balcony,13826.759309064131,true,named-presentation-or-exterior
+add-room-fcd2b52d-f1f1-497b-88d7-31252f85894d,add-level1,Dressing,23709.2613566895,true,named-presentation-or-exterior
+add-room-9e32eabd-ac27-4042-939e-b7d3eca9f4ae,add-level1,Bedroom #1,133929.0005831523,true,named-presentation-or-exterior
+add-room-844b8e87-2277-4b87-a70c-3b1a37705ebb,add-level1,Bathroom,126206.66269775946,true,named-presentation-or-exterior
+add-room-c8146434-9569-4080-8d3a-350d81aef4e9,add-level1,,18933.720258035464,true,small-unnamed-circulation-or-service
+add-room-10a152bd-27fe-44ea-9b99-46cc26fa6ee8,add-level1,Bedroom #3,186576.0518241535,true,named-presentation-or-exterior
+add-room-df7d6b84-9466-46a6-8046-ca274bb057b0,add-level2,Roof,1540429.8409572137,true,named-presentation-or-exterior

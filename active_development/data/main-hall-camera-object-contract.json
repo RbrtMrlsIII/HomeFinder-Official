@@ -1,0 +1,247 @@
+{
+  "version": 1,
+  "status": "LIVING / CAMERA-READY CONTRACT",
+  "room": "MAIN HALL",
+  "route": "index.html",
+  "allowed_environment_themes": [
+    "day",
+    "sunset",
+    "night",
+    "rain",
+    "mist",
+    "storm"
+  ],
+  "ui_theme_mode": "environment-driven",
+  "camera_security_boundary": "presentation-only",
+  "fallback": "HTML section authoritative; 2D/static fallback when cinematic layer fails",
+  "povs": {
+    "H-01": {
+      "object_ids": [
+        "home-hero-focal"
+      ],
+      "sections": [
+        "hero"
+      ],
+      "camera_anchor": "hall",
+      "purpose": "hero visual + primary CTA",
+      "role_states": [
+        "guest",
+        "seeker",
+        "owner",
+        "broker",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "responsive": {
+        "mobile-portrait": "hero compresses to primary focal + stacked CTA",
+        "mobile-landscape": "reduced hero height; preserve CTA visibility",
+        "tablet": "balanced hero composition with compact overlay",
+        "desktop": "full cinematic hero + HTML CTA",
+        "wide-desktop": "preserve focal hierarchy without scale inflation",
+        "reduced-motion": "no camera interpolation; focus state is instant/fade"
+      }
+    },
+    "H-02": {
+      "object_ids": [
+        "main-search-console"
+      ],
+      "sections": [
+        "about-home"
+      ],
+      "camera_anchor": "gallery",
+      "purpose": "universal search",
+      "role_states": [
+        "guest",
+        "seeker",
+        "owner",
+        "broker",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "responsive": {
+        "mobile-portrait": "search expands to full-width touch target",
+        "mobile-landscape": "compact search row without clipped controls",
+        "tablet": "two-part search controls remain readable",
+        "desktop": "cinematic focus with full search console",
+        "wide-desktop": "preserve search focus; no unnecessary scaling",
+        "reduced-motion": "instant focus; no animated camera sweep"
+      }
+    },
+    "H-03": {
+      "object_ids": [
+        "property-catalogue"
+      ],
+      "sections": [
+        "properties"
+      ],
+      "camera_anchor": "living",
+      "purpose": "featured property discovery",
+      "role_states": [
+        "guest",
+        "seeker",
+        "owner",
+        "broker",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "responsive": {
+        "mobile-portrait": "stack discovery cards vertically",
+        "mobile-landscape": "horizontal compact discovery rail",
+        "tablet": "adaptive card grid",
+        "desktop": "full property catalogue composition",
+        "wide-desktop": "cap content width; preserve card hierarchy",
+        "reduced-motion": "selection uses instant/fade transition"
+      }
+    },
+    "H-04": {
+      "object_ids": [
+        "home-map-table"
+      ],
+      "sections": [
+        "map"
+      ],
+      "camera_anchor": "window",
+      "purpose": "map preview gateway",
+      "role_states": [
+        "guest",
+        "seeker",
+        "owner",
+        "broker",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "responsive": {
+        "mobile-portrait": "map becomes touch-first compact surface; retain HTML fallback",
+        "mobile-landscape": "map height reduced but controls remain reachable",
+        "tablet": "adaptive map/table composition",
+        "desktop": "full cinematic map gateway",
+        "wide-desktop": "preserve map focus without excessive viewport scaling",
+        "reduced-motion": "no animated camera travel; map state preserved"
+      }
+    },
+    "H-05": {
+      "object_ids": [
+        "government-info-desk"
+      ],
+      "sections": [
+        "government-housing"
+      ],
+      "camera_anchor": "garden",
+      "purpose": "government housing reference",
+      "role_states": [
+        "guest",
+        "seeker",
+        "owner",
+        "broker",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "responsive": {
+        "mobile-portrait": "stack reference cards and disclaimer",
+        "mobile-landscape": "compact reference panel",
+        "tablet": "readable desk/reference layout",
+        "desktop": "full reference composition",
+        "wide-desktop": "cap reading width",
+        "reduced-motion": "instant/fade focus only"
+      }
+    },
+    "H-06": {
+      "object_ids": [
+        "mission-wall"
+      ],
+      "sections": [
+        "about",
+        "mission"
+      ],
+      "camera_anchor": "center|library",
+      "purpose": "about/mission reading",
+      "role_states": [
+        "public"
+      ],
+      "responsive": {
+        "mobile-portrait": "reading column with comfortable line length",
+        "mobile-landscape": "preserve reading anchor; avoid clipped text",
+        "tablet": "balanced reading/media layout",
+        "desktop": "full plaque/reading framing",
+        "wide-desktop": "cap reading width",
+        "reduced-motion": "instant section focus; preserve scroll position"
+      }
+    },
+    "H-07": {
+      "object_ids": [
+        "guide-book"
+      ],
+      "sections": [
+        "spaces",
+        "roles",
+        "guide"
+      ],
+      "camera_anchor": "lounge|stairs|study",
+      "purpose": "spaces/roles/guide reading",
+      "role_states": [
+        "public"
+      ],
+      "responsive": {
+        "mobile-portrait": "guide chapters stack; touch targets remain >=44px",
+        "mobile-landscape": "compact chapter navigation",
+        "tablet": "split guide/contents when space permits",
+        "desktop": "full guide-book composition",
+        "wide-desktop": "preserve readable book/content scale",
+        "reduced-motion": "instant page focus; no animated camera sweep"
+      }
+    },
+    "H-08": {
+      "object_ids": [
+        "safety-board"
+      ],
+      "sections": [
+        "pages",
+        "features",
+        "safety"
+      ],
+      "camera_anchor": "directory|feature-wall|quiet",
+      "purpose": "features/safety reading",
+      "role_states": [
+        "public"
+      ],
+      "responsive": {
+        "mobile-portrait": "safety notices stack and remain immediately readable",
+        "mobile-landscape": "compact board with no clipped warnings",
+        "tablet": "adaptive safety grid",
+        "desktop": "full safety-board framing",
+        "wide-desktop": "preserve warning hierarchy",
+        "reduced-motion": "no animated focus movement"
+      }
+    },
+    "H-09": {
+      "object_ids": [
+        "start-cta",
+        "contact-desk",
+        "credits-wall"
+      ],
+      "sections": [
+        "start",
+        "contact",
+        "credits"
+      ],
+      "camera_anchor": "center-return|exit|front-door-return",
+      "purpose": "start/contact/exit",
+      "role_states": [
+        "public"
+      ],
+      "responsive": {
+        "mobile-portrait": "CTA/contact/credits stack with large touch targets",
+        "mobile-landscape": "compact horizontal actions",
+        "tablet": "balanced action row",
+        "desktop": "full exit/contact composition",
+        "wide-desktop": "preserve action hierarchy without stretching",
+        "reduced-motion": "instant/fade transition; no cinematic exit travel"
+      }
+    }
+  }
+}

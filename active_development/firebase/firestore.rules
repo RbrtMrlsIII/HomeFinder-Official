@@ -1,0 +1,1079 @@
+// ================================================================
+// firestore.rules
+// ----------------------------------------------------------------
+// Deploy with: firebase deploy --only firestore:rules
+//
+// This is the REAL enforcement layer for everything described in
+// docs/CONTRACT-TIER-SYSTEM.md. The client-side checks in
+// js/radius-cooldown.js are UX only (fail fast, show a countdown) --
+// every rule below is what actually stops a user from cheating.
+//
+// Key principle carried through this whole file: a normal signed-in
+// user can WRITE their own users/{uid} document, but not every field
+// on it -- tier data, cancelled-contract counts, and cooldown
+// timestamps are either in a separate write-protected subcollection,
+// or excluded from what a plain client write is allowed to touch.
+// Only Cloud Functions (using the Admin SDK, which bypasses these
+// rules entirely) can write those fields.
+//
+// One deliberate, explicitly-requested exception to all of that:
+// isAdmin() below is a full bypass for a single hard-coded UID, which
+// powers admin.html (see that file's own header comment). It exists
+// so admin.html can directly overwrite tier/boost/capacity data --
+// normally Cloud-Function-write-only -- to test perk and boost
+// effects against real data without waiting on a real contract
+// completion or a Cloud Functions deploy.
+// ================================================================
+
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwnerOf(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    // ================================================================
+    // OPS ROLES (2026-08-13 fair split — no single role above everything)
+    // ----------------------------------------------------------------
+    // Admin     — final approvals + ONLY role that may view sensitive KYC docs
+    // Moderator — listing content (friendly/not scam) + payment reference truth
+    // Staff     — customer service, support tickets, report intake,
+    //             order-reference review (then hand-off to Admin)
+    //
+    // Decline paths MUST carry a reason string → user notification.
+    // KYC resubmit window is chosen by Admin based on severity.
+    // Live UIDs assigned 2026-08-13 — keep in sync with js/admin-uid.js.
+    // ================================================================
+
+    // Canonical operations role resolution. The UID checks remain explicit
+    // bootstrap authorities so a newly migrated environment cannot lock out
+    // its designated operations accounts before their users/{uid} document is
+    // fully normalized. All normal role decisions consume canonicalRole.
+    function canonicalRoleFor(uid) {
+      return exists(/databases/$(database)/documents/users/$(uid))
+        ? canonicalRoleValue(
+            get(/databases/$(database)/documents/users/$(uid)).data.get(
+              'canonicalRole',
+              get(/databases/$(database)/documents/users/$(uid)).data.get(
+                'accountType',
+                get(/databases/$(database)/documents/users/$(uid)).data.get('role', null)
+              )
+            )
+          )
+        : null;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        request.auth.uid == 'IZN9EHQ9iTboWXoEgklJlWiwzz82' ||
+        canonicalRoleFor(request.auth.uid) == 'admin'
+      );
+    }
+
+    function isModerator() {
+      return isSignedIn() && (
+        request.auth.uid == 'kCEWpYhFv8bCSlbxStuYpc7r1If1' ||
+        canonicalRoleFor(request.auth.uid) == 'moderator'
+      );
+    }
+
+    function isStaffRole() {
+      return isSignedIn() && (
+        request.auth.uid == 'aQsmw6Ca28eAze1frRi3ZBiCRf92' ||
+        canonicalRoleFor(request.auth.uid) == 'staff'
+      );
+    }
+
+    // Any ops account (broad read of non-sensitive queues)
+    function isOps() {
+      return isAdmin() || isModerator() || isStaffRole();
+    }
+
+    // Patch 40 capability-specific aliases. These intentionally preserve
+    // the already-approved broad Ops semantics where the existing UI and
+    // workflow require them. They replace ambiguous legacy broad-Ops names one
+    // capability at a time without changing privilege accidentally.
+    // Patch 41: capability-specific alias. Effective authority remains broad Ops.
+    function canManageSupportTickets() {
+      return isOps();
+    }
+
+    // Legacy alias retained only for compatibility with older references.
+    function canResolveSupportTickets() {
+      return canManageSupportTickets();
+    }
+
+    // Patch 41: capability-specific alias. Effective authority remains broad Ops.
+    function canReviewBoostOrders() {
+      return isOps();
+    }
+
+    function canInspectBoosts() {
+      return isOps();
+    }
+
+    function canReadOperationalContracts() {
+      return isOps();
+    }
+
+    function canResolveNotifications() {
+      return isOps();
+    }
+
+    function canModerateReports() {
+      return isOps();
+    }
+
+    function canInspectKycReferenceIndex() {
+      return isAdmin();
+    }
+
+    // Lets a client write a notification into ANOTHER user's
+    // notifications/{uid}/items -- normally forbidden (see the
+    // comment on that match block below for why this exists) --
+    // but only when both the writer and the recipient are
+    // participants in the SAME conversation the notification itself
+    // references. Can't be used to spam an arbitrary uid: you have to
+    // already share a real conversation with them, and the
+    // conversationId in the payload has to actually contain both of you.
+    // Cross-user client notifications are exceptional. Contract proposals may
+    // notify another party directly on Spark, but the ticket/notification
+    // writer must prove the caller and recipient are both parties to that
+    // canonical contract. Generic conversation participants may not fabricate
+    // arbitrary notifications for another user.
+    function isAuthorizedContractNotification(uid) {
+      return isSignedIn()
+        && request.auth.uid != uid
+        && request.resource.data.type == 'contract_proposed'
+        && request.resource.data.contractId is string
+        && exists(/databases/$(database)/documents/contracts/$(request.resource.data.contractId))
+        && request.auth.uid in [
+          get(/databases/$(database)/documents/contracts/$(request.resource.data.contractId)).data.get('ownerId', ''),
+          get(/databases/$(database)/documents/contracts/$(request.resource.data.contractId)).data.get('seekerId', ''),
+          get(/databases/$(database)/documents/contracts/$(request.resource.data.contractId)).data.get('brokerId', '')
+        ]
+        && uid in [
+          get(/databases/$(database)/documents/contracts/$(request.resource.data.contractId)).data.get('ownerId', ''),
+          get(/databases/$(database)/documents/contracts/$(request.resource.data.contractId)).data.get('seekerId', ''),
+          get(/databases/$(database)/documents/contracts/$(request.resource.data.contractId)).data.get('brokerId', '')
+        ];
+    }
+
+    function canonicalRoleValue(raw) {
+      return raw == 'landlord' || raw == 'property_owner' || raw == 'lessor'
+        ? 'owner'
+        : raw == 'super' ? 'admin' : raw;
+    }
+
+    function isCanonicalRole(raw) {
+      return canonicalRoleValue(raw) in ['owner', 'seeker', 'broker', 'staff', 'moderator', 'admin'];
+    }
+
+    function isAllowedProfileRole(raw) {
+      return isCanonicalRole(raw) && (
+        isOps() || canonicalRoleValue(raw) in ['owner', 'seeker', 'broker']
+      );
+    }
+
+    // A normal user may choose between the two self-service product roles
+    // (owner/seeker), but broker is granted only by privileged verification
+    // approval. Operations roles are never client-selectable.
+    function ownerSelfServiceRoleChangeAllowed() {
+      let roleChanged = request.resource.data.diff(resource.data).affectedKeys().hasAny(['canonicalRole', 'accountType']);
+      let oldRole = canonicalRoleValue(resource.data.get('canonicalRole', resource.data.get('accountType', 'seeker')));
+      let newRole = canonicalRoleValue(request.resource.data.get('canonicalRole', request.resource.data.get('accountType', oldRole)));
+      return !roleChanged
+        || (oldRole in ['owner', 'seeker'] && newRole in ['owner', 'seeker']);
+    }
+
+    // KYC state is server-authoritative after submission. A normal user may
+    // submit/replace their own pending metadata, but can never write an
+    // approved/verified state or promote themselves through KYC fields.
+    function selfSubmittedKycStateIsPending() {
+      let idChanged = request.resource.data.diff(resource.data).affectedKeys().hasAny(['idVerification']);
+      let brokerChanged = request.resource.data.diff(resource.data).affectedKeys().hasAny(['brokerLicense']);
+      let applicationChanged = request.resource.data.diff(resource.data).affectedKeys().hasAny(['brokerApplication']);
+      return (!idChanged || request.resource.data.idVerification.get('status', 'pending') == 'pending')
+        && (!brokerChanged || request.resource.data.brokerLicense.get('status', 'pending') == 'pending')
+        && (!applicationChanged || request.resource.data.brokerApplication.get('status', 'pending') == 'pending');
+    }
+
+    // Fields on users/{uid} a normal client write is allowed to touch.
+    // Anything NOT in this list (tier subcollection lives separately
+    // anyway; cancelledContractCount, mapState.lastRelocatedAt,
+    // listingCapOverride, wantedCapOverride) is protected below --
+    // the last two are admin.html-only levers, deliberately excluded
+    // here so a normal user can never grant themselves a bigger cap.
+    function onlyTouchesAllowedProfileFields() {
+      let allowed = ['firstName', 'surname', 'phone', 'address', 'email',
+                     'accountType', 'canonicalRole', 'activePinId',
+                     'middleInitial', 'suffix', 'gender',
+                     'idVerification', 'brokerLicense', 'brokerApplication', 'avatarUrl', 'privacy',
+                     'phoneDigits', 'nameChangedAt', 'phoneChangedAt', 'addressChangedAt',
+                     'profileComplete'];
+      return request.resource.data.diff(resource.data).affectedKeys()
+        .hasOnly(allowed);
+    }
+
+    // Untrusted profile values must have bounded types/lengths even when the
+    // caller bypasses the HTML form and writes Firestore directly.
+    function profileInputLimits() {
+      return request.resource.data.get('firstName', '') is string
+        && request.resource.data.get('firstName', '').size() <= 80
+        && request.resource.data.get('surname', '') is string
+        && request.resource.data.get('surname', '').size() <= 80
+        && request.resource.data.get('middleInitial', '') is string
+        && request.resource.data.get('middleInitial', '').size() <= 10
+        && request.resource.data.get('suffix', '') is string
+        && request.resource.data.get('suffix', '').size() <= 20
+        && request.resource.data.get('email', '') is string
+        && request.resource.data.get('email', '').size() <= 254
+        && request.resource.data.get('phone', '') is string
+        && (request.resource.data.get('phone', '').size() == 0 || request.resource.data.get('phone', '').size() == 12)
+        && request.resource.data.get('phone', '').matches('^(|63[0-9]{10})$')
+        && request.resource.data.get('phoneDigits', '') is string
+        && (request.resource.data.get('phoneDigits', '').size() == 0 || request.resource.data.get('phoneDigits', '').size() == 12)
+        && request.resource.data.get('phoneDigits', '').matches('^(|63[0-9]{10})$')
+        && request.resource.data.get('phone', '') == request.resource.data.get('phoneDigits', '')
+        && (
+          (request.resource.data.get('address', '') is string
+            && request.resource.data.get('address', '').size() <= 500)
+          || (request.resource.data.get('address', {}) is map
+            && request.resource.data.get('address', {}).size() <= 8)
+        )
+        && request.resource.data.get('gender', '') is string
+        && request.resource.data.get('gender', '').size() <= 30
+        && request.resource.data.get('accountType', 'seeker') is string
+        && request.resource.data.get('accountType', 'seeker').size() <= 20
+        && request.resource.data.get('canonicalRole', 'seeker') is string
+        && request.resource.data.get('canonicalRole', 'seeker').size() <= 20
+        && request.resource.data.get('displayName', '') is string
+        && request.resource.data.get('displayName', '').size() <= 160
+        && request.resource.data.get('avatarUrl', '') is string
+        && request.resource.data.get('avatarUrl', '').size() <= 2048;
+    }
+
+
+    // 🔧 DEFAULT -- keep in sync with COOLDOWN_BY_TIER_HOURS in js/tiers.js.
+    function cooldownHoursForIndex(tierIndex) {
+      return [72, 48, 24, 12, 6, 3][tierIndex];
+    }
+
+    // 🔧 DEFAULT -- keep in sync with SEEKER_BOOST_PACKAGES[*].cooldownReduceH
+    // Package id 0–5 → hours subtracted from tier cooldown (floor 1h in client).
+    function cooldownReduceForPackageId(packageId) {
+      return [0, 0, 6, 12, 18, 24][packageId];
+    }
+
+    // Resolve Seeking Boost package id from boosts/{uid}.seeker.
+    // Patch 50: canonical numeric package only; legacy aliases are retired.
+    function seekerBoostPackageId(uid) {
+      let boostPath = /databases/$(database)/documents/boosts/$(uid);
+      return exists(boostPath)
+        && get(boostPath).data.get('seeker', {}).get('active', false)
+        && get(boostPath).data.seeker.keys().hasAny(['package'])
+        && get(boostPath).data.seeker.package is int
+        ? get(boostPath).data.seeker.package
+        : 0;
+    }
+
+    function boostPackageIdForRole(uid, role) {
+      let boostPath = /databases/$(database)/documents/boosts/$(uid);
+      let line = role == 'owner' ? 'owner' : 'seeker';
+      return exists(boostPath)
+        && get(boostPath).data.get(line, {}).get('active', false)
+        && get(boostPath).data.get(line, {}).keys().hasAny(['package'])
+        && get(boostPath).data.get(line, {}).get('package', 0) is int
+        ? get(boostPath).data.get(line, {}).get('package', 0)
+        : 0;
+    }
+
+    function effectiveCooldownHours(uid, role) {
+      let base = cooldownHoursForIndex(currentTierIndex(uid, role));
+      let reduce = cooldownReduceForPackageId(boostPackageIdForRole(uid, role));
+      let hours = base - reduce;
+      return hours < 1 ? 1 : hours;
+    }
+
+    // Reads the seeker (or broker) tier doc's precomputed
+    // `highestIndex` field -- see the Cloud Functions comment in
+    // functions/index.js for why this is precomputed rather than
+    // derived here (rules can't easily max() across a map's values).
+    function currentTierIndex(uid, role) {
+      let tierPath = /databases/$(database)/documents/users/$(uid)/tier/$(role);
+      // exists() guard: new accounts have no tier doc yet -- without this,
+      // get().data is null and the subsequent .get() call throws, causing
+      // the whole rule evaluation to error-out (appears as a permission
+      // denial even though no rule explicitly denies it).
+      return exists(tierPath) ? get(tierPath).data.get('highestIndex', 0) : 0;
+    }
+
+    function cooldownElapsed(uid, role) {
+      let existing = get(/databases/$(database)/documents/users/$(uid)).data;
+      let lastRelocatedAt = existing.get('mapState', {}).get('lastRelocatedAt', null);
+      // Never relocated before -- always allowed.
+      return lastRelocatedAt == null ||
+        request.time > lastRelocatedAt + duration.value(
+          effectiveCooldownHours(uid, role), 'h'
+        );
+    }
+
+    // Portfolio / owner pin cooldown (mapStateOwner) — was referenced but missing
+    // (deploy warning: Invalid function name: cooldownElapsedOwner).
+    function cooldownElapsedOwner(uid) {
+      let existing = get(/databases/$(database)/documents/users/$(uid)).data;
+      let lastRelocatedAt = existing.get('mapStateOwner', {}).get('lastRelocatedAt', null);
+      return lastRelocatedAt == null ||
+        request.time > lastRelocatedAt + duration.value(
+          effectiveCooldownHours(uid, 'owner'), 'h'
+        );
+    }
+
+
+    // Extra / mirrored pins on users.pins[pinId] (Phase 7 server cooldown)
+    function pinLastRelocated(uid, pinId) {
+      return get(/databases/$(database)/documents/users/$(uid)).data
+        .get('pins', {}).get(pinId, {}).get('lastRelocatedAt', null);
+    }
+
+    function pinCooldownElapsed(uid, pinId) {
+      let last = pinLastRelocated(uid, pinId);
+      let roleRaw = get(/databases/$(database)/documents/users/$(uid)).data
+        .get('accountType', 'seeker');
+      let role = canonicalRoleValue(roleRaw) == 'broker' ? 'broker'
+        : canonicalRoleValue(roleRaw) == 'owner' ? 'owner' : 'seeker';
+      return last == null ||
+        request.time > last + duration.value(effectiveCooldownHours(uid, role), 'h');
+    }
+
+    // True if this write changes lastRelocatedAt for a known pin id (relocate / first set)
+    function pinRelocateAttempted(pinId) {
+      let oldL = resource.data.get('pins', {}).get(pinId, {}).get('lastRelocatedAt', null);
+      let newL = request.resource.data.get('pins', {}).get(pinId, {}).get('lastRelocatedAt', null);
+      return newL != oldL;
+    }
+
+    function pinsWriteCooldownOk(uid) {
+      return (!pinRelocateAttempted('discovery-1') || pinCooldownElapsed(uid, 'discovery-1'))
+        && (!pinRelocateAttempted('supply-1') || pinCooldownElapsed(uid, 'supply-1'))
+        && (!pinRelocateAttempted('slot-2') || pinCooldownElapsed(uid, 'slot-2'))
+        && (!pinRelocateAttempted('slot-3') || pinCooldownElapsed(uid, 'slot-3'));
+    }
+
+    // ------------------------------------------------------------
+    // publicProfiles/{uid} -- intentionally public discovery projection
+    // ------------------------------------------------------------
+    match /publicProfiles/{uid} {
+      allow read: if true;
+      allow write: if false; // Cloud Functions / Admin SDK only
+    }
+
+    // ------------------------------------------------------------
+    // users/{uid} -- private authoritative profile document
+    // ------------------------------------------------------------
+    match /users/{uid} {
+      allow read: if isAdmin() || isOwnerOf(uid);
+
+      // New self-service profiles may only establish identity/profile bootstrap
+      // fields. Security/verification/projection authority fields are server-owned.
+      allow create: if isOwnerOf(uid)
+        && canonicalRoleValue(request.resource.data.get("canonicalRole", request.resource.data.get("accountType", "seeker"))) in ['owner', 'seeker']
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'firstName', 'surname', 'middleInitial', 'suffix', 'email', 'phone',
+          'phoneDigits', 'address', 'gender', 'accountType', 'canonicalRole',
+          'createdAt', 'provider', 'displayName', 'profileComplete', 'status',
+          'privacy', 'avatarUrl'
+        ])
+        && request.resource.data.get('status', 'active') == 'active'
+        && profileInputLimits()
+        && !request.resource.data.get('verified', false)
+        && !request.resource.data.get('prcVerified', false);
+
+      // Foundation Repair 08: generic users/{uid} updates are no longer a
+      // Moderator write surface. Current Moderator UI is read-oriented for
+      // user data; Admin owns privileged user-document mutations, while the
+      // account owner retains the restricted profile-field path below.
+      allow update: if isAdmin()
+        || (
+          isOwnerOf(uid)
+          && onlyTouchesAllowedProfileFields()
+          && ownerSelfServiceRoleChangeAllowed()
+          && selfSubmittedKycStateIsPending()
+          && profileInputLimits()
+          && isAllowedProfileRole(request.resource.data.get('canonicalRole', request.resource.data.get('accountType', 'seeker')))
+          // Pin coordinates/timestamps are server-authoritative.
+          // Normal clients may select activePinId for UI state, but may not
+          // mutate mapState/mapStateOwner/users.pins directly.
+          && !request.resource.data.diff(resource.data).affectedKeys()
+               .hasAny(['mapState', 'mapStateOwner', 'pins'])
+        );
+
+      allow delete: if isAdmin();
+
+      // Tier is Cloud-Function-write-only for a normal client. Client
+      // can read (to show a badge/rank). admin.html is the deliberate
+      // exception -- see file header. Broker's doc here is tracked
+      // PER PROPERTY (byProperty: {propertyId: {...}}), aggregated
+      // into the same highestIndex field seeker/owner use -- see
+      // js/tiers.js's aggregateBrokerScore/brokerTierForProperties.
+      match /tier/{role} {
+        allow read: if true;
+        allow write: if isAdmin();
+      }
+    }
+
+    // ------------------------------------------------------------
+    // boosts/{uid} -- purchased capability upgrades (separate from
+    // tier on purpose -- see docs/CONTRACT-TIER-SYSTEM.md §2)
+    // ------------------------------------------------------------
+    
+    match /supportTickets/{ticketId} {
+      // A user may create only a new staff-pool ticket for themselves.
+      // Broker/application/ops state is never derived from ticket creation.
+      allow create: if isSignedIn()
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.status == 'open'
+        && request.resource.data.assignedTo == null
+        && request.resource.data.assignedRole == 'staff'
+        && request.resource.data.thread is list
+        && request.resource.data.thread.size() == 0;
+
+      allow read: if isAdmin()
+        || (
+          isStaffRole()
+          && resource.data.assignedRole == 'staff'
+        )
+        || (
+          isModerator()
+          && resource.data.assignedRole == 'moderator'
+        )
+        || (isSignedIn() && resource.data.uid == request.auth.uid);
+
+      // Claims are pool-specific and must be atomic at the client transaction
+      // layer. Firestore re-checks the same ownership boundary here.
+      allow update: if
+        (
+          isStaffRole()
+          && resource.data.assignedRole == 'staff'
+          && resource.data.assignedTo == null
+          && request.resource.data.assignedTo == request.auth.uid
+          && request.resource.data.assignedRole == 'staff'
+          && request.resource.data.diff(resource.data).affectedKeys()
+               .hasOnly(['assignedTo', 'assignedRole', 'claimedAt', 'updatedAt', 'staffReadAt', 'staffReadBy'])
+        )
+        ||
+        (
+          isModerator()
+          && resource.data.assignedRole == 'moderator'
+          && resource.data.assignedTo == null
+          && request.resource.data.assignedTo == request.auth.uid
+          && request.resource.data.assignedRole == 'moderator'
+          && request.resource.data.diff(resource.data).affectedKeys()
+               .hasOnly(['assignedTo', 'assignedRole', 'claimedAt', 'updatedAt', 'staffReadAt', 'staffReadBy'])
+        )
+        ||
+        (
+          isAdmin()
+          && resource.data.assignedRole == 'admin'
+          && resource.data.assignedTo == null
+          && request.resource.data.assignedTo == request.auth.uid
+          && request.resource.data.assignedRole == 'admin'
+          && request.resource.data.diff(resource.data).affectedKeys()
+               .hasOnly(['assignedTo', 'assignedRole', 'claimedAt', 'updatedAt', 'staffReadAt', 'staffReadBy'])
+        )
+        ||
+        (
+          isSignedIn()
+          && resource.data.assignedTo == request.auth.uid
+          && request.resource.data.diff(resource.data).affectedKeys()
+               .hasOnly([
+                 'thread', 'staffReply', 'repliedBy', 'repliedAt',
+                 'status', 'resolvedBy', 'resolvedAt', 'assignedRole',
+                 'assignedTo', 'transferredAt', 'transferredBy',
+                 'updatedAt', 'staffReadAt', 'staffReadBy'
+               ])
+          && (
+            // Reply/resolve/release by the current assignee.
+            request.resource.data.assignedTo == resource.data.assignedTo
+            || request.resource.data.assignedTo == null
+          )
+          && (
+            // A release keeps the ticket in its current pool.
+            request.resource.data.assignedTo == null
+            && request.resource.data.assignedRole == resource.data.assignedRole
+            ||
+            // Normal work may not silently move a ticket between pools.
+            request.resource.data.assignedTo == resource.data.assignedTo
+            && request.resource.data.assignedRole == resource.data.assignedRole
+            ||
+            // Transfer is an explicit one-step escalation.
+            (
+              resource.data.assignedRole == 'staff'
+              && request.resource.data.assignedRole == 'moderator'
+              && isStaffRole()
+              && request.resource.data.assignedTo == null
+              && request.resource.data.status == 'escalated'
+            )
+            ||
+            (
+              resource.data.assignedRole == 'moderator'
+              && request.resource.data.assignedRole == 'admin'
+              && isModerator()
+              && request.resource.data.assignedTo == null
+              && request.resource.data.status == 'escalated'
+            )
+          )
+        )
+        ||
+        (
+          isSignedIn()
+          && resource.data.uid == request.auth.uid
+          && resource.data.status != 'resolved'
+          && resource.data.status != 'closed'
+          && request.resource.data.diff(resource.data).affectedKeys()
+               .hasOnly(['thread', 'status', 'updatedAt'])
+          && request.resource.data.thread is list
+          && resource.data.thread is list
+          && request.resource.data.thread.size() == resource.data.thread.size() + 1
+          && request.resource.data.thread[request.resource.data.thread.size() - 1].get('role', '') == 'user'
+          && request.resource.data.thread[request.resource.data.thread.size() - 1].get('by', '') == request.auth.uid
+          // A user reply cannot de-escalate an operational ticket.
+          && (
+            resource.data.status == 'escalated'
+              ? request.resource.data.status == 'escalated'
+              : request.resource.data.status == 'open'
+          )
+        );
+
+      allow delete: if isAdmin();
+    }
+
+    match /boostOrders/{orderId} {
+      allow create: if isSignedIn()
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.status == "pending";
+      allow read: if isSignedIn() && (
+        resource.data.uid == request.auth.uid || canReviewBoostOrders()
+      );
+      allow update: if canReviewBoostOrders();
+      allow delete: if isAdmin();
+    }
+
+    match /boosts/{uid} {
+      allow read: if isOwnerOf(uid) || canInspectBoosts();
+      // Only a trusted backend (payment webhook via Admin SDK) grants
+      // boosts to a real client -- never a direct client write, or
+      // anyone could grant themselves a free boost. admin.html is the
+      // deliberate exception, to test boost effects on demand.
+      allow write: if isAdmin();
+    }
+
+    // ------------------------------------------------------------
+    // wantedListings/{id} -- a seeker's "looking for" post (the
+    // Post Wanted tab). Mirrors propertyListings/{propertyId}'s rule shape:
+    // public read (owners/brokers browsing need to see them, same as
+    // marketplace browsing), only the posting seeker can write/delete
+    // their own.
+    // B-240816: the "no role check here on purpose" tradeoff below was
+    // a deliberate prior decision, but it directly conflicts with SoT
+    // Appendix B ("Owner: Can create Wanted: No") and Appendix B's own
+    // footnote that capabilities stay subject to security rules. An
+    // owner calling this directly (bypassing the UI, which never shows
+    // them the Wanted tab) could pollute the Wanted-discovery feed
+    // other owners/brokers search against -- not nothing, contrary to
+    // the old comment's assumption. Added the same one-get() accountType
+    // check used on propertyListings/properties for consistency; cost
+    // is identical (one extra get() per write, same as every other
+    // role-gated collection in this file already pays).
+    // ------------------------------------------------------------
+    
+    // Canonical property listings (SoT D2). Mirror rules of properties during migration.
+    match /propertyListings/{propertyId} {
+      allow read: if true;
+      // SoT §14: client create only as Spark fallback — must claim self as owner + required keys.
+      // Prefer createListing callable (Admin SDK) when Functions are deployed.
+      // B-240816: added accountType check (SoT Appendix B) -- was missing;
+      // any signed-in user, including a seeker, could create a Property
+      // listing directly against this collection.
+      allow create: if isSignedIn()
+        && request.resource.data.ownerId == request.auth.uid
+        && request.resource.data.keys().hasAll(['ownerId', 'createdAt'])
+        && request.resource.data.status in ['active', 'pending_approval', 'draft']
+        && canonicalRoleValue(get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('canonicalRole', get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('accountType', ''))) in ['owner', 'broker'];
+      // SoT 48h management lock — owner update/delete only after 2 days; staff anytime
+      allow update: if isAdmin() || isModerator()
+        || (isSignedIn() && resource.data.ownerId == request.auth.uid
+            && request.time > resource.data.createdAt + duration.value(2, 'd'));
+      allow delete: if isAdmin()
+        || (isSignedIn() && resource.data.ownerId == request.auth.uid
+            && request.time > resource.data.createdAt + duration.value(2, 'd'));
+
+      match /reviews/{reviewId} {
+        allow read: if true;
+        // F-05 parity (see propertyListings/{propertyId}/reviews below): this
+        // canonical path was missing the tenancy-proof check entirely --
+        // any signed-in user could post a review with no completed
+        // contract. Mirrored the same proof-of-tenancy requirement here
+        // so the canonical and legacy paths can't drift again.
+        allow create: if isSignedIn()
+          && request.resource.data.userId == request.auth.uid
+          && request.resource.data.rating is int
+          && request.resource.data.rating >= 1
+          && request.resource.data.rating <= 5
+          && request.resource.data.contractId is string
+          && get(/databases/$(database)/documents/contracts/$(request.resource.data.contractId)).data.propertyId == propertyId
+          && get(/databases/$(database)/documents/contracts/$(request.resource.data.contractId)).data.seekerId == request.auth.uid
+          && get(/databases/$(database)/documents/contracts/$(request.resource.data.contractId)).data.status == "completed";
+        allow update: if isAdmin() || isModerator() || (isSignedIn() && (
+          (resource.data.userId == request.auth.uid
+            && request.resource.data.diff(resource.data).affectedKeys()
+                 .hasOnly(['comment', 'rating', 'images']))
+          || (get(/databases/$(database)/documents/propertyListings/$(propertyId)).data.ownerId == request.auth.uid
+            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['reply']))
+        ));
+        allow delete: if isAdmin()
+          || (isSignedIn() && resource.data.userId == request.auth.uid);
+      }
+    }
+
+    // Patch 14 + Patch 18 — listing activity is server-authored and immutable.
+    match /listingActivity/{eventId} {
+      allow read: if isAdmin();
+      allow create, update, delete: if false;
+    }
+
+    // Patch 14 + Patch 18 — aggregate listing stats are server-derived (views, saves, inquiries, matches).
+    match /listingStats/{listingId} {
+      allow read: if isSignedIn() && (
+        isAdmin()
+        || (exists(/databases/$(database)/documents/propertyListings/$(listingId))
+            && get(/databases/$(database)/documents/propertyListings/$(listingId)).data.ownerId == request.auth.uid)
+      );
+      allow create, update, delete: if false;
+    }
+
+match /wantedListings/{wantedId} {
+      allow read: if true;
+
+      // SoT §14: Spark fallback create — self seekerId + status; prefer createWantedListing callable.
+      // B-240816: added accountType check (SoT Appendix B) -- was missing;
+      // an owner account could create Wanted posts directly (see comment
+      // block above this match).
+      allow create: if isSignedIn()
+        && request.resource.data.seekerId == request.auth.uid
+        && request.resource.data.keys().hasAll(['seekerId', 'createdAt'])
+        && request.resource.data.status in ['active', 'pending_approval', 'draft', 'closed']
+        && canonicalRoleValue(get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('canonicalRole', get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('accountType', ''))) in ['seeker', 'broker'];
+
+      // The 2-day "locked after posting" edit/delete rule (see
+      // js/profile/wanted-posts-summary.js and wanted-form.js's
+      // canManageWanted()) was ONLY enforced by disabling the button
+      // client-side -- a direct Firestore SDK call from a seeker could
+      // update or delete their own post at any time, lock or no lock.
+      // Unlike the wanted-POST-COUNT cap (hard to enforce here --
+      // Firestore rules can't do an aggregate count query), a time
+      // lock is a straightforward comparison against the doc's own
+      // createdAt, so enforcing it here is cheap and worth doing.
+      allow update, delete: if isAdmin()
+        || (isSignedIn() && resource.data.seekerId == request.auth.uid
+            && request.time > resource.data.createdAt + duration.value(2, 'd'));
+    }
+
+    // ------------------------------------------------------------
+    // contracts/{contractId} -- see docs/CONTRACT-TIER-SYSTEM.md §5
+    // ------------------------------------------------------------
+    match /contracts/{contractId} {
+      function isParty() {
+        return isSignedIn() && (
+          resource.data.seekerId == request.auth.uid ||
+          resource.data.ownerId == request.auth.uid ||
+          resource.data.brokerId == request.auth.uid
+        );
+      }
+      function isPartyOnCreate() {
+        return isSignedIn() && (
+          request.resource.data.seekerId == request.auth.uid ||
+          request.resource.data.ownerId == request.auth.uid ||
+          request.resource.data.brokerId == request.auth.uid
+        );
+      }
+
+      allow read: if isParty() || canReadOperationalContracts();
+
+      // Patch 17: contract lifecycle is Cloud-Function-only for normal users.
+      // createContract / agreeContract / declineContract / renewContract are
+      // the trusted mutation paths. This prevents direct SDK writes from
+      // activating a contract without the canonical listing-match transaction.
+      allow create, update: if isAdmin();
+
+      // Server-side scheduled jobs and callable functions use Admin SDK.
+      allow delete: if isAdmin();
+    }
+
+    // ------------------------------------------------------------
+    // notifications/{uid}/items/{itemId} -- in-app notifications
+    // (contract confirmation prompts, verification status updates,
+    // etc.) Written by Cloud Functions (Admin SDK) only. A client
+    // reads their own, marks items read, and never creates or
+    // deletes one directly. Staff can read any notification for
+    // support/moderation purposes.
+    // ------------------------------------------------------------
+    match /paypalSubscriptions/{subscriptionId} {
+      allow read, write: if false;
+    }
+
+    // Patch 25: admin-only subscription smoke-test grants. These are
+    // deliberately separate from PayPal state and from the client-owned
+    // users/{uid}.subscription profile field. Cloud Functions are the only
+    // writers; the target user may read their own grant for UI diagnostics.
+    match /subscriptionAdminGrants/{uid} {
+      allow read: if isAdmin() || isOwnerOf(uid);
+      allow write: if false;
+    }
+
+    // Canonical effective entitlement. Server-only writes prevent a user from
+    // turning on premium access by editing their own profile.
+    match /subscriptionEntitlements/{uid} {
+      allow read: if isAdmin() || isOwnerOf(uid);
+      allow write: if false;
+    }
+
+    // Immutable-ish admin audit trail: no client writes.
+    match /adminSubscriptionAudit/{auditId} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
+
+
+    match /paypalWebhookEvents/{eventId} {
+      allow read, write: if false;
+    }
+
+    match /notifications/{uid}/items/{itemId} {
+      allow read: if isOwnerOf(uid) || canResolveNotifications();
+      // Owner may mark read / dismiss only — cannot change type or message.
+      // Staff may resolve/clear pending (order approve, etc.)
+      allow update: if isOwnerOf(uid)
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['read', 'dismissed', 'pinned']);
+      allow create: if isAdmin() || isOwnerOf(uid) || canResolveNotifications() || isAuthorizedContractNotification(uid);
+      // Owner can dismiss (delete) their own notifications
+      allow delete: if isAdmin() || isOwnerOf(uid);
+    }
+
+    // ------------------------------------------------------------
+    // users/{uid}/favourites/{propertyId} -- a seeker/broker bookmarking
+    // a listing. Doc ID IS the property's own ID (not auto-generated)
+    // so "is this already favourited" is a single get(), not a query,
+    // and re-favouriting can't create duplicates.
+    // ------------------------------------------------------------
+    match /users/{uid}/favourites/{propertyId} {
+      allow read: if isOwnerOf(uid);
+      // Patch 15: save/un-save mutations go through toggleListingSave so the
+      // canonical relationship and immutable listing activity stay atomic.
+      allow create, update, delete: if false;
+    }
+
+
+    // users/{uid}/savedWanted/{wantedId} -- owner/broker bookmarks of wanted requests.
+    // Mutations are server-authoritative through toggleWantedSave.
+    match /users/{uid}/savedWanted/{wantedId} {
+      allow read: if isOwnerOf(uid);
+      allow create, update, delete: if false;
+    }
+
+    // ------------------------------------------------------------
+    // conversations/{conversationId} + its messages subcollection.
+    // conversationId is deterministic client-side: the two
+    // participant uids, sorted, joined with "_" (e.g.
+    // "abc123_xyz789") -- so two people always land in the same
+    // conversation doc instead of creating duplicates.
+    // ------------------------------------------------------------
+    match /conversations/{conversationId} {
+      // Participant check (resource.data — never resource.keys())
+      function isParticipant() {
+        return isSignedIn()
+          && request.auth.uid in resource.data.participantIds;
+      }
+
+      // CRITICAL: allow get on MISSING docs so clients can check-then-create.
+      // Short-circuit: if doc does not exist, do not touch resource.data.
+      allow get: if isSignedIn() && (
+        !exists(/databases/$(database)/documents/conversations/$(conversationId))
+        || request.auth.uid in resource.data.participantIds
+      );
+      // Was `allow list: if false;` -- meant to stop someone from
+      // enumerating the WHOLE conversations collection, but Firestore
+      // has no way to grant "list, but only docs matching some filter"
+      // as a blanket allow/deny -- rules are evaluated per RETURNED
+      // document, same as the `get` rule above. A flat `false` doesn't
+      // narrow the query, it just denies every list on this collection
+      // outright, for everyone, admin included -- which is exactly
+      // what broke js/profile/messages.js's loadConversationList()
+      // (query + where participantIds array-contains uid): "Could not
+      // load chats: Missing or insufficient permissions." Scoping this
+      // the same way as `get` fixes the query while keeping the same
+      // guarantee -- a caller can only ever get back conversations
+      // they're already a participant in; Firestore rejects the whole
+      // query if even one candidate document wouldn't pass.
+      allow list: if isSignedIn() && request.auth.uid in resource.data.participantIds;
+
+      allow create: if isSignedIn()
+        && request.auth.uid in request.resource.data.participantIds
+        && request.resource.data.participantIds.size() == 2;
+
+      // Issue 2 (2026-08-18): participants may refresh preview + unread after send.
+      // unreadCounts / archivedBy / kind were written by messages.js but blocked here
+      // → "Send failed: Missing or insufficient permissions" after message create succeeded.
+      allow update: if isParticipant()
+        && request.resource.data.diff(resource.data).affectedKeys()
+             .hasOnly(['lastMessage', 'lastMessageAt', 'propertyId', 'propertyTitle',
+                       'propertyAddress', 'coverImage', 'updatedAt',
+                       'nickname', 'mutedBy', 'hiddenBy', 'archivedBy',
+                       'unreadCounts', 'kind']);
+
+      allow delete: if false;
+
+      match /messages/{messageId} {
+        function isConversationParticipant() {
+          let convo = get(/databases/$(database)/documents/conversations/$(conversationId));
+          return isSignedIn() && request.auth.uid in convo.data.participantIds;
+        }
+
+        allow read: if isConversationParticipant();
+
+        allow create: if isConversationParticipant()
+          && request.resource.data.senderId == request.auth.uid;
+
+        // a recipient marking a message read -- sender fields stay locked
+        allow update: if isConversationParticipant()
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['read']);
+
+        allow delete: if false;
+      }
+    }
+
+    // ------------------------------------------------------------
+    // propertyListings/{propertyId}/reviews/{reviewId} -- a seeker reviewing
+    // a property after a contract. Subcollection, not top-level, since
+    // every real read of this data is "show me this property's
+    // reviews" -- scoping it under the property makes that the cheap
+    // query instead of a where() filter over a flat collection.
+    // ------------------------------------------------------------
+    match /propertyListings/{propertyId}/reviews/{reviewId} {
+      allow read: if true; // public, same as the listing itself
+
+      // F-05 (Flagged_bugs.md): used to accept any signed-in user's
+      // review with no proof of tenancy. Now requires the review to
+      // name a `contractId` for a contract that (a) belongs to this
+      // property, (b) lists the reviewer as `seekerId`, and (c) is
+      // `completed`. get() calls against the same path are cached
+      // within one rule evaluation, so this is one read, not three.
+      allow create: if isSignedIn()
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.rating is int
+        && request.resource.data.rating >= 1
+        && request.resource.data.rating <= 5
+        && request.resource.data.contractId is string
+        && get(/databases/$(database)/documents/contracts/$(request.resource.data.contractId)).data.propertyId == propertyId
+        && get(/databases/$(database)/documents/contracts/$(request.resource.data.contractId)).data.seekerId == request.auth.uid
+        && get(/databases/$(database)/documents/contracts/$(request.resource.data.contractId)).data.status == "completed";
+
+      // the review's author can edit their own comment/rating; the
+      // property's owner can ONLY add a reply, never touch the
+      // rating/comment itself (that would defeat the point of a review);
+      // admin.html can touch anything, for moderation/testing.
+      allow update: if isAdmin() || isModerator() || (isSignedIn() && (
+        (resource.data.userId == request.auth.uid
+          && request.resource.data.diff(resource.data).affectedKeys()
+               .hasOnly(['comment', 'rating', 'images']))
+        || (get(/databases/$(database)/documents/propertyListings/$(propertyId)).data.ownerId == request.auth.uid
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['reply']))
+      ));
+
+      allow delete: if isAdmin()
+        || (isSignedIn() && resource.data.userId == request.auth.uid);
+    }
+
+      // ------------------------------------------------------------
+    // reports/{reportId} -- flagging a property or user. Top-level
+    // (unlike reviews/favourites) since moderation needs to query
+    // ACROSS listings/users, not scoped to one.
+    //
+    // isAdmin() now covers the read/update/delete gap this section
+    // used to flag ("no admin role in this app yet") -- admin.html is
+    // that role. Still not opened to "any signed-in user", since a
+    // report needs to stay private from the person/listing it reports.
+    // ------------------------------------------------------------
+    match /reports/{reportId} {
+      allow create: if isSignedIn()
+        && request.resource.data.reporterId == request.auth.uid;
+
+      // Was `if isAdmin()` for read/update/delete -- but admin.html's
+      // Reports tab has no `data-super-only` marker (unlike Wanted/
+      // Boosts, which do), so moderators see and can click Resolve/
+      // Dismiss (js/admin/reports.js has no staffRole check either).
+      // Every moderator click was hitting permission-denied -- at
+      // least visibly (caught + alerted), unlike the notifications
+      // bug, but still broken for a real staff role. Verifications
+      // (js/admin/verifications.js) already treats "moderator can
+      // write their queue" as the intended pattern -- matching that
+      // here: moderators can read/update (resolve, dismiss), delete
+      // stays admin-only as the more destructive, rarer action.
+      allow read, update: if canModerateReports();
+      allow delete: if isAdmin();
+    }
+  
+    match /phoneIndex/{digits} {
+      // Phone claims are reserved only by trusted Phone Auth verification
+      // code. Client profile edits cannot manufacture uniqueness claims.
+      allow read: if isSignedIn() && resource.data.uid == request.auth.uid;
+      allow create, update: if isAdmin()
+        && digits.matches('^63[0-9]{10}$')
+        && request.resource.data.uid is string;
+      allow delete: if isAdmin()
+        || (isSignedIn() && resource.data.uid == request.auth.uid);
+    }
+
+    // kycReferenceIndex/{indexId} -- one doc per (idType, normalized
+    // reference number), indexId itself IS the normalized key (see
+    // js/kyc-reference.js's kycReferenceIndexId()). This is the same
+    // "reservation collection" pattern as phoneIndex above, fixed the
+    // same way from the start: create only succeeds for whoever gets
+    // there first (Firestore itself refuses a second `create` on an
+    // existing doc ID -- that's not something these rules even need
+    // to enforce), and update is locked to the uid that already holds
+    // the claim. A different uid trying to write the same reference
+    // number is always an `update` against someone else's
+    // resource.data.linkedUid, which this rejects -- no Cloud
+    // Function, no Blaze plan, no Supabase call needed for the
+    // uniqueness guarantee itself. Deliberately holds ONLY idType +
+    // the reference number + linkedUid (no image, no other PII) --
+    // see docs/KYC_Reference_Registry.md for why.
+    match /kycReferenceIndex/{indexId} {
+      allow read: if canInspectKycReferenceIndex();
+      allow create: if isSignedIn()
+        && request.resource.data.linkedUid == request.auth.uid
+        && request.resource.data.idType is string
+        && request.resource.data.idType.matches('^[a-z0-9_]+$')
+        && request.resource.data.referenceNumber is string
+        && request.resource.data.referenceNumber.matches('^[A-Z0-9]+$')
+        && request.resource.data.referenceNumber.size() >= 4
+        && indexId == request.resource.data.idType + '_' + request.resource.data.referenceNumber;
+      allow update: if ((isSignedIn()
+          && resource.data.linkedUid == request.auth.uid
+          && request.resource.data.linkedUid == request.auth.uid
+          && request.resource.data.idType == resource.data.idType
+          && request.resource.data.referenceNumber == resource.data.referenceNumber
+          && indexId == request.resource.data.idType + '_' + request.resource.data.referenceNumber)
+        || isAdmin()); // admin may correct a typo'd/mis-scanned entry
+      allow delete: if isAdmin();
+    }
+
+    match /commendations/{id} {
+      allow create: if isSignedIn() && request.resource.data.fromUid == request.auth.uid;
+      allow read: if isSignedIn() && (resource.data.toUid == request.auth.uid || resource.data.fromUid == request.auth.uid || isAdmin());
+      allow update, delete: if isAdmin();
+    }
+
+    match /users/{userId}/blocked/{blockedId} {
+      allow read: if isSignedIn() && (request.auth.uid == userId || isAdmin());
+      allow create, delete: if isSignedIn() && request.auth.uid == userId
+        && request.resource.data.blockedUid == blockedId;
+      allow update: if false;
+    }
+
+    match /userReports/{id} {
+      allow create: if isSignedIn()
+        && request.resource.data.reporterId == request.auth.uid
+        && request.resource.data.targetUid is string;
+      allow read: if isAdmin() || isModerator()
+        || (isSignedIn() && resource.data.reporterId == request.auth.uid);
+      allow update, delete: if isAdmin();
+    }
+
+
+    // Broker assistance requests (SoT §26) — Phase 3 claim
+    // Patch 41: the Ops branch now has an explicit capability name;
+    // requester/claimer/broker branches remain independent.
+    function canReadAssistanceRequests() {
+      return isOps();
+    }
+
+    match /assistanceRequests/{requestId} {
+      allow read: if isSignedIn() && (
+        canReadAssistanceRequests()
+        || resource.data.posterId == request.auth.uid
+        || resource.data.claimedBy == request.auth.uid
+        || canonicalRoleValue(get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('canonicalRole', get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('accountType', ''))) == 'broker'
+      );
+      allow create: if isSignedIn()
+        && request.resource.data.posterId == request.auth.uid
+        && request.resource.data.status == 'open';
+      allow update: if isSignedIn() && (
+        isAdmin()
+        || (
+          // Broker claim open → claimed
+          canonicalRoleValue(get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('canonicalRole', get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('accountType', ''))) == 'broker'
+          && resource.data.status == 'open'
+          && request.resource.data.status == 'claimed'
+          && request.resource.data.claimedBy == request.auth.uid
+        )
+        || (
+          resource.data.claimedBy == request.auth.uid
+          && request.resource.data.claimedBy == resource.data.claimedBy
+        )
+        || resource.data.posterId == request.auth.uid
+      );
+      allow delete: if isAdmin();
+    }
+
+
+    // Phase 8 — organic points ledger (SoT §28)
+    match /pointsLedger/{entryId} {
+      // Point grants are backend-authoritative. Normal clients may read
+      // their own ledger for UX/history, but may not mint ledger entries.
+      // Admin SDK writes bypass Firestore Rules and are therefore the
+      // trusted mutation boundary for this append-only authority.
+      allow read: if isSignedIn() && (resource.data.uid == request.auth.uid || isAdmin());
+      allow create: if false;
+      allow update, delete: if isAdmin();
+    }
+
+    
+    // F0 — editable government disclaimer templates (ops only write)
+    
+    // F1a — government program posts (admin/staff write; public read published)
+    match /govHousingPosts/{postId} {
+      allow read: if true;
+      allow create, update, delete: if isSignedIn() && (isAdmin() || isStaffRole());
+    }
+
+    match /config/{docId} {
+      // Public configuration is deliberately allowlisted to the published
+      // government disclaimer document. Operational settings must never
+      // become publicly readable merely because they share this collection.
+      allow read: if docId == "govDisclaimers";
+      allow create, update, delete: if isSignedIn()
+        && (isAdmin() || isStaffRole())
+        && docId == "govDisclaimers";
+    }
+
+    match /userRatings/{id} {
+      allow create: if isSignedIn()
+        && request.resource.data.fromUid == request.auth.uid
+        && request.resource.data.toUid is string
+        && request.resource.data.rating is number
+        && request.resource.data.rating >= 1
+        && request.resource.data.rating <= 5;
+      allow read: if true;
+      allow update, delete: if isAdmin()
+        || (isSignedIn() && resource.data.fromUid == request.auth.uid);
+    }
+  }
+}

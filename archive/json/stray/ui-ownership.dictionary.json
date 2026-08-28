@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "homefinder.dictionary.ui-ownership",
+  "title": "HomeFinder UI Ownership Dictionary",
+  "version": 2,
+  "status": "frozen-for-ui-build",
+  "surfaces": [
+    {"id":"home","html":"index.html","css":["css/home/*.css","css/navbar.css","css/search.css"],"js":["js/home/*.js","js/search.js"],"dataBoundary":"public/home discovery","status":"canonical"},
+    {"id":"market","html":"market.html","css":["css/market.css"],"js":["js/market.js","js/market-chrome.js","js/market.js"],"dataBoundary":"Market canonical discovery/read boundary","status":"canonical"},
+    {"id":"broker-hq","html":"broker-hq.html","css":["css/broker-hq.css"],"js":["js/broker-hq.js","js/broker-data-contract.js"],"dataBoundary":"brokerHQDiscover / brokerHQWorkspace","status":"canonical"},
+    {"id":"profile","html":"profile.html","css":["css/profile/*.css"],"js":["js/profile/*.js"],"dataBoundary":"Profile role-specific boundary","status":"canonical"},
+    {"id":"admin","html":"admin.html","css":["css/admin.css"],"js":["js/admin/*.js","js/admin-gov-*.js"],"dataBoundary":"Admin authority boundary","status":"canonical"},
+    {"id":"ops","html":"staff.html","css":["css/admin.css"],"js":["js/admin/*.js"],"dataBoundary":"Ops capability boundary","status":"canonical"},
+    {"id":"moderator","html":"moderator.html","css":["css/admin.css"],"js":["js/transition.js","js/brand-logo.js"],"dataBoundary":"Moderator capability boundary","status":"canonical"},
+    {"id":"financing","html":"financing.html","css":["css/gov-finance.css","css/navbar.css"],"js":["js/subscription.js","js/payment-config.js"],"dataBoundary":"Financing presentation boundary","status":"canonical"},
+    {"id":"auth","html":"login.html + register.html + verify/index.html","css":["css/auth.css"],"js":["js/auth.js","js/firebase.js","js/session.js"],"dataBoundary":"Firebase authentication/verification boundary","status":"canonical"},
+    {"id":"legal","html":"privacy.html + terms.html","css":["css/reset.css","css/responsive.css"],"js":[],"dataBoundary":"Static legal document boundary","status":"canonical"}
+  ],
+  "freezeRule":"Presentation may change; canonical data meaning, authority, route boundaries, integrations, and lifecycle ownership may not silently change."
+}

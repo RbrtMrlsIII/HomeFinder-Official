@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Broker HQ · HomeFinder</title>
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@6.3.0/dist/maplibre-gl.css">
+  <link rel="stylesheet" href="css/variables.css?v=57">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/transition.css">
+  <link rel="stylesheet" href="css/toast.css">
+  <link rel="stylesheet" href="css/responsive.css?v=57">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/broker-hq.css?v=phase-d">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/viewport/mobile.css?v=19">
+  <link rel="icon" data-hf-favicon href="assets/images/logo-homefinder.png">
+
+  <link rel="stylesheet" href="css/cinematic-ui.css">
+</head>
+<body class="broker-hq-page" data-asset="surface_broker_hq">
+  <div class="toast-container" id="toast-container"></div>
+
+  <header class="bhq-header" data-asset="broker-hq-header">
+    <div class="bhq-header-inner">
+      <div class="bhq-brand">
+        <div class="bhq-brand-mark" aria-hidden="true"><i class="bx bx-buildings"></i></div>
+        <div>
+          <p class="bhq-kicker">HomeFinder · Licensed desk</p>
+          <h1>Broker HQ</h1>
+        </div>
+      </div>
+      <nav class="bhq-header-actions" aria-label="Broker HQ">
+        <button type="button" class="bhq-btn bhq-btn-ghost" id="bhq-open-profile"><i class="bx bx-user"></i><span class="bhq-btn-label">My profile</span></button>
+        <button type="button" class="bhq-btn bhq-btn-ghost" id="bhq-logout-btn"><i class="bx bx-log-out"></i><span class="bhq-btn-label">Log out</span></button>
+      </nav>
+    </div>
+    <p class="bhq-sub" id="bhq-welcome">Loading your workspace…</p>
+    <nav class="bhq-tabs" id="bhq-tabs" data-asset="broker-hq-tabs" aria-label="Broker HQ sections" hidden>
+      <button type="button" class="bhq-tab is-active" data-bhq-tab="desk" id="bhq-tab-desk" aria-selected="true">
+        <i class="bx bx-grid-alt"></i> Desk
+      </button>
+      <button type="button" class="bhq-tab" data-bhq-tab="pins" id="bhq-tab-pins" aria-selected="false">
+        <i class="bx bx-map-pin"></i> Manage pins
+      </button>
+      <button type="button" class="bhq-tab" data-bhq-tab="profile" id="bhq-tab-profile" aria-selected="false">
+        <i class="bx bx-user"></i> My profile
+      </button>
+    </nav>
+  </header>
+
+  <main class="bhq-main" id="bhq-main">
+    <!-- Gate -->
+    <section class="bhq-gate" id="bhq-gate" hidden>
+      <div class="bhq-gate-card">
+        <i class="bx bx-lock-alt"></i>
+        <h2 id="bhq-gate-title">Broker access only</h2>
+        <p id="bhq-gate-msg">This HQ is for licensed brokers.</p>
+        <a class="bhq-btn bhq-btn-primary" id="bhq-gate-cta" href="login.html">Sign in</a>
+      </div>
+    </section>
+
+    <section class="bhq-home" id="bhq-home" hidden>
+      <!-- Desk KPIs -->
+      <header class="bhq-section-head">
+        <div>
+          <h2>Today’s desk</h2>
+          <p>Broker discovery, service map, requests, and your profile workspace live here. Brokers do not use the public Market route.</p>
+        </div>
+        <button type="button" class="bhq-btn bhq-btn-ghost bhq-refresh" id="bhq-refresh-counts" title="Refresh counts">
+          <i class="bx bx-refresh"></i> Refresh
+        </button>
+      </header>
+
+      <div class="bhq-cards" role="list">
+        <article class="bhq-card bhq-card-new" role="listitem" data-asset="broker-hq-new-requests">
+          <div class="bhq-card-top">
+            <div class="bhq-card-icon" aria-hidden="true"><i class="bx bx-bell"></i></div>
+            <span class="bhq-card-pulse" id="bhq-pulse-new" hidden></span>
+          </div>
+          <p class="bhq-card-label">New requests</p>
+          <p class="bhq-card-count" id="bhq-count-new"><span class="bhq-skeleton">&nbsp;</span></p>
+          <p class="bhq-card-desc">Open requests waiting for a broker</p>
+          <button type="button" class="bhq-btn bhq-btn-primary" id="bhq-btn-new" data-view="new">View requests</button>
+        </article>
+
+        <article class="bhq-card bhq-card-near" role="listitem" data-asset="broker-hq-near-you">
+          <div class="bhq-card-top">
+            <div class="bhq-card-icon" aria-hidden="true"><i class="bx bx-map"></i></div>
+          </div>
+          <p class="bhq-card-label">Near you</p>
+          <p class="bhq-card-count" id="bhq-count-near"><span class="bhq-skeleton">&nbsp;</span></p>
+          <p class="bhq-card-desc">Inside your service radius</p>
+          <button type="button" class="bhq-btn bhq-btn-primary" id="bhq-btn-near" data-view="near">Explore</button>
+        </article>
+
+        <article class="bhq-card bhq-card-active" role="listitem" data-asset="broker-hq-active">
+          <div class="bhq-card-top">
+            <div class="bhq-card-icon" aria-hidden="true"><i class="bx bx-message-dots"></i></div>
+          </div>
+          <p class="bhq-card-label">My active</p>
+          <p class="bhq-card-count" id="bhq-count-active"><span class="bhq-skeleton">&nbsp;</span></p>
+          <p class="bhq-card-desc">Claimed / in progress</p>
+          <button type="button" class="bhq-btn bhq-btn-primary" id="bhq-btn-active" data-view="active">Open</button>
+        </article>
+      </div>
+
+      <!-- List panel -->
+      <section class="bhq-panel" id="bhq-list-panel" hidden>
+        <header class="bhq-panel-head">
+          <button type="button" class="bhq-btn bhq-btn-ghost" id="bhq-back-home"><i class="bx bx-arrow-back"></i> Desk</button>
+          <h3 id="bhq-list-title">Requests</h3>
+        </header>
+        <div class="bhq-list" id="bhq-list" aria-live="polite"></div>
+        <p class="bhq-empty" id="bhq-list-empty" hidden></p>
+      </section>
+
+      <!-- Service map (Phase 2 rebuild) -->
+      <section class="bhq-service" data-asset="broker-hq-service-pin">
+        <header class="bhq-section-head">
+          <div>
+            <h2>Service area</h2>
+            <p>Drop or move your <strong>Broker HQ pin</strong>. Choose how wide this pin searches; the selected radius can be narrowed or widened up to the <strong>50 km service cap</strong>.</p>
+          </div>
+        </header>
+        <div class="bhq-map-shell">
+          <div class="bhq-map-toolbar">
+            <button type="button" class="bhq-btn bhq-btn-primary" id="bhq-pin-btn">Drop service pin</button>
+            <button type="button" class="bhq-btn bhq-btn-ghost" id="bhq-locate-btn" title="Center map on your pin (cycles when you have more than one). Does not use GPS."><i class="bx bx-map-pin"></i> My pin</button>
+            <p class="bhq-service-status" id="bhq-service-status">Map loading…</p>
+          </div>
+          <div class="bhq-discovery-header" id="bhq-discovery-header">
+      <div class="bhq-filter-search">
+        <i class="bx bx-search" aria-hidden="true"></i>
+        <input id="bhq-discovery-search" type="search" placeholder="Search listings, descriptions, types…" autocomplete="off">
+      </div>
+      <select id="bhq-discovery-kind" aria-label="Listing category">
+        <option value="all">All listings</option>
+        <option value="property">Property</option>
+        <option value="propertyHelp">Property Help</option>
+        <option value="wanted">Wanted</option>
+        <option value="wantedHelp">Wanted Help</option>
+      </select>
+      <input id="bhq-price-min" type="number" min="0" inputmode="decimal" placeholder="Min ₱" aria-label="Minimum price">
+      <input id="bhq-price-max" type="number" min="0" inputmode="decimal" placeholder="Max ₱" aria-label="Maximum price">
+      <button type="button" class="bhq-filter-amenities" id="bhq-amenities-btn" aria-expanded="false">
+        <i class="bx bx-filter-alt"></i> Amenities
+      </button>
+      <button type="button" class="bhq-btn bhq-btn-ghost bhq-map-settings-btn" id="bhq-map-settings-btn" aria-expanded="false">
+        <i class="bx bx-cog"></i> Map
+      </button>
+    </div>
+    <div class="bhq-filter-popover" id="bhq-amenities-popover" hidden>
+      <div class="bhq-filter-popover-head"><strong>Amenities</strong><button type="button" id="bhq-amenities-close" aria-label="Close">×</button></div>
+      <div id="bhq-amenities-list" class="bhq-amenities-list"></div>
+    </div>
+    <div class="bhq-map-settings" id="bhq-map-settings" hidden>
+      <label><input type="checkbox" id="bhq-3d-toggle" checked> 3D buildings / terrain when supported</label>
+      <span class="bhq-radius-badge"><i class="bx bx-radar"></i> Search radius: <strong id="bhq-radius-label">50 km</strong></span>
+      <small>50 km is the hard service-radius cap for each Broker HQ service pin.</small>
+      <div class="preferred-radius-host bhq-pref-radius" id="bhq-preferred-radius-host"></div>
+    </div>
+          <div id="bhq-map" class="bhq-map" role="application" aria-label="Broker HQ discovery map"></div>
+          <section class="bhq-discovery-panel" aria-label="Broker HQ discovered listings">
+            <div class="bhq-discovery-panel-head">
+              <div><strong id="bhq-discovery-count">0 discovered</strong><span id="bhq-discovery-status"> · Select a pin to discover</span></div>
+              <button type="button" class="bhq-btn bhq-btn-ghost" id="bhq-discovery-refresh"><i class="bx bx-refresh"></i> Refresh</button>
+            </div>
+            <div id="bhq-discovery-rail" class="bhq-discovery-rail" tabindex="0"></div>
+          </section>
+          <div class="bhq-map-confirm" id="bhq-map-confirm" hidden>
+            <p id="bhq-map-confirm-msg">Use this location as your service pin?</p>
+            <div class="bhq-map-confirm-actions">
+              <button type="button" class="bhq-btn bhq-btn-ghost" id="bhq-map-cancel">Cancel</button>
+              <button type="button" class="bhq-btn bhq-btn-primary" id="bhq-map-ok">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Broker profile workspace: profile remains the feature authority, Broker HQ owns access. -->
+      <section class="bhq-profile-panel" id="bhq-profile-panel" data-asset="broker-hq-profile-workspace" hidden>
+        <header class="bhq-section-head">
+          <div>
+            <h2>My profile</h2>
+            <p>Your broker profile, broker-visible tabs, saved properties, wanted listings, government housing references, account tools, and identity features stay inside Broker HQ.</p>
+          </div>
+          <button type="button" class="bhq-btn bhq-btn-ghost" id="bhq-profile-reload"><i class="bx bx-refresh"></i> Refresh profile</button>
+        </header>
+        <div class="bhq-profile-frame-wrap">
+          <iframe
+            id="bhq-profile-frame"
+            class="bhq-profile-frame"
+            title="Broker profile workspace"
+            loading="lazy"
+            referrerpolicy="same-origin"
+            src="profile.html?embedded=broker-hq#perks"></iframe>
+        </div>
+      </section>
+
+      <!-- Phase D — Manage pins (horizontal rails) -->
+      <section class="bhq-pins-panel" id="bhq-pins-panel" data-asset="broker-hq-manage-pins" hidden>
+        <header class="bhq-pins-hero">
+          <div class="bhq-pins-hero-text">
+            <p class="bhq-pins-kicker">Pin desk</p>
+            <h2>Manage pins</h2>
+            <p class="bhq-pins-lead">Each row is one pin slot: status, cooldown, boost window, jump to Market, and a strip of nearby discovery cards. Scroll cards left → right. Each pin may keep its own preferred service radius up to the 50 km cap.</p>
+          </div>
+          <div class="bhq-pins-capacity" id="bhq-pins-capacity" aria-live="polite">
+            <span class="bhq-pins-cap-num" id="bhq-pins-cap-num">—</span>
+            <span class="bhq-pins-cap-label">pins used</span>
+          </div>
+        </header>
+
+        <div class="bhq-pins-toolbar">
+          <button type="button" class="bhq-btn bhq-btn-ghost" id="bhq-pins-refresh" title="Refresh pins and nearby cards">
+            <i class="bx bx-refresh"></i> Refresh
+          </button>
+          <button type="button" class="bhq-btn bhq-btn-primary" id="bhq-pins-to-desk" title="Brokers use HQ only">
+            <i class="bx bx-grid-alt"></i> Back to Desk
+          </button>
+        </div>
+
+        <div class="bhq-pin-rails" id="bhq-pin-rails" role="list">
+          <p class="bhq-pins-loading" id="bhq-pins-loading">Loading pin slots…</p>
+        </div>
+
+        <aside class="bhq-pins-footnote" role="note">
+          <p><strong>Service pin</strong> lives here and on the Desk map (<code>mapStateOwner</code>). <strong>Brokers do not use Market</strong> (P0). Discovery cards read canonical <code>propertyListings</code> (legacy <code>properties</code> fill-only). Cooldown is per pin; logout does not reset server cooldown.</p>
+        </aside>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="js/broker-hq.js"></script>
+  <script type="module" src="js/transition.js"></script>
+  <script src="js/leave-guard.js" defer></script>
+  <script src="js/brand-logo.js" defer></script>
+
+  <script>fetch('data/cinematic-scenes.json').then(r=>r.json()).then(v=>window.__HF_CINEMATIC_SCENES__=v).catch(()=>{});</script>
+  <script src="js/design-roots.js" defer></script>
+    <script src="js/animation-root.js" defer></script>
+    <script src="js/physical-ui-state.js" defer></script>
+  <!-- M1: production WebGL/Three triad not loaded; see js/reference-3d/ -->
+  <script src="js/cinematic-ui.js" defer></script>
+</body>
+</html>

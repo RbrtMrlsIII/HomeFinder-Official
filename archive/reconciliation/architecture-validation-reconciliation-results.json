@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "date": "2026-08-26",
+  "tests_total": 14,
+  "baseline": {
+    "executed_individually": 14,
+    "failed_due_to_missing_retired_walkmyplan_paths": 14
+  },
+  "decisions": [
+    {
+      "test": "dd05-ui-response-mapping.test.mjs",
+      "decision": "MIGRATE",
+      "finding": "Current response mapping, feature wiring, house UI/UX map are active; camera IDs need logical-camera reconciliation, not WalkMyPlan registry.",
+      "recommendation": "Rewrite to validate logical presentation/camera IDs against archive/csv-reconciliation/logical-camera-reconciliation.csv and current response mapping. Do not require physical camera positions."
+    },
+    {
+      "test": "dd05-h09-contact-exit.test.mjs",
+      "decision": "MIGRATE",
+      "finding": "Current main-hall UI map and house-camera-rig exist; physical object registry survives as reconciliation evidence.",
+      "recommendation": "Rewrite physical-object dependency to current reconciliation object registry; keep H-09 DOM/mailto/legal assertions and logical camera anchors."
+    },
+    {
+      "test": "room-shell-physical-ui-mapping.test.mjs",
+      "decision": "MIGRATE",
+      "finding": "Current room/object reconciliation artifacts already encode room shells, objects and routes; WalkMyPlan path is obsolete.",
+      "recommendation": "Rewrite to docs/json/reconciliation artifacts and explicitly assert their authority/status. Do not recreate cinematic/WalkMyPlan."
+    },
+    {
+      "test": "theme-lighting-performance-budget.test.mjs",
+      "decision": "ARCHIVE",
+      "finding": "The referenced theme/performance contracts exist only under archived WalkMyPlan evidence; no current active authority equivalent is established.",
+      "recommendation": "Archive as historical planning evidence. Later create a 3D presentation-performance contract test when the three-house spatial contract is current."
+    },
+    {
+      "test": "deep-dive-04-auth-roles-permissions.test.mjs",
+      "decision": "SPLIT/MIGRATE",
+      "finding": "Authentication/authorization assertions target current JS contracts; only role-path spatial assertions depend on retired WalkMyPlan matrices.",
+      "recommendation": "Split into current auth/route contract test now; archive spatial-room assertions until current physical route/role boundary contract is authored."
+    },
+    {
+      "test": "dd05-h05-government-housing.test.mjs",
+      "decision": "MIGRATE",
+      "finding": "Main-hall UI map is current; physical object mapping exists in reconciliation evidence.",
+      "recommendation": "Rewrite against current reconciliation object registry and preserve response/route assertions."
+    },
+    {
+      "test": "asset-integration-planning.test.mjs",
+      "decision": "ARCHIVE",
+      "finding": "This is explicitly an asset-planning checkpoint tied to WalkMyPlan asset root; no production assets should be reintroduced.",
+      "recommendation": "Archive. Recreate as a current asset-ingestion contract when staged SH3D/asset pipeline reaches the relevant chronological gate."
+    },
+    {
+      "test": "dd04-final-authority-freeze.test.mjs",
+      "decision": "SPLIT/MIGRATE",
+      "finding": "Current route/authority JS assertions remain valuable; role-path and door registry are retired spatial authority.",
+      "recommendation": "Split security/route assertions into current test; archive physical door assertions until current spatial route authority exists."
+    },
+    {
+      "test": "role-contract-subscription-path.test.mjs",
+      "decision": "SPLIT/MIGRATE",
+      "finding": "Profile/auth/subscription assertions are current; physical door/camera checks are old spatial authority.",
+      "recommendation": "Keep current application assertions; move door/camera checks to future spatial-route contract."
+    },
+    {
+      "test": "dd05-main-hall-cinematic-map.test.mjs",
+      "decision": "MIGRATE",
+      "finding": "Current main-hall UI map is active; physical object/zone registries survive as reconciliation artifacts.",
+      "recommendation": "Rewrite against current reconciliation registries and distinguish logical camera anchors from physical authored cameras."
+    },
+    {
+      "test": "dd05-h06-mission.test.mjs",
+      "decision": "MIGRATE",
+      "finding": "Current main-hall map and UI response mapping are active; physical object evidence is available in reconciliation.",
+      "recommendation": "Rewrite object lookup to current reconciliation artifact; retain accessible HTML authority assertions."
+    },
+    {
+      "test": "dd05-main-hall-sequence-reconciliation.test.mjs",
+      "decision": "MIGRATE",
+      "finding": "Current main-hall UI map and choreography reconciliation exist; camera IDs are logical planning IDs and physical cameras remain rebuild-required.",
+      "recommendation": "Rewrite to validate UI section order against choreography and logical camera registry; defer physical camera assertions."
+    },
+    {
+      "test": "canonical-room-camera-door-graph.test.mjs",
+      "decision": "ARCHIVE",
+      "finding": "Entire graph depends on retired WalkMyPlan room/camera/door/role-path registries. Current canonical SH3D has not yet been authored into an equivalent runtime route graph.",
+      "recommendation": "Archive. Replace later with a canonical SH3D room-camera-door-route validation test after spatial reconciliation/camera authoring."
+    },
+    {
+      "test": "hero-world-environment-shell.test.mjs",
+      "decision": "ARCHIVE",
+      "finding": "Hero/environment/choreography registries are historical WalkMyPlan planning artifacts; current spatial authority is canonical SH3D and current camera rig is only a seed.",
+      "recommendation": "Archive. Replace at the 3D reconciliation/camera-authoring gate with tests against canonical SH3D and current presentation contract."
+    }
+  ],
+  "three_split_migrate_execution": {
+    "date": "2026-08-26",
+    "tests": [
+      {
+        "test": "deep-dive-04-auth-roles-permissions.test.mjs",
+        "result": "PASS",
+        "active_scope": "authentication, canonical roles, route authority, ops capability boundaries",
+        "deferred_scope": "role-to-room spatial assertions"
+      },
+      {
+        "test": "dd04-final-authority-freeze.test.mjs",
+        "result": "PASS",
+        "active_scope": "route and application authority freeze",
+        "deferred_scope": "physical door/role spatial assertions"
+      },
+      {
+        "test": "role-contract-subscription-path.test.mjs",
+        "result": "PASS",
+        "active_scope": "profile, auth, subscription, ongoing-contract application path",
+        "deferred_scope": "physical door and camera assertions"
+      }
+    ],
+    "archived_original_tests": [
+      "archive/walkmyplan/tests/deep-dive-04-auth-roles-permissions.test.mjs",
+      "archive/walkmyplan/tests/dd04-final-authority-freeze.test.mjs",
+      "archive/walkmyplan/tests/role-contract-subscription-path.test.mjs"
+    ],
+    "active_walkmyplan_dependencies_introduced": 0,
+    "canonical_sh3d_modified": false
+  },
+  "current_validation_gate": {
+    "date": "2026-08-26",
+    "actionable_migrated_or_split_tests": 10,
+    "passed_individually": 10,
+    "failed_individually": 0,
+    "walkmyplan_active_dependencies_in_current_versions": 0,
+    "canonical_sh3d_modified": false
+  }
+}

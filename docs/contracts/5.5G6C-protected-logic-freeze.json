@@ -1,0 +1,53 @@
+{
+  "contract": "HomeFinder protected product logic freeze",
+  "version": "5.5G.6I-1",
+  "status": "FROZEN",
+  "rule": "New sessions may repair defects against evidence, but may not reinterpret or weaken these rules.",
+  "protected_rules": [
+    "Broker top-level access is Broker HQ only.",
+    "Broker profile functionality is retained inside Broker HQ; the profile implementation is not deleted.",
+    "Broker discovery/market and service map are inside Broker HQ; broker must not use public market.html.",
+    "Government housing reference information is public from the main experience and role-visible to seeker, owner, and broker in profile surfaces.",
+    "Seeker and broker may save property listings; owner and broker may save wanted listings; these are counterpart discovery surfaces.",
+    "House 1 is the only inter-house transit hub.",
+    "House 2\u2194House 3 has no direct physical route.",
+    "Physical travel never changes authenticated identity or role.",
+    "A Broker cannot become Seeker/Owner by traveling; explicit authentication identity transition is required.",
+    "Client role caches are never authorization authority and are cleared on logout.",
+    "Canonical SH3D remains the physical authority; 3d/imports and 3d/staging SH3Ds are evidence-only.",
+    "Runtime physical routes require physical evidence and route validation; logical links alone never promote a route.",
+    "Suspension expiry must reconcile both Firestore state and Firebase Auth disabled state.",
+    "Phone identity validation uses exactly 12 digits in canonical Philippine mobile format 639XXXXXXXXX."
+  ],
+  "protected_files": [
+    "active_development/js/route-access-contract.js",
+    "active_development/js/profile/core.js",
+    "active_development/js/profile/logout.js",
+    "active_development/js/profile/tabs.js",
+    "active_development/js/canonical-role.js",
+    "active_development/js/broker-hq.js",
+    "active_development/profile.html",
+    "active_development/broker-hq.html",
+    "active_development/firebase/functions/index.js",
+    "active_development/firebase/firestore.rules",
+    "docs/json/3d-contract.json",
+    "docs/g1/5.5G6-house-topology-contract.json"
+  ],
+  "repair_policy": "If a protected rule is wrong, update the rule only with explicit evidence and a new checkpoint; never silently weaken it.",
+  "protected_hashes": {
+    "active_development/js/route-access-contract.js": "32bfa33986f2c049a68a574e9bbbec9071999f3dd242d0f3335607912729035e",
+    "active_development/js/profile/core.js": "5a163929a235ae6c0e2fb276536efc8e2ccb33d5367c579186bb5d25eda1e29d",
+    "active_development/js/profile/logout.js": "eb3de86b435fec13478e37892135004e29cb0b0314fc9cf596cd416f70c3cbde",
+    "active_development/js/profile/tabs.js": "636db7c48d611560b4456a49260a21b1fe1172810ba15e34268b376bde54cded",
+    "active_development/js/canonical-role.js": "dd53f9f84e14ebb0dfdaaaeb5077b5e35b93691f20a2a1083d3b97dd3836e9eb",
+    "active_development/js/broker-hq.js": "eb6dc94fea475761fe9f3b39104c7cb31382cfeaecf39a6aab0049252e3709bb",
+    "active_development/profile.html": "019b1ba5115bfd227e117f02bedd8533f08e1215bd48685597a8d159900a5561",
+    "active_development/broker-hq.html": "3f2e10898d6c03cc048eacbbbae0770ea05710bf4c7782d74bf2fa6b3ee12ce1",
+    "active_development/firebase/functions/index.js": "5f37fb71717766c38f957fc3873ccb1f43369d3b6c0b1b67a267e84708665f57",
+    "active_development/firebase/firestore.rules": "8610fd1722e02d2ed14d2801060dcf46d64c008aa205a859da372671baf8832a",
+    "docs/json/3d-contract.json": "0a1ae4ecb77541d392416b43c5efe7e69ccf59e2c47a404369c00d62ab987413",
+    "docs/g1/5.5G6-house-topology-contract.json": "0c6ca160956cf44e8d3e0c4795d3e8acfd52ad3c8a9628570eaabd096a7f671e"
+  },
+  "freeze_generated_at": "2026-08-28",
+  "promotion_note": "5.5G.6G canonical promotion retained; 5.5G.6I reconciles post-promotion 3D/topology hash drift without weakening protected rules."
+}

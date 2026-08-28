@@ -1,0 +1,358 @@
+{
+  "version": "A.4.4-C.2.1",
+  "status": "code-reality-mapped",
+  "architectural_authority": "SweetHome3D model (master/HomeFinder.sh3d)",
+  "application_authority": "HomeFinder HTML/CSS/JS + Firebase/Supabase contracts",
+  "rooms": [
+    {
+      "room_id": "main-hall",
+      "file": "index.html",
+      "status": "confirmed",
+      "spatial_role": "public_home",
+      "sections": [
+        "hero",
+        "about-home",
+        "map",
+        "properties",
+        "government-housing",
+        "about",
+        "mission",
+        "spaces",
+        "roles",
+        "guide",
+        "pages",
+        "features",
+        "safety",
+        "start",
+        "contact",
+        "credits",
+        "footer"
+      ],
+      "objects": [
+        "navigation-console",
+        "search-console",
+        "map-object",
+        "featured-property-display"
+      ],
+      "notes": "Scroll remains one-room camera choreography, not independent backgrounds."
+    },
+    {
+      "room_id": "login-room",
+      "file": "login.html",
+      "status": "confirmed",
+      "sections": [
+        "login-form",
+        "password-recovery",
+        "social-auth",
+        "register-handoff",
+        "credits",
+        "footer"
+      ],
+      "objects": [
+        "identity-desk",
+        "login-terminal"
+      ],
+      "notes": "Functional authentication remains HTML/JS."
+    },
+    {
+      "room_id": "register-room",
+      "file": "register.html",
+      "status": "confirmed",
+      "sections": [
+        "identity",
+        "contact",
+        "address",
+        "account-type",
+        "password",
+        "social-registration",
+        "login-handoff",
+        "credits",
+        "footer"
+      ],
+      "objects": [
+        "registration-desk",
+        "account-application-document"
+      ],
+      "notes": "Property Owner and Property Seeker are real account types in the current implementation."
+    },
+    {
+      "room_id": "market-room",
+      "file": "market.html",
+      "status": "confirmed",
+      "sections": [
+        "market-guide",
+        "market-map-shell",
+        "market-discovery-rail",
+        "market-contact"
+      ],
+      "subsystems": [
+        "map",
+        "filters",
+        "pin-placement",
+        "stats",
+        "3d-buildings-toggle",
+        "discovery-cards",
+        "expanded-card-modal"
+      ],
+      "objects": [
+        "market-map-wall",
+        "market-catalogue",
+        "filter-cabinet",
+        "discovery-card-table",
+        "contact-desk"
+      ],
+      "roles": {
+        "seeker": "propertyListings",
+        "owner": "wantedListings",
+        "broker": "Broker HQ"
+      },
+      "notes": "One marketplace environment with role-aware data/interaction, not duplicated environments."
+    },
+    {
+      "room_id": "profile-suite",
+      "file": "profile.html",
+      "status": "confirmed",
+      "sections": [
+        "perks",
+        "messages",
+        "contracts",
+        "need-help",
+        "listing",
+        "wanted",
+        "saved",
+        "saved-wanted",
+        "reviews",
+        "gov-housing",
+        "account"
+      ],
+      "role_gates": {
+        "shared": [
+          "seeker",
+          "owner",
+          "broker"
+        ],
+        "owner_broker": [
+          "listing",
+          "saved-wanted"
+        ],
+        "seeker_broker": [
+          "wanted",
+          "saved"
+        ],
+        "seeker_owner": [
+          "gov-housing"
+        ],
+        "ops": [
+          "staff",
+          "moderator",
+          "admin"
+        ]
+      },
+      "objects": [
+        "profile-desk",
+        "messages-phone",
+        "contracts-folder",
+        "listing-document",
+        "wanted-document",
+        "saved-properties-cabinet",
+        "saved-wanted-cabinet",
+        "reviews-display",
+        "government-housing-desk",
+        "account-console",
+        "broker-door",
+        "ops-console"
+      ],
+      "notes": "Keep as one private suite with internal stations; do not split every tab into a room."
+    },
+    {
+      "room_id": "broker-hq",
+      "file": "broker-hq.html",
+      "status": "confirmed",
+      "sections": [
+        "bhq-gate",
+        "bhq-home",
+        "bhq-list-panel",
+        "bhq-service",
+        "bhq-discovery-panel",
+        "bhq-pins-panel"
+      ],
+      "subsystems": [
+        "requests",
+        "near-you",
+        "active",
+        "service-area",
+        "broker-map",
+        "discovery-rail",
+        "service-pins",
+        "manage-pins"
+      ],
+      "objects": [
+        "broker-desk",
+        "broker-map",
+        "request-board",
+        "discovery-wall",
+        "service-pin-console"
+      ],
+      "notes": "Broker HQ is a separate role-specific room. It includes broker discovery/map/profile-adjacent workflows."
+    },
+    {
+      "room_id": "financing-guide",
+      "file": "financing.html",
+      "status": "confirmed",
+      "spatial_role": "public_reference_room",
+      "sections": [
+        "what-this-page-is",
+        "typical-path",
+        "official-links",
+        "coming-on-homefinder"
+      ],
+      "objects": [
+        "government-info-desk",
+        "reference-book"
+      ],
+      "notes": "Current implementation is a government housing guide/reference page, not yet a full financing workspace."
+    },
+    {
+      "room_id": "admin-console",
+      "file": "admin.html",
+      "status": "confirmed",
+      "spatial_role": "ops_room",
+      "sections": [
+        "verifications",
+        "kyc-registry",
+        "orders",
+        "verified",
+        "users",
+        "boosts",
+        "listing-help-pay",
+        "gov-housing",
+        "gov-disclaimers"
+      ],
+      "objects": [
+        "approval-desk",
+        "kyc-lockbox",
+        "orders-ledger",
+        "user-registry",
+        "boost-console",
+        "gov-housing-desk"
+      ]
+    },
+    {
+      "room_id": "moderator-console",
+      "file": "moderator.html",
+      "status": "confirmed",
+      "spatial_role": "ops_room",
+      "sections": [
+        "properties",
+        "orders",
+        "wanted",
+        "contracts",
+        "verified"
+      ],
+      "objects": [
+        "moderation-board",
+        "payment-ledger",
+        "wanted-board",
+        "contracts-desk"
+      ]
+    },
+    {
+      "room_id": "staff-console",
+      "file": "staff.html",
+      "status": "confirmed",
+      "spatial_role": "ops_room",
+      "sections": [
+        "support",
+        "reports",
+        "orders",
+        "users",
+        "alerts",
+        "listing-help-pay"
+      ],
+      "objects": [
+        "support-desk",
+        "reports-board",
+        "orders-ledger",
+        "user-lookup",
+        "alerts-console"
+      ]
+    },
+    {
+      "room_id": "legal-info",
+      "files": [
+        "privacy.html",
+        "terms.html"
+      ],
+      "status": "confirmed",
+      "spatial_role": "quiet-reference-room",
+      "objects": [
+        "legal-library"
+      ]
+    }
+  ],
+  "role_routing": {
+    "public": [
+      "main-hall",
+      "login-room",
+      "register-room",
+      "market-room",
+      "financing-guide",
+      "legal-info"
+    ],
+    "seeker": [
+      "profile-suite",
+      "market-room"
+    ],
+    "owner": [
+      "profile-suite",
+      "market-room"
+    ],
+    "broker": [
+      "profile-suite",
+      "broker-hq",
+      "market-room"
+    ],
+    "staff": [
+      "staff-console"
+    ],
+    "moderator": [
+      "moderator-console"
+    ],
+    "admin": [
+      "admin-console"
+    ]
+  },
+  "security_boundary_map": {
+    "frontend": "HTML/CSS/JS page and runtime layer",
+    "access_control": "Client authority-contract/admin-role gates plus authoritative Firestore rules/callable functions",
+    "business_logic": "Firebase/Firestore data contracts, callable functions, profile/market/broker modules",
+    "external_apis": [
+      "Firebase browser SDK",
+      "Supabase browser SDK",
+      "MapLibre",
+      "PayPal",
+      "government reference sites",
+      "optional/linked AI/provider sites"
+    ],
+    "sensitive_data": [
+      "KYC documents",
+      "identity/licence references",
+      "private user/profile data"
+    ],
+    "input_validation": "Present across registration/forms/map/property workflows; must be treated as UX validation plus backend enforcement.",
+    "rate_limiting": "Client cooldown/radius logic exists and Firestore rules enforce related cooldown state; backend function implementation is referenced but not present in the checkpoint.",
+    "api_inventory": "Callable functions and direct SDK access are visible in JS modules; full backend function inventory requires the functions source, which is not present in this checkpoint.",
+    "ssrf": "No server-side HTTP caller source is present in the checkpoint; cannot claim SSRF safety for absent backend code. Browser external requests observed are explicit SDK/CDN/provider URLs.",
+    "configuration": "Firebase browser config and Supabase anon config are client-visible by design; sensitive service-role credentials must remain server-side."
+  },
+  "important_corrections": [
+    "market.html is the canonical marketplace page for this blueprint.",
+    "Use market.html as the canonical Marketplace room.",
+    "Broker HQ is a confirmed first-class room.",
+    "Profile is a large private suite with role-gated stations, not five separate rooms.",
+    "Finance is currently a government housing guide/reference page.",
+    "Admin, Moderator and Staff are confirmed operational rooms.",
+    "Favorites/Settings are currently profile capabilities/stations, not assumed standalone rooms.",
+    "Property detail route remains to be verified from the actual repository before creating a dedicated room."
+  ]
+}

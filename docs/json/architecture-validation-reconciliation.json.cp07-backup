@@ -1,0 +1,138 @@
+{
+  "branch": "architecture-validation-reconciliation",
+  "date": "2026-08-26",
+  "parent": "masterplan.md \u00a710",
+  "phase": "5.5C-V",
+  "baseline": {
+    "tests": 106,
+    "passed": 46,
+    "failed": 60
+  },
+  "walkmyplan_test_files": [
+    "dd05-ui-response-mapping.test.mjs",
+    "dd05-h09-contact-exit.test.mjs",
+    "room-shell-physical-ui-mapping.test.mjs",
+    "theme-lighting-performance-budget.test.mjs",
+    "deep-dive-04-auth-roles-permissions.test.mjs",
+    "dd05-h05-government-housing.test.mjs",
+    "asset-integration-planning.test.mjs",
+    "dd04-final-authority-freeze.test.mjs",
+    "role-contract-subscription-path.test.mjs",
+    "dd05-main-hall-cinematic-map.test.mjs",
+    "dd05-h06-mission.test.mjs",
+    "dd05-main-hall-sequence-reconciliation.test.mjs",
+    "canonical-room-camera-door-graph.test.mjs",
+    "hero-world-environment-shell.test.mjs"
+  ],
+  "census_baseline": [
+    "docs/csv/reconciliation/recovered-page-census.csv",
+    "active_development/data/feature-wiring-matrix.json",
+    "active_development/data/house-ui-ux-code-reality-map.json",
+    "active_development/data/ui-response-mapping.json",
+    "docs/audit/phase5.5c-ui-spatial-census-initiation.md",
+    "active_development/3d/docs/model-census.json",
+    "docs/md/3d-model-census-verified.md"
+  ],
+  "status": "baseline-recorded; test classification/reconciliation in progress",
+  "canonical_sh3d_untouched": true,
+  "walkmyplan_reconciliation": [
+    {
+      "test": "dd05-ui-response-mapping.test.mjs",
+      "disposition": "SUPERSEDED WALKMYPLAN CONTRACT",
+      "retired_dependency": "camera-registry.json",
+      "current_evidence": "ui-response-mapping.json + house-camera-rig.json + camera/spatial authority",
+      "action": "Replace camera lookup with current logical presentation/camera contract."
+    },
+    {
+      "test": "dd05-h09-contact-exit.test.mjs",
+      "disposition": "SUPERSEDED WALKMYPLAN CONTRACT",
+      "retired_dependency": "physical-ui-object-registry.json",
+      "current_evidence": "main-hall-cinematic-ui-map.json + house-camera-rig.json",
+      "action": "Reconcile H-09 physical object mapping to current authority."
+    },
+    {
+      "test": "room-shell-physical-ui-mapping.test.mjs",
+      "disposition": "SUPERSEDED WALKMYPLAN CONTRACT",
+      "retired_dependency": "room-shell/physical UI registry",
+      "current_evidence": "house-ui-ux-code-reality-map.json + current spatial contracts",
+      "action": "Rewrite against current room/presentation evidence."
+    },
+    {
+      "test": "theme-lighting-performance-budget.test.mjs",
+      "disposition": "SUPERSEDED WALKMYPLAN CONTRACT",
+      "retired_dependency": "theme-lighting-contract.json",
+      "current_evidence": "current active cinematic/runtime contract if still required",
+      "action": "Determine whether assertion is current or historical; preserve lighting evidence."
+    },
+    {
+      "test": "deep-dive-04-auth-roles-permissions.test.mjs",
+      "disposition": "MIXED: CURRENT + SUPERSEDED",
+      "retired_dependency": "role-path/auth-identity matrices",
+      "current_evidence": "route-access-contract.js + authority-contract.js + backend authority",
+      "action": "Keep security assertions; remove spatial authority dependency."
+    },
+    {
+      "test": "dd05-h05-government-housing.test.mjs",
+      "disposition": "SUPERSEDED WALKMYPLAN CONTRACT",
+      "retired_dependency": "physical-ui-object-registry.json",
+      "current_evidence": "main-hall-cinematic-ui-map.json + current presentation contract",
+      "action": "Rewrite Government physical mapping."
+    },
+    {
+      "test": "asset-integration-planning.test.mjs",
+      "disposition": "SUPERSEDED WALKMYPLAN CONTRACT",
+      "retired_dependency": "WalkMyPlan assets/manifest",
+      "current_evidence": "current runtime/asset contract",
+      "action": "Retain only assertions that still describe current runtime."
+    },
+    {
+      "test": "dd04-final-authority-freeze.test.mjs",
+      "disposition": "MIXED: CURRENT + SUPERSEDED",
+      "retired_dependency": "auth/path/door registries",
+      "current_evidence": "authority-contract + route authority + current spatial contracts",
+      "action": "Preserve security/authority invariants; replace retired spatial registries."
+    },
+    {
+      "test": "role-contract-subscription-path.test.mjs",
+      "disposition": "MIXED: CURRENT + SUPERSEDED",
+      "retired_dependency": "door/security camera registries",
+      "current_evidence": "route-access-contract + application authority + current spatial contracts",
+      "action": "Separate role/subscription behavior from retired spatial authority."
+    },
+    {
+      "test": "dd05-main-hall-cinematic-map.test.mjs",
+      "disposition": "SUPERSEDED WALKMYPLAN CONTRACT",
+      "retired_dependency": "physical-ui-object + zone maps",
+      "current_evidence": "main-hall-cinematic-ui-map.json + current spatial contract",
+      "action": "Rewrite main-hall mapping against current evidence."
+    },
+    {
+      "test": "dd05-h06-mission.test.mjs",
+      "disposition": "SUPERSEDED WALKMYPLAN CONTRACT",
+      "retired_dependency": "physical-ui-object-registry.json",
+      "current_evidence": "ui-response-mapping.json + current presentation contract",
+      "action": "Rewrite Mission presentation mapping."
+    },
+    {
+      "test": "dd05-main-hall-sequence-reconciliation.test.mjs",
+      "disposition": "SUPERSEDED WALKMYPLAN CONTRACT",
+      "retired_dependency": "camera/choreography registries",
+      "current_evidence": "main-hall camera contracts + logical camera reconciliation",
+      "action": "Replace old choreography authority with current camera contract."
+    },
+    {
+      "test": "canonical-room-camera-door-graph.test.mjs",
+      "disposition": "SUPERSEDED WALKMYPLAN CONTRACT",
+      "retired_dependency": "entire WalkMyPlan data directory",
+      "current_evidence": "canonical SH3D + camera/route/door authority contracts",
+      "action": "Rebuild graph validation from canonical/current sources."
+    },
+    {
+      "test": "hero-world-environment-shell.test.mjs",
+      "disposition": "SUPERSEDED WALKMYPLAN CONTRACT",
+      "retired_dependency": "hero/environment shell registries",
+      "current_evidence": "current cinematic runtime/world contract",
+      "action": "Determine surviving current contract; archive obsolete shell assertions."
+    }
+  ]
+}

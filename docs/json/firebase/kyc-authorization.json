@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "authority": "Canonical KYC authorization contract",
+  "identity": {
+    "source": "Firebase Auth",
+    "required": true
+  },
+  "roles": {
+    "admin": {
+      "viewSensitiveDocuments": true,
+      "review": true
+    },
+    "moderator": {
+      "viewSensitiveDocuments": false,
+      "review": false
+    },
+    "staff": {
+      "viewSensitiveDocuments": false,
+      "review": false
+    }
+  },
+  "operations": {
+    "signedUrl": {
+      "allowedRoles": [
+        "admin"
+      ],
+      "documentKinds": [
+        "id",
+        "broker"
+      ],
+      "ttlSeconds": 900
+    },
+    "review": {
+      "allowedRoles": [
+        "admin"
+      ]
+    },
+    "submit": {
+      "allowedRoles": [
+        "owner",
+        "seeker",
+        "broker"
+      ],
+      "target": "self"
+    }
+  },
+  "storage": {
+    "provider": "Supabase Storage",
+    "bucket": "kyc-documents",
+    "private": true
+  },
+  "firestoreSource": {
+    "collection": "users",
+    "fields": [
+      "canonicalRole",
+      "idVerification.storagePath",
+      "idVerification.path",
+      "brokerLicense.storagePath",
+      "brokerLicense.path"
+    ]
+  },
+  "implementationRule": "Firebase and Supabase implementations must resolve the caller to canonicalRole; the bootstrap admin UID is an explicit emergency/bootstrap authority shared by both implementations.",
+  "bootstrapAdminUids": [
+    "IZN9EHQ9iTboWXoEgklJlWiwzz82"
+  ],
+  "canonicalFields": {
+    "brokerLicense": "brokerLicense",
+    "legacyAliases": {
+      "license": "brokerLicense"
+    }
+  }
+}

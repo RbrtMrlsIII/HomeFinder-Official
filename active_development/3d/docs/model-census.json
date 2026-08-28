@@ -1,0 +1,56 @@
+{
+  "source_model": "master/HomeFinder.sh3d",
+  "canonical_sha256": "2463bbf41a92012bbd81b66ea957c993075f5a2bf6db8a43e676b0c832b0e58c",
+  "levels": [
+    {
+      "id": "level0",
+      "name": "Basement",
+      "elevation": "-150"
+    },
+    {
+      "id": "level1",
+      "name": "1st floor",
+      "elevation": "112"
+    },
+    {
+      "id": "level2",
+      "name": "Roof",
+      "elevation": "374"
+    },
+    {
+      "id": "add-level0",
+      "name": "1st floor",
+      "elevation": "0"
+    },
+    {
+      "id": "add-level1",
+      "name": "2nd floor",
+      "elevation": "262"
+    },
+    {
+      "id": "add-level2",
+      "name": "Attic",
+      "elevation": "524"
+    },
+    {
+      "id": "add-level3",
+      "name": "Roof",
+      "elevation": "524"
+    }
+  ],
+  "level_count": 7,
+  "room_polygon_count": 47,
+  "wall_count": 170,
+  "door_or_window_count": 86,
+  "furniture_element_count": 302,
+  "furniture_group_count": 8,
+  "light_count": 31,
+  "observer_camera_count": 15,
+  "house1_h_camera_count": 9,
+  "dimension_line_count": 58,
+  "polyline_count": 7,
+  "label_count": 7,
+  "text_element_count": 7,
+  "verification_note": "Regenerated from current canonical Home.xml during 5.5G.6I reconnaissance; counts are raw XML element counts.",
+  "authority_note": "master/HomeFinder.sh3d is the sole runtime physical authority. No noncanonical SH3D files remain in the current repository."
+}

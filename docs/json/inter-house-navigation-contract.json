@@ -1,0 +1,100 @@
+{
+  "version": "5.5G.6I-1",
+  "authority": "Controlled inter-house transport contract",
+  "status": "ACTIVE \u2014 NON-PHYSICAL TRANSITION MODEL",
+  "decision": "Because the canonical SH3D contains substantial spatial gaps and no inter-house portal evidence, inter-house movement is modeled as a controlled transport transition rather than invented physical traversal.",
+  "physical_authority": "master/HomeFinder.sh3d",
+  "physical_routes_promoted": 0,
+  "houses": {
+    "house-1": {
+      "label": "House 1",
+      "role": "inter-house transit hub",
+      "entry_route": "index.html"
+    },
+    "house-2": {
+      "label": "House 2",
+      "role": "Broker + Operations",
+      "entry_policy": "role-aware"
+    },
+    "house-3": {
+      "label": "House 3",
+      "role": "Seekers + Owners",
+      "entry_policy": "role-aware"
+    }
+  },
+  "transitions": [
+    {
+      "from": "house-1",
+      "to": "house-2",
+      "mode": "controlled-transport",
+      "status": "validated-logical-transition"
+    },
+    {
+      "from": "house-2",
+      "to": "house-1",
+      "mode": "controlled-transport",
+      "status": "validated-logical-transition"
+    },
+    {
+      "from": "house-1",
+      "to": "house-3",
+      "mode": "controlled-transport",
+      "status": "validated-logical-transition"
+    },
+    {
+      "from": "house-3",
+      "to": "house-1",
+      "mode": "controlled-transport",
+      "status": "validated-logical-transition"
+    },
+    {
+      "from": "house-2",
+      "to": "house-3",
+      "mode": "forbidden",
+      "status": "forbidden-direct"
+    },
+    {
+      "from": "house-3",
+      "to": "house-2",
+      "mode": "forbidden",
+      "status": "forbidden-direct"
+    }
+  ],
+  "role_policy": {
+    "physical_travel_never_changes_role": true,
+    "house-1": {
+      "guest": "index.html",
+      "owner": "index.html",
+      "seeker": "index.html",
+      "broker": "index.html",
+      "admin": "index.html",
+      "moderator": "index.html",
+      "staff": "index.html"
+    },
+    "house-2": {
+      "broker": "broker-hq.html",
+      "admin": "admin.html",
+      "moderator": "moderator.html",
+      "staff": "staff.html",
+      "owner": "profile.html",
+      "seeker": "profile.html",
+      "guest": "login.html"
+    },
+    "house-3": {
+      "owner": "market.html",
+      "seeker": "market.html",
+      "broker": "broker-hq.html",
+      "admin": "admin.html",
+      "moderator": "moderator.html",
+      "staff": "staff.html",
+      "guest": "login.html"
+    }
+  },
+  "invariants": [
+    "No House 2\u2194House 3 direct transition.",
+    "House 2\u2194House 3 journeys must be expressed through House 1.",
+    "A transition never changes authenticated role or identity.",
+    "Destination access is rechecked by the canonical route-access contract.",
+    "Logical transport is not represented as physical SH3D portal evidence."
+  ]
+}

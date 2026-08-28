@@ -1,0 +1,788 @@
+path,extension,path_batch,provisional_role
+README.md,.md,Documentation / Project Guide,historical/suspect
+HandOver.md,.md,Documentation / Project Guide,historical/suspect
+AI_ASSISTANT_READ_ME.md,.md,Documentation / Project Guide,historical/suspect
+masterplan.md,.md,Documentation / Project Guide,historical/suspect
+Endorsement.md,.md,Documentation / Project Guide,historical/suspect
+docs/SESSION_CONTINUATION_LOCK.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/verification-model.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/5.5f2-deep-additional-sh3d-census.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/5.5c-v5-baseline-integrity.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/data-authority.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/architecture-validation-reconciliation.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/index.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/m1-runtime-boundary-resolution.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/recovery-provenance.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/operating-guide.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/checkpoint-policy.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/sot-checkup.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/package-structure.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/m6-gate-lock.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/5.5e-spatial-reconciliation-proof.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/5.5f1-ui-physical-room-completeness.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/package-readme-archive.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/5.5d-three-house-allocation-presentation-contract.md,.md,Contracts,candidate canonical/supporting
+docs/md/authority-model.md,.md,Security / Authentication,historical/suspect
+docs/md/5.5c-v2-current-test-path-and-role-migration.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/project-authority.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/active-suite-failure-classification-2026-08-26.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/m0-to-p08-summary.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/route-authority.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/5.5c-v6-baseline-integrity-rejoin.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/dead-files-and-structure.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive-log.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/architecture-validation-reconciliation-results.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/g1-merge-2026-08-27.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/3d-authority.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/3d-model-census-verified.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/project-state.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/5.5c-v4-patch57-cinematic-test-path-reconciliation.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/5.5c-v3-historical-contract-reconciliation.md,.md,Contracts,historical/suspect
+docs/md/camera-and-spatial-authority.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/g-series-complete-merge-2026-08-27.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/role-authority.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/cloudflare/README.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/cloudflare/archive/production-checklist.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/cloudflare/archive/patch-paypal-cloudflare-hardening.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/working-notes/performance-accessibility.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/working-notes/master-cross-system-matrix.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/working-notes/responsive-browser-execution-2026-08-23.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/working-notes/readme.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/working-notes/project-map.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/working-notes/public-profile-deployment-runbook.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/working-notes/domain-dictionary.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/working-notes/checkpoint-structure.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/working-notes/market-profile-preview-note.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/working-notes/ui-ownership.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/working-notes/change-control.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/working-notes/phase11-deploy-and-browser-gate.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/working-notes/landmines-open-issues.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/working-notes/main-hall-h01-h02-h03-h05-refinement.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/working-notes/phase13-auth-propagation.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/working-notes/theme-and-animation-root.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/working-notes/document-organization-and-repair.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/working-notes/security-drainage-and-hardening.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/working-notes/responsive-qa-execution.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/working-notes/design-roots-implementation.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/working-notes/public-profile-projection.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/working-notes/cinematic-principles.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/working-notes/third-party-notices.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/working-notes/public-read-surface-hardening.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/working-notes/animation-object-responsive-contract.md,.md,Contracts,candidate canonical/supporting
+docs/md/working-notes/legacy-compatibility-retirement.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/working-notes/phase12-animation-object-responsive.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/working-notes/public-profile-read-surface-gate.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/archive/verification/readme.md,.md,Verification / Tests,historical/suspect
+docs/md/archive/verification/00-archive-and-evidence-policy.md,.md,Verification / Tests,historical/suspect
+docs/md/archive/verification/37-main-hall-visual-tuning-review.md,.md,Verification / Tests,historical/suspect
+docs/md/archive/working-notes/third-party-notices-full.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/evidence/2026-08-23-support-ticket-and-role-dive.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/evidence/2026-08-23-user-authority-data-graph.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/evidence/2026-08-23-attacker-capability-inventory.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/evidence/2026-08-23-firestore-ticket-notification-graph.md,.md,Backend / Firebase / Database,historical/suspect
+docs/md/archive/evidence/2026-08-23-input-upload-hardening.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/evidence/2026-08-23-registration-suspension-hardening.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/evidence/2026-08-23-authority-audit.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/walkmyplan-pdf/A4.4C3.5_Physical_UI_Object_Printable.pdf,.pdf,Unclassified / Needs Review,historical/suspect
+docs/md/archive/walkmyplan-pdf/A4.4C3.4_Hero_Composition_Printable.pdf,.pdf,Unclassified / Needs Review,historical/suspect
+docs/md/archive/walkmyplan-pdf/A4.4C3.3_Camera_Door_Graph_Printable.pdf,.pdf,Unclassified / Needs Review,historical/suspect
+docs/md/archive/working-notes-spatial/market-profile-physical-ui-propagation.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/working-notes-spatial/physical-ui-objects.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/working-notes-spatial/auth-physical-ui-propagation.md,.md,Security / Authentication,historical/suspect
+docs/md/archive/working-notes-spatial/animation-camera-door-contract.md,.md,Contracts,historical/suspect
+docs/md/archive/working-notes-spatial/main-hall-physical-ui-contract.md,.md,Contracts,historical/suspect
+docs/md/archive/working-notes-spatial/spatial-reconciliation.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/working-notes-spatial/main-hall-camera-object-contract.md,.md,Contracts,historical/suspect
+docs/md/archive/working-notes-spatial/main-hall-camera-tuning-phase13.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/working-notes-spatial/master-camera-contract.md,.md,Contracts,historical/suspect
+docs/md/archive/archive/readme.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/archive/09-sweethome3d-sot.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/archive/10-sweethome3d-model-census.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/archive/04-data-backend-authority.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/archive/17-verification-testing.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/archive/03-product-routes-roles.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/archive/01-source-of-truth.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/archive/36-phase8-integration-audit.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/archive/18-roadmap.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/archive/40-phase9-theme-security-repair.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/archive/37-phase10-public-profile-responsive-audit.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/reconciliation/2026-08-23-authority-migration.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/reconciliation/3d-authority-reconciliation.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/archive/stray/NEXT_PATCH-legacy.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/paypal/README.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/paypal/integrations-payments-edge.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/paypal/archive/production-paypal-cloudflare-contract.md,.md,Contracts,historical/suspect
+docs/md/paypal/archive/admin-subscription-grant.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/contracts/README.md,.md,Contracts,candidate canonical/supporting
+docs/md/contracts/authority.md,.md,Security / Authentication,candidate canonical/supporting
+docs/md/reconciliation/README.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/reconciliation/page-binding-workplan.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/reconciliation/migration-reconciliation-report.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/reconciliation/pov-wiring-phase-one-living-note.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/reconciliation/pov-wiring-phase-one.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/reconciliation/living-authority-and-next-reconciliation.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/reconciliation/MASTER_SCENE_REFERENCE.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/firebase/README.md,.md,Backend / Firebase / Database,historical/suspect
+docs/md/firebase/archive/firebase-supabase-deep-dive.md,.md,Backend / Firebase / Database,historical/suspect
+docs/md/firebase/archive/firebase-supabase-authority.md,.md,Backend / Firebase / Database,historical/suspect
+docs/md/supabase/README.md,.md,Documentation / Project Guide,historical/suspect
+docs/md/supabase/architecture.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/supabase/operator-playbook-full.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/md/supabase/operator-playbook.md,.md,Documentation / Project Guide,historical/suspect
+docs/csv/archive/verification/32_resilience_fallback_matrix.csv,.csv,Verification / Tests,historical/suspect
+docs/csv/archive/verification/34_feature_wiring_route_coverage.csv,.csv,Verification / Tests,historical/suspect
+docs/csv/archive/verification/main-hall-visual-tuning.csv,.csv,Verification / Tests,historical/suspect
+docs/csv/archive/verification/38_security_leak_scan.csv,.csv,Verification / Tests,historical/suspect
+docs/csv/archive/verification/31_responsive_qa_matrix.csv,.csv,Verification / Tests,historical/suspect
+docs/csv/archive/verification/39_discrepancy_ledger.csv,.csv,Verification / Tests,historical/suspect
+docs/csv/archive/verification/33_role_camera_security_matrix.csv,.csv,Verification / Tests,historical/suspect
+docs/csv/archive/verification/35_security_and_wiring_test_status.csv,.csv,Verification / Tests,historical/suspect
+docs/csv/archive/verification/37_theme_token_audit.csv,.csv,Verification / Tests,historical/suspect
+docs/csv/archive/walkmyplan/section-asset-binding.csv,.csv,Unclassified / Needs Review,historical/suspect
+docs/csv/archive/walkmyplan/camera-door-graph.csv,.csv,Unclassified / Needs Review,historical/suspect
+docs/csv/archive/walkmyplan/hero-composition-matrix.csv,.csv,Unclassified / Needs Review,historical/suspect
+docs/csv/archive/walkmyplan/asset-readiness-matrix.csv,.csv,Unclassified / Needs Review,historical/suspect
+docs/csv/archive/walkmyplan/operations-role-surface-matrix.csv,.csv,Unclassified / Needs Review,historical/suspect
+docs/csv/archive/walkmyplan/spatial-reconciliation.csv,.csv,Unclassified / Needs Review,historical/suspect
+docs/csv/archive/walkmyplan/physical-ui-object-contract.csv,.csv,Contracts,historical/suspect
+docs/csv/archive/audits/36-responsive-qa-execution.csv,.csv,Unclassified / Needs Review,historical/suspect
+docs/csv/reconciliation/5.5f1-ui-physical-room-completeness.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/reconciliation/logical-room-reconciliation.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/reconciliation/logical-room-anchor-candidates.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/reconciliation/5.5f5-logical-state-anchor-hypothesis.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/reconciliation/sweet-home-camera-creation-manifest.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/reconciliation/5.5d-three-house-allocation.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/reconciliation/page-section-pov-wiring.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/reconciliation/master-model-census.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/reconciliation/5.5f5-html-density-evidence.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/reconciliation/main-hall-section-camera-seed-candidates.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/reconciliation/master-furniture-name-counts.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/reconciliation/5.5f2-merge-candidate-resource-reference-audit.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/reconciliation/5.5f3-level-reconciliation.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/reconciliation/5.5e-house1-camera-anchor-validation.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/reconciliation/physical-ui-object-reconciliation.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/reconciliation/page-room-mapping-candidates.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/reconciliation/master-named-rooms.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/reconciliation/5.5f2-additional-sh3d-room-inventory.csv,.csv,Unclassified / Needs Review,historical/suspect
+docs/csv/reconciliation/logical-camera-master-binding-candidates.csv,.csv,Unclassified / Needs Review,historical/suspect
+docs/csv/reconciliation/5.5f4-three-house-candidate-physical-allocation.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/reconciliation/page-room-pov-object-working-matrix.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/reconciliation/5.5f1-actual-html-page-census.csv,.csv,Unclassified / Needs Review,historical/suspect
+docs/csv/reconciliation/logical-camera-reconciliation.csv,.csv,Unclassified / Needs Review,historical/suspect
+docs/csv/reconciliation/current-page-pov-summary.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/reconciliation/recovered-page-census.csv,.csv,Unclassified / Needs Review,historical/suspect
+docs/csv/reconciliation/master-named-cameras.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/reconciliation/5.5f5-reusable-presentation-anchor-candidates.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/reconciliation/5.5e-sh3d-authority-comparison.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/from-app-data/master-page-room-pov-theme-role-object-responsive.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/from-app-data/responsive-browser-execution.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/from-app-data/security-read-surface-matrix.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/from-app-data/theme-room-compatibility.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/from-app-data/feature-wiring-matrix.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/from-app-data/main-hall-camera-refinement-h01-h02-h03-h05.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/from-app-data/responsive-qa-execution.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/csv/from-app-data/market-profile-physical-ui-root-matrix.csv,.csv,Unclassified / Needs Review,historical/suspect
+docs/csv/from-app-data/main-hall-camera-object-contract.csv,.csv,Contracts,candidate canonical/supporting
+docs/reports/5.5f3-candidate-integrity-level-reconciliation.md,.md,Documentation / Project Guide,historical/suspect
+docs/reports/5.5f4-three-house-candidate-physical-allocation.md,.md,Documentation / Project Guide,historical/suspect
+docs/reports/5.5f5-allocation-suitability-capacity-reconciliation.md,.md,Documentation / Project Guide,historical/suspect
+docs/g1/5.5G1.3-corrected-stable-adjacency-edges.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/g1/5.5G1-door-adjacency-census.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/g1/5.5G4-promoted-circulation-spine.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/g1/5.5G5-physical-destination-anchors.json,.json,Configuration / Data,candidate canonical/supporting
+docs/g1/5.5G2-house-boundary-bindings.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/g1/5.5G6-targeted-physical-evidence-enhancement.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/g1/5.5G3-required-logical-door-binding-matrix.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/g1/5.5G1.3-unsafe-door-records.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/g1/5.5G6F-sh3d-merge-alignment.json,.json,Configuration / Data,historical/suspect
+docs/g1/5.5G4-route-validation-matrix.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/g1/5.5G1.1-logical-door-contracts.csv,.csv,Contracts,candidate canonical/supporting
+docs/g1/5.5G2-stable-adjacency-graph.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/g1/5.5G1.5-room-semantic-reconciliation.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/g1/5.5G4-route-validation.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/g1/5.5G1.1-application-route-evidence.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/g1/5.5G6G-final-three-house-physical-validation.md,.md,Documentation / Project Guide,historical/suspect
+docs/g1/5.5G4-route-validation.json,.json,Configuration / Data,candidate canonical/supporting
+docs/g1/5.5G5-physical-destination-anchors.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/g1/5.5G1-door-adjacency-census.json,.json,Configuration / Data,historical/suspect
+docs/g1/5.5G6-house-topology-contract.json,.json,Contracts,candidate canonical/supporting
+docs/g1/5.5G6-targeted-physical-evidence-enhancement.json,.json,Configuration / Data,historical/suspect
+docs/g1/5.5G2-stable-adjacency-graph.json,.json,Configuration / Data,historical/suspect
+docs/g1/5.5G1.4-problematic-door-endpoint-reconciliation.csv,.csv,Unclassified / Needs Review,historical/suspect
+docs/g1/5.5G2-stable-physical-nodes.csv,.csv,Unclassified / Needs Review,historical/suspect
+docs/g1/5.5G6D-3d-runtime-audit.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/g1/5.5G6H-canonical-sh3d-cleanup-audit.md,.md,Documentation / Project Guide,historical/suspect
+docs/g1/5.5G6A-house-topology-clarification.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/g1/5.5G1-door-adjacency-census.md,.md,Documentation / Project Guide,historical/suspect
+docs/g1/5.5G1.5-room-semantic-reconciliation.json,.json,Configuration / Data,historical/suspect
+docs/g1/5.5G6E-canonical-camera-reconciliation.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/g1/5.5G1.3-graph-integrity-reconciliation.json,.json,Configuration / Data,candidate canonical/supporting
+docs/g1/5.5G1.4-physical-door-endpoint-reconciliation.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/g1/5.5G1-problematic-door-resolution.json,.json,Configuration / Data,candidate canonical/supporting
+docs/g1/5.5G3-required-logical-door-binding-matrix.json,.json,Configuration / Data,candidate canonical/supporting
+docs/g1/5.5G1.1-G1.4-continuity-index.json,.json,Configuration / Data,historical/suspect
+docs/g1/5.5G6G-final-three-house-physical-validation.json,.json,Configuration / Data,historical/suspect
+docs/g1/5.5G6F-sh3d-xml-merge-alignment.md,.md,Documentation / Project Guide,historical/suspect
+docs/g1/5.5G2-stable-adjacency-edges.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/g1/5.5G1.1-adjacency-navigation-reconciliation.csv,.csv,Unclassified / Needs Review,candidate canonical/supporting
+docs/g1/5.5G1-problematic-door-resolution.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/g1/5.5G1.1-adjacency-navigation-reconciliation.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/g1/5.5G6D-3d-runtime-audit.json,.json,Configuration / Data,candidate canonical/supporting
+docs/g1/5.5G1.1-adjacency-navigation-reconciliation.json,.json,Configuration / Data,historical/suspect
+docs/g1/5.5G1.3-graph-integrity-reconciliation.md,.md,Documentation / Project Guide,historical/suspect
+docs/g1/5.5G1.5-room-semantic-reconciliation.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/archive/walkmyplan/tests/asset-integration-planning.test.mjs,.mjs,Verification / Tests,historical/suspect
+docs/archive/walkmyplan/tests/canonical-room-camera-door-graph.test.mjs,.mjs,Verification / Tests,historical/suspect
+docs/archive/walkmyplan/tests/role-contract-subscription-path.test.mjs,.mjs,Verification / Tests,historical/suspect
+docs/archive/walkmyplan/tests/theme-lighting-performance-budget.test.mjs,.mjs,Verification / Tests,historical/suspect
+docs/archive/walkmyplan/tests/dd04-final-authority-freeze.test.mjs,.mjs,Verification / Tests,historical/suspect
+docs/archive/walkmyplan/tests/deep-dive-04-auth-roles-permissions.test.mjs,.mjs,Verification / Tests,historical/suspect
+docs/archive/walkmyplan/tests/hero-world-environment-shell.test.mjs,.mjs,Verification / Tests,historical/suspect
+docs/archive/dead-or-superseded/cinematic-3d-adapter.from-verify.test.mjs,.mjs,Unclassified / Needs Review,historical/suspect
+docs/archive/historical-contract-tests/README.md,.md,Contracts,historical/suspect
+docs/archive/historical-contract-tests/patch-52-multi-check-wiring.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/foundation-repair-09-pin-authority.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/patch-28-broker-hq-data-wiring.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/paypal-cloudflare-contract.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/foundation-repair-04-tier-entitlement.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/patch-50-boost-parser-retirement.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/patch-14-listing-activity.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/patch-17-contract-activation.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/patch-19-discovery-impression.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/patch-26-paypal-cloudflare-hardening.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/patch-27-market-data-wiring.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/patch-11c-r7-pin-authority.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/patch-49-boost-parser-retirement.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/market-patch-11a-audit.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/patch-53-ui-ux-contract.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/patch-12-integration-hardening.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/foundation-repair-11-match-notification-dedupe.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/patch-18-listing-inquiry.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/patch-44-boost-compatibility.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/patch-20-statistics-read-map.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/patch-29-broker-hq-interaction-smoke.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/foundation-repair-07-admin-capacity-override.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/foundation-repair-12-stale-match.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/patch-25-admin-subscription-grant.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/foundation-repair-05-subscription-entitlement.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/foundation-repair-10-radius-authority.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/patch-38-authority-wiring-audit.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/patch-43-compatibility-inventory.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/patch-40-boundary-decision.test.mjs,.mjs,Contracts,historical/suspect
+docs/archive/historical-contract-tests/patch-16-listing-activity-contracts.test.mjs,.mjs,Contracts,historical/suspect
+docs/contracts/5.5G6C-protected-logic-freeze.json,.json,Contracts,historical/suspect
+docs/contracts/5.5G6H-canonical-sh3d-cleanup.json,.json,Contracts,historical/suspect
+docs/audit/phase5.5c-ui-spatial-census-initiation.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/audit/phase5.5b-sh3d-merge-dry-run.md,.md,Documentation / Project Guide,candidate canonical/supporting
+docs/plantuml/5.5d-three-house-presentation-travel.puml,.puml,Unclassified / Needs Review,candidate canonical/supporting
+docs/json/project-authority.json,.json,Configuration / Data,candidate canonical/supporting
+docs/json/3d-contract.json,.json,Contracts,historical/suspect
+docs/json/routes-contract.json,.json,Contracts,candidate canonical/supporting
+docs/json/auth-contract.json,.json,Security / Authentication,candidate canonical/supporting
+docs/json/roles-contract.json,.json,Contracts,candidate canonical/supporting
+docs/json/data-contract.json,.json,Contracts,candidate canonical/supporting
+docs/json/checkpoint-manifest-root.json,.json,Configuration / Data,historical/suspect
+docs/json/storage-contract.json,.json,Contracts,historical/suspect
+docs/json/architecture-validation-reconciliation.json,.json,Configuration / Data,historical/suspect
+docs/json/checkpoints/checkpoint-2026-08-26-three-split-migrate.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/verification/refinement-manifest.json,.json,Verification / Tests,historical/suspect
+docs/json/archive/verification/41_phase9_summary.json,.json,Verification / Tests,historical/suspect
+docs/json/archive/walkmyplan/asset-source-license-contract.json,.json,Contracts,historical/suspect
+docs/json/archive/walkmyplan/security-camera-registry.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/walkmyplan/physical-ui-object-registry.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/walkmyplan/room-theme-performance-map.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/walkmyplan/room-shell-registry.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/walkmyplan/door-registry.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/walkmyplan/section-camera-choreography.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/walkmyplan/canonical-camera-door-graph.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/walkmyplan/hero-composition-matrix.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/walkmyplan/spatial-reconciliation.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/walkmyplan/room-zone-registry.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/walkmyplan/auth-identity-route-capability-matrix.json,.json,Security / Authentication,historical/suspect
+docs/json/archive/walkmyplan/environment-shell-registry.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/walkmyplan/role-path-matrix.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/walkmyplan/main-hall-zone-object-map.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/walkmyplan/camera-registry.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/walkmyplan/hero-world-shell-registry.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/walkmyplan/MANIFEST.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/walkmyplan/visibility-performance-policy.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/walkmyplan/hero-asset-contract.json,.json,Contracts,historical/suspect
+docs/json/archive/walkmyplan/physical-ui-object-contract.json,.json,Contracts,historical/suspect
+docs/json/archive/walkmyplan/operations-role-surface-matrix.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/walkmyplan/asset-loading-graph.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/walkmyplan/cinematic-transition-contract.json,.json,Contracts,historical/suspect
+docs/json/archive/walkmyplan/route-registry.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/walkmyplan/performance-budget-matrix.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/walkmyplan/theme-lighting-contract.json,.json,Contracts,historical/suspect
+docs/json/archive/walkmyplan/asset-integration-manifest.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/evidence/guide-manifest.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/reconciliation/3d-authority-reconciliation.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/stray/INDEX.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/stray/PATCH-53-UI-UX-CONTRACT.json,.json,Contracts,historical/suspect
+docs/json/archive/stray/routes.dictionary.json,.json,Configuration / Data,historical/suspect
+docs/json/archive/stray/ui-ownership.dictionary.json,.json,Configuration / Data,historical/suspect
+docs/json/contracts/registration-abuse-authority.json,.json,Contracts,candidate canonical/supporting
+docs/json/contracts/broker-application.json,.json,Contracts,candidate canonical/supporting
+docs/json/contracts/support-ticket-authority.json,.json,Contracts,candidate canonical/supporting
+docs/json/reconciliation/5.5G6E-canonical-camera-binding.json,.json,Configuration / Data,candidate canonical/supporting
+docs/json/reconciliation/cinematic__WalkMyPlan__data__spatial-reconciliation.json,.json,Configuration / Data,candidate canonical/supporting
+docs/json/reconciliation/cinematic__WalkMyPlan__data__physical-ui-object-registry.json,.json,Configuration / Data,candidate canonical/supporting
+docs/json/reconciliation/data__ui-response-mapping.json,.json,Configuration / Data,candidate canonical/supporting
+docs/json/reconciliation/data__house-camera-rig.json,.json,Configuration / Data,candidate canonical/supporting
+docs/json/reconciliation/5.5c-v2-execution-2026-08-26.json,.json,Configuration / Data,historical/suspect
+docs/json/reconciliation/5.5f4-three-house-candidate-physical-allocation.json,.json,Configuration / Data,historical/suspect
+docs/json/reconciliation/5.5f5-return-presentation-contract.json,.json,Contracts,candidate canonical/supporting
+docs/json/reconciliation/data__house-ui-map.json,.json,Configuration / Data,historical/suspect
+docs/json/reconciliation/data__physical-ui-objects.json,.json,Configuration / Data,candidate canonical/supporting
+docs/json/reconciliation/cinematic__WalkMyPlan__data__section-camera-choreography.json,.json,Configuration / Data,candidate canonical/supporting
+docs/json/reconciliation/data__house-ui-ux-code-reality-map.json,.json,Configuration / Data,candidate canonical/supporting
+docs/json/reconciliation/architecture-validation-reconciliation-results.json,.json,Configuration / Data,historical/suspect
+docs/json/reconciliation/5.5f1-ui-physical-room-completeness.json,.json,Configuration / Data,historical/suspect
+docs/json/reconciliation/5.5d-ui-3d-presentation-contract.json,.json,Contracts,candidate canonical/supporting
+docs/json/reconciliation/5.5f2-deep-additional-sh3d-census.json,.json,Configuration / Data,candidate canonical/supporting
+docs/json/reconciliation/3d__docs__model-census.json,.json,Configuration / Data,candidate canonical/supporting
+docs/json/reconciliation/four-archive-execution.json,.json,Configuration / Data,historical/suspect
+docs/json/reconciliation/5.5c-v4-patch57-cinematic-test-path-reconciliation-2026-08-26.json,.json,Configuration / Data,historical/suspect
+docs/json/reconciliation/cinematic__WalkMyPlan__data__camera-registry.json,.json,Configuration / Data,candidate canonical/supporting
+docs/json/reconciliation/first-seven-migration-execution.json,.json,Configuration / Data,historical/suspect
+docs/json/reconciliation/cinematic__WalkMyPlan__data__room-shell-registry.json,.json,Configuration / Data,candidate canonical/supporting
+docs/json/reconciliation/active-suite-failure-classification-2026-08-26.json,.json,Configuration / Data,historical/suspect
+docs/json/reconciliation/freeze-manifest.json,.json,Configuration / Data,historical/suspect
+docs/json/reconciliation/5.5c-v3-historical-contract-reconciliation-2026-08-26.json,.json,Contracts,historical/suspect
+docs/json/reconciliation/5.5c-v6-baseline-integrity-rejoin-2026-08-26.json,.json,Configuration / Data,historical/suspect
+docs/json/reconciliation/5.5d-physical-travel-contract.json,.json,Contracts,candidate canonical/supporting
+docs/json/reconciliation/5.5e-canonical-spatial-topology-proof.json,.json,Configuration / Data,candidate canonical/supporting
+docs/json/reconciliation/cinematic__WalkMyPlan__data__room-zone-registry.json,.json,Configuration / Data,candidate canonical/supporting
+docs/json/reconciliation/5.5c-v5-baseline-integrity-2026-08-26.json,.json,Configuration / Data,historical/suspect
+docs/json/reconciliation/current-validation-baseline-2026-08-26.json,.json,Configuration / Data,historical/suspect
+docs/json/firebase/kyc-authorization.json,.json,Backend / Firebase / Database,candidate canonical/supporting
+docs/json/firebase/canonical-roles.json,.json,Backend / Firebase / Database,candidate canonical/supporting
+docs/json/firebase/canonical-data.json,.json,Backend / Firebase / Database,candidate canonical/supporting
+docs/json/firebase/route-authority.json,.json,Backend / Firebase / Database,candidate canonical/supporting
+docs/json/firebase/user-authority.json,.json,Backend / Firebase / Database,candidate canonical/supporting
+docs/json/supabase/storage-authority.json,.json,Configuration / Data,candidate canonical/supporting
+docs/json/supabase/backend-authority.json,.json,Configuration / Data,candidate canonical/supporting
+verification/5.5G2/5.5G2-verification.json,.json,Configuration / Data,candidate canonical/supporting
+verification/2026-08-27/5.5G6-verification.json,.json,Configuration / Data,candidate canonical/supporting
+verification/2026-08-27/5.5G6A-house-topology-verification.json,.json,Configuration / Data,candidate canonical/supporting
+verification/2026-08-27/5.5G6D-verification.json,.json,Configuration / Data,historical/suspect
+verification/2026-08-27/5.5G6F-verification.json,.json,Configuration / Data,candidate canonical/supporting
+verification/2026-08-27/5.5G1.4-verification.json,.json,Configuration / Data,candidate canonical/supporting
+verification/2026-08-27/5.5G6E-verification.json,.json,Configuration / Data,candidate canonical/supporting
+verification/2026-08-26/5.5f2-checkpoint-manifest.json,.json,Configuration / Data,historical/suspect
+verification/2026-08-26/5.5e-chat-development-checklist.json,.json,Configuration / Data,historical/suspect
+verification/2026-08-26/5.5c-v4-patch57-test.txt,.txt,Documentation / Project Guide,historical/suspect
+verification/2026-08-26/active-suite-after-v2.txt,.txt,Documentation / Project Guide,candidate canonical/supporting
+verification/2026-08-26/5.5f4-allocation-verification.json,.json,Configuration / Data,candidate canonical/supporting
+verification/2026-08-26/5.5f1-checkpoint-manifest.json,.json,Configuration / Data,historical/suspect
+verification/2026-08-26/house-camera-rig.test.mjs.txt,.txt,Documentation / Project Guide,candidate canonical/supporting
+verification/2026-08-26/5.5f2-development-continuity-checklist.json,.json,Configuration / Data,historical/suspect
+verification/2026-08-26/5.5c-v5-full-active-suite.txt,.txt,Documentation / Project Guide,historical/suspect
+verification/2026-08-26/historical-contract-individual-results.txt,.txt,Contracts,historical/suspect
+verification/2026-08-26/patch-57-cinematic-camera-hero.test.mjs.txt,.txt,Documentation / Project Guide,historical/suspect
+verification/2026-08-26/physical-ui-object-system.test.mjs.txt,.txt,Documentation / Project Guide,historical/suspect
+verification/2026-08-26/5.5f4-development-continuity-checklist.json,.json,Configuration / Data,historical/suspect
+verification/2026-08-26/5.5c-v6-full-active-suite.txt,.txt,Documentation / Project Guide,historical/suspect
+verification/2026-08-26/5.5e-checkpoint-manifest.json,.json,Configuration / Data,historical/suspect
+verification/2026-08-26/5.5c-v4-cinematic-3d-slice.txt,.txt,Documentation / Project Guide,historical/suspect
+verification/2026-08-26/5.5f3-candidate-integrity-level-reconciliation.json,.json,Configuration / Data,candidate canonical/supporting
+verification/2026-08-26/5.5f3-development-continuity-checklist.json,.json,Configuration / Data,candidate canonical/supporting
+verification/2026-08-26/listings-book-interaction.test.mjs.txt,.txt,Documentation / Project Guide,candidate canonical/supporting
+verification/2026-08-26/5.5d-checkpoint-manifest.json,.json,Configuration / Data,historical/suspect
+verification/2026-08-26/5.5f5-development-continuity-checklist.json,.json,Configuration / Data,historical/suspect
+verification/2026-08-26/patch-21-role-need-help.test.mjs.txt,.txt,Documentation / Project Guide,historical/suspect
+verification/2026-08-26/5.5f1-development-continuity-checklist.json,.json,Configuration / Data,historical/suspect
+verification/2026-08-26/active-suite-node-test-output.txt,.txt,Documentation / Project Guide,candidate canonical/supporting
+verification/2026-08-26/market-profile-physical-ui-propagation.test.mjs.txt,.txt,Documentation / Project Guide,candidate canonical/supporting
+verification/2026-08-26/full-active-suite-after-v3.txt,.txt,Documentation / Project Guide,candidate canonical/supporting
+verification/2026-08-26/classification-manifest.json,.json,Configuration / Data,historical/suspect
+verification/2026-08-26/5.5c-v4-full-active-suite.txt,.txt,Documentation / Project Guide,historical/suspect
+verification/5.5G1/5.5G1.3-verification.json,.json,Configuration / Data,candidate canonical/supporting
+verification/5.5G1/5.5G1.5-verification.json,.json,Configuration / Data,candidate canonical/supporting
+verification/5.5G1/5.5G1-problematic-door-resolution-verification.json,.json,Configuration / Data,historical/suspect
+verification/5.5G1/5.5G1.1-verification.json,.json,Configuration / Data,candidate canonical/supporting
+verify/data/canonical-listings.mjs,.mjs,Unclassified / Needs Review,candidate canonical/supporting
+verify/contracts/protected-logic-freeze.mjs,.mjs,Contracts,candidate canonical/supporting
+verify/contracts/authority-invariants.mjs,.mjs,Security / Authentication,candidate canonical/supporting
+verify/3d/canonical-homefinder-sh3d.mjs,.mjs,3D / Spatial,candidate canonical/supporting
+verify/3d/runtime-homefinder-reference.mjs,.mjs,3D / Spatial,candidate canonical/supporting
+verify/security/support-ticket-authority.mjs,.mjs,Security / Authentication,candidate canonical/supporting
+verify/security/broker-application-authority.mjs,.mjs,Security / Authentication,candidate canonical/supporting
+verify/security/user-authority.mjs,.mjs,Security / Authentication,candidate canonical/supporting
+verify/security/canonical-roles.mjs,.mjs,Security / Authentication,candidate canonical/supporting
+verify/security/kyc-self-escalation.mjs,.mjs,Security / Authentication,candidate canonical/supporting
+verify/security/canonical-role-authority.mjs,.mjs,Security / Authentication,candidate canonical/supporting
+verify/integrations/supabase-security-boundary.mjs,.mjs,Unclassified / Needs Review,candidate canonical/supporting
+verify/integrations/supabase-structure.mjs,.mjs,Unclassified / Needs Review,candidate canonical/supporting
+verify/integrations/backend-authority.mjs,.mjs,Unclassified / Needs Review,candidate canonical/supporting
+verify/integrations/kyc-contract-consistency.mjs,.mjs,Contracts,candidate canonical/supporting
+verify/routes/route-authority.mjs,.mjs,Routes / Navigation,candidate canonical/supporting
+master/HomeFinder.sh3d,.sh3d,3D / Spatial,candidate canonical/supporting
+active_development/register.html,.html,Frontend / UI,candidate canonical/supporting
+active_development/CHECKPOINT_MANIFEST.json,.json,Configuration / Data,historical/suspect
+active_development/admin.html,.html,Frontend / UI,historical/suspect
+active_development/ACTIVE_DEVELOPMENT_MANIFEST.json,.json,Configuration / Data,historical/suspect
+active_development/terms.html,.html,Frontend / UI,historical/suspect
+active_development/moderator.html,.html,Frontend / UI,candidate canonical/supporting
+active_development/broker-hq.html,.html,Frontend / UI,candidate canonical/supporting
+active_development/index.html,.html,Frontend / UI,candidate canonical/supporting
+active_development/staff.html,.html,Frontend / UI,candidate canonical/supporting
+active_development/financing.html,.html,Frontend / UI,candidate canonical/supporting
+active_development/login.html,.html,Frontend / UI,candidate canonical/supporting
+active_development/privacy.html,.html,Frontend / UI,historical/suspect
+active_development/house-world.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/firebase.json,.json,Backend / Firebase / Database,candidate canonical/supporting
+active_development/CURRENT_CHECKPOINT_STATE.json,.json,Configuration / Data,historical/suspect
+active_development/market.html,.html,Frontend / UI,candidate canonical/supporting
+active_development/profile.html,.html,Frontend / UI,candidate canonical/supporting
+active_development/cinematic/WalkMyPlan/README.md,.md,Documentation / Project Guide,historical/suspect
+active_development/data/house-camera-rig.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/phase12-animation-object-responsive.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/cinematic-scenes.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/main-hall-camera-contract-phase13.json,.json,Contracts,candidate canonical/supporting
+active_development/data/phase11-final-audit.json,.json,Configuration / Data,historical/suspect
+active_development/data/login-physical-ui-objects.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/phase11-secret-scan.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/feature-wiring-matrix.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/main-hall-camera-object-contract.json,.json,Contracts,candidate canonical/supporting
+active_development/data/main-hall-camera-object-contract-summary.json,.json,Contracts,candidate canonical/supporting
+active_development/data/phase12-read-surface-summary.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/house-ui-map.json,.json,Configuration / Data,historical/suspect
+active_development/data/cinematic-worlds.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/phase11-execution-summary.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/theme-system.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/syntax-audit.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/physical-ui-objects.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/ui-response-mapping.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/phase10-final-audit.json,.json,Configuration / Data,historical/suspect
+active_development/data/main-hall-camera-phase13-summary.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/cinematic-assets.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/house-ui-ux-code-reality-map.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/register-physical-ui-objects.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/phase13-auth-propagation.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/security-leak-audit.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/profile-physical-ui-objects.json,.json,Configuration / Data,historical/suspect
+active_development/data/design-roots.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/main-hall-cinematic-ui-map.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/market-physical-ui-objects.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/environment-modes.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/data/dictionary.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/css/navbar.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/admin.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/gov-finance.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/variables.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/search.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/transition.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/utilities.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/market-profile-physical-ui.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/auth.css,.css,Security / Authentication,candidate canonical/supporting
+active_development/css/market.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/toast.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/cinematic-ui.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/broker-hq.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/customSelect.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/reset.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/responsive.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/viewport/mobile.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/profile/kyc.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/profile/layout.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/profile/listing-form.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/profile/ui-upgrade.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/profile/panels.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/profile/forms.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/profile/subscription.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/profile/responsive.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/profile/visitor.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/profile/perks-showcase.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/home/footer.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/home/about.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/home/hero.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/home/style.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/home/property.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/css/home/house-world.css,.css,Frontend / UI,candidate canonical/supporting
+active_development/verify/index.html,.html,Verification / Tests,candidate canonical/supporting
+active_development/verify/fixtures/boost-after-p47-clean.json,.json,Verification / Tests,candidate canonical/supporting
+active_development/verify/fixtures/boost-after-p47.json,.json,Verification / Tests,candidate canonical/supporting
+active_development/verify/fixtures/boost-export.sample.json,.json,Verification / Tests,candidate canonical/supporting
+active_development/verify/fixtures/boost-before-p47.json,.json,Verification / Tests,candidate canonical/supporting
+active_development/verify/security/registration-suspension-boundary.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tools/boost-migration-executor.mjs,.mjs,Unclassified / Needs Review,historical/suspect
+active_development/tools/patch-52-multi-check-audit.mjs,.mjs,Unclassified / Needs Review,historical/suspect
+active_development/tools/run-boost-migration-production.mjs,.mjs,Unclassified / Needs Review,historical/suspect
+active_development/tools/boost-normalization.mjs,.mjs,Unclassified / Needs Review,historical/suspect
+active_development/tools/boost-parser-retirement-gate.mjs,.mjs,Unclassified / Needs Review,historical/suspect
+active_development/tools/patch-51-production-retirement-audit.mjs,.mjs,Unclassified / Needs Review,historical/suspect
+active_development/tools/boost-migration-proof.mjs,.mjs,Unclassified / Needs Review,historical/suspect
+active_development/tools/adapters/json-production-adapter.mjs,.mjs,Unclassified / Needs Review,candidate canonical/supporting
+active_development/tools/adapters/firebase-admin-production-adapter.mjs,.mjs,Unclassified / Needs Review,candidate canonical/supporting
+active_development/3d/docs/model-census.json,.json,3D / Spatial,historical/suspect
+active_development/3d/app/homefinder-viewer.js,.js,3D / Spatial,candidate canonical/supporting
+active_development/3d/app/homefinder-viewer.css,.css,3D / Spatial,candidate canonical/supporting
+active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/HomeFinderViewerOverlay.html,.html,3D / Spatial,candidate canonical/supporting
+active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/HomeFinderViewer.html,.html,3D / Spatial,candidate canonical/supporting
+active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/core.min.js,.js,3D / Spatial,candidate canonical/supporting
+active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/close.png,.png,3D / Spatial,candidate canonical/supporting
+active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/jsXmlSaxParser.min.js,.js,3D / Spatial,candidate canonical/supporting
+active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/navigationPanel.png,.png,3D / Spatial,candidate canonical/supporting
+active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/geom.min.js,.js,3D / Spatial,candidate canonical/supporting
+active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/viewmodel.min.js,.js,3D / Spatial,candidate canonical/supporting
+active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/jszip.min.js,.js,3D / Spatial,candidate canonical/supporting
+active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/viewhome.min.js,.js,3D / Spatial,candidate canonical/supporting
+active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/big.min.js,.js,3D / Spatial,candidate canonical/supporting
+active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/stroke.min.js,.js,3D / Spatial,candidate canonical/supporting
+active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/batik-svgpathparser.min.js,.js,3D / Spatial,candidate canonical/supporting
+active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/gl-matrix-min.js,.js,3D / Spatial,candidate canonical/supporting
+active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/lib/triangulator.min.js,.js,3D / Spatial,candidate canonical/supporting
+active_development/verification-artifacts/market_profile_preview/Market_Profile_physical_UI_root_preview.png,.png,Unclassified / Needs Review,candidate canonical/supporting
+active_development/verification-artifacts/market_profile_preview/preview-manifest.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/tests/patch-34-market-shell.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/cinematic-camera-hero.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/dd05-h09-contact-exit.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/listings-book-interaction.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/patch-47-boost-migration-proof.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/patch-45-boost-normalization.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/foundation-repair-09-pin-authority.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/patch-28-broker-hq-data-wiring.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/paypal-cloudflare-contract.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/foundation-repair-04-tier-entitlement.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/patch-55-cinematic-routing-a1.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/dd05-h05-government-housing.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/public-profile-projection.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/5.5G6C-role-hardening.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/patch-51-production-retirement-audit.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/patch-50-boost-parser-retirement.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/patch-14-listing-activity.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/patch-17-contract-activation.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/patch-22-admin-ops-authority.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/patch-19-discovery-impression.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/patch-26-paypal-cloudflare-hardening.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/patch-27-market-data-wiring.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/dd05-ui-response-mapping.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/patch-11c-r7-pin-authority.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/phase12-animation-object-state.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/patch-49-boost-parser-retirement.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/dd05-main-hall-cinematic-map.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/patch-33-foundation-repair.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/foundation-repair-06-image-cap.test.js,.js,Verification / Tests,historical/suspect
+active_development/tests/patch-24-admin-specific-boosts.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/patch-48-production-boost-migration.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/market-presentation.test.js,.js,Verification / Tests,candidate canonical/supporting
+active_development/tests/market-patch-11a-audit.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/dd05-h06-mission.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/house-camera-rig.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/market-discovery-contract.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/patch-54-cinematic-foundation.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/foundation-repair-08.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/role-contract-subscription-path.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/patch-12-integration-hardening.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/physical-ui-object-system.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/foundation-repair-01-authority-contracts.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/patch-21-role-need-help.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/foundation-repair-03-points-abuse.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/foundation-repair-11-match-notification-dedupe.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/patch-57-cinematic-camera-hero.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/patch-18-listing-inquiry.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/market-profile-physical-ui-propagation.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/patch-44-boost-compatibility.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/canonical-camera-binding.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/patch-20-statistics-read-map.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/room-shell-physical-ui-mapping.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/market-patch-07.test.js,.js,Verification / Tests,historical/suspect
+active_development/tests/dd04-final-authority-freeze.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/patch-29-broker-hq-interaction-smoke.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/deep-dive-04-auth-roles-permissions.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/foundation-repair-07-admin-capacity-override.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/market-patch-09.test.js,.js,Verification / Tests,historical/suspect
+active_development/tests/patch-15-listing-activity.test.js,.js,Verification / Tests,historical/suspect
+active_development/tests/m1-runtime-boundary.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/foundation-repair-12-stale-match.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/dd05-main-hall-sequence-reconciliation.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/dd05-h04-map-preview.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/patch-25-admin-subscription-grant.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/5.5G6C-protected-logic-freeze.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/foundation-repair-02-points-authority.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/foundation-repair-05-subscription-entitlement.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/patch-56-cinematic-home-world.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/foundation-repair-10-radius-authority.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/market-patch-08.test.js,.js,Verification / Tests,historical/suspect
+active_development/tests/patch-38-authority-wiring-audit.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/cinematic-3d-adapter.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/patch-40-boundary-decision.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/market-patch-10.test.js,.js,Verification / Tests,historical/suspect
+active_development/tests/patch-23-admin-user-manage.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/patch-16-listing-activity-contracts.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/from-verify/phase11-deploy-readiness.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/from-verify/auth-physical-ui-propagation.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/from-verify/master-matrix-contract.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/from-verify/public-profile-read-surface.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/from-verify/public-profile-migration.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/from-verify/main-hall-physical-ui-roots.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/from-verify/animation-object-responsive-root.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/from-verify/design-roots-contract.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/from-verify/main-hall-camera-object-contract.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/from-verify/data-vocabulary.test.mjs,.mjs,Verification / Tests,candidate canonical/supporting
+active_development/tests/authority/patch-37-authority-vocabulary.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/authority/patch-41-capability-migration.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/authority/patch-54-retire-ambiguous-staff-alias.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/authority/patch-39-capability-boundary-matrix.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/authority/patch-42-legacy-guard-inventory.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/tests/dictionary/patch-35-dictionary-foundation.test.mjs,.mjs,Verification / Tests,historical/suspect
+active_development/firebase/firestore.indexes.json,.json,Backend / Firebase / Database,candidate canonical/supporting
+active_development/firebase/firestore.rules,.rules,Backend / Firebase / Database,historical/suspect
+active_development/firebase/functions/backfillPublicProfiles.js,.js,Backend / Firebase / Database,candidate canonical/supporting
+active_development/firebase/functions/canonical-authority.js,.js,Backend / Firebase / Database,candidate canonical/supporting
+active_development/firebase/functions/index.js,.js,Backend / Firebase / Database,candidate canonical/supporting
+active_development/firebase/functions/package.json,.json,Backend / Firebase / Database,candidate canonical/supporting
+active_development/firebase/functions/tiers.js,.js,Backend / Firebase / Database,candidate canonical/supporting
+active_development/firebase/functions/publicProfileProjection.js,.js,Backend / Firebase / Database,candidate canonical/supporting
+active_development/firebase/functions/brokerHQDiscoveryProjection.js,.js,Backend / Firebase / Database,historical/suspect
+active_development/firebase/functions/contracts/kyc-authorization.json,.json,Backend / Firebase / Database,candidate canonical/supporting
+active_development/js/collections.js,.js,Unclassified / Needs Review,historical/suspect
+active_development/js/radius-cooldown.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/admin-uid.js,.js,Unclassified / Needs Review,historical/suspect
+active_development/js/credits-logos.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/pins-model.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/route-authority.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/admin-gov-disclaimers.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/authority-contract.js,.js,Security / Authentication,candidate canonical/supporting
+active_development/js/firebase.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/session.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/home-gov-housing.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/geo.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/market-map.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/customSelect.js,.js,Unclassified / Needs Review,historical/suspect
+active_development/js/route-access-contract.js,.js,Contracts,candidate canonical/supporting
+active_development/js/gov-housing-posts.js,.js,Unclassified / Needs Review,historical/suspect
+active_development/js/broker-data-contract.js,.js,Contracts,candidate canonical/supporting
+active_development/js/auth.js,.js,Security / Authentication,candidate canonical/supporting
+active_development/js/listing-create-gate.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/tiers.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/payment-config.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/market-data-contract.js,.js,Contracts,candidate canonical/supporting
+active_development/js/broker-hq.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/preferred-radius.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/transition.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/search.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/listing-catalog.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/gov-disclaimers.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/market-discovery-contract.js,.js,Contracts,historical/suspect
+active_development/js/subscription.js,.js,Unclassified / Needs Review,historical/suspect
+active_development/js/points-ledger.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/market.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/animation-root.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/supabase.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/market-profile-physical-ui.js,.js,Unclassified / Needs Review,historical/suspect
+active_development/js/kyc-reference.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/market-chrome.js,.js,Unclassified / Needs Review,historical/suspect
+active_development/js/physical-ui-state.js,.js,Unclassified / Needs Review,historical/suspect
+active_development/js/cinematic-ui.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/canonical-role.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/brand-logo.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/design-roots.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/admin-gov-housing.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/leave-guard.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/auth-physical-ui.js,.js,Security / Authentication,candidate canonical/supporting
+active_development/js/admin/orders.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/admin/properties.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/admin/verifications.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/admin/reports.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/admin/kyc-registry.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/admin/tabs.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/admin/staff-alerts.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/admin/listing-help-payments.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/admin/wanted.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/admin/contracts.js,.js,Contracts,candidate canonical/supporting
+active_development/js/admin/logout.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/admin/verified-users.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/admin/support-tickets.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/admin/core.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/admin/users.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/admin/prompt.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/reference-3d/README.md,.md,Documentation / Project Guide,candidate canonical/supporting
+active_development/js/reference-3d/cinematic-3d-asset-loader.js,.js,Unclassified / Needs Review,historical/suspect
+active_development/js/reference-3d/cinematic-3d-renderer.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/reference-3d/cinematic-3d-adapter.js,.js,Unclassified / Needs Review,historical/suspect
+active_development/js/profile/body-scroll-lock.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/broker-assists.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/avatar-picker.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/listing-lock.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/privacy-settings.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/header-scroll.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/contract-chat.js,.js,Contracts,candidate canonical/supporting
+active_development/js/profile/match-notify.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/messages.js,.js,Unclassified / Needs Review,historical/suspect
+active_development/js/profile/saved-wanted.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/boost-order.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/amenities-ui.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/profile-data.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/profile-scale.js,.js,Unclassified / Needs Review,historical/suspect
+active_development/js/profile/notifications.js,.js,Unclassified / Needs Review,historical/suspect
+active_development/js/profile/delete-account.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/contracts-tab.js,.js,Contracts,candidate canonical/supporting
+active_development/js/profile/settings-dropdown.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/listing-form.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/listing-map.js,.js,Unclassified / Needs Review,historical/suspect
+active_development/js/profile/portfolio-assets.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/tabs.js,.js,Unclassified / Needs Review,historical/suspect
+active_development/js/profile/need-help.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/wanted-posts-summary.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/ui-dialog.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/user-search.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/law-dictionary.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/kyc-form.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/saved-properties.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/role.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/perks.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/admin-link.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/subscription-boot.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/logout.js,.js,Unclassified / Needs Review,historical/suspect
+active_development/js/profile/reviews-view.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/wanted-map.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/gov-housing.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/tier-progress-modal.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/support-boot.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/visitor-profile.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/pull-refresh.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/wanted-form.js,.js,Unclassified / Needs Review,historical/suspect
+active_development/js/profile/core.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/visit-mode.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/active-listings.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/ongoing-contracts.js,.js,Contracts,candidate canonical/supporting
+active_development/js/profile/contract-dictionary.js,.js,Contracts,candidate canonical/supporting
+active_development/js/profile/support-ticket.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/profile/profile-cooldown.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/home/house-world-scroll.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/home/typing.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/home/map-teaser.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/home/house-camera-rig.js,.js,Unclassified / Needs Review,historical/suspect
+active_development/js/home/home-typing-slogans.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/home/featured-live.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/home/physical-ui-objects.js,.js,Unclassified / Needs Review,historical/suspect
+active_development/js/home/navbar.js,.js,Unclassified / Needs Review,candidate canonical/supporting
+active_development/js/home/environment-modes.js,.js,Unclassified / Needs Review,historical/suspect
+active_development/assets/User Avatars/image_d9cbc399.webp,.webp,Unclassified / Needs Review,candidate canonical/supporting
+active_development/assets/User Avatars/image_7b08ec7c.webp,.webp,Unclassified / Needs Review,candidate canonical/supporting
+active_development/assets/User Avatars/image_fd906f9a.webp,.webp,Unclassified / Needs Review,candidate canonical/supporting
+active_development/assets/User Avatars/image_5547e4a1.webp,.webp,Unclassified / Needs Review,candidate canonical/supporting
+active_development/assets/User Avatars/image_edf294ba.webp,.webp,Unclassified / Needs Review,candidate canonical/supporting
+active_development/assets/User Avatars/image_d052ef90.webp,.webp,Unclassified / Needs Review,candidate canonical/supporting
+active_development/assets/User Avatars/image_9fc3978b.webp,.webp,Unclassified / Needs Review,candidate canonical/supporting
+active_development/assets/User Avatars/image_85396f8c.webp,.webp,Unclassified / Needs Review,candidate canonical/supporting
+active_development/assets/User Avatars/image_a48e5b59.webp,.webp,Unclassified / Needs Review,candidate canonical/supporting
+active_development/assets/User Avatars/image_d89bb40d.webp,.webp,Unclassified / Needs Review,candidate canonical/supporting
+active_development/assets/User Avatars/image_75f53a8b.webp,.webp,Unclassified / Needs Review,candidate canonical/supporting
+active_development/assets/User Avatars/image_78423f51.webp,.webp,Unclassified / Needs Review,candidate canonical/supporting
+active_development/assets/User Avatars/image_cb7ef1d4.webp,.webp,Unclassified / Needs Review,candidate canonical/supporting
+active_development/assets/User Avatars/image_ab3b5fdb.webp,.webp,Unclassified / Needs Review,candidate canonical/supporting
+active_development/assets/images/logo-homefinder.png,.png,Unclassified / Needs Review,candidate canonical/supporting
+active_development/supabase/config.toml,.toml,Configuration / Data,candidate canonical/supporting
+active_development/supabase/README.md,.md,Documentation / Project Guide,candidate canonical/supporting
+active_development/supabase/functions/_shared/kyc-authorization.json,.json,Configuration / Data,candidate canonical/supporting
+active_development/supabase/functions/_shared/supabase-config.ts,.ts,Unclassified / Needs Review,candidate canonical/supporting
+active_development/supabase/functions/_shared/jpeg.ts,.ts,Unclassified / Needs Review,candidate canonical/supporting
+active_development/supabase/functions/_shared/firestore-rest.ts,.ts,Backend / Firebase / Database,candidate canonical/supporting
+active_development/supabase/functions/_shared/firebase-auth.ts,.ts,Unclassified / Needs Review,candidate canonical/supporting
+active_development/supabase/functions/upload-listing-image/index.ts,.ts,Unclassified / Needs Review,candidate canonical/supporting
+active_development/supabase/functions/get-kyc-signed-url/index.ts,.ts,Unclassified / Needs Review,candidate canonical/supporting
+active_development/supabase/functions/upload-kyc-document/index.ts,.ts,Unclassified / Needs Review,candidate canonical/supporting
+active_development/supabase/migrations/0001_homefinder_storage_authority.sql,.sql,Configuration / Data,candidate canonical/supporting

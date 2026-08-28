@@ -1,0 +1,559 @@
+{
+  "version": 3,
+  "world": "homefinder-house",
+  "room": "main-hall",
+  "objects": [
+    {
+      "id": "home-hero-focal",
+      "label": "Home Hero Focal",
+      "kind": "hero",
+      "icon": "bx-home-heart",
+      "description": "Primary Main Hall hero focal and CTA.",
+      "action": "focus",
+      "target": "home-hero",
+      "cameraAnchor": "hall",
+      "renderDeck": false,
+      "responsive": "hero-composition",
+      "theme": "environment",
+      "motion": "root",
+      "rootContract": "ui-object",
+      "cameraPOVs": [
+        "H-01"
+      ],
+      "cameraFallback": "html-authoritative",
+      "cameraSecurityBoundary": "presentation-only",
+      "responsiveContract": {
+        "root": "hero-composition",
+        "modes": [
+          "mobile-portrait",
+          "mobile-landscape",
+          "compact",
+          "tablet",
+          "desktop",
+          "wide-desktop"
+        ],
+        "semanticInvariant": true,
+        "minTouchTarget": "44px"
+      }
+    },
+    {
+      "id": "listings-book",
+      "label": "Listings Book",
+      "kind": "book",
+      "icon": "bx-book-open",
+      "description": "Open the property catalogue and listing workspace.",
+      "action": "navigate",
+      "href": "market.html",
+      "cameraAnchor": "living",
+      "renderDeck": true,
+      "responsive": "compact-grid",
+      "theme": "environment",
+      "motion": "root",
+      "responsiveContract": {
+        "root": "compact-grid",
+        "modes": [
+          "mobile-portrait",
+          "mobile-landscape",
+          "compact",
+          "tablet",
+          "desktop",
+          "wide-desktop"
+        ],
+        "semanticInvariant": true,
+        "minTouchTarget": "44px"
+      }
+    },
+    {
+      "id": "property-map",
+      "label": "Property Map",
+      "kind": "map",
+      "icon": "bx-map-alt",
+      "description": "Focus the house map and nearby property discovery.",
+      "action": "scroll",
+      "target": "map",
+      "cameraAnchor": "window",
+      "renderDeck": true,
+      "responsive": "compact-grid",
+      "theme": "environment",
+      "motion": "root",
+      "responsiveContract": {
+        "root": "compact-grid",
+        "modes": [
+          "mobile-portrait",
+          "mobile-landscape",
+          "compact",
+          "tablet",
+          "desktop",
+          "wide-desktop"
+        ],
+        "semanticInvariant": true,
+        "minTouchTarget": "44px"
+      }
+    },
+    {
+      "id": "property-catalogue",
+      "label": "Property Catalogue",
+      "kind": "catalogue",
+      "icon": "bx-buildings",
+      "description": "Focus featured property discovery.",
+      "action": "scroll",
+      "target": "properties",
+      "cameraAnchor": "living",
+      "renderDeck": false,
+      "theme": "environment",
+      "motion": "root",
+      "responsive": "root",
+      "rootContract": "ui-object",
+      "cameraPOVs": [
+        "H-03"
+      ],
+      "cameraFallback": "html-authoritative",
+      "cameraSecurityBoundary": "presentation-only",
+      "responsiveContract": {
+        "root": "root",
+        "modes": [
+          "mobile-portrait",
+          "mobile-landscape",
+          "compact",
+          "tablet",
+          "desktop",
+          "wide-desktop"
+        ],
+        "semanticInvariant": true,
+        "minTouchTarget": "44px"
+      }
+    },
+    {
+      "id": "listing-form",
+      "label": "List a Property",
+      "kind": "document",
+      "icon": "bx-note",
+      "description": "Open the listing document and fill it in.",
+      "action": "navigate",
+      "href": "profile.html#listing",
+      "cameraAnchor": "library",
+      "renderDeck": true,
+      "responsive": "compact-grid",
+      "theme": "environment",
+      "motion": "root",
+      "responsiveContract": {
+        "root": "compact-grid",
+        "modes": [
+          "mobile-portrait",
+          "mobile-landscape",
+          "compact",
+          "tablet",
+          "desktop",
+          "wide-desktop"
+        ],
+        "semanticInvariant": true,
+        "minTouchTarget": "44px"
+      }
+    },
+    {
+      "id": "navigation-console",
+      "label": "Navigation Console",
+      "kind": "console",
+      "icon": "bx-compass",
+      "description": "Move to the major rooms of HomeFinder.",
+      "action": "console",
+      "cameraAnchor": "center",
+      "renderDeck": true,
+      "responsive": "compact-grid",
+      "theme": "environment",
+      "motion": "root",
+      "responsiveContract": {
+        "root": "compact-grid",
+        "modes": [
+          "mobile-portrait",
+          "mobile-landscape",
+          "compact",
+          "tablet",
+          "desktop",
+          "wide-desktop"
+        ],
+        "semanticInvariant": true,
+        "minTouchTarget": "44px"
+      }
+    },
+    {
+      "id": "main-search-console",
+      "label": "Universal Search",
+      "kind": "search",
+      "icon": "bx-search",
+      "description": "Search and discover HomeFinder content from the Main Hall.",
+      "action": "focus",
+      "target": "universal-search",
+      "cameraAnchor": "gallery",
+      "renderDeck": false,
+      "theme": "environment",
+      "motion": "root",
+      "responsive": "root",
+      "rootContract": "ui-object",
+      "cameraPOVs": [
+        "H-02"
+      ],
+      "cameraFallback": "html-authoritative",
+      "cameraSecurityBoundary": "presentation-only",
+      "responsiveContract": {
+        "root": "root",
+        "modes": [
+          "mobile-portrait",
+          "mobile-landscape",
+          "compact",
+          "tablet",
+          "desktop",
+          "wide-desktop"
+        ],
+        "semanticInvariant": true,
+        "minTouchTarget": "44px"
+      }
+    },
+    {
+      "id": "home-map-table",
+      "label": "Home Map Preview",
+      "kind": "map-table",
+      "icon": "bx-map",
+      "description": "Focus the property map preview and nearby discovery.",
+      "action": "scroll",
+      "target": "map",
+      "cameraAnchor": "window",
+      "renderDeck": false,
+      "theme": "environment",
+      "motion": "root",
+      "responsive": "root",
+      "rootContract": "ui-object",
+      "cameraPOVs": [
+        "H-04"
+      ],
+      "cameraFallback": "html-authoritative",
+      "cameraSecurityBoundary": "presentation-only",
+      "responsiveContract": {
+        "root": "root",
+        "modes": [
+          "mobile-portrait",
+          "mobile-landscape",
+          "compact",
+          "tablet",
+          "desktop",
+          "wide-desktop"
+        ],
+        "semanticInvariant": true,
+        "minTouchTarget": "44px"
+      }
+    },
+    {
+      "id": "government-info-desk",
+      "label": "Government Information Desk",
+      "kind": "reference-desk",
+      "icon": "bx-building-house",
+      "description": "Focus public housing reference information.",
+      "action": "scroll",
+      "target": "gov-housing-home",
+      "cameraAnchor": "garden",
+      "renderDeck": false,
+      "theme": "environment",
+      "motion": "root",
+      "responsive": "root",
+      "rootContract": "ui-object",
+      "cameraPOVs": [
+        "H-05"
+      ],
+      "cameraFallback": "html-authoritative",
+      "cameraSecurityBoundary": "presentation-only",
+      "responsiveContract": {
+        "root": "root",
+        "modes": [
+          "mobile-portrait",
+          "mobile-landscape",
+          "compact",
+          "tablet",
+          "desktop",
+          "wide-desktop"
+        ],
+        "semanticInvariant": true,
+        "minTouchTarget": "44px"
+      }
+    },
+    {
+      "id": "mission-wall",
+      "label": "Mission Wall",
+      "kind": "reading-wall",
+      "icon": "bx-heart",
+      "description": "Focus HomeFinder mission and role.",
+      "action": "scroll",
+      "target": "mission",
+      "cameraAnchor": "library",
+      "renderDeck": false,
+      "theme": "environment",
+      "motion": "root",
+      "responsive": "root",
+      "rootContract": "ui-object",
+      "cameraPOVs": [
+        "H-06"
+      ],
+      "cameraFallback": "html-authoritative",
+      "cameraSecurityBoundary": "presentation-only",
+      "responsiveContract": {
+        "root": "root",
+        "modes": [
+          "mobile-portrait",
+          "mobile-landscape",
+          "compact",
+          "tablet",
+          "desktop",
+          "wide-desktop"
+        ],
+        "semanticInvariant": true,
+        "minTouchTarget": "44px"
+      }
+    },
+    {
+      "id": "guide-book",
+      "label": "Guide Book",
+      "kind": "guide",
+      "icon": "bx-book-open",
+      "description": "Focus roles and usage guidance.",
+      "action": "scroll",
+      "target": "guide",
+      "cameraAnchor": "study",
+      "renderDeck": false,
+      "theme": "environment",
+      "motion": "root",
+      "responsive": "root",
+      "rootContract": "ui-object",
+      "cameraPOVs": [
+        "H-07"
+      ],
+      "cameraFallback": "html-authoritative",
+      "cameraSecurityBoundary": "presentation-only",
+      "responsiveContract": {
+        "root": "root",
+        "modes": [
+          "mobile-portrait",
+          "mobile-landscape",
+          "compact",
+          "tablet",
+          "desktop",
+          "wide-desktop"
+        ],
+        "semanticInvariant": true,
+        "minTouchTarget": "44px"
+      }
+    },
+    {
+      "id": "safety-board",
+      "label": "Safety Board",
+      "kind": "safety",
+      "icon": "bx-shield-quarter",
+      "description": "Focus product safety guidance and boundaries.",
+      "action": "scroll",
+      "target": "safety",
+      "cameraAnchor": "quiet",
+      "renderDeck": false,
+      "theme": "environment",
+      "motion": "root",
+      "responsive": "root",
+      "rootContract": "ui-object",
+      "cameraPOVs": [
+        "H-08"
+      ],
+      "cameraFallback": "html-authoritative",
+      "cameraSecurityBoundary": "presentation-only",
+      "responsiveContract": {
+        "root": "root",
+        "modes": [
+          "mobile-portrait",
+          "mobile-landscape",
+          "compact",
+          "tablet",
+          "desktop",
+          "wide-desktop"
+        ],
+        "semanticInvariant": true,
+        "minTouchTarget": "44px"
+      }
+    },
+    {
+      "id": "start-cta",
+      "label": "Start HomeFinder",
+      "kind": "cta",
+      "icon": "bx-right-arrow-alt",
+      "description": "Begin the public HomeFinder journey.",
+      "action": "focus",
+      "target": "start",
+      "cameraAnchor": "center-return",
+      "renderDeck": false,
+      "theme": "environment",
+      "motion": "root",
+      "responsive": "root",
+      "rootContract": "ui-object",
+      "cameraPOVs": [
+        "H-09"
+      ],
+      "cameraFallback": "html-authoritative",
+      "cameraSecurityBoundary": "presentation-only",
+      "responsiveContract": {
+        "root": "root",
+        "modes": [
+          "mobile-portrait",
+          "mobile-landscape",
+          "compact",
+          "tablet",
+          "desktop",
+          "wide-desktop"
+        ],
+        "semanticInvariant": true,
+        "minTouchTarget": "44px"
+      }
+    },
+    {
+      "id": "contact-desk",
+      "label": "Contact Desk",
+      "kind": "contact",
+      "icon": "bx-envelope",
+      "description": "Focus contact and support options.",
+      "action": "focus",
+      "target": "contact",
+      "cameraAnchor": "exit",
+      "renderDeck": false,
+      "theme": "environment",
+      "motion": "root",
+      "responsive": "root",
+      "rootContract": "ui-object",
+      "cameraPOVs": [
+        "H-09"
+      ],
+      "cameraFallback": "html-authoritative",
+      "cameraSecurityBoundary": "presentation-only",
+      "responsiveContract": {
+        "root": "root",
+        "modes": [
+          "mobile-portrait",
+          "mobile-landscape",
+          "compact",
+          "tablet",
+          "desktop",
+          "wide-desktop"
+        ],
+        "semanticInvariant": true,
+        "minTouchTarget": "44px"
+      }
+    },
+    {
+      "id": "credits-wall",
+      "label": "Credits Wall",
+      "kind": "credits",
+      "icon": "bx-info-circle",
+      "description": "Focus credits and external references.",
+      "action": "focus",
+      "target": "credits",
+      "cameraAnchor": "front-door-return",
+      "renderDeck": false,
+      "theme": "environment",
+      "motion": "root",
+      "responsive": "root",
+      "rootContract": "ui-object",
+      "cameraPOVs": [
+        "H-09"
+      ],
+      "cameraFallback": "html-authoritative",
+      "cameraSecurityBoundary": "presentation-only",
+      "responsiveContract": {
+        "root": "root",
+        "modes": [
+          "mobile-portrait",
+          "mobile-landscape",
+          "compact",
+          "tablet",
+          "desktop",
+          "wide-desktop"
+        ],
+        "semanticInvariant": true,
+        "minTouchTarget": "44px"
+      }
+    }
+  ],
+  "root": "design-roots",
+  "stateModel": [
+    "idle",
+    "hover",
+    "focus",
+    "interaction-start",
+    "ui-open",
+    "loading",
+    "success",
+    "error",
+    "empty",
+    "disabled"
+  ],
+  "stateMachineContract": {
+    "states": [
+      "idle",
+      "hover",
+      "focus",
+      "interaction-start",
+      "ui-open",
+      "loading",
+      "success",
+      "error",
+      "empty",
+      "disabled"
+    ],
+    "events": [
+      "hover",
+      "unhover",
+      "focus",
+      "blur",
+      "activate",
+      "open",
+      "loading",
+      "success",
+      "error",
+      "empty",
+      "disable",
+      "enable",
+      "reset"
+    ],
+    "invalidTransitionPolicy": "retain-current-state",
+    "authority": "presentation-only"
+  },
+  "responsiveRootContract": {
+    "mobile-portrait": {
+      "touchMin": "44px",
+      "layout": "stack",
+      "motion": "micro",
+      "cameraSafeArea": "center-safe"
+    },
+    "mobile-landscape": {
+      "touchMin": "44px",
+      "layout": "compact-row",
+      "motion": "micro",
+      "cameraSafeArea": "center-safe"
+    },
+    "compact": {
+      "touchMin": "44px",
+      "layout": "adaptive",
+      "motion": "state",
+      "cameraSafeArea": "content-safe"
+    },
+    "tablet": {
+      "touchMin": "44px",
+      "layout": "adaptive-grid",
+      "motion": "state",
+      "cameraSafeArea": "content-safe"
+    },
+    "desktop": {
+      "touchMin": "44px",
+      "layout": "full-composition",
+      "motion": "state",
+      "cameraSafeArea": "full"
+    },
+    "wide-desktop": {
+      "touchMin": "44px",
+      "layout": "capped-composition",
+      "motion": "emphasis",
+      "cameraSafeArea": "full"
+    }
+  }
+}

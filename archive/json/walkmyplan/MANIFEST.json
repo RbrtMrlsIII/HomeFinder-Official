@@ -1,0 +1,42 @@
+{
+  "checkpoint": "A4.4C3-DD05-active",
+  "name": "DD05 spatial UI, camera, door and backend mapping",
+  "evidence_source": "HomeFinder DD05 canonical deep dive + current repository code/data/tests",
+  "directory_rule": "Human-readable planning history is consolidated under docs/; operational WalkMyPlan registries remain under cinematic/WalkMyPlan/data/.",
+  "next_phase": "DD05 continues through complete application-to-spatial mapping before main-hall construction",
+  "files": [
+    "Checkpoints/CHECKPOINT_A4.2.md",
+    "Checkpoints/CHECKPOINT_A4.3.md",
+    "Checkpoints/CHECKPOINT_A4.4C3.md",
+    "PHASE-ROADMAP.md",
+    "LANDMINE-REGISTER.md",
+    "MANIFEST.json",
+    "MANIFEST.md",
+    "data/camera-door-graph.csv",
+    "data/camera-registry.json",
+    "data/canonical-camera-door-graph.json",
+    "data/door-registry.json",
+    "data/house-camera-rig.json",
+    "data/physical-ui-object-contract.csv",
+    "data/physical-ui-object-registry.json",
+    "data/room-zone-registry.json",
+    "data/room-shell-registry.json",
+    "data/role-path-matrix.json",
+    "data/route-registry.json",
+    "data/security-camera-registry.json",
+    "data/spatial-reconciliation.csv",
+    "data/spatial-reconciliation.json",
+    "logs/PATCHLOG.md",
+    "logs/RECONCILIATION-AND-CLEANUP-A4.4C3.md",
+    "docs/deep-dives/DD05/3D preparation.md"
+  ],
+  "status": "ACTIVE DEVELOPMENT / SPATIAL UI + BACKEND MAPPING",
+  "camera_model": {
+    "scroll_driven_section_pov": true,
+    "same_room_persistent_environment": true,
+    "tab_selects_station_camera": true,
+    "local_scroll_refines_station_pov": true,
+    "reduced_motion": "short-fade-or-minimal-transform"
+  },
+  "authority": "HomeFinder application is authoritative for product semantics; SweetHome3D is authoritative for 3D architecture; WalkMyPlan data is derived presentation mapping."
+}

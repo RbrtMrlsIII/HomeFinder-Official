@@ -1,0 +1,53 @@
+{
+  "checkpoint": "5.5E-spatial-reconciliation",
+  "source_checkpoint": "HomeFinder_checkpoint_2026-08-26_5_5D-three-house-presentation-contract.zip",
+  "canonical_sh3d_sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "canonical_modified": false,
+  "artifacts": [
+    {
+      "path": "docs/md/5.5e-spatial-reconciliation-proof.md",
+      "sha256": "b8e835b9b8b14c3b7b9d66f0fdc683fdbd759338e4b0ac96e7f4eefa181620d8",
+      "size": 3632
+    },
+    {
+      "path": "docs/json/reconciliation/5.5e-canonical-spatial-topology-proof.json",
+      "sha256": "0dfb46dd4098826fc6b379ea17b9eb9d83b420a87606d8e958f147afdf8f5c0b",
+      "size": 5400
+    },
+    {
+      "path": "docs/csv/reconciliation/5.5e-house1-camera-anchor-validation.csv",
+      "sha256": "638d9397458f0e681681bf30654acfe1422d19bfa41a9c8f7ec8112b9dfe610a",
+      "size": 645
+    },
+    {
+      "path": "docs/csv/reconciliation/5.5e-sh3d-authority-comparison.csv",
+      "sha256": "cfc9eec1f20e75fe8456788aea14bfc43423d6a253afcd79d80704aa459fef64",
+      "size": 400
+    },
+    {
+      "path": "active_development/3d/docs/model-census.json",
+      "sha256": "06cb4751f68e5e0436ae902923e094c3a08c17d6b28b6b58325da010c78a1fa9",
+      "size": 815
+    },
+    {
+      "path": "docs/csv/reconciliation/master-model-census.csv",
+      "sha256": "8aaa3ef719cbed077711d7d9c727f8282f289c9a135260f34bdb56734e437018",
+      "size": 303
+    },
+    {
+      "path": "verification/2026-08-26/5.5e-chat-development-checklist.json",
+      "sha256": "a7d11cecbfc90a880bc73fdb8af082a0f40772ccee3efd95157d1fdb0550b98b",
+      "size": 2524
+    },
+    {
+      "path": "masterplan.md",
+      "sha256": "a59f2fbc90580a4cd217522a13b4373e8d346599d5163388cb13b5b149e69256",
+      "size": 36029
+    },
+    {
+      "path": "AI_ASSISTANT_READ_ME.md",
+      "sha256": "2cc8c3a8f0e5fca82ff6e1e1620c4ed8efb3661d066dfc28e0e19e9685af670c",
+      "size": 20459
+    }
+  ]
+}

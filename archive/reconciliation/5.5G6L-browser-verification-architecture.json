@@ -1,0 +1,46 @@
+{
+  "checkpoint": "5.5G.6L",
+  "status": "architecture_defined_implementation_pending",
+  "files": [
+    {
+      "path": "project-guide/masterplan.md",
+      "sha256": "90adba0db052370adff37dff2b97ad4a7a6a89757a639b7bca6db4400231d50a",
+      "bytes": 54397
+    },
+    {
+      "path": "project-guide/browser-verification/5.5G6L-browser-verification-architecture.md",
+      "sha256": "51f731ce2fadc565dd0619e7dbbbe30e8dc404e7a72fa380aba4e55de58ab852",
+      "bytes": 7215
+    },
+    {
+      "path": "project-guide/browser-verification/5.5G6L-team-implementation-guide.md",
+      "sha256": "1f583e244d56dd5e8b2fffc9e005f3b6e7d3b108dce2ca2e06eee0d89ff53a08",
+      "bytes": 5772
+    },
+    {
+      "path": "project-guide/browser-verification/5.5G6L-acceptance-gates.md",
+      "sha256": "9ba752b96c4b92eff0ccd87eee93fae1229cde6cfb274c9c97fd42991aaf1e4b",
+      "bytes": 2794
+    },
+    {
+      "path": "project-guide/browser-verification/5.5G6L-evidence-record-template.md",
+      "sha256": "f32f6de44985c3752eb54ae4de82b3dec2557f02436a77f8490ea711ed693110",
+      "bytes": 1271
+    },
+    {
+      "path": "docs/g1/5.5G6L-browser-verification-architecture-execution.md",
+      "sha256": "b0844f71a3164a057414a476dd74112610b3eb5c414f9bd390de07f7df5b510d",
+      "bytes": 2194
+    },
+    {
+      "path": "docs/SESSION_CONTINUITY_5.5G6L.md",
+      "sha256": "289109d9c9a2a5f8e6325019ffcc0810e3edc8d56a05e391d9a978509332a19d",
+      "bytes": 1384
+    },
+    {
+      "path": "active_development/CURRENT_CHECKPOINT_STATE.json",
+      "sha256": "8980d30243aac5189ca6ad9a35de98acc0d571dacfea0cf54caec17845415b7d",
+      "bytes": 3742
+    }
+  ]
+}

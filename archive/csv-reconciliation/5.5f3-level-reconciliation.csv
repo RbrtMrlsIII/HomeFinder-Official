@@ -1,0 +1,8 @@
+level_id,house_scope,name,elevation,elevation_index,reference_status
+level0,House 1,Basement,-150,0,referenced
+level1,House 1,1st floor,112,0,referenced
+level2,House 1,Roof,374,0,referenced
+add-level0,Additional candidate,1st floor,0,0,referenced
+add-level1,Additional candidate,2nd floor,262,0,referenced
+add-level2,Additional candidate,Attic,524,0,referenced
+add-level3,Additional candidate,Roof,524,1,referenced

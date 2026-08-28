@@ -1,0 +1,360 @@
+/* HF-UI-UPGRADE-2026-08-15 — borders, badges, search, perks, panels */
+
+:root {
+  --hf-border: 1px;
+  --hf-border-strong: 1px;
+  --hf-glow: none;
+}
+
+/* Light card chrome — heavy ring reserved for avatar only */
+/* panel-card surface → panels.css */
+/* panel-card styling is owned by profile tokens */
+
+/* Avatar only — radiant ring */
+#profile-avatar {
+  box-shadow:
+    0 0 0 3px rgba(196, 165, 116, 0.5),
+    0 0 20px rgba(196, 165, 116, 0.28),
+    0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Trust chips — thin, no glow */
+#profile-badges .trust-chip,
+.trust-chip {
+  border-width: 1px;
+  padding: 4px 10px;
+  font-weight: 650;
+  letter-spacing: 0;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+/* collapsed trust-chip geometry → layout.css */
+
+/* ---- Live user search modal ---- */
+#user-search-modal.hf-search-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10060;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 0;
+  padding-top: env(safe-area-inset-top, 0);
+  background: rgba(12, 10, 8, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+/* [hidden] is enough — no (policy) */
+#user-search-modal[hidden] { display: none; }
+.hf-search-card {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0;
+  border: none;
+  border-bottom: none;
+  overflow: hidden;
+  box-shadow: none;
+}
+@media (min-width: 640px) {
+  #user-search-modal.hf-search-modal {
+    align-items: stretch;
+    justify-content: center;
+    padding: 0;
+  }
+  .hf-search-card {
+    width: min(560px, 100%);
+    max-width: min(560px, 100%);
+    height: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+    border-radius: 0;
+    border-left: 1px solid rgba(196, 165, 116, 0.35);
+    border-right: 1px solid rgba(196, 165, 116, 0.35);
+  }
+}
+
+
+.hf-search-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-bottom: 2px solid rgba(91, 64, 48, 0.12);
+  flex-shrink: 0;
+}
+
+.hf-search-head i { font-size: 24px; color: #C4A574; }
+.hf-search-head h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+  flex: 1;
+  letter-spacing: -0.01em;
+}
+.hf-search-close {
+  border: 2px solid rgba(196, 165, 116, 0.35);
+  background: rgba(196, 165, 116, 0.12);
+  color: inherit;
+  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  font-size: 22px;
+  cursor: pointer;
+  line-height: 1;
+}
+.hf-search-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px 16px 0;
+}
+.hf-search-chip {
+  border: 2px solid rgba(91, 64, 48, 0.15);
+  background: transparent;
+  color: inherit;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.hf-search-chip.is-on {
+  background: rgba(196, 165, 116, 0.28);
+  border-color: #C4A574;
+  color: inherit;
+}
+
+.hf-search-input-wrap {
+  padding: 12px 16px 8px;
+  flex-shrink: 0;
+}
+.hf-search-input-wrap input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 16px 14px 44px;
+  border-radius: 14px;
+  border: 2px solid rgba(91, 64, 48, 0.2);
+  font-size: 16px;
+  outline: none;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='%23C4A574' viewBox='0 0 24 24'%3E%3Cpath d='M10 2a8 8 0 105.3 14.1l4.3 4.3 1.4-1.4-4.3-4.3A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z'/%3E%3C/svg%3E") 14px center no-repeat;
+  color: #1A1D21;
+}
+
+.hf-search-input-wrap input:focus {
+  border-color: #C4A574;
+  box-shadow: 0 0 0 3px rgba(196, 165, 116, 0.28);
+}
+.hf-search-hint {
+  margin: 0 16px 8px;
+  font-size: 0.78rem;
+  opacity: 0.8;
+}
+.hf-search-count {
+  margin: 0 16px 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #C4A574;
+}
+#user-search-suggest {
+  list-style: none;
+  margin: 0;
+  padding: 0 10px 16px;
+  overflow-y: auto;
+  flex: 1;
+  -webkit-overflow-scrolling: touch;
+}
+#user-search-suggest li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  margin-bottom: 4px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+#user-search-suggest li:hover,
+#user-search-suggest li:focus {
+  background: rgba(196, 165, 116, 0.16);
+  border-color: rgba(196, 165, 116, 0.4);
+  outline: none;
+}
+.us-av {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(196, 165, 116, 0.55);
+  background: #3A4048;
+  flex-shrink: 0;
+}
+.us-av-ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #F4EFE6;
+  background: linear-gradient(135deg, #5B4030, #C4A574);
+}
+.us-meta { flex: 1; min-width: 0; }
+.us-name {
+  font-weight: 800;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.us-sub {
+  font-size: 0.78rem;
+  opacity: 0.75;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.us-badges { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.us-b {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(122, 90, 62, 0.15);
+  border: 1px solid rgba(122, 90, 62, 0.25);
+}
+.us-v { background: rgba(34, 197, 94, 0.2); border-color: rgba(34, 197, 94, 0.45); }
+.us-l { background: rgba(56, 189, 248, 0.2); border-color: rgba(56, 189, 248, 0.45); }
+.us-empty {
+  justify-content: center;
+  text-align: center;
+  padding: 28px 16px;
+  opacity: 0.75;
+  cursor: default;
+  border: none;
+}
+
+/* Scale full-bleed helper (pairs with profile-scale.js width compensation) */
+html {
+  /* Single scroll owner: document */
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+body.profile-page {
+  box-sizing: border-box;
+}
+/* Header geometry lives only in layout.css — width box only */
+#profile-header {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* ---- Perks & Portfolio richness ---- */
+#perks-root > h3 {
+  font-size: 1.35rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#perks-root > h3 i { color: #C4A574; font-size: 1.5rem; }
+.profile-rank-block {
+  padding: 8px 0 4px;
+}
+.profile-rank-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 0 4px;
+  background: linear-gradient(90deg, #7A5A3E, #C4A574);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.capability-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+/* Card styling for .cap-stat lives in css/profile/layout.css (designated
+   file for profile chrome) -- was duplicated here as ".capability-stats
+   > div", which only matched the .cap-stat-grid wrapper perks.js actually
+   renders (cards are grandchildren, not direct children), so it never
+   applied and just fought layout.css's rule for no visible effect.
+   Removed per canonical-frontend: one selector, one owning file. */
+.tier-cards-mount,
+.tier-milestone-card {
+  border-width: 2px;
+}
+.tier-milestone-card {
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
+  border: 2px solid rgba(91, 64, 48, 0.12);
+  background: rgba(255, 255, 255, 0.55);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.tier-milestone-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(26, 29, 33, 0.12);
+}
+
+.tier-milestone-card.active {
+  border-color: #C4A574;
+  box-shadow: var(--hf-glow);
+}
+.rank-progress-track {
+  height: 12px;
+  border-radius: 999px;
+  border: 2px solid rgba(91, 64, 48, 0.15);
+  background: rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+.rank-progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #7A5A3E, #C4A574, #22c55e);
+}
+
+/* Tab panels general polish */
+/* panel padding → css/profile/panels.css (#profile-scroll-root) */
+.profile-panel .panel-card h3 {
+  font-size: 1.2rem;
+  gap: 8px;
+}
+.profile-panel .panel-card h3 i {
+  color: #C4A574;
+}
+.profile-tabs .profile-tab {
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  font-weight: 650;
+  box-shadow: none;
+}
+.profile-tabs .profile-tab.active {
+  border: none;
+  border-bottom: 2px solid var(--color-brand, #C4A574);
+  box-shadow: none;
+  background: transparent;
+}
+
+/* Hide legacy full-page search overlay chrome if it fights avatar */
+.search-overlay[hidden] { display: none; }
+
+
+
+
+
+/* Profile scale — full page like market (header + panels + chrome) */
+body.profile-page {
+  --profile-ui-scale: 1;
+  zoom: var(--profile-ui-scale, 1);
+}

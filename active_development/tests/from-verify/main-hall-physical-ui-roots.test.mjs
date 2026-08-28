@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const base = new URL('../', import.meta.url);
+const read = p => fs.readFileSync(new URL(p, base), 'utf8');
+const contract = JSON.parse(read('data/physical-ui-objects.json'));
+const html = read('index.html');
+const css = read('css/cinematic-ui.css');
+const roots = read('js/design-roots.js');
+const required = ['main-search-console','home-map-table','property-catalogue','government-info-desk','mission-wall','guide-book','safety-board','start-cta','contact-desk','credits-wall'];
+for (const id of required) assert.ok(contract.objects.some(o => o.id === id), `missing object ${id}`);
+for (const id of required.filter(x => x !== 'main-search-console')) assert.match(html, new RegExp(`data-hf-ui-object="${id}"`), `missing HTML mount ${id}`);
+assert.match(css, /--hf-component-motion/);
+assert.match(css, /--hf-density/);
+assert.match(css, /prefers-reduced-motion/);
+assert.match(roots, /registerObject/);
+console.log(`PASS: Main Hall physical UI root contract (${required.length} semantic objects)`);

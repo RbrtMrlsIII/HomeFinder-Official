@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "firebase": {
+    "projectId": "homefinder-official",
+    "database": "homefinder",
+    "auth": "Firebase Auth",
+    "firestore": "Firestore"
+  },
+  "supabase": {
+    "projectUrl": "https://hdeqixswsscyvmziinxt.supabase.co",
+    "storage": {
+      "listingImages": "listing-images",
+      "kyc": "kyc-documents"
+    }
+  },
+  "identity": {
+    "authority": "Firebase Auth",
+    "canonicalRoleField": "canonicalRole"
+  },
+  "roles": {
+    "authority": "docs/contracts/roles/canonical-roles.json"
+  },
+  "data": {
+    "canonicalCollections": [
+      "propertyListings",
+      "wantedListings",
+      "users",
+      "publicProfiles"
+    ],
+    "retiredCollections": [
+      "properties"
+    ]
+  },
+  "kyc": {
+    "authority": "docs/contracts/kyc/kyc-authorization.json"
+  },
+  "threeD": {
+    "canonicalModel": "master/HomeFinder.sh3d"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "gate": "5.5C-V.6",
+  "date": "2026-08-26",
+  "status": "COMPLETE",
+  "execution_context": "active_development",
+  "active_suite": {
+    "modules_mjs": 66,
+    "subtests": 115,
+    "passed": 97,
+    "failed": 18
+  },
+  "v5_92_92_status": "historical_execution_evidence_superseded_by_reproducible_v6_run",
+  "walkmyplan_active_references": 0,
+  "canonical_sh3d": {
+    "path": "master/HomeFinder.sh3d",
+    "sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+    "modified": false
+  },
+  "project_authority_references_verified": true,
+  "active_checkpoint_manifest": {
+    "status": "regenerated_current",
+    "file_count": 363
+  },
+  "historical_manifest_findings": {
+    "docs/json/checkpoint-manifest-root.json": "retained historical/root snapshot; stale SH3D hash",
+    "active_development/3d/docs/model-census.json": "source-model hash differs from current canonical; requires census verification"
+  },
+  "census_state": {
+    "logical_cameras": 42,
+    "logical_camera_status": "REBUILD_REQUIRED",
+    "logical_rooms": 9,
+    "logical_room_status": "VIRTUAL_APP_ROOM_REQUIRES_MAPPING",
+    "physical_room_polygons": 13,
+    "physical_observer_cameras": 6
+  },
+  "next_gate": "three-house-allocation-and-ui-3d-presentation-contract-reconciliation"
+}

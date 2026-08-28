@@ -1,0 +1,51 @@
+{
+  "current_checkpoint": "HomeFinder-G-series-complete-evidence",
+  "source_checkpoint": "HomeFinder_checkpoint_2026-08-26_5_5F5-allocation-suitability-capacity.zip",
+  "continuity_basis": "Retained F5 checkpoint plus G1.1-G1.3 findings recorded in the active handover conversation. G1.1-G1.3 are indexed here; no claim is made that unavailable prior generated files are byte-identical.",
+  "gates": {
+    "G1.1": {
+      "title": "Adjacency \u2194 navigation reconciliation",
+      "status": "PRESENT",
+      "key": "docs/g1/5.5G1.1-*"
+    },
+    "G1.2": {
+      "title": "Stable adjacency graph (early)",
+      "status": "SUPERSEDED_BY_G1.3_AND_G2",
+      "key": "see G1.3/G2 files"
+    },
+    "G1.3": {
+      "title": "Graph integrity",
+      "status": "PRESENT",
+      "key": "docs/g1/5.5G1.3-*"
+    },
+    "G1.4": {
+      "title": "Physical door endpoint reconciliation",
+      "status": "PRESENT",
+      "key": "docs/g1/5.5G1.4-*"
+    },
+    "G1.5": {
+      "title": "Semantic room/container",
+      "status": "PRESENT",
+      "key": "docs/g1/5.5G1.5-*"
+    },
+    "G1": {
+      "title": "Door & adjacency census",
+      "status": "PRESENT",
+      "key": "docs/g1/5.5G1-door-adjacency-census.*"
+    },
+    "G2": {
+      "title": "Stable adjacency graph package",
+      "status": "PRESENT_EVIDENCE_ONLY",
+      "key": "docs/g1/5.5G2-* \u2014 not route authority"
+    }
+  },
+  "g1_4_summary": {
+    "records": 6,
+    "resolved_candidate": 2,
+    "duplicate_room_representation": 4,
+    "runtime_routes_validated": 0
+  },
+  "rule": "Do not promote a physical edge to route authority merely because a room center or door name looks plausible.",
+  "merged_checkpoint": "HomeFinder.zip cumulative G1+G1.1+G1.3+G1.4+G1.5+G2 evidence",
+  "merge_note": "2026-08-27: Merged full G1/G1.1/G1.3/G2 census from HomeFinder-G1.3.zip and retained G1.4+G1.5 from prior merge. F3 reports already present. Canonical and F3 SHAs unchanged. G2 adjacency graph is evidence only \u2014 not route authority."
+}

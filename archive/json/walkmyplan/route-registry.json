@@ -1,0 +1,89 @@
+{
+  "index.html": {
+    "room": "MAIN HALL",
+    "entry": "main-door",
+    "role": "public",
+    "status": "CONFIRMED"
+  },
+  "login.html": {
+    "room": "LOGIN ROOM",
+    "entry": "main-hall-login-door",
+    "role": "public",
+    "status": "CONFIRMED"
+  },
+  "register.html": {
+    "room": "REGISTER ROOM",
+    "entry": "login-register-door",
+    "role": "public",
+    "status": "CONFIRMED"
+  },
+  "profile.html": {
+    "room": "PROFILE SUITE",
+    "entry": "profile-door",
+    "role": "owner,seeker,broker",
+    "status": "CONFIRMED",
+    "visibility": "private authenticated suite; visitor mode profile.html?uid=OTHER is read-only public subset"
+  },
+  "market.html": {
+    "room": "MARKET",
+    "entry": "market-door",
+    "role": [
+      "guest",
+      "seeker",
+      "owner"
+    ],
+    "status": "CONFIRMED",
+    "visibility": {
+      "guest": "shell+guide+pin-intent; no live cards",
+      "owner": "wantedListings",
+      "seeker": "propertyListings",
+      "broker": "redirect broker-hq.html"
+    }
+  },
+  "broker-hq.html": {
+    "room": "BROKER HQ",
+    "entry": "broker-hq-door",
+    "role": "broker",
+    "status": "CONFIRMED",
+    "visibility": "broker only; Admin does not enter Broker HQ through the product route"
+  },
+  "financing.html": {
+    "room": "REFERENCE",
+    "entry": "government-door",
+    "role": "public",
+    "status": "CONFIRMED"
+  },
+  "admin.html": {
+    "room": "OPERATIONS",
+    "entry": "admin-door",
+    "role": "admin",
+    "status": "CONFIRMED",
+    "visibility": "ops-only:admin; mismatched roles denied and routed to own console"
+  },
+  "moderator.html": {
+    "room": "OPERATIONS",
+    "entry": "moderator-door",
+    "role": "moderator",
+    "status": "CONFIRMED",
+    "visibility": "ops-only:moderator; mismatched roles denied and routed to own console"
+  },
+  "staff.html": {
+    "room": "OPERATIONS",
+    "entry": "staff-door",
+    "role": "staff",
+    "status": "CONFIRMED",
+    "visibility": "ops-only:staff; mismatched roles denied and routed to own console"
+  },
+  "privacy.html": {
+    "room": "REFERENCE",
+    "entry": "legal-door",
+    "role": "public",
+    "status": "CONFIRMED"
+  },
+  "terms.html": {
+    "room": "REFERENCE",
+    "entry": "legal-door",
+    "role": "public",
+    "status": "CONFIRMED"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "active_source": "active_development",
+  "historical_source": "docs/archive/",
+  "master_scene": "master/HomeFinder.sh3d",
+  "theme_mode": "environment-driven",
+  "removed_from_active": [
+    "legacy binary UI theme branch",
+    "legacy binary UI theme storage",
+    "legacy theme controls"
+  ],
+  "environment_themes": [
+    "day",
+    "sunset",
+    "night",
+    "rain",
+    "mist",
+    "storm"
+  ],
+  "master_matrix": "data/master-page-room-pov-theme-role-object-responsive.csv",
+  "canonical_docs_dir": "../docs/canonical",
+  "repair_principle": "canonical defines current truth; contracts define boundaries; reconciliation records work; evidence proves checks; archive preserves history",
+  "authority_manifest": "PROJECT_AUTHORITY.json",
+  "contracts_dir": "../docs/contracts",
+  "reconciliation_dir": "../docs/reconciliation",
+  "evidence_dir": "../docs/evidence",
+  "verification_dir": "../verify"
+}

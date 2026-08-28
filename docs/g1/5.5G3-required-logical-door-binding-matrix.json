@@ -1,0 +1,68 @@
+{
+  "gate": "5.5G.3",
+  "title": "Required Logical Door Binding Matrix",
+  "status": "BINDING PREPARATION COMPLETE / ROUTES STILL BLOCKED",
+  "date": "2026-08-27",
+  "authority": {
+    "application": "HomeFinder application contracts",
+    "physical": "master/HomeFinder.sh3d",
+    "rule": "Logical navigation may describe intent; physical bindings require direct spatial evidence."
+  },
+  "bindings": [
+    {
+      "logical_door": "main-door",
+      "source_room": "Main Hall",
+      "target_room": "Exterior",
+      "camera_anchor": "H-01",
+      "evidence": "Canonical front-door exterior candidate",
+      "status": "CANDIDATE"
+    },
+    {
+      "logical_door": "market-door",
+      "source_room": "Main Hall",
+      "target_room": "Market",
+      "camera_anchor": "H-02/H-03/H-04",
+      "evidence": "Logical contract exists; current physical graph does not uniquely prove a Main Hall \u2192 Market physical endpoint",
+      "status": "BLOCKED"
+    },
+    {
+      "logical_door": "gov-door",
+      "source_room": "Main Hall",
+      "target_room": "Government Housing workspace",
+      "camera_anchor": "H-05",
+      "evidence": "Logical contract exists; physical destination is not uniquely proven",
+      "status": "BLOCKED"
+    },
+    {
+      "logical_door": "profile-door",
+      "source_room": "Login Room / Market context",
+      "target_room": "Profile Suite",
+      "camera_anchor": "L-01",
+      "evidence": "Logical contract exists; no unique physical door binding established",
+      "status": "BLOCKED"
+    },
+    {
+      "logical_door": "broker-hq-door",
+      "source_room": "Profile Suite",
+      "target_room": "Broker HQ",
+      "camera_anchor": "P-12",
+      "evidence": "Role-gated logical destination exists; physical inter-house/room route is not proven",
+      "status": "BLOCKED"
+    },
+    {
+      "logical_door": "login-door",
+      "source_room": "Register Room",
+      "target_room": "Login Room",
+      "camera_anchor": "R-01",
+      "evidence": "Logical contract exists; unique physical endpoint pair not established",
+      "status": "BLOCKED"
+    }
+  ],
+  "promoted_physical_spine": [
+    "Corridor \u2194 Kitchen",
+    "Corridor \u2194 Bedroom #1",
+    "Corridor \u2194 Bedroom #2",
+    "Corridor \u2194 Living Room"
+  ],
+  "next_gate": "5.5G.4 \u2014 resolve the minimum physical destinations needed for required logical journeys, then validate routes without changing application authority."
+}

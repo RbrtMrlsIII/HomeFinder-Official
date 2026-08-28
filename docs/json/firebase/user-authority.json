@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "collection": "users",
+  "authority": "private authoritative identity/profile document",
+  "identity": {
+    "source": "Firebase Auth",
+    "documentId": "Firebase UID"
+  },
+  "canonicalRole": {
+    "field": "canonicalRole",
+    "selfService": [
+      "owner",
+      "seeker"
+    ],
+    "privileged": [
+      "broker",
+      "staff",
+      "moderator",
+      "admin"
+    ]
+  },
+  "serverOwnedFields": [
+    "verified",
+    "prcVerified",
+    "suspended",
+    "suspendedUntil",
+    "suspendReason",
+    "listingCapOverride",
+    "wantedCapOverride",
+    "tierIndex",
+    "tier",
+    "mapState",
+    "mapStateOwner"
+  ],
+  "privateFields": [
+    "email",
+    "phone",
+    "address",
+    "idVerification",
+    "brokerLicense",
+    "brokerApplication",
+    "privacy"
+  ],
+  "publicProjection": "publicProfiles/{uid}",
+  "subcollections": {
+    "tier": "admin-write; read according to existing public tier contract",
+    "favourites": "owner-only"
+  },
+  "legacyFields": {
+    "accountType": "boundary compatibility only",
+    "role": "boundary compatibility only",
+    "license": "retired; not written by active auth/profile flows"
+  }
+}

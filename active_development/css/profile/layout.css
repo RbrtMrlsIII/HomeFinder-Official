@@ -1,0 +1,1861 @@
+/* HF-BUILD-2026-08-13-V14 | file: layout.css | DO NOT USE OLD CACHE PATH */
+/* ==================================== */
+/*  LAYOUT                            */
+/* ==================================== */
+/* Page structure: header, avatar, identity column, tabs row. */
+
+/* ==================================== */
+/*  LAYOUT CONTAINERS & BOUNDARIES    */
+/* ==================================== */
+/* OWNER: profile page shell + scrollport */
+body.profile-page {
+    --hf-avatar: 104px; /* locked; collapse must not change */
+    --hf-pad-x: 16px;
+    --hf-pad-y: 12px;
+    --hf-action: 36px;
+    --hf-radius: 16px;
+    --hf-text: 0.95rem;
+    --hf-title: 1.15rem;
+    background: var(--bg-main);
+    color: var(--text-secondary);
+    min-height: 100%;
+    height: 100%;
+    /* Body is the scrollport (matches profile.html critical CSS). */
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+    touch-action: pan-y;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    /* Matches .profile-summary's EXPANDED min-height (210px) below.
+       header-scroll.js's syncBodyPad() takes over and keeps this in
+       sync with the header's real height from here on -- but that's a
+       deferred <script type="module">, so there's a real window on
+       first paint (and a possible race during a fast scroll-triggered
+       collapse/expand) where this fallback is the only thing stopping
+       the position:fixed header from covering the top of the page.
+       Without this, "header blocks everything below" was possible
+       any time JS hadn't caught up yet, not just a rare edge case. */
+    /* Matches compact neutral header (~280px) until syncBodyPad() */
+    padding-top: 220px; /* closer to real expanded header; syncBodyPad refines */
+    transition: background 0.25s ease, color 0.25s ease, padding-top 0.62s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* avatar size token must not be overridden on collapse */
+body.profile-page.header-collapsed {
+    --hf-avatar: 104px;
+}
+
+@media (min-width: 1024px) {
+    body.profile-page {
+        padding-top: 240px;
+    }
+}
+
+/* track rings, by tier index */
+.profile-avatar.tier-ring-0{ border-color:#9C948A; }
+.profile-avatar.tier-ring-1{ border-color:#38BDF8; box-shadow:0 0 0 3px rgba(56,189,248,.25); }
+.profile-avatar.tier-ring-2{ border-color:#A78BFA; box-shadow:0 0 0 3px rgba(167,139,250,.25); }
+.profile-avatar.tier-ring-3{ border-color:#FB923C; box-shadow:0 0 0 3px rgba(251,146,60,.25); }
+.profile-avatar.tier-ring-4{
+    border-color:transparent;
+    background-image:linear-gradient(var(--dark),var(--dark)), linear-gradient(135deg,#F59E0B,#EF4444,#EC4899);
+    background-origin:border-box;
+    background-clip:content-box, border-box;
+    box-shadow:0 0 14px 2px rgba(245,158,11,.4);
+}
+.profile-avatar.tier-ring-5{
+    border: 3px solid transparent;
+    background-image: linear-gradient(#1a1d21, #1a1d21), linear-gradient(135deg,#34D399,#3B82F6,#A78BFA,#F59E0B);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 0 18px 3px rgba(52,211,153,.5), 0 0 0 1px rgba(255,255,255,.08);
+}
+.profile-avatar.tier-ring-4{
+    border: 3px solid transparent;
+    background-image: linear-gradient(#1a1d21, #1a1d21), linear-gradient(135deg,#F59E0B,#EF4444,#EC4899);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 0 14px 2px rgba(245,158,11,.45);
+}
+
+/*         HEADER CONTAINERS          */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* (removed dead absolute-avatar era comments) */
+
+/* Legacy .profile-trust-badges — geometry owned by #profile-badges only */
+.profile-trust-badges:not(#profile-badges) {
+    display: none;
+}
+
+
+
+
+
+
+
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-avatar .avatar-edit {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 11px;
+    border: 2px solid var(--dark);
+    cursor: pointer;
+    transition: width .3s ease, height .3s ease, font-size .3s ease;
+}
+
+#profile-header.collapsed .profile-avatar .avatar-edit {
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+    border-width: 2px;
+}
+
+.profile-avatar .avatar-edit:hover {
+    transform: scale(1.1);
+}
+
+/* identity typography → #profile-name-block / #profile-email in hero block only */
+
+.badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 50px;
+    background: var(--color-accent-muted);
+    color: var(--color-accent-text);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+
+
+/* icon-btn:hover owned next to .icon-btn in CANONICAL chrome */
+
+.settings-wrap {
+    position: relative;
+}
+
+.settings-dropdown {
+    display: none;
+    position: absolute;
+    top: 48px;
+    right: 0;
+    width: min(280px, 92vw);
+    max-height: min(70vh, 440px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background: var(--dropdown-bg, #fff);
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0,0,0,.25);
+    padding: 6px;
+    z-index: 3000; /* above avatar (1200) and tabs */
+}
+
+.settings-dropdown.active,
+.settings-dropdown.open {
+    display: block;
+    animation: settingsPop 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+body > .settings-dropdown {
+    z-index: 10050;
+}
+
+@keyframes settingsPop {
+    from { opacity: 0; transform: translateY(-8px) scale(0.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.settings-dropdown button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border: none;
+    background: none;
+    color: var(--text-primary);
+    font-size: 13.5px;
+    font-weight: 600;
+    border-radius: 10px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.settings-dropdown button:hover {
+    background: var(--bg-main);
+    color: var(--color-brand);
+}
+
+.settings-dropdown button:hover i {
+    color: var(--color-brand);
+}
+
+.settings-dropdown button i {
+    font-size: 18px;
+    color: var(--text-muted);
+}
+
+.settings-divider {
+    height: 1px;
+    background: var(--border-color);
+    margin: 6px 6px;
+}
+
+/* ---- notification bell (mirrors .settings-wrap/.settings-dropdown) ---- */
+
+.notif-wrap {
+    position: relative;
+}
+
+.notif-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    background: #EF4444;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.notif-dropdown {
+  max-width: min(300px, calc(100vw - 24px));
+    display: none;
+    position: absolute;
+    top: 52px;
+    right: 0;
+    width: 300px;
+    max-height: 360px;
+    overflow-y: auto;
+    background: var(--dropdown-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    box-shadow: var(--shadow-md);
+    padding: 6px;
+    z-index: 100;
+}
+
+.notif-dropdown.active {
+    display: block;
+    animation: settingsPop 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.notif-empty {
+    padding: 20px 14px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.notif-item {
+    padding: 10px 12px;
+    border-radius: 10px;
+    margin-bottom: 4px;
+}
+
+.notif-item:hover {
+    background: var(--bg-main);
+}
+
+.notif-item p {
+    font-size: 13px;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.notif-item button {
+    font-size: 12px;
+    padding: 6px 12px;
+}
+
+.logout-btn {
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: var(--color-danger-muted);
+    color: var(--color-danger-light);
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+    background: var(--color-danger);
+    color: white;
+    border-color: var(--color-danger);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+/* Navigation tab row */
+
+
+
+
+/* .profile-tabs scrollbar: single rule in CANONICAL tabs block below */
+
+.profile-tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 20px;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition:
+      background-color .2s ease,
+      color .2s ease,
+      border-color .2s ease,
+      transform .35s ease;
+}
+
+.profile-tab i {
+    font-size: 18px;
+}
+
+.profile-tab:hover {
+    color: #CBD5E1;
+}
+
+.profile-tab.active {
+    color: #FFFFFF;
+    border-bottom-color: var(--color-brand);
+}
+
+/* ---- Tier progression extras ---- */
+.tier-points-line {
+    margin: 8px 0 0;
+    font-size: 0.82rem;
+    color: var(--text-muted, #64748B);
+    font-weight: 600;
+}
+
+.tier-ladder-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.tier-pill {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.2);
+    color: #64748B;
+}
+
+.tier-pill.is-done {
+    background: rgba(16, 185, 129, 0.15);
+    color: #059669;
+}
+
+.tier-pill.is-current {
+    background: linear-gradient(145deg, #C4A574, #D4C4A8);
+    color: #1A1D21;
+}
+
+/* ---- Ongoing contracts ---- */
+.ongoing-contracts-list {
+    display: grid;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.ongoing-contract-card {
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    background: rgba(248, 250, 252, 0.7);
+}
+
+.occ-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.occ-meta {
+    font-size: 0.8rem;
+    color: #64748B;
+}
+
+
+
+/* ---- Law dictionary modal ---- */
+.law-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.law-modal.active {
+    display: flex;
+}
+
+.law-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 29, 33, 0.72);
+    backdrop-filter: blur(4px);
+}
+
+.law-modal-panel {
+    position: relative;
+    z-index: 1;
+    width: min(720px, 100%);
+    max-height: min(88vh, 900px);
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    overflow: hidden;
+    background: linear-gradient(165deg, #F4EFE6 0%, #E8DFD0 100%);
+    color: #1A1D21;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    animation: lawModalIn 0.28s ease;
+}
+
+@keyframes lawModalIn {
+    from { opacity: 0; transform: translateY(12px) scale(0.98); }
+    to   { opacity: 1; transform: none; }
+}
+
+.law-modal-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 20px 8px;
+    border-bottom: 1px solid rgba(42, 46, 51, 0.1);
+}
+
+.law-modal-header h2 {
+    margin: 0;
+    font-size: 1.15rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.law-modal-sub {
+    margin: 4px 0 0;
+    font-size: 0.8rem;
+    color: #5A554C;
+}
+
+.law-modal-close {
+    appearance: none;
+    border: none;
+    background: rgba(42, 46, 51, 0.08);
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.law-modal-toolbar {
+    padding: 12px 20px;
+}
+
+.law-modal-toolbar input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(42, 46, 51, 0.15);
+    font: inherit;
+}
+
+.law-dictionary-list {
+    overflow-y: auto;
+    padding: 0 20px 20px;
+    display: grid;
+    gap: 12px;
+}
+
+.law-card {
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(42, 46, 51, 0.1);
+    border-radius: 12px;
+    padding: 14px 16px;
+}
+
+.law-card h4 {
+    margin: 0 0 4px;
+    font-size: 0.95rem;
+}
+
+.law-topic {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #6A5A40;
+    background: rgba(196, 165, 116, 0.25);
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-bottom: 6px;
+}
+
+.law-card p {
+    margin: 0;
+    font-size: 0.86rem;
+    line-height: 1.45;
+    color: #3A3630;
+}
+
+.law-empty {
+    text-align: center;
+    color: #6A655C;
+}
+
+
+
+
+
+
+
+
+.avatar-picker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+    gap: 12px;
+    padding: 12px 20px 24px;
+    overflow-y: auto;
+    max-height: 60vh;
+}
+.avatar-pick-btn {
+    appearance: none;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+    overflow: hidden;
+    aspect-ratio: 1;
+    background: #e2e8f0;
+}
+.avatar-pick-btn:hover,
+.avatar-pick-btn:focus {
+    border-color: #C4A574;
+    box-shadow: 0 0 0 3px rgba(196,165,116,.35);
+}
+.avatar-pick-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.profile-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    inset: 0;
+}
+.visitor-listing-card {
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(148,163,184,.25);
+    margin-bottom: 8px;
+    background: rgba(248,250,252,.8);
+}
+body.visitor-mode #panel-perks .tier-milestone-card,
+body.visitor-mode #ongoing-contracts-section {
+    display: none;
+}
+
+
+/* boost UI owned by css/profile/panels.css */
+
+/* Pull-to-refresh cue */
+.ptr-indicator {
+    position: fixed;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-40px);
+    opacity: 0;
+    z-index: 5000;
+    background: rgba(42,46,51,.9);
+    color: #F4EFE6;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    pointer-events: none;
+    transition: transform .2s, opacity .2s;
+}
+.ptr-indicator.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+
+.boost-order-panel { max-width: 440px; }
+.boost-order-body { padding: 8px 20px 24px; max-height: 70vh; overflow-y: auto; }
+.boost-order-step {
+  display: flex;
+  gap: 12px;
+  margin: 12px 0;
+  align-items: flex-start;
+}
+.boost-order-step .step-num {
+  flex: 0 0 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #C4A574;
+  color: #1A1D21;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+.boost-order-qr-wrap {
+  text-align: center;
+  margin: 8px 0 16px;
+}
+.boost-order-qr {
+  width: min(240px, 80vw);
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.1);
+  background: #fff;
+}
+.boost-order-bank {
+  text-align: left;
+  margin: 12px auto;
+  max-width: 280px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.boost-order-bank .lbl {
+  display: inline-block;
+  min-width: 6.5rem;
+  color: #64748b;
+  font-weight: 600;
+}
+.boost-order-form .field-group { margin-bottom: 12px; }
+.boost-order-form textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  padding: 10px 12px;
+  font: inherit;
+}
+.boost-order-btn {
+  margin-top: 10px;
+  width: 100%;
+  font-size: 0.9rem;
+  padding: 10px 14px;
+}
+
+/* capability stats + cooldown bar */
+.capability-stats { margin: 12px 0 8px; }
+.cap-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.cap-stat {
+  /* Was rgba(255,255,255,.04) + slate-gray text -- a pre-Clay-Atlas,
+     environment-theme presentation is owned by root tokens, so it
+     rendered as an almost-invisible box on the cinematic theme's cream
+     background and never adapted with the rest of the page. Matches
+     the sibling .tier-milestone-card treatment now (same gradient-card
+     pattern already used two sections up in this file) instead of
+     inventing a third look. */
+  background: rgba(255, 255, 255, 0.55);
+  border: 2px solid rgba(91, 64, 48, 0.14);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
+.cap-stat-wide { grid-column: 1 / -1; }
+.cap-label {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.cap-value { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); }
+.cap-boost { color: #22c55e; font-weight: 700; }
+.cooldown-bar-wrap { margin-top: 4px; }
+.cooldown-bar-track {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(148,163,184,.25);
+  overflow: hidden;
+}
+.cooldown-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #C4A574, #22c55e);
+}
+.cooldown-bar-time {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+#boost-btn.is-boosted {
+  background: linear-gradient(135deg, #166534, #22c55e);
+  color: #fff;
+  border: none;
+}
+.upload-guide {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  margin: 10px 0 14px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(196,165,116,.12);
+  border: 1px solid rgba(196,165,116,.25);
+}
+.upload-guide ul { margin: 6px 0 0; padding-left: 1.2em; }
+
+/* custom dialogs */
+#hf-dialog-host {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50000; /* above settings portal (30000) — logout/delete confirm must be clickable */
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+#hf-dialog-host.active { display: flex; }
+.hf-dialog-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15,23,42,.55);
+}
+.hf-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(360px, 92vw);
+  background: #1e2430;
+  color: #f1f5f9;
+  border-radius: 16px;
+  padding: 20px 18px 16px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.4);
+  border: 1px solid rgba(255,255,255,.08);
+}
+.hf-dialog-title { margin: 0 0 8px; font-size: 1.1rem; }
+.hf-dialog-msg { margin: 0 0 16px; line-height: 1.45; color: #cbd5e1; }
+.hf-dialog-actions { display: flex; gap: 8px; justify-content: flex-end; }
+.notif-status {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.notif-status-pending { background: rgba(245,158,11,.2); color: #f59e0b; }
+.notif-status-approved { background: rgba(34,197,94,.2); color: #22c55e; }
+.notif-status-rejected { background: rgba(239,68,68,.2); color: #ef4444; }
+
+.tier-progress-panel { max-width: 420px; }
+.tier-prog-body { padding: 8px 20px 24px; max-height: 70vh; overflow-y: auto; }
+.tier-prog-current { font-size: 1.4rem; font-weight: 800; }
+.tier-prog-ladder { display: grid; gap: 10px; margin-top: 16px; }
+.tier-prog-step {
+  display: flex; gap: 12px; align-items: center;
+  padding: 12px; border-radius: 14px;
+  border: 1px solid rgba(148,163,184,.25);
+  background: rgba(255,255,255,.03);
+}
+.tier-prog-step.is-current {
+  border-color: #C4A574;
+  box-shadow: 0 0 0 2px rgba(196,165,116,.25);
+}
+.tier-prog-step.is-done { opacity: 0.85; border-color: rgba(34,197,94,.35); }
+.tier-prog-ring {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; background: #2a3140; border: 2px solid #C4A574;
+}
+.tier-prog-step.is-done .tier-prog-ring { background: #166534; border-color: #22c55e; color: #fff; }
+.tier-prog-step.is-current .tier-prog-ring { background: #C4A574; color: #1a1d21; }
+
+
+/* Global .icon-btn — NOT inside #profile-header .header-actions (those are 40/28 balls). */
+.icon-btn:not(#profile-header .header-actions .icon-btn):not(#profile-header .header-actions a.icon-btn) {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+/* Note: :not() with complex selectors may be ignored in very old engines — header sizes still win via #profile-header .header-actions specificity */
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+
+/* ================================================================
+   CANONICAL PROFILE CHROME — single source of truth (CSS Policy §1)
+   Other files must NOT re-declare these selectors.
+   Neutral: centered avatar/name · badges under · tabs row · actions 2×3
+   Scrolled: avatar left (fixed 4×btn) · name + icon badges · actions 3×2
+   ================================================================ */
+
+/* OWNER: #profile-header (fixed clay glass) */
+#profile-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2000;
+  overflow: visible; /* avatar may extend; height animated via JS FLIP */
+  pointer-events: none;
+  box-sizing: border-box;
+  /* height set inline during collapse/expand FLIP, then cleared to auto */
+  /* cinematic theme: clay glass — brand-aligned, readable cream text */
+  background-color: #5B4030;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(91, 64, 48, 0.88) 0%,
+      rgba(44, 38, 33, 0.82) 100%
+    );
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid rgba(243, 236, 224, 0.22);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  backdrop-filter: blur(14px) saturate(1.2);
+  color: #F8F4EC;
+}
+#profile-header .profile-summary h2,
+#profile-header #profile-name,
+#profile-header .profile-tabs .profile-tab {
+  color: #F8F4EC;
+}
+#profile-header #profile-email {
+  color: rgba(248, 244, 236, 0.85);
+}
+#profile-header .header-actions .icon-btn,
+#profile-header .header-actions .tier-chip-circle {
+  color: #F8F4EC;
+  /* size/radius: single owner block below */
+}
+#profile-header .icon-btn:not(.header-actions .icon-btn) {
+  color: #F8F4EC;
+}
+#profile-header .icon-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: var(--clay-secondary, #C4A574);
+}
+#profile-header .icon-btn:active {
+  transform: scale(0.96);
+}
+#profile-header .icon-btn:focus-visible {
+  outline: 2px solid var(--clay-secondary, #C4A574);
+  outline-offset: 2px;
+}
+
+/* --- Profile hero: smooth morph, avatar size locked, ball actions, letter name --- */
+.profile-summary {
+  --hf-avatar: 104px; /* locked size expanded + collapsed */
+  --hf-action-size: 40px;
+  --hf-action-collapsed: 28px;
+  --hf-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --hf-spring: cubic-bezier(0.34, 1.3, 0.64, 1);
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0;
+  overflow: visible;
+}
+
+.ph-top {
+  display: grid;
+  /* True center for expanded identity: an empty first column is set to
+     the EXACT rendered width of the actions column (both derive from
+     the same --hf-action-size var already used to size the actual
+     action balls below, not a guessed/duplicated number) -- a bare
+     "1fr" on both sides looked symmetric but wasn't actually equal to
+     actions' real width, which is what silently broke past attempts.
+     Middle (identity) column is minmax(0, max-content): sized to its
+     natural content but allowed to shrink, so #profile-name/#profile-email's
+     existing overflow:hidden + ellipsis still truncates on narrow
+     screens or long emails instead of blowing out the two side columns.
+     No absolute positioning (SoT §22 forbids that specific old
+     technique), and this doesn't touch which DOM nodes
+     header-scroll.js measures for FLIP -- just how they're laid out. */
+  grid-template-columns:
+    calc(var(--hf-action-size) * 2 + 6px)
+    minmax(0, max-content)
+    auto;
+  grid-template-areas: ". identity actions";
+  align-items: start;
+  column-gap: 8px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 10px 10px 0;
+  overflow: visible;
+  transition: padding 0.45s var(--hf-ease), column-gap 0.45s var(--hf-ease);
+}
+
+#profile-header.collapsed .ph-top {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas: "identity identity actions";
+  align-items: center;
+  padding: 8px 8px 0;
+}
+
+.ph-identity {
+  grid-area: identity;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "name"
+    "avatar"
+    "badges";
+  justify-items: center;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  text-align: center;
+  transition: gap 0.45s var(--hf-ease);
+}
+
+/* Collapsed: avatar | name stack (name + badges under name) */
+#profile-header.collapsed .ph-identity {
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas:
+    "avatar name"
+    "avatar badges";
+  justify-items: start;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 2px;
+  text-align: left;
+}
+
+.profile-user-image {
+  grid-area: avatar;
+  position: relative;
+  flex-shrink: 0;
+  z-index: 1; /* never cover header-actions */
+  transition: transform 0.62s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#profile-avatar {
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  flex-shrink: 0;
+}
+
+#profile-header.collapsed #profile-avatar {
+  width: 104px;
+  height: 104px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+#profile-avatar img,
+#profile-avatar .profile-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+#avatar-initials {
+  font-size: calc(var(--hf-avatar) * 0.32);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+#profile-name-block {
+  grid-area: name;
+  position: relative;
+  min-width: 0;
+  max-width: min(320px, 100%);
+  text-align: center;
+  transition: max-width 0.45s var(--hf-ease);
+}
+
+#profile-header.collapsed #profile-name-block {
+  text-align: left;
+  max-width: none;
+  width: 100%;
+  overflow: hidden;
+}
+
+#profile-name-block h2,
+#profile-name {
+  margin: 0;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Letter-by-letter drift on collapse */
+#profile-name .hf-letter {
+  display: inline-block;
+  transition:
+    transform 0.5s var(--hf-ease),
+    opacity 0.4s var(--hf-ease);
+  transition-delay: calc(var(--i, 0) * 28ms);
+  will-change: transform;
+}
+#profile-header:not(.collapsed) #profile-name .hf-letter {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+#profile-header.collapsed #profile-name .hf-letter {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+/* subtle cascade when class toggles — nudge from below then settle */
+@keyframes hf-letter-in {
+  from { transform: translate3d(0, 8px, 0); opacity: 0.35; }
+  to { transform: translate3d(0, 0, 0); opacity: 1; }
+}
+#profile-header.collapsed #profile-name .hf-letter {
+  animation: hf-letter-in 0.45s var(--hf-ease) backwards;
+  animation-delay: calc(var(--i, 0) * 28ms);
+}
+
+#profile-email {
+  margin: 2px 0 0;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-height: 2em;
+  opacity: 1;
+  transition: opacity 0.35s var(--hf-ease), max-height 0.4s var(--hf-ease), margin 0.35s var(--hf-ease);
+}
+#profile-header.collapsed #profile-email {
+  opacity: 0;
+  max-height: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+#profile-account-type,
+#avatar-tier-label {
+  display: none;
+}
+
+#profile-header #profile-badges {
+  grid-area: badges;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  max-width: 100%;
+}
+
+#profile-header.collapsed #profile-badges {
+  justify-content: flex-start;
+}
+
+.trust-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 650;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  transition: padding 0.35s var(--hf-ease), min-width 0.35s var(--hf-ease);
+}
+
+#profile-header.collapsed .trust-chip-label {
+  display: none;
+}
+#profile-header.collapsed .trust-chip {
+  padding: 5px;
+  min-width: 26px;
+  justify-content: center;
+}
+
+/* Actions: ONE owner — always above avatar; size transitions; no redeclare elsewhere */
+/* DO NOT redeclare .header-actions elsewhere (z-index regressions: avatar over buttons). */
+#profile-header .header-actions {
+  grid-area: actions;
+  position: relative;
+  display: grid;
+  grid-template-columns: 40px 40px;
+  grid-auto-rows: 40px;
+  gap: 6px;
+  width: max-content;
+  max-width: calc(100vw - 24px);
+  box-sizing: border-box;
+  z-index: 50; /* above avatar (1) — never bury under collapsed face */
+  isolation: isolate;
+  pointer-events: auto;
+  margin: 0;
+  margin-right: env(safe-area-inset-right, 0px);
+  justify-self: end;
+  align-self: start;
+}
+
+#profile-header:not(.collapsed) .header-actions {
+  grid-template-columns: 40px 40px;
+  grid-auto-rows: 40px;
+}
+
+#profile-header.collapsed .header-actions {
+  grid-template-columns: 28px 28px 28px 28px;
+  grid-auto-rows: 28px;
+  gap: 5px;
+  align-self: center;
+}
+
+#profile-header .header-actions > *,
+#profile-header .header-actions .icon-btn,
+#profile-header .header-actions .tier-chip-circle,
+#profile-header .header-actions a.icon-btn,
+#profile-header .header-actions .notif-wrap,
+#profile-header .header-actions .settings-wrap {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1.5px solid rgba(248, 244, 236, 0.5);
+  color: #F8F4EC;
+  transition:
+    width 0.62s cubic-bezier(0.4, 0, 0.2, 1),
+    height 0.62s cubic-bezier(0.4, 0, 0.2, 1),
+    min-width 0.62s cubic-bezier(0.4, 0, 0.2, 1),
+    min-height 0.62s cubic-bezier(0.4, 0, 0.2, 1),
+    max-width 0.62s cubic-bezier(0.4, 0, 0.2, 1),
+    max-height 0.62s cubic-bezier(0.4, 0, 0.2, 1),
+    font-size 0.62s cubic-bezier(0.4, 0, 0.2, 1),
+    border-radius 0.62s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#profile-header.collapsed .header-actions > *,
+#profile-header.collapsed .header-actions .icon-btn,
+#profile-header.collapsed .header-actions .tier-chip-circle,
+#profile-header.collapsed .header-actions a.icon-btn,
+#profile-header.collapsed .header-actions .notif-wrap,
+#profile-header.collapsed .header-actions .settings-wrap {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+  max-width: 28px;
+  max-height: 28px;
+  border-radius: 50%;
+}
+
+#profile-header .header-actions .notif-wrap,
+#profile-header .header-actions .settings-wrap {
+  position: relative;
+}
+
+#profile-header .header-actions .tier-chip-circle {
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#profile-header.collapsed .header-actions .tier-chip-circle {
+  font-size: 9px;
+}
+
+#profile-header .header-actions .icon-btn i {
+  font-size: 1.15rem;
+  color: #F8F4EC;
+  line-height: 1;
+  transition: font-size 0.62s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#profile-header.collapsed .header-actions .icon-btn i {
+  font-size: 0.95rem;
+}
+
+#profile-assists-strip {
+  grid-area: badges;
+  max-width: 100%;
+}
+
+.profile-identity-stack {
+  grid-area: badges;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+
+@media (max-width: 360px) {
+  .profile-summary {
+    --hf-action-collapsed: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ph-top,
+  .ph-identity,
+  .header-actions,
+  .header-actions > *,
+  #profile-name .hf-letter,
+  #profile-email,
+  .trust-chip {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* OWNER: horizontal profile tabs (layout.css only) */
+.profile-tabs {
+  position: relative;
+  flex: 0 0 auto;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  max-width: none;
+  margin: 8px 0 0;
+  padding: 6px 4px 8px;
+  box-sizing: border-box;
+  align-self: stretch;
+  justify-self: stretch;
+  border-top: 1px solid rgba(248, 244, 236, 0.12);
+  background: rgba(28, 22, 18, 0.28);
+  scrollbar-width: none;
+}
+
+.profile-tabs::-webkit-scrollbar {
+  display: none;
+}
+.profile-tabs .profile-tab {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: rgba(255,255,255,0.72);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 44px;
+  transition: color var(--clay-ease, 160ms ease), background var(--clay-ease, 160ms ease), border-color var(--clay-ease, 160ms ease);
+}
+
+.profile-tabs .profile-tab.active {
+  color: #fff;
+  border-bottom-color: var(--clay-secondary, #C4A574);
+  font-weight: 700;
+}
+.profile-tabs .profile-tab:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px 10px 0 0;
+}
+.profile-tabs .profile-tab:focus-visible {
+  outline: 2px solid var(--clay-secondary, #C4A574);
+  outline-offset: 2px;
+}
+/* tab min-height/transition owned above */
+
+/* Collapsed: same gutter (header-actions still on the right) — no padding jump */
+#profile-header.collapsed .profile-tabs {
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-top: 6px;
+}
+
+/* Setup banner */
+.account-completion-alert-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 10px 12px 0;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.16);
+}
+
+.account-completion-alert-banner .alert-content {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  flex: 1;
+  min-width: 0;
+}
+
+.account-completion-alert-banner .alert-content h4 {
+  margin: 0 0 4px;
+  color: #fff;
+  font-size: 15px;
+}
+
+.account-completion-alert-banner .alert-content p {
+  margin: 0;
+  color: rgba(255,255,255,0.78);
+  font-size: 12.5px;
+  line-height: 1.4;
+  transition: opacity 0.6s ease;
+}
+
+.account-completion-alert-banner .alert-content p.is-tooltip-faded {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.account-completion-alert-banner .btn-get-started {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 148px;
+  height: 44px;
+  padding: 0 22px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #7A5A3E 0%, #C4A574 100%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(122, 90, 62, 0.35);
+  flex-shrink: 0;
+}
+
+/* removed: max-width 480px header size overrides (caused teleport + shrink) */
+
+
+/* badge/identity geometry → .profile-summary grid */
+
+/* Setup banner actions */
+.setup-banner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.account-completion-alert-banner.is-hidden,
+.account-completion-alert-banner[hidden] {
+  display: none;
+}
+.btn-hide-setup {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.28);
+  background: transparent;
+  color: rgba(255,255,255,0.9);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-hide-setup:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+
+/* tab extras merged into CANONICAL .profile-tabs above */
+
+
+/* Designed notification cards */
+.notif-dropdown {
+  width: min(320px, 92vw);
+  max-height: min(58vh, 420px);
+  padding: 8px;
+}
+.notif-dropdown .notif-empty {
+  font-size: 12px;
+  padding: 16px 12px;
+}
+.notif-item-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 10px 8px;
+  margin-bottom: 6px;
+  border-radius: 12px;
+  background: var(--bg-input, rgba(255,255,255,0.06));
+  border: 1px solid var(--border-color, rgba(148,163,184,0.15));
+}
+.notif-item-card.is-unread {
+  border-color: rgba(196, 165, 116, 0.45);
+  box-shadow: inset 3px 0 0 #C4A574;
+}
+.notif-item-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.notif-item-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #7A5A3E, #C4A574);
+  color: #fff;
+  font-size: 14px;
+}
+.notif-item-body {
+  flex: 1;
+  min-width: 0;
+}
+.notif-item-body p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+.notif-item-meta {
+  margin-top: 4px;
+  font-size: 10px;
+  color: var(--text-muted);
+}
+.notif-item-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+.notif-item-actions button {
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.notif-item-actions button:hover {
+  background: var(--bg-main);
+  color: var(--color-brand);
+}
+.notif-item-actions .notif-btn-primary {
+  background: linear-gradient(135deg, #7A5A3E, #C4A574);
+  border-color: transparent;
+  color: #fff;
+}
+.notif-badge {
+  font-size: 9px;
+  min-width: 14px;
+  height: 14px;
+}
+
+
+/* HF-TAB-STABILITY — snap/overscroll already on CANONICAL .profile-tabs */
+.profile-panel.active {
+  min-height: 40vh; /* reduces layout jump when switching */
+}
+/* body.profile-page scroll owned at file top */
+
+
+
+/* D5 light contrast */
+
+
+
+
+
+/* HEADER_THEME_GLASS — light glass beige / dark gradient brown */
+
+
+
+
+
+/* profile-notif-dropdown — position via CSS vars set once from JS */
+#notif-dropdown.profile-notif-anchored {
+  position: fixed;
+  top: var(--profile-notif-top, 72px);
+  right: var(--profile-notif-right, 12px);
+  left: auto;
+  z-index: 10060;
+}
+
+
+/* Profile UI scale control (settings menu) — values applied by profile-scale.js */
+.profile-scale-row {
+  padding: 10px 12px 12px;
+  border-bottom: 1px solid var(--border-color, rgba(0,0,0,0.08));
+  margin-bottom: 4px;
+}
+.profile-scale-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--text-primary, #1a1a1a);
+  margin-bottom: 6px;
+}
+.profile-scale-row input[type="range"] {
+  width: 100%;
+  accent-color: var(--color-brand, #C4A574);
+}
+.profile-scale-hint {
+  margin: 6px 0 0;
+  font-size: 11px;
+  color: var(--text-muted, #888);
+  line-height: 1.35;
+}
+
+
+
+
+
+
+
+/* HF-BOOST — sits under tabs, right corner, normal button size (not sticky over content) */
+.profile-perks-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 8px 12px 4px;
+  padding: 0;
+  position: relative;
+  top: auto;
+  z-index: 5;
+  pointer-events: none;
+  max-width: 1100px;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.profile-perks-toolbar #boost-btn,
+#boost-btn.boost-btn,
+button#boost-btn {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  z-index: 5;
+  pointer-events: auto;
+  animation: none;
+  width: auto;
+  max-width: none;
+  min-width: 0;
+  margin: 0;
+  margin-left: auto;
+  padding: 8px 16px;
+  min-height: 36px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 4px 14px rgba(26, 29, 33, 0.22);
+}
+
+/* HF-SETTINGS-PORTAL — menu on body so tabs never cover it */
+body.profile-page > #settings-dropdown.settings-dropdown,
+body.profile-page #settings-dropdown.settings-dropdown.is-portaled {
+  position: fixed;
+  z-index: 30000;
+  top: auto;
+  right: 8px;
+  left: auto;
+  width: min(300px, calc(100vw - 16px));
+  max-height: min(70vh, 480px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+/* .profile-tabs z-index owned in CANONICAL tabs block */
+
+
+/* Broker HQ entry in settings (anchor styled like menu rows) */
+.settings-dropdown a.settings-link-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+.settings-dropdown a.settings-link-row:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+
+
+/* Clay shell chrome owned on #profile-header + .icon-btn above */
+.panel-card,
+.profile-panel .panel-card {
+  border-radius: var(--clay-radius, 14px);
+  border: 1px solid var(--clay-border, var(--border-color, #E8E0D4));
+  background: var(--clay-card, var(--bg-surface, #FFFDF8));
+  box-shadow: var(--shadow-sm, 0 4px 12px rgba(44, 38, 33, 0.06));
+}
+.profile-panel h3 {
+  color: var(--clay-primary, #5B4030);
+  font-weight: 700;
+}
+
+/* Ensure form-map overlays stay above profile chrome */
+.listing-map-overlay,
+.wanted-map-overlay {
+  z-index: 12000;
+}
+
+#profile-header.collapsed .avatar-edit {
+  pointer-events: auto;
+}
+
+/* Pass A–A7 absolute/ header overrides removed — grid in .profile-summary owns layout */
+.settings-hint.field-hint { margin: 6px 12px; font-size: 0.75rem; }
+
+/* Tabs follow header height FLIP — clip band while height eases */
+#profile-header.is-height-flipping {
+  overflow: hidden;
+}
+#profile-header .profile-tabs,
+#profile-tabs.profile-tabs {
+  flex-shrink: 0;
+  will-change: transform;
+  transition:
+    margin 0.62s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.62s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.62s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* Keep tabs glued to bottom of clay band in both states */
+#profile-header .profile-summary {
+  display: flex;
+  flex-direction: column;
+}
+#profile-header .profile-tabs {
+  margin-top: auto;
+}
+
+.profile-pin-slots { margin-top: 0.75rem; padding: 0.75rem; }
+.profile-pin-list { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+.profile-pin-row {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  padding: 6px 8px; border-radius: 10px;
+  border: 1px solid rgba(91, 64, 48, 0.15);
+  font-size: 0.78rem;
+}
+.profile-pin-row.is-active { border-color: rgba(122, 90, 62, 0.45); background: rgba(122, 90, 62, 0.08); }
+.profile-pin-row-label { font-weight: 700; flex: 1 1 auto; }
+.profile-pin-row-st { opacity: 0.85; }
+.profile-pin-set-active { font-size: 0.72rem; }
+
+
+/* Phase C — Perks map pin status panel */
+.profile-pin-slots {
+  margin: 16px 0;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--clay-border, var(--border-color, #E8E0D4));
+  background: var(--clay-card, var(--bg-surface, #FFFDF8));
+}
+.profile-pin-slots-head .field-label {
+  margin: 0 0 6px;
+  font-weight: 800;
+  color: var(--clay-primary, #5B4030);
+}
+.profile-pin-boost-exp {
+  margin: 6px 0;
+  font-size: 0.82rem;
+  font-weight: 650;
+  color: var(--clay-primary, #5B4030);
+}
+.profile-pin-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 12px 0;
+}
+.profile-pin-row {
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--clay-border, #E8E0D4);
+  background: rgba(247, 243, 236, 0.6);
+}
+.profile-pin-row.is-active {
+  border-color: var(--clay-secondary, #C4A574);
+  box-shadow: 0 0 0 1px rgba(196, 165, 116, 0.35);
+}
+.profile-pin-row.is-empty {
+  opacity: 0.85;
+  border-style: dashed;
+}
+.profile-pin-row-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.profile-pin-row-label {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.profile-pin-row-st {
+  font-size: 0.78rem;
+  font-weight: 650;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.06);
+}
+.profile-pin-row-st[data-state="ready"] {
+  background: rgba(22, 101, 52, 0.12);
+  color: #166534;
+}
+.profile-pin-row-st[data-state="cool"] {
+  background: rgba(146, 101, 12, 0.15);
+  color: #92650c;
+}
+.profile-pin-row-st[data-state="empty"] {
+  color: var(--text-muted, #8a8072);
+}
+.profile-pin-row-coord {
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.75;
+}
+.profile-pin-row-actions {
+  margin-top: 4px;
+}
+.profile-pin-slots-foot {
+  margin-bottom: 0;
+}
+
+
+

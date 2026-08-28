@@ -1,0 +1,47 @@
+{
+  "version": "A4.4C3.13",
+  "route_gate": "authorization and route readiness occur before hero asset load",
+  "stages": [
+    {
+      "stage": 0,
+      "name": "global-house-shell",
+      "priority": "critical",
+      "blocking": false,
+      "payload": "fallback geometry/background only"
+    },
+    {
+      "stage": 1,
+      "name": "current-room-shell",
+      "priority": "critical",
+      "blocking": false,
+      "payload": "room environment shell + current section camera anchors"
+    },
+    {
+      "stage": 2,
+      "name": "current-hero",
+      "priority": "high",
+      "blocking": false,
+      "payload": "current hero Tier selected by capability"
+    },
+    {
+      "stage": 3,
+      "name": "next-likely-room",
+      "priority": "medium",
+      "blocking": false,
+      "payload": "warm cache only after current hero settles"
+    },
+    {
+      "stage": 4,
+      "name": "secondary-objects-on-demand",
+      "priority": "deferred",
+      "blocking": false,
+      "payload": "physical UI objects and noncritical props"
+    }
+  ],
+  "section_scroll_rule": "camera POV changes continuously within the loaded room; do not unload the room when a section changes",
+  "tab_rule": "tab selection changes station camera target; local scroll refines POV inside the same room",
+  "door_rule": "door navigation may load a destination room, but route authorization remains outside the asset loader",
+  "visibility_rule": "hidden/backgrounded loops pause; offscreen secondary assets may be released",
+  "reduced_motion": "prefer Tier 0/static or minimal deterministic motion",
+  "failure": "any asset error resolves to poster/static fallback and emits non-blocking diagnostic event"
+}

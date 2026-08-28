@@ -1,0 +1,24 @@
+{
+  "version": "A4.4C3.14",
+  "status": "CONFIRMED / PRESENTATION POLICY",
+  "rule": "Role visibility and authorization remain application-owned. Performance tier may change presentation, never feature access.",
+  "roles": [
+    "guest",
+    "seeker",
+    "owner",
+    "broker",
+    "staff",
+    "moderator",
+    "admin"
+  ],
+  "presentation": {
+    "guest": "public shells only; no live listing cards; no operational rooms",
+    "seeker": "role-allowed consumer surfaces",
+    "owner": "role-allowed consumer surfaces",
+    "broker": "Broker HQ surface; no normal broker Market discovery",
+    "staff": "Staff operations surface",
+    "moderator": "Moderator operations surface",
+    "admin": "Admin operations surface only; no Staff/Moderator cross-console access"
+  },
+  "performanceCannotOverride": "authorization"
+}

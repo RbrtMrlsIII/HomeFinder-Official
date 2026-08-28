@@ -1,0 +1,21 @@
+{
+  "version":"A4.4C3.14",
+  "status":"PLANNED / ADJUSTABLE GUARDRAILS",
+  "note":"Numeric values are engineering guardrails, not product SoT claims. Validate on representative devices before production lock.",
+  "deviceTiers": {
+    "tier0":{"label":"2D fallback","webgl":false,"maxDpr":1,"maxDynamicLights":0,"targetFps":"native DOM target","postProcessing":"none","animation":"CSS/DOM minimal","hero":"poster/static"},
+    "tier1":{"label":"lightweight mobile","webgl":true,"maxDpr":1.25,"maxDynamicLights":2,"targetFps":"30+ preferred","postProcessing":"none","animation":"low","hero":"optimized lightweight"},
+    "tier2":{"label":"standard desktop","webgl":true,"maxDpr":1.5,"maxDynamicLights":4,"targetFps":"60 preferred","postProcessing":"light / optional","animation":"moderate","hero":"optimized 3D/loop"},
+    "tier3":{"label":"high-fidelity desktop","webgl":true,"maxDpr":2,"maxDynamicLights":6,"targetFps":"60 preferred","postProcessing":"controlled","animation":"full cinematic","hero":"high-fidelity optimized"}
+  },
+  "resourceBudgets": {
+    "tier1":{"visibleSceneTriangles":"<=150k","visibleDrawCalls":"<=80","heroTextureMemory":"<=64MB","simultaneousVideo":0},
+    "tier2":{"visibleSceneTriangles":"<=400k","visibleDrawCalls":"<=140","heroTextureMemory":"<=192MB","simultaneousVideo":1},
+    "tier3":{"visibleSceneTriangles":"<=900k","visibleDrawCalls":"<=220","heroTextureMemory":"<=384MB","simultaneousVideo":1}
+  },
+  "roomProfiles": {
+    "BACKYARD":"tier1-3","MAIN HALL":"tier0-3","LOGIN ROOM":"tier0-2","REGISTER ROOM":"tier0-2","MARKET":"tier0-3","PROFILE SUITE":"tier0-2","BROKER HQ":"tier0-3","OPERATIONS":"tier0-2","REFERENCE":"tier0-2"
+  },
+  "runtimeRules":["lazy-load non-visible rooms","warm next-likely room","pause hidden/offscreen animation","cap device pixel ratio","reuse materials","use compressed textures","use LOD","avoid continuous expensive post-processing","keep HTML/UI independent from WebGL frame rate","fallback immediately on asset failure","do not block route on media decode"],
+  "scrollCameraRules":{"sameRoom":true,"unloadOnSectionChange":false,"interpolateCamera":true,"reduceTravelOnLowTier":true,"reducedMotion":"minimize or remove camera travel"}
+}

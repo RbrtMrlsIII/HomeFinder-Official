@@ -1,0 +1,53 @@
+{
+  "master_scene": "master/HomeFinder.sh3d",
+  "master_scene_sha256": "c27a764f2af0ab8ca674871f7ba291febbe94ae4dde11bb6cd0a9e11b593908d",
+  "home_xml_sha256": "22e5e7d72c826cde80cb57fb240fdf39ebfb826885ed5259d22340b0be1df015",
+  "freeze_status": "DECLARED_MASTER_DO_NOT_REPLACE",
+  "source_archives": [
+    "HomeFinder_SweetHome3D_SoT_Merged_20docs.zip",
+    "HomeFinder_DD05_MainHall_9POV_RECONCILED_checkpoint.zip"
+  ],
+  "recovered_census": {
+    "logical_camera_entries": 42,
+    "physical_ui_object_entries": 57,
+    "physical_ui_declared_count": 55,
+    "physical_ui_count_discrepancy": 2,
+    "logical_room_names": [
+      "BACKYARD",
+      "BROKER HQ",
+      "LOGIN ROOM",
+      "MAIN HALL",
+      "MARKET",
+      "OPERATIONS",
+      "PROFILE SUITE",
+      "REFERENCE",
+      "REGISTER ROOM"
+    ],
+    "pages_in_house_ui_map": 12
+  },
+  "master_scene_census": {
+    "levels": 3,
+    "rooms": 13,
+    "named_rooms": 7,
+    "unnamed_rooms": 6,
+    "walls": 42,
+    "doors_windows": 27,
+    "furniture": 114,
+    "furniture_groups": 6,
+    "lights": 6,
+    "observer_cameras": 6,
+    "named_cameras": 5,
+    "unnamed_cameras": 1
+  },
+  "reconciliation_summary": {
+    "logical_cameras_matched_by_name": 0,
+    "logical_cameras_semantic_candidates": 0,
+    "logical_cameras_rebuild_required": 42,
+    "ui_objects_likely_model_match": 1,
+    "ui_objects_possible_model_match": 1,
+    "ui_objects_need_tagging": 55,
+    "exact_logical_to_master_rooms": 0,
+    "virtual_app_rooms_needing_mapping": 9
+  },
+  "legacy_file_inventory_count": 38
+}

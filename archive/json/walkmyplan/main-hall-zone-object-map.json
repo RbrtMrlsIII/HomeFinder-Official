@@ -1,0 +1,99 @@
+{
+  "version": "A4.4C3.11",
+  "room": "MAIN HALL",
+  "rule": "one environment; sections are camera zones",
+  "zones": [
+    {
+      "zone_id": "H-01",
+      "name": "Hero",
+      "purpose": "hero visual + primary CTA",
+      "object": "house hero / hero CTA",
+      "feature": "hero",
+      "object_ids": [
+        "home-hero-focal"
+      ]
+    },
+    {
+      "zone_id": "H-02",
+      "name": "Discovery",
+      "purpose": "universal search",
+      "object": "Search Console",
+      "feature": "search",
+      "object_ids": [
+        "main-search-console"
+      ]
+    },
+    {
+      "zone_id": "H-03",
+      "name": "Property Discovery",
+      "purpose": "featured property discovery",
+      "object": "Property Catalogue",
+      "feature": "property discovery",
+      "object_ids": [
+        "property-catalogue"
+      ]
+    },
+    {
+      "zone_id": "H-04",
+      "name": "Map",
+      "purpose": "map preview gateway",
+      "object": "Home Map Table",
+      "feature": "map",
+      "object_ids": [
+        "home-map-table"
+      ]
+    },
+    {
+      "zone_id": "H-05",
+      "name": "Government",
+      "purpose": "government housing guide gateway",
+      "object": "Government Information Desk",
+      "feature": "government",
+      "object_ids": [
+        "government-info-desk"
+      ]
+    },
+    {
+      "zone_id": "H-06",
+      "name": "Mission",
+      "purpose": "about/mission",
+      "object": "Mission Plaque",
+      "feature": "mission",
+      "object_ids": [
+        "mission-wall"
+      ]
+    },
+    {
+      "zone_id": "H-07",
+      "name": "Guide",
+      "purpose": "spaces/roles/guide",
+      "object": "Guide Book",
+      "feature": "guide",
+      "object_ids": [
+        "guide-book"
+      ]
+    },
+    {
+      "zone_id": "H-08",
+      "name": "Safety",
+      "purpose": "features/safety",
+      "object": "Safety Board",
+      "feature": "safety",
+      "object_ids": [
+        "safety-board"
+      ]
+    },
+    {
+      "zone_id": "H-09",
+      "name": "Contact",
+      "purpose": "contact/support",
+      "object": "Start/Contact/Credits",
+      "feature": "start/contact/credits",
+      "object_ids": [
+        "start-cta",
+        "contact-desk",
+        "credits-wall"
+      ]
+    }
+  ]
+}

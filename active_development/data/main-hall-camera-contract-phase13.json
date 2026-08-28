@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "status": "TUNED_SEED / CONTRACT_BOUND",
+  "master": "master/HomeFinder.sh3d",
+  "scene": "master/HomeFinder.sh3d",
+  "povs": [
+    {
+      "pov": "H-01",
+      "camera": "HF H-01 \u2014 hero",
+      "object": "home-hero-focal",
+      "focus": "hero",
+      "theme": "environment-driven",
+      "responsive": "main-hall-root",
+      "security": "presentation-only"
+    },
+    {
+      "pov": "H-02",
+      "camera": "HF H-02 \u2014 discovery",
+      "object": "main-search-console",
+      "focus": "universal-search",
+      "theme": "environment-driven",
+      "responsive": "main-hall-root",
+      "security": "presentation-only"
+    },
+    {
+      "pov": "H-03",
+      "camera": "HF H-03 \u2014 property-display",
+      "object": "property-catalogue",
+      "focus": "featured-properties",
+      "theme": "environment-driven",
+      "responsive": "main-hall-root",
+      "security": "presentation-only"
+    },
+    {
+      "pov": "H-04",
+      "camera": "HF H-04 \u2014 map",
+      "object": "home-map-table",
+      "focus": "map-gateway",
+      "theme": "environment-driven",
+      "responsive": "main-hall-root",
+      "security": "presentation-only"
+    },
+    {
+      "pov": "H-05",
+      "camera": "HF H-05 \u2014 government-desk",
+      "object": "government-info-desk",
+      "focus": "government-housing",
+      "theme": "environment-driven",
+      "responsive": "main-hall-root",
+      "security": "presentation-only"
+    },
+    {
+      "pov": "H-06",
+      "camera": "HF H-06 \u2014 mission",
+      "object": "mission-wall",
+      "focus": "mission",
+      "theme": "environment-driven",
+      "responsive": "main-hall-root",
+      "security": "presentation-only"
+    },
+    {
+      "pov": "H-07",
+      "camera": "HF H-07 \u2014 guide",
+      "object": "guide-book",
+      "focus": "guide",
+      "theme": "environment-driven",
+      "responsive": "main-hall-root",
+      "security": "presentation-only"
+    },
+    {
+      "pov": "H-08",
+      "camera": "HF H-08 \u2014 safety",
+      "object": "safety-board",
+      "focus": "safety",
+      "theme": "environment-driven",
+      "responsive": "main-hall-root",
+      "security": "presentation-only"
+    },
+    {
+      "pov": "H-09",
+      "camera": "HF H-09 \u2014 contact",
+      "object": "contact-desk",
+      "focus": "contact",
+      "theme": "environment-driven",
+      "responsive": "main-hall-root",
+      "security": "presentation-only"
+    }
+  ]
+}

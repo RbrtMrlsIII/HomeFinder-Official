@@ -1,0 +1,8 @@
+{
+  "execution": "5.5F.4",
+  "canonical_homefinder_sh3d_sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "expected_canonical_sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "f3_reconciled_candidate_sha256": "21309c26ac11728180402b0ee94f97eab9f2c3ba6e9093ed071c955eb89ab5c5",
+  "allocation_csv": "docs/csv/reconciliation/5.5f4-three-house-candidate-physical-allocation.csv",
+  "canonical_modified": false
+}

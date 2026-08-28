@@ -1,0 +1,620 @@
+TAP version 13
+# Subtest: A.2.3 manifest defines the Home World 01 asset contract
+ok 1 - A.2.3 manifest defines the Home World 01 asset contract
+  ---
+  duration_ms: 0.683798
+  type: 'test'
+  ...
+# Subtest: A.2.3 has explicit high and medium performance budgets
+ok 2 - A.2.3 has explicit high and medium performance budgets
+  ---
+  duration_ms: 1.004141
+  type: 'test'
+  ...
+# Subtest: A.2.3 adapter exposes renderer registration and mounting
+ok 3 - A.2.3 adapter exposes renderer registration and mounting
+  ---
+  duration_ms: 0.651815
+  type: 'test'
+  ...
+# Subtest: A.2.3 keeps model sources empty until real assets exist
+ok 4 - A.2.3 keeps model sources empty until real assets exist
+  ---
+  duration_ms: 0.143173
+  type: 'test'
+  ...
+# Subtest: A.2.3 cinematic runtime calls the adapter without owning the renderer
+ok 5 - A.2.3 cinematic runtime calls the adapter without owning the renderer
+  ---
+  duration_ms: 0.112337
+  type: 'test'
+  ...
+# Subtest: Patch 57 A.2.2: Home has one shared cinematic camera loop
+ok 6 - Patch 57 A.2.2: Home has one shared cinematic camera loop
+  ---
+  duration_ms: 0.779593
+  type: 'test'
+  ...
+# Subtest: Patch 57 A.2.2: Home hero declares a cinematic focal contract
+ok 7 - Patch 57 A.2.2: Home hero declares a cinematic focal contract
+  ---
+  duration_ms: 2.786267
+  type: 'test'
+  ...
+# Subtest: Patch 57 A.2.2: Home uses the clean cinematic visual without baked UI
+ok 8 - Patch 57 A.2.2: Home uses the clean cinematic visual without baked UI
+  ---
+  duration_ms: 0.542811
+  type: 'test'
+  ...
+# Subtest: Patch 57 A.2.2: reduced motion and mobile composition are explicit
+ok 9 - Patch 57 A.2.2: reduced motion and mobile composition are explicit
+  ---
+  duration_ms: 0.31762
+  type: 'test'
+  ...
+# DD04 final authority freeze current-authority reconciliation: PASS
+# Subtest: /mnt/data/v5/active_development/tests/dd04-final-authority-freeze.test.mjs
+ok 3 - /mnt/data/v5/active_development/tests/dd04-final-authority-freeze.test.mjs
+  ---
+  duration_ms: 30.039788
+  type: 'test'
+  ...
+# PASS dd05-h04-map-preview
+# Subtest: DD05 H-04 map preview transition contract
+ok 11 - DD05 H-04 map preview transition contract
+  ---
+  duration_ms: 0.530519
+  type: 'test'
+  ...
+# PASS: DD05 H-05 Government Housing response mapping against current authority
+# Subtest: /mnt/data/v5/active_development/tests/dd05-h05-government-housing.test.mjs
+ok 5 - /mnt/data/v5/active_development/tests/dd05-h05-government-housing.test.mjs
+  ---
+  duration_ms: 26.917695
+  type: 'test'
+  ...
+# DD05 H-06 Mission/About mapping/current authority: PASS
+# Subtest: /mnt/data/v5/active_development/tests/dd05-h06-mission.test.mjs
+ok 6 - /mnt/data/v5/active_development/tests/dd05-h06-mission.test.mjs
+  ---
+  duration_ms: 40.174333
+  type: 'test'
+  ...
+# PASS: DD05 H-09 Start / Contact / Credits / Exit mapping against current authority
+# Subtest: /mnt/data/v5/active_development/tests/dd05-h09-contact-exit.test.mjs
+ok 7 - /mnt/data/v5/active_development/tests/dd05-h09-contact-exit.test.mjs
+  ---
+  duration_ms: 39.529991
+  type: 'test'
+  ...
+# PASS: DD05 Main Hall cinematic map/current physical authority
+# Subtest: /mnt/data/v5/active_development/tests/dd05-main-hall-cinematic-map.test.mjs
+ok 8 - /mnt/data/v5/active_development/tests/dd05-main-hall-cinematic-map.test.mjs
+  ---
+  duration_ms: 32.357919
+  type: 'test'
+  ...
+# PASS: DD05 Main Hall sequence/current authority reconciliation
+# Subtest: /mnt/data/v5/active_development/tests/dd05-main-hall-sequence-reconciliation.test.mjs
+ok 9 - /mnt/data/v5/active_development/tests/dd05-main-hall-sequence-reconciliation.test.mjs
+  ---
+  duration_ms: 34.180944
+  type: 'test'
+  ...
+# PASS dd05-ui-response-mapping/current-authority (37 surfaces, 9 POVs)
+# Subtest: /mnt/data/v5/active_development/tests/dd05-ui-response-mapping.test.mjs
+ok 10 - /mnt/data/v5/active_development/tests/dd05-ui-response-mapping.test.mjs
+  ---
+  duration_ms: 27.402213
+  type: 'test'
+  ...
+# Deep Dive 04 Auth/Roles/Permissions current-authority reconciliation: PASS
+# Subtest: /mnt/data/v5/active_development/tests/deep-dive-04-auth-roles-permissions.test.mjs
+ok 11 - /mnt/data/v5/active_development/tests/deep-dive-04-auth-roles-permissions.test.mjs
+  ---
+  duration_ms: 34.699394
+  type: 'test'
+  ...
+# Foundation Repair 01 authority contracts: PASS
+# Subtest: /mnt/data/v5/active_development/tests/foundation-repair-01-authority-contracts.test.mjs
+ok 12 - /mnt/data/v5/active_development/tests/foundation-repair-01-authority-contracts.test.mjs
+  ---
+  duration_ms: 32.11781
+  type: 'test'
+  ...
+# Foundation Repair 02 points authority: PASS
+# Subtest: /mnt/data/v5/active_development/tests/foundation-repair-02-points-authority.test.mjs
+ok 13 - /mnt/data/v5/active_development/tests/foundation-repair-02-points-authority.test.mjs
+  ---
+  duration_ms: 26.373573
+  type: 'test'
+  ...
+# Foundation Repair 03 anti-abuse authority checks: PASS
+# Subtest: /mnt/data/v5/active_development/tests/foundation-repair-03-points-abuse.test.mjs
+ok 14 - /mnt/data/v5/active_development/tests/foundation-repair-03-points-abuse.test.mjs
+  ---
+  duration_ms: 50.374792
+  type: 'test'
+  ...
+# Foundation Repair 04 tier/entitlement authority: PASS
+# Subtest: /mnt/data/v5/active_development/tests/foundation-repair-04-tier-entitlement.test.mjs
+ok 15 - /mnt/data/v5/active_development/tests/foundation-repair-04-tier-entitlement.test.mjs
+  ---
+  duration_ms: 30.314552
+  type: 'test'
+  ...
+# Foundation Repair 05 subscription entitlement/capacity authority: PASS
+# Subtest: /mnt/data/v5/active_development/tests/foundation-repair-05-subscription-entitlement.test.mjs
+ok 16 - /mnt/data/v5/active_development/tests/foundation-repair-05-subscription-entitlement.test.mjs
+  ---
+  duration_ms: 31.790012
+  type: 'test'
+  ...
+# Foundation Repair 07 Admin Capacity Override Authority: PASS
+# Subtest: /mnt/data/v5/active_development/tests/foundation-repair-07-admin-capacity-override.test.mjs
+ok 17 - /mnt/data/v5/active_development/tests/foundation-repair-07-admin-capacity-override.test.mjs
+  ---
+  duration_ms: 26.056149
+  type: 'test'
+  ...
+# Foundation Repair 08 authority test: PASS
+# Subtest: /mnt/data/v5/active_development/tests/foundation-repair-08.test.mjs
+ok 18 - /mnt/data/v5/active_development/tests/foundation-repair-08.test.mjs
+  ---
+  duration_ms: 26.049635
+  type: 'test'
+  ...
+# Foundation Repair 09 pin-authority checks passed.
+# Subtest: /mnt/data/v5/active_development/tests/foundation-repair-09-pin-authority.test.mjs
+ok 19 - /mnt/data/v5/active_development/tests/foundation-repair-09-pin-authority.test.mjs
+  ---
+  duration_ms: 26.034147
+  type: 'test'
+  ...
+# Foundation Repair 10 radius authority assertions passed.
+# Subtest: /mnt/data/v5/active_development/tests/foundation-repair-10-radius-authority.test.mjs
+ok 20 - /mnt/data/v5/active_development/tests/foundation-repair-10-radius-authority.test.mjs
+  ---
+  duration_ms: 48.314981
+  type: 'test'
+  ...
+# Foundation Repair 11 match-notification dedupe assertions passed.
+# Subtest: /mnt/data/v5/active_development/tests/foundation-repair-11-match-notification-dedupe.test.mjs
+ok 21 - /mnt/data/v5/active_development/tests/foundation-repair-11-match-notification-dedupe.test.mjs
+  ---
+  duration_ms: 27.13339
+  type: 'test'
+  ...
+# Foundation Repair 12 stale-match notification assertions passed.
+# Subtest: /mnt/data/v5/active_development/tests/foundation-repair-12-stale-match.test.mjs
+ok 22 - /mnt/data/v5/active_development/tests/foundation-repair-12-stale-match.test.mjs
+  ---
+  duration_ms: 28.573806
+  type: 'test'
+  ...
+# Subtest: A.4.2 defines an architectural house camera rig
+ok 30 - A.4.2 defines an architectural house camera rig
+  ---
+  duration_ms: 0.792682
+  type: 'test'
+  ...
+# Subtest: A.4.2 maps Home sections to architectural anchors
+ok 31 - A.4.2 maps Home sections to architectural anchors
+  ---
+  duration_ms: 1.444189
+  type: 'test'
+  ...
+# Subtest: A.4.2 scroll choreography publishes camera state for the renderer
+ok 32 - A.4.2 scroll choreography publishes camera state for the renderer
+  ---
+  duration_ms: 0.199025
+  type: 'test'
+  ...
+# Subtest: A.4.2 keeps reduced motion and mobile camera scaling explicit
+ok 33 - A.4.2 keeps reduced motion and mobile camera scaling explicit
+  ---
+  duration_ms: 0.262054
+  type: 'test'
+  ...
+# A.4.4-B listings book contract: 4/4
+# Subtest: /mnt/data/v5/active_development/tests/listings-book-interaction.test.mjs
+ok 24 - /mnt/data/v5/active_development/tests/listings-book-interaction.test.mjs
+  ---
+  duration_ms: 35.452438
+  type: 'test'
+  ...
+# Subtest: M1: product HTML does not script-load WebGL/Three triad
+ok 35 - M1: product HTML does not script-load WebGL/Three triad
+  ---
+  duration_ms: 3.321661
+  type: 'test'
+  ...
+# Subtest: M1: triad modules live only under js/reference-3d/
+ok 36 - M1: triad modules live only under js/reference-3d/
+  ---
+  duration_ms: 0.254031
+  type: 'test'
+  ...
+# Subtest: M1: cinematic-ui keeps optional mount (no hard dependency)
+ok 37 - M1: cinematic-ui keeps optional mount (no hard dependency)
+  ---
+  duration_ms: 0.236556
+  type: 'test'
+  ...
+# Patch 03 discovery contract tests passed.
+# Subtest: /mnt/data/v5/active_development/tests/market-discovery-contract.test.mjs
+ok 26 - /mnt/data/v5/active_development/tests/market-discovery-contract.test.mjs
+  ---
+  duration_ms: 27.763839
+  type: 'test'
+  ...
+# Patch 11A backend audit assertions passed.
+# Subtest: /mnt/data/v5/active_development/tests/market-patch-11a-audit.test.mjs
+ok 27 - /mnt/data/v5/active_development/tests/market-patch-11a-audit.test.mjs
+  ---
+  duration_ms: 27.016648
+  type: 'test'
+  ...
+# PASS Market/Profile physical UI propagation + root matrix
+# Subtest: /mnt/data/v5/active_development/tests/market-profile-physical-ui-propagation.test.mjs
+ok 28 - /mnt/data/v5/active_development/tests/market-profile-physical-ui-propagation.test.mjs
+  ---
+  duration_ms: 26.89357
+  type: 'test'
+  ...
+# Patch 11C-R7 static checks passed.
+# Subtest: /mnt/data/v5/active_development/tests/patch-11c-r7-pin-authority.test.mjs
+ok 29 - /mnt/data/v5/active_development/tests/patch-11c-r7-pin-authority.test.mjs
+  ---
+  duration_ms: 27.925748
+  type: 'test'
+  ...
+# patch-12-integration-hardening: PASS
+# Subtest: /mnt/data/v5/active_development/tests/patch-12-integration-hardening.test.mjs
+ok 30 - /mnt/data/v5/active_development/tests/patch-12-integration-hardening.test.mjs
+  ---
+  duration_ms: 33.882183
+  type: 'test'
+  ...
+# patch-14-listing-activity: PASS
+# Subtest: /mnt/data/v5/active_development/tests/patch-14-listing-activity.test.mjs
+ok 31 - /mnt/data/v5/active_development/tests/patch-14-listing-activity.test.mjs
+  ---
+  duration_ms: 28.698723
+  type: 'test'
+  ...
+# Patch 16 listing activity contract assertions passed.
+# Subtest: /mnt/data/v5/active_development/tests/patch-16-listing-activity-contracts.test.mjs
+ok 32 - /mnt/data/v5/active_development/tests/patch-16-listing-activity-contracts.test.mjs
+  ---
+  duration_ms: 26.597316
+  type: 'test'
+  ...
+# Patch 17 contract authority assertions passed.
+# Subtest: /mnt/data/v5/active_development/tests/patch-17-contract-activation.test.mjs
+ok 33 - /mnt/data/v5/active_development/tests/patch-17-contract-activation.test.mjs
+  ---
+  duration_ms: 30.860326
+  type: 'test'
+  ...
+# Patch 18 listing inquiry contract assertions passed.
+# Subtest: /mnt/data/v5/active_development/tests/patch-18-listing-inquiry.test.mjs
+ok 34 - /mnt/data/v5/active_development/tests/patch-18-listing-inquiry.test.mjs
+  ---
+  duration_ms: 28.307321
+  type: 'test'
+  ...
+# Patch 19 discovery impression contract: PASS
+# Subtest: /mnt/data/v5/active_development/tests/patch-19-discovery-impression.test.mjs
+ok 35 - /mnt/data/v5/active_development/tests/patch-19-discovery-impression.test.mjs
+  ---
+  duration_ms: 27.367022
+  type: 'test'
+  ...
+# Patch 20 statistics read-map contract: PASS
+# Subtest: /mnt/data/v5/active_development/tests/patch-20-statistics-read-map.test.mjs
+ok 36 - /mnt/data/v5/active_development/tests/patch-20-statistics-read-map.test.mjs
+  ---
+  duration_ms: 26.510989
+  type: 'test'
+  ...
+# Patch 21 role/Need Help contract: PASS
+# Subtest: /mnt/data/v5/active_development/tests/patch-21-role-need-help.test.mjs
+ok 37 - /mnt/data/v5/active_development/tests/patch-21-role-need-help.test.mjs
+  ---
+  duration_ms: 27.754796
+  type: 'test'
+  ...
+# Patch 22 Admin/Ops authority matrix contract: PASS
+# Subtest: /mnt/data/v5/active_development/tests/patch-22-admin-ops-authority.test.mjs
+ok 38 - /mnt/data/v5/active_development/tests/patch-22-admin-ops-authority.test.mjs
+  ---
+  duration_ms: 44.541971
+  type: 'test'
+  ...
+# Patch 23 Admin User Manage restoration contract: PASS
+# Subtest: /mnt/data/v5/active_development/tests/patch-23-admin-user-manage.test.mjs
+ok 39 - /mnt/data/v5/active_development/tests/patch-23-admin-user-manage.test.mjs
+  ---
+  duration_ms: 32.211966
+  type: 'test'
+  ...
+# Patch 24 Admin specific-user boost + Firestore readback contract: PASS
+# Subtest: /mnt/data/v5/active_development/tests/patch-24-admin-specific-boosts.test.mjs
+ok 40 - /mnt/data/v5/active_development/tests/patch-24-admin-specific-boosts.test.mjs
+  ---
+  duration_ms: 30.66774
+  type: 'test'
+  ...
+# Patch 25 Admin subscription grant lab contract: PASS
+# Subtest: /mnt/data/v5/active_development/tests/patch-25-admin-subscription-grant.test.mjs
+ok 41 - /mnt/data/v5/active_development/tests/patch-25-admin-subscription-grant.test.mjs
+  ---
+  duration_ms: 30.655377
+  type: 'test'
+  ...
+# Patch 26 PayPal + Cloudflare hardening contract: PASS
+# Subtest: /mnt/data/v5/active_development/tests/patch-26-paypal-cloudflare-hardening.test.mjs
+ok 42 - /mnt/data/v5/active_development/tests/patch-26-paypal-cloudflare-hardening.test.mjs
+  ---
+  duration_ms: 31.132904
+  type: 'test'
+  ...
+# Patch 27 Market data wiring contract: PASS
+# Subtest: /mnt/data/v5/active_development/tests/patch-27-market-data-wiring.test.mjs
+ok 43 - /mnt/data/v5/active_development/tests/patch-27-market-data-wiring.test.mjs
+  ---
+  duration_ms: 28.170305
+  type: 'test'
+  ...
+# Patch 28 Broker HQ data wiring contract: PASS
+# Subtest: /mnt/data/v5/active_development/tests/patch-28-broker-hq-data-wiring.test.mjs
+ok 44 - /mnt/data/v5/active_development/tests/patch-28-broker-hq-data-wiring.test.mjs
+  ---
+  duration_ms: 28.34085
+  type: 'test'
+  ...
+# Patch 29 Broker HQ interaction/data smoke-test contract: PASS
+# Subtest: /mnt/data/v5/active_development/tests/patch-29-broker-hq-interaction-smoke.test.mjs
+ok 45 - /mnt/data/v5/active_development/tests/patch-29-broker-hq-interaction-smoke.test.mjs
+  ---
+  duration_ms: 27.84062
+  type: 'test'
+  ...
+# Patch 33 foundation repair checks passed.
+# Subtest: /mnt/data/v5/active_development/tests/patch-33-foundation-repair.test.mjs
+ok 46 - /mnt/data/v5/active_development/tests/patch-33-foundation-repair.test.mjs
+  ---
+  duration_ms: 32.201488
+  type: 'test'
+  ...
+# Patch 34 Market HQ shell checks passed.
+# Subtest: /mnt/data/v5/active_development/tests/patch-34-market-shell.test.mjs
+ok 47 - /mnt/data/v5/active_development/tests/patch-34-market-shell.test.mjs
+  ---
+  duration_ms: 29.275976
+  type: 'test'
+  ...
+# Patch 38 Authority Wiring Audit: PASS
+# Subtest: /mnt/data/v5/active_development/tests/patch-38-authority-wiring-audit.test.mjs
+ok 48 - /mnt/data/v5/active_development/tests/patch-38-authority-wiring-audit.test.mjs
+  ---
+  duration_ms: 32.559202
+  type: 'test'
+  ...
+# Patch 40 Boundary Decision & Repair: PASS
+# Subtest: /mnt/data/v5/active_development/tests/patch-40-boundary-decision.test.mjs
+ok 49 - /mnt/data/v5/active_development/tests/patch-40-boundary-decision.test.mjs
+  ---
+  duration_ms: 26.540963
+  type: 'test'
+  ...
+# Patch 44 historical regression + Patch 50 retirement compatibility PASS.
+# Subtest: /mnt/data/v5/active_development/tests/patch-44-boost-compatibility.test.mjs
+ok 50 - /mnt/data/v5/active_development/tests/patch-44-boost-compatibility.test.mjs
+  ---
+  duration_ms: 30.047847
+  type: 'test'
+  ...
+# Patch 45 boost normalization audit PASS.
+# Subtest: /mnt/data/v5/active_development/tests/patch-45-boost-normalization.test.mjs
+ok 51 - /mnt/data/v5/active_development/tests/patch-45-boost-normalization.test.mjs
+  ---
+  duration_ms: 26.987997
+  type: 'test'
+  ...
+# Patch 47 boost migration proof PASS.
+# Subtest: /mnt/data/v5/active_development/tests/patch-47-boost-migration-proof.test.mjs
+ok 52 - /mnt/data/v5/active_development/tests/patch-47-boost-migration-proof.test.mjs
+  ---
+  duration_ms: 40.030229
+  type: 'test'
+  ...
+# Patch 48 production boost migration execution gate PASS.
+# Subtest: /mnt/data/v5/active_development/tests/patch-48-production-boost-migration.test.mjs
+ok 53 - /mnt/data/v5/active_development/tests/patch-48-production-boost-migration.test.mjs
+  ---
+  duration_ms: 44.017323
+  type: 'test'
+  ...
+# Patch 49 boost parser retirement gate regression PASS.
+# Subtest: /mnt/data/v5/active_development/tests/patch-49-boost-parser-retirement.test.mjs
+ok 54 - /mnt/data/v5/active_development/tests/patch-49-boost-parser-retirement.test.mjs
+  ---
+  duration_ms: 36.216965
+  type: 'test'
+  ...
+# Patch 50 boost parser retirement PASS.
+# Subtest: /mnt/data/v5/active_development/tests/patch-50-boost-parser-retirement.test.mjs
+ok 55 - /mnt/data/v5/active_development/tests/patch-50-boost-parser-retirement.test.mjs
+  ---
+  duration_ms: 31.753153
+  type: 'test'
+  ...
+# Patch 51 production retirement audit PASS.
+# Subtest: /mnt/data/v5/active_development/tests/patch-51-production-retirement-audit.test.mjs
+ok 56 - /mnt/data/v5/active_development/tests/patch-51-production-retirement-audit.test.mjs
+  ---
+  duration_ms: 38.317135
+  type: 'test'
+  ...
+# Subtest: Patch 54 Phase A: cinematic runtime and style foundation exist
+ok 69 - Patch 54 Phase A: cinematic runtime and style foundation exist
+  ---
+  duration_ms: 0.747319
+  type: 'test'
+  ...
+# Subtest: Patch 54 Phase A: every frozen page mounts the same cinematic runtime
+ok 70 - Patch 54 Phase A: every frozen page mounts the same cinematic runtime
+  ---
+  duration_ms: 4.299177
+  type: 'test'
+  ...
+# Subtest: Patch 54 Phase A: legacy transition no longer creates a competing overlay or click router
+ok 71 - Patch 54 Phase A: legacy transition no longer creates a competing overlay or click router
+  ---
+  duration_ms: 0.295169
+  type: 'test'
+  ...
+# Subtest: Patch 54 Phase A: dirty state has one visual confirmation owner
+ok 72 - Patch 54 Phase A: dirty state has one visual confirmation owner
+  ---
+  duration_ms: 0.479064
+  type: 'test'
+  ...
+# Subtest: Patch 54 Phase A: runtime exposes performance tier and ready event
+ok 73 - Patch 54 Phase A: runtime exposes performance tier and ready event
+  ---
+  duration_ms: 0.253442
+  type: 'test'
+  ...
+# Subtest: Patch 54 Phase A: scene catalog remains the page-owned visual source
+ok 74 - Patch 54 Phase A: scene catalog remains the page-owned visual source
+  ---
+  duration_ms: 0.203525
+  type: 'test'
+  ...
+# Subtest: Patch 55 A.1: door routing has explicit enter/exit timing
+ok 75 - Patch 55 A.1: door routing has explicit enter/exit timing
+  ---
+  duration_ms: 1.306447
+  type: 'test'
+  ...
+# Subtest: Patch 55 A.1: exit confirmation is keyboard accessible
+ok 76 - Patch 55 A.1: exit confirmation is keyboard accessible
+  ---
+  duration_ms: 1.163684
+  type: 'test'
+  ...
+# Subtest: Patch 55 A.1: door has atmospheric depth layer
+ok 77 - Patch 55 A.1: door has atmospheric depth layer
+  ---
+  duration_ms: 0.353164
+  type: 'test'
+  ...
+# Subtest: Patch 55 A.1: reduced motion bypasses cinematic movement
+ok 78 - Patch 55 A.1: reduced motion bypasses cinematic movement
+  ---
+  duration_ms: 0.343241
+  type: 'test'
+  ...
+# Subtest: Patch 56 A.2.1: Home has replaceable layered cinematic slots
+ok 79 - Patch 56 A.2.1: Home has replaceable layered cinematic slots
+  ---
+  duration_ms: 1.759528
+  type: 'test'
+  ...
+# Subtest: Patch 56 A.2.1: Home prototype has adaptive and reduced-motion behavior
+ok 80 - Patch 56 A.2.1: Home prototype has adaptive and reduced-motion behavior
+  ---
+  duration_ms: 0.406017
+  type: 'test'
+  ...
+# Subtest: Patch 56 A.2.1: future architectural asset slots remain represented in the world contract
+ok 81 - Patch 56 A.2.1: future architectural asset slots remain represented in the world contract
+  ---
+  duration_ms: 0.257362
+  type: 'test'
+  ...
+# Subtest: Patch 57 A.2.2: Home has one shared cinematic camera loop
+ok 82 - Patch 57 A.2.2: Home has one shared cinematic camera loop
+  ---
+  duration_ms: 0.800975
+  type: 'test'
+  ...
+# Subtest: Patch 57 A.2.2: Home hero declares a cinematic focal contract
+ok 83 - Patch 57 A.2.2: Home hero declares a cinematic focal contract
+  ---
+  duration_ms: 1.965117
+  type: 'test'
+  ...
+# Subtest: Patch 57 A.2.2: Home does not depend on retired generated poster assets
+ok 84 - Patch 57 A.2.2: Home does not depend on retired generated poster assets
+  ---
+  duration_ms: 1.664888
+  type: 'test'
+  ...
+# Subtest: Patch 57 A.2.2: reduced motion and mobile composition are explicit
+ok 85 - Patch 57 A.2.2: reduced motion and mobile composition are explicit
+  ---
+  duration_ms: 0.365747
+  type: 'test'
+  ...
+# paypal-cloudflare-contract: PASS
+# Subtest: /mnt/data/v5/active_development/tests/paypal-cloudflare-contract.test.mjs
+ok 61 - /mnt/data/v5/active_development/tests/paypal-cloudflare-contract.test.mjs
+  ---
+  duration_ms: 29.679318
+  type: 'test'
+  ...
+# PASS phase12 object state behavior
+# Subtest: state machine follows allowed interaction path and rejects invalid jumps
+ok 87 - state machine follows allowed interaction path and rejects invalid jumps
+  ---
+  duration_ms: 1.596701
+  type: 'test'
+  ...
+# Subtest: responsive transformer distinguishes portrait, landscape, tablet and wide modes
+ok 88 - responsive transformer distinguishes portrait, landscape, tablet and wide modes
+  ---
+  duration_ms: 1.675864
+  type: 'test'
+  ...
+# patch-59 physical UI + environment contract: roots + required camera objects
+# Subtest: /mnt/data/v5/active_development/tests/physical-ui-object-system.test.mjs
+ok 63 - /mnt/data/v5/active_development/tests/physical-ui-object-system.test.mjs
+  ---
+  duration_ms: 31.745416
+  type: 'test'
+  ...
+# public-profile-projection: PASS
+# Subtest: /mnt/data/v5/active_development/tests/public-profile-projection.test.mjs
+ok 64 - /mnt/data/v5/active_development/tests/public-profile-projection.test.mjs
+  ---
+  duration_ms: 31.33739
+  type: 'test'
+  ...
+# PASS role-contract-subscription-path current-authority reconciliation
+# Subtest: /mnt/data/v5/active_development/tests/role-contract-subscription-path.test.mjs
+ok 65 - /mnt/data/v5/active_development/tests/role-contract-subscription-path.test.mjs
+  ---
+  duration_ms: 48.286986
+  type: 'test'
+  ...
+# PASS room-shell/current-physical-ui-mapping (15 Main Hall objects)
+# Subtest: /mnt/data/v5/active_development/tests/room-shell-physical-ui-mapping.test.mjs
+ok 66 - /mnt/data/v5/active_development/tests/room-shell-physical-ui-mapping.test.mjs
+  ---
+  duration_ms: 34.824114
+  type: 'test'
+  ...
+1..92
+# tests 92
+# suites 0
+# pass 92
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2367.29779

@@ -1,0 +1,7 @@
+{
+  "uid-canonical": { "seeker": { "active": true, "package": 2 } },
+  "uid-roman": { "seeker": { "active": true, "package": "III" } },
+  "uid-level": { "seeker": { "active": true, "level": "IV" } },
+  "uid-conflict": { "seeker": { "active": true, "package": 2, "level": "III" } },
+  "uid-inactive": { "seeker": { "active": false, "package": "V" } }
+}

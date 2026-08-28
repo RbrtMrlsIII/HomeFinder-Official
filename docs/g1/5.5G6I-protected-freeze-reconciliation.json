@@ -1,0 +1,12 @@
+{
+  "checkpoint": "5.5G.6I",
+  "status": "RECONCILED",
+  "purpose": "Reconcile protected-freeze hash drift after the controlled 5.5G.6G canonical SH3D promotion.",
+  "historical_freeze_version": "5.5G.6G-1",
+  "historical_hashes": {
+    "docs/json/3d-contract.json": "3ff10c19e0e1f22e4be4facfc400ae8603940d4f9ed525543dc1eb127e584b5c",
+    "docs/g1/5.5G6-house-topology-contract.json": "cc2cf5e73f7be8d4b12a8cb38beb7ff3e080ad4cdba44a6d2399b7b48dd0e102"
+  },
+  "reason": "The protected freeze predates the post-promotion 3D/topology contract state. Historical hashes remain evidence; the active freeze is advanced by explicit checkpoint reconciliation.",
+  "rules_unchanged": true
+}

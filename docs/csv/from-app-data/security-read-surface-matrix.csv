@@ -1,0 +1,13 @@
+page_id,route,room,access_policy,camera_family,primary_data_surface,security_boundary
+home,index.html,MAIN HALL,public,H-01..H-09,public listings/config only,backend rules/callables; camera presentation-only
+login,login.html,LOGIN ROOM,public pre-auth / auth,L-01..L-05,auth + callable phone check,backend rules/callables; camera presentation-only
+register,register.html,REGISTER ROOM,public pre-auth / auth,R-01..R-07,auth + callable phone check,backend rules/callables; camera presentation-only
+market,market.html,MARKET,signed-in role-aware,M-01/M-02/M-04/M-06,public listings + own user state,backend rules/callables; camera presentation-only
+profile,profile.html,PROFILE SUITE,signed-in / visitor,P-01..P-12,owner/admin users + publicProfiles visitor surface,backend rules/callables; camera presentation-only
+broker-hq,broker-hq.html,BROKER HQ,broker,B-01..B-06,broker-authorized data/callables,backend rules/callables; camera presentation-only
+admin,admin.html,OPERATIONS,admin,A-01,admin users/KYC/ops,backend rules/callables; camera presentation-only
+moderator,moderator.html,OPERATIONS,moderator,A-02,moderation/payment-reference surfaces,backend rules/callables; camera presentation-only
+staff,staff.html,OPERATIONS,staff,A-03,support/order-reference surfaces,backend rules/callables; camera presentation-only
+financing-guide,financing.html,REFERENCE,public reference,G-01,public reference configuration only,backend rules/callables; camera presentation-only
+legal-privacy,privacy.html,REFERENCE,public reference,LGL-01,static legal content,backend rules/callables; camera presentation-only
+legal-terms,terms.html,REFERENCE,public reference,LGL-02,static legal content,backend rules/callables; camera presentation-only

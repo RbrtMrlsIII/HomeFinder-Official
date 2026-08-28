@@ -1,0 +1,12 @@
+door,from,to,route,roles,entry_camera,destination_camera,status
+main-door,BACKYARD,MAIN HALL,index.html,public,ARR-01,H-01,PLANNED
+login-door,MAIN HALL,LOGIN ROOM,login.html,public,H-01,L-01,PLANNED
+register-door,LOGIN ROOM,REGISTER ROOM,register.html,public,L-01,R-01,PLANNED
+profile-door,MAIN HALL,PROFILE SUITE,profile.html,"seeker,owner,broker",H-01,P-01,PLANNED
+market-door,MAIN HALL,MARKET,market.html,"guest,seeker,owner",H-01,M-01,PLANNED
+broker-hq-door,PROFILE SUITE,BROKER HQ,broker-hq.html,broker,P-12,B-01,PLANNED
+government-door,MAIN HALL,REFERENCE,financing.html,public,H-05,G-01,PLANNED
+legal-door,MAIN HALL,REFERENCE,privacy.html|terms.html,public,H-09,LGL-01,PLANNED
+admin-door,MAIN HALL,OPERATIONS,admin.html,admin,H-01,A-01,PLANNED
+moderator-door,MAIN HALL,OPERATIONS,moderator.html,"moderator",H-01,A-02,PLANNED
+staff-door,MAIN HALL,OPERATIONS,staff.html,"staff",H-01,A-03,PLANNED

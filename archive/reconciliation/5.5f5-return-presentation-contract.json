@@ -1,0 +1,12 @@
+{
+  "principle": "Every logical presentation state must provide a device/browser-friendly return path.",
+  "minimum_behavior": [
+    "visible Back/Return for pointer/touch",
+    "keyboard-safe return where appropriate",
+    "mobile-safe controls without hover dependence",
+    "compatible browser-history behavior",
+    "physical return uses validated reverse spatial route",
+    "no permanent lock into one logical UI state"
+  ],
+  "implementation_deferred": true
+}

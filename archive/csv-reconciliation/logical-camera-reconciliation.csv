@@ -1,0 +1,43 @@
+logical_camera_id,logical_room,zone,purpose,master_named_camera,status
+ARR-01,BACKYARD,Arrival,Establish property and approach main door,,REBUILD_REQUIRED
+H-01,MAIN HALL,Hero,Main Hall hero composition,,REBUILD_REQUIRED
+H-02,MAIN HALL,Discovery,Search/discovery console,,REBUILD_REQUIRED
+H-03,MAIN HALL,Property Discovery,Property catalogue,,REBUILD_REQUIRED
+H-04,MAIN HALL,Map,Home map preview,,REBUILD_REQUIRED
+H-05,MAIN HALL,Government,Government housing reference,,REBUILD_REQUIRED
+H-06,MAIN HALL,Mission,About/mission,,REBUILD_REQUIRED
+H-07,MAIN HALL,Guide,Roles/features guide,,REBUILD_REQUIRED
+H-08,MAIN HALL,Safety,Features/safety,,REBUILD_REQUIRED
+H-09,MAIN HALL,Contact,Contact desk,,REBUILD_REQUIRED
+L-01,LOGIN ROOM,Identity,Login terminal,,REBUILD_REQUIRED
+R-01,REGISTER ROOM,Registration,Registration desk,,REBUILD_REQUIRED
+P-01,PROFILE SUITE,Perks,Profile foyer,,REBUILD_REQUIRED
+P-05,PROFILE SUITE,List Property,Listing dossier/book,,REBUILD_REQUIRED
+P-12,PROFILE SUITE,Broker Gate,Broker HQ threshold,,REBUILD_REQUIRED
+M-01,MARKET,Entrance,Marketplace orientation,,REBUILD_REQUIRED
+M-02,MARKET,Map,Marketplace map,,REBUILD_REQUIRED
+M-03,MARKET,Filters,Filter controls,,REBUILD_REQUIRED
+M-04,MARKET,Discovery,Property/wanted discovery,,REBUILD_REQUIRED
+M-05,MARKET,Inspection,Expanded property dossier,,REBUILD_REQUIRED
+B-01,BROKER HQ,Desk,Broker workspace,,REBUILD_REQUIRED
+B-04,BROKER HQ,Intelligence Map,Broker-specific map,,REBUILD_REQUIRED
+A-01,OPERATIONS,Admin,Verification/KYC,,REBUILD_REQUIRED
+G-01,REFERENCE,Government,Government housing guide,,REBUILD_REQUIRED
+LGL-01,REFERENCE,Privacy,Privacy archive,,REBUILD_REQUIRED
+A-02,OPERATIONS,Moderator,Moderator operations hero,,REBUILD_REQUIRED
+A-03,OPERATIONS,Staff,Staff operations hero,,REBUILD_REQUIRED
+P-02,PROFILE SUITE,Messages,Messages station,,REBUILD_REQUIRED
+P-03,PROFILE SUITE,Contracts,Contracts station,,REBUILD_REQUIRED
+P-04,PROFILE SUITE,Need Help,Support station,,REBUILD_REQUIRED
+P-06,PROFILE SUITE,Wanted,Wanted station,,REBUILD_REQUIRED
+P-07,PROFILE SUITE,Saved Properties,Saved properties station,,REBUILD_REQUIRED
+P-08,PROFILE SUITE,Saved Wanted,Saved wanted station,,REBUILD_REQUIRED
+P-09,PROFILE SUITE,Reviews,Reviews station,,REBUILD_REQUIRED
+P-10,PROFILE SUITE,Government Housing,Government housing station,,REBUILD_REQUIRED
+P-11,PROFILE SUITE,Account / Identity,Account identity console,,REBUILD_REQUIRED
+M-06,MARKET,Contact,Market contact desk,,REBUILD_REQUIRED
+B-02,BROKER HQ,Requests,Request queue,,REBUILD_REQUIRED
+B-03,BROKER HQ,Service Area,Service workflow,,REBUILD_REQUIRED
+B-05,BROKER HQ,Discovery Wall,Discovery wall,,REBUILD_REQUIRED
+B-06,BROKER HQ,Service Pins,Service pin management,,REBUILD_REQUIRED
+L-GL,REFERENCE,Legal,Privacy and terms reference,,REBUILD_REQUIRED

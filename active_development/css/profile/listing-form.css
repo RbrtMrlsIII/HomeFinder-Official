@@ -1,0 +1,1436 @@
+/* HF-BUILD-2026-08-11-V13 | file: listing-form.css | DO NOT USE OLD CACHE PATH */
+/* ==================================== */
+/*  LISTING FORM                      */
+/* ==================================== */
+/* The full 'Create Listing' form: sections, toggles, checklists, */
+/* rule filters, and Manila-specific fields. */
+
+/* ==================================== */
+/*  HOMEFINDER ADVANCED PROPERTY LISTING ENGINE MODULE*/
+/* ==================================== */
+
+.form-section-divider {
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+    margin: 32px 0 24px 0;
+}
+
+.listing-grid-2col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.listing-grid-3col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+@media (min-width: 640px) {
+    .listing-grid-2col { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .listing-grid-3col { 
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+/* ==================================== */
+/*  INPUT SUFFIX FRAMEWORK (MANUAL MEASUREMENT FIELDS)*/
+/* ==================================== */
+.input-suffix-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-suffix-wrapper input {
+    padding-right: 60px; /* Prevents overlap with suffix marker text */
+    width: 100%;
+}
+
+.input-suffix-label {
+    position: absolute;
+    right: 14px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: lowercase;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* ==================================== */
+/*  UTILITY INCLUSIONS TOGGLE GRID (ICON SELECTORS)*/
+/* ==================================== */
+.utility-toggle-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.utility-toggle-card {
+    position: relative;
+}
+
+.utility-toggle-card input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.utility-toggle-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 12px;
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.utility-toggle-label i {
+    font-size: 20px;
+    color: var(--text-muted);
+    transition: color 0.2s ease;
+}
+
+/* Checked States */
+.utility-toggle-card input[type="checkbox"]:checked + .utility-toggle-label {
+    background: rgba(122, 90, 62, 0.06);
+    border-color: var(--color-brand);
+    color: var(--color-brand);
+}
+
+.utility-toggle-card input[type="checkbox"]:checked + .utility-toggle-label i {
+    color: var(--color-brand);
+}
+
+/* ==================================== */
+/*  AMENITY CHECKLIST MATRIX SYSTEM   */
+/* ==================================== */
+.amenity-checklist-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.amenity-checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13.5px;
+    color: var(--text-primary);
+    transition: background 0.15s ease;
+}
+
+.amenity-checkbox-item:hover {
+    background: var(--bg-main);
+}
+
+.amenity-checkbox-item input[type="checkbox"] {
+    accent-color: var(--color-brand);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* ==================================== */
+/*  RULE FILTERS & SEGMENTED CONTROLS */
+/* ==================================== */
+.rule-filter-card {
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.rule-filter-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.segmented-control {
+    display: flex;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 3px;
+    gap: 2px;
+}
+
+.segmented-option {
+    flex: 1;
+    position: relative;
+}
+
+.segmented-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.segmented-label {
+    display: block;
+    text-align: center;
+    padding: 8px 4px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.segmented-option input[type="radio"]:checked + .segmented-label {
+    background: var(--color-brand);
+    color: white;
+}
+
+/* ==================================== */
+/*  MANILA-SPECIFIC PARAMETRIC INDICATORS*/
+/* ==================================== */
+
+/* flood indicator → OWNER under flood GIS block */
+
+/* ISP Network Availability Badges */
+.isp-badge-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.isp-checkbox-tag {
+    position: relative;
+}
+
+.isp-checkbox-tag input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.isp-tag-label {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.isp-checkbox-tag input[type="checkbox"]:checked + .isp-tag-label {
+    background: var(--dark);
+    border-color: var(--dark);
+    color: #FFFFFF;
+}
+
+/* Commute Time Metrics Dashboard Warnings */
+.commute-metric-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(245, 158, 11, 0.05);
+    border: 1px dashed rgba(245, 158, 11, 0.3);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-top: 6px;
+}
+
+.commute-metric-box i {
+    font-size: 18px;
+    color: #F59E0B;
+}
+
+.commute-metric-details p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--text-secondary);
+}
+
+.commute-metric-details strong {
+    color: var(--text-primary);
+}
+
+/* ==================================== */
+/*  PROPERTY PHOTOS (dropzone + grid)  */
+/* ==================================== */
+/* Same dropzone visual language as the KYC upload (css/profile/kyc.css), */
+/* but multi-file: the dropzone itself only ever shows the "add more"     */
+/* empty state, and every chosen file gets its own removable thumbnail    */
+/* below it in a grid -- unlike KYC's single-file swap-in-place preview.  */
+
+/* OWNER: listing images / dropzone / thumbs */
+.listing-dropzone {
+    position: relative;
+    border: 1.5px dashed var(--border-color);
+    border-radius: 14px;
+    background: var(--bg-input);
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.listing-dropzone:hover,
+.listing-dropzone:focus-visible {
+    border-color: var(--color-brand);
+    background: var(--color-accent-muted);
+    outline: none;
+}
+
+.listing-dropzone.dragover {
+    border-color: var(--color-brand);
+    background: var(--color-accent-muted);
+}
+
+.listing-dropzone-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 26px 16px;
+    gap: 4px;
+}
+
+.listing-dropzone-empty i {
+    font-size: 28px;
+    color: var(--color-accent);
+    margin-bottom: 4px;
+}
+
+.listing-dropzone-empty p {
+    margin: 0;
+    font-size: 13.5px;
+    color: var(--text-primary);
+}
+
+.listing-dropzone-empty span {
+    font-size: 11.5px;
+    color: var(--text-muted);
+}
+
+.listing-images-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+    gap: 10px;
+    margin: 12px;
+    min-height: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.listing-images-preview:empty {
+    display: none;
+    margin: 0;
+}
+
+.listing-dropzone-empty.listing-cond-hidden {
+    display: none;
+}
+
+.listing-image-thumb-wrap {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.listing-image-thumb-wrap.is-cover::after {
+    content: "Cover";
+    position: absolute;
+    left: 6px;
+    bottom: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 3px 7px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+}
+
+.listing-image-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.listing-image-thumb-remove {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.listing-image-thumb-remove:hover {
+    background: var(--color-danger);
+}
+
+
+
+.form-emphasis, label .em, .field-hint .em {
+  color: #B45309;
+  font-weight: 700;
+}
+.field-group label i {
+  color: #7A5A3E;
+  margin-right: 6px;
+}
+.utility-toggle-card:hover, .chip-check:hover {
+  border-color: #7A5A3E;
+  transform: translateY(-1px);
+}
+#listing-pin-map, .listing-grid-2col + .field-group {
+  margin-top: 8px;
+}
+.visitor-guidelines-block, .curfew-block {
+  margin-bottom: 20px;
+}
+
+.deal-types-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.deal-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-surface);
+  cursor: pointer;
+  transition: border-color .2s, transform .2s, background .2s;
+}
+.deal-chip i { font-size: 18px; color: #7A5A3E; }
+.deal-chip input { accent-color: #7A5A3E; }
+.deal-chip:has(input:checked) {
+  border-color: #7A5A3E;
+  background: rgba(122, 90, 62, 0.08);
+}
+.deal-chip:hover { transform: translateY(-1px); border-color: #9C8768; }
+.time-detail-row input[type="time"] {
+  width: 100%;
+  max-width: 160px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-input);
+}
+.rule-filter-card { margin-bottom: 4px; }
+.visitor-guidelines-block { margin-top: 0; }
+.curfew-block { margin-bottom: 24px; }
+.form-emphasis { color: #B45309; font-weight: 750; }
+
+
+/* Moved from profile.html inline styles — CSS Policy §2 */
+.listing-grid-2col.u-mt-12 { margin-top: 12px; }
+.listing-grid-2col.u-mt-4 { margin-top: 4px; }
+/* Legacy embed pin map (fullscreen overlay uses .listing-pin-map-fullscreen) */
+#listing-pin-map:not(.listing-pin-map-fullscreen) {
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+#listing-pin-map.is-hidden { display: none; }
+#listing-pin-lock-notice {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+/* time-detail-row → OWNER progressive disclosure block */
+#visitor-hours-row {
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.form-actions-end {
+  margin-top: 32px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+.btn-ghost-wide {
+  border-radius: 10px;
+  width: auto;
+  padding: 0 16px;
+}
+#property-map-canvas {
+  height: calc(100vh - 340px);
+  min-height: 420px;
+  border-radius: 14px;
+}
+.map-search-guides {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 12px;
+}
+.map-search-guides h4 {
+  margin: 0 0 12px;
+  font-size: 15px;
+}
+.hf-guide-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  font-size: 13.5px;
+}
+.hf-guide-steps li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.my-active-wanted { margin-bottom: 20px; }
+.my-active-wanted h4 { margin: 0 0 10px; font-size: 14px; }
+.panel-empty--pad { padding: 30px 16px; }
+.panel-empty--pad i { font-size: 32px; }
+.panel-empty--pad p { font-size: 13px; }
+.settings-divider {
+  margin: 24px 0;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+.label-block { margin-top: 14px; display: block; }
+
+
+/* deal chip radio hide — native control was painting a tiny box */
+.deal-chip,
+.chip-check.deal-chip {
+  position: relative;
+}
+.deal-chip input[type="radio"],
+.chip-check.deal-chip input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+  pointer-events: none;
+}
+
+
+
+
+
+/* ===== Amenities chips + flood GIS ===== */
+.amenity-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-input);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+.amenity-chip input {
+  accent-color: var(--color-brand, #C4A574);
+  width: auto;
+  margin: 0;
+}
+.amenity-chip i {
+  font-size: 18px;
+  color: var(--color-brand, #C4A574);
+}
+.amenity-chip:has(input:checked) {
+  border-color: var(--color-brand, #C4A574);
+  background: rgba(196, 165, 116, 0.12);
+}
+
+.flood-history-block .flood-status-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+/* OWNER: flood status select + indicator */
+.flood-select-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.flood-select-wrapper select {
+  flex: 1;
+}
+.flood-indicator-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
+}
+.flood-safe { background-color: #10B981; }
+.flood-low { background-color: #F59E0B; }
+.flood-prone { background-color: #EF4444; }
+.flood-na { background-color: #6B7280; }
+
+.flood-history-panel {
+  display: grid;
+  gap: 4px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-input);
+}
+.flood-history-panel.flood-history-emphasized {
+  border-color: rgba(239, 68, 68, 0.45);
+  box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.12);
+}
+.flood-gis-hint {
+  margin-top: 8px;
+}
+
+/* mid time-detail removed — OWNER below */
+
+
+
+
+
+/* File input inside dropzone — accessible, not display:none */
+.listing-file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+/* dropzone/empty/preview owned in OWNER images block */
+.listing-dropzone-empty.listing-cond-hidden,
+.listing-dropzone-empty[hidden] {
+  display: none;
+}
+.listing-images-preview:not(:empty),
+.listing-images-preview.is-active {
+  display: grid;
+}
+
+
+/* Wanted-area pin (Profile authoring) */
+.wanted-pin-map {
+  height: 240px;
+  margin: 8px 0 0;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--border-color, #ccc) 80%, transparent);
+  z-index: 0;
+}
+.wanted-pin-map[hidden] {
+  display: none;
+}
+
+
+/* P0 — quota strip + reliable photo thumbs */
+.listing-quota-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 14px;
+}
+.listing-quota-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: rgba(196, 165, 116, 0.16);
+  border: 1px solid rgba(196, 165, 116, 0.35);
+  color: inherit;
+}
+.listing-quota-chip.is-at-cap {
+  background: rgba(248, 113, 113, 0.15);
+  border-color: rgba(248, 113, 113, 0.45);
+  color: #F87171;
+}
+.listing-quota-chip i { font-size: 1.1rem; color: #C4A574; }
+.listing-quota-chip.is-at-cap i { color: #F87171; }
+
+/* listing images preview/thumbs owned in CANONICAL dropzone block */
+.listing-images-preview.is-active,
+.listing-images-preview:not(:empty) {
+  display: grid;
+}
+.listing-dropzone.is-at-photo-cap {
+  opacity: 0.85;
+  border-style: solid;
+}
+.listing-dropzone.is-at-photo-cap .listing-dropzone-empty span::after {
+  content: " · Full";
+}
+/* is-at-photo-cap owned once */
+
+
+
+/* deal-type-grid → OWNER under .deal-type-block */
+
+.listing-access-rules {
+  margin: 16px 0 8px;
+  padding: 14px 12px 8px;
+  border-radius: 16px;
+  border: 1px solid rgba(91, 64, 48, 0.14);
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.listing-access-title {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.listing-access-title i { color: #C4A574; }
+
+.policy-chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 4px;
+}
+.policy-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 2px solid rgba(91, 64, 48, 0.16);
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.policy-chip input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+.policy-chip:has(input:checked) {
+  border-color: #C4A574;
+  background: rgba(196, 165, 116, 0.22);
+  color: inherit;
+}
+
+/* OWNER: time-detail-row (hidden until listing-cond-flex/block) */
+.time-detail-row {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(196, 165, 116, 0.25);
+  background: rgba(0, 0, 0, 0.15);
+}
+.time-detail-row.listing-cond-block,
+.time-detail-row.listing-cond-flex {
+  display: flex;
+}
+.time-detail-row.listing-cond-hidden {
+  display: none;
+}
+.time-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.time-detail-row input[type="time"],
+.time-detail-row input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 42px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(232, 223, 208, 0.2);
+  background: #2A2622;
+  color: #F4EFE6;
+}
+
+
+@media (min-width: 640px) {
+  .deal-type-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+
+/* P2 — access preview chips + broker help status */
+.access-rules-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 14px;
+}
+.access-preview-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  padding: 7px 11px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1px solid rgba(196, 165, 116, 0.28);
+  background: rgba(196, 165, 116, 0.1);
+  color: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.access-preview-chip i { color: #C4A574; flex-shrink: 0; }
+.access-preview-chip.is-active {
+  border-color: rgba(196, 165, 116, 0.55);
+  background: rgba(196, 165, 116, 0.22);
+}
+
+.listing-help-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 12px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.listing-help-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #9C948A;
+}
+.listing-help-status[data-state="pay"] .listing-help-status-dot { background: #FBBF24; }
+.listing-help-status[data-state="ready"] .listing-help-status-dot { background: #4ADE80; }
+.listing-help-status[data-state="idle"] .listing-help-status-dot { background: #9C948A; }
+.listing-help-block[hidden] { display: none; }
+
+
+/* P3 — flood block polish */
+.flood-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+.flood-preview-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(107, 114, 128, 0.15);
+}
+.flood-preview-chip i { font-size: 1rem; }
+.flood-preview-chip.is-safe {
+  border-color: rgba(16, 185, 129, 0.45);
+  background: rgba(16, 185, 129, 0.15);
+  color: #34D399;
+}
+.flood-preview-chip.is-low {
+  border-color: rgba(245, 158, 11, 0.5);
+  background: rgba(245, 158, 11, 0.15);
+  color: #FBBF24;
+}
+.flood-preview-chip.is-prone {
+  border-color: rgba(239, 68, 68, 0.5);
+  background: rgba(239, 68, 68, 0.15);
+  color: #F87171;
+}
+.flood-preview-chip.is-na {
+  border-color: rgba(148, 163, 184, 0.35);
+  background: rgba(107, 114, 128, 0.15);
+  color: inherit;
+  opacity: 0.9;
+}
+
+.flood-risk-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  list-style: none;
+  margin: 6px 0 12px;
+  padding: 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted, #9C948A);
+}
+.flood-risk-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.flood-risk-legend .flood-indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.flood-history-panel {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: rgba(0, 0, 0, 0.12);
+}
+.flood-history-panel.listing-cond-block {
+  display: flex;
+}
+.flood-history-panel.listing-cond-hidden {
+  display: none;
+}
+.flood-history-panel.flood-history-emphasized {
+  border-color: rgba(245, 158, 11, 0.45);
+  box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.2);
+}
+.flood-history-panel .field-group {
+  margin-bottom: 0;
+}
+@media (min-width: 560px) {
+  .flood-history-panel {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+  }
+  .flood-history-panel.listing-cond-block {
+    display: grid;
+  }
+  .flood-history-panel .field-group:has(textarea),
+  .flood-history-panel .flood-detail-prompt,
+  .flood-history-panel .flood-gis-hint {
+    grid-column: 1 / -1;
+  }
+}
+
+
+/* Size + fees UI */
+.listing-subhead {
+  margin: 4px 0 8px;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+.listing-size-block,
+.listing-fees-block {
+  margin: 12px 0 16px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(196, 165, 116, 0.22);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.listing-size-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.opt-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  margin-left: 4px;
+}
+/* OWNER: fee Amount | N/A rows */
+.fee-input-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: center;
+}
+.fee-input-row input[type="number"] {
+  min-width: 0;
+  width: 100%;
+}
+.fee-na-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 42px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 2px solid rgba(196, 165, 116, 0.3);
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+.fee-na-chip input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+.fee-na-chip.is-active,
+.fee-input-row.is-na .fee-na-chip {
+  border-color: #C4A574;
+  background: rgba(196, 165, 116, 0.22);
+  color: #C4A574;
+}
+.fee-input-row.is-na input[type="number"] {
+  opacity: 0.45;
+  pointer-events: none;
+}
+#flood-last-year-group.listing-cond-hidden,
+#flood-depth-group.listing-cond-hidden {
+  display: none;
+}
+
+
+/* Amenities category tabs + badges */
+.amenities-selected-summary {
+  margin: 0 0 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #C4A574;
+}
+.amenities-group-label {
+  margin: 0 0 8px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.amenities-general-wrap {
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.amenities-cat-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 10px;
+}
+.amenities-cat-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(196, 165, 116, 0.35);
+  background: transparent;
+  color: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.amenities-cat-tab.is-active {
+  border-color: #C4A574;
+  background: rgba(196, 165, 116, 0.22);
+}
+.amenities-tab-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  background: #C4A574;
+  color: #1a1a1a;
+}
+.amenities-cat-panel[hidden] {
+  display: none;
+}
+/* OWNER: amenities chip row layout */
+.amenities-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+
+/* OWNER: listing 5-step shell + full-screen 3D pin overlay */
+.listing-stepper {
+  margin: 0 0 14px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(196, 165, 116, 0.28);
+  background: rgba(0, 0, 0, 0.12);
+}
+.listing-stepper-meta {
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #C4A574;
+}
+.listing-stepper-dots {
+  display: flex;
+  gap: 8px;
+}
+.listing-step-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(196, 165, 116, 0.4);
+  background: transparent;
+  color: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+.listing-step-dot.is-active {
+  background: rgba(196, 165, 116, 0.3);
+  border-color: #C4A574;
+}
+.listing-step-dot.is-done {
+  border-color: #4ADE80;
+  color: #4ADE80;
+}
+.listing-step-title {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+.listing-step-panel[hidden] {
+  display: none;
+}
+.listing-step-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.listing-step-nav #listing-submit-btn[hidden],
+.listing-step-nav #listing-step-next[hidden],
+.listing-step-nav #listing-step-back[hidden] {
+  display: none;
+}
+.listing-pin-status {
+  margin: 8px 0 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+.listing-pin-status[data-state="missing"] { color: #F87171; }
+.listing-pin-status[data-state="set"] { color: #4ADE80; }
+
+.listing-map-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 12000; /* above profile tabs / sticky header */
+  display: flex;
+  flex-direction: column;
+  background: #1a1a1a;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.listing-map-overlay[hidden] {
+  display: none;
+}
+.listing-map-overlay-top {
+  flex: 0 0 auto;
+  padding: 10px 14px 8px;
+  background: rgba(0, 0, 0, 0.92);
+  border-bottom: 1px solid rgba(196, 165, 116, 0.25);
+  color: #f4efe6;
+}
+.listing-map-overlay-title {
+  display: block;
+  font-weight: 800;
+  font-size: 0.95rem;
+  margin: 0 0 4px;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  letter-spacing: 0.01em;
+}
+.listing-map-overlay-hint {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  font-weight: 400;
+  opacity: 0.88;
+}
+.listing-pin-map-fullscreen {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  position: relative;
+}
+.listing-map-overlay-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.92);
+  border-top: 1px solid rgba(196, 165, 116, 0.25);
+  flex: 0 0 auto;
+  z-index: 2;
+}
+.listing-map-overlay-bar--bottom {
+  padding-bottom: max(10px, env(safe-area-inset-bottom, 0px));
+  gap: 12px;
+}
+.listing-map-overlay-bar--bottom .primary-btn,
+.listing-map-overlay-bar--bottom .secondary-btn {
+  flex: 1 1 0;
+  min-height: 44px;
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 12px;
+}
+/* Hierarchy: Confirm pin is the hero; Exit is secondary */
+.listing-map-overlay-bar--bottom .primary-btn {
+  flex: 1.35 1 0;
+  order: 2;
+}
+.listing-map-overlay-bar--bottom .secondary-btn {
+  flex: 0.85 1 0;
+  order: 1;
+}
+/* overlay title/hint owned once above */
+body.listing-map-open,
+body.wanted-map-open {
+  overflow: hidden;
+}
+
+.listing-review-summary {
+  margin: 0 0 14px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(196, 165, 116, 0.25);
+  background: rgba(0, 0, 0, 0.12);
+}
+.listing-review-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+  font-size: 0.88rem;
+}
+.listing-review-list .muted {
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+
+
+/* OWNER: contract type chips */
+.deal-type-block {
+  border: none;
+  margin: 0 0 18px;
+  padding: 0;
+  min-inline-size: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.deal-type-block .field-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--text-secondary, #5c534a);
+  margin: 0 0 2px;
+}
+.deal-type-block > .field-hint {
+  margin: 0 0 8px;
+}
+.deal-type-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 0;
+}
+.deal-type-grid .deal-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 72px;
+  padding: 12px 10px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(91, 64, 48, 0.2);
+  background: var(--bg-input, rgba(255, 255, 255, 0.55));
+  cursor: pointer;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+.deal-type-grid .deal-chip input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+.deal-type-grid .deal-chip {
+  position: relative;
+}
+.deal-type-grid .deal-chip i {
+  font-size: 1.35rem;
+  color: #C4A574;
+}
+.deal-type-grid .deal-chip span { line-height: 1.2; }
+.deal-type-grid .deal-chip:has(input:checked) {
+  border-color: #C4A574;
+  background: rgba(196, 165, 116, 0.18);
+  box-shadow: 0 0 0 1px rgba(196, 165, 116, 0.35);
+}
+.deal-type-hint:not([hidden]) {
+  margin-top: 8px;
+  color: #C4A574;
+  font-weight: 600;
+}
+/* listing-step-nav owned once above */
+
+
+/* Group D — at-cap listing manage */
+.listing-at-cap-banner {
+  margin: 0 0 14px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(196, 165, 116, 0.45);
+  background: rgba(247, 243, 236, 0.95);
+}
+.listing-at-cap-banner[hidden] { display: none; }
+.listing-at-cap-banner strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--clay-primary, #5B4030);
+}
+.listed-properties-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0 0 18px;
+}
+.listing-manage-card {
+  border-radius: 16px;
+  border: 1px solid var(--clay-border, #E8E0D4);
+  overflow: hidden;
+  background: #fff;
+}
+.listing-manage-card.is-pending {
+  border-color: rgba(196, 165, 116, 0.8);
+  box-shadow: 0 0 0 1px rgba(196, 165, 116, 0.25);
+}
+.listing-status-pill {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #3d2a1f;
+  color: #f8f4ec;
+}
+.listing-status-pill.is-pending {
+  background: #c4a574;
+  color: #1a1510;
+}
+.property-card-thumbnail { position: relative; }
+.listing-card-expiry {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.78rem;
+  color: var(--clay-primary, #5B4030);
+  font-weight: 600;
+}
+.listing-card-expiry.is-expired { color: #b45309; }
+.listing-card-reveal {
+  margin: 8px 0;
+  font-size: 0.85rem;
+}
+.listing-card-reveal summary {
+  cursor: pointer;
+  font-weight: 650;
+  color: var(--clay-primary, #5B4030);
+}
+.listing-card-details {
+  margin: 8px 0 0;
+  padding-left: 1.1rem;
+  line-height: 1.45;
+}
+.listing-card-ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 100px;
+  color: var(--text-muted, #8a8072);
+  font-size: 32px;
+}
+#panel-listing.is-listing-at-cap #listing-form-root[hidden] {
+  display: none;
+}

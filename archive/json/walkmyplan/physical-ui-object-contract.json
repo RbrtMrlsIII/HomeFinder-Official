@@ -1,0 +1,27 @@
+{
+  "version": "A4.4C3.11",
+  "principle": "3D objects represent UI; they do not replace the UI.",
+  "lifecycle": [
+    "idle",
+    "hover/focus",
+    "interaction-start",
+    "ui-open",
+    "loading",
+    "success",
+    "error",
+    "disabled"
+  ],
+  "rules": [
+    "Every interactive 3D object has a real HTML/UI equivalent.",
+    "Keyboard and screen-reader access must remain available without the 3D layer.",
+    "Interaction must invoke the existing application feature, not duplicate business logic.",
+    "3D animation is cosmetic feedback and may be skipped under reduced motion.",
+    "If 3D is unavailable, the HTML UI remains fully functional.",
+    "Object state must reflect application state; it must never become a second source of truth.",
+    "Focus, hover, click/tap and keyboard behavior must have consistent semantics.",
+    "Performance tier is attached to the object, not to the feature correctness."
+  ],
+  "object_registry": "physical-ui-object-registry.json",
+  "mapped_object_count": 55,
+  "status": "CANONICAL / ADJUSTABLE"
+}

@@ -1,0 +1,31 @@
+{
+  "gate": "5.5G.6G",
+  "status": "PASS",
+  "canonical_promoted": true,
+  "canonical_model": "master/HomeFinder.sh3d",
+  "source_candidate": "3d/staging/HomeFinder-merge-candidate-Additional-reconciled.sh3d",
+  "pre_promotion_master_archived": "docs/archive/5.5G6G-pre-promotion/HomeFinder_master_pre_5_5G6G.sh3d",
+  "counts": {
+    "levels": 7,
+    "rooms": 47,
+    "walls": 170,
+    "door_or_window": 86,
+    "observer_cameras": 15,
+    "hf_cameras": 9
+  },
+  "checks": {
+    "candidate_xml_parses": true,
+    "candidate_ids_unique": true,
+    "promoted_xml_parses": true,
+    "promoted_ids_unique": true,
+    "promoted_resource_refs_resolve": true,
+    "legacy_house1_ids_preserved": true,
+    "house_2_to_house_3_direct_portal_evidence": true,
+    "house_1_to_house_2_direct_portal_evidence": false,
+    "protected_logic_hashes_checked": true,
+    "runtime_routes_promoted": 0,
+    "firebase_deployed": false
+  },
+  "canonical_sha256": "2463bbf41a92012bbd81b66ea957c993075f5a2bf6db8a43e676b0c832b0e58c",
+  "next_gate": "physical portal/route validation: House 1↔House 2 and House 1↔House 3 independently"
+}

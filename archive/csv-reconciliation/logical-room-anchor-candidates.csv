@@ -1,0 +1,10 @@
+logical_room,candidate_master_room,confidence,rationale,state
+MAIN HALL,Corridor,HIGH,central/common circulation; do not rename physical room,CANDIDATE_ONLY
+LOGIN ROOM,Bedroom #1,LOW,temporary staging anchor only; needs dedicated viewpoint/area validation,CANDIDATE_ONLY
+REGISTER ROOM,Bedroom #2,LOW,temporary staging anchor only; needs dedicated viewpoint/area validation,CANDIDATE_ONLY
+MARKET,Living room,MEDIUM,largest public/common room; candidate for market environment,CANDIDATE_ONLY
+PROFILE SUITE,Bedroom #2,MEDIUM,private-space semantics; likely candidate but must validate geometry,CANDIDATE_ONLY
+BROKER HQ,Garage,MEDIUM,workspace semantics and isolated access; candidate only,CANDIDATE_ONLY
+OPERATIONS,Garage,LOW,operations is application-virtual; should not imply physical garage identity,CANDIDATE_ONLY
+REFERENCE,Kitchen,LOW,reference/legal/government pages are application-virtual,CANDIDATE_ONLY
+BACKYARD,Terrace,MEDIUM,exterior-adjacent candidate; validate whether terrace is intended arrival/backyard anchor,CANDIDATE_ONLY

@@ -1,0 +1,248 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "homefinder.architecture.patch-53-ui-ux-contract",
+  "title": "HomeFinder UI/UX Contract and Page Ownership Freeze",
+  "version": 1,
+  "status": "frozen-for-ui-build",
+  "rule": "Presentation may change, but canonical data meaning, authority, integrations, route boundaries, and lifecycle ownership may not silently change.",
+  "pages": [
+    {
+      "id": "home",
+      "path": "index.html",
+      "owner": "home",
+      "access": [
+        "public",
+        "user",
+        "broker",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "dataBoundary": "public/home discovery",
+      "uiScope": "page-owned home composition; shared navigation/search/transition primitives allowed"
+    },
+    {
+      "id": "market",
+      "path": "market.html",
+      "owner": "market",
+      "access": [
+        "user",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "dataBoundary": "Market discovery boundary",
+      "uiScope": "market shell, discovery, map/pin presentation; broker HQ remains separate"
+    },
+    {
+      "id": "profile",
+      "path": "profile.html",
+      "owner": "profile",
+      "access": [
+        "user",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "dataBoundary": "Profile role-specific boundary",
+      "uiScope": "profile shell and role-aware tabs; broker-only HQ remains outside profile route"
+    },
+    {
+      "id": "broker-hq",
+      "path": "broker-hq.html",
+      "owner": "broker-hq",
+      "access": [
+        "broker",
+        "admin"
+      ],
+      "dataBoundary": "Broker HQ server projections",
+      "uiScope": "broker workspace and operational dashboards"
+    },
+    {
+      "id": "admin",
+      "path": "admin.html",
+      "owner": "admin",
+      "access": [
+        "admin"
+      ],
+      "dataBoundary": "Admin authority boundary",
+      "uiScope": "admin authority UI and user/ops management"
+    },
+    {
+      "id": "staff",
+      "path": "staff.html",
+      "owner": "ops",
+      "access": [
+        "staff",
+        "admin"
+      ],
+      "dataBoundary": "Ops capability boundary",
+      "uiScope": "ops task surface; admin may inherit lower-ops tasks without changing ownership"
+    },
+    {
+      "id": "moderator",
+      "path": "moderator.html",
+      "owner": "moderator",
+      "access": [
+        "moderator",
+        "admin"
+      ],
+      "dataBoundary": "Moderator capability boundary",
+      "uiScope": "moderation task surface; admin may inherit where authority permits"
+    },
+    {
+      "id": "financing",
+      "path": "financing.html",
+      "owner": "government-reference",
+      "access": [
+        "public",
+        "user",
+        "broker",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "dataBoundary": "Financing presentation boundary",
+      "uiScope": "page-owned financing presentation; payment authority remains external/contractual"
+    },
+    {
+      "id": "login",
+      "path": "login.html",
+      "owner": "auth",
+      "access": [
+        "public"
+      ],
+      "dataBoundary": "Firebase authentication boundary",
+      "uiScope": "auth presentation only"
+    },
+    {
+      "id": "register",
+      "path": "register.html",
+      "owner": "auth",
+      "access": [
+        "public"
+      ],
+      "dataBoundary": "Firebase authentication boundary",
+      "uiScope": "auth presentation only"
+    },
+    {
+      "id": "verify",
+      "path": "verify/index.html",
+      "owner": "auth",
+      "access": [
+        "public"
+      ],
+      "dataBoundary": "Firebase verification boundary",
+      "uiScope": "verification presentation only"
+    },
+    {
+      "id": "privacy",
+      "path": "privacy.html",
+      "owner": "legal",
+      "access": [
+        "public"
+      ],
+      "dataBoundary": "Static legal document",
+      "uiScope": "page-owned legal presentation"
+    },
+    {
+      "id": "terms",
+      "path": "terms.html",
+      "owner": "legal",
+      "access": [
+        "public"
+      ],
+      "dataBoundary": "Static legal document",
+      "uiScope": "page-owned legal presentation"
+    }
+  ],
+  "sharedPrimitives": [
+    {
+      "id": "transition",
+      "owner": "platform",
+      "assets": [
+        "js/transition.js",
+        "css/transition.css"
+      ],
+      "rule": "May provide animation infrastructure; must not own page business state."
+    },
+    {
+      "id": "brand",
+      "owner": "platform",
+      "assets": [
+        "js/brand-logo.js"
+      ],
+      "rule": "May provide shared branding; must not own page data."
+    },
+    {
+      "id": "auth",
+      "owner": "auth",
+      "assets": [
+        "js/auth.js",
+        "js/firebase.js",
+        "js/session.js"
+      ],
+      "rule": "Authentication identity is authoritative; UI may consume it but may not redefine roles."
+    },
+    {
+      "id": "dictionary",
+      "owner": "authority",
+      "assets": [
+        "data/dictionary.json",
+        "docs/dictionary/INDEX.json"
+      ],
+      "rule": "Vocabulary IDs are stable identifiers and must be changed through the contract-change rule."
+    },
+    {
+      "id": "cinematic",
+      "owner": "platform",
+      "assets": [
+        "js/cinematic-ui.js",
+        "css/cinematic-ui.css",
+        "data/cinematic-scenes.json"
+      ],
+      "rule": "Presentation-only navigation and hero-scene infrastructure; must not own page business state, persisted data, authority, or route permissions."
+    }
+  ],
+  "dataContracts": [
+    {
+      "id": "market-discovery",
+      "authority": "js/market-discovery-contract.js",
+      "consumer": "market.html + js/market.js + js/market-pin-discovery.js"
+    },
+    {
+      "id": "market-data",
+      "authority": "js/market-data-contract.js",
+      "consumer": "market discovery/read surfaces"
+    },
+    {
+      "id": "broker-data",
+      "authority": "js/broker-data-contract.js",
+      "consumer": "broker-hq.html + js/broker-hq.js"
+    },
+    {
+      "id": "authority",
+      "authority": "js/authority-contract.js",
+      "consumer": "role/capability-sensitive surfaces"
+    },
+    {
+      "id": "subscription",
+      "authority": "js/subscription.js",
+      "consumer": "profile/admin/entitlement consumers"
+    },
+    {
+      "id": "boost",
+      "authority": "js/tiers.js",
+      "consumer": "entitlement and boost consumers"
+    }
+  ],
+  "freezeRules": [
+    "A UI refactor cannot rename or reinterpret a dictionary ID without a vocabulary change record.",
+    "A UI data hook must identify its producer and canonical consumer boundary.",
+    "A route cannot gain or lose a role without updating routes dictionary, capability matrix, and verification tests together.",
+    "A page may reuse shared primitives, but business ownership remains with its designated page owner.",
+    "Payment, Firebase, and Cloudflare authority remains in their designated integration boundaries.",
+    "New UI fields that represent persisted data must first be reconciled into the authoritative data vocabulary and contract.",
+    "No visual implementation may silently revive retired compatibility vocabulary."
+  ]
+}

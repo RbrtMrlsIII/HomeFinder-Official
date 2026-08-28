@@ -1,0 +1,23 @@
+{
+  "gate": "5.5G.6E",
+  "status": "PASS",
+  "camera_reconciliation": {
+    "homefinder_cameras": 9,
+    "legacy_stored_cameras": 5,
+    "active_observer": 1,
+    "total_observer_camera_elements": 15
+  },
+  "h04": "presentation_only_unanchored",
+  "canonical_model": "master/HomeFinder.sh3d",
+  "canonical_sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "canonical_model_modified": false,
+  "runtime_physical_routes_promoted": 0,
+  "protected_role_logic_test": "PASS",
+  "tests": {
+    "canonical-camera-binding": "PASS",
+    "canonical-homefinder-sh3d": "PASS",
+    "house-camera-rig": "PASS",
+    "5.5G6C-protected-logic-freeze": "PASS"
+  },
+  "note": "Legacy/evidence SH3D files remain non-authoritative; House 2\u2194House 3 direct traversal remains forbidden."
+}

@@ -1,0 +1,10 @@
+{
+  "gate": "5.5G.6F",
+  "status": "PASS",
+  "xml_parses": true,
+  "ids_unique": true,
+  "canonical_ids_preserved": true,
+  "resource_references_resolve": true,
+  "canonical_sh3d_modified": false,
+  "runtime_routes_promoted": 0
+}

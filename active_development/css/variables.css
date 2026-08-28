@@ -1,0 +1,304 @@
+/* OWNER: global design tokens. Load before page CSS.
+ * Theme architecture: environment-driven, cinematic-compatible.
+ * No light/cinematic theme branch exists in the active project.
+ */
+:root {
+  --hf-theme-id: day;
+  --hf-theme-transition-duration: 420ms;
+  --hf-theme-transition-ease: cubic-bezier(.22,.61,.36,1);
+
+  /* Core brand / geometry */
+  --clay-primary: #5B4030; --clay-secondary: #C4A574; --clay-cta: #3D2A1F;
+  --clay-bg: #F7F3EC; --clay-text: #2C2621; --clay-border: #E8E0D4;
+  --clay-on-cta: #F7F3EC; --clay-card: #FFFDF8; --clay-radius: 14px; --clay-hit: 44px;
+  --primary: #7A5A3E; --secondary: #5B4030; --accent: #9C8768; --ash: #8C8578; --ash-deep: #5A564D;
+  --dark: #2C2621; --white: #FFFFFF; --gray: #F4EFE6; --text: #3D362D;
+  --bg-main: #F3ECE0; --bg-page: var(--bg-main); --bg-surface: #FFFFFF; --bg-card: var(--bg-surface); --bg-input: #FAF6EE;
+  --text-primary: #2C2621; --text-main: var(--text-primary); --text-secondary: #5C5347; --text-muted: #8A8072;
+  --border-color: #E2D8C7; --dropdown-bg: #FFFFFF;
+  --color-brand: #7A5A3E; --color-brand-hover: #5B4030; --color-accent: #9C8768;
+  --color-accent-muted: rgba(156,135,104,.15); --color-accent-text: #B49A76; --color-danger: #B3543F;
+  --color-danger-muted: rgba(179,84,63,.1); --color-danger-light: #E3AC9E;
+  --gradient-warm: linear-gradient(135deg,#EFE5D2 0%,#D3BB99 45%,#9A9284 100%);
+  --gradient-clay: linear-gradient(135deg,#9C8768 0%,#7A5A3E 55%,#5B4030 100%);
+  --gradient-dusk: linear-gradient(180deg,#4A3F33 0%,#2C2621 100%);
+  --shadow-sm: 0 4px 6px -1px rgba(44,38,33,.05); --shadow-md: 0 10px 25px -5px rgba(44,38,33,.15);
+
+  /* Typography */
+  --font-ui: "DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-reading: "Source Serif 4",Georgia,"Times New Roman",serif;
+
+  /* Theme-driven UI contract */
+  --hf-ui-surface: #FFFDF8; --hf-ui-surface-2: #F7F3EC; --hf-ui-ink: #2C2621; --hf-ui-muted: #6B5C4C;
+  --hf-ui-border: #E2D8C7; --hf-ui-accent: #C4A574; --hf-ui-accent-strong: #7A5A3E;
+  --hf-ui-shadow: 0 10px 25px -5px rgba(44,38,33,.15);
+  --hf-motion-intensity: 1;
+  --hf-anim-fast: 140ms; --hf-anim-base: 220ms; --hf-anim-slow: 420ms;
+  --hf-ease-standard: cubic-bezier(.22,.61,.36,1); --hf-ease-emphasis: cubic-bezier(.16,1,.3,1);
+
+  /* Market aliases */
+  --m-primary: var(--clay-primary); --m-secondary: var(--clay-secondary); --m-cta: var(--clay-cta);
+  --m-bg: var(--clay-bg); --m-ink: var(--clay-text); --m-border: var(--clay-border); --m-muted: #6B5C4C;
+  --m-card: var(--clay-card); --m-line: var(--m-border); --m-accent: var(--m-secondary); --m-on-cta: var(--clay-on-cta);
+  --m-radius: var(--clay-radius); --m-radius-pill: 999px; --m-space-1:4px; --m-space-2:8px; --m-space-3:12px; --m-space-4:16px; --m-space-5:24px;
+  --m-font-ui: var(--font-ui); --m-font-read: var(--font-reading); --m-ease: var(--hf-ease-standard);
+}
+
+/* Environment theme adapters. The environment changes presentation only. */
+:root[data-environment="day"] { --hf-theme-id: day; --hf-ui-surface:#FFFDF8; --hf-ui-surface-2:#F7F3EC; --hf-ui-ink:#2C2621; --hf-ui-muted:#6B5C4C; --hf-ui-border:#E2D8C7; --hf-ui-accent:#C4A574; --hf-motion-intensity:1; }
+:root[data-environment="sunset"] { --hf-theme-id:sunset; --hf-ui-surface:#FFF4E6; --hf-ui-surface-2:#F1DED0; --hf-ui-ink:#3D2A26; --hf-ui-muted:#795D53; --hf-ui-border:#DFC0AA; --hf-ui-accent:#C27A4E; --hf-motion-intensity:1; }
+:root[data-environment="night"] { --hf-theme-id:night; --hf-ui-surface:#241E1B; --hf-ui-surface-2:#332721; --hf-ui-ink:#F4E9DA; --hf-ui-muted:#C6B8A5; --hf-ui-border:rgba(244,233,218,.15); --hf-ui-accent:#D1A96D; --hf-motion-intensity:.82; }
+:root[data-environment="rain"] { --hf-theme-id:rain; --hf-ui-surface:#25323A; --hf-ui-surface-2:#31424D; --hf-ui-ink:#EAF2F5; --hf-ui-muted:#B7C8CF; --hf-ui-border:rgba(234,242,245,.17); --hf-ui-accent:#7EA9BD; --hf-motion-intensity:.76; }
+:root[data-environment="mist"] { --hf-theme-id:mist; --hf-ui-surface:#EEF0EA; --hf-ui-surface-2:#E1E6DD; --hf-ui-ink:#303936; --hf-ui-muted:#66706B; --hf-ui-border:#C8D1CA; --hf-ui-accent:#82978B; --hf-motion-intensity:.72; }
+:root[data-environment="storm"] { --hf-theme-id:storm; --hf-ui-surface:#1B2230; --hf-ui-surface-2:#273143; --hf-ui-ink:#EEF2F8; --hf-ui-muted:#B5C1D1; --hf-ui-border:rgba(238,242,248,.15); --hf-ui-accent:#8EA7CA; --hf-motion-intensity:.68; }
+
+/* One animation root. Components consume these tokens instead of inventing timing ad hoc. */
+[data-hf-animated], .hf-cinematic-backdrop, .hf-door-transition, .hf-camera-shell, .hf-ui-overlay {
+  transition-duration: var(--hf-anim-base);
+  transition-timing-function: var(--hf-ease-standard);
+}
+@media (prefers-reduced-motion: reduce) {
+  :root { --hf-motion-intensity: 0; --hf-anim-fast: 1ms; --hf-anim-base: 1ms; --hf-anim-slow: 1ms; }
+  [data-hf-animated], .hf-cinematic-backdrop, .hf-door-transition, .hf-camera-shell, .hf-ui-overlay { transition-duration:1ms !important; animation-duration:1ms !important; }
+}
+
+/* ==========================================================================\n   HOMEFINDER ROOT SYSTEM v2\n   One semantic root for UI surfaces, typography, responsive geometry, motion,\n   and cinematic presentation. New components must consume these tokens.\n   ========================================================================== */
+:root {
+  /* Surface / container roots */
+  --hf-surface-page: var(--hf-ui-surface-2);
+  --hf-surface-panel: var(--hf-ui-surface);
+  --hf-surface-card: color-mix(in srgb, var(--hf-ui-surface) 96%, var(--hf-ui-accent) 4%);
+  --hf-surface-card-hover: color-mix(in srgb, var(--hf-ui-surface) 92%, var(--hf-ui-accent) 8%);
+  --hf-surface-input: color-mix(in srgb, var(--hf-ui-surface) 94%, var(--hf-ui-ink) 6%);
+  --hf-surface-overlay: color-mix(in srgb, var(--hf-ui-surface) 86%, transparent);
+  --hf-surface-glass: color-mix(in srgb, var(--hf-ui-surface) 72%, transparent);
+
+  /* Typography roots */
+  --hf-font-display: var(--font-reading);
+  --hf-font-ui: var(--font-ui);
+  --hf-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --hf-font-size-xs: 0.75rem;
+  --hf-font-size-sm: 0.875rem;
+  --hf-font-size-md: 1rem;
+  --hf-font-size-lg: 1.125rem;
+  --hf-font-size-xl: 1.375rem;
+  --hf-font-size-2xl: clamp(1.75rem, 2vw + 1rem, 2.75rem);
+  --hf-line-tight: 1.15;
+  --hf-line-body: 1.55;
+  --hf-line-loose: 1.75;
+  --hf-weight-regular: 400;
+  --hf-weight-medium: 500;
+  --hf-weight-semibold: 600;
+  --hf-weight-bold: 700;
+
+  /* Geometry roots */
+  --hf-radius-xs: 6px;
+  --hf-radius-sm: 10px;
+  --hf-radius-md: 14px;
+  --hf-radius-lg: 20px;
+  --hf-radius-xl: 28px;
+  --hf-radius-pill: 999px;
+  --hf-hit-min: 44px;
+
+  /* Spacing roots */
+  --hf-space-1: 4px;
+  --hf-space-2: 8px;
+  --hf-space-3: 12px;
+  --hf-space-4: 16px;
+  --hf-space-5: 24px;
+  --hf-space-6: 32px;
+  --hf-space-7: 48px;
+  --hf-space-8: 64px;
+
+  /* Border / elevation roots */
+  --hf-border-subtle: color-mix(in srgb, var(--hf-ui-border) 72%, transparent);
+  --hf-border-strong: var(--hf-ui-border);
+  --hf-shadow-card: var(--hf-ui-shadow);
+  --hf-shadow-floating: 0 18px 48px -18px color-mix(in srgb, var(--hf-ui-ink) 24%, transparent);
+  --hf-shadow-focus: 0 0 0 3px color-mix(in srgb, var(--hf-ui-accent) 28%, transparent);
+
+  /* Responsive roots */
+  --hf-content-max: 1280px;
+  --hf-gutter: clamp(16px, 2.5vw, 40px);
+  --hf-section-gap: clamp(32px, 5vw, 88px);
+  --hf-ui-scale: 1;
+  --hf-density: 1;
+
+  /* Animation root */
+  --hf-motion-enabled: 1;
+  --hf-motion-intensity: 1;
+  --hf-duration-instant: 1ms;
+  --hf-duration-fast: 140ms;
+  --hf-duration-base: 220ms;
+  --hf-duration-emphasis: 420ms;
+  --hf-duration-cinematic: 760ms;
+  --hf-duration-door: 1040ms;
+  --hf-ease-standard: cubic-bezier(.22,.61,.36,1);
+  --hf-ease-emphasis: cubic-bezier(.16,1,.3,1);
+  --hf-ease-spring: cubic-bezier(.18,.82,.22,1);
+  --hf-ease-linear: linear;
+
+  /* Camera/presentation roots */
+  --hf-camera-transition-duration: var(--hf-duration-cinematic);
+  --hf-camera-transition-ease: var(--hf-ease-emphasis);
+  --hf-camera-scale: 1;
+  --hf-camera-offset-x: 0px;
+  --hf-camera-offset-y: 0px;
+
+  /* UI object roots */
+  --hf-object-interactive-scale: 1;
+  --hf-object-interactive-lift: -2px;
+  --hf-object-disabled-opacity: .52;
+  --hf-object-focus-shadow: var(--hf-shadow-focus);
+}
+
+/* Semantic component roots. These classes are intentionally generic so new UI
+   objects can inherit the same visual grammar without re-inventing tokens. */
+.hf-ui-root,
+.hf-panel,
+.hf-card,
+.hf-box,
+.hf-field,
+.hf-nav,
+.hf-overlay,
+.hf-dialog,
+.hf-object {
+  --hf-component-surface: var(--hf-surface-panel);
+  --hf-component-ink: var(--hf-ui-ink);
+  --hf-component-muted: var(--hf-ui-muted);
+  --hf-component-border: var(--hf-border-subtle);
+  --hf-component-radius: var(--hf-radius-md);
+  --hf-component-shadow: var(--hf-shadow-card);
+  --hf-component-gap: var(--hf-space-4);
+  --hf-component-motion: var(--hf-duration-base);
+  --hf-component-ease: var(--hf-ease-standard);
+}
+
+.hf-card,
+.hf-box,
+.hf-object {
+  background: var(--hf-component-surface);
+  color: var(--hf-component-ink);
+  border: 1px solid var(--hf-component-border);
+  border-radius: var(--hf-component-radius);
+  box-shadow: var(--hf-component-shadow);
+}
+
+.hf-object[data-interactive="true"] {
+  transition:
+    transform var(--hf-component-motion) var(--hf-component-ease),
+    box-shadow var(--hf-component-motion) var(--hf-component-ease),
+    border-color var(--hf-component-motion) var(--hf-component-ease),
+    opacity var(--hf-component-motion) var(--hf-component-ease);
+}
+
+.hf-object[data-interactive="true"]:hover {
+  transform: translateY(var(--hf-object-interactive-lift)) scale(var(--hf-object-interactive-scale));
+}
+
+.hf-object:focus-visible,
+.hf-card:focus-visible,
+.hf-box:focus-visible,
+.hf-field:focus-visible {
+  outline: none;
+  box-shadow: var(--hf-object-focus-shadow);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --hf-ui-scale: .96;
+    --hf-density: .94;
+    --hf-section-gap: 32px;
+  }
+}
+
+@media (min-width: 1600px) {
+  :root { --hf-content-max: 1440px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --hf-motion-enabled: 0;
+    --hf-motion-intensity: 0;
+    --hf-duration-fast: var(--hf-duration-instant);
+    --hf-duration-base: var(--hf-duration-instant);
+    --hf-duration-emphasis: var(--hf-duration-instant);
+    --hf-duration-cinematic: var(--hf-duration-instant);
+    --hf-duration-door: var(--hf-duration-instant);
+    --hf-camera-transition-duration: var(--hf-duration-instant);
+  }
+  .hf-object[data-interactive="true"] { transition-duration: var(--hf-duration-instant) !important; }
+  .hf-object[data-interactive="true"]:hover { transform: none !important; }
+}
+
+/* Physical UI state + responsive transformation root. */
+.hf-object,
+.hf-physical-object {
+  --hf-state-scale: 1;
+  --hf-state-opacity: 1;
+  --hf-state-lift: 0px;
+  --hf-state-border: var(--hf-component-border, var(--hf-border-subtle));
+  --hf-state-shadow: var(--hf-component-shadow, var(--hf-shadow-card));
+  --hf-state-duration: var(--hf-duration-base);
+  --hf-state-ease: var(--hf-ease-standard);
+  transform: translateY(var(--hf-state-lift)) scale(var(--hf-state-scale));
+  opacity: var(--hf-state-opacity);
+  border-color: var(--hf-state-border);
+  box-shadow: var(--hf-state-shadow);
+  transition:
+    transform var(--hf-state-duration) var(--hf-state-ease),
+    opacity var(--hf-state-duration) var(--hf-state-ease),
+    border-color var(--hf-state-duration) var(--hf-state-ease),
+    box-shadow var(--hf-state-duration) var(--hf-state-ease);
+}
+.hf-physical-object[data-hf-object-state="hover"],
+.hf-physical-object[data-hf-object-state="focus"] { --hf-state-lift: var(--hf-object-interactive-lift); --hf-state-scale: var(--hf-object-interactive-scale); }
+.hf-physical-object[data-hf-object-state="interaction-start"],
+.hf-physical-object[data-hf-object-state="ui-open"] { --hf-state-lift: -1px; --hf-state-scale: 1.01; --hf-state-border: var(--hf-ui-accent); }
+.hf-physical-object[data-hf-object-state="loading"] { --hf-state-opacity: .78; }
+.hf-physical-object[data-hf-object-state="success"] { --hf-state-border: color-mix(in srgb, #4f9d69 70%, var(--hf-ui-border)); }
+.hf-physical-object[data-hf-object-state="error"] { --hf-state-border: color-mix(in srgb, var(--color-danger) 70%, var(--hf-ui-border)); }
+.hf-physical-object[data-hf-object-state="empty"] { --hf-state-opacity: .84; }
+.hf-physical-object[data-hf-object-state="disabled"] { --hf-state-opacity: var(--hf-object-disabled-opacity); pointer-events: none; }
+
+[data-hf-responsive-mode="mobile-portrait"] .hf-object-surface,
+[data-hf-responsive-mode="mobile-portrait"] .hf-object-label { font-size: calc(1em * var(--hf-object-ui-scale, 1)); }
+@media (max-width: 767px) {
+  .hf-physical-object { min-height: var(--hf-hit-min); }
+  .hf-physical-object .hf-object-label { line-height: var(--hf-line-body); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hf-object,
+  .hf-physical-object { --hf-state-duration: var(--hf-duration-instant); --hf-state-lift: 0px !important; --hf-state-scale: 1 !important; }
+}
+
+/* Phase 12 Login/Register physical-object propagation */
+.hf-auth-physical-object {
+  --hf-state-lift: 0px;
+  --hf-state-scale: 1;
+  --hf-state-opacity: 1;
+  transition:
+    transform var(--hf-duration-base) var(--hf-ease-standard),
+    opacity var(--hf-duration-base) var(--hf-ease-standard),
+    box-shadow var(--hf-duration-base) var(--hf-ease-standard),
+    border-color var(--hf-duration-base) var(--hf-ease-standard);
+  transform: translateY(var(--hf-state-lift)) scale(var(--hf-state-scale));
+  opacity: var(--hf-state-opacity);
+}
+.hf-auth-physical-object[data-hf-object-state="hover"],
+.hf-auth-physical-object[data-hf-object-state="focus"] {
+  --hf-state-lift: var(--hf-object-interactive-lift);
+  --hf-state-scale: var(--hf-object-interactive-scale);
+}
+.hf-auth-physical-object[data-hf-object-state="interaction-start"],
+.hf-auth-physical-object[data-hf-object-state="ui-open"] {
+  --hf-state-lift: -1px;
+  --hf-state-scale: 1.01;
+}
+.hf-auth-physical-object[data-hf-object-state="loading"] { --hf-state-opacity: .78; }
+.hf-auth-physical-object[data-hf-object-state="disabled"] { --hf-state-opacity: var(--hf-object-disabled-opacity); pointer-events: none; }
+[data-hf-responsive-mode="mobile-portrait"] .hf-auth-physical-object { max-width: 100%; }
+[data-hf-responsive-mode="mobile-landscape"] .hf-auth-physical-object { max-width: 92%; }
+@media (prefers-reduced-motion: reduce) {
+  .hf-auth-physical-object { transition: none !important; transform: none !important; }
+}

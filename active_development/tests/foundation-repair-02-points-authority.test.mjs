@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const read = p => fs.readFileSync(p, 'utf8');
+const functions = read('firebase/functions/index.js');
+const rules = read('firebase/firestore.rules');
+const listing = read('js/profile/listing-form.js');
+const points = read('js/points-ledger.js');
+const contracts = read('js/profile/contracts-tab.js');
+
+assert.match(functions, /async function awardListingPublishedInTransaction\(transaction, uid, propertyId, profile\)/);
+assert.match(functions, /event: "listing_published"/);
+assert.match(functions, /points: 5/);
+assert.match(functions, /source: "listing_creation"/);
+assert.match(functions, /awardListingPublishedInTransaction\(transaction, callerUid, docRef\.id, profile\)/);
+assert.match(functions, /FieldValue\.increment\(5\)/);
+assert.match(rules, /match \/pointsLedger\/\{entryId\} \{[\s\S]*allow create: if false;/);
+assert.doesNotMatch(listing, /awardListingPublished/);
+assert.doesNotMatch(contracts, /awardSuccessfulAssist|awardMonthlyRenew/);
+assert.match(points, /backend_authority_required/);
+assert.match(points, /export async function getWantedRevealProgress/);
+assert.match(points, /export async function getOrganicPointsTotal/);
+console.log('Foundation Repair 02 points authority: PASS');

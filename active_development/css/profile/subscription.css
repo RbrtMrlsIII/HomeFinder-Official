@@ -1,0 +1,3 @@
+.subscription-entry{display:grid;grid-template-columns:minmax(220px,1fr) minmax(220px,320px);gap:12px;align-items:center;margin-top:12px;padding:14px 16px;border:1px solid rgba(127,127,127,.22);border-radius:14px;background:rgba(127,127,127,.06)}
+.subscription-entry-copy{display:grid;gap:4px}.paypal-subscription-mount{min-height:44px}.subscription-entry [role=status]{grid-column:1/-1;margin:0}.subscription-entry strong{display:flex;gap:7px;align-items:center}
+@media (max-width:700px){.subscription-entry{grid-template-columns:1fr}.subscription-entry [role=status]{grid-column:auto}}

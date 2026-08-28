@@ -1,0 +1,211 @@
+{
+  "version": "DD05-MAIN-HALL-CINEMATIC-1.0",
+  "status": "ACTIVE / ADJUSTABLE",
+  "room": "MAIN HALL",
+  "route": "index.html",
+  "authority": "HomeFinder application contracts",
+  "architectural_authority": "SweetHome3D model; WalkMyPlan mapping is derived",
+  "rule": "Multiple HTML sections may share one cinematic zone; the camera follows section state without creating separate rooms.",
+  "sections": [
+    {
+      "section": "hero",
+      "zone": "H-01",
+      "camera_anchor": "hall",
+      "object_id": "home-hero-focal",
+      "ui_mount": "home-hero",
+      "response": "idle/focus/loading/success/error",
+      "next": "about-home",
+      "transition": "hero-settle",
+      "walkmyplan_candidate_marker": "B"
+    },
+    {
+      "section": "about-home",
+      "zone": "H-02",
+      "camera_anchor": "gallery",
+      "object_id": "main-search-console",
+      "ui_mount": "universal-search",
+      "response": "query/loading/results/no-match/error",
+      "next": "map",
+      "transition": "search-focus",
+      "walkmyplan_candidate_marker": "H"
+    },
+    {
+      "section": "map",
+      "zone": "H-04",
+      "camera_anchor": "window",
+      "object_id": "home-map-table",
+      "ui_mount": "home-map-preview",
+      "response": "idle/loading/pin-confirm/login-required/market-fallback/error",
+      "next": "properties",
+      "transition": "map-interaction",
+      "walkmyplan_candidate_marker": "D"
+    },
+    {
+      "section": "properties",
+      "zone": "H-03",
+      "camera_anchor": "living",
+      "object_id": "property-catalogue",
+      "ui_mount": "home-properties",
+      "response": "loading/listings/selection/empty/error",
+      "next": "government-housing",
+      "transition": "catalogue-open/market-handoff",
+      "walkmyplan_candidate_marker": "D"
+    },
+    {
+      "section": "government-housing",
+      "zone": "H-05",
+      "camera_anchor": "garden",
+      "object_id": "government-info-desk",
+      "ui_mount": "home-government",
+      "response": "loading/published/empty/error/disclaimer/external-link",
+      "next": "about",
+      "transition": "desk-open/guide-handoff",
+      "walkmyplan_candidate_marker": "E"
+    },
+    {
+      "section": "about",
+      "zone": "H-06",
+      "camera_anchor": "center",
+      "object_id": "mission-wall",
+      "ui_mount": "home-mission",
+      "response": "idle/focus/read",
+      "next": "mission",
+      "transition": "plaque-focus/read",
+      "walkmyplan_candidate_marker": "F"
+    },
+    {
+      "section": "mission",
+      "zone": "H-06",
+      "camera_anchor": "library",
+      "object_id": "mission-wall",
+      "ui_mount": "home-mission",
+      "response": "idle/focus/read",
+      "next": "spaces",
+      "transition": "plaque-focus/read",
+      "walkmyplan_candidate_marker": "F"
+    },
+    {
+      "section": "spaces",
+      "zone": "H-07",
+      "camera_anchor": "lounge",
+      "object_id": "guide-book",
+      "ui_mount": "home-guide",
+      "response": "idle/open",
+      "next": "roles",
+      "transition": "book-open",
+      "walkmyplan_candidate_marker": "F"
+    },
+    {
+      "section": "roles",
+      "zone": "H-07",
+      "camera_anchor": "stairs",
+      "object_id": "guide-book",
+      "ui_mount": "home-guide",
+      "response": "idle/open",
+      "next": "guide",
+      "transition": "book-open",
+      "walkmyplan_candidate_marker": "F"
+    },
+    {
+      "section": "guide",
+      "zone": "H-07",
+      "camera_anchor": "study",
+      "object_id": "guide-book",
+      "ui_mount": "home-guide",
+      "response": "idle/open",
+      "next": "pages",
+      "transition": "book-open",
+      "walkmyplan_candidate_marker": "F"
+    },
+    {
+      "section": "pages",
+      "zone": "H-08",
+      "camera_anchor": "directory",
+      "object_id": "safety-board",
+      "ui_mount": "home-safety",
+      "response": "idle/open",
+      "next": "features",
+      "transition": "board-open",
+      "walkmyplan_candidate_marker": "D"
+    },
+    {
+      "section": "features",
+      "zone": "H-08",
+      "camera_anchor": "feature-wall",
+      "object_id": "safety-board",
+      "ui_mount": "home-safety",
+      "response": "idle/open",
+      "next": "safety",
+      "transition": "board-open",
+      "walkmyplan_candidate_marker": "D"
+    },
+    {
+      "section": "safety",
+      "zone": "H-08",
+      "camera_anchor": "quiet",
+      "object_id": "safety-board",
+      "ui_mount": "home-safety",
+      "response": "idle/open",
+      "next": "start",
+      "transition": "board-open",
+      "walkmyplan_candidate_marker": "D"
+    },
+    {
+      "section": "start",
+      "zone": "H-09",
+      "camera_anchor": "center-return",
+      "object_id": "start-cta",
+      "ui_mount": "home-start-cta",
+      "response": "idle/focus/navigation",
+      "next": "contact",
+      "transition": "cta-open",
+      "walkmyplan_candidate_marker": "A"
+    },
+    {
+      "section": "contact",
+      "zone": "H-09",
+      "camera_anchor": "exit",
+      "object_id": "contact-desk",
+      "ui_mount": "contact-ui",
+      "response": "idle/focus/mailto/legal/login-support",
+      "next": "credits",
+      "transition": "desk-open",
+      "walkmyplan_candidate_marker": "A"
+    },
+    {
+      "section": "credits",
+      "zone": "H-09",
+      "camera_anchor": "front-door-return",
+      "object_id": "credits-wall",
+      "ui_mount": "credits-ui",
+      "response": "idle/focus/external-link",
+      "next": "leave-main-hall",
+      "transition": "short-fade/exit",
+      "walkmyplan_candidate_marker": "A"
+    }
+  ],
+  "zone_semantics": {
+    "H-01": "hero/focal CTA",
+    "H-02": "search/discovery",
+    "H-03": "featured property discovery",
+    "H-04": "map gateway",
+    "H-05": "government housing reference",
+    "H-06": "about/mission reading",
+    "H-07": "spaces/roles/guide reading",
+    "H-08": "pages/features/safety reading",
+    "H-09": "start/contact/exit"
+  },
+  "physical_state_contract": [
+    "idle",
+    "hover/focus",
+    "interaction-start",
+    "ui-open",
+    "loading",
+    "success",
+    "error",
+    "disabled"
+  ],
+  "accessibility": "HTML sections remain authoritative and usable without the cinematic layer; reduced motion uses short fades/minimal transforms.",
+  "construction_status": "application mapping retained; physical placement must be reconciled against SweetHome3D",
+  "walkmyplan_spatial_status": "DERIVED MAPPING ONLY; do not treat markers as geometry authority."
+}

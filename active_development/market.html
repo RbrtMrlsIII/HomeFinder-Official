@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    body.market-page.market-boot-pending #market-scale-root { visibility: hidden; }
+    body.market-page:not(.market-boot-pending) #market-scale-root { visibility: visible; }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Market · HomeFinder</title>
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@6.3.0/dist/maplibre-gl.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css?v=57">
+  <link rel="stylesheet" href="css/market-profile-physical-ui.css">
+  <link rel="stylesheet" href="css/home/footer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/market.css?v=71">
+  <link rel="icon" data-hf-favicon href="assets/images/logo-homefinder.png">
+
+  <link rel="stylesheet" href="css/cinematic-ui.css">
+  <link rel="stylesheet" href="css/transition.css">
+</head>
+<body class="market-page market-boot-pending" data-asset="surface_market" data-scale="100">
+<div id="market-scale-root" class="market-scale-root" data-asset="market_scale_root">
+  <header class="market-header" id="market-header" data-asset="market_header" aria-label="Market header">
+    <a class="market-brand" href="index.html" aria-label="HomeFinder">
+      <span class="market-brand-logo" id="market-brand-logo"><img data-hf-logo src="assets/images/logo-homefinder.png" alt="HomeFinder" width="28" height="28"><span class="market-brand-text">HomeFinder</span></span>
+      <span class="market-brand-avatar" id="market-brand-avatar" hidden><img id="market-user-avatar-img" alt="" width="32" height="32" hidden><span id="market-user-avatar-initials">?</span></span>
+    </a>
+    <nav class="market-nav" aria-label="Market"><a href="market.html" class="active">Market</a></nav>
+    <div class="market-header-actions">
+      <div class="market-settings-wrap">
+        <button type="button" class="market-icon-btn" id="market-settings-btn" aria-label="Market settings" aria-expanded="false" aria-haspopup="true"><i class="bx bx-cog"></i></button>
+        <div class="market-settings-dropdown" id="market-settings-dropdown" role="menu" hidden>
+          <button type="button" role="menuitem" data-market-action="home"><i class="bx bx-home"></i> Home</button>
+          <button type="button" role="menuitem" data-market-action="login" data-auth="guest"><i class="bx bx-log-in"></i> Login</button>
+          <button type="button" role="menuitem" data-market-action="register" data-auth="guest"><i class="bx bx-user-plus"></i> Register</button>
+          <button type="button" role="menuitem" data-market-action="profile" data-auth="user"><i class="bx bx-user"></i> Profile</button>
+          <button type="button" role="menuitem" data-market-action="logout" data-auth="user"><i class="bx bx-log-out"></i> Log out</button>
+          <hr>
+          <div class="market-scale-row" role="group" aria-label="Page scale">
+            <label class="market-scale-label" for="market-scale-range"><i class="bx bx-move-horizontal"></i> Page scale <span id="market-scale-value">100</span>%</label>
+            <input type="range" id="market-scale-range" min="50" max="100" step="1" value="100">
+            <div class="market-scale-presets" role="group" aria-label="Scale presets">
+              <button type="button" class="market-scale-preset" data-scale-preset="50">50%</button>
+              <button type="button" class="market-scale-preset" data-scale-preset="75">75%</button>
+              <button type="button" class="market-scale-preset" data-scale-preset="100">100%</button>
+            </div>
+            <p class="market-scale-hint">Controls the whole Market page. Map workspace size is responsive and no longer has a separate Compact/Tall/Wide selector.</p>
+          </div>
+          <hr>
+          <button type="button" role="menuitem" data-market-action="dictionary"><i class="bx bx-book"></i> Market rules</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="market-main" id="market-main" data-shell-version="34" data-shell-owner="market.html">
+    <section class="market-guide" id="market-guide" data-shell-zone="orientation" aria-labelledby="market-guide-title">
+      <header class="market-guide-head"><p class="market-guide-kicker">Market guide</p><h2 id="market-guide-title">Discover around your pin</h2><p class="market-guide-lead">Set one or more pins, choose a discovery radius, then narrow the authorized cards with search and filters. Guests can explore the map but do not receive live cards.</p></header>
+      <ol class="market-guide-steps">
+        <li><span class="market-guide-num">1</span><div><strong>Drop a pin</strong><p>Tap Drop pin, place it on the map, then confirm.</p></div></li>
+        <li><span class="market-guide-num">2</span><div><strong>Choose the radius</strong><p>The selected pin's radius controls which cards can be discovered.</p></div></li>
+        <li><span class="market-guide-num">3</span><div><strong>Search and filter</strong><p>Use type, price/budget and type-aware amenities. Filters read the canonical listing fields.</p></div></li>
+        <li><span class="market-guide-num">4</span><div><strong>Move between pins</strong><p>Drop Pin manages separate slots and cooldowns. Center Pin flies to the current pin or cycles to the next.</p></div></li>
+      </ol>
+      <button type="button" id="market-guide-cta" class="market-btn-primary">Got it — focus map</button>
+    </section>
+    <button type="button" id="market-guide-reopen" class="market-guide-reopen" hidden>Open Market guide</button>
+
+    <section class="market-map-shell" id="market-map-shell" aria-label="Market discovery workspace" data-asset="map_search" data-shell-zone="workspace" data-shell-layout="map-results">
+      <header class="market-map-topbar" id="market-map-topbar" data-shell-zone="command" aria-label="Market search and map command bar">
+        <div class="market-search-filter-engine" role="search" aria-label="Market search and filters">
+          <label class="market-search" id="market-search"><i class="bx bx-search" aria-hidden="true"></i><input type="search" id="market-search-q" name="market_search_q" placeholder="Search properties, requests, locations…" autocomplete="off" enterkeyhint="search" aria-label="Search market listings"></label>
+          <button type="button" class="market-filter-toggle" id="market-filter-toggle" aria-expanded="false" aria-controls="market-filter-panel"><i class="bx bx-filter-alt"></i><span>Search filters</span><span class="market-filter-badge" id="market-filter-badge" hidden>0</span><i class="bx bx-chevron-down"></i></button>
+          <button type="button" class="market-filter-clear" id="market-filter-clear" hidden>Clear</button>
+        </div>
+        <div class="market-map-settings-wrap">
+          <button type="button" id="market-map-settings-btn" class="market-map-settings-btn" aria-haspopup="true" aria-expanded="false" title="Map settings"><i class="bx bx-cog"></i><span>Map</span></button>
+          <div id="market-map-settings" class="market-map-settings" hidden role="dialog" aria-label="Map settings">
+            <p class="market-map-settings-title">Map controls</p>
+            <button type="button" class="market-map-setting-action" id="market-map-fullscreen-menu"><i class="bx bx-fullscreen"></i><span>Enter fullscreen</span></button>
+            <button type="button" class="market-map-setting-action" id="market-map-zoom-in"><i class="bx bx-zoom-in"></i><span>Zoom in</span></button>
+            <button type="button" class="market-map-setting-action" id="market-map-zoom-out"><i class="bx bx-zoom-out"></i><span>Zoom out</span></button>
+            <button type="button" class="market-map-setting-action" id="market-map-stats-toggle"><i class="bx bx-bar-chart-alt-2"></i><span>Stats</span><i class="bx bx-chevron-down setting-end"></i></button>
+            <div id="market-map-stats-panel" class="market-map-stats-panel" hidden>
+              <span id="market-map-status">Loading map…</span><span id="market-radius-chip">Radius —</span><span id="market-pin-chip">No pin yet</span><span id="market-filter-count" hidden></span>
+            </div>
+            <button type="button" class="market-map-setting-action" id="market-map-3d-toggle"><i class="bx bx-buildings"></i><span>3D buildings</span><span class="setting-state" id="market-map-3d-state">On</span></button>
+          </div>
+        </div>
+      </header>
+
+      <div class="market-filters market-filters-sheet" id="market-filters" data-shell-zone="refinement" hidden>
+        <div class="market-filter-panel" id="market-filter-panel" hidden>
+          <div class="market-filter-role-note" id="market-filter-role-note">Search property and wanted listings with one filter engine.</div>
+          <div class="market-filter-grid">
+            <label class="market-filter-field" id="market-filter-type-wrap">Property type<select id="filter-type"><option value="">Any property type</option></select></label>
+            <label class="market-filter-field" id="market-filter-wanted-type-wrap">Wanted type<select id="filter-wanted-type"><option value="">Any wanted type</option></select></label>
+            <label class="market-filter-field" id="market-price-min-wrap">Property price min<input id="filter-price-min" type="number" min="0" step="1000" inputmode="numeric" placeholder="₱ min"></label>
+            <label class="market-filter-field" id="market-price-max-wrap">Property price max<input id="filter-price-max" type="number" min="0" step="1000" inputmode="numeric" placeholder="₱ max"></label>
+            <label class="market-filter-field" id="market-budget-min-wrap">Wanted budget min<input id="filter-budget-min" type="number" min="0" step="1000" inputmode="numeric" placeholder="₱ min"></label>
+            <label class="market-filter-field" id="market-budget-max-wrap">Wanted budget max<input id="filter-budget-max" type="number" min="0" step="1000" inputmode="numeric" placeholder="₱ max"></label>
+          </div>
+          <fieldset class="market-filter-amenities" id="filter-amenities"><legend>Property amenities</legend><p class="field-hint">Amenities are grouped by property type.</p><div class="market-amenity-chips" id="filter-amenities-chips"></div></fieldset>
+          <fieldset class="market-filter-amenities" id="filter-wanted-amenities"><legend>Wanted amenities</legend><p class="field-hint">Matches amenities requested by wanted listings.</p><div class="market-amenity-chips" id="filter-wanted-amenities-chips"></div></fieldset>
+        </div>
+      </div>
+
+      <div class="market-map-canvas" id="market-map-canvas" data-shell-zone="map"><div id="market-map" role="application" aria-label="Philippines map"></div>
+        <div class="market-pin-confirm" id="market-pin-confirm" hidden><p class="market-pin-confirm-msg" id="market-pin-confirm-msg">Set search pin here?</p><div class="market-pin-confirm-actions"><button type="button" class="market-btn-secondary" id="market-pin-confirm-cancel">Cancel</button><button type="button" class="market-btn-primary" id="market-pin-confirm-ok">Confirm</button></div></div>
+      </div>
+
+      <div class="market-pin-toolbar" id="market-map-toolbar" data-shell-zone="map-actions" aria-label="Pin and map actions">
+        <div class="market-pin-capacity" id="market-pin-capacity">Pins 1/1</div>
+        <div class="market-pin-manager"><button type="button" id="market-pin-btn" class="market-btn-primary market-pin-main-btn">Drop pin</button><div id="market-pin-menu" class="market-pin-menu" hidden role="listbox" aria-label="Your pins"></div></div>
+        <div class="market-pin-cooldown" id="market-pin-cooldown">Ready</div>
+        <button type="button" id="market-locate-btn" class="market-btn-secondary" title="Center on the current pin or cycle to the next pin">Center Pin</button>
+      </div>
+
+      <div id="preferred-radius-host" class="preferred-radius-host" data-asset="market-preferred-radius" data-shell-zone="radius" hidden></div>
+
+      <section class="market-discovery-rail" id="market-discovery-rail" data-shell-zone="results" aria-labelledby="market-discovery-title">
+        <div class="market-discovery-head"><div><p class="market-discovery-kicker">Discovery</p><h2 id="market-discovery-title">Cards near your current pin</h2></div><span id="market-discovery-count" class="market-discovery-count">0 cards</span></div>
+        <div class="market-card-rail" id="market-card-rail" tabindex="0" aria-label="Discovered listings"></div>
+        <div class="market-empty market-empty-panel" id="market-empty" hidden></div>
+      </section>
+    </section>
+  </main>
+
+  <section class="contact-section market-contact" id="market-contact" data-shell-zone="support" data-asset="market_footer"><div class="contact-inner"><p class="section-eyebrow contact-slogan">We are here to help</p><h2>Contact</h2><p class="section-lead">Questions about accounts, verification, or the platform? Reach the HomeFinder team using the channels below.</p><div class="contact-cards contact-cards--arranged"><a class="contact-card contact-card--link" href="mailto:management.home.finder@gmail.com"><i class="bx bx-envelope"></i><strong>Email</strong><span>management.home.finder@gmail.com</span></a><a class="contact-card contact-card--link" href="index.html#about"><i class="bx bx-help-circle"></i><strong>Product guide</strong><span>About — roles, map, boosts &amp; safety</span></a></div></div></section>
+</div>
+<div class="market-card-modal" id="market-card-modal" hidden aria-hidden="true"><div class="market-card-modal-backdrop" data-card-dismiss></div><article class="market-card-expanded" role="dialog" aria-modal="true" aria-labelledby="market-card-expanded-title"><button type="button" class="market-card-modal-close" id="market-card-modal-close" aria-label="Close"><i class="bx bx-x"></i></button><div id="market-card-expanded-media" class="market-card-expanded-media"></div><div class="market-card-expanded-body"><span id="market-card-expanded-kind" class="market-card-kind"></span><h2 id="market-card-expanded-title"></h2><p id="market-card-expanded-description"></p><div id="market-card-expanded-meta" class="market-card-expanded-meta"></div><div id="market-card-expanded-price" class="market-card-expanded-price"></div><div id="market-card-expanded-actions" class="market-card-expanded-actions" hidden>
+<button type="button" class="market-btn-primary" id="market-card-save-btn"><i class="bx bx-bookmark"></i><span>Save</span></button>
+<button type="button" class="market-btn-primary" id="market-card-contact-btn"><i class="bx bx-message-rounded-dots"></i><span>Contact listing</span></button>
+<p class="field-hint market-contact-hint">Save keeps this discovery in your profile. Contacting a property listing is a separate Contracts flow.</p></div></div></article></div>
+<script type="module" src="js/market.js?v=74"></script>
+<script type="module" src="js/market-chrome.js"></script>
+<script src="js/credits-logos.js" defer></script><script src="js/brand-logo.js" defer></script><script src="js/leave-guard.js" defer></script>
+
+  <script>fetch('data/cinematic-scenes.json').then(r=>r.json()).then(v=>window.__HF_CINEMATIC_SCENES__=v).catch(()=>{});</script>
+  <script src="js/design-roots.js" defer></script>
+  <script src="js/market-profile-physical-ui.js" defer></script>
+    <script src="js/animation-root.js" defer></script>
+    <script src="js/physical-ui-state.js" defer></script>
+  <!-- M1: production WebGL/Three triad not loaded; see js/reference-3d/ -->
+  <script src="js/cinematic-ui.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+room,zone,object,route,role,camera_anchor,door,theme,performance_budget,status
+BACKYARD,ARRIVAL,Cinematic arrival environment,public arrival,public,ARR-01,main-door,all,Tier 1-3,PLANNED
+MAIN HALL,H-01 Hero,Hero environment + primary CTA,index.html,public,H-01,main-door,all,Tier 1-3,CONFIRMED/PLANNED
+MAIN HALL,H-02 Discovery,Search Console,index.html,public,H-02,market-door,all,Tier 1-2,PLANNED
+MAIN HALL,H-03 Property Discovery,Property catalogue/display,index.html,public,H-03,market-door,all,Tier 1-2,PLANNED
+MAIN HALL,H-04 Map,Map preview,index.html,public,H-04,market-door,all,Tier 1-3,PLANNED
+MAIN HALL,H-05 Government,Government information desk,financing.html,public,H-05,gov-door,all,Tier 1-2,PLANNED
+MAIN HALL,H-06 Mission,About/mission plaque,index.html,public,H-06,—,all,Tier 1,PLANNED
+MAIN HALL,H-07 Guide,Role/feature guide,index.html,public,H-07,—,all,Tier 1,PLANNED
+MAIN HALL,H-08 Safety,Features/safety board,index.html,public,H-08,—,all,Tier 1,PLANNED
+MAIN HALL,H-09 Contact,Contact desk,index.html,public,H-09,contact-door,all,Tier 1-2,PLANNED
+LOGIN ROOM,L-01 Identity,Login terminal,login.html,public,L-01,profile-door,all,Tier 1-2,CONFIRMED/PLANNED
+REGISTER ROOM,R-01 Registration,Registration desk/application,register.html,public,R-01,login-door,all,Tier 1-2,CONFIRMED/PLANNED
+PROFILE SUITE,P-01 Perks,Achievement/rank display,profile.html,"owner,seeker,broker",P-01,—,all,Tier 1-2,PLANNED
+PROFILE SUITE,P-02 Messages,Communication terminal,profile.html,authenticated,P-02,—,all,Tier 1-2,PLANNED
+PROFILE SUITE,P-03 Contracts,Contracts folder,profile.html,authenticated,P-03,—,all,Tier 1-2,PLANNED
+PROFILE SUITE,P-04 Help,Help desk,profile.html,authenticated,P-04,—,all,Tier 1,PLANNED
+PROFILE SUITE,P-05 List Property,Listing dossier/book,profile.html,"owner,broker",P-05,market-door,all,Tier 1-2,PLANNED
+PROFILE SUITE,P-06 Wanted,Wanted notice board,profile.html,"seeker,owner,broker",P-06,market-door,all,Tier 1-2,PLANNED
+PROFILE SUITE,P-07 Saved Properties,Saved-properties cabinet,profile.html,authenticated,P-07,market-door,all,Tier 1-2,PLANNED
+PROFILE SUITE,P-08 Saved Wanted,Saved-wanted cabinet,profile.html,authenticated,P-08,market-door,all,Tier 1-2,PLANNED
+PROFILE SUITE,P-09 Reviews,Review ledger,profile.html,authenticated,P-09,—,all,Tier 1,PLANNED
+PROFILE SUITE,P-10 Government,Government desk,profile.html,authenticated,P-10,gov-door,all,Tier 1-2,PLANNED
+PROFILE SUITE,P-11 Account,Identity console,profile.html,authenticated,P-11,—,all,Tier 1,PLANNED
+PROFILE SUITE,P-12 Broker Gate,Controlled broker doorway,profile.html,broker,P-12,broker-hq-door,all,Tier 1,PLANNED
+MARKET,M-01 Entrance,Marketplace directory,market.html,"guest,owner,seeker",M-01,profile-door,all,Tier 1-2,CONFIRMED/PLANNED
+MARKET,M-02 Map,Market map,market.html,"owner,seeker",M-02,—,all,Tier 1-3,CONFIRMED/PLANNED
+MARKET,M-03 Filters,Filter cabinet,market.html,"owner,seeker",M-03,—,all,Tier 1,PLANNED
+MARKET,M-04 Discovery,Property/wanted discovery rail,market.html,seeker,M-04,—,all,Tier 1-2,PLANNED
+MARKET,M-05 Inspection,Expanded property dossier,market.html,"owner,seeker",M-05,—,all,Tier 1-2,PLANNED
+MARKET,M-06 Contact,Contact desk,market.html,"owner,seeker",M-06,profile-door,all,Tier 1,PLANNED
+BROKER HQ,B-01 Desk,Broker workspace,broker-hq.html,broker,B-01,profile-door,all,Tier 1-2,PLANNED
+BROKER HQ,B-02 Requests,Requests board,broker-hq.html,broker,B-02,—,all,Tier 1,PLANNED
+BROKER HQ,B-03 Service Area,Service-area board,broker-hq.html,broker,B-03,—,all,Tier 1-2,PLANNED
+BROKER HQ,B-04 Intelligence Map,Broker-specific map,broker-hq.html,broker,B-04,—,all,Tier 1-3,PLANNED
+BROKER HQ,B-05 Discovery,Discovered cards wall,broker-hq.html,broker,B-05,—,all,Tier 1-2,PLANNED
+BROKER HQ,B-06 Service Pins,Service pin management,broker-hq.html,broker,B-06,—,all,Tier 1,PLANNED
+OPERATIONS,A-01 Admin,Verification/KYC desk,admin.html,admin,A-01,—,all,Tier 1-2,PLANNED
+OPERATIONS,A-02 Moderator,Moderation board,moderator.html,moderator,A-02,—,all,Tier 1-2,PLANNED
+OPERATIONS,A-03 Staff,Support/alerts desk,staff.html,staff,A-03,—,all,Tier 1-2,PLANNED
+REFERENCE,G-01 Government,Government housing reference,financing.html,"public,authenticated",G-01,main-hall-door,all,Tier 1-2,CONFIRMED/PLANNED
+REFERENCE,LGL-01 Privacy,Privacy archive,privacy.html,public,LGL-01,legal-door,all,Tier 1,PLANNED
+REFERENCE,LGL-02 Terms,Terms archive,terms.html,public,LGL-02,legal-door,all,Tier 1,PLANNED

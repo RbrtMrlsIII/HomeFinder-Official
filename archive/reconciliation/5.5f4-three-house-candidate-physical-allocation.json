@@ -1,0 +1,29 @@
+{
+  "execution": "5.5F.4",
+  "status": "COMPLETE",
+  "mode": "read-only physical allocation; no canonical SH3D modification; no runtime code changes",
+  "source_checkpoint": "HomeFinder_checkpoint_2026-08-26_5_5F3-candidate-integrity-level-reconciliation.zip",
+  "candidate_model": "3d/staging/HomeFinder-merge-candidate-Additional-F3-reconciled.sh3d",
+  "house1_protected": true,
+  "canonical_sh3d_modified": false,
+  "many_to_many_presentation_model": true,
+  "candidate_house2_room_count": 23,
+  "candidate_house3_room_count": 11,
+  "unallocated_room_count": 0,
+  "allocation_basis": [
+    "spatial clustering in the repaired candidate",
+    "room semantics where available",
+    "room area/capacity",
+    "support for reusable presentation anchors",
+    "avoidance of one-page/one-room assumptions"
+  ],
+  "not_proven_by_this_gate": [
+    "door adjacency",
+    "walkable route topology",
+    "house-transfer corridor",
+    "final camera positions",
+    "runtime spatial contract",
+    "deletion/retirement of historical navigation code"
+  ],
+  "verdict": "CANDIDATE ALLOCATION ACCEPTED AS WORKING HYPOTHESIS; TOPOLOGY NOT YET PROVEN"
+}

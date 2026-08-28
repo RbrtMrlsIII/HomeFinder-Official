@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+const root = new URL('../', import.meta.url).pathname;
+const read = file => fs.readFileSync(path.join(root, file), 'utf8');
+const html=read('index.html');
+const objects=JSON.parse(read('data/physical-ui-objects.json'));
+const env=JSON.parse(read('data/environment-modes.json'));
+assert.match(html,/physical-ui-objects\.js/);
+assert.match(html,/environment-modes\.js/);
+assert.ok(objects.objects.length >= 10);
+const requiredCameraObjects=['home-hero-focal','main-search-console','property-catalogue','home-map-table','government-info-desk','mission-wall','guide-book','safety-board','start-cta','contact-desk','credits-wall'];
+for(const id of requiredCameraObjects) assert.ok(objects.objects.some(o => o.id === id), `missing physical UI object: ${id}`);
+assert.deepEqual(Object.keys(env.modes),['day','sunset','night','rain','mist','storm']);
+for(const o of objects.objects) assert.ok(o.id && o.kind && o.action);
+console.log('patch-59 physical UI + environment contract: roots + required camera objects');

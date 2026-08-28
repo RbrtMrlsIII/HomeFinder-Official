@@ -1,0 +1,10 @@
+room,default_theme,allowed_environment_themes,ui_rule,animation_rule
+BACKYARD,day,day;sunset;mist,environment-driven UI tokens only,root tokens + reduced-motion override
+MAIN HALL,day,day;sunset;night;rain;mist;storm,environment-driven UI tokens only,root tokens + reduced-motion override
+LOGIN ROOM,day,day;night;rain;mist,environment-driven UI tokens only,root tokens + reduced-motion override
+REGISTER ROOM,day,day;sunset;mist,environment-driven UI tokens only,root tokens + reduced-motion override
+MARKET,day,day;sunset;night;rain;mist,environment-driven UI tokens only,root tokens + reduced-motion override
+PROFILE SUITE,day,day;sunset;night;rain;mist;storm,environment-driven UI tokens only,root tokens + reduced-motion override
+BROKER HQ,day,day;sunset;night;rain,environment-driven UI tokens only,root tokens + reduced-motion override
+OPERATIONS,night,day;night;storm,environment-driven UI tokens only,root tokens + reduced-motion override
+REFERENCE,day,day;mist;night,environment-driven UI tokens only,root tokens + reduced-motion override

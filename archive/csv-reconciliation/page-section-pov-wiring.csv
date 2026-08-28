@@ -1,0 +1,91 @@
+current_page_id,route,room,section_index,section_id,logical_pov_id,scroll_start,scroll_end,orientation_hint,focus_anchor,candidate_master_camera,binding_confidence,wire_status,sweet_home_camera_name
+main-hall,index.html,MAIN HALL,1,hero,H-01,0.0,0.08,center,hero,Corridor,MEDIUM,DERIVE_FROM_MASTER_CAMERA,HF H-01 — hero
+main-hall,index.html,MAIN HALL,2,about-home,H-02,0.08,0.14,slight-right,discovery,Living room,MEDIUM,DERIVE_FROM_MASTER_CAMERA,HF H-02 — discovery
+main-hall,index.html,MAIN HALL,3,map,H-04,0.14,0.22,right/down,map,Exterior,MEDIUM,DERIVE_FROM_MASTER_CAMERA,HF H-04 — map
+main-hall,index.html,MAIN HALL,4,properties,H-03,0.22,0.3,slight-left,property-display,Living room,MEDIUM,DERIVE_FROM_MASTER_CAMERA,HF H-03 — property-display
+main-hall,index.html,MAIN HALL,5,government-housing,H-05,0.3,0.37,left,government-desk,Corridor,MEDIUM,DERIVE_FROM_MASTER_CAMERA,HF H-05 — government-desk
+main-hall,index.html,MAIN HALL,6,about,H-06,0.37,0.44,center-left,mission,Living room,MEDIUM,DERIVE_FROM_MASTER_CAMERA,HF H-06 — mission
+main-hall,index.html,MAIN HALL,7,mission,H-06,0.44,0.5,center,mission,Living room,MEDIUM,DERIVE_FROM_MASTER_CAMERA,HF H-06 — mission
+main-hall,index.html,MAIN HALL,8,spaces,H-07,0.5,0.57,slight-right,guide,Kitchen,MEDIUM,DERIVE_FROM_MASTER_CAMERA,HF H-07 — guide
+main-hall,index.html,MAIN HALL,9,roles,H-07,0.57,0.63,right,guide,Kitchen,MEDIUM,DERIVE_FROM_MASTER_CAMERA,HF H-07 — guide
+main-hall,index.html,MAIN HALL,10,guide,H-07,0.63,0.69,right/down,guide,Kitchen,MEDIUM,DERIVE_FROM_MASTER_CAMERA,HF H-07 — guide
+main-hall,index.html,MAIN HALL,11,pages,H-08,0.69,0.75,left,safety,Bedroom #1,MEDIUM,DERIVE_FROM_MASTER_CAMERA,HF H-08 — safety
+main-hall,index.html,MAIN HALL,12,features,H-08,0.75,0.81,left/down,safety,Bedroom #1,MEDIUM,DERIVE_FROM_MASTER_CAMERA,HF H-08 — safety
+main-hall,index.html,MAIN HALL,13,safety,H-08,0.81,0.86,center-left,safety,Bedroom #1,MEDIUM,DERIVE_FROM_MASTER_CAMERA,HF H-08 — safety
+main-hall,index.html,MAIN HALL,14,start,H-09,0.86,0.91,center-return,start,Corridor,MEDIUM,DERIVE_FROM_MASTER_CAMERA,HF H-09 — start
+main-hall,index.html,MAIN HALL,15,contact,H-09,0.91,0.96,right,contact,Corridor,MEDIUM,DERIVE_FROM_MASTER_CAMERA,HF H-09 — contact
+main-hall,index.html,MAIN HALL,16,credits,H-09,0.96,0.985,rear/low,credits,Corridor,MEDIUM,DERIVE_FROM_MASTER_CAMERA,HF H-09 — credits
+main-hall,index.html,MAIN HALL,17,footer,H-09,0.985,1.0,exit,footer,Corridor,MEDIUM,DERIVE_FROM_MASTER_CAMERA,HF H-09 — footer
+login,login.html,LOGIN ROOM,1,login-form,L-01,0.0,0.45,hero-center,login-terminal,Bedroom #1,LOW,DERIVE_FROM_MASTER_CAMERA,HF L-01 — login-terminal
+login,login.html,LOGIN ROOM,2,password-recovery,L-02,0.45,0.65,slight-right,recovery-control,,,CREATE_OR_VALIDATE_POV,HF L-02 — recovery-control
+login,login.html,LOGIN ROOM,3,social-auth,L-03,0.65,0.8,slight-left,social-auth,,,CREATE_OR_VALIDATE_POV,HF L-03 — social-auth
+login,login.html,LOGIN ROOM,4,register-handoff,L-04,0.8,0.92,doorward,registration-doorway,,,CREATE_OR_VALIDATE_POV,HF L-04 — registration-doorway
+login,login.html,LOGIN ROOM,5,credits,L-05,0.92,0.97,quiet,credits,,,CREATE_OR_VALIDATE_POV,HF L-05 — credits
+login,login.html,LOGIN ROOM,6,footer,L-05,0.97,1.0,exit,footer,,,CREATE_OR_VALIDATE_POV,HF L-05 — footer
+register,register.html,REGISTER ROOM,1,identity,R-01,0.0,0.2,hero-center,identity,Bedroom #2,LOW,DERIVE_FROM_MASTER_CAMERA,HF R-01 — identity
+register,register.html,REGISTER ROOM,2,contact,R-02,0.2,0.38,slight-right,contact,,,CREATE_OR_VALIDATE_POV,HF R-02 — contact
+register,register.html,REGISTER ROOM,3,address,R-03,0.38,0.53,right/down,address,,,CREATE_OR_VALIDATE_POV,HF R-03 — address
+register,register.html,REGISTER ROOM,4,account-type,R-04,0.53,0.7,center,account-type,,,CREATE_OR_VALIDATE_POV,HF R-04 — account-type
+register,register.html,REGISTER ROOM,5,password,R-05,0.7,0.84,slight-left,password,,,CREATE_OR_VALIDATE_POV,HF R-05 — password
+register,register.html,REGISTER ROOM,6,social-registration,R-06,0.84,0.93,left,social-registration,,,CREATE_OR_VALIDATE_POV,HF R-06 — social-registration
+register,register.html,REGISTER ROOM,7,login-handoff,R-07,0.93,0.97,doorward,login-doorway,,,CREATE_OR_VALIDATE_POV,HF R-07 — login-doorway
+register,register.html,REGISTER ROOM,8,footer,R-07,0.97,1.0,exit,footer,,,CREATE_OR_VALIDATE_POV,HF R-07 — footer
+market,market.html,MARKET,1,market-guide,M-01,0.0,0.18,hero-center,market-directory,Living room,MEDIUM,DERIVE_FROM_MASTER_CAMERA,HF M-01 — market-directory
+market,market.html,MARKET,2,market-map-shell,M-02,0.18,0.48,right/down,market-map-table,Living room,MEDIUM,DERIVE_FROM_MASTER_CAMERA,HF M-02 — market-map-table
+market,market.html,MARKET,3,market-discovery-rail,M-04,0.48,0.78,left,property-display-wall,Living room,MEDIUM,DERIVE_FROM_MASTER_CAMERA,HF M-04 — property-display-wall
+market,market.html,MARKET,4,market-contact,M-06,0.78,0.92,right,contact-desk,Corridor,MEDIUM,DERIVE_FROM_MASTER_CAMERA,HF M-06 — contact-desk
+market,market.html,MARKET,5,footer,M-06,0.92,1.0,exit,footer,Corridor,MEDIUM,DERIVE_FROM_MASTER_CAMERA,HF M-06 — footer
+profile,profile.html,PROFILE SUITE,1,perks,P-01,0.0,0.08,hero-center,perk-portfolio,Bedroom #2,LOW,DERIVE_FROM_MASTER_CAMERA,HF P-01 — perk-portfolio
+profile,profile.html,PROFILE SUITE,2,messages,P-02,0.08,0.16,slight-right,message-terminal,Bedroom #2,LOW,DERIVE_FROM_MASTER_CAMERA,HF P-02 — message-terminal
+profile,profile.html,PROFILE SUITE,3,contracts,P-03,0.16,0.25,left/down,contracts-folder,Bedroom #2,LOW,DERIVE_FROM_MASTER_CAMERA,HF P-03 — contracts-folder
+profile,profile.html,PROFILE SUITE,4,need-help,P-04,0.25,0.33,right,help-desk,Bedroom #2,LOW,DERIVE_FROM_MASTER_CAMERA,HF P-04 — help-desk
+profile,profile.html,PROFILE SUITE,5,listing,P-05,0.33,0.43,right/down,listing-book,Bedroom #2,LOW,DERIVE_FROM_MASTER_CAMERA,HF P-05 — listing-book
+profile,profile.html,PROFILE SUITE,6,wanted,P-06,0.43,0.52,left,wanted-notebook,Bedroom #2,LOW,DERIVE_FROM_MASTER_CAMERA,HF P-06 — wanted-notebook
+profile,profile.html,PROFILE SUITE,7,saved,P-07,0.52,0.6,left/down,saved-properties-cabinet,Bedroom #2,LOW,DERIVE_FROM_MASTER_CAMERA,HF P-07 — saved-properties-cabinet
+profile,profile.html,PROFILE SUITE,8,saved-wanted,P-08,0.6,0.68,right/down,saved-wanted-cabinet,Bedroom #2,LOW,DERIVE_FROM_MASTER_CAMERA,HF P-08 — saved-wanted-cabinet
+profile,profile.html,PROFILE SUITE,9,reviews,P-09,0.68,0.76,center-left,review-ledger,Bedroom #2,LOW,DERIVE_FROM_MASTER_CAMERA,HF P-09 — review-ledger
+profile,profile.html,PROFILE SUITE,10,gov-housing,P-10,0.76,0.84,forward,government-housing-desk,Bedroom #2,LOW,DERIVE_FROM_MASTER_CAMERA,HF P-10 — government-housing-desk
+profile,profile.html,PROFILE SUITE,11,account,P-11,0.84,0.92,center,account-console,Bedroom #2,LOW,DERIVE_FROM_MASTER_CAMERA,HF P-11 — account-console
+profile,profile.html,PROFILE SUITE,12,broker-gate,P-12,0.92,0.97,doorward,broker-gate,Bedroom #2,LOW,DERIVE_FROM_MASTER_CAMERA,HF P-12 — broker-gate
+profile,profile.html,PROFILE SUITE,13,footer,P-12,0.97,1.0,exit,footer,Bedroom #2,LOW,DERIVE_FROM_MASTER_CAMERA,HF P-12 — footer
+broker-hq,broker-hq.html,BROKER HQ,1,bhq-gate,B-01,0.0,0.08,hero-center,broker-desk,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF B-01 — broker-desk
+broker-hq,broker-hq.html,BROKER HQ,2,bhq-home,B-01,0.08,0.24,center,broker-desk,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF B-01 — broker-desk
+broker-hq,broker-hq.html,BROKER HQ,3,bhq-list-panel,B-02,0.24,0.42,slight-right,request-board,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF B-02 — request-board
+broker-hq,broker-hq.html,BROKER HQ,4,bhq-service,B-03,0.42,0.58,left/down,service-board,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF B-03 — service-board
+broker-hq,broker-hq.html,BROKER HQ,5,bhq-discovery-panel,B-04,0.58,0.78,right,intelligence-wall,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF B-04 — intelligence-wall
+broker-hq,broker-hq.html,BROKER HQ,6,bhq-pins-panel,B-06,0.78,0.93,forward/down,service-pin-console,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF B-06 — service-pin-console
+broker-hq,broker-hq.html,BROKER HQ,7,footer,B-06,0.93,1.0,exit,footer,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF B-06 — footer
+admin,admin.html,OPERATIONS,1,verifications,A-01,0.0,0.14,hero-center,approval-desk,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-01 — approval-desk
+admin,admin.html,OPERATIONS,2,kyc-registry,A-01,0.14,0.28,left,kyc-lockbox,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-01 — kyc-lockbox
+admin,admin.html,OPERATIONS,3,orders,A-01,0.28,0.4,right,orders-ledger,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-01 — orders-ledger
+admin,admin.html,OPERATIONS,4,verified,A-01,0.4,0.51,center,user-registry,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-01 — user-registry
+admin,admin.html,OPERATIONS,5,users,A-01,0.51,0.63,left/down,user-registry,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-01 — user-registry
+admin,admin.html,OPERATIONS,6,boosts,A-01,0.63,0.74,right/down,boost-console,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-01 — boost-console
+admin,admin.html,OPERATIONS,7,listing-help-pay,A-01,0.74,0.84,center-right,payment-console,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-01 — payment-console
+admin,admin.html,OPERATIONS,8,gov-housing,A-01,0.84,0.92,forward,government-desk,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-01 — government-desk
+admin,admin.html,OPERATIONS,9,gov-disclaimers,A-01,0.92,0.97,quiet,disclaimer-board,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-01 — disclaimer-board
+admin,admin.html,OPERATIONS,10,footer,A-01,0.97,1.0,exit,footer,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-01 — footer
+moderator,moderator.html,OPERATIONS,1,properties,A-02,0.0,0.24,hero-center,moderation-board,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-02 — moderation-board
+moderator,moderator.html,OPERATIONS,2,orders,A-02,0.24,0.44,right,payment-ledger,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-02 — payment-ledger
+moderator,moderator.html,OPERATIONS,3,wanted,A-02,0.44,0.62,left,wanted-board,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-02 — wanted-board
+moderator,moderator.html,OPERATIONS,4,contracts,A-02,0.62,0.8,forward/down,contracts-desk,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-02 — contracts-desk
+moderator,moderator.html,OPERATIONS,5,verified,A-02,0.8,0.94,center,verified-users,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-02 — verified-users
+moderator,moderator.html,OPERATIONS,6,footer,A-02,0.94,1.0,exit,footer,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-02 — footer
+staff,staff.html,OPERATIONS,1,support,A-03,0.0,0.18,hero-center,support-desk,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-03 — support-desk
+staff,staff.html,OPERATIONS,2,reports,A-03,0.18,0.34,right,reports-board,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-03 — reports-board
+staff,staff.html,OPERATIONS,3,orders,A-03,0.34,0.5,left,orders-ledger,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-03 — orders-ledger
+staff,staff.html,OPERATIONS,4,users,A-03,0.5,0.66,center,user-lookup,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-03 — user-lookup
+staff,staff.html,OPERATIONS,5,alerts,A-03,0.66,0.82,right/down,alerts-console,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-03 — alerts-console
+staff,staff.html,OPERATIONS,6,listing-help-pay,A-03,0.82,0.94,forward,payment-reference,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-03 — payment-reference
+staff,staff.html,OPERATIONS,7,footer,A-03,0.94,1.0,exit,footer,Garage,LOW,DERIVE_FROM_MASTER_CAMERA,HF A-03 — footer
+financing-guide,financing.html,REFERENCE,1,what-this-page-is,G-01,0.0,0.28,hero-center,government-info-desk,Kitchen,LOW,DERIVE_FROM_MASTER_CAMERA,HF G-01 — government-info-desk
+financing-guide,financing.html,REFERENCE,2,typical-path,G-01,0.28,0.54,slight-right,reference-book,Kitchen,LOW,DERIVE_FROM_MASTER_CAMERA,HF G-01 — reference-book
+financing-guide,financing.html,REFERENCE,3,official-links,G-01,0.54,0.78,left,official-links-board,Kitchen,LOW,DERIVE_FROM_MASTER_CAMERA,HF G-01 — official-links-board
+financing-guide,financing.html,REFERENCE,4,coming-on-homefinder,G-01,0.78,0.94,quiet,future-service-board,Kitchen,LOW,DERIVE_FROM_MASTER_CAMERA,HF G-01 — future-service-board
+financing-guide,financing.html,REFERENCE,5,footer,G-01,0.94,1.0,exit,footer,Kitchen,LOW,DERIVE_FROM_MASTER_CAMERA,HF G-01 — footer
+legal-privacy,privacy.html,REFERENCE,1,document-hero,LGL-01,0.0,0.2,hero-center,legal-library,Kitchen,LOW,DERIVE_FROM_MASTER_CAMERA,HF LGL-01 — legal-library
+legal-privacy,privacy.html,REFERENCE,2,document-body,LGL-01,0.2,0.88,slow lateral drift,legal-library,Kitchen,LOW,DERIVE_FROM_MASTER_CAMERA,HF LGL-01 — legal-library
+legal-privacy,privacy.html,REFERENCE,3,footer,LGL-01,0.88,1.0,exit,footer,Kitchen,LOW,DERIVE_FROM_MASTER_CAMERA,HF LGL-01 — footer
+legal-terms,terms.html,REFERENCE,1,document-hero,LGL-02,0.0,0.2,hero-center,legal-terms,Kitchen,LOW,CREATE_NEW_LOGICAL_VARIANT,HF LGL-02 — legal-terms
+legal-terms,terms.html,REFERENCE,2,document-body,LGL-02,0.2,0.88,slow lateral drift,legal-terms,Kitchen,LOW,CREATE_NEW_LOGICAL_VARIANT,HF LGL-02 — legal-terms
+legal-terms,terms.html,REFERENCE,3,footer,LGL-02,0.88,1.0,exit,legal-terms,Kitchen,LOW,CREATE_NEW_LOGICAL_VARIANT,HF LGL-02 — legal-terms

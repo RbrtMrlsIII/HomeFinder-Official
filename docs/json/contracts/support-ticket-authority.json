@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "collection": "supportTickets",
+  "lifecycle": [
+    "open",
+    "claimed",
+    "escalated",
+    "resolved"
+  ],
+  "initialPool": "staff",
+  "claim": {
+    "atomic": true,
+    "singleAssignee": true,
+    "staffCanClaim": true,
+    "moderatorCanClaimEscalated": true,
+    "adminCanClaimUpperOps": true,
+    "poolExclusive": true
+  },
+  "conversation": {
+    "participants": [
+      "ticketOwner",
+      "assignedStaff",
+      "upperOpsWhenTransferred"
+    ],
+    "messages": "thread",
+    "storage": "thread (current implementation; subcollection migration is future P1)"
+  },
+  "transfer": {
+    "staffTo": "moderator",
+    "moderatorTo": "admin",
+    "clearsAssignee": true
+  },
+  "resolution": {
+    "assignedWorkerMayResolve": true,
+    "userMayReplyUntilResolved": true,
+    "assigneeOnly": true
+  },
+  "userConsent": {
+    "opsJoin": false,
+    "note": "No consent is required for operational escalation; assigned upper ops may inspect and continue the ticket."
+  },
+  "visibility": {
+    "staff": "assignedRole=staff",
+    "moderator": "assignedRole=moderator",
+    "admin": "all tickets",
+    "ticketOwner": "own uid"
+  },
+  "states": {
+    "open": "waiting for work or user follow-up",
+    "escalated": "waiting in upper operations pool; assignedRole determines destination",
+    "resolved": "conversation closed"
+  },
+  "notes": [
+    "Claimed is represented by assignedTo rather than a separate status value.",
+    "A user reply to an escalated ticket remains escalated.",
+    "Broker application/verification state is unrelated to support ticket role authority."
+  ]
+}

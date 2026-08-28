@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HomeFinder — 3D Home</title>
+
+  <!-- Sweet Home 3D JS Viewer 7.5.2 runtime -->
+  <script src="lib/big.min.js"></script>
+  <script src="lib/gl-matrix-min.js"></script>
+  <script src="lib/jszip.min.js"></script>
+  <script src="lib/core.min.js"></script>
+  <script src="lib/geom.min.js"></script>
+  <script src="lib/stroke.min.js"></script>
+  <script src="lib/batik-svgpathparser.min.js"></script>
+  <script src="lib/jsXmlSaxParser.min.js"></script>
+  <script src="lib/triangulator.min.js"></script>
+  <script src="lib/viewmodel.min.js"></script>
+  <script src="lib/viewhome.min.js"></script>
+
+  <link rel="stylesheet" href="../../app/homefinder-viewer.css">
+  <script src="../../app/homefinder-viewer.js"></script>
+</head>
+<body>
+  <main class="homefinderShell">
+    <header class="homefinderHeader">
+      <h1>HomeFinder 3D Home</h1>
+      <p>Explore the authoritative HomeFinder Sweet Home 3D model.</p>
+    </header>
+
+    <section class="homefinderViewer" aria-label="HomeFinder 3D viewer">
+      <canvas id="viewerCanvas" tabindex="0" aria-label="Interactive 3D home"></canvas>
+
+      <div id="viewerProgressDiv" class="homefinderProgress">
+        <progress id="viewerProgress" value="0" max="200"></progress>
+        <div id="viewerProgressLabel" aria-live="polite">Loading HomeFinder…</div>
+      </div>
+
+      <div class="homefinderControls" id="viewerNavigationDiv">
+        <div class="homefinderHouseNav" id="homefinderHouseNav" aria-label="HomeFinder house navigation">
+          <span class="homefinderHouseLabel">House</span>
+          <button type="button" class="homefinderHouseButton" data-house="house-1" aria-pressed="true">House 1</button>
+          <button type="button" class="homefinderHouseButton" data-house="house-2" aria-pressed="false">House 2</button>
+          <button type="button" class="homefinderHouseButton" data-house="house-3" aria-pressed="false">House 3</button>
+          <span id="homefinderHouseStatus" class="homefinderHouseStatus" role="status" aria-live="polite">House 1 · transit hub</span>
+        </div>
+        <span class="homefinderMode">
+          <input id="aerialView" name="cameraType" type="radio">
+          <label for="aerialView">Aerial view</label>
+        </span>
+        <span class="homefinderMode">
+          <input id="virtualVisit" name="cameraType" type="radio">
+          <label for="virtualVisit">Virtual visit</label>
+        </span>
+        <label for="levelsAndCameras">Explore</label>
+        <select id="levelsAndCameras" aria-label="Choose a floor or camera view"></select>
+      </div>
+    </section>
+  </main>
+
+  <footer class="homefinderCredits" aria-label="Credits">
+    <strong>Credits</strong>
+    <span><a href="https://openai.com/" target="_blank" rel="noopener noreferrer">OpenAI</a> — AI-assisted project development and engineering.</span>
+    <span><a href="https://www.sweethome3d.com/" target="_blank" rel="noopener noreferrer">Sweet Home 3D</a> — architectural modeling and 3D viewer technology.</span>
+  </footer>
+
+  <script>
+    HomeFinderViewer.start(
+      "viewerCanvas",
+      "viewerProgressDiv",
+      "viewerProgress",
+      "viewerProgressLabel"
+    );
+  </script>
+  <script type="module">
+    import { planJourney } from "../../../../js/inter-house-navigation.js";
+
+    (function () {
+      const buttons = Array.from(document.querySelectorAll(".homefinderHouseButton"));
+      const status = document.getElementById("homefinderHouseStatus");
+      let currentHouse = "house-1";
+
+      function roleFromSession() {
+        try {
+          return sessionStorage.getItem("hf_account_role") || "guest";
+        } catch (_) {
+          return "guest";
+        }
+      }
+
+      function label(house) {
+        return house.replace("house-", "House ");
+      }
+
+      function setCurrent(house) {
+        currentHouse = house;
+        buttons.forEach((button) => {
+          const active = button.dataset.house === house;
+          button.setAttribute("aria-pressed", String(active));
+        });
+        status.textContent = house === "house-1"
+          ? "House 1 · transit hub"
+          : `${label(house)} · role-aware destination`;
+      }
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const destination = button.dataset.house;
+          const role = roleFromSession();
+          const plan = planJourney(currentHouse, destination, role);
+
+          if (!plan.allowed) {
+            status.textContent = `${label(destination)} unavailable from ${label(currentHouse)} for ${role}`;
+            return;
+          }
+
+          // Transport remains a logical application transition. The SH3D
+          // viewer remains the physical/spatial authority and is not mutated.
+          // A House 2↔House 3 journey visibly resolves through House 1
+          // instead of silently skipping the required hub leg.
+          if (plan.mode === "hub-routed") {
+            setCurrent("house-1");
+            status.textContent = `House 1 · transit hub · continue to ${label(destination)}`;
+            return;
+          }
+
+          setCurrent(destination);
+
+          const finalLeg = plan.legs.length ? plan.legs[plan.legs.length - 1] : plan;
+          if (finalLeg.route && finalLeg.route !== "index.html") {
+            window.location.href = finalLeg.route;
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

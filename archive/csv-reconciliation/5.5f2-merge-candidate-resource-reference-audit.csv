@@ -1,0 +1,881 @@
+element_type,element_id,attribute,reference,name,present
+texture,,image,17,Grass darker,True
+texture,,image,0,Cloudy,True
+pieceOfFurniture,pieceOfFurniture-119b1c57-c194-42a2-b267-1272d4d38f6f,model,96/wardrobe.obj,Wardrobe,True
+pieceOfFurniture,pieceOfFurniture-119b1c57-c194-42a2-b267-1272d4d38f6f,icon,97,Wardrobe,True
+pieceOfFurniture,pieceOfFurniture-bd5b6350-f7f5-48f0-b389-577178f0e295,model,96/wardrobe.obj,Wardrobe,True
+pieceOfFurniture,pieceOfFurniture-bd5b6350-f7f5-48f0-b389-577178f0e295,icon,97,Wardrobe,True
+pieceOfFurniture,pieceOfFurniture-8c4a3aec-de96-45c8-b4e7-ee95ae9e51b6,model,96/wardrobe.obj,Wardrobe,True
+pieceOfFurniture,pieceOfFurniture-8c4a3aec-de96-45c8-b4e7-ee95ae9e51b6,icon,97,Wardrobe,True
+pieceOfFurniture,pieceOfFurniture-d18c0117-d566-460f-9e33-910f2fe20a8a,model,94/squareTable.obj,Square table,True
+pieceOfFurniture,pieceOfFurniture-d18c0117-d566-460f-9e33-910f2fe20a8a,icon,95,Square table,True
+texture,,image,93,Old wood,True
+pieceOfFurniture,pieceOfFurniture-f9956c12-c3eb-4de7-9303-dbf5b976a5ef,model,91/clothesWasher.obj,Clothes washer,True
+pieceOfFurniture,pieceOfFurniture-f9956c12-c3eb-4de7-9303-dbf5b976a5ef,icon,92,Clothes washer,True
+pieceOfFurniture,pieceOfFurniture-4aff1eda-4602-4b66-b7f5-fba121aa6657,model,89/curveStaircase.obj,Curve staircase,True
+pieceOfFurniture,pieceOfFurniture-4aff1eda-4602-4b66-b7f5-fba121aa6657,icon,90,Curve staircase,True
+texture,,image,88,Pine,True
+pieceOfFurniture,pieceOfFurniture-b5d8c63a-c8cf-4aab-9d46-f89527a4d999,model,86/texturableCylinder0.obj,Cylinder,True
+pieceOfFurniture,pieceOfFurniture-b5d8c63a-c8cf-4aab-9d46-f89527a4d999,icon,87,Cylinder,True
+pieceOfFurniture,pieceOfFurniture-b2f9f1c3-fe23-45e0-a4cd-fe94514cfe08,model,86/texturableCylinder0.obj,Cylinder,True
+pieceOfFurniture,pieceOfFurniture-b2f9f1c3-fe23-45e0-a4cd-fe94514cfe08,icon,87,Cylinder,True
+pieceOfFurniture,pieceOfFurniture-5e31c04d-458b-4503-ace4-319c15eec25e,model,86/texturableCylinder0.obj,Cylinder,True
+pieceOfFurniture,pieceOfFurniture-5e31c04d-458b-4503-ace4-319c15eec25e,icon,87,Cylinder,True
+doorOrWindow,doorOrWindow-50af547e-1477-4ac2-978b-94bafaa4b1f0,model,84/doorFrame.obj,Door frame,True
+doorOrWindow,doorOrWindow-50af547e-1477-4ac2-978b-94bafaa4b1f0,icon,85,Door frame,True
+doorOrWindow,doorOrWindow-724e7351-4c29-48b3-8190-11a67981880f,model,84/doorFrame.obj,Door frame,True
+doorOrWindow,doorOrWindow-724e7351-4c29-48b3-8190-11a67981880f,icon,85,Door frame,True
+doorOrWindow,doorOrWindow-e08e453f-611e-4309-a5b3-f8d268b9e065,model,82/fixedWindow85x123.obj,Fixed window,True
+doorOrWindow,doorOrWindow-e08e453f-611e-4309-a5b3-f8d268b9e065,icon,83,Fixed window,True
+doorOrWindow,doorOrWindow-1b754483-335b-4f4d-ae15-dc2452c9ac0a,model,82/fixedWindow85x123.obj,Fixed window,True
+doorOrWindow,doorOrWindow-1b754483-335b-4f4d-ae15-dc2452c9ac0a,icon,83,Fixed window,True
+pieceOfFurniture,pieceOfFurniture-ca88a6a7-0ba6-4fd6-8e48-8a4599d2c833,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-ca88a6a7-0ba6-4fd6-8e48-8a4599d2c833,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-d6b11f23-cffa-494b-a7b9-b1e35c258d49,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-d6b11f23-cffa-494b-a7b9-b1e35c258d49,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-1dcfe143-07ce-4a43-a04b-b2a8a99c1502,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-1dcfe143-07ce-4a43-a04b-b2a8a99c1502,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-bfabc85a-9a2c-4101-b91d-bf307107aef4,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-bfabc85a-9a2c-4101-b91d-bf307107aef4,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-74616e9d-4683-4181-8dda-c3bcb2be0c93,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-74616e9d-4683-4181-8dda-c3bcb2be0c93,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-5d7bc52f-014a-4c9f-98b3-3851ae2fe78d,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-5d7bc52f-014a-4c9f-98b3-3851ae2fe78d,icon,81,Box,True
+doorOrWindow,doorOrWindow-65274cc8-2d6e-4508-b456-77220c653dcb,model,78/doubleFrenchWindow126x200.obj,Double French window,True
+doorOrWindow,doorOrWindow-65274cc8-2d6e-4508-b456-77220c653dcb,icon,79,Double French window,True
+doorOrWindow,doorOrWindow-16742a94-1ee8-4d5d-a177-81a17604f383,model,76/doubleWindow126x123.obj,Double small window,True
+doorOrWindow,doorOrWindow-16742a94-1ee8-4d5d-a177-81a17604f383,icon,77,Double small window,True
+doorOrWindow,doorOrWindow-9bed4823-2107-4a29-bed6-5a886b35ac28,model,76/doubleWindow126x123.obj,Double small window,True
+doorOrWindow,doorOrWindow-9bed4823-2107-4a29-bed6-5a886b35ac28,icon,77,Double small window,True
+doorOrWindow,doorOrWindow-754f2558-f704-4a5b-a32b-9bc3d84a24b3,model,78/doubleFrenchWindow126x200.obj,Double French window,True
+doorOrWindow,doorOrWindow-754f2558-f704-4a5b-a32b-9bc3d84a24b3,icon,79,Double French window,True
+doorOrWindow,doorOrWindow-d668d18d-bb8a-4a23-bab0-a665dcd66b69,model,78/doubleFrenchWindow126x200.obj,Double French window,True
+doorOrWindow,doorOrWindow-d668d18d-bb8a-4a23-bab0-a665dcd66b69,icon,79,Double French window,True
+doorOrWindow,doorOrWindow-f5aa788d-fbab-4eaf-902e-1baff5db9af0,model,74/door.obj,Door,True
+doorOrWindow,doorOrWindow-f5aa788d-fbab-4eaf-902e-1baff5db9af0,icon,75,Door,True
+doorOrWindow,doorOrWindow-1e0e398a-ad1d-45f5-8435-3b2c2463ef77,model,74/door.obj,Door,True
+doorOrWindow,doorOrWindow-1e0e398a-ad1d-45f5-8435-3b2c2463ef77,icon,75,Door,True
+doorOrWindow,doorOrWindow-ecde7105-ea92-4996-9804-1bc0587376aa,model,74/door.obj,Door,True
+doorOrWindow,doorOrWindow-ecde7105-ea92-4996-9804-1bc0587376aa,icon,75,Door,True
+pieceOfFurniture,pieceOfFurniture-4537e91a-3291-44c4-9936-3031aff59270,model,96/wardrobe.obj,Wardrobe,True
+pieceOfFurniture,pieceOfFurniture-4537e91a-3291-44c4-9936-3031aff59270,icon,97,Wardrobe,True
+pieceOfFurniture,pieceOfFurniture-ade015c0-fc29-4cb3-aa90-2aafae8c8100,model,72/kitchenCabinet.obj,Kitchen cabinet,True
+pieceOfFurniture,pieceOfFurniture-ade015c0-fc29-4cb3-aa90-2aafae8c8100,icon,73,Kitchen cabinet,True
+pieceOfFurniture,pieceOfFurniture-069177ef-7bec-40b7-9037-e81b8e98fc5c,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-069177ef-7bec-40b7-9037-e81b8e98fc5c,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-05ce03e1-a8ca-462c-9c41-7012e6e5e3fe,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-05ce03e1-a8ca-462c-9c41-7012e6e5e3fe,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-17594c69-ea7b-4118-9a81-5af9c23bf6be,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-17594c69-ea7b-4118-9a81-5af9c23bf6be,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-28ee3c51-d1a7-4aa0-a3d7-f301b2fdf86a,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-28ee3c51-d1a7-4aa0-a3d7-f301b2fdf86a,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-8aa67468-f881-4528-b191-127220a139cf,model,70/cooker.obj,Cooker,True
+pieceOfFurniture,pieceOfFurniture-8aa67468-f881-4528-b191-127220a139cf,icon,71,Cooker,True
+pieceOfFurniture,pieceOfFurniture-1f7e31e6-19d0-489b-b6e2-306314b1df03,model,68/fridgeFreezer.obj,Fridge & Freezer,True
+pieceOfFurniture,pieceOfFurniture-1f7e31e6-19d0-489b-b6e2-306314b1df03,icon,69,Fridge & Freezer,True
+pieceOfFurniture,pieceOfFurniture-03ab6d04-561d-463e-b6f6-8e12f01a41a8,model,66/sink.obj,Sink,True
+pieceOfFurniture,pieceOfFurniture-03ab6d04-561d-463e-b6f6-8e12f01a41a8,icon,67,Sink,True
+pieceOfFurniture,pieceOfFurniture-492c67ec-1559-40a6-82f3-529dcb90ec3e,model,64/chair.obj,Chair,True
+pieceOfFurniture,pieceOfFurniture-492c67ec-1559-40a6-82f3-529dcb90ec3e,icon,65,Chair,True
+pieceOfFurniture,pieceOfFurniture-70e20c75-ed13-4c21-bb67-8937c14fc37e,model,64/chair.obj,Chair,True
+pieceOfFurniture,pieceOfFurniture-70e20c75-ed13-4c21-bb67-8937c14fc37e,icon,65,Chair,True
+pieceOfFurniture,pieceOfFurniture-1fc99a79-42d7-43de-b906-4467f0667c66,model,64/chair.obj,Chair,True
+pieceOfFurniture,pieceOfFurniture-1fc99a79-42d7-43de-b906-4467f0667c66,icon,65,Chair,True
+pieceOfFurniture,pieceOfFurniture-fee4ed0c-cf17-4caa-8852-8a07fb997609,model,64/chair.obj,Chair,True
+pieceOfFurniture,pieceOfFurniture-fee4ed0c-cf17-4caa-8852-8a07fb997609,icon,65,Chair,True
+pieceOfFurniture,pieceOfFurniture-d77b2d15-6a53-4f0d-93f2-eb6e2a90e881,model,94/squareTable.obj,Square table,True
+pieceOfFurniture,pieceOfFurniture-d77b2d15-6a53-4f0d-93f2-eb6e2a90e881,icon,95,Square table,True
+light,light-dacec29c-85c3-4b52-bfbc-7ac12d53cd1f,model,62/pendantLamp.obj,Pendant lamp,True
+light,light-dacec29c-85c3-4b52-bfbc-7ac12d53cd1f,icon,63,Pendant lamp,True
+doorOrWindow,doorOrWindow-5f7a0b73-008b-439e-8877-87e9b4a54b86,model,82/fixedWindow85x123.obj,Fixed window,True
+doorOrWindow,doorOrWindow-5f7a0b73-008b-439e-8877-87e9b4a54b86,icon,83,Fixed window,True
+shelfUnit,shelfUnit-3e3a0ddb-11d1-494c-9fbe-ad4629015331,model,60/bedsideTable.obj,Bedside table,True
+shelfUnit,shelfUnit-3e3a0ddb-11d1-494c-9fbe-ad4629015331,icon,61,Bedside table,True
+texture,,image,93,Old wood,True
+light,light-3fbf800d-6b41-43fd-9bf8-198cae53d7fa,model,58/floorUplight.obj,Floor uplight,True
+light,light-3fbf800d-6b41-43fd-9bf8-198cae53d7fa,icon,59,Floor uplight,True
+pieceOfFurniture,pieceOfFurniture-1feff01f-b19b-429e-aed6-04d5843f24b3,model,56/cornerSofa.obj,Corner sofa,True
+pieceOfFurniture,pieceOfFurniture-1feff01f-b19b-429e-aed6-04d5843f24b3,icon,57,Corner sofa,True
+pieceOfFurniture,pieceOfFurniture-205ba1d5-0454-4734-98c6-9a8a232fd50a,model,54/tvUnit.obj,TV unit,True
+pieceOfFurniture,pieceOfFurniture-205ba1d5-0454-4734-98c6-9a8a232fd50a,icon,55,TV unit,True
+texture,,image,93,Old wood,True
+pieceOfFurniture,pieceOfFurniture-f119bd44-2c7d-439c-a729-4f82ca461306,model,64/chair.obj,Chair,True
+pieceOfFurniture,pieceOfFurniture-f119bd44-2c7d-439c-a729-4f82ca461306,icon,65,Chair,True
+texture,,image,93,Old wood,True
+pieceOfFurniture,pieceOfFurniture-17e69668-b29c-46e2-bce6-72b76829802e,model,64/chair.obj,Chair,True
+pieceOfFurniture,pieceOfFurniture-17e69668-b29c-46e2-bce6-72b76829802e,icon,65,Chair,True
+texture,,image,93,Old wood,True
+pieceOfFurniture,pieceOfFurniture-02cae19e-fd23-47e6-8edc-43aba9b92611,model,64/chair.obj,Chair,True
+pieceOfFurniture,pieceOfFurniture-02cae19e-fd23-47e6-8edc-43aba9b92611,icon,65,Chair,True
+texture,,image,93,Old wood,True
+pieceOfFurniture,pieceOfFurniture-4fedd59d-24fc-4469-ab5e-90541a07d720,model,64/chair.obj,Chair,True
+pieceOfFurniture,pieceOfFurniture-4fedd59d-24fc-4469-ab5e-90541a07d720,icon,65,Chair,True
+texture,,image,93,Old wood,True
+pieceOfFurniture,pieceOfFurniture-0147f8ed-0b18-44bf-854c-d22e65997eba,model,86/texturableCylinder0.obj,Cylinder,True
+pieceOfFurniture,pieceOfFurniture-0147f8ed-0b18-44bf-854c-d22e65997eba,icon,87,Cylinder,True
+texture,,image,53,Carpet with colored tiles,True
+doorOrWindow,doorOrWindow-938d12b9-1442-450d-a55e-2739784378cd,model,74/door.obj,Door,True
+doorOrWindow,doorOrWindow-938d12b9-1442-450d-a55e-2739784378cd,icon,75,Door,True
+doorOrWindow,doorOrWindow-d1ae87a8-7c4f-4e34-9956-3f6f257f1cb5,model,74/door.obj,Door,True
+doorOrWindow,doorOrWindow-d1ae87a8-7c4f-4e34-9956-3f6f257f1cb5,icon,75,Door,True
+pieceOfFurniture,pieceOfFurniture-85d6e7b4-8e91-4a67-8c97-66d2a1c1472f,model,51/bed90x190.obj,Bed 90x190,True
+pieceOfFurniture,pieceOfFurniture-85d6e7b4-8e91-4a67-8c97-66d2a1c1472f,icon,52,Bed 90x190,True
+pieceOfFurniture,pieceOfFurniture-e1324c14-56a8-46fd-9d48-478897828c4b,model,96/wardrobe.obj,Wardrobe,True
+pieceOfFurniture,pieceOfFurniture-e1324c14-56a8-46fd-9d48-478897828c4b,icon,97,Wardrobe,True
+pieceOfFurniture,pieceOfFurniture-9f5f95df-b012-4ed8-ad6e-3fa4d625899c,model,72/kitchenCabinet.obj,Kitchen cabinet,True
+pieceOfFurniture,pieceOfFurniture-9f5f95df-b012-4ed8-ad6e-3fa4d625899c,icon,73,Kitchen cabinet,True
+light,light-69da1c4c-c565-4c2d-9dfc-6e29ccf0d9f1,model,49/workLamp.obj,Work lamp,True
+light,light-69da1c4c-c565-4c2d-9dfc-6e29ccf0d9f1,icon,50,Work lamp,True
+pieceOfFurniture,pieceOfFurniture-d9e6f3c6-dd67-4114-96b0-c6e91dba90f3,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-d9e6f3c6-dd67-4114-96b0-c6e91dba90f3,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-bebc0cf5-5b2b-4a93-a079-4397c91c5c93,model,47/stool.obj,Stool,True
+pieceOfFurniture,pieceOfFurniture-bebc0cf5-5b2b-4a93-a079-4397c91c5c93,icon,48,Stool,True
+pieceOfFurniture,pieceOfFurniture-7e4fe357-357f-42ad-93be-88394409500e,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-7e4fe357-357f-42ad-93be-88394409500e,icon,81,Box,True
+light,light-a0b3308c-358e-477e-bd26-9663bdb9f118,model,49/workLamp.obj,Work lamp,True
+light,light-a0b3308c-358e-477e-bd26-9663bdb9f118,icon,50,Work lamp,True
+light,light-e16d76fb-5474-4d29-94de-7f503fa24ac4,model,62/pendantLamp.obj,Pendant lamp,True
+light,light-e16d76fb-5474-4d29-94de-7f503fa24ac4,icon,63,Pendant lamp,True
+doorOrWindow,doorOrWindow-35db7b57-58e3-4b1f-a5f9-56ea2cd978fb,model,82/fixedWindow85x123.obj,Fixed window,True
+doorOrWindow,doorOrWindow-35db7b57-58e3-4b1f-a5f9-56ea2cd978fb,icon,83,Fixed window,True
+pieceOfFurniture,pieceOfFurniture-73b0d135-9a78-45dd-8cf9-012782a4f95c,model,45/washbasinWithCabinet.obj,Washbasin with cabinet,True
+pieceOfFurniture,pieceOfFurniture-73b0d135-9a78-45dd-8cf9-012782a4f95c,icon,46,Washbasin with cabinet,True
+pieceOfFurniture,pieceOfFurniture-dbd61583-0b6b-494d-badb-98ac539ce774,model,43/fittedBath.obj,Fitted bath,True
+pieceOfFurniture,pieceOfFurniture-dbd61583-0b6b-494d-badb-98ac539ce774,icon,44,Fitted bath,True
+pieceOfFurniture,pieceOfFurniture-5942dd7b-3edd-4f05-b01a-959ae15c48ce,model,72/kitchenCabinet.obj,Kitchen cabinet,True
+pieceOfFurniture,pieceOfFurniture-5942dd7b-3edd-4f05-b01a-959ae15c48ce,icon,73,Kitchen cabinet,True
+pieceOfFurniture,pieceOfFurniture-2a573692-9083-4ea9-8950-f7a3b26d6308,model,41/chest.obj,Chest,True
+pieceOfFurniture,pieceOfFurniture-2a573692-9083-4ea9-8950-f7a3b26d6308,icon,42,Chest,True
+pieceOfFurniture,pieceOfFurniture-ec1cb9ca-5d62-450a-a920-4fb0b6645878,model,96/wardrobe.obj,Wardrobe,True
+pieceOfFurniture,pieceOfFurniture-ec1cb9ca-5d62-450a-a920-4fb0b6645878,icon,97,Wardrobe,True
+light,light-c7af634d-aaad-40ec-9192-b09cb3915a83,model,49/workLamp.obj,Work lamp,True
+light,light-c7af634d-aaad-40ec-9192-b09cb3915a83,icon,50,Work lamp,True
+pieceOfFurniture,pieceOfFurniture-2826e84e-186a-4822-b1c6-ea867e669b68,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-2826e84e-186a-4822-b1c6-ea867e669b68,icon,81,Box,True
+texture,,image,40,Beige fabric,True
+doorOrWindow,doorOrWindow-2e2cf7a0-ba85-48d3-9527-51097448e822,model,82/fixedWindow85x123.obj,Fixed window,True
+doorOrWindow,doorOrWindow-2e2cf7a0-ba85-48d3-9527-51097448e822,icon,83,Fixed window,True
+doorOrWindow,doorOrWindow-c7b97944-0834-41db-a98c-26e308c75796,model,82/fixedWindow85x123.obj,Fixed window,True
+doorOrWindow,doorOrWindow-c7b97944-0834-41db-a98c-26e308c75796,icon,83,Fixed window,True
+doorOrWindow,doorOrWindow-1a6796e9-0784-4afd-af84-299257482205,model,38/window85x123.obj,Small window,True
+doorOrWindow,doorOrWindow-1a6796e9-0784-4afd-af84-299257482205,icon,39,Small window,True
+pieceOfFurniture,pieceOfFurniture-d7955d82-5922-4990-9102-d821dae8dd7b,model,36/toiletUnit.obj,Toilet unit,True
+pieceOfFurniture,pieceOfFurniture-d7955d82-5922-4990-9102-d821dae8dd7b,icon,37,Toilet unit,True
+pieceOfFurniture,pieceOfFurniture-36f1bd94-d6f1-4ae3-aa9b-d74029c1a7fc,model,34/kitchenUpperCabinet.obj,Kitchen upper cabinet,True
+pieceOfFurniture,pieceOfFurniture-36f1bd94-d6f1-4ae3-aa9b-d74029c1a7fc,icon,35,Kitchen upper cabinet,True
+pieceOfFurniture,pieceOfFurniture-dd9b6144-4983-4b27-b44e-2dd9e75ad9f0,model,32/flowers.obj,Flowers,True
+pieceOfFurniture,pieceOfFurniture-dd9b6144-4983-4b27-b44e-2dd9e75ad9f0,icon,33,Flowers,True
+doorOrWindow,doorOrWindow-64204aa7-7856-44d4-9d9c-3c5e2dd88b45,model,76/doubleWindow126x123.obj,Double small window,True
+doorOrWindow,doorOrWindow-64204aa7-7856-44d4-9d9c-3c5e2dd88b45,icon,77,Double small window,True
+doorOrWindow,doorOrWindow-121a00d5-29e2-4164-967b-a0d01b9ef3a2,model,76/doubleWindow126x123.obj,Double small window,True
+doorOrWindow,doorOrWindow-121a00d5-29e2-4164-967b-a0d01b9ef3a2,icon,77,Double small window,True
+pieceOfFurniture,pieceOfFurniture-bc2be844-84ef-4218-9ebd-c63e4b8101fa,model,30/flatTV.obj,Flat TV,True
+pieceOfFurniture,pieceOfFurniture-bc2be844-84ef-4218-9ebd-c63e4b8101fa,icon,31,Flat TV,True
+doorOrWindow,doorOrWindow-fde01204-d2ba-4cd8-963d-1eadd829238f,model,84/doorFrame.obj,Door frame,True
+doorOrWindow,doorOrWindow-fde01204-d2ba-4cd8-963d-1eadd829238f,icon,85,Door frame,True
+shelfUnit,shelfUnit-5c50da4d-9554-4d3c-9400-4f2f4c3b2326,model,28/bookcase.obj,Bookcase,True
+shelfUnit,shelfUnit-5c50da4d-9554-4d3c-9400-4f2f4c3b2326,icon,29,Bookcase,True
+shelfUnit,shelfUnit-ac5cde32-02e0-4e07-9c01-b00bdb438478,model,28/bookcase.obj,Bookcase,True
+shelfUnit,shelfUnit-ac5cde32-02e0-4e07-9c01-b00bdb438478,icon,29,Bookcase,True
+shelfUnit,shelfUnit-01dd5418-498b-4ebf-9009-63cafe1c27bd,model,28/bookcase.obj,Bookcase,True
+shelfUnit,shelfUnit-01dd5418-498b-4ebf-9009-63cafe1c27bd,icon,29,Bookcase,True
+shelfUnit,shelfUnit-92093408-754b-4475-9340-b73bb3ec8af3,model,28/bookcase.obj,Bookcase,True
+shelfUnit,shelfUnit-92093408-754b-4475-9340-b73bb3ec8af3,icon,29,Bookcase,True
+shelfUnit,shelfUnit-665dae37-031a-455b-8b53-40d8d092e96b,model,28/bookcase.obj,Bookcase,True
+shelfUnit,shelfUnit-665dae37-031a-455b-8b53-40d8d092e96b,icon,29,Bookcase,True
+shelfUnit,shelfUnit-01bb51a0-cdca-4756-ac2e-b4ee4989f29f,model,28/bookcase.obj,Bookcase,True
+shelfUnit,shelfUnit-01bb51a0-cdca-4756-ac2e-b4ee4989f29f,icon,29,Bookcase,True
+pieceOfFurniture,pieceOfFurniture-870e2dff-284e-4f45-ba32-bf2c462e3887,model,26/hotWaterRadiator.obj,Hot water radiator,True
+pieceOfFurniture,pieceOfFurniture-870e2dff-284e-4f45-ba32-bf2c462e3887,icon,27,Hot water radiator,True
+pieceOfFurniture,pieceOfFurniture-dcc7da6b-d6f5-4fdc-b648-161d63d70a4b,model,26/hotWaterRadiator.obj,Hot water radiator,True
+pieceOfFurniture,pieceOfFurniture-dcc7da6b-d6f5-4fdc-b648-161d63d70a4b,icon,27,Hot water radiator,True
+pieceOfFurniture,pieceOfFurniture-66fa79cd-a237-47b2-b0ff-e74426f06cb5,model,26/hotWaterRadiator.obj,Hot water radiator,True
+pieceOfFurniture,pieceOfFurniture-66fa79cd-a237-47b2-b0ff-e74426f06cb5,icon,27,Hot water radiator,True
+pieceOfFurniture,pieceOfFurniture-76d4bcef-5acf-4d88-9183-4d5fa50ddee5,model,26/hotWaterRadiator.obj,Hot water radiator,True
+pieceOfFurniture,pieceOfFurniture-76d4bcef-5acf-4d88-9183-4d5fa50ddee5,icon,27,Hot water radiator,True
+pieceOfFurniture,pieceOfFurniture-b56f0618-be0f-4295-8ad1-c799637a8f34,model,26/hotWaterRadiator.obj,Hot water radiator,True
+pieceOfFurniture,pieceOfFurniture-b56f0618-be0f-4295-8ad1-c799637a8f34,icon,27,Hot water radiator,True
+pieceOfFurniture,pieceOfFurniture-f939f568-add1-4c4a-baab-7a323877079d,model,32/flowers.obj,Flowers,True
+pieceOfFurniture,pieceOfFurniture-f939f568-add1-4c4a-baab-7a323877079d,icon,33,Flowers,True
+shelfUnit,shelfUnit-1b817e36-dd0f-4229-b3bd-a73e41e1acca,model,28/bookcase.obj,Bookcase,True
+shelfUnit,shelfUnit-1b817e36-dd0f-4229-b3bd-a73e41e1acca,icon,29,Bookcase,True
+shelfUnit,shelfUnit-7db9e5aa-8b12-4e30-9f24-577010963464,model,28/bookcase.obj,Bookcase,True
+shelfUnit,shelfUnit-7db9e5aa-8b12-4e30-9f24-577010963464,icon,29,Bookcase,True
+pieceOfFurniture,pieceOfFurniture-a09b1206-2e97-46da-a984-229940a1ab2c,model,94/squareTable.obj,Square table,True
+pieceOfFurniture,pieceOfFurniture-a09b1206-2e97-46da-a984-229940a1ab2c,icon,95,Square table,True
+pieceOfFurniture,pieceOfFurniture-2060447c-384a-4da7-b7d5-0e7e72c96eb7,model,86/texturableCylinder0.obj,Cylinder,True
+pieceOfFurniture,pieceOfFurniture-2060447c-384a-4da7-b7d5-0e7e72c96eb7,icon,87,Cylinder,True
+pieceOfFurniture,pieceOfFurniture-90a5304d-4aa1-46b9-8904-77f284873ba3,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-90a5304d-4aa1-46b9-8904-77f284873ba3,icon,81,Box,True
+texture,,image,25,Oak,True
+pieceOfFurniture,pieceOfFurniture-f094bb1b-aff8-4745-b60e-2c507ac9f2a8,model,23/bed.obj,Bed,True
+pieceOfFurniture,pieceOfFurniture-f094bb1b-aff8-4745-b60e-2c507ac9f2a8,icon,24,Bed,True
+texture,,image,40,Beige fabric,True
+texture,,image,40,Beige fabric,True
+pieceOfFurniture,pieceOfFurniture-5a3ab0af-beb9-4114-986c-2200f7455a62,model,21/dishwasher.obj,Dishwasher,True
+pieceOfFurniture,pieceOfFurniture-5a3ab0af-beb9-4114-986c-2200f7455a62,icon,22,Dishwasher,True
+pieceOfFurniture,pieceOfFurniture-f16e51b5-e9cf-4a6a-ad4d-172ede1c058e,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-f16e51b5-e9cf-4a6a-ad4d-172ede1c058e,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-54804055-d0aa-4684-9aaf-736a92830ae9,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-54804055-d0aa-4684-9aaf-736a92830ae9,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-7773f257-0a58-46b1-aacf-c7f14d98e5df,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-7773f257-0a58-46b1-aacf-c7f14d98e5df,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-2d258abb-9bbf-4ec4-9df5-2d2d9c1016f2,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-2d258abb-9bbf-4ec4-9df5-2d2d9c1016f2,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-24d8cc68-5c98-404a-8bc3-f69ba3f123d0,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-24d8cc68-5c98-404a-8bc3-f69ba3f123d0,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-9b4f8b42-fd25-4fc2-abfb-6803f64b72cf,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-9b4f8b42-fd25-4fc2-abfb-6803f64b72cf,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-29b575b4-5449-421a-a426-e817657882fc,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-29b575b4-5449-421a-a426-e817657882fc,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-02119a78-7a0c-4d50-8aeb-5bbb5e541a5f,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-02119a78-7a0c-4d50-8aeb-5bbb5e541a5f,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-af814c71-ee8d-49ba-8458-5be04221d657,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-af814c71-ee8d-49ba-8458-5be04221d657,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-9e4cb3f8-ddcc-421e-a73b-9df63d6c6a91,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-9e4cb3f8-ddcc-421e-a73b-9df63d6c6a91,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-43826a6c-c793-463d-b4b9-baebf15331f7,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-43826a6c-c793-463d-b4b9-baebf15331f7,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-227f4fdd-b4d1-4196-ac2e-c3d5ace78e7e,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-227f4fdd-b4d1-4196-ac2e-c3d5ace78e7e,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-3290d15f-2e93-4fb7-a1bc-6dda178fbaf9,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-3290d15f-2e93-4fb7-a1bc-6dda178fbaf9,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-3cf97e7d-1513-4c61-8906-43c92d155532,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-3cf97e7d-1513-4c61-8906-43c92d155532,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-7cc6ddb7-1636-4a66-86aa-f8aa2d7a39db,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-7cc6ddb7-1636-4a66-86aa-f8aa2d7a39db,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-6c3a7f07-032b-4051-bc79-01a4a9df43ef,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-6c3a7f07-032b-4051-bc79-01a4a9df43ef,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-01840eae-a927-4ebb-a850-a4ef16105fa6,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-01840eae-a927-4ebb-a850-a4ef16105fa6,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-2a3809b3-4046-4055-8450-6d36d850f880,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-2a3809b3-4046-4055-8450-6d36d850f880,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-1a7f786c-7b45-462f-9445-e1e84d861667,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-1a7f786c-7b45-462f-9445-e1e84d861667,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-18611d16-13c0-48d9-8c5c-766db2010dbb,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-18611d16-13c0-48d9-8c5c-766db2010dbb,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-725fd70d-1009-479a-8866-f02d3d99add2,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-725fd70d-1009-479a-8866-f02d3d99add2,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-f9c74d45-3f84-44a3-97f4-86ebf1c4b2bc,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-f9c74d45-3f84-44a3-97f4-86ebf1c4b2bc,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-183924d9-f950-4e39-bc73-73d1ac95d2bb,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-183924d9-f950-4e39-bc73-73d1ac95d2bb,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-7ad656c1-65bb-44a1-95f8-d1b9bee43e81,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-7ad656c1-65bb-44a1-95f8-d1b9bee43e81,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-21a4cd51-b30c-40f2-b8b6-d275197faf01,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-21a4cd51-b30c-40f2-b8b6-d275197faf01,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-157800aa-d01a-4256-9888-354fa70735a5,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-157800aa-d01a-4256-9888-354fa70735a5,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-07201ce5-5b5d-4cfd-826c-590c9083b6d7,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-07201ce5-5b5d-4cfd-826c-590c9083b6d7,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-4a64e71b-3146-4aab-b6f0-24b639e7fe89,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-4a64e71b-3146-4aab-b6f0-24b639e7fe89,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-eab762ce-4045-40e5-91e5-1d0576a0fe90,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-eab762ce-4045-40e5-91e5-1d0576a0fe90,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-e9b16250-6efa-4cef-b768-5d6e802260c1,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-e9b16250-6efa-4cef-b768-5d6e802260c1,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-5a80d51f-1dfa-41d3-853d-429509a70f5a,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-5a80d51f-1dfa-41d3-853d-429509a70f5a,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-899b0634-e8b3-4f16-af2c-e8cb43d0a72a,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-899b0634-e8b3-4f16-af2c-e8cb43d0a72a,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-a620a133-646f-484e-b219-3ea013100f2d,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-a620a133-646f-484e-b219-3ea013100f2d,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-4356b35a-9a45-43b8-85a3-429a317e7566,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-4356b35a-9a45-43b8-85a3-429a317e7566,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-b6eadaae-8d17-4a31-ad9c-11dfb64447fd,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-b6eadaae-8d17-4a31-ad9c-11dfb64447fd,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-619fea2e-6c4d-4932-8843-99b4a5367d9e,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-619fea2e-6c4d-4932-8843-99b4a5367d9e,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-979487a4-746c-433e-93f5-cb8ba9c53c26,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-979487a4-746c-433e-93f5-cb8ba9c53c26,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-a69a3bf8-15dd-4f14-beff-ee3b5f8446df,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-a69a3bf8-15dd-4f14-beff-ee3b5f8446df,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-3d150812-c67b-4927-a47c-e656defc627b,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-3d150812-c67b-4927-a47c-e656defc627b,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-148d1ee8-de7c-4506-bbcd-6c828d168cde,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-148d1ee8-de7c-4506-bbcd-6c828d168cde,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-3297ab1f-1737-436e-8349-2cf9bb577869,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-3297ab1f-1737-436e-8349-2cf9bb577869,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-a871c214-5a4c-475c-8666-0bea583b8871,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-a871c214-5a4c-475c-8666-0bea583b8871,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-f5656a0d-112e-4076-a029-748de28e2892,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-f5656a0d-112e-4076-a029-748de28e2892,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-1ae7d1f5-ce6e-4a08-b9de-1e20cb527cd1,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-1ae7d1f5-ce6e-4a08-b9de-1e20cb527cd1,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-c88f22d5-96b6-46ae-af16-c9f873343593,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-c88f22d5-96b6-46ae-af16-c9f873343593,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-edcad4ee-2e3e-417e-90ad-1112f19e19bf,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-edcad4ee-2e3e-417e-90ad-1112f19e19bf,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-5c987415-67d3-4cdc-a77b-373d0493ba5b,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-5c987415-67d3-4cdc-a77b-373d0493ba5b,icon,81,Box,True
+pieceOfFurniture,pieceOfFurniture-3b62e993-40ce-428b-959e-492bcff6749b,model,19/roundTable.obj,Round table,True
+pieceOfFurniture,pieceOfFurniture-3b62e993-40ce-428b-959e-492bcff6749b,icon,20,Round table,True
+texture,,image,93,Old wood,True
+pieceOfFurniture,pieceOfFurniture-c99a2870-9d68-4f7b-9553-aa5b300b23ad,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-c99a2870-9d68-4f7b-9553-aa5b300b23ad,icon,81,Box,True
+texture,,image,18,Small stones roughcast,True
+pieceOfFurniture,pieceOfFurniture-cdb41e91-7b3b-4e36-94ae-783694b5b88a,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-cdb41e91-7b3b-4e36-94ae-783694b5b88a,icon,81,Box,True
+texture,,image,17,Grass darker,True
+pieceOfFurniture,pieceOfFurniture-74eaa58c-ac0d-4e1e-b9d7-9452d35af411,model,80/texturableBox.obj,Box,True
+pieceOfFurniture,pieceOfFurniture-74eaa58c-ac0d-4e1e-b9d7-9452d35af411,icon,81,Box,True
+texture,,image,16,Old red roof,True
+doorOrWindow,doorOrWindow-084e4aac-b73a-4e78-a804-ee88ffd4c4d3,model,14/frontDoor.obj,Front door,True
+doorOrWindow,doorOrWindow-084e4aac-b73a-4e78-a804-ee88ffd4c4d3,icon,15,Front door,True
+texture,,image,25,Oak,True
+doorOrWindow,doorOrWindow-6117c253-b0f5-4398-915c-81c554e038e2,model,12/halfRoundWindow.obj,Half round window,True
+doorOrWindow,doorOrWindow-6117c253-b0f5-4398-915c-81c554e038e2,icon,13,Half round window,True
+doorOrWindow,doorOrWindow-94dbaf0a-3933-4ca1-8b26-cc2a4de04938,model,74/door.obj,Door,True
+doorOrWindow,doorOrWindow-94dbaf0a-3933-4ca1-8b26-cc2a4de04938,icon,75,Door,True
+doorOrWindow,doorOrWindow-5a9a4d99-8766-4176-8fa6-68a201410887,model,74/door.obj,Door,True
+doorOrWindow,doorOrWindow-5a9a4d99-8766-4176-8fa6-68a201410887,icon,75,Door,True
+doorOrWindow,doorOrWindow-217f13c4-dfdd-4d43-9428-5f495a8d88ed,model,74/door.obj,Door,True
+doorOrWindow,doorOrWindow-217f13c4-dfdd-4d43-9428-5f495a8d88ed,icon,75,Door,True
+texture,,image,11,Pastel yellow sponge wallpaint,True
+texture,,image,11,Pastel yellow sponge wallpaint,True
+texture,,image,9,Gray waves,True
+texture,,image,8,Pink clouds,True
+texture,,image,9,Gray waves,True
+texture,,image,8,Pink clouds,True
+texture,,image,9,Gray waves,True
+texture,,image,10,Red lines,True
+texture,,image,5,Butterflies,True
+texture,,image,5,Butterflies,True
+texture,,image,7,Pastel lilac sponge wallpaint,True
+texture,,image,6,White tile,True
+texture,,image,7,Pastel lilac sponge wallpaint,True
+texture,,image,8,Pink clouds,True
+texture,,image,6,White tile,True
+texture,,image,5,Butterflies,True
+texture,,image,10,Red lines,True
+texture,,image,10,Red lines,True
+texture,,image,5,Butterflies,True
+texture,,image,10,Red lines,True
+texture,,image,7,Pastel lilac sponge wallpaint,True
+texture,,image,6,White tile,True
+texture,,image,9,Gray waves,True
+texture,,image,5,Butterflies,True
+texture,,image,8,Pink clouds,True
+texture,,image,11,Pastel yellow sponge wallpaint,True
+texture,,image,7,Pastel lilac sponge wallpaint,True
+texture,,image,5,Butterflies,True
+texture,,image,6,White tile,True
+texture,,image,10,Red lines,True
+texture,,image,7,Pastel lilac sponge wallpaint,True
+texture,,image,10,Red lines,True
+texture,,image,6,White tile,True
+texture,,image,8,Pink clouds,True
+texture,,image,10,Red lines,True
+texture,,image,11,Pastel yellow sponge wallpaint,True
+texture,,image,10,Red lines,True
+texture,,image,10,Red lines,True
+texture,,image,4,Blue slates,True
+texture,,image,18,Small stones roughcast,True
+texture,,image,3,Fantasy mosaic,True
+texture,,image,2,Chess wooden floor,True
+texture,,image,1,Tiled stones,True
+texture,,image,2,Chess wooden floor,True
+texture,,image,2,Chess wooden floor,True
+texture,,image,4,Blue slates,True
+texture,,image,2,Chess wooden floor,True
+doorOrWindow,add-doorOrWindow-0427ab9e-332f-493e-85c0-90e82a8093f1,icon,139,Double small window,False
+doorOrWindow,add-doorOrWindow-6481b0f1-302f-4d58-90b6-bca6aefbdbf8,icon,137,Door frame,False
+pieceOfFurniture,add-pieceOfFurniture-71c6f3c9-2de9-4fe0-b6b3-6ecb0f3b8ece,icon,135,Staircase,False
+pieceOfFurniture,add-pieceOfFurniture-8500b09d-a679-4595-918d-586928d66e23,icon,133,Armchair,False
+pieceOfFurniture,add-pieceOfFurniture-c473ce44-d780-44cd-8508-3195a5a2ab24,icon,133,Armchair,False
+doorOrWindow,add-doorOrWindow-b5f75d3e-7a04-4c87-b6d8-d2f271171c26,icon,139,Double small window,False
+doorOrWindow,add-doorOrWindow-0a798c44-b011-4dac-a96a-6107012cd36e,icon,139,Double small window,False
+pieceOfFurniture,add-pieceOfFurniture-244eba35-aea6-4c1c-9adc-315b478bd5e4,icon,131,Cooker,False
+pieceOfFurniture,add-pieceOfFurniture-90c6dac6-e94f-4057-b086-ff9fc5a3f30d,icon,129,Dishwasher,False
+pieceOfFurniture,add-pieceOfFurniture-c7d0f1aa-2467-4f83-8a6b-787f61768347,icon,127,Sink,False
+pieceOfFurniture,add-pieceOfFurniture-5f2332e5-7cfe-45dd-b4c5-4e6a1f242eb3,icon,125,Square table,False
+pieceOfFurniture,add-pieceOfFurniture-8f99878f-0001-4dc2-82f2-c3615deec7f5,icon,123,Stool,False
+pieceOfFurniture,add-pieceOfFurniture-b7b0c27f-e7c6-44a5-ad28-3a4a62b6b93c,icon,125,Square table,False
+pieceOfFurniture,add-pieceOfFurniture-b6ece99e-2244-43f4-a2c6-d1e6a11d3083,icon,121,Kitchen cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-c54d03c2-49fd-4cce-ad39-0c4ac182d080,icon,119,Wardrobe,False
+pieceOfFurniture,add-pieceOfFurniture-ec23fbdb-c7ab-42d6-85bc-bf7681879c47,icon,123,Stool,False
+pieceOfFurniture,add-pieceOfFurniture-81bbf785-0ae9-4e85-858d-51e07b8480a6,icon,117,Plant,False
+pieceOfFurniture,add-pieceOfFurniture-13e31e6e-f0e9-415c-8228-795786179962,icon,119,Wardrobe,False
+doorOrWindow,add-doorOrWindow-eb59f607-28de-4696-b9c8-3300bb6b5d5b,icon,115,Rounded door,False
+texture,,image,113,Bleached wood,False
+doorOrWindow,add-doorOrWindow-d0edcf0e-00ca-4e67-a9c0-17de0d49ac5c,icon,115,Rounded door,False
+texture,,image,113,Bleached wood,False
+doorOrWindow,add-doorOrWindow-898dba25-8ce4-4088-9d56-2b7bf17d118e,icon,115,Rounded door,False
+texture,,image,113,Bleached wood,False
+doorOrWindow,add-doorOrWindow-7df82e15-d7fd-41b0-a439-00cb2483c426,icon,115,Rounded door,False
+doorOrWindow,add-doorOrWindow-2de85f12-659c-4772-8ddc-734f87d2cc13,icon,139,Double small window,False
+pieceOfFurniture,add-pieceOfFurniture-d85c8213-8cb9-4433-9ade-540c7c2d194c,icon,112,Toilet unit,False
+pieceOfFurniture,add-pieceOfFurniture-445a6d92-324c-4ba6-9d28-742080d2f9ac,icon,110,Cylinder,False
+texture,,image,108,Gray medium thick carpeting,False
+shelfUnit,add-shelfUnit-629af29a-ba87-4011-b3c7-01186ece0359,icon,107,Bedside table,False
+texture,,image,105,Dark brown,False
+pieceOfFurniture,add-pieceOfFurniture-4accdc0c-b702-40a7-8280-5e24c7094555,icon,104,Washbasin with cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-5d8fc850-fbce-4dcc-bdc8-b705d9e47e6a,icon,112,Toilet unit,False
+doorOrWindow,add-doorOrWindow-87a6489f-23a3-4348-94d4-58df44cc641c,icon,139,Double small window,False
+pieceOfFurniture,add-pieceOfFurniture-1afc90e8-7e86-4adf-8c03-ba4a306458c0,icon,119,Wardrobe,False
+shelfUnit,add-shelfUnit-89e962dd-90a3-4d6f-9359-0f80dfe999a1,icon,107,Bedside table,False
+pieceOfFurniture,add-pieceOfFurniture-f546aa34-951b-4263-8ca1-1b953e443af0,icon,102,Chair,False
+shelfUnit,add-shelfUnit-30bf2316-79b3-472f-b905-48734e6485d4,icon,100,Bookcase,False
+doorOrWindow,add-doorOrWindow-5258f67f-b010-42db-9e24-0c3f3969bcc3,icon,98,Small window,False
+pieceOfFurniture,add-pieceOfFurniture-39f80123-cf34-49e1-a4cb-c6c232f34961,icon,96,Corner bunk bed,False
+pieceOfFurniture,add-pieceOfFurniture-f685fb15-5d96-4924-8784-534d24dd485d,icon,119,Wardrobe,False
+pieceOfFurniture,add-pieceOfFurniture-b38d3b9d-b52d-45da-af0f-c828e5570a83,icon,94,Chest,False
+doorOrWindow,add-doorOrWindow-58a228fc-599f-46d4-afce-2fec91260369,icon,139,Double small window,False
+pieceOfFurniture,add-pieceOfFurniture-8e35a9ba-d4bf-41a9-8dbf-70907a12498e,icon,102,Chair,False
+pieceOfFurniture,add-pieceOfFurniture-e4ce8dac-afec-4452-bc48-68cf03b50ee8,icon,102,Chair,False
+doorOrWindow,add-doorOrWindow-2b032d9a-1e80-47ba-aa72-2b1f5f692e9a,icon,139,Double small window,False
+pieceOfFurniture,add-pieceOfFurniture-af503aa8-7526-44c5-b83e-ce941ae35736,icon,121,Kitchen cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-d26fd418-8c06-4233-bafe-24317707b4c3,icon,92,Fridge & Freezer,True
+pieceOfFurniture,add-pieceOfFurniture-dd534abb-53fd-46e6-9089-a585d3e0eec3,icon,90,Clothes washer,True
+pieceOfFurniture,add-pieceOfFurniture-0459d7cf-6d8d-47fa-afd2-9d70eb0d7d0c,icon,121,Kitchen cabinet,False
+doorOrWindow,add-doorOrWindow-96d7d070-3b9e-40eb-9d36-1aba2a23ce3a,icon,115,Rounded door,False
+texture,,image,113,Bleached wood,False
+shelfUnit,add-shelfUnit-3d7a65cb-59c7-49c1-97ba-eff3b3596a5a,icon,100,Bookcase,False
+pieceOfFurniture,add-pieceOfFurniture-7b087012-53f5-4fb7-9101-2b09a38f4597,icon,117,Plant,False
+pieceOfFurniture,add-pieceOfFurniture-aa713a4d-f0e8-4b9a-bac9-20f57351ca31,icon,117,Plant,False
+pieceOfFurniture,add-pieceOfFurniture-6ebc7988-3260-4dba-811e-39627118a750,icon,117,Plant,False
+pieceOfFurniture,add-pieceOfFurniture-2f4cebc8-593b-45db-a51a-c2a08cda6e1f,icon,117,Plant,False
+pieceOfFurniture,add-pieceOfFurniture-947443b0-ecdd-4897-ab88-61d51e53b28a,icon,117,Plant,False
+pieceOfFurniture,add-pieceOfFurniture-5914c815-626a-4129-bacb-6c7958329cdc,icon,117,Plant,False
+pieceOfFurniture,add-pieceOfFurniture-59dd10df-b48a-4438-a478-5db3b3a73d85,icon,117,Plant,False
+doorOrWindow,add-doorOrWindow-af48fe05-e394-4fae-8589-fa959a41aa7f,icon,98,Small window,False
+doorOrWindow,add-doorOrWindow-27c0603a-b070-49ac-bc32-071398127ef7,icon,88,Fixed window,True
+doorOrWindow,add-doorOrWindow-12a7f7f9-7d40-4a20-ab16-bb6c573b2544,icon,88,Fixed window,True
+doorOrWindow,add-doorOrWindow-3499c7d7-bc23-4f65-ae88-b2fd01a6767a,icon,139,Double small window,False
+doorOrWindow,add-doorOrWindow-a9d2243f-7915-4e3b-ade2-84ea750d93e3,icon,115,Rounded door,False
+texture,,image,113,Bleached wood,False
+pieceOfFurniture,add-pieceOfFurniture-c4cdc625-da86-4f64-ac01-615a61a29a5c,icon,104,Washbasin with cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-a1857ac3-5475-4a13-984b-1b15e10c19fd,icon,86,Shower,False
+pieceOfFurniture,add-pieceOfFurniture-6c96979e-8cd8-4d49-bea7-519148a9b005,icon,84,Bath,False
+pieceOfFurniture,add-pieceOfFurniture-2fa989ed-6d51-42a3-9882-e5b4450c6504,icon,82,Flowers,False
+pieceOfFurniture,add-pieceOfFurniture-41693d64-0c94-41a5-8bfe-1303290818cb,icon,80,Flat TV,False
+pieceOfFurniture,add-pieceOfFurniture-37c7171f-9b0b-4cda-9aed-f7436e0b3bd5,icon,78,Electric radiator,False
+pieceOfFurniture,add-pieceOfFurniture-083c0c66-c3b9-4cba-a4fb-3d1fa8dc8c80,icon,76,Kitchen upper cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-d765e483-3a59-4992-b7cb-bec5d06e415c,icon,117,Plant,False
+pieceOfFurniture,add-pieceOfFurniture-1163caf5-7322-4d4a-813e-2ac7b7844aa8,icon,117,Plant,False
+pieceOfFurniture,add-pieceOfFurniture-d479be73-bea8-4bc8-a8b6-9cea0f7c53da,icon,117,Plant,False
+pieceOfFurniture,add-pieceOfFurniture-42a549e5-3b6d-43e6-9cfc-66bc3be03030,icon,78,Electric radiator,False
+pieceOfFurniture,add-pieceOfFurniture-6f71930f-7df8-4793-8c1f-d2435ef9f829,icon,82,Flowers,False
+pieceOfFurniture,add-pieceOfFurniture-28b0d95d-2e2d-47e9-8ad9-f18468234f32,icon,78,Electric radiator,False
+pieceOfFurniture,add-pieceOfFurniture-e16bb5d7-4b57-4a74-811e-49a211aa275e,icon,102,Chair,False
+pieceOfFurniture,add-pieceOfFurniture-b8457e82-cc90-4f17-99c6-6881ce6ad13c,icon,102,Chair,False
+pieceOfFurniture,add-pieceOfFurniture-7f10fb5c-0d9e-4922-ad09-c5a75f4d6300,icon,78,Electric radiator,False
+pieceOfFurniture,add-pieceOfFurniture-3b14f22f-8aa7-4a96-b650-779117b54e0f,icon,78,Electric radiator,False
+shelfUnit,add-shelfUnit-b4d5c124-2959-4027-9207-600e53d1923f,icon,100,Bookcase,False
+pieceOfFurniture,add-pieceOfFurniture-68c30113-caff-4615-98aa-867d4483d962,icon,74,Box,False
+pieceOfFurniture,add-pieceOfFurniture-6359afd0-123c-4a7d-acac-04651a30a608,icon,74,Box,False
+texture,,image,105,Dark brown,False
+pieceOfFurniture,add-pieceOfFurniture-243b3027-9665-4526-950f-62f3f7e732a7,icon,74,Box,False
+pieceOfFurniture,add-pieceOfFurniture-1c1e398b-be43-4369-a07e-c7b8f34e806c,icon,82,Flowers,False
+pieceOfFurniture,add-pieceOfFurniture-d2fd56f0-c32d-43e7-a8fe-e579d82f46a8,icon,78,Electric radiator,False
+light,add-light-0c0a4669-5a15-4f23-a3c3-256008578d11,icon,72,Pendant lamp,False
+pieceOfFurniture,add-pieceOfFurniture-b169091f-baec-4296-a5bc-b0135ec1be65,icon,78,Electric radiator,False
+pieceOfFurniture,add-pieceOfFurniture-4ba82c5b-b8b1-4fac-91b6-17c32c2b7568,icon,78,Electric radiator,False
+light,add-light-f9db51ee-6070-4315-9f8c-4a5e680d0cce,icon,72,Pendant lamp,False
+pieceOfFurniture,add-pieceOfFurniture-67367764-85c8-456f-b7de-c3bb403655be,icon,70,Curve staircase,False
+pieceOfFurniture,add-pieceOfFurniture-832b2690-e8da-429b-8974-2acb2aff23ae,icon,68,Bed 90x190,False
+pieceOfFurniture,add-pieceOfFurniture-7331c5f6-9f3b-43d8-b1e8-847a915783d2,icon,78,Electric radiator,False
+doorOrWindow,add-doorOrWindow-20899be4-b9af-4664-9c62-53e8a180a001,icon,66,Front door,False
+texture,,image,113,Bleached wood,False
+pieceOfFurniture,add-pieceOfFurniture-6d69c9b7-4cf1-43bb-bc03-3aa080b08c1d,icon,74,Box,False
+pieceOfFurniture,add-pieceOfFurniture-9c4954a8-b5c4-40e4-8b0c-b1cb3d215934,icon,133,Armchair,False
+pieceOfFurniture,add-pieceOfFurniture-93801e58-325d-4889-8bbd-74ebd1d060a0,icon,64,Piano,False
+pieceOfFurniture,add-pieceOfFurniture-94e15c22-0121-488e-afa5-85b7a4b2b555,icon,76,Kitchen upper cabinet,False
+doorOrWindow,add-doorOrWindow-d5a0bef5-04a1-45e1-97ff-24dc9ec62226,icon,98,Small window,False
+pieceOfFurniture,add-pieceOfFurniture-9fef356a-a35c-43bf-a7c8-783ba5aa993c,icon,76,Kitchen upper cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-334544a1-efba-475b-bb87-c14b7299b404,icon,76,Kitchen upper cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-e1d4a8f4-7734-44f7-a4fb-5d7b8a622fa4,icon,74,Box,False
+pieceOfFurniture,add-pieceOfFurniture-b19df5cc-45c6-40e9-8c22-df4c1987cdcb,icon,62,Sliding doors,False
+pieceOfFurniture,add-pieceOfFurniture-3e98dd2c-1779-4d01-8725-69be259099e5,icon,125,Square table,False
+pieceOfFurniture,add-pieceOfFurniture-3da8c90f-4c65-4b0f-b5c1-62f9db2db17b,icon,125,Square table,False
+pieceOfFurniture,add-pieceOfFurniture-a2691f36-9348-4dfd-81f5-3aef18654300,icon,60,Bed,False
+shelfUnit,add-shelfUnit-c986310b-5c31-46c6-aa8f-a91be10fe086,icon,107,Bedside table,False
+shelfUnit,add-shelfUnit-f9c16297-1905-471d-9715-53959b75037f,icon,107,Bedside table,False
+light,add-light-f27a12b7-ad90-4c81-aebc-339dfdf6ba21,icon,58,Work lamp,False
+light,add-light-aa0237e6-25ba-4141-a1ab-a7f7065c3c40,icon,58,Work lamp,False
+light,add-light-6ad81886-ed09-4f1f-92a1-0399b5b1878a,icon,58,Work lamp,False
+light,add-light-4a41df46-81cc-4ae4-a66b-8be7250a6711,icon,58,Work lamp,False
+pieceOfFurniture,add-pieceOfFurniture-712fb39e-5a2e-4682-a5b2-6ec0d42f5946,icon,110,Cylinder,False
+texture,,image,113,Bleached wood,False
+pieceOfFurniture,add-pieceOfFurniture-da7137f9-6d5d-4ec3-84bc-35b7cddad02a,icon,110,Cylinder,False
+texture,,image,113,Bleached wood,False
+pieceOfFurniture,add-pieceOfFurniture-bb9f885e-22e1-4801-88af-809def94e378,icon,74,Box,False
+pieceOfFurniture,add-pieceOfFurniture-29495e06-38e2-4c44-a383-d378a2bd3895,icon,125,Square table,False
+pieceOfFurniture,add-pieceOfFurniture-6dbafe8f-909d-4c64-b2e2-7759d95922b4,icon,102,Chair,False
+pieceOfFurniture,add-pieceOfFurniture-3878a1fa-367b-496f-854b-bb2101f85cc0,icon,102,Chair,False
+pieceOfFurniture,add-pieceOfFurniture-85c1b0e2-fae5-4c5a-ab5d-158332063b9f,icon,74,Box,False
+pieceOfFurniture,add-pieceOfFurniture-de215648-09a7-41fc-bc71-5b7c7cf225d6,icon,74,Box,False
+texture,,image,56,Round blue slates,False
+pieceOfFurniture,add-pieceOfFurniture-89c812cf-2008-4bf8-92d3-4bb29ce5624f,icon,74,Box,False
+pieceOfFurniture,add-pieceOfFurniture-c2dec297-44fe-4a19-97ae-6aeba8cbc2c7,icon,74,Box,False
+pieceOfFurniture,add-pieceOfFurniture-a57eca1c-ded1-4661-a666-87f9bd76c207,icon,74,Box,False
+pieceOfFurniture,add-pieceOfFurniture-d1f5498b-b614-4f8d-9aab-f74ed855d73d,icon,74,Box,False
+pieceOfFurniture,add-pieceOfFurniture-be9e3ffc-dcf7-42e5-9a87-2b250ebc34c2,icon,74,Box,False
+texture,,image,56,Round blue slates,False
+pieceOfFurniture,add-pieceOfFurniture-6423b5a4-a705-41ae-953c-23ca66ae0796,icon,74,Box,False
+texture,,image,56,Round blue slates,False
+pieceOfFurniture,add-pieceOfFurniture-e745c6a8-d502-4e29-8108-cac18d7bd0d5,icon,70,Curve staircase,False
+doorOrWindow,add-doorOrWindow-7c27d91d-060e-47a6-a5a1-7d047af39699,icon,55,Slider window,True
+doorOrWindow,add-doorOrWindow-47bcf2e5-0298-4dff-87d5-7e966592cd4f,icon,88,Fixed window,True
+doorOrWindow,add-doorOrWindow-9e4335dd-3e32-4ff7-a83a-2033e7aea759,icon,88,Fixed window,True
+doorOrWindow,add-doorOrWindow-7954ab8a-0e1b-41ff-8add-31b75ab56d76,icon,88,Fixed window,True
+pieceOfFurniture,add-pieceOfFurniture-392fc040-6efd-493c-b283-36e45b68c5be,icon,92,Fridge & Freezer,True
+pieceOfFurniture,add-pieceOfFurniture-569c2f4b-bcd3-4fd6-9908-c735e5415c26,icon,121,Kitchen cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-022e031e-2edb-4917-8d1b-9d6ca5e94645,icon,121,Kitchen cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-9531907e-d2b6-4c62-b5b5-795a2d2f3352,icon,121,Kitchen cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-abd9353a-a355-4cbe-940e-919d1e75ae01,icon,121,Kitchen cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-faf0d89a-1f7c-41cf-be2a-37fab90cace3,icon,102,Chair,False
+pieceOfFurniture,add-pieceOfFurniture-195512dc-59ed-4c1f-869c-4eb2c9249b03,icon,102,Chair,False
+pieceOfFurniture,add-pieceOfFurniture-70b63a0d-0edb-4035-a2ca-4b7b1ce13941,icon,102,Chair,False
+doorOrWindow,add-doorOrWindow-ed7f02e2-c85e-4ec1-a0ff-3f8f006cf17e,icon,88,Fixed window,True
+pieceOfFurniture,add-pieceOfFurniture-2aa13018-f778-47a1-b70b-35329a897f50,icon,102,Chair,False
+pieceOfFurniture,add-pieceOfFurniture-368004f3-3c3f-4014-bc70-aabb9e496386,icon,127,Sink,False
+pieceOfFurniture,add-pieceOfFurniture-a5988b89-e789-4a27-bc66-ed7bb7a1b687,icon,129,Dishwasher,False
+pieceOfFurniture,add-pieceOfFurniture-73e569a1-718f-4b59-8a56-efac20ef5c6a,icon,121,Kitchen cabinet,False
+light,add-light-a8eebd6c-6115-4a47-90ea-6bf0449771f3,icon,72,Pendant lamp,False
+light,add-light-2d8dd930-9356-4bff-80f5-5bd4e47b34f6,icon,72,Pendant lamp,False
+light,add-light-4f2e87e3-8d3b-471b-8012-5003a977e3ea,icon,72,Pendant lamp,False
+doorOrWindow,add-doorOrWindow-c0c16fa1-5f8c-4a36-9321-85521972f4fd,icon,88,Fixed window,True
+doorOrWindow,add-doorOrWindow-7b6b1eb7-56ea-4222-a04a-e6bd024bbcd7,icon,88,Fixed window,True
+doorOrWindow,add-doorOrWindow-47e36ac9-ca88-4ad5-a2a7-03a4abed479b,icon,88,Fixed window,True
+pieceOfFurniture,add-pieceOfFurniture-3cba51c8-8b37-447a-9767-c2e4dcc45921,icon,112,Toilet unit,False
+pieceOfFurniture,add-pieceOfFurniture-094abd1b-b343-4484-8134-42ac7a13021a,icon,53,Washbasin,True
+doorOrWindow,add-doorOrWindow-9df41ae2-c632-4510-a40d-f15c0a40fb83,icon,51,Door,False
+doorOrWindow,add-doorOrWindow-6e1b1544-341c-4246-9dba-b1f11d4f2b5e,icon,55,Slider window,True
+doorOrWindow,add-doorOrWindow-dafb8a8d-6c34-44bf-94be-0f17db61f874,icon,49,French window,False
+pieceOfFurniture,add-pieceOfFurniture-0945e689-e5c6-4699-ae88-a84c35faec4d,icon,125,Square table,False
+texture,,image,105,Dark brown,False
+pieceOfFurniture,add-pieceOfFurniture-f88ba0d7-a814-4ff8-82ac-74da208f6709,icon,102,Chair,False
+shelfUnit,add-shelfUnit-8892ac5e-f619-43c9-b460-00be3821986b,icon,100,Bookcase,False
+shelfUnit,add-shelfUnit-856f39c3-aacd-4a0f-b8c2-98f7cd5eb07c,icon,100,Bookcase,False
+shelfUnit,add-shelfUnit-fd0418d4-c004-41f2-9ecf-f4b3a20d5951,icon,100,Bookcase,False
+shelfUnit,add-shelfUnit-133ea042-bdfa-411c-a091-5f750e698ecd,icon,100,Bookcase,False
+shelfUnit,add-shelfUnit-667a2198-2041-4210-93e3-b85aeca073bc,icon,100,Bookcase,False
+shelfUnit,add-shelfUnit-6b55cdba-881e-42c2-a66a-3690d98a99cf,icon,100,Bookcase,False
+shelfUnit,add-shelfUnit-7a19d944-11e9-4c0f-ae18-70991336ec93,icon,100,Bookcase,False
+light,add-light-b6b9d69b-3df9-430f-ad1e-bf15c9b1170d,icon,58,Work lamp,False
+light,add-light-8f35452c-3abd-4ff0-82c2-931cd5932f5e,icon,47,Floor uplight,False
+shelfUnit,add-shelfUnit-03882536-d412-445c-9d06-278f2206f22b,icon,100,Bookcase,False
+pieceOfFurniture,add-pieceOfFurniture-1b10cbb4-bdc8-4b86-bdd3-4c6efd5f51de,icon,110,Cylinder,False
+texture,,image,45,Beige fabric,False
+shelfUnit,add-shelfUnit-55908d46-9180-4efc-af18-7c37f39e091d,icon,100,Bookcase,False
+pieceOfFurniture,add-pieceOfFurniture-6785703b-d433-491f-bbff-12ffcab37708,icon,125,Square table,False
+texture,,image,105,Dark brown,False
+pieceOfFurniture,add-pieceOfFurniture-00ee46ba-cfa6-4b82-830b-392013197cd6,icon,94,Chest,False
+texture,,image,44,Old wood,True
+pieceOfFurniture,add-pieceOfFurniture-1d67f732-40c7-4dd5-ab20-bff6b152d1dd,icon,74,Box,False
+texture,,image,43,Carpet with geometric shapes,False
+pieceOfFurniture,add-pieceOfFurniture-82d3ef17-7828-4161-abc8-fc190bbd5b2d,icon,42,Sofa,True
+texture,,image,40,Dark leather,True
+pieceOfFurniture,add-pieceOfFurniture-772d1d86-8931-4f6d-9c0b-3c2e15092aad,icon,42,Sofa,True
+texture,,image,40,Dark leather,True
+pieceOfFurniture,add-pieceOfFurniture-a33bc3b8-dca8-46b4-bde7-aa26b173b1e5,icon,125,Square table,False
+pieceOfFurniture,add-pieceOfFurniture-193568db-1e78-4780-8885-84d47e3e7a58,icon,94,Chest,False
+texture,,image,44,Old wood,True
+pieceOfFurniture,add-pieceOfFurniture-21b4d7e5-8bc6-4210-84e1-80b7e38f97f8,icon,117,Plant,False
+pieceOfFurniture,add-pieceOfFurniture-281491e8-f014-420f-b762-e73d242b2b0e,icon,117,Plant,False
+pieceOfFurniture,add-pieceOfFurniture-33d93641-1382-4e90-9a58-2292fa03e7ab,icon,117,Plant,False
+pieceOfFurniture,add-pieceOfFurniture-05e4d07f-ee5f-4c0d-9ba2-9b6c50bce51f,icon,117,Plant,False
+pieceOfFurniture,add-pieceOfFurniture-e45d28c2-16e6-4cd8-9bec-b5f5adb11411,icon,117,Plant,False
+pieceOfFurniture,add-pieceOfFurniture-f8fa54a5-cd88-4f6b-9cb7-80e03abf199e,icon,94,Chest,False
+texture,,image,44,Old wood,True
+light,add-light-5498158a-174b-4e16-adcc-3e46c7345482,icon,39,Wall uplight,True
+light,add-light-c2a6ff25-7633-40c8-a90e-5f3a1bccec05,icon,39,Wall uplight,True
+light,add-light-4a548833-5725-4dbe-8457-c94ef47b2857,icon,39,Wall uplight,True
+light,add-light-23481a0a-456e-4fb7-a135-3f3adf6d9550,icon,72,Pendant lamp,False
+doorOrWindow,add-doorOrWindow-20bf7ef2-6d2f-4ae1-b2e4-aaaca2aef0ed,icon,88,Fixed window,True
+pieceOfFurniture,add-pieceOfFurniture-f0d3e9c7-dfa9-409c-bd2e-90599d084558,icon,80,Flat TV,False
+pieceOfFurniture,add-pieceOfFurniture-86a2782e-bb49-4b18-b220-a1abf63a4414,icon,82,Flowers,False
+pieceOfFurniture,add-pieceOfFurniture-908453d1-b6e9-44c5-aa6f-613ee62fef5b,icon,82,Flowers,False
+pieceOfFurniture,add-pieceOfFurniture-11e7a2e8-aa0f-4be4-bb27-5dce31368f8f,icon,121,Kitchen cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-2ba86eff-9555-4ee5-9590-ffd51197f429,icon,74,Box,False
+texture,,image,37,Dark ceramic tiles,True
+pieceOfFurniture,add-pieceOfFurniture-cae90479-5049-4f70-9ac5-b4e40406e495,icon,121,Kitchen cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-c2555574-0603-48da-8cef-0ea4bbfbbc94,icon,121,Kitchen cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-7e3ae205-8ec6-4472-8608-606d7d7f1157,icon,121,Kitchen cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-365ac933-9358-4254-8276-f8ecf434857d,icon,131,Cooker,False
+pieceOfFurniture,add-pieceOfFurniture-1898b880-bd52-4289-a634-9e7283b70345,icon,121,Kitchen cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-d441f31b-3a2a-4d5a-a4b4-af64872823fc,icon,121,Kitchen cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-b337c0ee-45a7-415d-98ed-c37818e1e29d,icon,76,Kitchen upper cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-f4564bca-e0d2-43f3-ba81-29e7c1e217a8,icon,76,Kitchen upper cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-d4e0d550-3f56-4a4a-8f1a-41921c724893,icon,76,Kitchen upper cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-67afa151-66e1-41cf-853c-fd9efda26015,icon,76,Kitchen upper cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-348145fd-d032-4f09-8afa-b9c23044a349,icon,121,Kitchen cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-fec2fe74-9b2e-46a4-a010-cd7ea640813d,icon,121,Kitchen cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-98a6cbd0-0124-4579-b7e4-5e9962443f72,icon,76,Kitchen upper cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-40d38eaa-4601-49ad-89ff-325f3086de87,icon,76,Kitchen upper cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-3d062d38-319a-4ea6-82f7-50a18579320e,icon,42,Sofa,True
+doorOrWindow,add-doorOrWindow-c7805654-0e93-4b58-9a34-5ee1ad3f5183,icon,36,Open door,False
+doorOrWindow,add-doorOrWindow-6ecf091c-549e-4dfa-9716-1a8a5b6b15c3,icon,36,Open door,False
+doorOrWindow,add-doorOrWindow-e54939b2-21fb-46ad-89c0-19c2bb000368,icon,66,Front door,False
+texture,,image,34,Metal,False
+pieceOfFurniture,add-pieceOfFurniture-004c9486-09d0-4c75-b1eb-bda224ec7b16,icon,70,Curve staircase,False
+doorOrWindow,add-doorOrWindow-93d4edab-7a38-4435-91d6-33e18216501e,icon,88,Fixed window,True
+doorOrWindow,add-doorOrWindow-b793b8e7-f9ee-4c72-b651-8f8cd608cc33,icon,88,Fixed window,True
+doorOrWindow,add-doorOrWindow-9fdcee65-6cde-4072-a5b4-8bbe95c4f72e,icon,88,Fixed window,True
+doorOrWindow,add-doorOrWindow-64d80eff-2edf-4a26-bf93-ee10c4263d36,icon,49,French window,False
+pieceOfFurniture,add-pieceOfFurniture-dcfc3c89-6980-48e4-b31d-d236daa87055,icon,117,Plant,False
+pieceOfFurniture,add-pieceOfFurniture-6a656f92-166e-4f71-b1be-e889511f2b61,icon,117,Plant,False
+pieceOfFurniture,add-pieceOfFurniture-ffe8e7c6-38e8-4bfb-8b69-a65ec61cf16a,icon,117,Plant,False
+pieceOfFurniture,add-pieceOfFurniture-5c6b0ad3-3d4d-4fb3-b7ee-04a9fb14b6e2,icon,117,Plant,False
+pieceOfFurniture,add-pieceOfFurniture-74c083cd-8b87-45cd-92fe-cd2f1fbf4a40,icon,102,Chair,False
+pieceOfFurniture,add-pieceOfFurniture-46ec0d46-2c77-4b4e-85a0-2384a185c807,icon,125,Square table,False
+pieceOfFurniture,add-pieceOfFurniture-1b951016-d989-49bd-83da-c86f20c8ea08,icon,133,Armchair,False
+texture,,image,33,Orange leather,True
+doorOrWindow,add-doorOrWindow-cf0dcc26-ac78-4fcc-a4ca-461f571b1c10,icon,88,Fixed window,True
+pieceOfFurniture,add-pieceOfFurniture-28ee64b5-6bff-446b-9451-e427b6d6dd7d,icon,94,Chest,False
+texture,,image,105,Dark brown,False
+shelfUnit,add-shelfUnit-2acef91d-6cd1-4ff0-a969-cf1aed35e7e5,icon,107,Bedside table,False
+texture,,image,105,Dark brown,False
+pieceOfFurniture,add-pieceOfFurniture-5943266d-c1f6-40f5-ab72-393bcf5413ea,icon,86,Shower,False
+pieceOfFurniture,add-pieceOfFurniture-80ebc851-0921-4599-9fb0-83dbe081d80c,icon,112,Toilet unit,False
+pieceOfFurniture,add-pieceOfFurniture-e43bcbeb-72d4-4d25-9221-932622d818e4,icon,104,Washbasin with cabinet,False
+shelfUnit,add-shelfUnit-080684a0-659d-4ccc-b82a-3d2d98a9aa88,icon,100,Bookcase,False
+pieceOfFurniture,add-pieceOfFurniture-a07f8964-2d97-47b5-aeea-9b145ec91e11,icon,102,Chair,False
+texture,,image,105,Dark brown,False
+pieceOfFurniture,add-pieceOfFurniture-dc34e594-bc84-40ee-ba3f-50c4a8dd4a4e,icon,102,Chair,False
+texture,,image,105,Dark brown,False
+doorOrWindow,add-doorOrWindow-590b0303-c14e-4aa1-ba49-c0b3c60981a0,icon,36,Open door,False
+doorOrWindow,add-doorOrWindow-b783d1fa-2085-4d12-84fd-1ae71ba4dcf2,icon,51,Door,False
+doorOrWindow,add-doorOrWindow-236b4260-cf0f-4f5c-a237-0ae033c4a8c0,icon,51,Door,False
+doorOrWindow,add-doorOrWindow-fe38ac2f-3292-4794-ae12-9d6bb580e1e5,icon,51,Door,False
+doorOrWindow,add-doorOrWindow-29987743-84c2-4260-bb19-90c073127aa5,icon,88,Fixed window,True
+pieceOfFurniture,add-pieceOfFurniture-e473b0a0-b9f7-4022-9788-9623b1e8b3ce,icon,32,Fitted bath,False
+pieceOfFurniture,add-pieceOfFurniture-65a13040-32cc-425f-bf34-0ef33a94b3d2,icon,90,Clothes washer,True
+pieceOfFurniture,add-pieceOfFurniture-e7958fdf-bbcd-4a42-acee-cb2b8347a5cf,icon,104,Washbasin with cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-22d7d621-25ac-4696-9685-2f80c140f37a,icon,121,Kitchen cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-7db6444b-2da7-4cb6-93c5-62eae6d70a9b,icon,123,Stool,False
+pieceOfFurniture,add-pieceOfFurniture-13b18f9c-80f0-4e82-9e9f-0710de5878a2,icon,112,Toilet unit,False
+doorOrWindow,add-doorOrWindow-ff66e0d4-90dc-4ab6-b304-7a99091ce63a,icon,51,Door,False
+pieceOfFurniture,add-pieceOfFurniture-9467d2fa-f885-4402-92d4-1b714a73d708,icon,119,Wardrobe,False
+doorOrWindow,add-doorOrWindow-5b231b1e-6e72-4569-8d38-67013b3f5be8,icon,88,Fixed window,True
+doorOrWindow,add-doorOrWindow-d695801d-21f2-4a1b-87ef-0d3964f897e6,icon,88,Fixed window,True
+pieceOfFurniture,add-pieceOfFurniture-91b7e39e-e7e8-42cb-869d-40f4e388a994,icon,133,Armchair,False
+doorOrWindow,add-doorOrWindow-e2f8a381-399f-4447-92a3-28d1e8db004d,icon,51,Door,False
+shelfUnit,add-shelfUnit-beaadd63-98b5-43eb-b20d-d69102318ac4,icon,100,Bookcase,False
+shelfUnit,add-shelfUnit-c1307d6c-631e-4c07-bf1d-ed864e27546c,icon,100,Bookcase,False
+pieceOfFurniture,add-pieceOfFurniture-afb0d006-1d5f-43ee-8466-c275245a9f4b,icon,110,Cylinder,False
+pieceOfFurniture,add-pieceOfFurniture-f8266327-b4b8-4d6a-8c91-a3f7f4d7bd06,icon,110,Cylinder,False
+pieceOfFurniture,add-pieceOfFurniture-294a6583-6216-4c22-936c-05a20b15c985,icon,94,Chest,False
+doorOrWindow,add-doorOrWindow-a68709c4-6c18-4ae0-a76c-891145e8d3a8,icon,88,Fixed window,True
+pieceOfFurniture,add-pieceOfFurniture-afab2433-04ca-4376-8fe1-bd4fc0ab4051,icon,123,Stool,False
+light,add-light-87c75644-2318-45e3-9ff5-d19a9c7d6af2,icon,39,Wall uplight,True
+doorOrWindow,add-doorOrWindow-9bf1665c-c341-4bcf-86e1-988b6e6aeb23,icon,88,Fixed window,True
+pieceOfFurniture,add-pieceOfFurniture-56459dc5-2409-4520-a482-245026e47549,icon,110,Cylinder,False
+texture,,image,30,Carpet with colored tiles,False
+pieceOfFurniture,add-pieceOfFurniture-6f2dd568-b8c8-4c8f-a8f1-ba9f0952178f,icon,29,Corner sofa,True
+light,add-light-78d1311f-8e09-47ea-9c4e-c080bafddc4e,icon,39,Wall uplight,True
+light,add-light-fbbb1f5a-0ee2-4aa2-9143-0e4ea5298d8e,icon,39,Wall uplight,True
+doorOrWindow,add-doorOrWindow-e77fe02a-542b-4a21-8bf3-541fa4098730,icon,49,French window,False
+doorOrWindow,add-doorOrWindow-874923db-decc-429b-868f-7ad1a6ca1d94,icon,88,Fixed window,True
+pieceOfFurniture,add-pieceOfFurniture-cfe95cc3-3fb0-4743-833d-21bb04e37a51,icon,27,Bunk bed,True
+light,add-light-914ceab2-164e-4c17-a6dc-2289533cf4f6,icon,72,Pendant lamp,False
+pieceOfFurniture,add-pieceOfFurniture-15994b0d-52e8-416a-bd4e-70b92c5bc29f,icon,119,Wardrobe,False
+pieceOfFurniture,add-pieceOfFurniture-449117d3-243e-4dd5-bbcb-bce9c83249cb,icon,68,Bed 90x190,False
+shelfUnit,add-shelfUnit-850005a8-c06a-441a-a903-ad04662ffa5e,icon,107,Bedside table,False
+pieceOfFurniture,add-pieceOfFurniture-bb9dc801-3b05-43c1-bdf3-f251dd66d251,icon,102,Chair,False
+pieceOfFurniture,add-pieceOfFurniture-08988f89-8bfc-4adf-987b-19c08407a6ca,icon,102,Chair,False
+light,add-light-01ccf488-383d-44af-a151-362eeb60605e,icon,39,Wall uplight,True
+light,add-light-1a8badd7-cdf0-454f-9730-9de9c2657ded,icon,39,Wall uplight,True
+doorOrWindow,add-doorOrWindow-b64ac109-6dcf-4877-9239-b22bf9a656b1,icon,88,Fixed window,True
+doorOrWindow,add-doorOrWindow-7ea330f1-ae9f-4a9c-8a86-b517c04aebd6,icon,88,Fixed window,True
+doorOrWindow,add-doorOrWindow-308bd183-df33-460c-a91f-e43f44aa2cef,icon,88,Fixed window,True
+pieceOfFurniture,add-pieceOfFurniture-7a2bb5da-0eca-4901-9ba8-7da63e335a35,icon,60,Bed,False
+pieceOfFurniture,add-pieceOfFurniture-314b6e2e-78ee-44fc-ade7-0632fa8ed26f,icon,82,Flowers,False
+pieceOfFurniture,add-pieceOfFurniture-7e6c6137-ebdd-42d2-a814-9bd6eb610095,icon,82,Flowers,False
+pieceOfFurniture,add-pieceOfFurniture-3d1deaaf-14e7-4768-9c2b-72bd93c2d29a,icon,60,Bed,False
+pieceOfFurniture,add-pieceOfFurniture-3e890a3b-8620-4b97-b779-7a0a29e103ff,icon,82,Flowers,False
+pieceOfFurniture,add-pieceOfFurniture-de146422-86bf-40b3-a40f-bdf832de0fc3,icon,125,Square table,False
+pieceOfFurniture,add-pieceOfFurniture-34307f21-bd07-4f2f-8adb-ed2fcdbacdcd,icon,25,Round table,True
+texture,,image,105,Dark brown,False
+doorOrWindow,add-doorOrWindow-ed8d3dee-aea5-40c6-8141-4a768adff3ba,icon,88,Fixed window,True
+pieceOfFurniture,add-pieceOfFurniture-203e96bd-1502-43b6-8523-cc1dbd98067b,icon,117,Plant,False
+pieceOfFurniture,add-pieceOfFurniture-00eb6b47-8d60-42a1-a030-a2469910c570,icon,117,Plant,False
+pieceOfFurniture,add-pieceOfFurniture-809f26d3-051a-471a-a32c-ac9b5b7c2080,icon,117,Plant,False
+pieceOfFurniture,add-pieceOfFurniture-fd5a383b-3159-4f4c-80cd-598334d59585,icon,117,Plant,False
+light,add-light-1c8d37b9-08f2-4ffd-931b-6ade038ad428,icon,72,Pendant lamp,False
+pieceOfFurniture,add-pieceOfFurniture-30b96d86-58b5-435b-8e8a-330c2298fa43,icon,62,Sliding doors,False
+light,add-light-f2d63b79-06cc-4b20-afe3-cfd87087cb7e,icon,58,Work lamp,False
+pieceOfFurniture,add-pieceOfFurniture-32f081e4-e4f4-492e-acd0-e088e4ee38f1,icon,125,Square table,False
+light,add-light-fd6d605d-2607-4013-8812-993e74b2c703,icon,58,Work lamp,False
+light,add-light-a70c9d8b-3848-45ab-af30-274c7eeeb456,icon,58,Work lamp,False
+pieceOfFurniture,add-pieceOfFurniture-3bbe199a-92a0-4932-8825-731d28f6027e,icon,64,Piano,False
+doorOrWindow,add-doorOrWindow-16d223b7-d35a-4665-837a-ed5b4bd8097c,icon,36,Open door,False
+pieceOfFurniture,add-pieceOfFurniture-24fd1a68-6c9f-4a3a-bc71-5c017cb10b27,icon,76,Kitchen upper cabinet,False
+pieceOfFurniture,add-pieceOfFurniture-df72ecfc-1e9b-4232-af6b-fb119f9c6a1d,icon,76,Kitchen upper cabinet,False
+texture,,image,23,Gray wood,False
+texture,,image,22,Roughcast,True
+texture,,image,22,Roughcast,True
+texture,,image,22,Roughcast,True
+texture,,image,21,Gold circles,False
+texture,,image,19,African style,False
+texture,,image,23,Gray wood,False
+texture,,image,113,Bleached wood,False
+texture,,image,23,Gray wood,False
+texture,,image,113,Bleached wood,False
+texture,,image,23,Gray wood,False
+texture,,image,23,Gray wood,False
+texture,,image,113,Bleached wood,False
+texture,,image,23,Gray wood,False
+texture,,image,23,Gray wood,False
+texture,,image,19,African style,False
+texture,,image,21,Gold circles,False
+texture,,image,20,Detailed mosaic,True
+texture,,image,37,Dark ceramic tiles,True
+texture,,image,20,Detailed mosaic,True
+texture,,image,37,Dark ceramic tiles,True
+texture,,image,20,Detailed mosaic,True
+texture,,image,37,Dark ceramic tiles,True
+texture,,image,20,Detailed mosaic,True
+texture,,image,21,Gold circles,False
+texture,,image,37,Dark ceramic tiles,True
+texture,,image,21,Gold circles,False
+texture,,image,20,Detailed mosaic,True
+texture,,image,20,Detailed mosaic,True
+texture,,image,37,Dark ceramic tiles,True
+texture,,image,37,Dark ceramic tiles,True
+texture,,image,20,Detailed mosaic,True
+texture,,image,20,Detailed mosaic,True
+texture,,image,37,Dark ceramic tiles,True
+texture,,image,37,Dark ceramic tiles,True
+texture,,image,20,Detailed mosaic,True
+texture,,image,20,Detailed mosaic,True
+texture,,image,37,Dark ceramic tiles,True
+texture,,image,37,Dark ceramic tiles,True
+texture,,image,20,Detailed mosaic,True
+texture,,image,20,Detailed mosaic,True
+texture,,image,37,Dark ceramic tiles,True
+texture,,image,37,Dark ceramic tiles,True
+texture,,image,18,Stones,True
+texture,,image,18,Stones,True
+texture,,image,113,Bleached wood,False
+texture,,image,19,African style,False
+texture,,image,19,African style,False
+texture,,image,23,Gray wood,False
+texture,,image,23,Gray wood,False
+texture,,image,20,Detailed mosaic,True
+texture,,image,37,Dark ceramic tiles,True
+texture,,image,19,African style,False
+texture,,image,21,Gold circles,False
+texture,,image,19,African style,False
+texture,,image,19,African style,False
+texture,,image,20,Detailed mosaic,True
+texture,,image,21,Gold circles,False
+texture,,image,37,Dark ceramic tiles,True
+texture,,image,20,Detailed mosaic,True
+texture,,image,21,Gold circles,False
+texture,,image,37,Dark ceramic tiles,True
+texture,,image,23,Gray wood,False
+texture,,image,23,Gray wood,False
+texture,,image,21,Gold circles,False
+texture,,image,23,Gray wood,False
+texture,,image,23,Gray wood,False
+texture,,image,23,Gray wood,False
+texture,,image,113,Bleached wood,False
+texture,,image,22,Roughcast,True
+texture,,image,23,Gray wood,False
+texture,,image,113,Bleached wood,False
+texture,,image,23,Gray wood,False
+texture,,image,113,Bleached wood,False
+texture,,image,17,White marble,True
+texture,,image,14,Mosaic patchwork,False
+texture,,image,17,White marble,True
+texture,,image,14,Mosaic patchwork,False
+texture,,image,17,White marble,True
+texture,,image,17,White marble,True
+texture,,image,17,White marble,True
+texture,,image,17,White marble,True
+texture,,image,16,Geometric tiles,True
+texture,,image,17,White marble,True
+texture,,image,17,White marble,True
+texture,,image,16,Geometric tiles,True
+texture,,image,17,White marble,True
+texture,,image,17,White marble,True
+texture,,image,17,White marble,True
+texture,,image,17,White marble,True
+texture,,image,17,White marble,True
+texture,,image,14,Mosaic patchwork,False
+texture,,image,16,Geometric tiles,True
+texture,,image,17,White marble,True
+texture,,image,16,Geometric tiles,True
+texture,,image,17,White marble,True
+texture,,image,17,White marble,True
+texture,,image,15,Half round geometry,True
+texture,,image,15,Half round geometry,True
+texture,,image,17,White marble,True
+texture,,image,17,White marble,True
+texture,,image,12,Pink flowers,False
+texture,,image,12,Pink flowers,False
+texture,,image,10,White tile,True
+texture,,image,12,Pink flowers,False
+texture,,image,12,Pink flowers,False
+texture,,image,15,Half round geometry,True
+texture,,image,17,White marble,True
+texture,,image,15,Half round geometry,True
+texture,,image,10,White tile,True
+texture,,image,17,White marble,True
+texture,,image,15,Half round geometry,True
+texture,,image,17,White marble,True
+texture,,image,13,Green small ceramic,True
+texture,,image,13,Green small ceramic,True
+texture,,image,11,Fruits multicolor tiles,True
+texture,,image,17,White marble,True
+texture,,image,13,Green small ceramic,True
+texture,,image,11,Fruits multicolor tiles,True
+texture,,image,17,White marble,True
+texture,,image,13,Green small ceramic,True
+texture,,image,11,Fruits multicolor tiles,True
+texture,,image,17,White marble,True
+texture,,image,13,Green small ceramic,True
+texture,,image,15,Half round geometry,True
+texture,,image,17,White marble,True
+texture,,image,15,Half round geometry,True
+texture,,image,17,White marble,True
+texture,,image,13,Green small ceramic,True
+texture,,image,15,Half round geometry,True
+texture,,image,17,White marble,True
+texture,,image,12,Pink flowers,False
+texture,,image,15,Half round geometry,True
+texture,,image,10,White tile,True
+texture,,image,12,Pink flowers,False
+texture,,image,11,Fruits multicolor tiles,True
+texture,,image,15,Half round geometry,True
+texture,,image,17,White marble,True
+texture,,image,17,White marble,True
+texture,,image,12,Pink flowers,False
+texture,,image,12,Pink flowers,False
+texture,,image,15,Half round geometry,True
+texture,,image,17,White marble,True
+texture,,image,15,Half round geometry,True
+texture,,image,17,White marble,True
+texture,,image,15,Half round geometry,True
+texture,,image,17,White marble,True
+texture,,image,37,Dark ceramic tiles,True
+texture,,image,22,Roughcast,True
+texture,,image,9,Yellow medium carpeting,True
+texture,,image,8,Gray and green carpeting,True
+texture,,image,7,Gray and cyan carpeting,True
+texture,,image,37,Dark ceramic tiles,True
+texture,,image,6,Wooden floor,True
+texture,,image,5,Hexagonal tiles,True
+texture,,image,5,Hexagonal tiles,True
+texture,,image,4,Dark wood,True
+texture,,image,5,Hexagonal tiles,True
+texture,,image,17,White marble,True
+texture,,image,7,Gray and cyan carpeting,True
+texture,,image,3,Beige tiles,True
+texture,,image,17,White marble,True
+texture,,image,17,White marble,True
+texture,,image,3,Beige tiles,True
+texture,,image,17,White marble,True
+texture,,image,17,White marble,True
+texture,,image,3,Beige tiles,True
+texture,,image,37,Dark ceramic tiles,True
+texture,,image,17,White marble,True
+texture,,image,8,Gray and green carpeting,True
+texture,,image,3,Beige tiles,True
+texture,,image,34,Metal,False
+texture,,image,34,Metal,False
+texture,,image,2,Blue and beige tiles,True
+texture,,image,17,White marble,True
+texture,,image,1,Claret red velvet,True

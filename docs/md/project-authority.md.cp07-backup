@@ -1,0 +1,49 @@
+# Project authority
+
+## Firebase (matches live console + `js/firebase.js`)
+
+| Item | Value |
+|------|--------|
+| **GCP / Firebase project** | `homefinder-official` (console: HomeFinder-Official) |
+| **Auth domain** | `homefinder-official.firebaseapp.com` |
+| **Named Firestore database** | `homefinder` |
+| **Hosting** | Firebase Hosting on this project (Spark plan as of console check) |
+
+Do not call the **project** `homefinder` — that string is the **database id** only.
+
+## Roles
+
+Canonical roles: `owner`, `seeker`, `broker`, `staff`, `moderator`, `admin`  
+Canonical field: `canonicalRole` (legacy `accountType` / `role` may appear as fallbacks in code)
+
+## Listings data
+
+- `propertyListings`
+- `wantedListings`  
+Legacy collection `properties` is retired.
+
+## 3D
+
+- Model: `master/HomeFinder.sh3d`
+- SHA-256: `0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34`
+- Narrative: `docs/md/3d-authority.md`, `docs/md/camera-and-spatial-authority.md`
+
+## Documentation map
+
+| Kind | Location |
+|------|----------|
+| Wiring | `AI_ASSISTANT_READ_ME.md` |
+| Markdown SoT | `docs/md/` |
+| CSV evidence | `docs/csv/` |
+| Authority JSON | `docs/json/` (not all app JSON — runtime stays under `active_development/`) |
+| Firebase docs | `docs/md/firebase/`, `docs/json/firebase/` |
+| Supabase docs | `docs/md/supabase/`, `docs/json/supabase/` |
+| Cloudflare | `docs/md/cloudflare/` — **human operator read only** |
+| PayPal | `docs/md/paypal/` |
+
+## Runtime (not under docs/)
+
+- `active_development/firebase/firestore.rules`
+- `active_development/firebase.json`
+- `active_development/js/firebase.js`
+- `active_development/supabase/`

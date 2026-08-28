@@ -1,0 +1,31 @@
+{
+  "source_model": "master/HomeFinder.sh3d",
+  "levels": [
+    [
+      "level0",
+      "Basement",
+      "-150"
+    ],
+    [
+      "level1",
+      "1st floor",
+      "112"
+    ],
+    [
+      "level2",
+      "Roof",
+      "374"
+    ]
+  ],
+  "room_polygon_count": 13,
+  "door_or_window_count": 27,
+  "furniture_count": 114,
+  "furniture_group_count": 6,
+  "light_count": 6,
+  "observer_camera_count": 6,
+  "dimension_line_count": 20,
+  "polyline_count": 2,
+  "label_count": 2,
+  "text_element_count": 2,
+  "sha256": "33f7266779dd52c865c0529ffecd19f29986a15c65bfba384113f59b314c06b4"
+}

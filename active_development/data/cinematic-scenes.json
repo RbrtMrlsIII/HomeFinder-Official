@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "principle": "One cinematic runtime, page-owned visual identity.",
+  "scenes": {
+    "home": {"title":"HomeFinder Arrival","media":"assets/cinematic/home.webm","hero":"SweetHome3D-backed architectural arrival / premium residential district"},
+    "market": {"title":"Market Intelligence","media":"assets/cinematic/market.webm","hero":"hyper-realistic urban property market / map intelligence"},
+    "profile": {"title":"Personal Space","media":"assets/cinematic/profile.webm","hero":"premium private interior / personalized property environment"},
+    "broker": {"title":"Broker HQ","media":"assets/cinematic/broker.webm","hero":"luxury brokerage workspace / city skyline"},
+    "admin": {"title":"Operations","media":"assets/cinematic/admin.webm","hero":"secure operations command environment"},
+    "staff": {"title":"Operations","media":"assets/cinematic/staff.webm","hero":"service operations environment"},
+    "moderator": {"title":"Moderation","media":"assets/cinematic/moderator.webm","hero":"content safety / trust operations environment"},
+    "auth": {"title":"Welcome","media":"assets/cinematic/auth.webm","hero":"quiet premium entry architecture"},
+    "financing": {"title":"Financing","media":"assets/cinematic/financing.webm","hero":"modern financial district / architectural visualization"},
+    "legal": {"title":"HomeFinder","media":"assets/cinematic/legal.webm","hero":"minimal architectural ambient environment"}
+  }
+}

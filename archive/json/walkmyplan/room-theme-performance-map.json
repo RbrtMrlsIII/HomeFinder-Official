@@ -1,0 +1,116 @@
+{
+  "version": "A4.4C3.14",
+  "status": "PLANNED / ADJUSTABLE",
+  "rooms": [
+    {
+      "room": "BACKYARD",
+      "defaultTheme": "day",
+      "preferredThemes": [
+        "day",
+        "sunset",
+        "mist"
+      ],
+      "budget": "tier1-3",
+      "lightingRole": "arrival / architectural silhouette"
+    },
+    {
+      "room": "MAIN HALL",
+      "defaultTheme": "day",
+      "preferredThemes": [
+        "day",
+        "sunset",
+        "night",
+        "rain",
+        "mist",
+        "storm"
+      ],
+      "budget": "tier0-3",
+      "lightingRole": "hero / section focal transitions"
+    },
+    {
+      "room": "LOGIN ROOM",
+      "defaultTheme": "day",
+      "preferredThemes": [
+        "day",
+        "night",
+        "rain",
+        "mist"
+      ],
+      "budget": "tier0-2",
+      "lightingRole": "identity / calm focus"
+    },
+    {
+      "room": "REGISTER ROOM",
+      "defaultTheme": "day",
+      "preferredThemes": [
+        "day",
+        "sunset",
+        "mist"
+      ],
+      "budget": "tier0-2",
+      "lightingRole": "soft documentation focus"
+    },
+    {
+      "room": "MARKET",
+      "defaultTheme": "day",
+      "preferredThemes": [
+        "day",
+        "sunset",
+        "night",
+        "rain",
+        "mist"
+      ],
+      "budget": "tier0-3",
+      "lightingRole": "discovery / map readability"
+    },
+    {
+      "room": "PROFILE SUITE",
+      "defaultTheme": "day",
+      "preferredThemes": [
+        "day",
+        "sunset",
+        "night",
+        "rain",
+        "mist",
+        "storm"
+      ],
+      "budget": "tier0-2",
+      "lightingRole": "personal / station focus"
+    },
+    {
+      "room": "BROKER HQ",
+      "defaultTheme": "day",
+      "preferredThemes": [
+        "day",
+        "sunset",
+        "night",
+        "rain"
+      ],
+      "budget": "tier0-3",
+      "lightingRole": "premium intelligence / map"
+    },
+    {
+      "room": "OPERATIONS",
+      "defaultTheme": "night",
+      "preferredThemes": [
+        "day",
+        "night",
+        "storm"
+      ],
+      "budget": "tier0-2",
+      "lightingRole": "controlled command / status"
+    },
+    {
+      "room": "REFERENCE",
+      "defaultTheme": "day",
+      "preferredThemes": [
+        "day",
+        "mist",
+        "night"
+      ],
+      "budget": "tier0-2",
+      "lightingRole": "civic / archival calm"
+    }
+  ],
+  "securityNote": "Environmental appearance never changes role visibility or access paths. Admin presentation scope is confined to A-01 Admin; presentation never grants cross-console access."
+}

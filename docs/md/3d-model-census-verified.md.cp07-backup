@@ -1,0 +1,29 @@
+# 3D model census (verified)
+
+**Source:** `master/HomeFinder.sh3d`  
+**SHA-256:** `0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34`  
+**Method:** Direct read of `Home.xml` inside the SH3D (2026-08-24)
+
+## Counts
+
+| Entity | Count |
+|--------|------:|
+| Levels | 3 |
+| Rooms | 13 |
+| Walls | 42 |
+| Doors/windows | 27 |
+| Furniture | 114 |
+| Furniture groups | 6 |
+| Lights | 6 |
+| Active observer camera | 1 (unnamed current) |
+| Named stored cameras | 14 |
+| → legacy | 5 (Living room, Exterior, Corridor, Bedroom #1, Kitchen) |
+| → HF H-series | 9 (HF H-01 — hero … HF H-09 — contact) |
+
+## Named rooms (include)
+Terrace, Garage, Kitchen, Living room, Bedroom #1, Bedroom #2, Corridor  
+
+**Note:** Bedroom #2 is a **room**, not a stored camera. Do not invent a Bedroom #2 camera.
+
+## Superseded documents
+- `docs/archive/stale-census/10-SWEETHOME3D-MODEL-CENSUS.md` claimed 6 stored cameras and an older SHA — **not authority**.

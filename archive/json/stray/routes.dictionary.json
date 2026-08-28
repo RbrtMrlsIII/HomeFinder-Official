@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "homefinder.dictionary.routes",
+  "title": "HomeFinder Route Dictionary",
+  "version": 2,
+  "routes": [
+    {
+      "id": "home",
+      "path": "index.html",
+      "owner": "home",
+      "access": [
+        "guest",
+        "seeker",
+        "owner",
+        "broker",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "dataBoundary": "public/home discovery"
+    },
+    {
+      "id": "login",
+      "path": "login.html",
+      "owner": "auth",
+      "access": [
+        "guest",
+        "seeker",
+        "owner",
+        "broker",
+        "staff",
+        "moderator",
+        "admin"
+      ],
+      "dataBoundary": "authentication"
+    },
+    {
+      "id": "register",
+      "path": "register.html",
+      "owner": "auth",
+      "access": [
+        "guest"
+      ],
+      "dataBoundary": "account creation"
+    },
+    {
+      "id": "market",
+      "path": "market.html",
+      "owner": "market",
+      "access": [
+        "guest",
+        "seeker",
+        "owner"
+      ],
+      "dataBoundary": "Market discovery boundary",
+      "notes": "Guest sees shell/guide/pin intent only. Seeker consumes propertyListings. Owner consumes wantedListings. Broker selection redirects to Broker HQ."
+    },
+    {
+      "id": "broker-hq",
+      "path": "broker-hq.html",
+      "owner": "broker-hq",
+      "access": [
+        "broker",
+        "admin"
+      ],
+      "dataBoundary": "Broker HQ server projections",
+      "notes": "Broker command surface; broker must not use Market discovery."
+    },
+    {
+      "id": "profile",
+      "path": "profile.html",
+      "owner": "profile",
+      "access": [
+        "seeker",
+        "owner",
+        "broker"
+      ],
+      "dataBoundary": "Private Profile role-specific boundary",
+      "notes": "Visitor mode uses profile.html?uid=OTHER and is read-only public subset."
+    },
+    {
+      "id": "financing",
+      "path": "financing.html",
+      "owner": "government-reference",
+      "access": [
+        "public"
+      ],
+      "dataBoundary": "Government housing reference"
+    },
+    {
+      "id": "admin",
+      "path": "admin.html",
+      "owner": "admin",
+      "access": [
+        "admin"
+      ],
+      "dataBoundary": "Admin authority boundary"
+    },
+    {
+      "id": "moderator",
+      "path": "moderator.html",
+      "owner": "moderator",
+      "access": [
+        "moderator",
+        "admin"
+      ],
+      "dataBoundary": "Moderator authority boundary"
+    },
+    {
+      "id": "staff",
+      "path": "staff.html",
+      "owner": "ops",
+      "access": [
+        "staff",
+        "admin"
+      ],
+      "dataBoundary": "Staff authority boundary"
+    },
+    {
+      "id": "privacy",
+      "path": "privacy.html",
+      "owner": "legal",
+      "access": [
+        "public"
+      ],
+      "dataBoundary": "Static legal document"
+    },
+    {
+      "id": "terms",
+      "path": "terms.html",
+      "owner": "legal",
+      "access": [
+        "public"
+      ],
+      "dataBoundary": "Static legal document"
+    }
+  ]
+}

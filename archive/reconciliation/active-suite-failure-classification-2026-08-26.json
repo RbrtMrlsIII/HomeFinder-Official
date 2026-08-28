@@ -1,0 +1,16 @@
+{
+  "date": "2026-08-26",
+  "suite": {
+    "passed": 53,
+    "failed": 42,
+    "total": 95
+  },
+  "classifications": {
+    "current_test_path": 11,
+    "current_contract_assertion_drift": 1,
+    "superseded_historical_documentation_contract": 30
+  },
+  "next_gate": "5.5C-V.2",
+  "walkmyplan_active_references": 0,
+  "canonical_sh3d_sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34"
+}

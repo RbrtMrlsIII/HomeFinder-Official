@@ -1,0 +1,150 @@
+{
+  "version": "A4.4C3.10",
+  "principle": "navigation path is role-aware; backend remains authoritative",
+  "roles": {
+    "guest": {
+      "start": "BACKYARD",
+      "allowed_rooms": [
+        "BACKYARD",
+        "MAIN HALL",
+        "LOGIN ROOM",
+        "REGISTER ROOM",
+        "MARKET",
+        "REFERENCE"
+      ],
+      "blocked_rooms": [
+        "PROFILE SUITE",
+        "BROKER HQ",
+        "OPERATIONS"
+      ],
+      "preferred_paths": [
+        "MAIN HALL \u2192 LOGIN ROOM",
+        "MAIN HALL \u2192 REGISTER ROOM",
+        "MAIN HALL \u2192 MARKET",
+        "MAIN HALL \u2192 REFERENCE"
+      ]
+    },
+    "seeker": {
+      "start": "MAIN HALL",
+      "allowed_rooms": [
+        "BACKYARD",
+        "MAIN HALL",
+        "LOGIN ROOM",
+        "REGISTER ROOM",
+        "MARKET",
+        "PROFILE SUITE",
+        "REFERENCE"
+      ],
+      "blocked_rooms": [
+        "BROKER HQ",
+        "OPERATIONS"
+      ],
+      "preferred_paths": [
+        "LOGIN ROOM \u2192 PROFILE SUITE \u2192 MARKET",
+        "MAIN HALL \u2192 MARKET",
+        "PROFILE SUITE \u2192 REFERENCE"
+      ]
+    },
+    "owner": {
+      "start": "MAIN HALL",
+      "allowed_rooms": [
+        "BACKYARD",
+        "MAIN HALL",
+        "LOGIN ROOM",
+        "REGISTER ROOM",
+        "MARKET",
+        "PROFILE SUITE",
+        "REFERENCE"
+      ],
+      "blocked_rooms": [
+        "BROKER HQ",
+        "OPERATIONS"
+      ],
+      "preferred_paths": [
+        "LOGIN ROOM \u2192 PROFILE SUITE \u2192 MARKET",
+        "MAIN HALL \u2192 MARKET",
+        "PROFILE SUITE \u2192 REFERENCE"
+      ]
+    },
+    "broker": {
+      "start": "MAIN HALL",
+      "allowed_rooms": [
+        "BACKYARD",
+        "MAIN HALL",
+        "LOGIN ROOM",
+        "REGISTER ROOM",
+        "PROFILE SUITE",
+        "BROKER HQ",
+        "REFERENCE"
+      ],
+      "blocked_rooms": [
+        "OPERATIONS",
+        "MARKET live discovery"
+      ],
+      "preferred_paths": [
+        "LOGIN ROOM \u2192 PROFILE SUITE \u2192 BROKER GATE \u2192 BROKER HQ",
+        "MAIN HALL \u2192 PROFILE SUITE \u2192 BROKER HQ"
+      ]
+    },
+    "staff": {
+      "start": "MAIN HALL",
+      "allowed_rooms": [
+        "BACKYARD",
+        "MAIN HALL",
+        "LOGIN ROOM",
+        "REGISTER ROOM",
+        "REFERENCE",
+        "OPERATIONS[A-03]"
+      ],
+      "blocked_rooms": [
+        "MARKET",
+        "PROFILE SUITE",
+        "BROKER HQ",
+        "OPERATIONS[A-01,A-02]"
+      ],
+      "preferred_paths": [
+        "MAIN HALL \u2192 Staff Operations Door"
+      ]
+    },
+    "moderator": {
+      "start": "MAIN HALL",
+      "allowed_rooms": [
+        "BACKYARD",
+        "MAIN HALL",
+        "LOGIN ROOM",
+        "REGISTER ROOM",
+        "REFERENCE",
+        "OPERATIONS[A-02]"
+      ],
+      "blocked_rooms": [
+        "MARKET",
+        "PROFILE SUITE",
+        "BROKER HQ",
+        "OPERATIONS[A-01,A-03]"
+      ],
+      "preferred_paths": [
+        "MAIN HALL \u2192 Moderator Operations Door"
+      ]
+    },
+    "admin": {
+      "start": "MAIN HALL",
+      "allowed_rooms": [
+        "BACKYARD",
+        "MAIN HALL",
+        "LOGIN ROOM",
+        "REGISTER ROOM",
+        "REFERENCE",
+        "OPERATIONS[A-01]"
+      ],
+      "blocked_rooms": [
+        "MARKET",
+        "PROFILE SUITE",
+        "BROKER HQ",
+        "OPERATIONS[A-02,A-03]"
+      ],
+      "preferred_paths": [
+        "MAIN HALL \u2192 Admin Operations Door"
+      ]
+    }
+  }
+}

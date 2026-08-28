@@ -1,0 +1,8 @@
+id,level,name,floor_visible,ceiling_visible
+room-8447231e-8800-422e-8258-993c3818c55c,level1,Terrace,,false
+room-ba3cfd49-a545-4f2a-9a19-73cb10cb7f60,level0,Garage,,
+room-7731d0c9-4005-44ef-815d-f38969e4f269,level1,Kitchen,,
+room-f7418681-094a-400a-9858-b6dedb3e0ef5,level1,Living room,,
+room-575fc1c0-b03a-403b-b9f5-d777fc71d8a2,level1,Bedroom #1,,
+room-b9071fc4-c684-4eab-a6cd-64259683ec05,level1,Bedroom #2,,
+room-29eb6f38-c84e-4801-bc43-7d77beba3f57,level1,Corridor,,

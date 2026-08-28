@@ -1,0 +1,6 @@
+{
+  "storedImageFormats": ["image/jpeg", "image/jpg"],
+  "canonicalStoredContent": "JPEG",
+  "directBrowserStorageWrite": false,
+  "finalEnforcement": "server-side upload boundary plus storage policy where deployed"
+}

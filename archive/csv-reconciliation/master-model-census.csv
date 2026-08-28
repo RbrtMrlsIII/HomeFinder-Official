@@ -1,0 +1,13 @@
+entity,count,details
+levels,3,Basement; 1st floor; Roof
+rooms,13,named=7; unnamed=6
+walls,42,
+doors_windows,27,doors=12; windows=15
+furniture,123,
+furniture_groups,6,
+lights,6,
+observer_cameras,15,HF H-01..H-09=9; legacy/stored=6
+dimension_lines,20,
+polylines,2,
+labels,2,
+text_elements,2,

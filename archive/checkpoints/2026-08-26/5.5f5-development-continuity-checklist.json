@@ -1,0 +1,16 @@
+{
+  "execution": "5.5F.5",
+  "canonical_present": true,
+  "canonical_sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "canonical_expected": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "f3_candidate_present": true,
+  "additional_source_present": true,
+  "masterplan_present": true,
+  "ai_readme_present": true,
+  "readme_execution_discipline_recorded": true,
+  "previous_development_preserved": true,
+  "canonical_modified": false,
+  "runtime_code_changed": false,
+  "historical_navigation_deleted": false,
+  "missing_required_artifacts": 0
+}

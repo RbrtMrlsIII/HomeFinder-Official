@@ -1,0 +1,25 @@
+{
+  "heroAssetContract": "hero-scene-v1",
+  "required": [
+    "optimized scene/model or video loop",
+    "thumbnail/poster",
+    "mobile fallback",
+    "reduced-motion fallback",
+    "loading placeholder",
+    "license/source metadata"
+  ],
+  "rules": [
+    "Do not ship raw 4K masters to every device.",
+    "Hero media is lazy-loaded after route readiness.",
+    "Use adaptive quality tiers.",
+    "Pause or reduce animation when offscreen/backgrounded.",
+    "A missing hero asset must fall back without blocking route or HTML UI.",
+    "Keep hero media separate from business/data logic.",
+    "Reuse materials, lighting rigs and environment assets where practical."
+  ],
+  "tiers": {
+    "Tier 1": "static/poster + CSS/DOM motion; mobile-safe baseline",
+    "Tier 2": "optimized 3D/loop with constrained lighting and texture budgets",
+    "Tier 3": "high-fidelity cinematic scene for capable desktop hardware"
+  }
+}

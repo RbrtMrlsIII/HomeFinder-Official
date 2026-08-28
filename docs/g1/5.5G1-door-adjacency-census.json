@@ -1,0 +1,125 @@
+{
+  "gate": "5.5G.1",
+  "title": "Door & Adjacency Census \u2014 Geometry + Existing Navigation Evidence",
+  "status": "PRELIMINARY CENSUS COMPLETE / ROUTES NOT VALIDATED",
+  "source_checkpoint": "HomeFinder_5_5F5_continuity-reconciled.zip",
+  "source_model": "3d/staging/HomeFinder-merge-candidate-Additional-F3-reconciled.sh3d",
+  "canonical_model": "master/HomeFinder.sh3d",
+  "canonical_sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "f3_candidate_sha256": "21309c26ac11728180402b0ee94f97eab9f2c3ba6e9093ed071c955eb89ab5c5",
+  "candidate_inventory": {
+    "levels": 7,
+    "rooms": 47,
+    "walls": 170,
+    "door_or_window_objects": 86,
+    "door_like_objects": 31
+  },
+  "door_like_breakdown": [
+    {
+      "level": "add-level0",
+      "door_name": "Door",
+      "count": 1
+    },
+    {
+      "level": "add-level0",
+      "door_name": "Door frame",
+      "count": 1
+    },
+    {
+      "level": "add-level0",
+      "door_name": "Front door",
+      "count": 2
+    },
+    {
+      "level": "add-level0",
+      "door_name": "Open door",
+      "count": 2
+    },
+    {
+      "level": "add-level1",
+      "door_name": "Door",
+      "count": 5
+    },
+    {
+      "level": "add-level1",
+      "door_name": "Open door",
+      "count": 1
+    },
+    {
+      "level": "add-level1",
+      "door_name": "Rounded door",
+      "count": 3
+    },
+    {
+      "level": "level0",
+      "door_name": "Door",
+      "count": 3
+    },
+    {
+      "level": "level0",
+      "door_name": "Door frame",
+      "count": 2
+    },
+    {
+      "level": "level1",
+      "door_name": "Door",
+      "count": 5
+    },
+    {
+      "level": "level1",
+      "door_name": "Door frame",
+      "count": 1
+    },
+    {
+      "level": "level1",
+      "door_name": "Front door",
+      "count": 1
+    }
+  ],
+  "adjacency_status_counts": [
+    {
+      "status": "ADJACENCY_CANDIDATE",
+      "confidence": "HIGH",
+      "count": 17
+    },
+    {
+      "status": "ADJACENCY_CANDIDATE",
+      "confidence": "MEDIUM",
+      "count": 6
+    },
+    {
+      "status": "ONE_SIDED_OR_AMBIGUOUS",
+      "confidence": "MEDIUM",
+      "count": 4
+    }
+  ],
+  "important_findings": [
+    "The F3-reconciled candidate retains the canonical level namespace (level0/level1/level2) and adds namespaced levels add-level0..add-level3.",
+    "The candidate contains physically distinct additional clusters consistent with the F4/F5 allocation hypothesis, but topology does not yet prove House 2/House 3 transfers.",
+    "Geometric door-to-wall association and two-sided room sampling produce multiple high-confidence local adjacency candidates.",
+    "Several door records remain one-sided or ambiguous because the room polygons include unnamed/overlapping support polygons or exterior boundaries.",
+    "No route has been promoted from adjacency candidate to validated route.",
+    "No canonical SH3D or runtime code was modified by this census."
+  ],
+  "navigation_evidence": [
+    "Runtime route authority remains application-route based: public/product/operations/archive/checkpoints/development/vendor.",
+    "Current canonical routes include market.html, profile.html, broker-hq.html, admin.html, moderator.html and staff.html.",
+    "The current cinematic navigation layer performs one leave confirmation, then a cinematic exit, then location.assign(href); it does not yet perform physically validated inter-room traversal.",
+    "The current house camera rig maps logical sections to authored camera anchors, preserving UI intent -> presentation framing separation.",
+    "The runtime Sweet Home 3D viewer integration currently exposes only a small selectable camera set (5 named cameras) while the canonical topology evidence tracks 9 H-camera presentation zones; this is an integration gap, not a reason to rewrite the authority model.",
+    "Existing camera-rig and cinematic files still contain historical WalkMyPlan-derived naming/comments. They should be treated as historical/derived evidence unless and until the current contract explicitly replaces them; WalkMyPlan should not be resurrected as a runtime authority."
+  ],
+  "allocation_crosscheck": {
+    "H2": [
+      "Broker HQ -> Office",
+      "Operations/Admin -> large Living room",
+      "Shared H2 arrival -> Hall"
+    ],
+    "H3": [
+      "Seeker discovery -> Living Room",
+      "Owner management -> Attic",
+      "Focused profile/listing -> Bedroom zones"
+    ]
+  },
+  "next_gate": "Only after this G1 census is accepted: refine unresolved door endpoints and then perform route validation. Do not implement routes yet."
+}

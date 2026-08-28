@@ -1,0 +1,13 @@
+{
+  "legacy_ui_theme_traces_active": [],
+  "credential_shaped_secret_hits": [],
+  "users_rule": "allow read only admin or owner",
+  "publicProfiles_rule": "public read, client write denied",
+  "phoneIndex_rule": "owner-only read; owner/admin write semantics",
+  "visitor_profile_source": "publicProfiles",
+  "user_search_source": "publicProfiles",
+  "phone_uniqueness_source": "checkPhoneAvailability callable",
+  "responsive_matrix_rows": 72,
+  "responsive_source_status": "SOURCE_VERIFIED",
+  "responsive_browser_status": "BLOCKED_BY_REMOTE_SDK_HANG_IN_LOCAL_HARNESS"
+}

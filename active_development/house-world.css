@@ -1,0 +1,31 @@
+/* A.4 House World: one residence, many camera compositions. */
+.house-world{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none;background:#071014;--cam-x:0px;--cam-y:0px;--cam-z:0px;--world-progress:0;}
+.house-world > div{position:absolute;inset:-8%;will-change:transform,opacity;}
+.house-world-sky{background:radial-gradient(circle at 72% 25%,rgba(255,220,164,.34),transparent 25%),linear-gradient(180deg,#0d1d25 0%,#294a4c 48%,#d59b67 100%);transform:translate3d(calc(var(--cam-x) * .12),calc(var(--cam-y) * .08),0) scale(1.08);}
+.house-world-backyard{background:radial-gradient(ellipse at 65% 78%,rgba(104,194,166,.38),transparent 28%),linear-gradient(165deg,transparent 50%,rgba(8,29,25,.5) 100%);transform:translate3d(calc(var(--cam-x) * .28),calc(var(--cam-y) * .2),0) scale(1.06);}
+.house-world-house{inset:18% 8% 4%;background:linear-gradient(145deg,transparent 0 36%,rgba(218,205,180,.18) 36.5% 37.5%,transparent 38%),linear-gradient(90deg,transparent 0 43%,rgba(11,18,20,.78) 43.5% 67%,transparent 67.5%),linear-gradient(180deg,transparent 0 28%,rgba(16,24,25,.72) 28.5% 76%,transparent 76.5%);clip-path:polygon(15% 30%,55% 12%,88% 32%,88% 82%,15% 82%);filter:drop-shadow(0 30px 45px rgba(0,0,0,.32));transform:translate3d(calc(var(--cam-x) * .52),calc(var(--cam-y) * .38),0) scale(calc(1.02 + var(--world-progress) * .02));opacity:.82;}
+.house-world-hall{inset:22% 18% 5%;background:linear-gradient(90deg,transparent 0 20%,rgba(255,244,216,.16) 20.5% 21.5%,transparent 22% 73%,rgba(255,244,216,.13) 73.5% 74.5%,transparent 75%),radial-gradient(ellipse at 51% 38%,rgba(255,215,158,.22),transparent 34%);transform:perspective(900px) translate3d(calc(var(--cam-x) * .82),calc(var(--cam-y) * .65),calc(var(--cam-z) * 1px)) scale(calc(1 + var(--world-progress) * .035));opacity:calc(.28 + var(--world-progress) * .5);}
+.house-world-light{background:radial-gradient(circle at calc(50% + var(--cam-x)) 48%,rgba(255,232,187,.18),transparent 24%);mix-blend-mode:screen;opacity:.7;}
+.house-world-vignette{background:radial-gradient(ellipse at center,transparent 48%,rgba(0,0,0,.48) 100%);}
+.house-world-status{inset:auto auto 30px 30px;width:auto;height:auto;display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.62);font:600 10px/1.2 system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;transform:none!important;}
+.house-world-status i{display:block;width:34px;height:1px;background:currentColor;opacity:.55;}
+.house-arrival{position:fixed;inset:0;z-index:9998;overflow:hidden;background:#071014;display:grid;place-items:center;animation:arrival-exit 1.4s cubic-bezier(.76,0,.24,1) 2.7s forwards;pointer-events:none;}
+.arrival-sky,.arrival-landscape,.arrival-house{position:absolute;inset:-10%;}
+.arrival-sky{background:radial-gradient(circle at 70% 25%,rgba(255,226,171,.42),transparent 24%),linear-gradient(180deg,#09151c,#29494a 48%,#c4865d);animation:arrival-camera 3.8s cubic-bezier(.2,.75,.2,1) forwards;}
+.arrival-landscape{background:linear-gradient(165deg,transparent 44%,rgba(5,25,23,.76) 44.5% 100%);transform:scale(1.08);}
+.arrival-house{inset:18% 10% 2%;clip-path:polygon(18% 34%,53% 12%,86% 34%,86% 84%,18% 84%);background:linear-gradient(180deg,rgba(15,25,26,.05),rgba(10,18,20,.9));filter:drop-shadow(0 35px 55px rgba(0,0,0,.38));animation:arrival-house 3.2s cubic-bezier(.2,.7,.2,1) forwards;}
+.arrival-house-glow{position:absolute;inset:35% 24% 20%;background:radial-gradient(ellipse,rgba(255,213,152,.26),transparent 58%);}
+.arrival-door{position:absolute;left:48%;bottom:0;width:8%;height:31%;background:linear-gradient(90deg,#0c1517,#9f7751,#0c1517);box-shadow:0 0 34px rgba(255,212,145,.3);transform-origin:center bottom;animation:arrival-door-open 1.05s cubic-bezier(.76,0,.24,1) 2s forwards;}
+.arrival-copy{position:relative;z-index:2;display:grid;gap:10px;text-align:center;color:#fff;opacity:0;animation:arrival-copy 1s ease .65s forwards;}
+.arrival-copy span{font:600 10px/1 system-ui,sans-serif;letter-spacing:.32em;opacity:.62;}
+.arrival-copy strong{font:500 clamp(2rem,5vw,4.5rem)/1.02 Georgia,serif;letter-spacing:-.03em;}
+.house-camera-zone{position:relative;isolation:isolate;}
+.house-camera-zone > *{position:relative;z-index:1;}
+.house-camera-zone[data-house-zone]{--section-depth:0;}
+@keyframes arrival-camera{0%{transform:scale(1.22) translateY(8%)}100%{transform:scale(1) translateY(0)}}
+@keyframes arrival-house{0%{transform:scale(1.2) translateY(8%)}100%{transform:scale(1) translateY(0)}}
+@keyframes arrival-door-open{0%{transform:perspective(600px) rotateY(0deg)}100%{transform:perspective(600px) rotateY(-82deg)}}
+@keyframes arrival-copy{to{opacity:1}}
+@keyframes arrival-exit{0%{opacity:1}70%{opacity:1}100%{opacity:0;visibility:hidden}}
+@media (max-width:700px){.house-world-status{left:16px;bottom:16px}.house-world-house{inset:25% 0 8%;}.house-world-hall{inset:27% 8% 8%;}.arrival-copy strong{font-size:2.4rem}.house-arrival{animation-duration:1s;animation-delay:2.2s}}
+@media (prefers-reduced-motion:reduce){.house-arrival{animation:arrival-exit .35s ease .2s forwards}.arrival-sky,.arrival-house,.arrival-door,.arrival-copy{animation:none}.arrival-copy{opacity:1}.arrival-door{transform:perspective(600px) rotateY(-82deg)}.house-world > div{transform:none!important}.house-world-hall{opacity:.35}.house-world{--cam-x:0px;--cam-y:0px;--cam-z:0px;}}

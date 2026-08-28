@@ -1,0 +1,18 @@
+{
+  "version": "A4.4C3.12",
+  "status": "PLANNED / SHARED STATE",
+  "modes": ["day","sunset","night","rain","mist","storm"],
+  "room_overrides": {
+    "MAIN HALL": {"default":"day","allowed":"all","transition":"interpolated"},
+    "LOGIN ROOM": {"default":"day","allowed":"day,night,rain,mist","transition":"interpolated"},
+    "REGISTER ROOM": {"default":"day","allowed":"day,sunset,mist","transition":"interpolated"},
+    "MARKET": {"default":"day","allowed":"day,sunset,night,rain,mist","transition":"interpolated"},
+    "PROFILE SUITE": {"default":"day","allowed":"all","transition":"interpolated"},
+    "BROKER HQ": {"default":"day","allowed":"day,sunset,night,rain","transition":"interpolated"},
+    "OPERATIONS": {"default":"night","allowed":"day,night,storm","transition":"interpolated"},
+    "REFERENCE": {"default":"day","allowed":"day,mist,night","transition":"interpolated"}
+  },
+  "state_drives": ["sky","ambient_light","directional_light","interior_lights","material_response","reflections","weather","atmosphere","ui_palette","animation_intensity"],
+  "independent_accessibility": ["prefers-reduced-motion","contrast","keyboard","screen-reader"],
+  "forbidden_effects": ["changing roles","changing permissions","changing routes","changing business logic","changing data authority"]
+}

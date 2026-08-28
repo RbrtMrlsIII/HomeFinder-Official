@@ -1,0 +1,17 @@
+{
+  "checkpoint": "HomeFinder 5.5F.2",
+  "date": "2026-08-26",
+  "cumulative_source": "5.5F.1 checkpoint",
+  "canonical_sh3d_sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "canonical_sh3d_modified": false,
+  "new_gate": "5.5F.2",
+  "next_gate": "5.5F.3 \u2014 Three-House Candidate Physical Allocation",
+  "new_artifacts": [
+    "docs/md/5.5f2-deep-additional-sh3d-census.md",
+    "docs/json/reconciliation/5.5f2-deep-additional-sh3d-census.json",
+    "docs/csv/reconciliation/5.5f2-additional-sh3d-room-inventory.csv",
+    "docs/csv/reconciliation/5.5f2-merge-candidate-resource-reference-audit.csv",
+    "verification/2026-08-26/5.5f2-development-continuity-checklist.json"
+  ],
+  "file_count": 708
+}

@@ -1,0 +1,88 @@
+page_id,route,room,section,camera,range_start,range_end,direction,focal_object,asset_binding
+main-hall,index.html,MAIN HALL,hero,H-01,0.0,0.08,center,hero,hero/section shell only; runtime asset selected by camera/zone
+main-hall,index.html,MAIN HALL,about-home,H-02,0.08,0.14,slight-right,discovery,hero/section shell only; runtime asset selected by camera/zone
+main-hall,index.html,MAIN HALL,map,H-04,0.14,0.22,right/down,map,hero/section shell only; runtime asset selected by camera/zone
+main-hall,index.html,MAIN HALL,properties,H-03,0.22,0.3,slight-left,property-display,hero/section shell only; runtime asset selected by camera/zone
+main-hall,index.html,MAIN HALL,government-housing,H-05,0.3,0.37,left,government-desk,hero/section shell only; runtime asset selected by camera/zone
+main-hall,index.html,MAIN HALL,about,H-06,0.37,0.44,center-left,mission,hero/section shell only; runtime asset selected by camera/zone
+main-hall,index.html,MAIN HALL,mission,H-06,0.44,0.5,center,mission,hero/section shell only; runtime asset selected by camera/zone
+main-hall,index.html,MAIN HALL,spaces,H-07,0.5,0.57,slight-right,guide,hero/section shell only; runtime asset selected by camera/zone
+main-hall,index.html,MAIN HALL,roles,H-07,0.57,0.63,right,guide,hero/section shell only; runtime asset selected by camera/zone
+main-hall,index.html,MAIN HALL,guide,H-07,0.63,0.69,right/down,guide,hero/section shell only; runtime asset selected by camera/zone
+main-hall,index.html,MAIN HALL,pages,H-08,0.69,0.75,left,safety,hero/section shell only; runtime asset selected by camera/zone
+main-hall,index.html,MAIN HALL,features,H-08,0.75,0.81,left/down,safety,hero/section shell only; runtime asset selected by camera/zone
+main-hall,index.html,MAIN HALL,safety,H-08,0.81,0.86,center-left,safety,hero/section shell only; runtime asset selected by camera/zone
+main-hall,index.html,MAIN HALL,start,H-09,0.86,0.91,center-return,start,hero/section shell only; runtime asset selected by camera/zone
+main-hall,index.html,MAIN HALL,contact,H-09,0.91,0.96,right,contact,hero/section shell only; runtime asset selected by camera/zone
+main-hall,index.html,MAIN HALL,credits,H-09,0.96,0.985,rear/low,credits,hero/section shell only; runtime asset selected by camera/zone
+main-hall,index.html,MAIN HALL,footer,H-09,0.985,1.0,exit,footer,hero/section shell only; runtime asset selected by camera/zone
+login,login.html,LOGIN ROOM,login-form,L-01,0.0,0.45,hero-center,login-terminal,hero/section shell only; runtime asset selected by camera/zone
+login,login.html,LOGIN ROOM,password-recovery,L-02,0.45,0.65,slight-right,recovery-control,hero/section shell only; runtime asset selected by camera/zone
+login,login.html,LOGIN ROOM,social-auth,L-03,0.65,0.8,slight-left,social-auth,hero/section shell only; runtime asset selected by camera/zone
+login,login.html,LOGIN ROOM,register-handoff,L-04,0.8,0.92,doorward,registration-doorway,hero/section shell only; runtime asset selected by camera/zone
+login,login.html,LOGIN ROOM,credits,L-05,0.92,0.97,quiet,credits,hero/section shell only; runtime asset selected by camera/zone
+login,login.html,LOGIN ROOM,footer,L-05,0.97,1.0,exit,footer,hero/section shell only; runtime asset selected by camera/zone
+register,register.html,REGISTER ROOM,identity,R-01,0.0,0.2,hero-center,identity,hero/section shell only; runtime asset selected by camera/zone
+register,register.html,REGISTER ROOM,contact,R-02,0.2,0.38,slight-right,contact,hero/section shell only; runtime asset selected by camera/zone
+register,register.html,REGISTER ROOM,address,R-03,0.38,0.53,right/down,address,hero/section shell only; runtime asset selected by camera/zone
+register,register.html,REGISTER ROOM,account-type,R-04,0.53,0.7,center,account-type,hero/section shell only; runtime asset selected by camera/zone
+register,register.html,REGISTER ROOM,password,R-05,0.7,0.84,slight-left,password,hero/section shell only; runtime asset selected by camera/zone
+register,register.html,REGISTER ROOM,social-registration,R-06,0.84,0.93,left,social-registration,hero/section shell only; runtime asset selected by camera/zone
+register,register.html,REGISTER ROOM,login-handoff,R-07,0.93,0.97,doorward,login-doorway,hero/section shell only; runtime asset selected by camera/zone
+register,register.html,REGISTER ROOM,footer,R-07,0.97,1.0,exit,footer,hero/section shell only; runtime asset selected by camera/zone
+market,market.html,MARKET,market-guide,M-01,0.0,0.18,hero-center,market-directory,hero/section shell only; runtime asset selected by camera/zone
+market,market.html,MARKET,market-map-shell,M-02,0.18,0.48,right/down,market-map-table,hero/section shell only; runtime asset selected by camera/zone
+market,market.html,MARKET,market-discovery-rail,M-04,0.48,0.78,left,property-display-wall,hero/section shell only; runtime asset selected by camera/zone
+market,market.html,MARKET,market-contact,M-06,0.78,0.92,right,contact-desk,hero/section shell only; runtime asset selected by camera/zone
+market,market.html,MARKET,footer,M-06,0.92,1.0,exit,footer,hero/section shell only; runtime asset selected by camera/zone
+profile,profile.html,PROFILE SUITE,perks,P-01,0.0,0.08,hero-center,perk-portfolio,hero/section shell only; runtime asset selected by camera/zone
+profile,profile.html,PROFILE SUITE,messages,P-02,0.08,0.16,slight-right,message-terminal,hero/section shell only; runtime asset selected by camera/zone
+profile,profile.html,PROFILE SUITE,contracts,P-03,0.16,0.25,left/down,contracts-folder,hero/section shell only; runtime asset selected by camera/zone
+profile,profile.html,PROFILE SUITE,need-help,P-04,0.25,0.33,right,help-desk,hero/section shell only; runtime asset selected by camera/zone
+profile,profile.html,PROFILE SUITE,listing,P-05,0.33,0.43,right/down,listing-book,hero/section shell only; runtime asset selected by camera/zone
+profile,profile.html,PROFILE SUITE,wanted,P-06,0.43,0.52,left,wanted-notebook,hero/section shell only; runtime asset selected by camera/zone
+profile,profile.html,PROFILE SUITE,saved,P-07,0.52,0.6,left/down,saved-properties-cabinet,hero/section shell only; runtime asset selected by camera/zone
+profile,profile.html,PROFILE SUITE,saved-wanted,P-08,0.6,0.68,right/down,saved-wanted-cabinet,hero/section shell only; runtime asset selected by camera/zone
+profile,profile.html,PROFILE SUITE,reviews,P-09,0.68,0.76,center-left,review-ledger,hero/section shell only; runtime asset selected by camera/zone
+profile,profile.html,PROFILE SUITE,gov-housing,P-10,0.76,0.84,forward,government-housing-desk,hero/section shell only; runtime asset selected by camera/zone
+profile,profile.html,PROFILE SUITE,account,P-11,0.84,0.92,center,account-console,hero/section shell only; runtime asset selected by camera/zone
+profile,profile.html,PROFILE SUITE,broker-gate,P-12,0.92,0.97,doorward,broker-gate,hero/section shell only; runtime asset selected by camera/zone
+profile,profile.html,PROFILE SUITE,footer,P-12,0.97,1.0,exit,footer,hero/section shell only; runtime asset selected by camera/zone
+broker-hq,broker-hq.html,BROKER HQ,bhq-gate,B-01,0.0,0.08,hero-center,broker-desk,hero/section shell only; runtime asset selected by camera/zone
+broker-hq,broker-hq.html,BROKER HQ,bhq-home,B-01,0.08,0.24,center,broker-desk,hero/section shell only; runtime asset selected by camera/zone
+broker-hq,broker-hq.html,BROKER HQ,bhq-list-panel,B-02,0.24,0.42,slight-right,request-board,hero/section shell only; runtime asset selected by camera/zone
+broker-hq,broker-hq.html,BROKER HQ,bhq-service,B-03,0.42,0.58,left/down,service-board,hero/section shell only; runtime asset selected by camera/zone
+broker-hq,broker-hq.html,BROKER HQ,bhq-discovery-panel,B-04,0.58,0.78,right,intelligence-wall,hero/section shell only; runtime asset selected by camera/zone
+broker-hq,broker-hq.html,BROKER HQ,bhq-pins-panel,B-06,0.78,0.93,forward/down,service-pin-console,hero/section shell only; runtime asset selected by camera/zone
+broker-hq,broker-hq.html,BROKER HQ,footer,B-06,0.93,1.0,exit,footer,hero/section shell only; runtime asset selected by camera/zone
+admin,admin.html,OPERATIONS,verifications,A-01,0.0,0.14,hero-center,approval-desk,hero/section shell only; runtime asset selected by camera/zone
+admin,admin.html,OPERATIONS,kyc-registry,A-01,0.14,0.28,left,kyc-lockbox,hero/section shell only; runtime asset selected by camera/zone
+admin,admin.html,OPERATIONS,orders,A-01,0.28,0.4,right,orders-ledger,hero/section shell only; runtime asset selected by camera/zone
+admin,admin.html,OPERATIONS,verified,A-01,0.4,0.51,center,user-registry,hero/section shell only; runtime asset selected by camera/zone
+admin,admin.html,OPERATIONS,users,A-01,0.51,0.63,left/down,user-registry,hero/section shell only; runtime asset selected by camera/zone
+admin,admin.html,OPERATIONS,boosts,A-01,0.63,0.74,right/down,boost-console,hero/section shell only; runtime asset selected by camera/zone
+admin,admin.html,OPERATIONS,listing-help-pay,A-01,0.74,0.84,center-right,payment-console,hero/section shell only; runtime asset selected by camera/zone
+admin,admin.html,OPERATIONS,gov-housing,A-01,0.84,0.92,forward,government-desk,hero/section shell only; runtime asset selected by camera/zone
+admin,admin.html,OPERATIONS,gov-disclaimers,A-01,0.92,0.97,quiet,disclaimer-board,hero/section shell only; runtime asset selected by camera/zone
+admin,admin.html,OPERATIONS,footer,A-01,0.97,1.0,exit,footer,hero/section shell only; runtime asset selected by camera/zone
+moderator,moderator.html,OPERATIONS,properties,A-02,0.0,0.24,hero-center,moderation-board,hero/section shell only; runtime asset selected by camera/zone
+moderator,moderator.html,OPERATIONS,orders,A-02,0.24,0.44,right,payment-ledger,hero/section shell only; runtime asset selected by camera/zone
+moderator,moderator.html,OPERATIONS,wanted,A-02,0.44,0.62,left,wanted-board,hero/section shell only; runtime asset selected by camera/zone
+moderator,moderator.html,OPERATIONS,contracts,A-02,0.62,0.8,forward/down,contracts-desk,hero/section shell only; runtime asset selected by camera/zone
+moderator,moderator.html,OPERATIONS,verified,A-02,0.8,0.94,center,verified-users,hero/section shell only; runtime asset selected by camera/zone
+moderator,moderator.html,OPERATIONS,footer,A-02,0.94,1.0,exit,footer,hero/section shell only; runtime asset selected by camera/zone
+staff,staff.html,OPERATIONS,support,A-03,0.0,0.18,hero-center,support-desk,hero/section shell only; runtime asset selected by camera/zone
+staff,staff.html,OPERATIONS,reports,A-03,0.18,0.34,right,reports-board,hero/section shell only; runtime asset selected by camera/zone
+staff,staff.html,OPERATIONS,orders,A-03,0.34,0.5,left,orders-ledger,hero/section shell only; runtime asset selected by camera/zone
+staff,staff.html,OPERATIONS,users,A-03,0.5,0.66,center,user-lookup,hero/section shell only; runtime asset selected by camera/zone
+staff,staff.html,OPERATIONS,alerts,A-03,0.66,0.82,right/down,alerts-console,hero/section shell only; runtime asset selected by camera/zone
+staff,staff.html,OPERATIONS,listing-help-pay,A-03,0.82,0.94,forward,payment-reference,hero/section shell only; runtime asset selected by camera/zone
+staff,staff.html,OPERATIONS,footer,A-03,0.94,1.0,exit,footer,hero/section shell only; runtime asset selected by camera/zone
+financing-guide,financing.html,REFERENCE,what-this-page-is,G-01,0.0,0.28,hero-center,government-info-desk,hero/section shell only; runtime asset selected by camera/zone
+financing-guide,financing.html,REFERENCE,typical-path,G-01,0.28,0.54,slight-right,reference-book,hero/section shell only; runtime asset selected by camera/zone
+financing-guide,financing.html,REFERENCE,official-links,G-01,0.54,0.78,left,official-links-board,hero/section shell only; runtime asset selected by camera/zone
+financing-guide,financing.html,REFERENCE,coming-on-homefinder,G-01,0.78,0.94,quiet,future-service-board,hero/section shell only; runtime asset selected by camera/zone
+financing-guide,financing.html,REFERENCE,footer,G-01,0.94,1.0,exit,footer,hero/section shell only; runtime asset selected by camera/zone
+legal,privacy.html|terms.html,REFERENCE,document-hero,LGL-01,0.0,0.2,hero-center,legal-library,hero/section shell only; runtime asset selected by camera/zone
+legal,privacy.html|terms.html,REFERENCE,document-body,LGL-01,0.2,0.88,slow lateral drift,legal-library,hero/section shell only; runtime asset selected by camera/zone
+legal,privacy.html|terms.html,REFERENCE,footer,LGL-01,0.88,1.0,exit,footer,hero/section shell only; runtime asset selected by camera/zone

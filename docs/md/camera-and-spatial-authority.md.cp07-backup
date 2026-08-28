@@ -1,0 +1,67 @@
+# Camera and spatial authority (merged)
+
+**Status:** canonical working authority for 3D presentation  
+**Physical SoT:** `master/HomeFinder.sh3d`  
+**SHA-256:** `0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34`  
+**Date merged:** 2026-08-24  
+
+This file merges former working notes (animation/camera/door, physical UI objects, spatial reconciliation, master camera contract, main-hall camera notes) into one place. Phase-numbered sources were archived or superseded.
+
+## 1. Hard rules
+
+1. Sweet Home 3D cameras are **presentation-only**. They never grant auth, roles, KYC, payments, or data authority.
+2. There is **one** operational SH3D: `master/HomeFinder.sh3d`.
+3. **HF H-01 … HF H-09** already exist in the model — **bind UI, do not recreate**.
+4. Logical POVs (L-*, R-*, ARR-01) are not automatic physical cameras.
+5. **R-03** remains HOLD (no physical address field on register).
+6. **ARR-01** is retired as a required physical camera; arrival is 2D/cinematic-ui toward **HF H-01**.
+7. Production app stays HTML/CSS/JS (+ MapLibre for market). No production WebGL/Three triad.
+8. Environment themes affect presentation only.
+
+## 2. Verified camera census (from Home.xml)
+
+| Class | Count | Names |
+|-------|------:|-------|
+| Active observer | 1 | (unnamed current view) |
+| Legacy named | 5 | Living room, Exterior, Corridor, Bedroom #1, Kitchen |
+| HomeFinder H-series | 9 | HF H-01 — hero, HF H-02 — discovery, HF H-03 — property-display, HF H-04 — map, HF H-05 — government-desk, HF H-06 — mission, HF H-07 — guide, HF H-08 — safety, HF H-09 — contact |
+| **Named total** | **14** | |
+
+Bedroom #2 is a **room**, not a stored camera.
+
+## 3. Semantic UI binds (promoted plan)
+
+| Priority | App surface | Camera |
+|----------|-------------|--------|
+| P0 | Home hero | HF H-01 |
+| P1 | Home discovery | HF H-02 |
+| P1 | Featured listings | HF H-03 |
+| P1 | Market map page | HF H-04 (runtime MapLibre) |
+| P2 | Admin/gov/financing | HF H-05 |
+| P2 | Mission narrative | HF H-06 |
+| P2 | Guides/dictionary | HF H-07 |
+| P2 | Safety/KYC notices | HF H-08 |
+| P2 | Contact/footer/legal | HF H-09 |
+
+Login/Register logical POVs stay logical until a future room strategy. Profile and Broker HQ need no new HF camera for v1.
+
+## 4. Physical UI objects
+
+Physical UI object registries and contracts are **presentation mapping** evidence. They must not override Firestore rules, roles, or KYC. Prefer machine contracts under `docs/json/` when present; treat old WalkMyPlan copies as archive.
+
+## 5. Doors, routes, choreography
+
+Door/camera graphs and section choreography guide **presentation transitions** only. Route authorization remains `docs/json` route contracts + Firebase Auth.
+
+## 6. Change control for the SH3D
+
+1. Compare proposed state  
+2. Reconcile  
+3. Verify (including `verify-hf-cameras` style name check)  
+4. Recalculate SHA-256  
+5. Update this file + `docs/md/3d-authority.md` + `docs/json/3d-contract.json`  
+6. Replace binary deliberately  
+
+## 7. Superseded sources (do not edit as SoT)
+
+Former paths such as `active_development/docs/11-ANIMATION-CAMERA-DOOR-CONTRACT.md`, `12-PHYSICAL-UI-OBJECTS.md`, `13-SPATIAL-RECONCILIATION.md`, `31-MASTER-CAMERA-CONTRACT.md`, `35/36/37` main-hall notes — content folded here or kept only under `docs/md/archive/`.

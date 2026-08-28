@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "page": "login",
+  "root": "ui-object",
+  "objects": [
+    {
+      "id": "login-identity-terminal",
+      "label": "Login Identity Terminal",
+      "selector": "#login-form .field-group:nth-of-type(1)",
+      "kind": "auth-field-group",
+      "pov": "L-01",
+      "purpose": "primary identity/email entry",
+      "responsive": "auth-field",
+      "animation": "state"
+    },
+    {
+      "id": "login-recovery-control",
+      "label": "Login Recovery Control",
+      "selector": "#login-form .field-group:nth-of-type(2)",
+      "kind": "auth-recovery",
+      "pov": "L-02",
+      "purpose": "password/recovery path",
+      "responsive": "auth-field",
+      "animation": "state"
+    },
+    {
+      "id": "login-submit-console",
+      "label": "Login Submit Console",
+      "selector": "#login-submit",
+      "kind": "auth-submit",
+      "pov": "L-01",
+      "purpose": "primary login submission",
+      "responsive": "auth-action",
+      "animation": "emphasis"
+    },
+    {
+      "id": "login-social-terminal",
+      "label": "Login Social Terminal",
+      "selector": ".social-login",
+      "kind": "auth-social",
+      "pov": "L-03",
+      "purpose": "social authentication choices",
+      "responsive": "auth-social",
+      "animation": "state"
+    },
+    {
+      "id": "login-registration-doorway",
+      "label": "Login Registration Doorway",
+      "selector": ".auth-footer a[href=\"register.html\"]",
+      "kind": "auth-route",
+      "pov": "L-04",
+      "purpose": "registration transition",
+      "responsive": "auth-route",
+      "animation": "door"
+    },
+    {
+      "id": "login-credits-wall",
+      "label": "Login Credits Wall",
+      "selector": "#credits",
+      "kind": "credits",
+      "pov": "L-05",
+      "purpose": "supporting information and credits",
+      "responsive": "auth-secondary",
+      "animation": "micro"
+    }
+  ],
+  "stateContract": "phase12",
+  "securityBoundary": "presentation-only"
+}

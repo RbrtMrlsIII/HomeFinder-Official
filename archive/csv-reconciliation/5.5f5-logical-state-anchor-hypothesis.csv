@@ -1,0 +1,7 @@
+house,logical_state,anchor_candidate,reason
+H2,Broker HQ,Office,reusable presentation anchor
+H2,Operations/Admin,large Living room,reusable presentation anchor
+H2,Shared H2 arrival,Hall,arrival/transition anchor
+H3,Seeker discovery,Living Room,shared presentation anchor
+H3,Owner management,Attic,high-capacity shared anchor candidate
+H3,Focused profile/listing,Bedroom zones,focused presentation where density justifies it

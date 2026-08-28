@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "page": "profile",
+  "logicalRoom": "PROFILE SUITE",
+  "stateContract": "phase12",
+  "securityBoundary": "presentation-only",
+  "objects": [
+    {"id":"profile-perks-portfolio","label":"Profile Perks Portfolio","selector":"#panel-perks","pov":"P-01","kind":"portfolio","purpose":"personal rank, perks, portfolio and saved progress","responsive":"profile-panel","animation":"emphasis"},
+    {"id":"profile-message-terminal","label":"Profile Message Terminal","selector":"#panel-messages","pov":"P-02","kind":"messages","purpose":"authenticated conversation workspace","responsive":"profile-messages","animation":"state"},
+    {"id":"profile-contracts-folder","label":"Profile Contracts Folder","selector":"#panel-contracts","pov":"P-03","kind":"contracts","purpose":"authenticated contract workspace","responsive":"profile-panel","animation":"state"},
+    {"id":"profile-help-desk","label":"Profile Help Desk","selector":"#panel-need-help","pov":"P-04","kind":"support","purpose":"guided help request flow","responsive":"profile-form","animation":"state"},
+    {"id":"profile-listing-dossier","label":"Profile Listing Dossier","selector":"#panel-listing","pov":"P-05","kind":"listing","purpose":"property listing workflow","responsive":"profile-form","animation":"emphasis"},
+    {"id":"profile-saved-searches","label":"Profile Saved Searches","selector":"#panel-wanted","pov":"P-06","kind":"wanted","purpose":"wanted-property search workflow","responsive":"profile-form","animation":"state"},
+    {"id":"profile-alert-console","label":"Profile Alerts Console","selector":"#panel-saved","pov":"P-07","kind":"saved","purpose":"saved properties and alert-oriented state","responsive":"profile-cards","animation":"state"},
+    {"id":"profile-identity-console","label":"Profile Identity Console","selector":"#profile-header","pov":"P-08","kind":"identity","purpose":"authenticated identity and trust summary","responsive":"profile-header","animation":"emphasis"},
+    {"id":"profile-documents-archive","label":"Profile Documents Archive","selector":"#panel-contracts","pov":"P-09","kind":"documents","purpose":"document-centric contract/profile context","responsive":"profile-panel","animation":"state"},
+    {"id":"profile-preferences-console","label":"Profile Preferences Console","selector":"#panel-edit-fields","pov":"P-10","kind":"preferences","purpose":"account and preference controls","responsive":"profile-form","animation":"state"},
+    {"id":"profile-privacy-console","label":"Profile Privacy Console","selector":"#panel-edit-fields","pov":"P-11","kind":"privacy","purpose":"identity/privacy/security controls","responsive":"profile-form","animation":"state"},
+    {"id":"profile-broker-gate","label":"Profile Broker Gate","selector":"#profile-tabs","pov":"P-12","kind":"route-gate","purpose":"broker-route transition and logout/exit context","responsive":"profile-nav","animation":"door"}
+  ],
+  "responsiveModes":["mobile-portrait","mobile-landscape","compact","tablet","desktop","wide-desktop"],
+  "themes":["day","sunset","night","rain","mist","storm"],
+  "states":["idle","hover","focus","interaction-start","ui-open","loading","success","error","empty","disabled"]
+}

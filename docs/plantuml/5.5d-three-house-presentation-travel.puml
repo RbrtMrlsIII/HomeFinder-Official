@@ -1,0 +1,43 @@
+@startuml
+title HomeFinder 5.5D — Three-House Presentation and Physical Travel Contract
+
+actor User
+rectangle "Application Authority" as APP {
+  rectangle "Logical presentation destination" as LP
+  rectangle "Auth / Roles / Business Rules" as SEC
+  rectangle "HTML / CSS / JS / Animation / Responsive" as UI
+}
+rectangle "Canonical HomeFinder.sh3d" as SH3D {
+  rectangle "Authored rooms / objects" as GEO
+  rectangle "Authored doors / openings" as DOOR
+  rectangle "Authored cameras" as CAM
+  rectangle "Validated physical routes" as ROUTE
+}
+
+rectangle "House 1\nPublic / Hero\nindex.html + legal/footer" as H1
+rectangle "House 2\nBroker + Operations" as H2
+rectangle "House 3\nSeekers + Owners" as H3
+
+User --> APP
+LP --> UI
+APP --> LP
+APP --> SEC
+UI --> SH3D : request logical destination
+SH3D --> CAM : resolve physical camera
+SH3D --> ROUTE : resolve validated path
+ROUTE --> DOOR : execute door sequence
+ROUTE --> GEO : traverse geometry
+
+H1 -[hidden]right- H2
+H2 -[hidden]right- H3
+
+note right of ROUTE
+No teleportation.
+No wall penetration.
+No invented routes.
+Exit → door animation → traverse →
+house threshold → destination hero settle.
+Travel duration comes only from
+authored/validated spatial route data.
+end note
+@enduml

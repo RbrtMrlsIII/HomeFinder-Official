@@ -1,0 +1,13 @@
+route,present_in_feature_wiring,record_count,camera_authority_rule
+index.html,PRESENT,6,camera consumes section/route state; never grants access
+login.html,PRESENT,1,camera consumes section/route state; never grants access
+register.html,PRESENT,1,camera consumes section/route state; never grants access
+market.html,PRESENT,6,camera consumes section/route state; never grants access
+profile.html,PRESENT,12,camera consumes section/route state; never grants access
+broker-hq.html,PRESENT,6,camera consumes section/route state; never grants access
+admin.html,PRESENT,1,camera consumes section/route state; never grants access
+moderator.html,PRESENT,1,camera consumes section/route state; never grants access
+staff.html,PRESENT,1,camera consumes section/route state; never grants access
+financing.html,PRESENT,1,camera consumes section/route state; never grants access
+privacy.html,MISSING,0,camera consumes section/route state; never grants access
+terms.html,MISSING,0,camera consumes section/route state; never grants access

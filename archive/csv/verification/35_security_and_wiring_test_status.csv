@@ -1,0 +1,8 @@
+test,status,interpretation
+foundation-repair-01-authority-contracts.test.mjs,PASS,verified
+patch-22-admin-ops-authority.test.mjs,PASS,verified
+deep-dive-04-auth-roles-permissions.test.mjs,PASS,verified
+role-contract-subscription-path.test.mjs,PASS,verified
+dd05-ui-response-mapping.test.mjs,PASS,verified
+room-shell-physical-ui-mapping.test.mjs,PASS,verified
+patch-38-authority-wiring-audit.test.mjs,BLOCKED—missing authority-wiring dictionary,test harness dependency missing; not a logic failure

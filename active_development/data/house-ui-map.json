@@ -1,0 +1,164 @@
+{
+  "main-hall": {
+    "hero": [
+      "cinematic arrival",
+      "headline",
+      "primary CTA"
+    ],
+    "navigation": [
+      "primary nav",
+      "account entry",
+      "room navigation"
+    ],
+    "sections": [
+      "featured properties",
+      "quick actions",
+      "discovery/search",
+      "supporting content"
+    ]
+  },
+  "login": {
+    "hero": [
+      "welcome composition"
+    ],
+    "sections": [
+      "authentication form",
+      "password recovery",
+      "registration handoff"
+    ],
+    "navigation": [
+      "back to hall",
+      "register"
+    ]
+  },
+  "register": {
+    "hero": [
+      "invitation composition"
+    ],
+    "sections": [
+      "registration form",
+      "account options",
+      "terms/consent"
+    ],
+    "navigation": [
+      "login",
+      "back to hall"
+    ]
+  },
+  "listings": {
+    "hero": [
+      "listings room establishing shot"
+    ],
+    "sections": [
+      "search",
+      "filters",
+      "sort/view controls",
+      "results grid",
+      "pagination"
+    ],
+    "tabs": [
+      "for sale",
+      "for rent",
+      "other applicable listing states"
+    ]
+  },
+  "property-gallery": {
+    "hero": [
+      "property establishing shot"
+    ],
+    "sections": [
+      "gallery",
+      "property facts",
+      "description",
+      "location/map",
+      "contact/actions"
+    ],
+    "tabs": [
+      "overview",
+      "gallery",
+      "location",
+      "details"
+    ]
+  },
+  "map": {
+    "hero": [
+      "map-room establishing shot"
+    ],
+    "sections": [
+      "interactive map",
+      "search",
+      "filters",
+      "result details"
+    ]
+  },
+  "profile": {
+    "hero": [
+      "private-suite establishing shot"
+    ],
+    "sections": [
+      "profile summary",
+      "property",
+      "messages",
+      "list property"
+    ],
+    "tabs": [
+      "property",
+      "messages",
+      "list property"
+    ]
+  },
+  "finance": {
+    "hero": [
+      "office establishing shot"
+    ],
+    "sections": [
+      "finance overview",
+      "calculators/forms",
+      "documents",
+      "actions"
+    ]
+  },
+  "messages": {
+    "hero": [
+      "lounge establishing shot"
+    ],
+    "sections": [
+      "conversation list",
+      "active conversation",
+      "compose/reply"
+    ]
+  },
+  "favorites": {
+    "hero": [
+      "archive establishing shot"
+    ],
+    "sections": [
+      "saved properties",
+      "collections",
+      "sorting/filtering"
+    ]
+  },
+  "broker": {
+    "hero": [
+      "library/office establishing shot"
+    ],
+    "sections": [
+      "broker dashboard",
+      "clients/listings",
+      "documents",
+      "actions"
+    ]
+  },
+  "settings": {
+    "hero": [
+      "control-room establishing shot"
+    ],
+    "sections": [
+      "account",
+      "preferences",
+      "appearance/environment",
+      "privacy",
+      "security"
+    ]
+  }
+}

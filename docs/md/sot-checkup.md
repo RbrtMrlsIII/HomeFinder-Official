@@ -1,0 +1,59 @@
+# SoT checkup — 2026-08-24
+
+## Physical 3D
+
+| Claim | Source | Verdict |
+|-------|--------|---------|
+| Path `master/HomeFinder.sh3d` | PROJECT_AUTHORITY, contracts/3d.json | **OK** |
+| SHA `0e4d75…53cb34` | Binary hash + 3d.json + 3d-authority | **OK** |
+| Only one SH3D | Package inventory | **OK** |
+| HF H-01…H-09 names present | Home.xml verify script | **OK** |
+| `docs/md/project-authority.md` said PENDING_RECONCILIATION | Was contradicting locked 3d-authority | **FIXED** this session |
+| AD `10-SWEETHOME3D-MODEL-CENSUS.md` (6 cameras, SHA `33f726…`) | Stale | **ARCHIVED** → `archive/stale-census/` |
+| New census | `docs/md/3d-model-census-verified.md` | **CURRENT** |
+
+## App / data SoT (docs only — not live Firebase probe)
+
+| Claim | Source | Notes |
+|-------|--------|-------|
+| Roles owner/seeker/broker/staff/moderator/admin | project-authority, roles contract | Align with live `canonicalRole` in app before treating as final |
+| Collections propertyListings, wantedListings | PROJECT_AUTHORITY | Confirm firestore.rules match |
+| Firebase project id was wrong in older docs (`homefinder`); **fixed to `homefinder-official`** | project-authority | Confirm against `active_development` firebase config |
+| Supabase paths under active_development | PROJECT_AUTHORITY | OK as path authority |
+
+## Documentation layers
+
+| Layer | Role |
+|-------|------|
+| `docs/json/project-authority.json` + `docs/md/` + `docs/json/` | **Current SoT** |
+| `active_development/docs/*` remaining | Working notes / phase logs — **candidates to merge or archive** |
+| `reconciliation/` | Historical evidence |
+| `archive/` | Superseded stubs, phase audits, stale census |
+
+## Archive actions this session (no deletes)
+
+- Superseded stubs → `archive/superseded-active-docs/`
+- Phase audit markdowns → `archive/phase-audits/`
+- Stale model census → `archive/stale-census/`
+
+## Candidates for later line-by-line merge/archive
+
+Remaining under `active_development/docs/` (examples):
+
+- `31-MASTER-CAMERA-CONTRACT.md` — living rules OK; must not override Home.xml camera list
+- `13-SPATIAL-RECONCILIATION.md`, `11-ANIMATION-CAMERA-DOOR-CONTRACT.md`, `12-PHYSICAL-UI-OBJECTS.md` — overlap with contracts/3d and spatial data; merge later
+- `19-LANDMINES-OPEN-ISSUES.md` — triage into BUGS vs resolved
+- Numbered `30–40` phase gate notes — archive after extracting open actions
+- Duplicate top-level `docs/json/*.json` vs nested `docs/json/roles/` etc. — dedupe map later
+
+## Open conflicts (not fixed in binary)
+
+1. ~~Firebase project id~~ **Resolved:** docs now use `homefinder-official`; database id remains `homefinder`  
+2. **Working notes still numbered** (`02-PROJECT-MAP.md` …) — rename/merge in a later pass  
+3. **CHECKPOINT_MANIFEST** file lists may still mention old paths — regenerate when convenient  
+
+## Rule going forward
+
+If two docs disagree on SH3D path or SHA, **hash the binary**.  
+If two docs disagree on camera count, **read Home.xml**.  
+Do not promote `active_development/docs` phase files to SoT without an explicit copy into `docs/md/` or `docs/json/`.

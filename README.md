@@ -1,0 +1,49 @@
+# HomeFinder package
+
+**Agents:** open `project-guide/AI_ASSISTANT_READ_ME.md` first.
+
+Docs: `docs/md`, `docs/csv`, `docs/json`  
+Integrations: `docs/md/firebase|supabase|cloudflare|paypal`  
+App: `active_development/` (`firestore.rules` stays under `firebase/`)  
+3D: `master/HomeFinder.sh3d`
+
+## Engineering Execution Discipline — Flashlight Method
+
+Future sessions must preserve this execution behavior:
+
+1. Read `project-guide/AI_ASSISTANT_READ_ME.md`, `project-guide/masterplan.md`, active contracts, spatial-authority documents, and latest checkpoint/audit manifests before changes.
+2. Work chronologically and execute only the next approved gate unless evidence requires a documented branch.
+3. Use one bounded hypothesis at a time; inspect evidence before repairing or promoting anything.
+4. Classify failures before fixing them; distinguish current contracts from historical/superseded expectations.
+5. Protect `master/HomeFinder.sh3d` until candidate reconciliation gates are passed.
+6. Prefer repairing useful staged work over rebuilding it; preserve originals as evidence.
+7. Do not pursue green tests at the expense of the current architecture.
+8. Do not delete old runtime/navigation code until replacement responsibility is reconciled, proven, and documented.
+9. Before every checkpoint, verify all previously accepted development is present plus the current changes.
+10. Update `project-guide/masterplan.md`, `project-guide/AI_ASSISTANT_READ_ME.md`, README execution discipline, reports, manifests, and relevant census artifacts.
+11. End every gate with findings, verdict, unresolved constraints, checkpoint, and exactly the next recommended gate.
+12. Never equate UI/page/DOM counts with room/object counts. Physical anchors may serve multiple logical UI states.
+13. Adapt MASTER_SKILL.md.
+14. Visit PRODUCT-KNOWLEDGE.md.
+15. Please be guided by CODING-INSTRUCTIONS.md.
+
+
+
+## Current execution state — G1.5
+
+Semantic room/container reconciliation is complete. Physical route validation remains blocked. No runtime, canonical SH3D, or F3 candidate changes were made. Next gate: bind physical doors against semantically eligible spaces and logical navigation contracts.
+
+## SESSION CONTINUITY — REQUIRED
+
+HomeFinder uses exactly two live continuity files:
+
+### `project-guide/Endorsement.md`
+The chronological execution map and progress ledger for backend, security, frontend, testing, 3D, spatial, integration, and deployment work. A task is marked `☑️` only after implementation, verification, documentation, and checkpoint inclusion are complete.
+
+### `project-guide/HandOver.md`
+The single current-state handover. It must contain the latest findings, results, fixes, decisions, protected rules, checkpoint state, and next continuation point. Never create numbered, dated, or gate-specific handover replacements.
+
+### Mandatory session order
+New sessions must read `README.md`, then `project-guide/HandOver.md`, then `project-guide/Endorsement.md`, then relevant existing audits/contracts. Consult `project-guide/masterplan.md` and `project-guide/AI_ASSISTANT_READ_ME.md` when deeper architectural or assistant guidance is needed.
+
+At checkpoint time, `project-guide/Endorsement.md`, `project-guide/HandOver.md`, and the actual project files must agree. Partial work stays unchecked. Detailed evidence belongs in existing `docs/` audit locations rather than new handover files.

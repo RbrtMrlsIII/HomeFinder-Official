@@ -1,0 +1,398 @@
+/* OWNER: site header / navbar (home). Profile header → css/profile/layout.css */
+/* HF-BUILD-2026-08-13-V14 | file: navbar.css | DO NOT USE OLD CACHE PATH */
+/* ================================ */
+/*  NAVBAR — glass + Get Started    */
+/* ================================ */
+
+header.header {
+    position: fixed;
+    /* Sits below the "Under development" banner (index.html), not on
+       top of it -- --dev-banner-height is measured by js/home/navbar.js;
+       52px fallback matches the banner's un-measured single-line height. */
+    top: var(--dev-banner-height, 52px);
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* True glass: light frost that stays glass on scroll */
+    background: rgba(255, 250, 242, 0.72);
+    backdrop-filter: blur(18px) saturate(1.35);
+    -webkit-backdrop-filter: blur(18px) saturate(1.35);
+    border-bottom: 1px solid rgba(91, 64, 48, 0.14);
+    box-shadow: 0 4px 20px rgba(44, 38, 33, 0.06);
+    transition: background 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease;
+}
+
+/* Scrolled: dark clay glass — high contrast over long pages */
+header.header.is-scrolled {
+    background: rgba(58, 48, 40, 0.94);
+    backdrop-filter: blur(22px) saturate(1.35);
+    -webkit-backdrop-filter: blur(22px) saturate(1.35);
+    border-bottom: 1px solid rgba(243, 236, 224, 0.18);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+}
+
+.navbar {
+    position: relative;
+    width: 100%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    padding: 0 3%;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 1px solid rgba(122, 90, 62, 0.2);
+}
+
+header.header.is-scrolled .logo img {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.logo span {
+    color: #5B4030;
+    font-size: 17px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: color 0.25s ease;
+}
+
+header.header.is-scrolled .logo span {
+    color: #F3ECE0;
+}
+
+.nav-scroll {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.nav-scroll::-webkit-scrollbar { display: none; }
+
+.nav-links {
+    display: flex;
+    gap: 4px;
+    flex-shrink: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #3D2E22;
+    font-weight: 600;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    font-weight: 650;
+    font-size: 13.5px;
+    white-space: nowrap;
+    padding: 8px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #7A5A3E;
+    background: rgba(122, 90, 62, 0.08);
+}
+
+header.header.is-scrolled .nav-links a {
+    color: rgba(243, 236, 224, 0.95);
+}
+
+header.header.is-scrolled .nav-links a:hover,
+header.header.is-scrolled .nav-links a.active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    margin-left: 4px;
+}
+
+.login-btn,
+.register-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 650;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: 0.2s ease;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.login-btn {
+    background: transparent;
+    color: #5B4030;
+    border-color: rgba(91, 64, 48, 0.4);
+}
+
+.register-btn {
+    background: #7A5A3E;
+    color: #fff;
+    border-color: #7A5A3E;
+}
+
+header.header.is-scrolled .login-btn {
+    color: #F3ECE0;
+    border-color: rgba(243, 236, 224, 0.4);
+}
+
+header.header.is-scrolled .register-btn {
+    background: #C4A574;
+    border-color: #C4A574;
+    color: #2C2621;
+}
+
+.search-toggle {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(122, 90, 62, 0.25);
+    background: rgba(255,255,255,0.35);
+    color: #5B4030;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+header.header.is-scrolled .search-toggle {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.2);
+    color: #F3ECE0;
+}
+
+/* =========================================
+   GET STARTED — floating chip + animation
+   ========================================= */
+.floating-register {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 3% 8px;
+    padding: 8px 14px 8px 16px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #7A5A3E, #9C8768);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow:
+        0 4px 14px rgba(122, 90, 62, 0.35),
+        0 0 0 1px rgba(255,255,255,0.12) inset;
+    animation: getStartedIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both,
+               getStartedPulse 2.4s ease-in-out 0.8s infinite;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: fit-content;
+    max-width: calc(100% - 6%);
+}
+.floating-register .arrow {
+    display: inline-flex;
+    animation: getStartedArrow 1.2s ease-in-out infinite;
+}
+.floating-register:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow:
+        0 8px 22px rgba(122, 90, 62, 0.45),
+        0 0 0 1px rgba(255,255,255,0.18) inset;
+    animation-play-state: paused;
+}
+
+@keyframes getStartedIn {
+    from {
+        opacity: 0;
+        transform: translateX(-18px) scale(0.92);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+@keyframes getStartedPulse {
+    0%, 100% {
+        box-shadow:
+            0 4px 14px rgba(122, 90, 62, 0.35),
+            0 0 0 0 rgba(196, 165, 116, 0.45);
+    }
+    50% {
+        box-shadow:
+            0 4px 18px rgba(122, 90, 62, 0.4),
+            0 0 0 8px rgba(196, 165, 116, 0);
+    }
+}
+@keyframes getStartedArrow {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(4px); }
+}
+
+header.header.is-scrolled .floating-register {
+    background: linear-gradient(135deg, #C4A574, #9C8768);
+    color: #1a1510;
+}
+
+@media (max-width: 420px) {
+    .nav-links a { padding: 8px 7px; font-size: 12.5px; }
+    .login-btn, .register-btn { padding: 7px 11px; font-size: 12px; }
+}
+
+
+/* Mobile header — nav + Get Started under it, glass stays translucent */
+@media (max-width: 768px) {
+  header.header {
+    padding: 10px 4% 10px;
+    /* Keep glass translucent so hero content remains visible underneath */
+    background: rgba(255, 250, 242, 0.68);
+  }
+  header.header .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+  }
+  .nav-scroll {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    gap: 2px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .nav-scroll::-webkit-scrollbar { display: none; }
+  .nav-scroll a {
+    flex: 0 0 auto;
+    padding: 7px 11px;
+    font-size: 13px;
+    font-weight: 650;
+    border-radius: 999px;
+    color: #2C2621;
+    opacity: 1;
+  }
+  .nav-scroll a.active {
+    background: rgba(122, 90, 62, 0.14);
+    color: #5B4030;
+  }
+  /* Fixed chip under nav — does not grow the glass header.
+     Offset stacks below both the dev banner and the nav header
+     themselves (both JS-measured in js/home/navbar.js) instead of a
+     flat guess, so it doesn't land on top of / overlap the banner. */
+  .floating-register {
+    position: fixed;
+    top: calc(var(--dev-banner-height, 52px) + var(--home-header-height, 72px));
+    left: 4%;
+    margin: 0;
+    min-height: 40px;
+    padding: 0 16px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 999px;
+    z-index: 900;
+    background: linear-gradient(135deg, #7A5A3E, #9C8768);
+  }
+  header.header {
+    /* single-row glass only */
+    padding: 8px 4%;
+  }
+  header.header .navbar {
+    height: 56px;
+  }
+  header.header.is-scrolled {
+    background: rgba(32, 26, 22, 0.58);
+    border-bottom-color: rgba(255, 255, 255, 0.12);
+  }
+  header.header.is-scrolled .nav-scroll a {
+    color: #F3ECE0;
+    opacity: 1;
+  }
+  header.header.is-scrolled .nav-scroll a.active {
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+  }
+  header.header.is-scrolled .logo span {
+    color: #F3ECE0;
+  }
+  header.header.is-scrolled .search-toggle {
+    color: #F3ECE0;
+    border-color: rgba(255,255,255,0.2);
+  }
+}
+
+/* Profile glass theme must NOT live here — profile owns glass under
+   body.profile-page / #profile-header in css/profile/layout.css only. */
+
+/* Scrolled nav contrast (logo span owned once above; background owned at top) */
+header.header.is-scrolled .nav-links a,
+header.header.is-scrolled .nav-scroll a {
+  color: #F3ECE0;
+}
+
+
+/* Auth-aware home header actions */
+/* [hidden] is native — no override */
+.profile-btn,
+.logout-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 650;
+  font-size: 13px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: 0.2s ease;
+  white-space: nowrap;
+}
+.profile-btn {
+  background: linear-gradient(135deg, #7A5A3E, #9C8768);
+  color: #fff;
+  border-color: transparent;
+}
+.logout-btn {
+  background: transparent;
+  color: #5B4030;
+  border-color: rgba(122, 90, 62, 0.35);
+}
+header.header.is-scrolled .profile-btn {
+  background: linear-gradient(135deg, #C4A574, #9C8768);
+  color: #1a1510;
+}
+header.header.is-scrolled .logout-btn {
+  color: #F3ECE0;
+  border-color: rgba(255, 255, 255, 0.28);
+}
+.floating-register[hidden] {
+  display: none;
+}

@@ -1,0 +1,5 @@
+{
+  "canonicalCollections": ["propertyListings", "wantedListings", "users", "publicProfiles"],
+  "authenticationAuthority": "firebaseAuth",
+  "crossSystemRule": "Supabase must consume aligned authority definitions"
+}

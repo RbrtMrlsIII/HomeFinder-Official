@@ -1,0 +1,36 @@
+# 2026-08-23 Authority Migration
+
+## Decision
+
+HomeFinder is moving away from numbered/patch-based SoT document governance to a semantic authority structure.
+
+## Target layers
+
+- `docs/md/` — current truth
+- `docs/json/` — machine-checkable boundaries
+- `docs/reconciliation/` — active fixes and migrations
+- `docs/evidence/` — proof of checks
+- `docs/archive/` — historical material
+
+## Completed in this checkpoint
+
+1. Added `PROJECT_AUTHORITY.json`.
+2. Added canonical role, route, data, KYC, Firebase, Supabase, and 3D contracts.
+3. Added canonical verification directories.
+4. Removed active application reads/writes against the retired `properties` collection.
+5. Removed legacy `properties` quota counting from `createListing`.
+6. Moved listing reviews to the canonical `propertyListings/{id}/reviews` path.
+7. Added `canonicalRole` support to profile creation/update and security rules.
+8. Normalized legacy owner aliases at the application/rules boundary.
+9. Corrected the Spark-safe canonical listing fallback to write only `propertyListings` / `wantedListings`.
+10. Corrected KYC authority to admin-only and aligned the Supabase function with a service-account Firestore read model.
+11. Corrected the Firestore cooldown rule so owner boosts use the owner boost line rather than the seeker boost line.
+12. Established route classes: public, product, operations, verification, development, vendor.
+
+## Remaining migration
+
+Existing numbered/patch documents and old verification directories remain preserved until their references can be classified and migrated without breaking historical evidence. They are not allowed to override the new authority model.
+
+## Important constraint
+
+The Firebase project remains on the Spark/free plan. The canonical implementation therefore retains validated client fallbacks for listing creation where callable Functions are unavailable, while keeping server validation authoritative whenever the callable path is available.

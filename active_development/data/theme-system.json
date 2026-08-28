@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "status": "LIVING / ADJUSTABLE",
+  "theme_authority": "data/environment-modes.json + data/cinematic-worlds.json + docs/21-THEME-ANIMATION-ROOT.md",
+  "ui_theme_mode": "environment-driven",
+  "legacy_ui_mode": "removed_from_active_source",
+  "environment_themes": [
+    "day",
+    "sunset",
+    "night",
+    "rain",
+    "mist",
+    "storm"
+  ],
+  "ui_tokens_root": "css/variables.css",
+  "animation_tokens_root": "css/variables.css",
+  "animation_runtime_root": "js/design-roots.js",
+  "component_rule": "components consume root tokens; page-wide theme state is environment-driven only",
+  "security_rule": "theme changes may never change roles, permissions, routes, data authority, payment state, or security",
+  "accessibility": [
+    "prefers-reduced-motion",
+    "contrast",
+    "keyboard",
+    "screen-reader"
+  ],
+  "extensible": true,
+  "design_roots": "data/design-roots.json",
+  "camera_rule": "camera motion consumes root timing/easing tokens and remains presentation-only"
+}

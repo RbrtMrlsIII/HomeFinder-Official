@@ -1,0 +1,4 @@
+model,authority_status,rooms,walls,doors_windows,observer_cameras,notes
+master/HomeFinder.sh3d,CANONICAL,13,42,27,15,Protected physical/presentation authority
+3d/imports/Additional.sh3d,NON-AUTHORITATIVE INPUT,34,128,59,9,Stage/census/remap before any merge
+3d/staging/HomeFinder-merge-candidate-Additional.sh3d,NON-AUTHORITATIVE CANDIDATE,47,170,86,15,Candidate combined artifact; not canonical

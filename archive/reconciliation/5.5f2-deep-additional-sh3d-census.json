@@ -1,0 +1,81 @@
+{
+  "gate": "5.5F.2",
+  "status": "COMPLETE_READ_ONLY_CENSUS",
+  "merge_readiness": "NOT_READY",
+  "additional": {
+    "levels": 4,
+    "walls": 128,
+    "doors_windows": 59,
+    "rooms": 34,
+    "piece_of_furniture": 179,
+    "shelf_units": 21,
+    "lights": 25,
+    "dimension_lines": 38,
+    "polylines": 5,
+    "labels": 5,
+    "furniture_groups": 2,
+    "stored_cameras": 9,
+    "top_camera": 1,
+    "non_home_resources": 142
+  },
+  "candidate": {
+    "levels": 7,
+    "walls": 170,
+    "doors_windows": 86,
+    "rooms": 47,
+    "piece_of_furniture": 235,
+    "lights": 31,
+    "dimension_lines": 58,
+    "polylines": 7,
+    "labels": 7,
+    "furniture_groups": 8,
+    "stored_cameras": 15,
+    "top_camera": 1
+  },
+  "spatial_separation": {
+    "canonical_bbox": [
+      -284.85886,
+      -23.2,
+      1037.4973,
+      1165.1157
+    ],
+    "additional_bbox": [
+      2787.6812093176254,
+      -39.74377581995304,
+      6256.256064040102,
+      1287.156224180047
+    ],
+    "x_gap": 1750.1839093176254
+  },
+  "canonical_preservation": {
+    "canonical_ids": 249,
+    "exact_element_matches": 248,
+    "xml_whitespace_only_difference": 1,
+    "duplicate_ids": 0
+  },
+  "additional_id_remap": {
+    "add_prefixed_candidate_elements": 509,
+    "duplicate_ids": 0
+  },
+  "resource_payload": {
+    "additional_non_home_resources": 142,
+    "content_equivalent_candidate_copies": 142,
+    "candidate_prefix": "A_"
+  },
+  "candidate_reference_defect": {
+    "missing_model_occurrences": 0,
+    "missing_icon_occurrences": 248,
+    "distinct_missing_icon_ids": 42,
+    "missing_image_occurrences": 76,
+    "distinct_missing_image_ids": 13
+  },
+  "presentation_model": "many_to_many",
+  "page_exit_confirmation": {
+    "required": true,
+    "shows_source_and_destination": true,
+    "confirmation_precedes_travel": true,
+    "cancel_preserves_current_state": true,
+    "applies_same_house_and_house_transfer": true
+  },
+  "next_gate": "5.5F.3 \u2014 Three-House Candidate Physical Allocation"
+}

@@ -1,0 +1,37 @@
+{
+  "checkpoint": "5.5G.6D",
+  "status": "PASS_WITH_IMPLEMENTATION_GAPS",
+  "role_logic": "5.5G.6C applied and frozen",
+  "protected_logic_freeze": "PASS",
+  "protected_files": 12,
+  "canonical_sh3d": "master/HomeFinder.sh3d",
+  "canonical_sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+  "canonical_modified": false,
+  "firebase_deployed": false,
+  "runtime_physical_routes_promoted": 0,
+  "tests": {
+    "protected_logic_freeze": "PASS",
+    "role_hardening": "PASS",
+    "house_camera_rig": "PASS",
+    "3d_runtime_authority": "PASS"
+  },
+  "syntax_checked_files": [
+    "active_development/js/route-access-contract.js",
+    "active_development/js/profile/core.js",
+    "active_development/js/profile/logout.js",
+    "active_development/js/broker-hq.js",
+    "active_development/js/profile/saved-wanted.js",
+    "active_development/js/market.js",
+    "active_development/firebase/functions/index.js"
+  ],
+  "3d_findings": [
+    "Standalone Sweet Home 3D viewer loads canonical SH3D.",
+    "Viewer exposes 5 selectable cameras while canonical model contains 15 observer cameras.",
+    "Cinematic WebGL adapter/renderer is a prototype proxy layer, not canonical SH3D runtime.",
+    "Application pages do not directly load the cinematic adapter/renderer.",
+    "House camera state bridge exists but is presentation-only until physical route graph integration.",
+    "Physical UI objects navigate via application hrefs and do not validate physical portals.",
+    "House 2\u2194House 3 direct route is forbidden by frozen topology contract."
+  ],
+  "next_execution": "Implement one canonical application 3D runtime boundary, reconcile camera anchors, build validated physical portal graph, then connect role/session authorization at destination boundaries."
+}

@@ -1,0 +1,6 @@
+edge_id,level,node_a,node_b,confidence,validation_status
+E1,level1,Kitchen,Corridor,HIGH,candidate-only
+E2,level1,Bedroom #2,Corridor,HIGH,candidate-only
+E3,level1,Bedroom #1,Corridor,HIGH,candidate-only
+E4,level1,Living room,Corridor,HIGH,candidate-only
+E5,level1,Corridor,room-b437b24d-c9c1-47e0-aafd-aba247c86e34,HIGH,candidate-only front-door edge

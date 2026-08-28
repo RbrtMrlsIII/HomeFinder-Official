@@ -1,0 +1,66 @@
+{
+  "version": 2,
+  "status": "canonical",
+  "firebase": {
+    "projectId": "homefinder-official",
+    "projectDisplayName": "HomeFinder-Official",
+    "authDomain": "homefinder-official.firebaseapp.com",
+    "database": "homefinder",
+    "rulesPath": "active_development/firebase/firestore.rules",
+    "clientConfigPath": "active_development/js/firebase.js"
+  },
+  "identity": {
+    "canonicalRoleField": "canonicalRole",
+    "roles": [
+      "owner",
+      "seeker",
+      "broker",
+      "staff",
+      "moderator",
+      "admin"
+    ],
+    "rolesContract": "docs/json/firebase/canonical-roles.json"
+  },
+  "routes": {
+    "authority": "docs/json/firebase/route-authority.json"
+  },
+  "data": {
+    "canonical": [
+      "propertyListings",
+      "wantedListings",
+      "users",
+      "publicProfiles"
+    ],
+    "retired": [
+      "properties"
+    ]
+  },
+  "supabase": {
+    "docs": "docs/md/supabase/",
+    "contracts": "docs/json/supabase/",
+    "code": "active_development/supabase/",
+    "client": "active_development/js/supabase.js"
+  },
+  "paypal": {
+    "docs": "docs/md/paypal/",
+    "client": "active_development/js/payment-config.js"
+  },
+  "cloudflare": {
+    "docs": "docs/md/cloudflare/",
+    "note": "Human operator documentation only \u2014 not app runtime"
+  },
+  "kyc": {
+    "authority": "docs/json/firebase/kyc-authorization.json"
+  },
+  "threeD": {
+    "canonicalModel": "master/HomeFinder.sh3d",
+    "sha256": "0e4d75bcedbf2d9827917cd61c01780d0c1d4ba9b852dbcac65ca63e8353cb34",
+    "narrative": "docs/md/3d-authority.md"
+  },
+  "documentation": {
+    "wiring": "AI_ASSISTANT_READ_ME.md",
+    "md": "docs/md/",
+    "csv": "docs/csv/",
+    "json": "docs/json/"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "gate": "5.5G.1",
+  "subgate": "problematic-door-resolution",
+  "status": "RESOLVED FOR CENSUS; NO SH3D EDIT",
+  "records": [
+    {
+      "id": "add-doorOrWindow-7df82e15-d7fd-41b0-a439-00cb2483c426",
+      "level": "add-level1",
+      "name": "Rounded door",
+      "problem": "missing angle",
+      "evidence": "nearest wall add-add-wall31 is horizontal; wall normal is +90 degrees.",
+      "resolution": "derived_angle_1.5707963267948966",
+      "adjacency": "unnamed support room \u2194 Bedroom #1",
+      "confidence": "HIGH",
+      "runtime_action": "none; derived evidence only"
+    },
+    {
+      "id": "add-doorOrWindow-96d7d070-3b9e-40eb-9d36-1aba2a23ce3a",
+      "level": "add-level0",
+      "name": "Rounded door",
+      "problem": "missing angle",
+      "evidence": "nearest wall add-add-wall39 is horizontal; wall normal is +90 degrees.",
+      "resolution": "derived_angle_1.5707963267948966",
+      "adjacency": "unnamed support room \u2194 Kitchen",
+      "confidence": "HIGH",
+      "runtime_action": "none; derived evidence only"
+    },
+    {
+      "id": "add-doorOrWindow-a9d2243f-7915-4e3b-ade2-84ea750d93e3",
+      "level": "add-level1",
+      "name": "Rounded door",
+      "problem": "missing angle",
+      "evidence": "nearest wall add-add-wall16 is horizontal; wall normal is +90 degrees.",
+      "resolution": "derived_angle_1.5707963267948966",
+      "adjacency": "unnamed support room \u2194 Bedroom #2",
+      "confidence": "HIGH",
+      "runtime_action": "none; derived evidence only"
+    },
+    {
+      "id": "add-doorOrWindow-590b0303-c14e-4aa1-ba49-c0b3c60981a0",
+      "level": "add-level1",
+      "name": "Open door",
+      "problem": "missing angle + not geometrically bound",
+      "evidence": "door has no angle; nearest wall is 29.25 units away while its wallDistance metadata is 0.0147, indicating the object is not currently colocated with the nearest wall.",
+      "resolution": "retain unresolved orientation; classify as non-topological/opening artifact pending authoring evidence",
+      "adjacency": "unnamed room only; no proven wall crossing",
+      "confidence": "LOW",
+      "runtime_action": "do not use for route graph"
+    },
+    {
+      "id": "doorOrWindow-084e4aac-b73a-4e78-a804-ee88ffd4c4d3",
+      "level": "level1",
+      "name": "Front door",
+      "problem": "ambiguous two-sided room sampling",
+      "evidence": "catalogId is eTeks#frontDoor; nearest wall33 is 1.235 units away; wall runs at x=-4.5 and door is outside the room polygon on the exterior side.",
+      "resolution": "classify as exterior entrance: Corridor \u2194 exterior",
+      "adjacency": "Corridor \u2194 EXTERIOR",
+      "confidence": "HIGH",
+      "runtime_action": "eligible as House 1 exterior-entry candidate, not interior adjacency"
+    },
+    {
+      "id": "add-doorOrWindow-20899be4-b9af-4664-9c62-53e8a180a001",
+      "level": "add-level0",
+      "name": "Front door",
+      "problem": "ambiguous two-sided room sampling",
+      "evidence": "catalogId is eTeks#frontDoor; nearest wall add-wall0 is 3.611 units away; Living Room is the nearest interior room on the wall-facing side and the opposite side is exterior.",
+      "resolution": "classify as exterior entrance: Living Room \u2194 exterior",
+      "adjacency": "Living Room \u2194 EXTERIOR",
+      "confidence": "HIGH",
+      "runtime_action": "eligible as candidate exterior entrance for additional house, not interior adjacency"
+    },
+    {
+      "id": "add-doorOrWindow-c7805654-0e93-4b58-9a34-5ee1ad3f5183",
+      "level": "add-level0",
+      "name": "Open door",
+      "problem": "ambiguous wall association",
+      "evidence": "nearest wall is 33.456 units away; door point lies inside Kitchen polygon; no credible wall-crossing geometry was found.",
+      "resolution": "classify as floating/non-topological presentation object until authoring evidence proves an opening",
+      "adjacency": "Kitchen only",
+      "confidence": "HIGH for non-topological classification",
+      "runtime_action": "exclude from route graph"
+    },
+    {
+      "id": "add-doorOrWindow-6ecf091c-549e-4dfa-9716-1a8a5b6b15c3",
+      "level": "add-level0",
+      "name": "Open door",
+      "problem": "ambiguous wall association",
+      "evidence": "nearest wall is 33.500 units away; door point lies inside Office polygon; no credible wall-crossing geometry was found.",
+      "resolution": "classify as floating/non-topological presentation object until authoring evidence proves an opening",
+      "adjacency": "Office only",
+      "confidence": "HIGH for non-topological classification",
+      "runtime_action": "exclude from route graph"
+    }
+  ],
+  "policy": "Resolution is evidence classification, not mutation of the SH3D. No route is promoted from these records."
+}

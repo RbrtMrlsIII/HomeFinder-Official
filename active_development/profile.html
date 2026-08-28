@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile · HomeFinder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css?v=57">
+  <link rel="stylesheet" href="css/market-profile-physical-ui.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/transition.css">
+  <link rel="stylesheet" href="css/toast.css">
+  <link rel="stylesheet" href="css/navbar.css?v=57">
+  <link rel="stylesheet" href="css/search.css">
+  <link rel="stylesheet" href="css/profile/layout.css?v=hdrA7">
+  <link rel="stylesheet" href="css/profile/panels.css?v=passB">
+  <link rel="stylesheet" href="css/profile/forms.css?v=63">
+  <link rel="stylesheet" href="css/profile/listing-form.css?v=57">
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@6.3.0/dist/maplibre-gl.css">
+  <link rel="stylesheet" href="css/profile/kyc.css?v=57">
+  <link rel="stylesheet" href="css/profile/perks-showcase.css?v=57">
+  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href="css/profile/ui-upgrade.css?v=68">
+  <link rel="stylesheet" href="css/profile/responsive.css?v=67">
+  <link rel="stylesheet" href="css/profile/visitor.css">
+  <link rel="stylesheet" href="css/responsive.css?v=57">
+  <link rel="stylesheet" href="css/customSelect.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/viewport/mobile.css?v=68">
+
+  <style id="hf-profile-scroll-critical">
+    /* Profile scrollport = body (mobile WebViews). Fixed header does not own scroll. */
+    html {
+      height: 100%;
+      overflow: hidden; /* body scrolls, not html — avoids dual scrollports */
+    }
+    body.profile-page {
+      min-height: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-y: contain;
+      touch-action: pan-y;
+    }
+    /* Header: pass touches through empty chrome so panels can scroll */
+    body.profile-page #profile-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      max-width: 100%;
+      z-index: 2000;
+      pointer-events: none;
+    }
+    body.profile-page #profile-header a,
+    body.profile-page #profile-header button,
+    body.profile-page #profile-header input,
+    body.profile-page #profile-header select,
+    body.profile-page #profile-header textarea,
+    body.profile-page #profile-header .profile-tab,
+    body.profile-page #profile-header .icon-btn,
+    body.profile-page #profile-header .header-actions,
+    body.profile-page #profile-header .tier-chip-circle,
+    body.profile-page #profile-header #tier-chip,
+    body.profile-page #profile-header .settings-wrap,
+    body.profile-page #profile-header .notif-wrap,
+    body.profile-page #profile-header .avatar-edit,
+    body.profile-page #profile-header .trust-chip,
+    body.profile-page #profile-header .profile-tabs {
+      pointer-events: auto;
+    }
+    /* Portaled settings menu is on body — must receive taps */
+    body.profile-page > #settings-dropdown,
+    body.profile-page > #settings-dropdown.is-portaled,
+    body.profile-page > #settings-dropdown.open {
+      pointer-events: auto;
+      z-index: 100050;
+    }
+    body.profile-page > #settings-dropdown button {
+      pointer-events: auto;
+    }
+    #profile-scroll-root {
+      display: block;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 100%;
+      min-height: 50vh;
+      pointer-events: auto;
+    }
+  </style>
+  <link rel="stylesheet" href="css/gov-finance.css">
+  <link rel="icon" data-hf-favicon href="assets/images/logo-homefinder.png">
+
+  <style id="hf-header-actions-nuclear">
+    /* v70: avatar 104px locked both states; actions 2×2 / 1×4; body pad transitions in layout */
+    body.profile-page {
+      --hf-avatar: 104px;
+    }
+    body.profile-page.header-collapsed {
+      --hf-avatar: 104px;
+    }
+    body.profile-page #profile-header .profile-user-image,
+    body.profile-page #profile-header #profile-avatar,
+    body.profile-page #profile-header.collapsed #profile-avatar,
+    body.profile-page #profile-header.collapsed .profile-user-image {
+      width: 104px;
+      height: 104px;
+      min-width: 104px;
+      min-height: 104px;
+      max-width: 104px;
+      max-height: 104px;
+      flex-shrink: 0;
+      box-sizing: border-box;
+    }
+    body.profile-page #profile-header #profile-avatar {
+      border-radius: 50%;
+      margin: 0 auto;
+    }
+    body.profile-page #profile-header.collapsed #profile-avatar {
+      margin: 0;
+    }
+    body.profile-page #profile-header .header-actions {
+      display: grid;
+      grid-template-columns: 40px 40px;
+      grid-auto-rows: 40px;
+      gap: 6px;
+      width: max-content;
+      z-index: 50;
+      isolation: isolate;
+      pointer-events: auto;
+      visibility: visible;
+      opacity: 1;
+      position: relative;
+      justify-self: end;
+      align-self: start;
+      margin: 0;
+    }
+    body.profile-page #profile-header.collapsed .header-actions {
+      grid-template-columns: 28px 28px 28px 28px;
+      grid-auto-rows: 28px;
+      gap: 5px;
+      align-self: center;
+    }
+    body.profile-page #profile-header .header-actions > *,
+    body.profile-page #profile-header .header-actions .icon-btn,
+    body.profile-page #profile-header .header-actions .tier-chip-circle,
+    body.profile-page #profile-header .header-actions a.icon-btn,
+    body.profile-page #profile-header .header-actions .notif-wrap,
+    body.profile-page #profile-header .header-actions .settings-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      min-height: 40px;
+      max-width: 40px;
+      max-height: 40px;
+      box-sizing: border-box;
+      border-radius: 50%;
+      padding: 0;
+      margin: 0;
+      pointer-events: auto;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1.5px solid rgba(248, 244, 236, 0.5);
+      color: #F8F4EC;
+      transition: width 0.62s cubic-bezier(0.4, 0, 0.2, 1), height 0.62s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    body.profile-page #profile-header.collapsed .header-actions > *,
+    body.profile-page #profile-header.collapsed .header-actions .icon-btn,
+    body.profile-page #profile-header.collapsed .header-actions .tier-chip-circle,
+    body.profile-page #profile-header.collapsed .header-actions a.icon-btn,
+    body.profile-page #profile-header.collapsed .header-actions .notif-wrap,
+    body.profile-page #profile-header.collapsed .header-actions .settings-wrap {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      min-height: 28px;
+      max-width: 28px;
+      max-height: 28px;
+    }
+    body.profile-page #profile-header .profile-tabs {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
+  </style>
+
+
+  <link rel="stylesheet" href="css/cinematic-ui.css">
+</head>
+<body class="profile-page" data-asset="profile-surface">
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- ===== PROFILE HEADER (SoT §12: scroll-only collapse; neutral on enter + tab switch) ===== -->
+  <header id="profile-header" data-hf-header-build="73" class="profile-header profile-header-shell" data-asset="profile-header">
+    <div id="profile-summary" class="profile-summary" data-asset="profile-hero">
+      <div class="ph-top" data-asset="profile-hero-top">
+        <div class="ph-identity" data-asset="profile-hero-identity">
+          <div class="profile-user-image">
+        <div id="profile-avatar" class="profile-avatar" data-asset="profile-user-logo">
+          <img class="profile-avatar-img" id="profile-avatar-img" alt="" hidden>
+          <span id="avatar-initials">?</span>
+          <!-- Avatar camera (SoT §17) -->
+          <button type="button" class="avatar-edit" data-action="choose-avatar" aria-label="Change avatar" title="Change avatar">
+            <i class="bx bx-camera"></i>
+          </button>
+        </div>
+      </div>
+          <div id="profile-name-block" data-asset="profile-user-identity">
+        <h2 id="profile-name">Loading…</h2>
+        <p id="profile-email" data-asset="profile-user-email"></p>
+        <p id="profile-account-type" class="profile-account-type"></p>
+      </div>
+          <div id="profile-badges" class="trust-chip-row" data-asset="profile-user-trust"></div>
+          <div id="profile-assists-strip" class="profile-assists-strip" data-asset="profile-broker-assists-strip" hidden></div>
+        </div>
+        <div class="header-actions" data-asset="profile-header-actions">
+        <button type="button" class="tier-chip-circle" id="tier-chip" data-action="tier-progress" title="Tier progress" aria-label="Tier progress">T0</button>
+
+        <a href="market.html" class="icon-btn" id="market-link-btn" aria-label="Market" title="Market" data-no-transition="1">
+          <i class="bx bx-store"></i>
+        </a>
+
+        <div class="notif-wrap">
+          <button type="button" class="icon-btn" id="notif-btn" aria-label="Notifications" title="Notifications">
+            <i class="bx bx-bell"></i>
+            <span class="notif-badge" id="notif-badge" hidden>0</span>
+          </button>
+          <div class="notif-dropdown" id="notif-dropdown" role="menu"></div>
+        </div>
+
+        <div class="settings-wrap">
+          <button type="button" class="icon-btn" id="settings-btn" aria-label="Settings" title="Settings">
+            <i class="bx bx-cog"></i>
+          </button>
+          <!-- SoT §17 settings: edit, search people, privacy, dictionaries, environment, ops, logout -->
+          <div class="settings-dropdown" id="settings-dropdown" role="menu">
+            <button type="button" data-action="edit-profile"><i class="bx bx-user"></i> Edit profile</button>
+            <a class="settings-link-row" href="broker-hq.html" data-roles="broker" data-asset="profile-broker-hq-link" data-no-transition="1"><i class="bx bx-buildings"></i> Broker HQ</a>
+            <button type="button" data-action="choose-avatar"><i class="bx bx-user-circle"></i> Choose avatar</button>
+            <button type="button" data-action="search-user" data-roles="seeker,owner,broker">
+              <i class="bx bx-user-voice"></i> Search people
+            </button>
+
+            <hr>
+            <p class="settings-hint field-hint">Visitor profile only — not Messages. Tap again to undo.</p>
+            <button type="button" data-action="privacy-toggle"><i class="bx bx-show"></i> <span>Public name / role</span></button>
+            <button type="button" data-action="privacy-email"><i class="bx bx-envelope"></i> <span>Public email</span></button>
+            <button type="button" data-action="privacy-phone"><i class="bx bx-phone"></i> <span>Public phone</span></button>
+            <button type="button" data-action="privacy-online"><i class="bx bx-radio-circle"></i> <span>Online status</span></button>
+
+            <hr>
+            <button type="button" data-action="law-dictionary"><i class="bx bx-book-bookmark"></i> Dictionary of Law</button>
+            <button type="button" data-action="contract-dictionary"><i class="bx bx-file"></i> Contract dictionary</button>
+
+            <hr>
+            <div class="profile-scale-row" data-asset="profile-ui-scale" onclick="event.stopPropagation()">
+              <label class="profile-scale-label" for="profile-scale-range">
+                <i class="bx bx-move-horizontal"></i> Scale <span id="profile-scale-value">100</span>%
+              </label>
+              <input type="range" id="profile-scale-range" min="50" max="100" step="1" value="100" />
+              <p class="profile-scale-hint">Page scale (like Market). Lower = smaller full page including header. Default 100%.</p>
+            </div>
+
+            <hr>
+            <button type="button" data-action="support-ticket" data-asset="profile-support-entry"><i class="bx bx-support"></i> Support &amp; tickets</button>
+            <button type="button" data-action="delete-account" data-asset="profile-delete-account"><i class="bx bx-trash"></i> Delete account</button>
+            <hr>
+            <button type="button" data-action="logout" id="settings-logout-btn"><i class="bx bx-log-out"></i> Log out</button>
+          </div>
+        </div>
+      </div>
+      </div>
+      <nav id="profile-tabs" class="profile-tabs" data-asset="profile-tabs" aria-label="Profile sections">
+        <button type="button" class="profile-tab active" data-tab="perks" data-roles="seeker,owner,broker">
+          <i class="bx bx-gift"></i> Perks &amp; Portfolio
+        </button>
+        <button type="button" class="profile-tab" data-tab="messages" data-roles="seeker,owner,broker">
+          <i class="bx bx-message-dots"></i> Messages
+        </button>
+        <button type="button" class="profile-tab" data-tab="contracts" data-roles="seeker,owner,broker">
+          <i class="bx bx-file"></i> Contracts
+        </button>
+        <button type="button" class="profile-tab" data-tab="need-help" data-roles="seeker,owner,broker" data-asset="profile-tab-need-help">
+          <i class="bx bx-help-circle"></i> Need help
+        </button>
+        <button type="button" class="profile-tab" data-tab="listing" data-roles="owner,broker">
+          <i class="bx bx-plus-circle"></i> List Property
+        </button>
+        <button type="button" class="profile-tab" data-tab="wanted" data-roles="seeker,broker">
+          <i class="bx bx-search-alt-2"></i> Wanted form
+        </button>
+        <button type="button" class="profile-tab" data-tab="saved" data-roles="seeker,broker">
+          <i class="bx bx-bookmark"></i> Saved properties
+        </button>
+        <button type="button" class="profile-tab" data-tab="saved-wanted" data-roles="owner,broker">
+          <i class="bx bx-bookmarks"></i> Saved wanted
+        </button>
+        <button type="button" class="profile-tab" data-tab="reviews" data-roles="seeker,owner,broker">
+          <i class="bx bx-star"></i> Reviews
+        </button>
+        <button type="button" class="profile-tab" data-tab="gov-housing" data-roles="seeker,owner,broker" data-asset="profile-tab-gov-housing">
+          <i class="bx bx-building-house"></i><span>Gov Housing</span>
+        </button>
+        <button type="button" class="profile-tab" data-tab="edit-fields" data-roles="seeker,owner,broker" data-asset="profile-tab-account">
+          <i class="bx bx-user-circle"></i> Account
+        </button>
+      </nav>
+    </div>    </div>
+  </header>
+
+  <div id="profile-scroll-root" data-asset="profile-scroll-root">
+  <div id="completion-alert-zone" data-asset="profile-setup-banner" hidden></div>
+
+
+  <!-- ===== PANELS (SoT §7) ===== -->
+
+  <!-- Perks & Portfolio + ongoing contracts summary (SoT §9) -->
+  <section class="profile-panel active" id="panel-perks" data-asset="profile-perks-panel" data-roles="seeker,owner,broker">
+    <div class="profile-perks-toolbar" data-asset="profile-perks-toolbar">
+      <button type="button" class="boost-btn primary-btn" id="boost-btn" data-asset="profile-boost-open-btn">
+        <i class="bx bx-rocket"></i> Boost
+      </button>
+      <div class="subscription-entry" data-asset="profile-subscription-entry">
+        <div class="subscription-entry-copy">
+          <strong><i class="bx bx-crown"></i> HomeFinder Subscription</strong>
+          <span class="field-hint">₱499.99 setup + 3 free months · then ₱4,999.99/year</span>
+        </div>
+        <div id="paypal-subscription-mount" class="paypal-subscription-mount" aria-live="polite"></div>
+        <p id="subscription-status" class="field-hint" role="status"></p>
+      </div>
+    </div>
+    <div class="panel-card u-max-full" id="perks-root">
+      <h3><i class="bx bx-gift"></i> Perks &amp; Portfolio</h3>
+      <p class="field-hint u-mb-16"><i class="bx bx-trophy"></i> Your rank, caps, boosts &amp; portfolio power — climb tiers to unlock more reach.</p>
+      <div class="perks-guide-strip">
+        <span class="us-b"><i class="bx bx-star"></i> Points from deals</span>
+        <span class="us-b"><i class="bx bx-map"></i> Map radius by tier</span>
+        <span class="us-b"><i class="bx bx-image"></i> Photo slots</span>
+        <span class="us-b"><i class="bx bx-rocket"></i> Boosts amplify caps</span>
+      </div>
+      <div id="perks-content" data-asset="profile-perks-content">
+      <div class="profile-rank-block" data-asset="profile-rank-block">
+        <h4 id="user-rank-title" class="profile-rank-title">Tier 0</h4>
+        <p id="current-tier-progress-text" class="field-hint">Loading tier…</p>
+        <div class="rank-progress-container">
+          <div class="rank-progress-track"><div id="perk-progress-fill" class="rank-progress-fill"></div></div>
+          <p id="next-tier-target-label" class="field-hint"></p>
+        </div>
+        <div id="capability-stats" class="capability-stats" data-asset="profile-capability-stats"></div>
+        <div id="tier-cards-mount" class="tier-cards-mount" data-asset="profile-tier-cards"></div>
+      </div>
+</div>
+      <div id="portfolio-assets-section" class="u-mt-24" data-asset="profile-portfolio-assets">
+        <h4><i class="bx bx-building-house"></i> Your listings</h4>
+        <p class="field-hint">Active property and wanted posts you manage. Contracts live on the Contracts tab.</p>
+        <div id="portfolio-property-list" data-roles-show="owner,broker"></div>
+        <div id="portfolio-wanted-list" data-roles-show="seeker,broker"></div>
+        <div id="broker-assists-history" class="broker-assists-history" data-asset="profile-broker-assists-history" hidden>
+          <h4><i class="bx bx-badge-check"></i> Successful assists</h4>
+          <p class="field-hint">Completed broker assistance recorded from HQ contracts. Public proof is limited; full detail is for you only.</p>
+          <div id="broker-assists-history-list" class="broker-assists-history-list"></div>
+        </div>
+      </div>
+      <div id="ongoing-contracts-section" class="u-mt-24" data-asset="profile-ongoing-contracts-summary">
+        <h4><i class="bx bx-file"></i> Ongoing contracts</h4>
+        <p class="field-hint">Active and pending contract work stays here as a quick summary. Full agreement actions remain on the Contracts tab.</p>
+        <div id="ongoing-contracts-list"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Need help — Phase 6 assistance entry (SoT §26) -->
+  <section class="profile-panel" id="panel-need-help" data-asset="profile-need-help-panel" data-roles="seeker,owner">
+    <div class="panel-card u-max-full need-help-shell">
+      <header class="need-help-head">
+        <h3><i class="bx bx-help-circle"></i> Need help with property?</h3>
+        <p class="field-hint">Tell us what you need. Brokers pick up open requests in Broker HQ. Listing help (₱99.99) is paid on the List Property form.</p>
+      </header>
+
+      <div class="need-help-progress" id="need-help-progress" aria-hidden="true">
+        <span class="nh-step is-active" data-nh-step="1">1 · Type</span>
+        <span class="nh-step" data-nh-step="2">2 · Details</span>
+        <span class="nh-step" data-nh-step="3">3 · Review</span>
+      </div>
+
+      <!-- Step 1: type tiles -->
+      <div class="need-help-step" id="need-help-step-1">
+        <div class="need-help-tiles" role="list">
+          <button type="button" class="need-help-tile" data-help-type="find_property" data-roles="seeker" role="listitem">
+            <span class="nh-tile-icon" aria-hidden="true"><i class="bx bx-search-alt"></i></span>
+            <span class="nh-tile-title">Find a Property</span>
+            <span class="nh-tile-sub">Help me find something</span>
+          </button>
+          <button type="button" class="need-help-tile" data-help-type="list_property" data-roles="owner" role="listitem">
+            <span class="nh-tile-icon" aria-hidden="true"><i class="bx bx-home-alt"></i></span>
+            <span class="nh-tile-title">List My Property</span>
+            <span class="nh-tile-sub">I need help listing · ₱99.99 on List Property</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: details -->
+      <div class="need-help-step" id="need-help-step-2" hidden>
+        <form id="need-help-form" class="need-help-form" novalidate>
+          <input type="hidden" id="nh_type" name="type" value="">
+          <p class="need-help-type-label" id="nh-type-label"></p>
+
+          <div class="field-group" id="nh-asset-picker" hidden data-asset="need-help-asset-picker">
+            <label>Select a listing card <span class="req" id="nh-asset-req">*</span></label>
+            <p class="field-hint" id="nh-asset-hint">Brokers use this listing’s map pin to locate the request.</p>
+            <div id="nh-asset-list" class="nh-asset-list" role="listbox" aria-label="Your listings"></div>
+            <input type="hidden" id="nh_listing_id" name="listing_id" value="">
+            <input type="hidden" id="nh_listing_col" name="listing_col" value="">
+          </div>
+
+          <div class="field-group">
+            <label for="nh_title">Short title <span class="req">*</span></label>
+            <input type="text" id="nh_title" name="title" maxlength="120" required placeholder="e.g. Looking for 2BR near BGC">
+          </div>
+
+          <div class="field-group">
+            <label for="nh_summary">What do you need? <span class="req">*</span></label>
+            <textarea id="nh_summary" name="summary" rows="4" maxlength="800" required placeholder="Area, timeline, constraints…"></textarea>
+          </div>
+
+          <div class="field-group nh-fields" data-for="find_property" hidden>
+            <label for="nh_budget_rent">Target monthly budget (₱, optional)</label>
+            <input type="number" id="nh_budget_rent" name="budget_rent" min="0" step="100" placeholder="e.g. 25000">
+            <label for="nh_area_pref">Preferred area / city</label>
+            <input type="text" id="nh_area_pref" name="area_pref" maxlength="120" placeholder="e.g. Makati, Quezon City">
+          </div>
+
+          <div class="field-group nh-budget-block" id="nh-budget-block">
+            <label>What you’re willing to pay the broker (₱ range) <span class="req">*</span></label>
+            <div class="nh-budget-row">
+              <div>
+                <label for="nh_budget_min" class="field-hint">Min</label>
+                <input type="number" id="nh_budget_min" name="budget_min" min="0" step="1" required placeholder="Min">
+              </div>
+              <span class="nh-budget-sep" aria-hidden="true">–</span>
+              <div>
+                <label for="nh_budget_max" class="field-hint">Max</label>
+                <input type="number" id="nh_budget_max" name="budget_max" min="0" step="1" required placeholder="Max">
+              </div>
+            </div>
+            <p class="field-hint">Brokers see this range before they claim. Listing help uses fixed ₱99.99 on List Property instead.</p>
+          </div>
+
+          <div class="field-group">
+            <label for="nh_lat">Location pin (optional)</label>
+            <div class="nh-geo-row">
+              <input type="number" id="nh_lat" name="lat" step="any" placeholder="Latitude">
+              <input type="number" id="nh_lng" name="lng" step="any" placeholder="Longitude">
+              <button type="button" class="secondary-btn" id="nh-use-location">Use my location</button>
+            </div>
+            <p class="field-hint">Helps “Near you” in Broker HQ. You can skip this.</p>
+          </div>
+
+          <div class="need-help-nav">
+            <button type="button" class="secondary-btn" id="nh-back-1">Back</button>
+            <button type="button" class="primary-btn" id="nh-to-review">Review</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Step 3: review -->
+      <div class="need-help-step" id="need-help-step-3" hidden>
+        <div class="need-help-review panel-card" id="need-help-review"></div>
+        <div class="need-help-nav">
+          <button type="button" class="secondary-btn" id="nh-back-2">Back</button>
+          <button type="button" class="primary-btn" id="nh-submit">Submit request</button>
+        </div>
+        <p class="field-hint" id="nh-submit-status" hidden></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="profile-panel" id="panel-messages" data-asset="profile-messages-panel" data-roles="seeker,owner,broker">
+    <div class="panel-card u-max-full messages-shell" data-asset="profile-messages-shell">
+      <header class="messages-head">
+        <div>
+          <h3><i class="bx bx-message-dots"></i> Messages</h3>
+          <p class="field-hint">P2P only — no listing threads. Deals stay on <strong>Contracts</strong>.</p>
+        </div>
+        <button type="button" class="secondary-btn messages-guide-btn" id="messages-guide-btn" aria-haspopup="dialog" aria-controls="messages-guide-modal" title="Messages guide">
+          <span aria-hidden="true">📖</span> Guide
+        </button>
+      </header>
+      <div id="messages-guide-modal" class="messages-guide-modal" hidden role="dialog" aria-modal="true" aria-labelledby="messages-guide-title">
+        <div class="messages-guide-backdrop" data-close-guide tabindex="-1"></div>
+        <div class="messages-guide-panel">
+          <header class="messages-guide-panel-head">
+            <h4 id="messages-guide-title">📖 Messages guide</h4>
+            <button type="button" class="icon-btn" data-close-guide aria-label="Close guide">&times;</button>
+          </header>
+          <div class="messages-guide-body">
+            <p><strong>Purpose.</strong> Private person-to-person chat between HomeFinder users. It is <em>not</em> for listing deals — those stay on <strong>Contracts</strong>.</p>
+            <h5>You can</h5>
+            <ul>
+              <li>Message someone from <strong>user search</strong> or their <strong>visitor profile</strong> (Message button).</li>
+              <li>Filter <strong>All</strong>, <strong>Unread</strong>, <strong>Archived</strong>, and <strong>Hidden</strong>.</li>
+              <li><strong>Mute</strong> notifications, <strong>Archive</strong> a thread, or <strong>Hide</strong> it (restore under Hidden).</li>
+              <li>Search your conversation list.</li>
+            </ul>
+            <h5>Please don’t</h5>
+            <ul>
+              <li>Share OTPs, government IDs, or bank details in chat.</li>
+              <li>Treat Messages as a place to close property deals (use Contracts).</li>
+              <li>Confuse <strong>Hide chat</strong> with <strong>Settings → public profile</strong> privacy (visitor About only).</li>
+            </ul>
+            <h5>Quick map</h5>
+            <ul>
+              <li><strong>Mute</strong> — fewer notifications; chat stays in the list.</li>
+              <li><strong>Archive</strong> — stored under Archived.</li>
+              <li><strong>Hide</strong> — removed from All; open <strong>Hidden</strong> to unhide.</li>
+            </ul>
+          </div>
+          <footer class="messages-guide-foot">
+            <button type="button" class="primary-btn" data-close-guide>Got it</button>
+          </footer>
+        </div>
+      </div>
+      <div class="messages-toolbar" data-asset="profile-messages-toolbar">
+        <label class="messages-search-wrap">
+          <i class="bx bx-search" aria-hidden="true"></i>
+          <input type="search" id="messages-search" placeholder="Search conversations…" autocomplete="off">
+        </label>
+        <div class="messages-filters" role="tablist" aria-label="Conversation filters">
+          <button type="button" class="msg-filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button type="button" class="msg-filter" data-filter="unread" role="tab" aria-selected="false">Unread</button>
+          <button type="button" class="msg-filter" data-filter="archived" role="tab" aria-selected="false">Archived</button>
+          <button type="button" class="msg-filter" data-filter="hidden" role="tab" aria-selected="false">Hidden</button>
+        </div>
+      </div>
+      <div class="messages-layout" data-asset="profile-messages-layout">
+        <aside id="conversation-list" class="conversation-list" aria-label="Conversations"></aside>
+        <div class="chat-window" id="chat-window" aria-label="Thread"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="profile-panel" id="panel-contracts" data-roles="seeker,owner,broker">
+    <div class="panel-card u-max-full">
+      <h3><i class="bx bx-file"></i> Contracts</h3>
+      <p class="field-hint u-mb-16">Listing-originated deals only. Both parties must Agree to activate.</p>
+      <h4>Ongoing</h4>
+      <div id="contracts-ongoing"></div>
+      <h4 class="u-mt-16">Finished</h4>
+      <div id="contracts-finished"></div>
+    </div>
+  </section>
+
+  <!-- List Property — full form for listing-form.js?v=47 / listing-map.js?v=44 -->
+  <section class="profile-panel" id="panel-listing" data-asset="profile-listing-form" data-roles="owner,broker">
+    <div class="panel-card u-max-full">
+      <h3><i class="bx bx-plus-circle"></i> List a property</h3>
+      <div id="listing-quota-strip" class="listing-quota-strip" data-asset="profile-listing-quota" aria-live="polite">
+        <div class="listing-quota-chip" id="listing-slot-chip">
+          <i class="bx bx-home-alt"></i>
+          <span id="listing-slot-label">Listings · …</span>
+        </div>
+        <div class="listing-quota-chip" id="listing-photo-chip">
+          <i class="bx bx-image"></i>
+          <span id="listing-photo-label">Photos · 0 / …</span>
+        </div>
+      </div>
+      <p class="field-hint u-mb-16">Unverified listings need approval. A 3D map pin is required so Market can match radius accurately.</p>
+      <div id="listing-at-cap-banner" class="listing-at-cap-banner" hidden role="status">
+        <strong>All listing slots in use</strong>
+        <p class="field-hint">You have no free slots for a new listing. Manage the cards below (status, details, expiry). Free a slot (close/delete when allowed) or add capacity via Perks / boost.</p>
+      </div>
+      <div id="listed-properties-scroll" class="listed-properties-scroll" data-asset="profile-listed-properties" aria-live="polite"></div>
+      <div id="listing-form-root">
+        <form id="create-property-form" data-asset="profile-listing-form">
+          <div class="listing-stepper" id="listing-stepper" data-asset="profile-listing-stepper">
+            <div class="listing-stepper-meta">
+              <span id="listing-step-label">Step 1 of 5 · Basics &amp; location</span>
+            </div>
+            <div class="listing-stepper-dots" role="list">
+              <button type="button" class="listing-step-dot is-active" data-go-step="1" aria-label="Step 1">1</button>
+              <button type="button" class="listing-step-dot" data-go-step="2" aria-label="Step 2">2</button>
+              <button type="button" class="listing-step-dot" data-go-step="3" aria-label="Step 3">3</button>
+              <button type="button" class="listing-step-dot" data-go-step="4" aria-label="Step 4">4</button>
+              <button type="button" class="listing-step-dot" data-go-step="5" aria-label="Step 5">5</button>
+            </div>
+          </div>
+
+          <div class="listing-step-panel is-active" data-listing-step="1">
+            <h3 class="listing-step-title">Basics &amp; location</h3>
+            <p class="field-hint">Property type, contract, address, and a required map pin (full-screen 3D).</p>
+            
+          <div class="field-group">
+            <label for="listing_title">Listing title</label>
+            <input type="text" id="listing_title" name="listing_title" required maxlength="120" placeholder="e.g. Bright 1BR near MRT">
+          </div>
+          <div class="field-group">
+            <label for="property_classification">Property type</label>
+            <select id="property_classification" name="property_classification" required>
+              <option value="">Select type…</option>
+              <optgroup label="Residential">
+                <option value="condo_studio">Condo / Studio</option>
+                <option value="bedspace_dorm">Bedspace / Dorm</option>
+                <option value="townhouse">Townhouse</option>
+                <option value="house_lot">House &amp; lot</option>
+              </optgroup>
+              <optgroup label="Commercial">
+                <option value="office_fitted">Office (fitted)</option>
+                <option value="coworking_desk">Coworking desk</option>
+                <option value="retail_store">Retail store</option>
+              </optgroup>
+              <optgroup label="Industrial / land">
+                <option value="warehouse">Warehouse</option>
+                <option value="industrial_lot">Industrial lot</option>
+                <option value="raw_land">Raw land</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="field-group deal-type-block" data-asset="profile-listing-deal-type">
+            <span class="field-label" id="deal-type-label">Contract type</span>
+            <p class="field-hint">How this property is offered on the Market.</p>
+            <div class="deal-type-grid" role="radiogroup" aria-labelledby="deal-type-label">
+              <label class="deal-chip">
+                <input type="radio" name="deal_type" value="rent" required>
+                <i class="bx bx-key"></i>
+                <span>Rent</span>
+              </label>
+              <label class="deal-chip">
+                <input type="radio" name="deal_type" value="lease">
+                <i class="bx bx-file"></i>
+                <span>Lease</span>
+              </label>
+              <label class="deal-chip">
+                <input type="radio" name="deal_type" value="rent_to_own">
+                <i class="bx bx-home-heart"></i>
+                <span>Rent-to-own</span>
+              </label>
+              <label class="deal-chip">
+                <input type="radio" name="deal_type" value="sale">
+                <i class="bx bx-purchase-tag"></i>
+                <span>Sale</span>
+              </label>
+            </div>
+            <p id="deal-type-hint" class="field-hint deal-type-hint" hidden></p>
+          </div>
+          <div class="field-group">
+            <label for="property-address">Address</label>
+            <input type="text" id="property-address" name="address" required placeholder="Street, barangay, city — pin is set on the map (Confirm), not by this text alone">
+            <button type="button" class="secondary-btn u-mt-8" id="locate-on-map-btn"><i class="bx bx-map-alt"></i> Open 3D map &amp; set pin</button>
+            <p id="listing-pin-status" class="listing-pin-status" data-state="missing">Pin required · not set yet</p>
+          </div>
+          
+          </div>
+          <div class="listing-step-panel" data-listing-step="2" hidden>
+            <h3 class="listing-step-title">Space &amp; money</h3>
+            <p class="field-hint">Size, price, and fees. Nothing here is cleared when you leave this step.</p>
+            <div class="field-group" id="monthly-price-group">
+            <label for="monthly_price">Monthly price (₱)</label>
+            <input type="number" id="monthly_price" name="monthly_price" min="0" step="1" inputmode="numeric" placeholder="e.g. 15000">
+            <p class="field-hint" id="monthly-price-hint">For rent, lease, and rent-to-own.</p>
+          </div>
+          <div class="field-group" id="sale-price-group" hidden>
+            <label for="sale_price">Sale price (₱)</label>
+            <input type="number" id="sale_price" name="sale_price" min="0" step="1" inputmode="numeric" placeholder="e.g. 3500000">
+            <p class="field-hint">Total asking price for sale listings.</p>
+          </div>
+          <div class="field-group">
+            <label for="floor_area">Floor area (sqm) <span class="opt-tag">Optional</span></label>
+            <input type="text" id="floor_area" name="floor_area" placeholder="e.g. 22.5">
+          </div>
+
+          <div class="listing-size-block" data-asset="profile-listing-size">
+            <h4 class="listing-subhead">Room &amp; capacity</h4>
+            <div class="listing-size-grid">
+              <div class="field-group">
+                <label for="number_of_beds">Beds</label>
+                <input type="number" id="number_of_beds" name="number_of_beds" min="0" step="1" inputmode="numeric">
+              </div>
+              <div class="field-group">
+                <label for="number_of_bathrooms">Bathrooms</label>
+                <input type="number" id="number_of_bathrooms" name="number_of_bathrooms" min="0" step="1" inputmode="numeric">
+              </div>
+            </div>
+            <div class="field-group listing-cond-hidden" id="bed-capacity-group">
+              <label for="bed_capacity">Bed capacity <span class="opt-tag">Optional</span></label>
+              <input type="number" id="bed_capacity" name="bed_capacity" min="0" step="1" inputmode="numeric" placeholder="People this listing can sleep">
+              <p class="field-hint">Useful for bedspace / dorm. Not required.</p>
+            </div>
+            <div class="field-group listing-cond-hidden" id="per-bed-price-group">
+              <label for="per_bed_price">Per-bed price (₱) <span class="opt-tag">Optional</span></label>
+              <input type="number" id="per_bed_price" name="per_bed_price" min="0" step="1" inputmode="numeric">
+              <p class="field-hint">Only for shared bedspace pricing. Not required.</p>
+            </div>
+          </div>
+
+          <div class="listing-fees-block" data-asset="profile-listing-fees">
+            <h4 class="listing-subhead">Fees</h4>
+            <p class="field-hint">Choose amount or N/A for each. Mark N/A if it does not apply to this deal.</p>
+            <div class="fee-row field-group">
+              <label for="security_deposit">Security deposit (₱)</label>
+              <div class="fee-input-row">
+                <input type="number" id="security_deposit" name="security_deposit" min="0" step="1" inputmode="numeric" placeholder="Amount">
+                <label class="fee-na-chip"><input type="checkbox" class="na-toggle" data-target="security_deposit"> N/A</label>
+              </div>
+            </div>
+            <div class="fee-row field-group">
+              <label for="advance_rent">Advance rent (₱)</label>
+              <div class="fee-input-row">
+                <input type="number" id="advance_rent" name="advance_rent" min="0" step="1" inputmode="numeric" placeholder="Amount">
+                <label class="fee-na-chip"><input type="checkbox" class="na-toggle" data-target="advance_rent"> N/A</label>
+              </div>
+            </div>
+            <div class="fee-row field-group">
+              <label for="downpayment">Downpayment (₱)</label>
+              <div class="fee-input-row">
+                <input type="number" id="downpayment" name="downpayment" min="0" step="1" inputmode="numeric" placeholder="Amount">
+                <label class="fee-na-chip"><input type="checkbox" class="na-toggle" data-target="downpayment"> N/A</label>
+              </div>
+            </div>
+          </div>
+                    
+          </div>
+          <div class="listing-step-panel" data-listing-step="3" hidden>
+            <h3 class="listing-step-title">Risk &amp; rules</h3>
+            <p class="field-hint">Flood status and access rules (curfew / visitors). Custom curfew and restricted visitors need their times before you continue.</p>
+            <!-- Flood GIS history (owner-declared structured record; map layer-ready) -->
+          <fieldset class="field-group flood-history-block" data-asset="profile-listing-flood">
+            <legend><i class="bx bx-water"></i> Flood status &amp; history</legend>
+            <p class="field-hint">Owner-declared risk for seekers at this pin. Optional when unknown; more detail helps when risk is low or prone.</p>
+            <div id="flood-preview" class="flood-preview" aria-live="polite">
+              <span class="flood-preview-chip" id="flood-preview-chip"><i class="bx bx-water"></i> Flood · Unknown</span>
+            </div>
+            <div class="flood-status-row">
+              <label for="flood_status">Current risk</label>
+              <div class="flood-select-wrapper">
+                <select id="flood_status" name="flood_status">
+                  <option value="na">N/A / unknown</option>
+                  <option value="safe">Safe — no known flooding</option>
+                  <option value="low">Low — rare / shallow</option>
+                  <option value="prone">Prone — regular or deep</option>
+                </select>
+                <span id="flood-indicator" class="flood-indicator-dot flood-na" title="Risk indicator" aria-hidden="true"></span>
+              </div>
+            </div>
+            <ul class="flood-risk-legend" aria-hidden="true">
+              <li><span class="flood-indicator-dot flood-na"></span> Unknown</li>
+              <li><span class="flood-indicator-dot flood-safe"></span> Safe</li>
+              <li><span class="flood-indicator-dot flood-low"></span> Low</li>
+              <li><span class="flood-indicator-dot flood-prone"></span> Prone</li>
+            </ul>
+            <div id="flood-history-panel" class="flood-history-panel listing-cond-hidden">
+              <div class="field-group">
+                <label for="flood_frequency"><i class="bx bx-calendar"></i> How often</label>
+                <select id="flood_frequency" name="flood_frequency">
+                  <option value="unknown">Unknown</option>
+                  <option value="never">Never in living memory</option>
+                  <option value="rare">Rare (once in 10+ years)</option>
+                  <option value="seasonal">Seasonal (monsoon / typhoon)</option>
+                  <option value="frequent">Frequent (yearly or more)</option>
+                </select>
+              </div>
+              <div class="field-group" id="flood-last-year-group">
+                <label for="flood_last_year"><i class="bx bx-history"></i> Last flood year <span class="opt-tag">Optional</span></label>
+                <input type="number" id="flood_last_year" name="flood_last_year" min="1950" max="2030" placeholder="e.g. 2020" inputmode="numeric">
+              </div>
+              <div class="field-group" id="flood-depth-group">
+                <label for="flood_depth_cm"><i class="bx bx-vertical-center"></i> Typical depth (cm) <span class="opt-tag">Optional</span></label>
+                <input type="number" id="flood_depth_cm" name="flood_depth_cm" min="0" max="500" step="1" placeholder="e.g. 30">
+              </div>
+              <div class="field-group">
+                <label for="flood_source"><i class="bx bx-map-alt"></i> Source of info</label>
+                <select id="flood_source" name="flood_source">
+                  <option value="owner">Owner / caretaker knowledge</option>
+                  <option value="neighbor">Neighbors / barangay</option>
+                  <option value="records">Local records / news</option>
+                  <option value="gis">Official / GIS map reference</option>
+                </select>
+              </div>
+              <div class="field-group">
+                <label for="flood_notes"><i class="bx bx-note"></i> Flood notes</label>
+                <textarea id="flood_notes" name="flood_notes" rows="2" maxlength="500" placeholder="Drainage, elevation, nearest creek, recovery time…"></textarea>
+              </div>
+              <p id="flood-gis-hint" class="field-hint flood-gis-hint">Seekers see this with the listing after you set the property pin. Official hazard layers can use the same fields later.</p>
+            </div>
+          </fieldset>
+
+                    <div class="listing-access-rules" data-asset="profile-listing-access-rules">
+            <h4 class="listing-access-title"><i class="bx bx-shield-quarter"></i> Access rules</h4>
+            <p class="field-hint">Shown on the listing so seekers know gate and guest rules before messaging.</p>
+            <div id="access-rules-preview" class="access-rules-preview" aria-live="polite" data-asset="profile-listing-access-preview">
+              <span class="access-preview-chip" id="access-preview-curfew"><i class="bx bx-time-five"></i> Curfew · None</span>
+              <span class="access-preview-chip" id="access-preview-visitors"><i class="bx bx-user-check"></i> Visitors · Allowed anytime</span>
+            </div>
+
+            <fieldset class="field-group" data-asset="profile-listing-curfew">
+              <legend><i class="bx bx-time-five"></i> Curfew</legend>
+              <p class="field-hint">Building or subdivision night rules, if any.</p>
+              <div class="policy-chip-grid" role="radiogroup" aria-label="Curfew policy">
+                <label class="policy-chip">
+                  <input type="radio" name="curfew_policy" value="none" checked>
+                  <span>None</span>
+                </label>
+                <label class="policy-chip">
+                  <input type="radio" name="curfew_policy" value="building">
+                  <span>Building rules</span>
+                </label>
+                <label class="policy-chip">
+                  <input type="radio" name="curfew_policy" value="custom">
+                  <span>Custom gate time</span>
+                </label>
+              </div>
+              <div id="curfew-building-row" class="listing-cond-hidden time-detail-row">
+                <label for="curfew_building_notes"><i class="bx bx-buildings"></i> Describe the rule (optional)</label>
+                <input type="text" id="curfew_building_notes" name="curfew_building_notes" maxlength="200" placeholder="e.g. No loud noise after 10 PM">
+              </div>
+              <div id="curfew-time-row" class="listing-cond-hidden time-detail-row">
+                <label for="curfew_time"><i class="bx bx-time"></i> Gate closes at</label>
+                <input type="time" id="curfew_time" name="curfew_time">
+                <p class="field-hint">24-hour clock. Example: 22:00 for 10 PM.</p>
+              </div>
+            </fieldset>
+
+            <fieldset class="field-group" data-asset="profile-listing-visitors">
+              <legend><i class="bx bx-user-check"></i> Visitors</legend>
+              <p class="field-hint">Whether guests may enter and under what hours.</p>
+              <div class="policy-chip-grid" role="radiogroup" aria-label="Visitor policy">
+                <label class="policy-chip">
+                  <input type="radio" name="visitor_policy" value="allowed" checked>
+                  <span>Allowed anytime</span>
+                </label>
+                <label class="policy-chip">
+                  <input type="radio" name="visitor_policy" value="restricted">
+                  <span>Restricted hours</span>
+                </label>
+                <label class="policy-chip">
+                  <input type="radio" name="visitor_policy" value="none">
+                  <span>Not allowed</span>
+                </label>
+              </div>
+              <div id="visitor-hours-row" class="listing-cond-hidden time-detail-row">
+                <div class="time-pair">
+                  <div>
+                    <label for="visitor_hours_from"><i class="bx bx-time"></i> From</label>
+                    <input type="time" id="visitor_hours_from" name="visitor_hours_from">
+                  </div>
+                  <div>
+                    <label for="visitor_hours_to"><i class="bx bx-time"></i> To</label>
+                    <input type="time" id="visitor_hours_to" name="visitor_hours_to">
+                  </div>
+                </div>
+                <label for="visitor_hours"><i class="bx bx-text"></i> Notes (optional)</label>
+                <input type="text" id="visitor_hours" name="visitor_hours" placeholder="e.g. ID required at gate">
+                <p class="field-hint">Open window for visitors. Notes appear on the listing.</p>
+              </div>
+              <div id="visitor-none-row" class="listing-cond-hidden time-detail-row">
+                <label for="visitor_none_notes"><i class="bx bx-text"></i> Notes (optional)</label>
+                <input type="text" id="visitor_none_notes" name="visitor_none_notes" maxlength="200" placeholder="e.g. Residents only">
+              </div>
+            </fieldset>
+          </div>
+
+          
+          </div>
+          <div class="listing-step-panel" data-listing-step="4" hidden>
+            <h3 class="listing-step-title">Amenities &amp; media</h3>
+            <p class="field-hint">Amenities are optional. Add at least one photo to continue. Description is optional.</p>
+            <fieldset class="field-group amenities-block" data-asset="profile-listing-amenities" id="listing-amenities-block">
+            <legend><i class="bx bx-home-heart"></i> Amenities</legend>
+            <p class="field-hint">General applies to all types. Category tabs only change what you see — selections are never cleared when you switch.</p>
+            <div id="amenities-selected-summary" class="amenities-selected-summary" aria-live="polite">Selected: none</div>
+
+            <div class="amenities-general-wrap">
+              <h5 class="amenities-group-label">General</h5>
+              <div class="amenities-grid" data-amenity-group="general">
+                <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="wifi"> <i class="bx bx-wifi"></i> Wi‑Fi</label>
+                <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="aircon"> <i class="bx bx-wind"></i> Aircon</label>
+                <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="parking"> <i class="bx bx-car"></i> Parking</label>
+                <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="security"> <i class="bx bx-shield"></i> Security</label>
+                <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="cctv"> <i class="bx bx-cctv"></i> CCTV</label>
+                <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="power_backup"> <i class="bx bx-bolt"></i> Backup power</label>
+                <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="water_included"> <i class="bx bx-droplet"></i> Water incl.</label>
+                <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="gated"> <i class="bx bx-lock-alt"></i> Gated entry</label>
+                <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="access_24h"> <i class="bx bx-time-five"></i> 24h access</label>
+              </div>
+            </div>
+
+            <div class="amenities-cat-tabs" role="tablist" aria-label="Amenity categories">
+              <button type="button" class="amenities-cat-tab is-active" role="tab" aria-selected="true" data-amenities-tab="residential">
+                Residential <span class="amenities-tab-badge" data-badge-for="residential" hidden>0</span>
+              </button>
+              <button type="button" class="amenities-cat-tab" role="tab" aria-selected="false" data-amenities-tab="workspace">
+                Workspace <span class="amenities-tab-badge" data-badge-for="workspace" hidden>0</span>
+              </button>
+              <button type="button" class="amenities-cat-tab" role="tab" aria-selected="false" data-amenities-tab="industrial">
+                Industrial <span class="amenities-tab-badge" data-badge-for="industrial" hidden>0</span>
+              </button>
+            </div>
+
+            <div class="amenities-cat-panels">
+              <div class="amenities-cat-panel is-active" data-amenities-panel="residential" role="tabpanel">
+                <div class="amenities-grid" data-amenity-group="residential">
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="furnished"> <i class="bx bx-cabinet"></i> Furnished</label>
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="semi_furnished"> <i class="bx bx-bed"></i> Semi-furnished</label>
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="kitchen"> <i class="bx bx-fridge"></i> Kitchen</label>
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="laundry"> <i class="bx bx-washer"></i> Laundry</label>
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="pets"> <i class="bx bx-dog"></i> Pets OK</label>
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="elevator"> <i class="bx bx-building"></i> Elevator</label>
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="balcony"> <i class="bx bx-home-alt"></i> Balcony</label>
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="own_meter"> <i class="bx bx-tachometer"></i> Own meter</label>
+                </div>
+              </div>
+              <div class="amenities-cat-panel" data-amenities-panel="workspace" role="tabpanel" hidden>
+                <div class="amenities-grid" data-amenity-group="workspace">
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="fiber_ready"> <i class="bx bx-broadcast"></i> Fiber-ready</label>
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="meeting_room"> <i class="bx bx-group"></i> Meeting room</label>
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="reception"> <i class="bx bx-desk"></i> Reception</label>
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="fit_out"> <i class="bx bx-paint"></i> Fitted / fit-out</label>
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="street_frontage"> <i class="bx bx-store"></i> Street frontage</label>
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="display_window"> <i class="bx bx-window-alt"></i> Display window</label>
+                </div>
+              </div>
+              <div class="amenities-cat-panel" data-amenities-panel="industrial" role="tabpanel" hidden>
+                <div class="amenities-grid" data-amenity-group="industrial">
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="loading_bay"> <i class="bx bx-dock-bottom"></i> Loading bay</label>
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="loading_area"> <i class="bx bx-package"></i> Loading area</label>
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="truck_access"> <i class="bx bx-bus"></i> Truck access</label>
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="racking_ok"> <i class="bx bx-grid-alt"></i> Racking OK</label>
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="existing_racking"> <i class="bx bx-layer"></i> Existing racking</label>
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="pallet_ready"> <i class="bx bx-package"></i> Pallet-ready</label>
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="three_phase_power"> <i class="bx bx-bolt-circle"></i> 3-phase power</label>
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="high_clearance"> <i class="bx bx-up-arrow-alt"></i> High clearance</label>
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="yard_space"> <i class="bx bx-map"></i> Yard space</label>
+                  <label class="amenity-chip"><input type="checkbox" name="amenities[]" value="fire_sprinkler"> <i class="bx bx-droplet"></i> Fire sprinkler</label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="field-group">
+            <label for="listing_description"><i class="bx bx-text"></i> Description</label>
+            <textarea id="listing_description" name="description" rows="4" maxlength="2000" placeholder="Layout, neighborhood, nearest transit…"></textarea>
+          </div>
+
+          <div class="field-group" data-asset="profile-listing-images">
+            <label class="listing-photos-label"><i class="bx bx-images"></i> Photos</label>
+            <p id="listing-images-cap-hint" class="field-hint">Photos · loading cap… First image is the cover. Max 10 hard limit.</p>
+            <div class="listing-dropzone" id="listing-images-dropzone" role="button" tabindex="0" aria-label="Add property photos">
+              <label for="listing-images-input" class="listing-dropzone-empty" id="listing-dropzone-empty-state">
+                <i class="bx bx-image-add"></i>
+                <span>Tap or drop photos (first = cover)</span>
+              </label>
+              <div id="listing-images-preview" class="listing-images-preview" aria-live="polite"></div>
+              <input type="file" id="listing-images-input" name="listing_images" accept="image/jpeg,image/png,image/webp,image/*" multiple class="listing-file-input">
+            </div>
+          </div>
+
+                    
+          </div>
+          <div class="listing-step-panel" data-listing-step="5" hidden>
+            <h3 class="listing-step-title">Review &amp; publish</h3>
+            <p class="field-hint">Review the summary, optional broker help, then publish. Step dots jump without clearing data.</p>
+            <div id="listing-review-summary" class="listing-review-summary" aria-live="polite"></div>
+            <fieldset class="field-group listing-help-block" data-asset="profile-listing-broker-help" id="listing-help-fieldset">
+            <legend><i class="bx bx-briefcase"></i> Broker help (optional)</legend>
+            <p id="listing-help-owner-copy" class="field-hint">Need a licensed broker to help list this property? A fixed <strong>₱99.99</strong> platform fee is due when you submit. Staff verify payment before the listing can go live.</p>
+            <p id="listing-help-broker-copy" class="field-hint" hidden>You already list as a licensed broker path — this fee is for owners who need help publishing.</p>
+            <div id="listing-help-status" class="listing-help-status" data-state="idle" aria-live="polite">
+              <span class="listing-help-status-dot"></span>
+              <span id="listing-help-status-text">Not requested</span>
+            </div>
+            <label class="checkbox-row listing-help-toggle" id="listing-help-toggle-row">
+              <input type="checkbox" id="needs_broker_help" name="needs_broker_help" value="1">
+              <span>I need broker help to list this property (₱99.99)</span>
+            </label>
+            <div class="listing-help-pay-panel" id="listing-help-pay-panel" hidden>
+              <p class="listing-help-fee-chip"><i class="bx bx-peso"></i> Fee due now: <strong>₱99.99</strong></p>
+              <ol class="listing-help-steps">
+                <li>Pay with PayPal below (Need Help? · ₱99.99).</li>
+                <li>After payment, paste your PayPal transaction / receipt reference.</li>
+                <li>Submit the listing — staff verify payment before it can go live.</li>
+              </ol>
+              <div class="listing-help-paypal" id="listing-help-paypal-mount" aria-live="polite">
+                <div id="paypal-container-Y3NZNSJYJ2Y24"></div>
+              </div>
+              <label for="listing_help_payment_ref">Payment reference <span class="req">*</span></label>
+              <input type="text" id="listing_help_payment_ref" name="listing_help_payment_ref" maxlength="120" placeholder="PayPal transaction ID after you pay" autocomplete="off">
+              <p class="field-hint">Staff match this reference to PayPal. Return URL may open Profile; come back to this form to paste the ref and submit.</p>
+            </div>
+          </fieldset>
+
+          
+          </div>
+          <div class="listing-step-nav" id="listing-step-nav">
+            <button type="button" class="secondary-btn" id="listing-step-back" hidden>Back</button>
+            <button type="button" class="primary-btn" id="listing-step-next">Continue</button>
+            <button type="submit" class="primary-btn" id="listing-submit-btn" hidden>List Property</button>
+          </div>
+        </form>
+      </div>
+      
+  <div id="listing-map-overlay" class="listing-map-overlay" hidden>
+    <div class="listing-map-overlay-top">
+      <span class="listing-map-overlay-title">Set property pin</span>
+      <p class="listing-map-overlay-hint">Tap the map to place or move the pin. Confirm below when ready.</p>
+    </div>
+    <div id="listing-pin-map" class="listing-pin-map-fullscreen" role="application" aria-label="Property pin map"></div>
+    <!-- Bottom chrome: never under profile tabs -->
+    <div class="listing-map-overlay-bar listing-map-overlay-bar--bottom">
+      <button type="button" class="secondary-btn" id="listing-map-close"><i class="bx bx-x"></i> Exit</button>
+      <button type="button" class="primary-btn" id="listing-map-confirm" disabled>Confirm pin</button>
+    </div>
+  </div>
+
+  <!-- Wanted form map — same full-screen chrome pattern -->
+  <div id="wanted-map-overlay" class="listing-map-overlay wanted-map-overlay" hidden>
+    <div class="listing-map-overlay-top">
+      <span class="listing-map-overlay-title">Set wanted-area pin</span>
+      <p class="listing-map-overlay-hint">Tap the map for where you want a property. Confirm below to save and close.</p>
+    </div>
+    <div id="wanted-pin-map-fs" class="listing-pin-map-fullscreen" role="application" aria-label="Wanted area pin map"></div>
+    <div class="listing-map-overlay-bar listing-map-overlay-bar--bottom">
+      <button type="button" class="secondary-btn" id="wanted-map-close"><i class="bx bx-x"></i> Exit</button>
+      <button type="button" class="primary-btn" id="wanted-map-confirm" disabled>Confirm pin</button>
+    </div>
+  </div>
+
+      
+    </div>
+  </section>
+
+  <!-- Wanted form -->
+  <section class="profile-panel" id="panel-wanted" data-asset="profile-wanted-form" data-roles="seeker,broker">
+    <div class="panel-card u-max-full">
+      <h3><i class="bx bx-search-alt-2"></i> Post a wanted request</h3>
+      <p class="field-hint u-mb-16">Discovery for owners is on Market (pin radius) only.</p>
+      <div id="wanted-form-root">
+        <form id="create-wanted-form">
+          <div class="field-group">
+            <label for="wanted_title">Title</label>
+            <input type="text" id="wanted_title" name="title" required maxlength="120" placeholder="What are you looking for?">
+          </div>
+          <div class="field-group">
+            <label for="wanted_classification">Type</label>
+            <select id="wanted_classification" name="wanted_classification" required>
+              <option value="">Select…</option>
+              <optgroup label="Residential">
+                <option value="condo_studio">Condo / Studio</option>
+                <option value="bedspace_dorm">Bedspace / Dorm</option>
+                <option value="townhouse">Townhouse</option>
+                <option value="house_lot">House &amp; lot</option>
+              </optgroup>
+              <optgroup label="Commercial">
+                <option value="office_fitted">Office (fitted)</option>
+                <option value="coworking_desk">Coworking desk</option>
+                <option value="retail_store">Retail store</option>
+              </optgroup>
+              <optgroup label="Industrial / land">
+                <option value="warehouse">Warehouse</option>
+                <option value="industrial_lot">Industrial lot</option>
+                <option value="raw_land">Raw land</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="field-group">
+            <label for="budget_min">Budget min (₱)</label>
+            <input type="number" id="budget_min" name="budget_min" min="0" required>
+          </div>
+          <div class="field-group">
+            <label for="budget_max">Budget max (₱)</label>
+            <input type="number" id="budget_max" name="budget_max" min="0" required>
+          </div>
+          <div class="field-group">
+            <label for="wanted_address">Preferred area (text)</label>
+            <input type="text" id="wanted_address" name="address" placeholder="City / barangay">
+            <button type="button" class="secondary-btn u-mt-8" id="wanted-locate-on-map-btn">
+              <i class="bx bx-map"></i> Locate on map
+            </button>
+            <p class="field-hint">SoT: this pin is your <strong>wanted area</strong> — “I want a property near here.” Not a Market search pin.</p>
+          </div>
+          <div class="field-group">
+            <label>Wanted-area pin</label>
+            <div id="wanted-pin-map" class="wanted-pin-map" hidden></div>
+            <p id="wanted-pin-status" class="field-hint" hidden></p>
+            <p class="field-hint">Click the map to drop a pin, or locate from the area text above. Required to post.</p>
+          </div>
+          <div class="field-group">
+            <label for="move_in_date">Target move-in</label>
+            <input type="date" id="move_in_date" name="move_in_date">
+          </div>
+          <div class="field-group">
+            <fieldset class="field-group amenities-block" data-asset="profile-wanted-amenities" id="wanted-amenities-block">
+              <legend><i class="bx bx-home-heart"></i> Preferred amenities (optional)</legend>
+              <p class="field-hint">Same categories and keys as List Property. Tabs only change what you see — selections are never cleared when you switch.</p>
+              <div id="wanted-amenities-selected-summary" class="amenities-selected-summary" aria-live="polite">Selected: none</div>
+
+              <div class="amenities-general-wrap">
+                <h5 class="amenities-group-label">General</h5>
+                <div class="amenities-grid" data-amenity-group="general">
+                  <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="wifi"> <i class="bx bx-wifi"></i> Wi‑Fi</label>
+                  <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="aircon"> <i class="bx bx-wind"></i> Aircon</label>
+                  <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="parking"> <i class="bx bx-car"></i> Parking</label>
+                  <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="security"> <i class="bx bx-shield"></i> Security</label>
+                  <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="cctv"> <i class="bx bx-cctv"></i> CCTV</label>
+                  <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="power_backup"> <i class="bx bx-bolt"></i> Backup power</label>
+                  <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="water_included"> <i class="bx bx-droplet"></i> Water incl.</label>
+                  <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="gated"> <i class="bx bx-lock-alt"></i> Gated entry</label>
+                  <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="access_24h"> <i class="bx bx-time-five"></i> 24h access</label>
+                </div>
+              </div>
+
+              <div class="amenities-cat-tabs" role="tablist" aria-label="Preferred amenity categories">
+                <button type="button" class="amenities-cat-tab is-active" role="tab" aria-selected="true" data-amenities-tab="residential">
+                  Residential <span class="amenities-tab-badge" data-badge-for="residential" hidden>0</span>
+                </button>
+                <button type="button" class="amenities-cat-tab" role="tab" aria-selected="false" data-amenities-tab="workspace">
+                  Workspace <span class="amenities-tab-badge" data-badge-for="workspace" hidden>0</span>
+                </button>
+                <button type="button" class="amenities-cat-tab" role="tab" aria-selected="false" data-amenities-tab="industrial">
+                  Industrial <span class="amenities-tab-badge" data-badge-for="industrial" hidden>0</span>
+                </button>
+              </div>
+
+              <div class="amenities-cat-panels">
+                <div class="amenities-cat-panel is-active" data-amenities-panel="residential" role="tabpanel">
+                  <div class="amenities-grid" data-amenity-group="residential">
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="furnished"> <i class="bx bx-cabinet"></i> Furnished</label>
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="semi_furnished"> <i class="bx bx-bed"></i> Semi-furnished</label>
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="kitchen"> <i class="bx bx-fridge"></i> Kitchen</label>
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="laundry"> <i class="bx bx-washer"></i> Laundry</label>
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="pets"> <i class="bx bx-dog"></i> Pets OK</label>
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="elevator"> <i class="bx bx-building"></i> Elevator</label>
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="balcony"> <i class="bx bx-home-alt"></i> Balcony</label>
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="own_meter"> <i class="bx bx-tachometer"></i> Own meter</label>
+                  </div>
+                </div>
+                <div class="amenities-cat-panel" data-amenities-panel="workspace" role="tabpanel" hidden>
+                  <div class="amenities-grid" data-amenity-group="workspace">
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="fiber_ready"> <i class="bx bx-broadcast"></i> Fiber-ready</label>
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="meeting_room"> <i class="bx bx-group"></i> Meeting room</label>
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="reception"> <i class="bx bx-desk"></i> Reception</label>
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="fit_out"> <i class="bx bx-paint"></i> Fitted / fit-out</label>
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="street_frontage"> <i class="bx bx-store"></i> Street frontage</label>
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="display_window"> <i class="bx bx-window-alt"></i> Display window</label>
+                  </div>
+                </div>
+                <div class="amenities-cat-panel" data-amenities-panel="industrial" role="tabpanel" hidden>
+                  <div class="amenities-grid" data-amenity-group="industrial">
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="loading_bay"> <i class="bx bx-dock-bottom"></i> Loading bay</label>
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="loading_area"> <i class="bx bx-package"></i> Loading area</label>
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="truck_access"> <i class="bx bx-bus"></i> Truck access</label>
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="racking_ok"> <i class="bx bx-grid-alt"></i> Racking OK</label>
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="existing_racking"> <i class="bx bx-layer"></i> Existing racking</label>
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="pallet_ready"> <i class="bx bx-cube"></i> Pallet-ready</label>
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="high_clearance"> <i class="bx bx-vertical-top"></i> High clearance</label>
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="three_phase_power"> <i class="bx bx-bolt-circle"></i> 3-phase power</label>
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="fire_sprinkler"> <i class="bx bx-droplet"></i> Fire sprinkler</label>
+                    <label class="amenity-chip"><input type="checkbox" name="preferred_amenities[]" value="yard_space"> <i class="bx bx-map-alt"></i> Yard space</label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <label for="wanted_notes">Notes</label>
+            <textarea id="wanted_notes" name="notes" rows="3" maxlength="1000"></textarea>
+          </div>
+          <button type="submit" class="primary-btn">Post wanted request</button>
+        </form>
+        <div id="my-active-wanted-list" class="u-mt-24"></div>
+      </div>
+      <div id="wanted-posts-summary" class="u-mt-16"></div>
+    </div>
+  </section>
+
+  <section class="profile-panel" id="panel-saved" data-roles="seeker,broker">
+    <div class="panel-card u-max-full">
+      <h3><i class="bx bx-bookmark"></i> Saved properties</h3>
+      <p class="field-hint u-mb-16">Properties you bookmarked.</p>
+      <div id="saved-properties-grid" class="property-feed-grid"></div>
+      <div id="saved-properties-root" hidden></div>
+    </div>
+  </section>
+
+  <section class="profile-panel" id="panel-saved-wanted" data-roles="owner,broker">
+    <div class="panel-card u-max-full">
+      <h3><i class="bx bx-bookmarks"></i> Saved wanted</h3>
+      <p class="field-hint u-mb-16">Wanted requests you saved.</p>
+      <div id="saved-wanted-root" class="property-feed-grid"></div>
+    </div>
+  </section>
+
+  <section class="profile-panel" id="panel-reviews" data-roles="seeker,owner,broker">
+    <div class="panel-card u-max-full">
+      <h3><i class="bx bx-star"></i> Reviews</h3>
+      <p class="field-hint u-mb-16">Ratings and comments from finished contracts and listings.</p>
+      <div id="my-reviews-list"></div>
+      <div id="owner-reviews-list" class="u-mt-16"></div>
+    </div>
+  </section>
+
+  <!-- Edit profile + KYC -->
+
+  <!-- F3 — Government housing catalog (seeker + owner) -->
+  <section class="profile-panel" id="panel-gov-housing" data-asset="profile-gov-housing-panel" data-roles="seeker,owner,broker">
+    <div class="panel-card u-max-full gov-profile-shell">
+      <header class="gov-profile-hero">
+        <div class="gov-profile-hero-text">
+          <p class="gov-profile-kicker">Public programs</p>
+          <h3><i class="bx bx-building-house"></i> Government housing</h3>
+          <p class="field-hint">Browse highlights curated by HomeFinder ops. Cards show an image and a <strong>Details</strong> link to the official site. We do not collect eligibility documents here.</p>
+        </div>
+        <a class="gov-profile-guide-btn" href="financing.html" data-no-transition="1"><i class="bx bx-book-open"></i> Guide</a>
+      </header>
+
+      <div class="gov-profile-filters" role="tablist" aria-label="Filter by sector">
+        <button type="button" class="gov-filter is-active" data-gov-filter="all">All</button>
+        <button type="button" class="gov-filter" data-gov-filter="pagibig">Pag-IBIG</button>
+        <button type="button" class="gov-filter" data-gov-filter="4ph">4PH</button>
+        <button type="button" class="gov-filter" data-gov-filter="nha">NHA</button>
+        <button type="button" class="gov-filter" data-gov-filter="other">Other</button>
+        <button type="button" class="gov-filter" data-gov-filter="partner">Partner</button>
+      </div>
+
+      <div id="gov-profile-grid" class="gov-profile-grid" aria-live="polite">
+        <p class="field-hint">Loading…</p>
+      </div>
+
+      <div id="gov-profile-disclaimer" class="gov-profile-disclaimer" data-asset="gov-disclaimer-block"></div>
+
+      <footer class="gov-profile-footer" data-asset="gov-official-links">
+        <p class="gov-profile-footer-title">See more &amp; check eligibility on official sites</p>
+        <p class="field-hint">HomeFinder does not decide loan approval. Use agency portals for membership and applications.</p>
+        <div class="gov-logo-row">
+          <a class="gov-logo-chip" href="https://www.pagibigfund.gov.ph" target="_blank" rel="noopener noreferrer">
+            <span class="gov-logo-mark">P</span>
+            <span>Pag-IBIG Fund</span>
+          </a>
+          <a class="gov-logo-chip" href="https://www.dhsud.gov.ph" target="_blank" rel="noopener noreferrer">
+            <span class="gov-logo-mark">D</span>
+            <span>DHSUD</span>
+          </a>
+          <a class="gov-logo-chip" href="https://www.pagibigfund.gov.ph" target="_blank" rel="noopener noreferrer">
+            <span class="gov-logo-mark">4</span>
+            <span>4PH / housing info</span>
+          </a>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <section class="profile-panel" id="panel-edit-fields" class="profile-panel-account" data-roles="seeker,owner,broker" data-asset="profile-account-panel">
+    <div class="panel-card u-max-full">
+      <h3><i class="bx bx-user"></i> Account details</h3>
+      <p class="field-hint u-mb-16">Name and phone: once every 30 days. Email via Firebase Auth only.</p>
+      <p class="field-hint identity-cooldown-intro">Name, mobile, and address each have their own 30-day change limit. Editing one does not lock the others.</p>
+
+      <div class="identity-field-block" data-identity-field="name">
+        <div id="identity-cooldown-name" class="identity-cooldown-card" hidden data-asset="profile-cooldown-name">
+          <div class="identity-cooldown-head">
+            <strong>Display name</strong>
+            <span class="kyc-status-pill" data-cooldown-pill data-state="locked">Locked</span>
+          </div>
+          <p class="identity-cooldown-value" data-cooldown-value>—</p>
+          <p class="identity-cooldown-timing" data-cooldown-timing></p>
+          <p class="field-hint" data-cooldown-guide></p>
+        </div>
+        <div class="identity-field-edit" data-identity-edit="name">
+          <div class="field-group">
+            <label for="p-first-name">First name</label>
+            <input type="text" id="p-first-name" autocomplete="given-name">
+          </div>
+          <div class="field-group">
+            <label for="p-surname">Surname</label>
+            <input type="text" id="p-surname" autocomplete="family-name">
+          </div>
+          <button type="button" class="primary-btn" id="save-name-btn">Save name</button>
+        </div>
+      </div>
+
+      <div class="identity-field-block u-mt-16" data-identity-field="phone">
+        <div id="identity-cooldown-phone" class="identity-cooldown-card" hidden data-asset="profile-cooldown-phone">
+          <div class="identity-cooldown-head">
+            <strong>Mobile</strong>
+            <span class="kyc-status-pill" data-cooldown-pill data-state="locked">Locked</span>
+          </div>
+          <p class="identity-cooldown-value" data-cooldown-value>—</p>
+          <p class="identity-cooldown-timing" data-cooldown-timing></p>
+          <p class="field-hint" data-cooldown-guide></p>
+        </div>
+        <div class="identity-field-edit" data-identity-edit="phone">
+          <div class="field-group">
+            <label for="p-phone">Mobile</label>
+            <input type="tel" id="p-phone" autocomplete="tel" inputmode="tel" maxlength="12" minlength="12" pattern="63[0-9]{10}" placeholder="639XXXXXXXXX">
+          </div>
+          <button type="button" class="primary-btn" id="save-phone-btn">Save phone</button>
+        </div>
+      </div>
+
+      <div class="identity-field-block u-mt-16" data-identity-field="address">
+        <div id="identity-cooldown-address" class="identity-cooldown-card" hidden data-asset="profile-cooldown-address">
+          <div class="identity-cooldown-head">
+            <strong>Address</strong>
+            <span class="kyc-status-pill" data-cooldown-pill data-state="locked">Locked</span>
+          </div>
+          <p class="identity-cooldown-value" data-cooldown-value>—</p>
+          <p class="identity-cooldown-timing" data-cooldown-timing></p>
+          <p class="field-hint" data-cooldown-guide></p>
+        </div>
+        <div class="identity-field-edit" data-identity-edit="address">
+          <div class="field-group">
+            <label for="p-address">Address</label>
+            <input type="text" id="p-address" autocomplete="street-address">
+          </div>
+          <button type="button" class="primary-btn" id="save-address-btn">Save address</button>
+        </div>
+      </div>
+
+            <div class="u-mt-24" data-asset="profile-kyc-id-form">
+        <h4><i class="bx bx-id-card"></i> Identity verification</h4>
+        <p class="field-hint">Government ID. Admin approves. Required before broker license.</p>
+        <p id="kyc-status-line" class="field-hint" hidden></p>
+        <span id="kyc-status-pill" class="kyc-status-pill" data-asset="profile-kyc-status-pill" hidden></span>
+
+        <!-- Pending / verified receipt card (replaces form while locked) -->
+        <div id="kyc-id-receipt" class="kyc-receipt-card" hidden data-asset="profile-kyc-id-receipt">
+          <div class="kyc-receipt-head">
+            <span id="kyc-receipt-pill" class="kyc-status-pill" data-state="pending">Pending review</span>
+            <p id="kyc-receipt-timing" class="kyc-receipt-timing">Submitted · reviews usually finish within 1–2 business days. You’ll get a notification when decided.</p>
+          </div>
+          <div class="kyc-receipt-body">
+            <h5 class="kyc-receipt-label">On file</h5>
+            <dl class="kyc-receipt-dl">
+              <div><dt>Name on ID</dt><dd id="kyc-receipt-name">—</dd></div>
+              <div><dt>Date of birth</dt><dd id="kyc-receipt-dob">—</dd></div>
+              <div><dt>Type</dt><dd id="kyc-receipt-type">—</dd></div>
+              <div><dt>Number</dt><dd id="kyc-receipt-number">—</dd></div>
+              <div><dt>Photo</dt><dd id="kyc-receipt-photo">Document received</dd></div>
+            </dl>
+            <p id="kyc-receipt-broker-note" class="field-hint">Broker license stays locked until this ID is verified.</p>
+          </div>
+          <div class="kyc-receipt-guides">
+            <h5 class="kyc-receipt-label">What happens next</h5>
+            <ul class="kyc-receipt-list">
+              <li><strong>If verified</strong> — your ID badge is set; first listing and broker-license path can proceed.</li>
+              <li><strong>If rejected</strong> — you’ll see the reason here; this form unlocks so you can fix and resubmit.</li>
+            </ul>
+          </div>
+        </div>
+
+        <form id="kyc-id-form">
+          <div class="field-group">
+            <label for="kyc-id-type">ID type</label>
+            <select id="kyc-id-type" name="id_type" required>
+              <option value="">Select…</option>
+              <option value="ph_national_id">Philippine National ID</option>
+              <option value="passport">Passport</option>
+              <option value="drivers_license">Driver&apos;s license</option>
+              <option value="umid">UMID</option>
+              <option value="sss">SSS ID</option>
+              <option value="philhealth">PhilHealth ID</option>
+              <option value="postal">Postal ID</option>
+              <option value="prc">PRC ID</option>
+              <option value="nbi">NBI Clearance</option>
+              <option value="other">Other government ID</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label for="kyc-id-full-name">Full name on ID</label>
+            <input type="text" id="kyc-id-full-name" name="id_full_name" required autocomplete="name"
+              placeholder="Exactly as printed on the ID" maxlength="120">
+          </div>
+          <div class="field-group">
+            <label for="kyc-id-dob">Date of birth on ID</label>
+            <input type="date" id="kyc-id-dob" name="id_dob" required>
+            <p class="field-hint">Use the birthday printed on your ID. Must be 18+.</p>
+          </div>
+          <div class="field-group">
+            <label for="kyc-id-number">ID number</label>
+            <input type="text" id="kyc-id-number" name="id_number" required autocomplete="off">
+          </div>
+          <div class="field-group">
+            <label>ID photo</label>
+            <div class="kyc-dropzone" id="kyc-id-dropzone" role="button" tabindex="0" aria-label="Upload ID photo">
+              <div class="kyc-dropzone-empty"><i class="bx bx-cloud-upload"></i><span>Tap to upload ID photo</span></div>
+              <div class="kyc-dropzone-preview" hidden>
+                <img alt="">
+                <span class="kyc-preview-name"></span>
+                <span class="kyc-preview-size"></span>
+                <button type="button" class="kyc-preview-remove" aria-label="Remove">&times;</button>
+              </div>
+              <input type="file" id="kyc-id-photo" name="id_photo" accept="image/jpeg,image/png,image/webp,image/*" class="kyc-file-input">
+            </div>
+          </div>
+          <button type="submit" class="primary-btn" id="kyc-id-submit-btn">Submit ID for verification</button>
+        </form>
+      </div>
+
+      <div class="u-mt-16" id="kyc-broker-block" data-asset="profile-kyc-broker-form">
+        <h4><i class="bx bx-briefcase"></i> Broker license</h4>
+        <p class="field-hint">PRC / license after ID is verified.</p>
+        <!-- Pending / verified / rejected receipt (mirrors government ID locked card) -->
+        <div id="kyc-license-receipt" class="kyc-receipt-card" hidden data-asset="profile-kyc-license-receipt">
+          <div class="kyc-receipt-head">
+            <span id="kyc-license-receipt-pill" class="kyc-receipt-pill" data-state="pending">Pending review</span>
+            <p id="kyc-license-receipt-timing" class="field-hint"></p>
+          </div>
+          <dl class="kyc-receipt-meta">
+            <div><dt>License number</dt><dd id="kyc-license-receipt-number">—</dd></div>
+            <div><dt>Photo</dt><dd id="kyc-license-receipt-photo">—</dd></div>
+          </dl>
+          <p class="field-hint">Admin reviews PRC against official records. You will be notified when decided.</p>
+          <ul class="kyc-receipt-guides field-hint">
+            <li><strong>Pending</strong> — form locked; no need to re-upload unless rejected.</li>
+            <li><strong>Approved</strong> — Broker role + Licensed badge.</li>
+            <li><strong>Rejected</strong> — reason in notifications; you can submit again after the window.</li>
+          </ul>
+        </div>
+        <form id="kyc-license-form">
+          <div class="field-group">
+            <label for="kyc-broker-license">License number</label>
+            <input type="text" id="kyc-broker-license" name="license_number" autocomplete="off">
+          </div>
+          <div class="field-group">
+            <label>License photo</label>
+            <div class="kyc-dropzone" id="kyc-broker-dropzone" role="button" tabindex="0" aria-label="Upload license photo">
+              <div class="kyc-dropzone-empty"><i class="bx bx-cloud-upload"></i><span>Tap to upload license photo</span></div>
+              <div class="kyc-dropzone-preview" hidden>
+                <img alt="">
+                <span class="kyc-preview-name"></span>
+                <span class="kyc-preview-size"></span>
+                <button type="button" class="kyc-preview-remove" aria-label="Remove">&times;</button>
+              </div>
+              <input type="file" id="kyc-broker-photo" name="license_photo" accept="image/jpeg,image/png,image/webp,image/*" class="kyc-file-input">
+            </div>
+          </div>
+          <button type="submit" class="primary-btn" id="kyc-license-submit-btn">Submit license for verification</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="profile-panel" id="panel-properties-view" data-roles="" hidden>
+    <div class="panel-card u-max-full">
+      <div id="properties-view-root"></div>
+    </div>
+  </section>
+
+<!-- ===== MODALS ===== -->
+  <div id="boost-packages-modal" class="law-modal profile-boost-packages-modal" data-asset="profile-boost-packages-modal" class="law-modal profile-boost-packages-modal" role="dialog" aria-modal="true">
+    <div class="law-modal-backdrop" id="boost-packages-backdrop"></div>
+    <div class="law-modal-panel">
+      <header class="law-modal-header">
+        <div>
+          <h2><i class="bx bxs-rocket"></i> Boost packages</h2>
+          <p class="boost-packages-lead field-hint">Boosts add <strong>capacity only</strong> (slots, radius, images, wanted caps). <strong>Market access stays free</strong> — never required to browse or post within your free tier.</p>
+          <p class="law-modal-sub">Packages are labeled S1–S… (seeker) and L1–L… (owner). Pay with PayPal — order stays pending until verified, then runs 30 days. Payment does not unlock perks instantly.</p>
+        </div>
+        <button type="button" class="law-modal-close" id="boost-packages-close" aria-label="Close">&times;</button>
+      </header>
+      <div id="boost-packages-list" class="boost-packages-list"></div>
+    </div>
+  </div>
+
+  <div id="avatar-picker-modal" class="law-modal" role="dialog" aria-modal="true">
+    <div class="law-modal-backdrop" id="avatar-picker-backdrop"></div>
+    <div class="law-modal-panel">
+      <header class="law-modal-header">
+        <div>
+          <h2><i class="bx bx-user-circle"></i> Choose avatar</h2>
+          <p class="law-modal-sub">Pick a HomeFinder avatar. Custom photo uploads are disabled for security.</p>
+        </div>
+        <button type="button" class="law-modal-close" id="avatar-picker-close" aria-label="Close">&times;</button>
+      </header>
+      <div class="avatar-picker-grid" id="avatar-picker-grid"></div>
+    </div>
+  </div>
+
+  <div id="law-dictionary-modal" class="law-modal" role="dialog" aria-modal="true" aria-labelledby="law-dict-title">
+    <div class="law-modal-backdrop" id="law-dictionary-backdrop"></div>
+    <div class="law-modal-panel">
+      <header class="law-modal-header">
+        <div>
+          <h2 id="law-dict-title"><i class="bx bx-book-bookmark"></i> Dictionary of Law</h2>
+          <p class="law-modal-sub">Philippine laws related to property — educational reference only, not legal advice.</p>
+        </div>
+        <button type="button" class="law-modal-close" id="law-dictionary-close" aria-label="Close">&times;</button>
+      </header>
+      <div class="law-modal-toolbar">
+        <input type="search" id="law-dictionary-search" placeholder="Search RA, topic, keyword…">
+      </div>
+      <div class="law-dictionary-list" id="law-dictionary-list"></div>
+    </div>
+  </div>
+</div><!-- #profile-scroll-root -->
+
+  <script type="module" src="js/profile/body-scroll-lock.js?v=46"></script>
+  <script type="module" src="js/profile/core.js"></script>
+  <script type="module" src="js/profile/ui-dialog.js?v=lo2"></script>
+  <script type="module" src="js/profile/notifications.js?v=39"></script>
+  <script type="module" src="js/profile/support-boot.js?v=39"></script>
+  <script type="module" src="js/profile/profile-data.js?v=65"></script>
+  <script type="module" src="js/profile/profile-cooldown.js?v=53"></script>
+  <script type="module" src="js/profile/tabs.js"></script>
+  <script type="module" src="js/profile/profile-scale.js?v=49"></script>
+  <script type="module" src="js/profile/settings-dropdown.js?v=lo6"></script>
+  <script type="module" src="js/profile/messages.js?v=msgnav2"></script>
+  <script type="module" src="js/profile/listing-map.js?v=46"></script>
+  <script type="module" src="js/profile/listing-form.js?v=48"></script>
+  <script type="module" src="js/profile/wanted-map.js?v=46"></script>
+  <script type="module" src="js/profile/wanted-form.js?v=f1"></script>
+  <script type="module" src="js/profile/reviews-view.js"></script>
+  <script type="module" src="js/profile/perks.js?v=46"></script>
+  <script type="module" src="js/profile/law-dictionary.js"></script>
+  <script type="module" src="js/profile/portfolio-assets.js?v=52"></script>
+  <script type="module" src="js/profile/broker-assists.js"></script>
+  <script type="module" src="js/profile/contracts-tab.js"></script>
+  <script type="module" src="js/profile/ongoing-contracts.js"></script>
+  <script type="module" src="js/profile/subscription-boot.js"></script>
+  <script type="module" src="js/profile/need-help.js"></script>
+  <script type="module" src="js/profile/kyc-form.js?v=52"></script>
+  <script type="module" src="js/profile/avatar-picker.js?v=40"></script>
+  <script type="module" src="js/profile/privacy-settings.js"></script>
+  <script type="module" src="js/profile/user-search.js?v=50"></script>
+  <script type="module" src="js/profile/visitor-profile.js?v=msgnav2"></script>
+  <script type="module" src="js/profile/active-listings.js"></script>
+  <script type="module" src="js/profile/wanted-posts-summary.js"></script>
+  <script type="module" src="js/profile/saved-properties.js"></script>
+<script type="module" src="js/profile/saved-wanted.js"></script>
+  <script type="module" src="js/profile/logout.js?v=lo6"></script>
+  <script type="module" src="js/profile/header-scroll.js?v=tabs-flip2"></script>
+  <script type="module" src="js/search.js"></script>
+  <script type="module" src="js/transition.js"></script>
+  <script src="js/leave-guard.js" defer></script>
+  <script type="module" src="js/profile/pull-refresh.js"></script>
+  <script type="module" src="js/customSelect.js"></script>
+  <script type="module" src="js/profile/gov-housing.js"></script>
+  <script src="js/brand-logo.js" defer></script>
+
+  <script>fetch('data/cinematic-scenes.json').then(r=>r.json()).then(v=>window.__HF_CINEMATIC_SCENES__=v).catch(()=>{});</script>
+  <script src="js/design-roots.js" defer></script>
+  <script src="js/market-profile-physical-ui.js" defer></script>
+    <script src="js/animation-root.js" defer></script>
+    <script src="js/physical-ui-state.js" defer></script>
+  <!-- M1: production WebGL/Three triad not loaded; see js/reference-3d/ -->
+  <script src="js/cinematic-ui.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "execution_date": "2026-08-26",
+  "phase": "5.5C-V",
+  "gate": "current-validation-baseline-and-walkmyplan-archive",
+  "ten_test_baseline": {
+    "tests": [
+      "dd05-ui-response-mapping.test.mjs",
+      "dd05-h09-contact-exit.test.mjs",
+      "room-shell-physical-ui-mapping.test.mjs",
+      "dd05-h05-government-housing.test.mjs",
+      "dd05-main-hall-cinematic-map.test.mjs",
+      "dd05-h06-mission.test.mjs",
+      "dd05-main-hall-sequence-reconciliation.test.mjs",
+      "deep-dive-04-auth-roles-permissions.test.mjs",
+      "dd04-final-authority-freeze.test.mjs",
+      "role-contract-subscription-path.test.mjs"
+    ],
+    "passed": 10,
+    "failed": 0,
+    "command_context": "active_development; node --test tests/<name>"
+  },
+  "four_archived": [
+    "theme-lighting-performance-budget.test.mjs",
+    "asset-integration-planning.test.mjs",
+    "canonical-room-camera-door-graph.test.mjs",
+    "hero-world-environment-shell.test.mjs"
+  ],
+  "post_archive_active_suite": {
+    "tests": 102,
+    "passed": 56,
+    "failed": 46,
+    "walkmyplan_active_test_references": 0
+  },
+  "interpretation": {
+    "10_test_baseline": "PASS \u2014 current authority migration/split set is green.",
+    "active_suite": "Not a product score; remaining failures require classification into current-contract defects, stale repository/test assumptions, or other historical contracts.",
+    "walkmyplan": "No active test file references WalkMyPlan after the four explicit archives."
+  },
+  "integrity": {
+    "canonical_sh3d_modified": false,
+    "walkmyplan_restored": false
+  },
+  "next_execution": "Classify the remaining 46 active-suite failures before modifying implementation; prioritize current-contract failures, then repair stale test paths/contracts, while preserving the master chronological gate before three-house allocation."
+}

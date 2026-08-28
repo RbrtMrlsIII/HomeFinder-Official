@@ -1,0 +1,52 @@
+{
+  "version": "5.5D-1",
+  "status": "route-authoring-required",
+  "principle": "No teleportation; no wall penetration; no invented routes.",
+  "travel_model": {
+    "sequence": [
+      "exit_hero",
+      "door_open",
+      "threshold_crossing",
+      "door_close_if_required",
+      "interior_traverse",
+      "door_open_if_required",
+      "house_threshold_crossing",
+      "destination_hero_settle"
+    ],
+    "duration_source": "canonical spatial authority / authored route data",
+    "fallback": "If route or duration is not authored and validated, block physical navigation and retain logical destination request as unresolved."
+  },
+  "house_transfers": [
+    {
+      "from": "House 1",
+      "to": "House 2",
+      "route_status": "TO_AUTHOR"
+    },
+    {
+      "from": "House 1",
+      "to": "House 3",
+      "route_status": "TO_AUTHOR"
+    },
+    {
+      "from": "House 2",
+      "to": "House 3",
+      "route_status": "TO_AUTHOR"
+    },
+    {
+      "from": "House 3",
+      "to": "House 1",
+      "route_status": "TO_AUTHOR"
+    },
+    {
+      "from": "House 3",
+      "to": "House 2",
+      "route_status": "TO_AUTHOR"
+    },
+    {
+      "from": "House 2",
+      "to": "House 1",
+      "route_status": "TO_AUTHOR"
+    }
+  ],
+  "note": "No numeric travel durations are invented at 5.5D; durations belong to the later authored physical-route validation gate."
+}

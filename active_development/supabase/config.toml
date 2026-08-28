@@ -1,0 +1,11 @@
+# HomeFinder Supabase configuration authority.
+# Firebase Auth tokens are verified inside these Edge Functions, so Supabase's
+# own JWT verifier must not reject the Firebase-issued Authorization header.
+[functions.get-kyc-signed-url]
+verify_jwt = false
+
+[functions.upload-kyc-document]
+verify_jwt = false
+
+[functions.upload-listing-image]
+verify_jwt = false

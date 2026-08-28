@@ -1,0 +1,61 @@
+{
+  "version": 2,
+  "worlds": {
+    "home": {
+      "id": "world-01-home",
+      "title": "HomeFinder Arrival",
+      "status": "sweethome3d-model-baseline",
+      "visual": {
+        "style": "hyper-realistic premium real-estate architectural visualization",
+        "lighting": "golden hour",
+        "environment": "premium coastal residential city",
+        "camera": "slow forward and lateral cinematic drift",
+        "loopSeconds": 22,
+        "audio": false,
+        "layers": [
+          "sky",
+          "skyline",
+          "residential-district",
+          "hero-residence",
+          "foreground",
+          "haze",
+          "sun",
+          "ui"
+        ]
+      },
+      "media": {
+        "high": "assets/cinematic/home.webm",
+        "medium": "assets/cinematic/home-1080.webm",
+        "low": "assets/cinematic/home-poster.webp"
+      },
+      "assetStrategy": {
+        "source": "SweetHome3D architectural model / future optimized 3D pipeline",
+        "assetPlan": [
+          "city-skyline",
+          "residential-district",
+          "hero-residence",
+          "vehicles",
+          "vegetation",
+          "architectural-props"
+        ],
+        "targetFormat": "glb",
+        "textureTarget": "KTX2",
+        "highTriangleBudget": 2800000
+      },
+      "prototype": {
+        "mode": "layered-poster-depth",
+        "meshReplacementSlots": [
+          "skyline",
+          "residential-district",
+          "hero-residence",
+          "vehicles",
+          "vegetation",
+          "architectural-props"
+        ],
+        "meshReplacementCompatible": true,
+        "pointerParallax": true,
+        "sourceAssets": []
+      }
+    }
+  }
+}
