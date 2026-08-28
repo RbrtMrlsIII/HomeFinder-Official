@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '../../');
+const repoRoot = path.resolve(here, '../../../');
 const port = Number(process.env.PORT || 4173);
 const mime = {
   '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
@@ -22,8 +23,10 @@ const server = http.createServer((req, res) => {
 
   const decoded = decodeURIComponent((req.url || '/').split('?')[0]);
   const relative = decoded === '/' ? 'index.html' : decoded.replace(/^\/+/, '');
-  const target = path.resolve(root, relative);
-  if (!target.startsWith(root + path.sep) || !fs.existsSync(target) || fs.statSync(target).isDirectory()) {
+  const isAuthoritativeModel = relative === 'master/HomeFinder.sh3d';
+  const target = isAuthoritativeModel ? path.resolve(repoRoot, relative) : path.resolve(root, relative);
+  const targetRoot = isAuthoritativeModel ? repoRoot : root;
+  if (!target.startsWith(targetRoot + path.sep) || !fs.existsSync(target) || fs.statSync(target).isDirectory()) {
     res.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' });
     res.end('Not found');
     return;
