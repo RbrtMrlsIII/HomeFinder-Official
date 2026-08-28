@@ -11,11 +11,13 @@ export default defineConfig({
   reporter: [['list'], ['html', { outputFolder: 'playwright-report', open: 'never' }]],
   use: {
     baseURL: process.env.PLAYWRIGHT_TEST_BASE_URL || 'http://127.0.0.1:4173',
-    browserName: 'chromium',
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
     video: 'off'
   },
+  projects: [
+    { name: 'chromium', use: { browserName: 'chromium' } }
+  ],
   webServer: {
     command: 'node ./server.mjs',
     cwd: new URL('.', import.meta.url).pathname,
