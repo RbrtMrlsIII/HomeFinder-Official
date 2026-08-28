@@ -1,0 +1,45 @@
+name: Automated commit using PAT secret
+
+on:
+ workflow_dispatch:
+ schedule:
+ - cron: '0 4 *  '
+ 
+permissions:
+ contents: write
+
+jobs:
+ commit:
+ runs-on: ubuntu-latest
+ 
+steps:
+  - name: Checkout repository
+    uses: actions/checkout@v4
+    with:
+      fetch-depth: 0
+
+  - name: Configure git author
+    run: |
+      git config user.name "my-bot"
+      git config user.email "bot@example.com"
+
+  - name: Make changes
+    run: |
+      echo "Updated at $(date -u +"%Y-%m-%dT%H:%M:%SZ")" > last-updated.txt
+
+  - name: Set remote to use PAT
+    env:
+      BOT_PAT: ${{ secrets.AI_Assistant_Key }}
+      REPO: ${{ github.repository }}
+    run: |
+      git remote set-url origin https://x-access-token:${BOT_PAT}@github.com/${REPO}.git
+
+  - name: Commit and push if changes
+    run: |
+      git add last-updated.txt
+      if git diff --cached --quiet; then
+        echo "No changes to commit"
+        exit 0
+      fi
+      git commit -m "ci: update last-updated timestamp [skip ci]"
+      git push origin HEAD:refs/heads/main
