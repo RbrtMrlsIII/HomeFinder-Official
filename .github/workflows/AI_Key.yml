@@ -1,4 +1,4 @@
-name: Automated commit using PAT secret
+name: Automated commit using GitHub token
 
 on:
   workflow_dispatch:
@@ -26,13 +26,6 @@ jobs:
       - name: Make changes
         run: |
           echo "Updated at $(date -u +"%Y-%m-%dT%H:%M:%SZ")" > last-updated.txt
-
-      - name: Set remote to use PAT
-        env:
-          BOT_PAT: ${{ secrets.AI_Assistant_Key }}
-          REPO: ${{ github.repository }}
-        run: |
-          git remote set-url origin "https://x-access-token:${BOT_PAT}@github.com/${REPO}.git"
 
       - name: Commit and push if changes
         run: |
