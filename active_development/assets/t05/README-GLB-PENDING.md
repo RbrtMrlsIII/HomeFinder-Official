@@ -1,0 +1,1 @@
+Approved GLB binary is supplied in the full P04 handoff package. Repository binary upload is pending connector support for arbitrary binary files.
