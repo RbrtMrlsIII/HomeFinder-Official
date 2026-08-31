@@ -28,17 +28,19 @@
    - T03 `83d1eadf8ac940c213618e5afdd5f7d96b71e7f17aa61a7582d3516f6271020c`
    - T04 `330b4afc1068554abab84ac985e30f5cd39ec16887ee2f036a42424f7ddd57a0`
    - T05 `b71bc456b3fc1aaf4659926b2626da0d4bc61c47a8f495ff64043473d661f1e6`
-3. The P04 target manifest expects these binaries at repository-backed paths under `active_development/assets/t02` through `t05`.
+3. The clean handoff also contains those four exact binaries at the manifest paths under `active_development/assets/t02` through `t05`; local checks confirmed the copies are byte-identical to the approved handoff copies.
 4. The current P04 branch contains inherited base64 payload workaround artifacts instead of the canonical `.glb` files at those manifest paths. These workarounds remain historical/inherited evidence and are not being promoted as the runtime source.
 5. A clean isolation branch `p04/glb-runtime-restored-2026-09-01` was created from the P04 GLB runtime line. `main` was not modified.
-6. The local browser-test server `/healthz` returned HTTP 200. A local Chromium headless probe reached the harness but did not produce a completed DOM result in the current offline execution environment. No Chromium pass is claimed from that probe.
-7. The detailed reconciliation is recorded in `docs/reconciliation/2026-09-01-p04-execution-reconciliation.md`.
+6. The local browser-test server `/healthz` returned HTTP 200. Local Playwright dependency installation timed out in the offline execution environment, so no fresh Chromium pass is claimed.
+7. Vercel project `home-finder-official` is linked to `RbrtMrlsIII/HomeFinder-Official`; the latest deployment for the isolation branch is READY and Vercel reports no grouped runtime errors in the selected window. The protected GLB URL remains behind Vercel SSO, so deployment availability is not being treated as binary-load proof.
+8. The main application-facing viewer remains the Sweet Home 3D JS Viewer and continues to use `master/HomeFinder.sh3d` as physical authority. The P04 GLB viewer is a separate validation surface.
+9. Detailed reconciliation is recorded in `docs/reconciliation/2026-09-01-p04-execution-reconciliation.md` and `docs/reconciliation/2026-09-01-p04-vercel-runtime-finding.md`.
 
 ### Current evidence
 
 - P04.3 remains **unchecked / not endorsed** because fresh repository-backed Chromium execution has not yet completed.
 - Current isolation branch: `p04/glb-runtime-restored-2026-09-01`.
-- Latest reconciliation commit: `b5177153960340e24b560d744d44f79d0356a7be`.
+- Latest handover commit: `986e39e5a0d641a24acde327766cf7f42e6f1577`.
 - Current P04 viewer entrypoint: `active_development/3d/glb-viewer/index.html`.
 - Current target manifest: `active_development/data/cinematic-3d-targets.json`.
 
