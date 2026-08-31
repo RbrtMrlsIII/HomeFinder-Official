@@ -1,49 +1,68 @@
-# HomeFinder package
+# HomeFinder
 
-**Agents:** open `project-guide/AI_ASSISTANT_READ_ME.md` first.
+HomeFinder is a web application with an authored 3D presentation environment. The repository contains application code, authoritative spatial assets, validation tooling, deployment configuration, product documentation, and historical evidence.
 
-Docs: `docs/md`, `docs/csv`, `docs/json`  
-Integrations: `docs/md/firebase|supabase|cloudflare|paypal`  
-App: `active_development/` (`firestore.rules` stays under `firebase/`)  
-3D: `master/HomeFinder.sh3d`
+## Start here
 
-## Engineering Execution Discipline — Flashlight Method
+For AI-assisted work, begin with:
 
-Future sessions must preserve this execution behavior:
+`project-guide/AI_ASSISTANT_READ_ME.md`
 
-1. Read `project-guide/AI_ASSISTANT_READ_ME.md`, `project-guide/masterplan.md`, active contracts, spatial-authority documents, and latest checkpoint/audit manifests before changes.
-2. Work chronologically and execute only the next approved gate unless evidence requires a documented branch.
-3. Use one bounded hypothesis at a time; inspect evidence before repairing or promoting anything.
-4. Classify failures before fixing them; distinguish current contracts from historical/superseded expectations.
-5. Protect `master/HomeFinder.sh3d` until candidate reconciliation gates are passed.
-6. Prefer repairing useful staged work over rebuilding it; preserve originals as evidence.
-7. Do not pursue green tests at the expense of the current architecture.
-8. Do not delete old runtime/navigation code until replacement responsibility is reconciled, proven, and documented.
-9. Before every checkpoint, verify all previously accepted development is present plus the current changes.
-10. Update `project-guide/masterplan.md`, `project-guide/AI_ASSISTANT_READ_ME.md`, README execution discipline, reports, manifests, and relevant census artifacts.
-11. End every gate with findings, verdict, unresolved constraints, checkpoint, and exactly the next recommended gate.
-12. Never equate UI/page/DOM counts with room/object counts. Physical anchors may serve multiple logical UI states.
-13. Adapt MASTER_SKILL.md.
-14. Visit PRODUCT-KNOWLEDGE.md.
-15. Please be guided by CODING-INSTRUCTIONS.md.
+That file is the current continuity index. It tells the agent what is active now and where the detailed source material lives.
 
+For the full document-routing model, read:
 
+`project-guide/DOCUMENTATION-MAP.md`
 
-## Current execution state — G1.5
+## Document wiring
 
-Semantic room/container reconciliation is complete. Physical route validation remains blocked. No runtime, canonical SH3D, or F3 candidate changes were made. Next gate: bind physical doors against semantically eligible spaces and logical navigation contracts.
+| Document | What belongs here | What does not belong here |
+| --- | --- | --- |
+| `README.md` | Repository doorway, document map, high-level state | Detailed gate history, skills, coding procedure, product doctrine, test logs |
+| `project-guide/AI_ASSISTANT_READ_ME.md` | Current continuity, active phase, latest verified state, next gate, pointers | Skills, coding instructions, product rules, security guidance, long historical narratives |
+| `project-guide/HandOver.md` | Single live checkpoint and exact continuation point | Permanent historical archive or a second handover |
+| `project-guide/Endorsement.md` | Chronological execution and acceptance ledger | Detailed evidence or replacement for HandOver |
+| `project-guide/masterplan.md` | Durable architecture, chronology, and institutional memory | Per-run logs or transient notes |
+| `project-guide/DOCUMENTATION-MAP.md` | Ownership and routing of documentation | Product implementation or runtime logic |
+| `MASTER_SKILL.md` | Agent skills and operating procedures | Project-state continuity |
+| `CODING-INSTRUCTIONS.md` | Coding conventions and implementation guidance | Current checkpoint state |
+| `PRODUCT-KNOWLEDGE.md` | Product/domain context | Agent procedure or gate status |
+| `docs/` | Detailed contracts, audits, manifests, reconciliation and validation evidence | A duplicate continuity authority |
+| `archive/` | Historical evidence | Current source of truth |
 
-## SESSION CONTINUITY — REQUIRED
+## Current state
 
-HomeFinder uses exactly two live continuity files:
+The project is currently in the **P04 Spatial / Visual Validation** track.
 
-### `project-guide/Endorsement.md`
-The chronological execution map and progress ledger for backend, security, frontend, testing, 3D, spatial, integration, and deployment work. A task is marked `☑️` only after implementation, verification, documentation, and checkpoint inclusion are complete.
+P04.0, P04.1, and P04.2 are accepted. P04.3–P04.6 remain unendorsed.
 
-### `project-guide/HandOver.md`
-The single current-state handover. It must contain the latest findings, results, fixes, decisions, protected rules, checkpoint state, and next continuation point. Never create numbered, dated, or gate-specific handover replacements.
+The canonical physical model is:
 
-### Mandatory session order
-New sessions must read `README.md`, then `project-guide/HandOver.md`, then `project-guide/Endorsement.md`, then relevant existing audits/contracts. Consult `project-guide/masterplan.md` and `project-guide/AI_ASSISTANT_READ_ME.md` when deeper architectural or assistant guidance is needed.
+`master/HomeFinder.sh3d`
 
-At checkpoint time, `project-guide/Endorsement.md`, `project-guide/HandOver.md`, and the actual project files must agree. Partial work stays unchecked. Detailed evidence belongs in existing `docs/` audit locations rather than new handover files.
+The main application-facing 3D viewer remains the Sweet Home 3D JS Viewer. The P04 GLB viewer is a separate validation surface for derived GLB artifacts and does not replace the SH3D authority.
+
+## Browser verification
+
+The repository already contains browser verification infrastructure. Inspect it before creating another workflow or harness:
+
+- `.github/workflows/homefinder-browser.yml` — repository-wide browser verification.
+- `.github/workflows/homefinder-p04.yml` — dedicated P04 spatial/visual validation.
+- `active_development/tests/browser/package.json` — Playwright package definition.
+- `active_development/tests/browser/playwright.config.mjs` — browser project and harness configuration.
+- `active_development/tests/browser/server.mjs` — browser test server.
+- `active_development/tests/browser/specs/` — browser acceptance tests.
+
+## Session continuity
+
+Use this order for a new session:
+
+1. `README.md`
+2. `project-guide/AI_ASSISTANT_READ_ME.md`
+3. `project-guide/HandOver.md`
+4. `project-guide/Endorsement.md`
+5. the relevant `docs/` evidence/contracts
+6. `project-guide/masterplan.md` when durable architecture or historical context is needed
+7. the dedicated skill/coding/product files when their subject is relevant
+
+At every checkpoint, the actual repository state, `HandOver.md`, and `Endorsement.md` must agree.
