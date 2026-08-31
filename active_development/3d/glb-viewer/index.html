@@ -25,7 +25,7 @@
   <main>
     <header>
       <h1>HomeFinder spatial validation</h1>
-      <p>Native WebGL2 validation scaffold using source-backed P04 target definitions.</p>
+      <p>Native WebGL2 spatial-validation scaffold using source-backed P04 target definitions.</p>
     </header>
     <section class="viewer" aria-label="HomeFinder spatial validation viewer">
       <div class="hf-cinematic-backdrop" id="cinematicBackdrop"></div>
@@ -38,7 +38,7 @@
       </div>
       <div id="status" class="status">Target: t02-main-hall</div>
     </section>
-    <footer>Physical authority remains <code>master/HomeFinder.sh3d</code>. This view does not mutate SH3D or GLB binaries.</footer>
+    <footer>Physical authority remains <code>master/HomeFinder.sh3d</code>. This validation view does not mutate SH3D or GLB binaries.</footer>
   </main>
 
   <script>
@@ -48,8 +48,8 @@
       backdrop: document.getElementById('cinematicBackdrop')
     };
   </script>
-  <script src="../../js/reference-3d/cinematic-3d-adapter.js"></script>
-  <script src="../../js/reference-3d/cinematic-3d-renderer.js"></script>
+  <script src="../../../js/reference-3d/cinematic-3d-adapter.js"></script>
+  <script src="../../../js/reference-3d/cinematic-3d-renderer.js"></script>
   <script>
     (async () => {
       const buttons = [...document.querySelectorAll('[data-target]')];
