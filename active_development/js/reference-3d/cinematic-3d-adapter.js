@@ -7,8 +7,11 @@
  */
 (() => {
   const manifestUrl = 'data/cinematic-assets.json';
+  const targetManifestUrl = 'data/cinematic-3d-targets.json';
   let manifest = null;
   let renderer = null;
+  let targetManifest = null;
+  let activeTarget = 't02-main-hall';
   let mounted = new Map();
   let ready = false;
 
@@ -43,6 +46,36 @@
     return manifest;
   }
 
+  async function loadTargetManifest() {
+    if (targetManifest) return targetManifest;
+    try {
+      const response = await fetch(targetManifestUrl, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`target manifest ${response.status}`);
+      targetManifest = await response.json();
+    } catch (_) {
+      targetManifest = { schema: 'CP10-T03D-3D-TARGETS-1.0', targets: {} };
+    }
+    return targetManifest;
+  }
+
+  function activeTargetDefinition() {
+    return targetManifest?.targets?.[activeTarget] || null;
+  }
+
+  function mountWorldWithTarget(state) {
+    if (!renderer?.mountWorld) return;
+    const target = activeTargetDefinition();
+    renderer.mountWorld({
+      world: state.world,
+      tier: state.tier,
+      stage: state.stage,
+      slots: state.slots,
+      budget: getBudget(state.world.id, state.tier),
+      targetId: activeTarget,
+      target
+    });
+  }
+
   function mount(worldId, { tier = 'medium', backdrop = document.querySelector('.hf-cinematic-backdrop') } = {}) {
     const world = getWorld(worldId);
     if (!world || !backdrop || tier === 'low' || window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
@@ -69,14 +102,28 @@
       priority: slot.priority
     }));
 
-    mounted.set(worldId, { world, tier, stage, slots });
+    const state = { world, tier, stage, slots };
+    mounted.set(worldId, state);
     if (renderer?.mountWorld) {
-      renderer.mountWorld({ world, tier, stage, slots, budget: getBudget(worldId, tier) });
+      loadTargetManifest().then(() => mountWorldWithTarget(state));
     }
     window.dispatchEvent(new CustomEvent('hf:cinematic-3d-mounted', {
-      detail: { worldId, tier, slots, rendererAttached: !!renderer }
+      detail: { worldId, tier, slots, rendererAttached: !!renderer, targetId: activeTarget }
     }));
     return { mounted: true, worldId, tier, slots };
+  }
+
+  async function setTarget(targetId) {
+    await loadManifest();
+    await loadTargetManifest();
+    const target = targetManifest?.targets?.[targetId];
+    if (!target) return { changed: false, reason: 'unknown-target', targetId };
+    activeTarget = targetId;
+    if (renderer?.setTarget) {
+      await renderer.setTarget({ world: getWorld('world-01-home'), targetId, target, tier: mounted.get('world-01-home')?.tier || 'medium' });
+    }
+    window.dispatchEvent(new CustomEvent('hf:cinematic-3d-target', { detail: { targetId, target } }));
+    return { changed: true, targetId, target };
   }
 
   function unmount(worldId) {
@@ -92,22 +139,20 @@
       throw new TypeError('Cinematic renderer must expose mountWorld().');
     }
     renderer = nextRenderer;
-    for (const state of mounted.values()) {
-      renderer.mountWorld({
-        world: state.world,
-        tier: state.tier,
-        stage: state.stage,
-        slots: state.slots,
-        budget: getBudget(state.world.id, state.tier)
-      });
-    }
+    loadTargetManifest().then(() => {
+      for (const state of mounted.values()) mountWorldWithTarget(state);
+    });
     return renderer;
   }
 
   const api = {
     version: '1.1.0-phase-a2.4',
     manifestUrl,
+    targetManifestUrl,
     loadManifest,
+    loadTargetManifest,
+    setTarget,
+    get activeTarget() { return activeTarget; },
     mount,
     unmount,
     registerRenderer,
