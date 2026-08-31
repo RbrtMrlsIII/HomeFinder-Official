@@ -1,15 +1,13 @@
 import { test, expect } from '@playwright/test';
 
 const viewerPath = '/active_development/3d/glb-viewer/index.html';
-const EXPECTED_RENDERER = 'native-webgl2';
-
+const EXPECTED_RENDERER = 'three-glb';
 const EXPECTED_CAMERAS = {
   't02-main-hall': { position: [3.5, 1.5, -5.6], target: [4.8, 0.85, -4.6], fov: 52.70715 },
   't03-h07-kitchen': { position: [3.5, 1.7, -1.45], target: [2.1, 1.3, -1.1], fov: 58.441964 },
   't03-h08-bedroom1': { position: [7.35, 1.75, -5], target: [8.5, 1.3, -4.7], fov: 56.150515 },
   't04-h1-basement-firstfloor': { position: [-1.7, 1.78, -2.8], target: [1, 2.2, -6], fov: 48 }
 };
-
 function cameraEquals(actual, expected) {
   return actual?.position?.every((v, i) => Math.abs(v - expected.position[i]) < 1e-6)
     && actual?.target?.every((v, i) => Math.abs(v - expected.target[i]) < 1e-6)
@@ -17,7 +15,7 @@ function cameraEquals(actual, expected) {
 }
 
 test.describe('P04 spatial / visual validation', () => {
-  test('initial mount receives the active T02/H-03 source-backed target', async ({ page }) => {
+  test('initial mount receives the active T02/H-03 source-backed GLB target', async ({ page }) => {
     const errors = [];
     page.on('pageerror', e => errors.push(e.message));
     page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
@@ -25,6 +23,8 @@ test.describe('P04 spatial / visual validation', () => {
     const stage = page.locator('.hf-cinematic-3d-stage');
     await expect(stage).toHaveAttribute('data-renderer', EXPECTED_RENDERER, { timeout: 60000 });
     await expect(stage).toHaveAttribute('data-target-id', 't02-main-hall');
+    await expect(stage).toHaveAttribute('data-glb-loaded', 'true', { timeout: 60000 });
+    await expect(stage).toHaveAttribute('data-glb-url', /house1-mainhall-public-arrival\.glb/);
     await expect(stage).toHaveAttribute('data-camera-position', EXPECTED_CAMERAS['t02-main-hall'].position.join(','));
     await expect(stage).toHaveAttribute('data-camera-target', EXPECTED_CAMERAS['t02-main-hall'].target.join(','));
     await expect(stage).toHaveAttribute('data-camera-fov', String(EXPECTED_CAMERAS['t02-main-hall'].fov));
@@ -35,7 +35,7 @@ test.describe('P04 spatial / visual validation', () => {
   });
 
   for (const [targetId, expected] of Object.entries(EXPECTED_CAMERAS)) {
-    test(`target ${targetId} resolves to the expected source-backed camera contract`, async ({ page }) => {
+    test(`target ${targetId} resolves to the expected source-backed camera and GLB contract`, async ({ page }) => {
       const errors = [];
       let targetEvent = null;
       page.on('pageerror', e => errors.push(e.message));
@@ -53,6 +53,8 @@ test.describe('P04 spatial / visual validation', () => {
       expect(cameraEquals(target.cameraThreeMeters, expected)).toBe(true);
       expect(target.cameraBinding || target.cameraBindingStatus).toBeTruthy();
       await expect(stage).toHaveAttribute('data-target-id', targetId);
+      await expect(stage).toHaveAttribute('data-glb-loaded', 'true', { timeout: 60000 });
+      await expect(stage).toHaveAttribute('data-glb-url', /\.glb$/);
       await expect(stage).toHaveAttribute('data-camera-position', expected.position.join(','));
       await expect(stage).toHaveAttribute('data-camera-target', expected.target.join(','));
       await expect(stage).toHaveAttribute('data-camera-fov', String(expected.fov));
@@ -73,6 +75,7 @@ test.describe('P04 spatial / visual validation', () => {
     expect(target.cameraBinding['Bedroom #2'].pov).toBeNull();
     await page.locator('[data-target="t05-h1-level1-interior-network"]').click();
     await expect(stage).toHaveAttribute('data-target-id', 't05-h1-level1-interior-network');
+    await expect(stage).toHaveAttribute('data-glb-loaded', 'true', { timeout: 60000 });
     await expect(page.locator('#status')).toContainText('Target: t05-h1-level1-interior-network');
     await page.screenshot({ path: 'p04-t05-level1.png', fullPage: true });
   });
