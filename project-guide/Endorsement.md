@@ -73,6 +73,15 @@ A `☑️` means the item is fully implemented, verified, documented in `HandOve
 - [ ] 5.5G.8.4 — Establish deployment-readiness baseline.
 - [ ] 5.5G.8.5 — Do not deploy Firebase Hosting while web/3D integration is incomplete.
 
+## P04 — Post-T07 Spatial / Visual Validation
+- [x] ☑️ P04.0 — Establish dedicated spatial/visual validation lane and preserve the blocked initial evidence.
+- [x] ☑️ P04.1 — Isolate missing viewer-entrypoint/test-harness failure and add repository-backed validation entrypoint.
+- [x] ☑️ P04.2 — Activate source-backed target manifest and runtime metadata contract.
+- [ ] P04.3 — Fresh Chromium validation of native WebGL2 target mount/camera/scale/elevation.
+- [ ] P04.4 — Visual review of fresh screenshots and T05 vertical normalization.
+- [ ] P04.5 — Actual derived GLB binary loading/correspondence verification when binary-safe runtime path is available.
+- [ ] P04.6 — Fresh P04 endorsement decision.
+
 ## H — Final integration
 - [ ] Phase 8 — Door animation / traversal integration.
 - [ ] Phase 9 — Responsive spatial/UI integration.
