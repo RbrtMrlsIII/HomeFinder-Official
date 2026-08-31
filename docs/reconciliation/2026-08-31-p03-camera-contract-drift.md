@@ -25,7 +25,10 @@ This reconciliation branch is intentionally being push-triggered so the existing
 4. run the unchanged Chromium suite against the candidate-backed model, and
 5. retain the Playwright report as fresh evidence.
 
+## Gate trigger correction
+Run #52 was pull-request-triggered, so its `push && github.ref_name == env.P03_BRANCH` candidate-promotion step was correctly skipped. The resulting 17 passed / 1 flaky / 1 failed run therefore remains pre-candidate evidence and does not test the approved binary candidate. This commit exists only to trigger the required push-path execution; no acceptance test or candidate scope is changed.
+
 ## Gate decision
 P03 remains BLOCKED FOR ENDORSEMENT pending fresh candidate-backed Chromium evidence and the full P03 browser gate.
 
-Do not weaken the acceptance test. Do not treat the historical 18/19 run as candidate evidence. Do not promote to production from this gate.
+Do not weaken the acceptance test. Do not treat the historical 18/19 or Run #52 results as candidate evidence. Do not promote to production from this gate.
