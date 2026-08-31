@@ -1,0 +1,26 @@
+{
+  "phase": "P04",
+  "status": "CANDIDATE / NOT YET ACTIVE",
+  "canonical_scene": "master/HomeFinder.sh3d",
+  "target": "t02-main-hall",
+  "binding": {
+    "pov": "H-03",
+    "cameraMode": "source-backed-room-presentation",
+    "house": "House 1",
+    "levelId": "level1",
+    "room": "Living room",
+    "roomId": "room-f7418681-094a-400a-9858-b6dedb3e0ef5",
+    "sourceCoordinatesCm": {
+      "position": [350, 560, 150],
+      "target": [480, 460, 85]
+    },
+    "cameraThreeMeters": {
+      "position": [3.5, 1.5, -5.6],
+      "target": [4.8, 0.85, -4.6],
+      "fov": 52.70715
+    },
+    "cameraBinding": "SOURCE-BOUND H-03 / PRESENTATION ONLY"
+  },
+  "scope": "target-definition only; no SH3D or GLB binary mutation",
+  "nextGate": "Fresh Chromium GLB visual validation"
+}
