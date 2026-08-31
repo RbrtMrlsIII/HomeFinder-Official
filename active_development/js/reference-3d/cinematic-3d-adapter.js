@@ -6,8 +6,8 @@
  * attached later without changing page HTML, routing, or scene ownership.
  */
 (() => {
-  const manifestUrl = 'data/cinematic-assets.json';
-  const targetManifestUrl = 'data/cinematic-3d-targets.json';
+  const manifestUrl = '/active_development/data/cinematic-assets.json';
+  const targetManifestUrl = '/active_development/data/cinematic-3d-targets.json';
   let manifest = null;
   let renderer = null;
   let targetManifest = null;
