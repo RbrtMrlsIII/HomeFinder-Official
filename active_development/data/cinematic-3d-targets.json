@@ -1,0 +1,47 @@
+{
+  "schema": "CP10-T03D-3D-TARGETS-1.0",
+  "phase": "P04",
+  "canonicalScene": "master/HomeFinder.sh3d",
+  "coordinateConvention": "source-cm-to-m-xzy",
+  "scale": 0.01,
+  "targets": {
+    "t02-main-hall": {
+      "house": "House 1",
+      "levelId": "level1",
+      "room": "Living room",
+      "cameraBinding": "SOURCE-BOUND H-03 / PRESENTATION ONLY",
+      "cameraThreeMeters": { "position": [3.5, 1.5, -5.6], "target": [4.8, 0.85, -4.6], "fov": 52.70715 }
+    },
+    "t03-h07-kitchen": {
+      "house": "House 1",
+      "levelId": "level1",
+      "room": "Kitchen",
+      "cameraBinding": "SOURCE-BOUND H-07 / PRESENTATION ONLY",
+      "cameraThreeMeters": { "position": [3.5, 1.7, -1.45], "target": [2.1, 1.3, -1.1], "fov": 58.441964 }
+    },
+    "t03-h08-bedroom1": {
+      "house": "House 1",
+      "levelId": "level1",
+      "room": "Bedroom #1",
+      "cameraBinding": "SOURCE-BOUND H-08 / PRESENTATION ONLY",
+      "cameraThreeMeters": { "position": [7.35, 1.75, -5], "target": [8.5, 1.3, -4.7], "fov": 56.150515 }
+    },
+    "t04-h1-basement-firstfloor": {
+      "house": "House 1",
+      "levelId": "basement",
+      "room": "Staircase",
+      "cameraBinding": "SOURCE-BOUND / PRESENTATION ONLY",
+      "cameraThreeMeters": { "position": [-1.7, 1.78, -2.8], "target": [1, 2.2, -6], "fov": 48 }
+    },
+    "t05-h1-level1-interior-network": {
+      "house": "House 1",
+      "levelId": "level1",
+      "levelElevationCm": 112,
+      "cameraBinding": {
+        "Living room": { "pov": "H-03", "binding": "SOURCE-BOUND H-03 / PRESENTATION ONLY" },
+        "Bedroom #2": { "pov": null, "binding": "NO INVENTED CAMERA" }
+      },
+      "presentationOnly": true
+    }
+  }
+}
