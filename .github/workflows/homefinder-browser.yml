@@ -5,10 +5,11 @@ on:
   pull_request:
 
 permissions:
-  contents: read
+  contents: write
 
 env:
   EXPECTED_P03_SHA256: f8a0bf7d0181155d342dfc97fad0679741e38fdcfda60982dfa3ee534eb81aed
+  P03_BRANCH: reconcile/p03-camera-contract-2026-08-31
 
 jobs:
   browser:
@@ -33,23 +34,45 @@ jobs:
         working-directory: active_development/tests/browser
         run: npx playwright install chromium --with-deps
 
-      - name: Prepare isolated P03 camera candidate
+      - name: Promote exact P03 candidate on reconciliation branch
+        if: github.event_name == 'push' && github.ref_name == env.P03_BRANCH
         run: |
           set -eu
           before="$(sha256sum master/HomeFinder.sh3d | cut -d' ' -f1)"
-          python3 active_development/tests/browser/prepare-p03-camera-candidate.py
-          after="$(sha256sum master/HomeFinder.sh3d | cut -d' ' -f1)"
-          test "$before" = "$after"
-          candidate="$(sha256sum /tmp/HomeFinder-P03-candidate.sh3d | cut -d' ' -f1)"
-          echo "Canonical model SHA-256: $after"
+          test "$before" = "2463bbf41a92012bbd81b66ea957c993075f5a2bf6db8a43e676b0c832b0e58c"
+          python3 active_development/tests/browser/promote-p03-camera-candidate.py
+          candidate="$(sha256sum master/HomeFinder.sh3d.p03-candidate | cut -d' ' -f1)"
           echo "P03 candidate SHA-256: $candidate"
           test "$candidate" = "$EXPECTED_P03_SHA256"
+          cp master/HomeFinder.sh3d.p03-candidate master/HomeFinder.sh3d
+          rm master/HomeFinder.sh3d.p03-candidate
+          promoted="$(sha256sum master/HomeFinder.sh3d | cut -d' ' -f1)"
+          echo "Promoted canonical SHA-256: $promoted"
+          test "$promoted" = "$EXPECTED_P03_SHA256"
+          test "$(git status --porcelain)" = " M master/HomeFinder.sh3d"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add master/HomeFinder.sh3d
+          git commit -m "feat(P03): promote verified camera-contract candidate [skip ci]"
+          git push origin "HEAD:${P03_BRANCH}"
+
+      - name: Verify P03 model hash used by browser
+        run: |
+          set -eu
+          current="$(sha256sum master/HomeFinder.sh3d | cut -d' ' -f1)"
+          echo "Browser model SHA-256: $current"
+          if [ "$current" = "$EXPECTED_P03_SHA256" ]; then
+            echo "P03 candidate model active"
+          elif [ "$current" = "2463bbf41a92012bbd81b66ea957c993075f5a2bf6db8a43e676b0c832b0e58c" ]; then
+            echo "Canonical pre-candidate model active"
+          else
+            exit 1
+          fi
 
       - name: Run Chromium browser verification
         working-directory: active_development/tests/browser
         env:
           CI: 'true'
-          HOMEFINDER_P03_MODEL_PATH: /tmp/HomeFinder-P03-candidate.sh3d
         run: npx playwright test --project=chromium
 
       - name: Upload Playwright report
