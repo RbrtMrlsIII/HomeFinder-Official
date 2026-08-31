@@ -2,85 +2,53 @@
 
 > Single live handover authority. Update this file after every execution gate.
 
-## CURRENT STATE — POST-T07 P03 CAMERA-CONTRACT RECONCILIATION — 2026-08-31
+## CURRENT STATE — POST-T07 / P02 ACCEPTED / P03 ACCEPTED / P04.1 BLOCKED — 2026-08-31
 
 **Execution discipline:** Observe → Record → Understand → Classify → Align → Validate → Endorse → Advance.
 
 **T07:** FROZEN. Do not reopen T07 without an explicit new bounded gate.
 
-**Current track:** Post-T07 GLB Promotion Track.
+**P02:** ACCEPTED. SH3D ↔ GLB correspondence remains the accepted lineage checkpoint.
 
-**P03 verdict:** **BLOCKED FOR ENDORSEMENT.**
+**P03:** ACCEPTED. Candidate-backed Chromium evidence previously established the H-03/H-07/H-08 selectable-camera contract. The approved candidate SHA-256 remains `f8a0bf7d0181155d342dfc97fad0679741e38fdcfda60982dfa3ee534eb81aed`.
 
-**Physical authority:** `master/HomeFinder.sh3d` remains protected and unchanged.
+**Current track:** P04 Spatial / Visual Validation.
 
-### Fresh browser evidence
+**P04.0 verdict:** BLOCKED by a test-harness/runtime-mount defect. The first focused P04 run targeted `/3d/glb-viewer/index.html`, a route that did not exist in the checked-out repository. After adding the missing viewer entrypoint and target manifest, the P04 runtime scaffold became available on the canonical repository URL space.
 
-The corrected import-path revision resolved the earlier browser infrastructure failure. Fresh Chromium evidence reports:
+**P04.1 latest execution:** The focused P04 browser lane was run against the repository-backed viewer. The accepted native renderer is `native-webgl2` proxy geometry; this phase does not claim that real GLB binaries are already loaded by the renderer. The gate verifies source-backed target/camera/scale contracts and the current spatial-validation scaffold.
 
-- Browser infrastructure: PASS
-- Chromium setup: PASS
-- Browser health: PASS
-- All inter-house navigation journeys: PASS
-- T07-E control count/visibility: PASS
-- T07-E canonical camera binding: **FAIL**
-- Overall: **18/19 PASS, 1/19 FAIL**
+### Fresh P04 findings
 
-The remaining failing contract is specifically the selectable-camera binding for:
+1. The checked-out branch originally had no `/3d/glb-viewer/index.html`, so the initial P04 tests could never mount the stage. Classification: **test-harness / missing-entrypoint defect**.
+2. The repository now contains `active_development/3d/glb-viewer/index.html` and the active source-backed target manifest `active_development/data/cinematic-3d-targets.json`.
+3. The GLB-adapter layer consumes the target manifest and passes the active target to the renderer. Source-backed camera metadata is now exposed on the runtime stage for independent verification.
+4. The canonical P04 coordinate convention is `source-cm-to-m-xzy` with scale `0.01`. These values are independently checked by the P04 browser suite.
+5. The current renderer is a **native WebGL2 proxy scaffold**, not a real GLB binary renderer. This is intentional and explicitly recorded rather than inferred as a completed GLB integration.
+6. The previously accepted P02 vertical-frame carry-forward remains: T02/T03 level-local Z=0 versus T05 level elevation of 112 cm. It is still a P04 visual-normalization checkpoint.
+7. Vercel confirmed the branch deployment is source-connected and READY for commit `173312f08c6459eb228617a2cca283b2546b3c8f`; the preview URL is protected by Vercel SSO, so browser screenshots from the deployment require an authenticated browser connector that was not available in this execution.
 
-- `HF H-03 — property-display`
-- `HF H-07 — guide`
-- `HF H-08 — safety`
+### Current evidence
 
-The acceptance test remains unchanged and is intentionally not softened.
+- Historical P04 focused run `33391752987` / artifact `9757930414`: **6/6 focused tests failed** because `.hf-cinematic-3d-stage` never existed. This is retained as diagnostic evidence, not a spatial-model failure.
+- Current branch head: `173312f08c6459eb228617a2cca283b2546b3c8f`.
+- Current P04 viewer entrypoint: `active_development/3d/glb-viewer/index.html`.
+- Current target manifest: `active_development/data/cinematic-3d-targets.json`.
 
-### Root cause classification
+### Required next gate
 
-Inspection of the canonical `HomeFinder.sh3d` XML confirms that all nine H-series cameras exist. The failing three, however, are ordinary `observerCamera` entries. Legacy selectable cameras such as Living room, Kitchen, and Bedroom #1 use `attribute="storedCamera"`.
+1. Execute the newest P04 dedicated workflow on branch head and capture the fresh Chromium report/screenshots.
+2. Require the native WebGL2 stage to mount and all camera/target/scale/elevation checks to pass.
+3. Separately verify the actual derived GLB binaries once a binary-safe GLB path is available; do not label the proxy scaffold as GLB correspondence proof.
+4. Review captured screenshots for target framing and T05 level-1 normalization.
+5. Only then decide P04 endorsement.
 
-The viewer's selectable-camera collection is therefore driven by stored-camera semantics. **Camera exists physically ≠ camera is selectable by the viewer.**
-
-Classification: **canonical asset/runtime contract mismatch**, not a Playwright, Chromium, route, or acceptance-test defect.
-
-### Candidate remediation
-
-A bounded candidate was prepared outside the repository. It changes only the nine H-series presentation-camera entries to `attribute="storedCamera"` and preserves geometry, furniture, rooms, levels, coordinates, and camera metadata.
-
-Candidate SHA-256:
-`f8a0bf7d0181155d342dfc97fad0679741e38fdcfda60982dfa3ee534eb81aed`
-
-The candidate binary is **not committed**. No canonical SH3D mutation has been made.
-
-### Checkpoint / ZIP evidence
-
-The supplied full reconciliation checkpoint was inspected against the project's execution standard. It confirms the required continuity files and the project-wide execution discipline. Historical snapshot material is treated as evidence, not as authority when newer evidence exists.
-
-The checkpoint's canonical `master/HomeFinder.sh3d` is SHA-256:
-`2463bbf41a92012bbd81b66ea957c993075f5a2bf6db8a43e676b0c832b0e58c`
-
-### Required gate sequence
-
-1. Introduce the verified candidate through a genuinely binary-safe repository path.
-2. Verify the committed artifact hash equals `f8a0bf7d0181155d342dfc97fad0679741e38fdcfda60982dfa3ee534eb81aed`.
-3. Run the unchanged Playwright Chromium suite.
-4. Require H-03, H-07, and H-08 camera bindings to pass.
-5. Perform the full P03 browser gate.
-6. Only then evaluate endorsement and advance to P04.
-
-**Do not:** weaken the acceptance test, alter unrelated geometry/runtime behavior, reopen T07, or claim P03 endorsement from the current evidence.
+**Physical authority:** `master/HomeFinder.sh3d` remains protected and is not mutated by P04. GLBs remain derived artifacts. Security/authorization remain outside SH3D.
 
 ## Mandatory continuity outputs
 
-- Human-readable findings: `docs/reconciliation/2026-08-31-p03-camera-contract-drift.md`
-- Machine-readable registry: `docs/reconciliation/2026-08-31-p03-camera-contract-drift.json`
-- Validation evidence: fresh Chromium result; repository CI remains the execution authority
-- Team handover/checkpoint: this `project-guide/HandOver.md`
-
-## File authority
-
-- `project-guide/Endorsement.md` = chronological execution ledger.
 - `project-guide/HandOver.md` = latest project state and continuation point.
-- `README.md` = project-wide execution/session rules.
+- `project-guide/Endorsement.md` = chronological execution ledger.
 - `project-guide/masterplan.md` = durable architecture/chronology.
 - `project-guide/AI_ASSISTANT_READ_ME.md` = assistant orientation.
 - Existing `docs/` audits/contracts = detailed evidence.
