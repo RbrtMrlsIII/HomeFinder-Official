@@ -6,26 +6,26 @@ import { fileURLToPath } from 'node:url';
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '../../');
 const repoRoot = path.resolve(here, '../../../');
+const p03Candidate = process.env.HOMEFINDER_P03_MODEL_PATH ? path.resolve(process.env.HOMEFINDER_P03_MODEL_PATH) : null;
 const port = Number(process.env.PORT || 4173);
 const mime = {
   '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
-  '.mjs': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8',
-  '.json': 'application/json; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg',
-  '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.svg': 'image/svg+xml'
+  '.mjs': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json; charset=utf-8',
+  '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.svg': 'image/svg+xml'
 };
 
 const server = http.createServer((req, res) => {
   if (req.url === '/healthz') {
     res.writeHead(200, { 'content-type': 'application/json; charset=utf-8' });
-    res.end(JSON.stringify({ status: 'ok', service: 'homefinder-browser-test-server' }));
+    res.end(JSON.stringify({ status: 'ok', service: 'homefinder-browser-test-server', p03Candidate: Boolean(p03Candidate) }));
     return;
   }
 
   const decoded = decodeURIComponent((req.url || '/').split('?')[0]);
   const relative = decoded === '/' ? 'index.html' : decoded.replace(/^\/+/, '');
   const isAuthoritativeModel = relative === 'master/HomeFinder.sh3d';
-  const target = isAuthoritativeModel ? path.resolve(repoRoot, relative) : path.resolve(root, relative);
-  const targetRoot = isAuthoritativeModel ? repoRoot : root;
+  const target = isAuthoritativeModel && p03Candidate ? p03Candidate : isAuthoritativeModel ? path.resolve(repoRoot, relative) : path.resolve(root, relative);
+  const targetRoot = isAuthoritativeModel && p03Candidate ? path.dirname(p03Candidate) : isAuthoritativeModel ? repoRoot : root;
   if (!target.startsWith(targetRoot + path.sep) || !fs.existsSync(target) || fs.statSync(target).isDirectory()) {
     res.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' });
     res.end('Not found');
