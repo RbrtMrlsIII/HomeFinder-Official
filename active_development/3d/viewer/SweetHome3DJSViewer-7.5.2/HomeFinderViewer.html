@@ -54,6 +54,12 @@
         </span>
         <label for="levelsAndCameras">Explore</label>
         <select id="levelsAndCameras" aria-label="Choose a floor or camera view"></select>
+        <div class="homefinderPresentationNav" id="t07ePresentationNav" aria-label="T07 endorsed presentation destinations">
+          <span class="homefinderPresentationLabel">Destinations</span>
+          <button type="button" class="homefinderPresentationButton" aria-pressed="false" data-t07e-camera="H-03">Living room · H-03</button>
+          <button type="button" class="homefinderPresentationButton" aria-pressed="false" data-t07e-camera="H-07">Kitchen · H-07</button>
+          <button type="button" class="homefinderPresentationButton" aria-pressed="false" data-t07e-camera="H-08">Bedroom #1 · H-08</button>
+        </div>
       </div>
     </section>
   </main>
@@ -73,7 +79,8 @@
     );
   </script>
   <script type="module">
-    import { planJourney } from "../../../../js/inter-house-navigation.js";
+    import { planJourney, toApplicationHref } from "../../../../js/inter-house-navigation.js";
+    import { focusT07EPresentationDestination, getT07EPresentationDestination } from "../../../../js/t07-e-controlled-presentation.js";
 
     (function () {
       const buttons = Array.from(document.querySelectorAll(".homefinderHouseButton"));
@@ -91,6 +98,22 @@
       function label(house) {
         return house.replace("house-", "House ");
       }
+
+      const presentationSelect = document.getElementById("levelsAndCameras");
+      const presentationButtons = Array.from(document.querySelectorAll("[data-t07e-camera]"));
+      presentationButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const id = button.dataset.t07eCamera;
+          const result = focusT07EPresentationDestination(presentationSelect, id);
+          const destination = getT07EPresentationDestination(id);
+          if (result.ok) {
+            status.textContent = `${destination.roomName} · ${id} · presentation view`;
+            presentationButtons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+            return;
+          }
+          status.textContent = `${id} presentation view unavailable until camera options are ready`;
+        });
+      });
 
       function setCurrent(house) {
         currentHouse = house;
@@ -128,7 +151,7 @@
 
           const finalLeg = plan.legs.length ? plan.legs[plan.legs.length - 1] : plan;
           if (finalLeg.route && finalLeg.route !== "index.html") {
-            window.location.href = finalLeg.route;
+            window.location.href = toApplicationHref(finalLeg.route);
           }
         });
       });
