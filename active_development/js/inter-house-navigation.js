@@ -36,6 +36,22 @@ export function destinationFor(house, role = "guest") {
   return destinations?.[role] ?? "login.html";
 }
 
+/**
+ * Convert an application-root route vocabulary entry into a root-relative
+ * href. The 3D viewer lives several directories below the application root,
+ * so a bare "login.html" would resolve under the viewer folder.
+ *
+ * 5.5G.6M.3: this is the smallest routing correction that preserves the
+ * existing role × house destination model.
+ */
+export function toApplicationHref(route) {
+  if (route == null) return route;
+  const value = String(route).trim();
+  if (!value) return value;
+  if (/^[a-z][a-z0-9+.-]*:/i.test(value)) return value;
+  return value.startsWith("/") ? value : `/${value}`;
+}
+
 export function planInterHouseTransition(fromHouse, toHouse, role = "guest") {
   if (fromHouse === toHouse) {
     return { allowed: true, mode: "same-house", fromHouse, toHouse, role, route: destinationFor(toHouse, role), legs: [] };
@@ -90,6 +106,7 @@ if (typeof window !== "undefined") {
   window.HomeFinderInterHouseNavigation = Object.freeze({
     canTravelBetween,
     destinationFor,
+    toApplicationHref,
     planInterHouseTransition,
     planJourney
   });
