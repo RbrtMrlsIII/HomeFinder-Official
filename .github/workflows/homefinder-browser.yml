@@ -7,6 +7,9 @@ on:
 permissions:
   contents: read
 
+env:
+  EXPECTED_P03_SHA256: f8a0bf7d0181155d342dfc97fad0679741e38fdcfda60982dfa3ee534eb81aed
+
 jobs:
   browser:
     runs-on: ubuntu-latest
@@ -30,10 +33,23 @@ jobs:
         working-directory: active_development/tests/browser
         run: npx playwright install chromium --with-deps
 
+      - name: Prepare isolated P03 camera candidate
+        run: |
+          set -eu
+          before="$(sha256sum master/HomeFinder.sh3d | cut -d' ' -f1)"
+          python3 active_development/tests/browser/prepare-p03-camera-candidate.py
+          after="$(sha256sum master/HomeFinder.sh3d | cut -d' ' -f1)"
+          test "$before" = "$after"
+          candidate="$(sha256sum /tmp/HomeFinder-P03-candidate.sh3d | cut -d' ' -f1)"
+          echo "Canonical model SHA-256: $after"
+          echo "P03 candidate SHA-256: $candidate"
+          test "$candidate" = "$EXPECTED_P03_SHA256"
+
       - name: Run Chromium browser verification
         working-directory: active_development/tests/browser
         env:
           CI: 'true'
+          HOMEFINDER_P03_MODEL_PATH: /tmp/HomeFinder-P03-candidate.sh3d
         run: npx playwright test --project=chromium
 
       - name: Upload Playwright report
