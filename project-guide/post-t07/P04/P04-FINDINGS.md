@@ -1,32 +1,44 @@
 # Post-T07 P04 — Spatial / Visual Validation — Fresh Findings
 
 ## Status
-IN PROGRESS — runtime camera-binding defect isolated and minimally corrected; browser verification pending.
+BLOCKED — P04.1 runtime-mount remediation completed; fresh Chromium evidence is still required before endorsement.
 
 ## Authority
-- Physical authority: `master/HomeFinder.sh3d`
+- Physical authority: `master/HomeFinder.sh3d`.
 - GLB assets remain derived artifacts.
 - T07 remains frozen.
 - P02 correspondence is accepted and carried forward.
 
-## Findings and classification
-1. The active `active_development/data/cinematic-3d-targets.json` already contains the source-bound H-03 camera definition for `t02-main-hall`. The earlier finding that the active target manifest lacked H-03 was stale and is superseded by this inspection.
-2. The actual defect was in `cinematic-3d-adapter.js`: initial GLB renderer mounting did not load/pass the active target definition, so the renderer's generic fallback camera could remain active even though the target manifest was correct.
-3. The bounded correction passes the active target definition into the renderer during mount/registration. This does not alter SH3D, GLB binaries, route/role logic, collision behavior, or T07 contracts.
-4. The GLB renderer already enforces the established spatial convention: source centimetres are scaled by `0.01` and rotated from source X/Y/Z into Three.js X/Z/Y (Y-up). P04 will now verify this behavior in Chromium rather than infer it from source alone.
-5. T05's absolute level-1 Z=112 cm versus T02/T03 local-Z=0 remains an explicit normalization checkpoint. No normalization is being invented during this gate.
+## P04.0 evidence and classification
+1. Focused run `33391752987` executed six P04 tests and all six failed before spatial assertions because `.hf-cinematic-3d-stage` did not exist.
+2. Inspection proved the test path `/3d/glb-viewer/index.html` did not exist in the checked-out repository. Classification: **missing viewer entrypoint / test-harness integration defect**, not a geometry or camera failure.
+3. The same run preserved screenshots and traces in artifact `9757930414`, SHA-256 `2d6776ccb9925ce8a6cc84f60a9a2a1067547d261de8cf5ec5a9f61ce24c46ef`.
 
-## Bounded implementation
-- Updated `active_development/js/reference-3d/cinematic-3d-adapter.js` to pass the active target definition into `mountWorld`.
-- Added a P04 Chromium regression test covering target-camera propagation and the runtime scale/axis contract.
+## P04.1 bounded remediation
+1. Added `active_development/3d/glb-viewer/index.html` as the repository-backed spatial-validation entrypoint.
+2. Added active `active_development/data/cinematic-3d-targets.json` with source-backed P04 target contracts.
+3. Corrected the test viewer URL to `/active_development/3d/glb-viewer/index.html`, matching the repository/Vercel URL space.
+4. Updated the test server to resolve both synthetic `/3d/...` paths and repository-root `/active_development/...` paths without changing SH3D authority.
+5. Updated the native renderer to expose target ID, camera position/target/FOV, model scale, and coordinate convention on the runtime stage.
+6. Aligned the P04 gate with the actual current renderer: `native-webgl2` proxy scaffold. The repository does **not** yet claim that real GLB binaries are loaded by this renderer.
 
-## Required browser evidence
-- GLB viewer mounts without console/page errors.
-- Default T02 mount uses the H-03 camera values from the active target manifest.
-- T03 H-07 and H-08 switch to their source-derived camera values.
-- T04 retains its presentation-only camera definition and vertical target semantics.
-- Runtime stage reports the expected `0.01` model scale and Y-up conversion convention.
-- Existing GLB target switching remains green.
+## Source-backed target contracts
+- T02 / H-03: position `[3.5,1.5,-5.6]` m, target `[4.8,0.85,-4.6]` m, FOV `52.70715°`.
+- T03 / H-07: position `[3.5,1.7,-1.45]` m, target `[2.1,1.3,-1.1]` m, FOV `58.441964°`.
+- T03 / H-08: position `[7.35,1.75,-5]` m, target `[8.5,1.3,-4.7]` m, FOV `56.150515°`.
+- T04 presentation camera: position `[-1.7,1.78,-2.8]` m, target `[1,2.2,-6]` m, FOV `48°`.
+- Spatial convention: source centimetres → metres at `0.01`, then source X/Y/Z → runtime X/Z/Y.
+- T05 level elevation: `112 cm`; Bedroom #2 has no invented camera binding.
+
+## Independent hosting observation
+Vercel produced a READY preview for branch head `173312f08c6459eb228617a2cca283b2546b3c8f`. The deployment is source-connected, but its protected preview requires authenticated browser access for full screenshot verification; the available browser connector was not connected during this execution.
+
+## Required next gate
+1. Run the newest dedicated P04 workflow from the current branch head.
+2. Require stage mount plus all camera/scale/coordinate/elevation checks to pass.
+3. Review fresh screenshots for framing and T05 vertical normalization.
+4. Separately verify actual derived GLB binary loading when a binary-safe GLB path is available.
+5. Update `HandOver.md` and `Endorsement.md` with the fresh result.
 
 ## Decision
-P04 remains open until the fresh Chromium execution passes and the results are reconciled into the project handover and endorsement ledger.
+P04 is **not endorsed yet**. The bounded remediation is accepted as an implementation checkpoint; the browser gate remains the deciding evidence.
