@@ -1,0 +1,33 @@
+{
+  "phase": "P04",
+  "status": "IN_PROGRESS",
+  "authority": "master/HomeFinder.sh3d",
+  "frozenPrevious": "P02 correspondence endorsed; T07 frozen",
+  "findings": [
+    {
+      "id": "P04-001",
+      "type": "target-camera-binding",
+      "asset": "t02-main-hall",
+      "status": "REMEDIATION_CANDIDATE",
+      "pov": "H-03",
+      "sourcePositionCm": [350, 560, 150],
+      "sourceTargetCm": [480, 460, 85],
+      "runtimePositionM": [3.5, 1.5, -5.6],
+      "runtimeTargetM": [4.8, 0.85, -4.6],
+      "fovDegrees": 52.70715
+    },
+    {
+      "id": "P04-002",
+      "type": "cross-target-coordinate-frame",
+      "status": "CARRY_FORWARD",
+      "detail": "T02/T03 local Z=0; T05 absolute level Z=112 cm"
+    },
+    {
+      "id": "P04-003",
+      "type": "binary-integrity",
+      "status": "UNCHANGED",
+      "detail": "No SH3D or GLB binaries modified during P04 candidate preparation"
+    }
+  ],
+  "nextGate": "Fresh Chromium GLB visual validation"
+}
