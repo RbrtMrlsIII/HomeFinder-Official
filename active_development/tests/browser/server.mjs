@@ -22,10 +22,18 @@ const server = http.createServer((req, res) => {
   }
 
   const decoded = decodeURIComponent((req.url || '/').split('?')[0]);
-  const relative = decoded === '/' ? 'index.html' : decoded.replace(/^\/+/, '');
-  const isAuthoritativeModel = relative === 'master/HomeFinder.sh3d';
-  const target = isAuthoritativeModel && p03Candidate ? p03Candidate : isAuthoritativeModel ? path.resolve(repoRoot, relative) : path.resolve(root, relative);
-  const targetRoot = isAuthoritativeModel && p03Candidate ? path.dirname(p03Candidate) : isAuthoritativeModel ? repoRoot : root;
+  const requested = decoded.replace(/^\/+/, '');
+  const isAuthoritativeModel = requested === 'master/HomeFinder.sh3d';
+  const repoRelative = requested.startsWith('active_development/') ? requested : null;
+  const relative = repoRelative ? repoRelative : (decoded === '/' ? 'index.html' : requested);
+  const target = isAuthoritativeModel && p03Candidate
+    ? p03Candidate
+    : isAuthoritativeModel
+      ? path.resolve(repoRoot, relative)
+      : repoRelative
+        ? path.resolve(repoRoot, relative)
+        : path.resolve(root, relative);
+  const targetRoot = isAuthoritativeModel && p03Candidate ? path.dirname(p03Candidate) : repoRelative || isAuthoritativeModel ? repoRoot : root;
   if (!target.startsWith(targetRoot + path.sep) || !fs.existsSync(target) || fs.statSync(target).isDirectory()) {
     res.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' });
     res.end('Not found');
