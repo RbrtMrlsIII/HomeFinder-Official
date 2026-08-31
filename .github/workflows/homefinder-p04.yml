@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - p04/spatial-visual-2026-08-31
+      - p04/glb-runtime-restored-2026-09-01
   pull_request:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -20,19 +22,30 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
           node-version: 22
+
+      - name: Preflight external Three.js dependency reachability
+        run: |
+          set -eux
+          curl --fail --silent --show-error --location --head https://cdn.jsdelivr.net/npm/three@0.179.1/build/three.module.js
+          curl --fail --silent --show-error --location --head https://cdn.jsdelivr.net/npm/three@0.179.1/examples/jsm/loaders/GLTFLoader.js
+
       - name: Install browser-test dependencies
         working-directory: active_development/tests/browser
         run: npm ci --ignore-scripts
+
       - name: Install Chromium browser and system dependencies
         working-directory: active_development/tests/browser
         run: npx playwright install chromium --with-deps
+
       - name: Run focused P04 spatial / visual browser validation
         working-directory: active_development/tests/browser
         run: npx playwright test specs/p04-spatial-visual-validation.spec.mjs --project=chromium
+
       - name: Upload P04 Playwright evidence
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v5
