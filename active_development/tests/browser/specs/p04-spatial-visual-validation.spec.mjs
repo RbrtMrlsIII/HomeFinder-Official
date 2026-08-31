@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 const viewerPath = '/3d/glb-viewer/index.html';
+const EXPECTED_RENDERER = 'native-webgl2';
 
 const EXPECTED_CAMERAS = {
   't02-main-hall': {
@@ -32,26 +33,21 @@ function cameraEquals(actual, expected) {
 }
 
 test.describe('P04 spatial / visual validation', () => {
-  test('initial GLB mount receives the active T02/H-03 source-backed target', async ({ page }) => {
+  test('initial mount receives the active T02/H-03 source-backed target', async ({ page }) => {
     const errors = [];
-    const cameraEvents = [];
     page.on('pageerror', e => errors.push(e.message));
     page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
-    await page.exposeFunction('__recordP04Target', detail => cameraEvents.push(detail));
-    await page.addInitScript(() => {
-      window.addEventListener('hf:cinematic-3d-target', e => window.__recordP04Target(e.detail));
-    });
 
     await page.goto(viewerPath, { waitUntil: 'networkidle', timeout: 60000 });
-    await expect(page.locator('.hf-cinematic-3d-stage')).toHaveAttribute('data-renderer', 'three-glb', { timeout: 60000 });
-    const result = await page.evaluate(async () => {
-      const manifest = await window.hfCinematic3D.loadTargetManifest();
-      return { activeTarget: window.hfCinematic3D.activeTarget, target: manifest.targets['t02-main-hall'] };
-    });
-
-    expect(result.activeTarget).toBe('t02-main-hall');
-    expect(cameraEquals(result.target.cameraThreeMeters, EXPECTED_CAMERAS['t02-main-hall'])).toBe(true);
-    await page.screenshot({ path: 'p04-t02-h03.png' });
+    const stage = page.locator('.hf-cinematic-3d-stage');
+    await expect(stage).toHaveAttribute('data-renderer', EXPECTED_RENDERER, { timeout: 60000 });
+    await expect(stage).toHaveAttribute('data-target-id', 't02-main-hall');
+    await expect(stage).toHaveAttribute('data-camera-position', EXPECTED_CAMERAS['t02-main-hall'].position.join(','));
+    await expect(stage).toHaveAttribute('data-camera-target', EXPECTED_CAMERAS['t02-main-hall'].target.join(','));
+    await expect(stage).toHaveAttribute('data-camera-fov', String(EXPECTED_CAMERAS['t02-main-hall'].fov));
+    await expect(stage).toHaveAttribute('data-model-scale', '0.01');
+    await expect(stage).toHaveAttribute('data-coordinate-convention', 'source-cm-to-m-xzy');
+    await page.screenshot({ path: 'p04-t02-h03.png', fullPage: true });
     expect(errors).toEqual([]);
   });
 
@@ -67,7 +63,8 @@ test.describe('P04 spatial / visual validation', () => {
       });
 
       await page.goto(viewerPath, { waitUntil: 'networkidle', timeout: 60000 });
-      await expect(page.locator('.hf-cinematic-3d-stage')).toHaveAttribute('data-renderer', 'three-glb', { timeout: 60000 });
+      const stage = page.locator('.hf-cinematic-3d-stage');
+      await expect(stage).toHaveAttribute('data-renderer', EXPECTED_RENDERER, { timeout: 60000 });
       await page.getByRole('button', { name: new RegExp(targetId.replace(/-/g, ' '), 'i') }).click();
       await expect.poll(() => targetEvent?.targetId).toBe(targetId);
 
@@ -77,14 +74,21 @@ test.describe('P04 spatial / visual validation', () => {
       }, targetId);
       expect(cameraEquals(target.cameraThreeMeters, expected)).toBe(true);
       expect(target.cameraBinding || target.cameraBindingStatus).toBeTruthy();
-      await page.screenshot({ path: `p04-${targetId}.png` });
+      await expect(stage).toHaveAttribute('data-target-id', targetId);
+      await expect(stage).toHaveAttribute('data-camera-position', expected.position.join(','));
+      await expect(stage).toHaveAttribute('data-camera-target', expected.target.join(','));
+      await expect(stage).toHaveAttribute('data-camera-fov', String(expected.fov));
+      await expect(stage).toHaveAttribute('data-model-scale', '0.01');
+      await expect(stage).toHaveAttribute('data-coordinate-convention', 'source-cm-to-m-xzy');
+      await page.screenshot({ path: `p04-${targetId}.png`, fullPage: true });
       expect(errors).toEqual([]);
     });
   }
 
   test('T05 preserves the level-1 elevation contract and does not invent a Bedroom #2 camera', async ({ page }) => {
     await page.goto(viewerPath, { waitUntil: 'networkidle', timeout: 60000 });
-    await expect(page.locator('.hf-cinematic-3d-stage')).toHaveAttribute('data-renderer', 'three-glb', { timeout: 60000 });
+    const stage = page.locator('.hf-cinematic-3d-stage');
+    await expect(stage).toHaveAttribute('data-renderer', EXPECTED_RENDERER, { timeout: 60000 });
     const target = await page.evaluate(async () => {
       const manifest = await window.hfCinematic3D.loadTargetManifest();
       return manifest.targets['t05-h1-level1-interior-network'];
@@ -93,7 +97,8 @@ test.describe('P04 spatial / visual validation', () => {
     expect(target.cameraBinding['Living room'].pov).toBe('H-03');
     expect(target.cameraBinding['Bedroom #2'].pov).toBeNull();
     await page.getByRole('button', { name: /T05 Level 1 Interior/i }).click();
+    await expect(stage).toHaveAttribute('data-target-id', 't05-h1-level1-interior-network');
     await expect(page.locator('#status')).toContainText('Target: t05-h1-level1-interior-network');
-    await page.screenshot({ path: 'p04-t05-level1.png' });
+    await page.screenshot({ path: 'p04-t05-level1.png', fullPage: true });
   });
 });
