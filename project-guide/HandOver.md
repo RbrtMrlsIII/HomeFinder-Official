@@ -2,7 +2,7 @@
 
 > Single live handover authority. Update this file after every execution gate.
 
-## CURRENT STATE — POST-T07 / P02 ACCEPTED / P03 ACCEPTED / P04.1 BLOCKED — 2026-08-31
+## CURRENT STATE — POST-T07 / P02 ACCEPTED / P03 ACCEPTED / P04.1–P04.2 ACCEPTED / P04.3 BLOCKED — 2026-09-01
 
 **Execution discipline:** Observe → Record → Understand → Classify → Align → Validate → Endorse → Advance.
 
@@ -14,34 +14,41 @@
 
 **Current track:** P04 Spatial / Visual Validation.
 
-**P04.0 verdict:** BLOCKED by a test-harness/runtime-mount defect. The first focused P04 run targeted `/3d/glb-viewer/index.html`, a route that did not exist in the checked-out repository. After adding the missing viewer entrypoint and target manifest, the P04 runtime scaffold became available on the canonical repository URL space.
+**P04.0 verdict:** BLOCKED by a test-harness/runtime-mount defect. The first focused P04 run targeted a GLB viewer route that did not exist in the checked-out repository. The missing viewer entrypoint and target manifest were subsequently added on the P04 line.
 
-**P04.1 latest execution:** The focused P04 browser lane was run against the repository-backed viewer. The accepted native renderer is `native-webgl2` proxy geometry; this phase does not claim that real GLB binaries are already loaded by the renderer. The gate verifies source-backed target/camera/scale contracts and the current spatial-validation scaffold.
+**P04.1:** ACCEPTED as the bounded missing-entrypoint/test-harness correction.
 
-### Fresh P04 findings
+**P04.2:** ACCEPTED as the source-backed target manifest and runtime metadata contract.
 
-1. The checked-out branch originally had no `/3d/glb-viewer/index.html`, so the initial P04 tests could never mount the stage. Classification: **test-harness / missing-entrypoint defect**.
-2. The repository now contains `active_development/3d/glb-viewer/index.html` and the active source-backed target manifest `active_development/data/cinematic-3d-targets.json`.
-3. The GLB-adapter layer consumes the target manifest and passes the active target to the renderer. Source-backed camera metadata is now exposed on the runtime stage for independent verification.
-4. The canonical P04 coordinate convention is `source-cm-to-m-xzy` with scale `0.01`. These values are independently checked by the P04 browser suite.
-5. The current renderer is a **native WebGL2 proxy scaffold**, not a real GLB binary renderer. This is intentional and explicitly recorded rather than inferred as a completed GLB integration.
-6. The previously accepted P02 vertical-frame carry-forward remains: T02/T03 level-local Z=0 versus T05 level elevation of 112 cm. It is still a P04 visual-normalization checkpoint.
-7. Vercel confirmed the branch deployment is source-connected and READY for commit `173312f08c6459eb228617a2cca283b2546b3c8f`; the preview URL is protected by Vercel SSO, so browser screenshots from the deployment require an authenticated browser connector that was not available in this execution.
+### Fresh P04 execution reconciliation — 2026-09-01
+
+1. The inherited handoff package contains the four approved P04 GLB binaries. Local SHA-256 and GLB-container structure checks passed for all four files.
+2. The approved hashes are:
+   - T02 `d3e1851fdf737dc59c4d4939b9aed6d6036c33d500a0bc2be0390130a91fc22d`
+   - T03 `83d1eadf8ac940c213618e5afdd5f7d96b71e7f17aa61a7582d3516f6271020c`
+   - T04 `330b4afc1068554abab84ac985e30f5cd39ec16887ee2f036a42424f7ddd57a0`
+   - T05 `b71bc456b3fc1aaf4659926b2626da0d4bc61c47a8f495ff64043473d661f1e6`
+3. The P04 target manifest expects these binaries at repository-backed paths under `active_development/assets/t02` through `t05`.
+4. The current P04 branch contains inherited base64 payload workaround artifacts instead of the canonical `.glb` files at those manifest paths. These workarounds remain historical/inherited evidence and are not being promoted as the runtime source.
+5. A clean isolation branch `p04/glb-runtime-restored-2026-09-01` was created from the P04 GLB runtime line. `main` was not modified.
+6. The local browser-test server `/healthz` returned HTTP 200. A local Chromium headless probe reached the harness but did not produce a completed DOM result in the current offline execution environment. No Chromium pass is claimed from that probe.
+7. The detailed reconciliation is recorded in `docs/reconciliation/2026-09-01-p04-execution-reconciliation.md`.
 
 ### Current evidence
 
-- Historical P04 focused run `33391752987` / artifact `9757930414`: **6/6 focused tests failed** because `.hf-cinematic-3d-stage` never existed. This is retained as diagnostic evidence, not a spatial-model failure.
-- Current branch head: `173312f08c6459eb228617a2cca283b2546b3c8f`.
+- P04.3 remains **unchecked / not endorsed** because fresh repository-backed Chromium execution has not yet completed.
+- Current isolation branch: `p04/glb-runtime-restored-2026-09-01`.
+- Latest reconciliation commit: `b5177153960340e24b560d744d44f79d0356a7be`.
 - Current P04 viewer entrypoint: `active_development/3d/glb-viewer/index.html`.
 - Current target manifest: `active_development/data/cinematic-3d-targets.json`.
 
 ### Required next gate
 
-1. Execute the newest P04 dedicated workflow on branch head and capture the fresh Chromium report/screenshots.
-2. Require the native WebGL2 stage to mount and all camera/target/scale/elevation checks to pass.
-3. Separately verify the actual derived GLB binaries once a binary-safe GLB path is available; do not label the proxy scaffold as GLB correspondence proof.
-4. Review captured screenshots for target framing and T05 level-1 normalization.
-5. Only then decide P04 endorsement.
+1. Use a binary-safe repository write path to promote the four exact approved GLBs to their manifest paths without transforming them.
+2. Run the unchanged P04 Chromium Playwright project against that repository state.
+3. Require `data-renderer="three-glb"`, `data-glb-loaded="true"`, source-backed camera values, scale `0.01`, and coordinate contract `source-cm-to-m-xzy`.
+4. Capture fresh Playwright screenshots/traces and review the target framing, including T05 level-1 normalization.
+5. Only after those results pass may P04.3/P04.4/P04.5 be marked complete and a fresh endorsement decision recorded.
 
 **Physical authority:** `master/HomeFinder.sh3d` remains protected and is not mutated by P04. GLBs remain derived artifacts. Security/authorization remain outside SH3D.
 
