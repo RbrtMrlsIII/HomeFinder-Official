@@ -2,7 +2,7 @@
 
 > Single live handover authority. Update this file after every execution gate.
 
-## CURRENT STATE — POST-T07 / P02 ACCEPTED / P03 ACCEPTED / P04.1–P04.2 ACCEPTED / E0–E5 EXECUTION-SYSTEM FOUNDATION — 2026-09-01
+## CURRENT STATE — POST-T07 / P02 ACCEPTED / P03 ACCEPTED / P04.1–P04.2 ACCEPTED / E0–E6 EXECUTION-SYSTEM FOUNDATION — 2026-09-01
 
 **Execution discipline:** Observe → Record → Understand → Classify → Align → Validate → Endorse → Advance.
 
@@ -34,7 +34,7 @@
 6. The local browser-test server `/healthz` check returned HTTP 200. Local Playwright dependency installation timed out in the execution environment; no local pass was claimed.
 7. Direct headless Chromium also failed to complete the local P04 DOM probe. The P04 runtime uses external Three.js/GLTFLoader modules, but later GitHub-hosted preflight proved the external CDN was reachable from CI.
 8. The P04 workflow was updated to run on the clean isolation branch and to preflight the external Three.js dependency before Chromium. The P04 acceptance assertions were not weakened.
-9. Vercel project `home-finder-official` is linked to `RbrtMrlsIII/HomeFinder-Official`; the clean-branch deployment was READY during reconciliation. Deployment READY is not treated as browser/GLB proof.
+9. Vercel project `home-finder-official` is linked to `RbrtMrlsIII/HomeFinder-Official`; E5 established deployment provenance and confirmed that Vercel READY is deployment evidence, not browser/GLB proof.
 10. The main application-facing viewer remains the Sweet Home 3D JS Viewer and continues to use `master/HomeFinder.sh3d` as physical authority. The P04 GLB viewer is a separate validation surface.
 11. Temporary placeholder `.glb` files created during an attempted high-level GitHub contents upload were removed immediately. No corrupted binary remains in the clean branch; the failed attempt is preserved in Git history for auditability.
 12. A controlled draft PR #6 was opened from the clean P04 branch to `main` solely to exercise GitHub-hosted validation. The PR remains unmerged.
@@ -43,7 +43,7 @@
 15. The current investigation must treat the renderer-mount failure as a P04 implementation/runtime defect. Do not infer GLB corruption or Chromium installation failure from the result.
 16. Documentation continuity remains routed through `README.md`, `project-guide/DOCUMENTATION-MAP.md`, `project-guide/AI_ASSISTANT_READ_ME.md`, `project-guide/HandOver.md`, `project-guide/Endorsement.md`, `MASTER_SKILL.md`, `CODING-INSTRUCTIONS.md`, `PRODUCT-KNOWLEDGE.md`, and detailed `docs/` evidence.
 
-### Execution-system equalization — E0 / E1 / E2 / E3 / E4 / E5
+### Execution-system equalization — E0 / E1 / E2 / E3 / E4 / E5 / E6
 
 17. **E0:** Project-wide execution-system evaluation completed and validated. Universal Agent mechanisms were mapped against existing HomeFinder governance; duplicate governance architectures were rejected.
 18. **E1:** The single canonical `MASTER_SKILL.md` was promoted to v1.2. It covers equalized procedures for Product/Requirements, Architecture, Frontend/UI, Backend/API, Data/Storage, 3D/Spatial, GLB/Web Graphics, Browser/Runtime, Testing/QA, Security, CI/CD, Deployment/Hosting, Documentation/Knowledge, and Operations/Whole-Project Handover.
@@ -56,12 +56,16 @@
 25. **E3 baseline:** `docs/census/E3-BASELINE-2026-09-01.md` and `.json` preserve only verified authored-model counts from the existing canonical 3D census; incomplete GitHub API tree views are not promoted as full project totals.
 26. **E4:** Machine-readable anti-repeat index, deterministic knowledge search, and explicit pre-Classify knowledge check are implemented. `PRODUCT-KNOWLEDGE.md` remains the durable knowledge authority; the anti-repeat index is derived navigation state only.
 27. **E4 anti-pattern coverage:** the index records 11 high-value HomeFinder dead ends/guardrails, including P04 module-resolution history, GLB availability, WalkMyPlan, SH3D authority, assertion weakening, invented spatial geometry, blanket documentation updates, incomplete census counts, duplicate dictionaries, and ungoverned history rewrites.
-28. **E5:** Canonical artifact/build provenance is implemented and validated across HomeFinder, GitHub Actions, and Vercel. `E5-CANONICAL-BUILD-PROVENANCE.md` defines strict state transitions; `builds.json` contains concrete GitHub CI and Vercel provenance records; `build-provenance.py` records tooling and endorsement state; and `E5-BASELINE-2026-09-01.json` records the final cross-platform evidence.
+28. **E5:** Canonical artifact/build provenance is implemented and validated across HomeFinder, GitHub Actions, and Vercel. `E5-CANONICAL-BUILD-PROVENANCE.md` defines strict state transitions; `builds.json` contains concrete GitHub CI and Vercel provenance records; `build-provenance.py` records tooling and endorsement state; and the E5 findings/validation documents preserve the evidence and dispositions.
 29. **E5 GitHub provenance:** workflow run `33451823171` on source commit `5c9903113010d88c6a91677dc3709552bc297ed0` failed focused P04 runtime validation but successfully uploaded artifact `9780126370` (`homefinder-p04-playwright-report`) with SHA-256 `d4e59131592c7af694b222726c603c3fa5683cf392cd1e876953632402cdec67`. This is evidence provenance, not P04 success.
 30. **E5 Vercel provenance:** deployment `dpl_5Fi2KT76WLu7zUFH1wcu3yPPU6Nj` reached `READY` for source commit `d2149c79d8197d6ee7879f9ad677bd959808db7f` on the same P04 branch. READY is deployment evidence only, not runtime/GLB acceptance.
 31. **E5 findings/validation:** `docs/provenance/E5-FINDINGS-2026-09-01.md` records observations, classifications, dispositions, and the explicit knowledge-distillation assessment; `docs/provenance/E5-VALIDATION-2026-09-01.md` records GitHub and Vercel validation evidence and protected boundaries.
 32. **E5 session:** `.agent/sessions/session-2026-09-01-114800-E5-PROMOTION.json` was created before substantive mutation, records the full execution lifecycle, and is closed as `COMPLETED_VALIDATED_ENDORSED`.
-33. No second skill, handover, dictionary, or parallel governance authority was created. The prepared E5 handover addendum was treated as source material only and was not promoted as a second handover file.
+33. **E6:** Structural Intelligence Reconciliation completed and endorsed. The evidence established that HomeFinder already has substantial domain-owned structural records, and the genuine execution gap was cross-domain discoverability/lineage rather than missing semantic or architectural authority.
+34. **E6 adopted capability:** `.agent/structural/structural-index.config.json` + `.agent/structural/STRUCTURAL-INDEX.json` + `scripts/structural-index.py` provide a derived navigation index over existing structural sources. `project-guide/repository-governance/STRUCTURAL-INTELLIGENCE.md` defines its boundaries. The index does not replace the semantic dictionary, authored-model census, contracts, SH3D, `MASTER_SKILL.md`, `HandOver.md`, or `Endorsement.md`.
+35. **E6 findings/validation:** `docs/architecture/E6-STRUCTURAL-INTELLIGENCE-FINDINGS-2026-09-01.md` and `.json` record eight classified findings and dispositions; `docs/architecture/E6-VALIDATION-2026-09-01.md` records source discovery, authority separation, relationship integrity, procedure-selection safety, and negative controls. Full-repository numeric totals were not inferred from truncated remote API data.
+36. **E6 knowledge:** the durable rule is that HomeFinder's structural-intelligence gap is cross-reference/discoverability across domain-owned sources. Structural intelligence therefore remains derived navigation state, not a new authority.
+37. No second skill, handover, dictionary, or parallel governance authority was created. No Git history rewrite or P04 runtime mutation was performed during E6.
 
 ### Current evidence
 
@@ -70,7 +74,7 @@
 - P04.3: **unchecked / blocked**.
 - Current isolation branch: `p04/glb-runtime-restored-2026-09-01`.
 - Current branch/PR ref state is maintained live in GitHub; this handover intentionally does not freeze a transient commit-count/HEAD snapshot.
-- `main` was not modified by E5.
+- `main` was not modified by E6.
 - Controlled PR: `#6` (draft, unmerged). The branch remains a validation vehicle and must not be merged or history-rewritten without an explicit GitHub branch-ownership/reconciliation gate.
 - Main SH3D viewer: unchanged.
 - Current P04 viewer entrypoint: `active_development/3d/glb-viewer/index.html`.
@@ -92,6 +96,13 @@
 - E5 validation: `docs/provenance/E5-VALIDATION-2026-09-01.md`.
 - E5 baseline: `E5-BASELINE-2026-09-01.json`.
 - E5 promotion session: `.agent/sessions/session-2026-09-01-114800-E5-PROMOTION.json`.
+- E6 structural protocol: `project-guide/repository-governance/STRUCTURAL-INTELLIGENCE.md`.
+- E6 structural configuration: `.agent/structural/structural-index.config.json`.
+- E6 structural index: `.agent/structural/STRUCTURAL-INDEX.json`.
+- E6 structural generator: `scripts/structural-index.py`.
+- E6 findings: `docs/architecture/E6-STRUCTURAL-INTELLIGENCE-FINDINGS-2026-09-01.md` and `.json`.
+- E6 validation: `docs/architecture/E6-VALIDATION-2026-09-01.md`.
+- E6 session trace: `.agent/sessions/session-2026-09-01-130000-E6-STRUCTURAL-INTELLIGENCE.json`.
 
 ### Required next gate
 
@@ -99,7 +110,7 @@
 2. Keep `master/HomeFinder.sh3d` and the main SH3D viewer untouched.
 3. Do not rerun historical T01–T02 ZIP evidence as a substitute for current execution.
 4. Only after fresh Chromium reaches `data-renderer="three-glb"` and `data-glb-loaded="true"` should the remaining P04 assertions advance.
-5. The next execution-system gate after E5 is **E6 — Structural Intelligence**.
+5. The next execution-system gate after E6 is **E7 — Automated Enforcement**.
 6. For every substantive session, create the session trace before mutation and classify each change by impact.
 7. Run the project-wide census from a checked-out repository when a real structural baseline is required; do not use a truncated remote API response as a substitute.
 8. Do not merge PR #6 or force-rewrite its history until the branch's intended ownership is explicitly reconciled.
@@ -119,6 +130,7 @@
 - `.agent/sessions/` = machine-readable session traces.
 - `.agent/census/` = machine-readable census configuration/output.
 - `.agent/knowledge/` = derived anti-repeat index.
+- `.agent/structural/` = derived structural intelligence index/configuration; never an authority replacement.
 - `scripts/knowledge-search.py` = deterministic knowledge/anti-repeat search.
 - `project-guide/repository-governance/EXECUTION-TRACE-AND-FILE-UPDATE.md` = E2 trace/update protocol.
 - `project-guide/repository-governance/CENSUS-AND-INVENTORY.md` = E3 census protocol.
@@ -128,5 +140,9 @@
 - `build-provenance.py` = E5 reproducible provenance helper.
 - `docs/provenance/E5-FINDINGS-2026-09-01.md` = E5 human-readable findings.
 - `docs/provenance/E5-VALIDATION-2026-09-01.md` = E5 validation evidence.
+- `project-guide/repository-governance/STRUCTURAL-INTELLIGENCE.md` = E6 structural-intelligence protocol.
+- `scripts/structural-index.py` = E6 derived structural-intelligence generator.
+- `docs/architecture/E6-STRUCTURAL-INTELLIGENCE-FINDINGS-2026-09-01.md` = E6 human-readable findings.
+- `docs/architecture/E6-VALIDATION-2026-09-01.md` = E6 validation evidence.
 
 Do not create another handover file.
