@@ -1,0 +1,24 @@
+{
+  "session": "2026-09-01-203000-P04.3-BINARY-PROMOTION-PREFLIGHT",
+  "gate": "P04.3",
+  "impact": "BOUNDED",
+  "status": "BLOCKED",
+  "actions": [
+    "Inspected the clean E8/P-series checkpoint with Python.",
+    "Computed SHA-256 for all four approved GLBs from actual ZIP bytes.",
+    "Compared each computed hash with the approved hash registry.",
+    "Confirmed the canonical P04 runtime branch lacks the four binary files at their required runtime paths.",
+    "Recorded the blocker without placeholder or fabricated binary content."
+  ],
+  "evidence": {
+    "all_four_sha256_match": true,
+    "runtime_binary_paths_present_in_branch": false,
+    "next": "binary-capable promotion of exact verified GLBs, followed by fresh focused Chromium P04.3 validation"
+  },
+  "protected": [
+    "master/HomeFinder.sh3d",
+    "main",
+    "P04 assertions",
+    "historical Git lineage"
+  ]
+}
