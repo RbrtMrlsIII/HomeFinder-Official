@@ -109,7 +109,7 @@ A narrow import-map repair was subsequently committed on the P04 validation view
 - [x] ☑️ E3 — Project-wide census & inventory foundation.
 - [x] ☑️ E4 — Knowledge & anti-repeat system.
 - [x] ☑️ E5 — Canonical artifact/build provenance.
-- [ ] E6 — Structural intelligence (dictionary, architecture, skill selection).
+- [x] ☑️ E6 — Structural intelligence reconciliation and derived structural navigation index.
 - [ ] E7 — Automated enforcement gates.
 - [ ] E8 — Full execution-system integration.
 
@@ -151,7 +151,7 @@ No duplicate Product Knowledge authority, second dictionary, second skill, or pa
 
 E5 was re-executed as a complete, bounded provenance gate rather than relying on the earlier partial promotion attempt. The gate followed the HomeFinder process from whole-project observation through findings, classification, alignment, validation, endorsement, and advance.
 
-The canonical provenance specification, machine registry, helper, findings, validation evidence, baseline, and session trace are live on the P04 validation branch. The registry now contains real cross-platform records rather than an empty schema:
+The canonical provenance specification, machine registry, helper, findings, validation evidence, baseline, and session trace are live on the P04 validation branch. The registry contains real cross-platform records rather than an empty schema:
 
 - GitHub Actions run `33451823171` / job `99683217304` / artifact `9780126370`, source commit `5c9903113010d88c6a91677dc3709552bc297ed0`, failed focused P04 runtime validation with successful evidence-artifact upload, artifact SHA-256 `d4e59131592c7af694b222726c603c3fa5683cf392cd1e876953632402cdec67`.
 - Vercel deployment `dpl_5Fi2KT76WLu7zUFH1wcu3yPPU6Nj`, source commit `d2149c79d8197d6ee7879f9ad677bd959808db7f`, state `READY`.
@@ -165,6 +165,31 @@ Knowledge-distillation assessment: no new durable project rule was identified be
 The whole-project `HandOver.md` was synchronized. The E5 session `.agent/sessions/session-2026-09-01-114800-E5-PROMOTION.json` was created before substantive mutation and closed with `COMPLETED_VALIDATED_ENDORSED`.
 
 E5 is endorsed as an execution-system capability. This endorsement does **not** endorse P04.3–P04.6, which remain unchecked and blocked pending fresh browser/GLB evidence. PR #6 remains a draft/unmerged validation vehicle and no history rewrite was performed.
+
+## E6 endorsement note — 2026-09-01
+
+E6 was executed using the full HomeFinder structural-intelligence reconciliation discipline. Startup established current whole-project state, the E4 anti-repeat index was checked before Classify, existing structural sources and their authority boundaries were inspected, and the demonstrated gap was narrowed to cross-domain discoverability rather than missing semantic or architectural authority.
+
+The adopted E6 capability is a **derived Structural Intelligence Index**. It records existing structural sources, their owners and authority roles, evidenced cross-source relationships, and procedure-selection hints that route back to the single canonical `MASTER_SKILL.md`.
+
+The E6 implementation consists of:
+- `.agent/structural/structural-index.config.json`
+- `.agent/structural/STRUCTURAL-INDEX.json`
+- `scripts/structural-index.py`
+- `project-guide/repository-governance/STRUCTURAL-INTELLIGENCE.md`
+- `docs/architecture/E6-STRUCTURAL-INTELLIGENCE-FINDINGS-2026-09-01.md`
+- `docs/architecture/E6-STRUCTURAL-INTELLIGENCE-FINDINGS-2026-09-01.json`
+- `docs/architecture/E6-VALIDATION-2026-09-01.md`
+
+The findings registry records eight findings with explicit classifications and dispositions. Existing `active_development/data/dictionary.json` ownership, `active_development/3d/docs/model-census.json` ownership, canonical contracts/manifests, `MASTER_SKILL.md`, `HandOver.md`, `Endorsement.md`, and `master/HomeFinder.sh3d` authority remain unchanged.
+
+Validation confirmed the adopted structural source set was directly observable on the current branch, the derived index uses explicit ownership/authority roles, the procedure-selection metadata does not create another skill system, and prohibited outcomes such as duplicate dictionaries, SH3D authority replacement, history rewriting, fabricated full-repository totals, and P04 runtime mutation were not performed. `scripts/structural-index.py` passed Python syntax validation.
+
+Architecture-map replacement, autonomous skill orchestration, structural-source consolidation, second dictionary creation, repository-history reconciliation, and P04 runtime work were deliberately deferred or rejected because current evidence did not justify them in E6.
+
+Knowledge-distillation assessment: **new durable knowledge identified and retained in the E6 findings/continuity layer**. The stable rule is that HomeFinder has substantial domain-owned structural knowledge; the execution-system gap is primarily cross-domain discovery/lineage, so structural intelligence should remain a derived navigation layer rather than a new authority.
+
+The whole-project `HandOver.md` was updated with E6 and the exact next gate. E6 is endorsed as an execution-system capability. This endorsement does **not** endorse P04.3–P04.6 and does not authorize Git history reconciliation or P04 runtime mutation.
 
 ## Session protocol
 1. Read `README.md`.
