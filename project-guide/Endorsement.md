@@ -84,9 +84,9 @@ A `☑️` means the item is fully implemented, verified, documented in `HandOve
 
 ### P04.3 evidence note — 2026-09-01
 
-A GitHub-hosted P04 run was executed on the clean validation branch. The runner, container, Node setup, external Three.js reachability, npm installation, and Chromium installation all passed. The focused P04 suite then failed 6/6 at the common `data-renderer="three-glb"` mount assertion; no target-specific camera or GLB-load assertion was reached. Screenshots and traces were uploaded.
+A GitHub-hosted P04 run was executed on the clean validation branch. The runner, container, Node setup, external Three.js reachability, npm installation, and Chromium installation all passed. The focused P04 suite then failed 6/6 at the common renderer-mount assertion; no target-specific camera or GLB-load assertion was reached. Screenshots and traces were uploaded.
 
-A narrow import-map repair was subsequently committed on the P04 validation viewer and a fresh GitHub run was triggered. The run remains evidence-only until its result is complete and independently reviewed. P04.3 therefore remains unchecked.
+The later import-map repair run reached the focused runtime assertion layer and still failed at application/runtime state. The failure remains P04 evidence and does not justify another workflow.
 
 ## H — Final integration
 - [ ] Phase 8 — Door animation / traversal integration.
@@ -111,75 +111,63 @@ A narrow import-map repair was subsequently committed on the P04 validation view
 - [x] ☑️ E5 — Canonical artifact/build provenance.
 - [x] ☑️ E6 — Structural intelligence reconciliation and derived structural navigation index.
 - [x] ☑️ E7 — CI / Execution-System Integration Reconciliation and governance-only enforcement.
-- [ ] E8 — Full execution-system integration.
+- [x] ☑️ E8 — Full Execution-System Integration.
 
 ## MR0 endorsement note — 2026-09-01
 
-MR0 — Post-T02 Masterplan & Execution-Lineage Rebaseline — was executed as a whole-project foundation gate and is endorsed. It established the canonical development chronology as `T02 → T03 → T04 → T05 → T06 → T07 (FROZEN) → P01 → P02 → P03 → P04 → P05 → P06` and classified E0–E8 as an execution-system overlay that cannot reorder, reopen, replace, or authorize product-development gates by itself.
+MR0 — Post-T02 Masterplan & Execution-Lineage Rebaseline — was executed as a whole-project foundation gate and is endorsed. It established the canonical development chronology as `T02 → T03 → T04 → T05 → T06 → T07 (FROZEN) → P01 → P02 → P03 → P04 → P05 → P06` and classified the E-series as an execution-system overlay that cannot reorder, reopen, replace, or authorize product-development gates by itself.
 
-MR0 dispositions: E0 retain/rebaseline; E1 retain; E2 retain/extend; E3 retain/rebaseline; E4 retain/strengthen; E5 retain/rebaseline; E6 retain/hold-for-dependency-check; E7 hold pending integration; E8 hold. No product runtime, SH3D, GLB binary, P04 acceptance criterion, PR merge, or history rewrite was performed by MR0.
-
-Evidence is recorded in `docs/execution-system/MR0-POST-T02-LINEAGE-REBASELINE-2026-09-01.md`, `.json`, and `-VALIDATION.md`; the closure session is `.agent/sessions/session-2026-09-01-171800-MR0-CLOSURE.json`.
+MR0 dispositions: E0 retain/rebaseline; E1 retain; E2 retain/extend; E3 retain/rebaseline; E4 retain/strengthen; E5 retain/rebaseline; E6 retain/hold-for-dependency-check; E7 hold; E8 hold. No product runtime, SH3D, GLB binary, P04 acceptance criterion, PR merge, or history rewrite was performed by MR0.
 
 ## E1 endorsement note — 2026-09-01
 
-E1 was evaluated, validated, and promoted on the current execution-system line. The single canonical `MASTER_SKILL.md` now defines the project-wide execution lifecycle, equalized discipline procedures, anti-repeat behavior, impact-aware updates, evidence boundaries, Git mutation governance, and whole-project handover requirements. No second permanent skill file was created.
-
-The E1 endorsement does not endorse P04.3–P04.6 or authorize reopening T07.
+E1 was evaluated, validated, and promoted as the single canonical execution skill. `MASTER_SKILL.md` v1.2 defines the project-wide lifecycle, equalized procedures, evidence boundaries, Git governance, and whole-project handover requirements.
 
 ## E2 endorsement note — 2026-09-01
 
-E2 was executed and validated. A machine-readable session record was created before substantive mutation. `scripts/session_logger.py` provides session start/action/close/verify operations, and `project-guide/repository-governance/EXECUTION-TRACE-AND-FILE-UPDATE.md` defines LOCAL, BOUNDED, and SYSTEMIC impact classes and their canonical update chains.
-
-The implementation preserves existing HomeFinder document ownership and avoids blanket document duplication. The active P04 gates remain unchanged and unendorsed.
+E2 established machine-readable session tracing and impact-aware file-update discipline. It preserves canonical ownership and requires LOCAL, BOUNDED, or SYSTEMIC impact classification.
 
 ## E3 endorsement note — 2026-09-01
 
-E3 was executed and validated. `scripts/census.py` is the source-first project census tool, `.agent/census/census.config.json` is its configuration, and `project-guide/repository-governance/CENSUS-AND-INVENTORY.md` defines inventory-before-transformation.
-
-The existing semantic dictionary and authored-model census retain ownership of their meanings. The census tool passed deterministic synthetic-repository validation. Full project-wide numeric totals remain pending a checked-out repository run; incomplete remote API views were not promoted as complete counts.
+E3 established source-first census tooling and configuration while retaining existing semantic dictionary and authored-model census ownership. Full numeric totals require a checked-out repository baseline rather than truncated remote API views.
 
 ## E4 endorsement note — 2026-09-01
 
-E4 was executed and validated. `PRODUCT-KNOWLEDGE.md` remains the durable knowledge authority. `.agent/knowledge/ANTI-REPEAT-INDEX.json` is a derived machine index containing 11 high-value anti-pattern/dead-end triggers; `scripts/knowledge-search.py` deterministically searches it and returns an anti-pattern match status under `--anti`.
-
-The required pre-Classify search is now an explicit HomeFinder behavior. No duplicate Product Knowledge authority, second dictionary, second skill, or parallel handover was created.
+E4 established the derived anti-repeat index and deterministic knowledge search. `PRODUCT-KNOWLEDGE.md` remains the durable knowledge authority and non-trivial approaches must be checked before Classify.
 
 ## E5 endorsement note — 2026-09-01
 
-E5 was re-executed as a complete, bounded provenance gate. `E5-CANONICAL-BUILD-PROVENANCE.md`, `builds.json`, `build-provenance.py`, and the E5 findings/validation records define and populate exact artifact/build/deployment provenance.
-
-GitHub Actions run `33451823171` failed focused P04 runtime validation while successfully uploading the evidence artifact. Vercel deployment `dpl_5Fi2KT76WLu7zUFH1wcu3yPPU6Nj` reached `READY` for its exact source commit. Neither is interpreted as P04 application success.
-
-Existing source/artifact ownership remained unchanged; `master/HomeFinder.sh3d` remained protected and no GLB workaround was promoted.
-
-E5 is endorsed as an execution-system capability only. P04.3–P04.6 remain unchecked.
+E5 established canonical artifact/build provenance across HomeFinder, GitHub Actions, and Vercel. Real GitHub and Vercel records are retained with exact source commits and evidence states. Deployment READY is not equated with runtime success.
 
 ## E6 endorsement note — 2026-09-01
 
-E6 was executed using the structural-intelligence reconciliation discipline. The evidence established that HomeFinder already has substantial domain-owned structural records and that the genuine gap was cross-domain discoverability/lineage.
-
-The adopted capability is a derived Structural Intelligence Index. Existing semantic, authored-model, contract, SH3D, skill, handover, and endorsement authorities remain unchanged. No second dictionary, autonomous skill universe, history rewrite, or P04 runtime mutation was performed.
-
-E6 is endorsed as an execution-system capability only.
+E6 established derived structural intelligence for cross-domain discovery/lineage. Existing domain-owned structural sources remain authorities. No duplicate dictionary, skill, handover, or SH3D authority was created.
 
 ## E7 endorsement note — 2026-09-01
 
-E7 was executed strictly as an E-series gate. P01–P06 product work, P04 runtime acceptance, GLB promotion, and SH3D mutation were outside scope.
+E7 was executed as an E-series-only CI integration gate. The single workflow `.github/workflows/homefinder-execution-governance.yml` is path-scoped, manual-capable, read-only (`contents: read`), and governance-only. It does not run product/browser/P04 validation.
 
-The E7 governance workflow is `.github/workflows/homefinder-execution-governance.yml` on `e/execution-system-2026-09-01`. It is deliberately narrow and read-only: `workflow_dispatch` plus path-scoped execution-system pushes/PRs, `contents: read`, and only the E7 governance checker/self-test. It contains no browser, Playwright, Chromium, P04 runtime, or GLB validation.
+Definitive GitHub validation run `33475974141`, job `99755198477`, passed checkout, Python setup, execution-gate compilation, governance self-test, and the read-only execution gate. Two earlier workflow-level false failures exposed an overly literal parser and a self-referential shell assertion; both were corrected without weakening the gate.
 
-The gate initially exposed two implementation defects. First, the endorsement parser was too literal about E6 wording. Second, a self-referential workflow assertion caused a false failure. Both were corrected without weakening governance. The definitive GitHub run was `33475974141`, job `99755198477`, which completed successfully with checkout, Python setup, execution-gate compilation, governance self-test, and the read-only execution gate all passing.
+E7 is endorsed as an execution-system capability only. P01–P06 and P04.3–P04.6 remain delegated and unendorsed.
 
-E7 findings are recorded in `docs/execution-system/E7-CI-INTEGRATION-FINDINGS-2026-09-01.md`. Machine state is `docs/execution-system/E7-CI-INTEGRATION-2026-09-01.json`. The E7 session trace `.agent/sessions/session-2026-09-01-180000-E-CI-INTEGRATION.json` was created before substantive E7 mutation and records the gate lifecycle.
+## E8 endorsement note — 2026-09-01
 
-Knowledge-distillation result: execution-system automation is governance-only, narrow in trigger scope, read-only, and separate from P-series product/browser validation. Existing proven browser mechanisms remain the product-team baseline.
+E8 was executed strictly on the E-series branch and integrated E0–E7 through the single E-series governance workflow. `scripts/execution-system-integration.py` performs deterministic read-only verification of the integrated execution-system chain.
 
-E7 is **endorsed** as an execution-system capability. This endorsement does not endorse or alter P04.3–P04.6 and does not authorize product development.
+Definitive GitHub validation run `33476234720`, job `99755973527`, passed compilation, the E7 governance self-test, the E7 read-only gate, and the full E-series integration gate.
 
-## E-series branch rule
+The integration verifies that masterplan lineage remains superior authority; the canonical skill, session trace, census, anti-repeat knowledge, provenance, structural intelligence, governance enforcement, and whole-project handover/endorsement all coexist without creating parallel authorities. E8 did not mutate product/P-series work, SH3D, GLB binaries, `main`, or PR history.
 
-E-series work is now isolated on `e/execution-system-2026-09-01`. The P-series branch `p04/glb-runtime-restored-2026-09-01` remains product-team territory. E-series changes must not be used to promote or accept P-series runtime work.
+Knowledge-distillation result: the E-series is complete only when its capabilities operate through one coherent, non-duplicative execution path while remaining subordinate to the masterplan and designated product-development teams.
+
+E8 is endorsed. The E-series is complete. P01–P06 are explicitly handed over to their designated development/validation teams and are not endorsed by the E-series.
+
+## E-series handover disposition
+
+The E-series has completed its execution-system buildout from E0 through E8. The complete whole-project handover remains `project-guide/HandOver.md`. No separate E-only handover is authoritative.
+
+The final checkpoint must contain the complete HomeFinder project state plus the E-series execution-system evidence. Product/P-series work remains independently owned and independently gated.
 
 ## Session protocol
 1. Read `README.md`.
