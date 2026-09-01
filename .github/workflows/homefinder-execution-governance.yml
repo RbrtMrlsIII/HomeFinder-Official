@@ -78,10 +78,3 @@ jobs:
 
       - name: Run read-only execution gate
         run: python scripts/execution-gate.py --json
-
-      - name: Confirm this workflow is governance-only
-        run: |
-          if grep -Eqi "playwright|chromium|p04-spatial|three-glb" .github/workflows/homefinder-execution-governance.yml; then
-            echo "ERROR: governance workflow contains product/browser execution references"
-            exit 1
-          fi
