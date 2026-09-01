@@ -4,7 +4,7 @@ This is the small, current orientation layer for AI-assisted sessions. It preven
 
 ## Current continuity — 2026-09-01
 
-**Product/P-series:** P01–P06 remain a separate development/validation track owned by their designated teams. P04.0–P04.2 are accepted; P04.3–P04.5 remain unendorsed/blocked; P04.6 is held. P05/P06 are held until authoritative acceptance specifications exist. The E-series does not authorize, mutate, or accept P-series work.
+**Product/P-series:** P01–P03 and P04.0–P04.3 are accepted. **P04.4–P04.5 remain unendorsed/open; P04.6 is held for final P04 endorsement.** P05/P06 are held until authoritative acceptance specifications exist. The E-series does not authorize, mutate, or accept P-series work.
 
 **E-series:** E0–E8 are complete, validated, and endorsed as the execution-system capability layer. Final E-series branch: `e/execution-system-2026-09-01`.
 
@@ -14,7 +14,7 @@ This is the small, current orientation layer for AI-assisted sessions. It preven
 
 **Physical authority:** `master/HomeFinder.sh3d` remains the sole canonical SH3D source. The E-series never changes physical authority.
 
-**GitHub:** `main` remains protected from active product/E-series mutation without an explicit integration gate. PR #6 remains draft/unmerged validation history.
+**GitHub:** `main` remains protected from active product/E-series mutation without an explicit integration gate. Historical PRs and red workflow results remain evidence and are not to be rewritten merely to improve status appearance.
 
 ## Mandatory execution discipline
 
@@ -83,6 +83,7 @@ Before packaging, perform a source-first census and duplicate-path check. After 
 - P01–P06 remain delegated product work.
 - Do not create another permanent skill, dictionary, handover, workflow owner, or product-browser runner without new evidence and a bounded gate.
 - Do not treat stale E0–E6 continuity text on a product branch as stronger than the endorsed E0–E8 state; reconcile branch-local documentation before advancing.
+- A successful P04.3 browser gate does not pre-accept P04.4, P04.5, or P04.6.
 
 ## Final E-series state
 
@@ -96,7 +97,11 @@ E6 ✅
 E7 ✅
 E8 ✅
 
-The E-series is complete. The next work belongs to the designated product/P-series teams and must start from the whole-project `HandOver.md`, current masterplan, and current product evidence.
+## P04.3 validated state
+
+P04.3 ✅ accepted by fresh GitHub Actions Chromium validation run `33503413059` / job `99841751786`. Exact approved repository-backed GLBs passed SHA-256 verification and the existing P04 browser assertions passed.
+
+Next gate: **P04.4 fresh screenshot/visual review**.
 
 ## Primary continuity sources
 
@@ -113,24 +118,6 @@ The E-series is complete. The next work belongs to the designated product/P-seri
 `MASTER_SKILL.md` — one canonical execution skill (v1.3).
 
 `CODING-INSTRUCTIONS.md` — project-specific coding guidance; it must not override the canonical skill or current authority.
-
-## E-series evidence
-
-`docs/execution-system/` — E-series findings, machine state, validation, and integration evidence.
-
-`.agent/sessions/` — machine-readable session traces.
-
-`.agent/census/` — census configuration/derived state.
-
-`.agent/knowledge/` — anti-repeat derived state.
-
-`.agent/structural/` — structural-intelligence derived state.
-
-`builds.json` / `build-provenance.py` — E5 provenance.
-
-`scripts/execution-gate.py` — E7 read-only governance gate.
-
-`scripts/execution-system-integration.py` — E8 full integration verifier.
 
 ## Session-start rule
 

@@ -1,0 +1,14 @@
+{
+  "date": "2026-09-01",
+  "gate": "P04.3",
+  "scope": "binary promotion preflight",
+  "approved": true,
+  "binaries": [
+    {"id":"T02","path":"active_development/assets/t02/house1-mainhall-public-arrival.glb","size":878952,"sha256":"d3e1851fdf737dc59c4d4939b9aed6d6036c33d500a0bc2be0390130a91fc22d"},
+    {"id":"T03","path":"active_development/assets/t03/house1-kitchen-bedroom1-network.glb","size":640304,"sha256":"83d1eadf8ac940c213618e5afdd5f7d96b71e7f17aa61a7582d3516f6271020c"},
+    {"id":"T04","path":"active_development/assets/t04/house1-basement-firstfloor-vertical-interface.glb","size":23192,"sha256":"330b4afc1068554abab84ac985e30f5cd39ec16887ee2f036a42424f7ddd57a0"},
+    {"id":"T05","path":"active_development/assets/t05/house1-corridor-living-bedroom2-network.glb","size":14968,"sha256":"b71bc456b3fc1aaf4659926b2626da0d4bc61c47a8f495ff64043473d661f1e6"}
+  ],
+  "post_promotion_requirement": "fresh Chromium validation using existing P04 assertions",
+  "protected": ["main","master/HomeFinder.sh3d","P04 assertions","historical Git lineage"]
+}

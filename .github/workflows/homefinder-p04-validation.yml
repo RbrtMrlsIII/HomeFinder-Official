@@ -2,6 +2,18 @@ name: HomeFinder P04 Spatial Validation
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches:
+      - p/series-execution-2026-09-01
+    paths:
+      - 'active_development/3d/glb-viewer/**'
+      - 'active_development/js/reference-3d/**'
+      - 'active_development/data/cinematic-3d-targets.json'
+      - 'active_development/tests/browser/**'
+      - 'active_development/assets/**'
+      - 'docs/p-series/**'
+      - 'project-guide/HandOver.md'
+      - 'project-guide/Endorsement.md'
   push:
     branches:
       - p/series-execution-2026-09-01
