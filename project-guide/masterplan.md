@@ -9,6 +9,7 @@
 - **Current validation PR:** #6, draft/unmerged.
 - **Canonical physical authority:** `master/HomeFinder.sh3d`.
 - **Current P04 blocker:** approved GLB binaries are preserved as evidence but are not yet repository-backed at their required runtime paths.
+- **Execution-system milestones:** E0, E1, E2, E3 implemented/validated on the current P04 line.
 
 This file is the compact project-wide policy/architecture document. Detailed historical execution records remain in Git history and designated evidence/archive locations. Do not reconstruct those records here.
 
@@ -264,3 +265,49 @@ HomeFinder succeeds when current architecture is provable, not merely visually c
 - historical evidence remains deliberate rather than accidental;
 - repeated AI trial-and-error decreases over time;
 - repository size stays minimal by deleting redundancy **after** knowledge has been preserved.
+
+---
+
+## 13. Execution-System Equalization
+
+HomeFinder now extends the project discipline with an execution-system sequence:
+
+```text
+E0 Project-wide evaluation
+      ↓
+E1 Governance / skill equalization
+      ↓
+E2 Execution trace / impact-aware updates
+      ↓
+E3 Project census / inventory
+      ↓
+E4 Knowledge / anti-repeat
+      ↓
+E5 Artifact / build provenance
+      ↓
+E6 Structural intelligence
+      ↓
+E7 Automated enforcement
+      ↓
+E8 Full integration
+```
+
+### E0–E3 adopted principles
+
+- One canonical `MASTER_SKILL.md`; no parallel skill architecture.
+- Handover scope is always the complete HomeFinder project state.
+- Sessions are traceable from start through close.
+- File-update requirements are impact-aware: LOCAL, BOUNDED, SYSTEMIC.
+- Inventory is source-first and precedes transformation.
+- Existing semantic dictionaries and detailed 3D census records keep ownership of the meanings they already define.
+- Census output is derived state and never overrides project authority.
+- Remote/incomplete API views are not promoted as full structural counts when a checked-out source census is required.
+
+E3 implementation owners:
+
+- `scripts/census.py`
+- `.agent/census/census.config.json`
+- `project-guide/repository-governance/CENSUS-AND-INVENTORY.md`
+- `docs/census/`
+
+The next execution-system gate is **E4 — Knowledge & Anti-Repeat System**.
