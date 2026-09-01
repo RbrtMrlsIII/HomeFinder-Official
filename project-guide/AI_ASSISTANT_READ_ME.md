@@ -6,9 +6,9 @@ It is not a report archive, skill library, contract replacement, or historical d
 
 ## Current continuity — 2026-09-01
 
-**Active track:** P04 Spatial / Visual Validation.
+**Active track:** P04 Spatial / Visual Validation plus execution-system equalization.
 
-**Accepted:** P04.0, P04.1, P04.2.
+**Accepted:** P04.0, P04.1, P04.2; E0, E1, E2, E3 execution-system milestones.
 
 **Not endorsed:** P04.3, P04.4, P04.5, P04.6.
 
@@ -26,16 +26,24 @@ Use the project sequence for every change:
 
 Do not jump from a finding directly to implementation or deletion.
 
+Startup and handover are always **whole-project**, even when the active gate is narrow.
+
 ## Current P04 memory — do not repeat old experiments
 
-- The dedicated GitHub Chromium environment is healthy: checkout, Node/npm, Three.js CDN reachability, browser dependencies, Chromium installation, and evidence upload all passed in the latest run.
+- The dedicated GitHub Chromium environment is healthy: checkout, Node/npm, Three.js CDN reachability, browser dependencies, Chromium installation, and evidence upload all passed in the latest established run.
 - The Three.js import-map/bootstrap repair has been effective enough for the stage to report `data-renderer="three-glb"`; do **not** reopen the old module-resolution hypothesis without new evidence.
-- The latest P04 run still reports `data-glb-loaded="false"` because the repository checkout does not contain the approved GLB binaries at the manifest target paths.
+- The latest established P04 evidence still has `data-glb-loaded="false"` because the repository checkout does not contain the approved GLB binaries at the manifest target paths.
 - Git history was checked for the canonical T02/T03/T04 GLB paths and returned no historical commits for those paths. There is therefore no Git-history restore to perform.
 - The four approved binaries remain preserved in the handoff evidence package with their recorded SHA-256 values. Binary repository promotion is the remaining P04 runtime prerequisite.
 - Do not weaken the P04 assertions, substitute placeholder geometry, or restore superseded WalkMyPlan architecture merely to make the browser suite green.
 
-**Detailed P04 evidence:** `project-guide/HandOver.md`, `project-guide/Endorsement.md`, `docs/reconciliation/`, and the latest CI artifact/run records.
+## Execution-system memory
+
+- E1 established `MASTER_SKILL.md` v1.2 as the single canonical skill with equalized procedures for all major disciplines and whole-project handover.
+- E2 established `.agent/sessions/`, `scripts/session_logger.py`, and `project-guide/repository-governance/EXECUTION-TRACE-AND-FILE-UPDATE.md`.
+- E3 established `scripts/census.py`, `.agent/census/census.config.json`, and `project-guide/repository-governance/CENSUS-AND-INVENTORY.md`.
+- E3 must not invent full-project numeric counts from truncated remote API responses. Use the census from a checked-out repository for authoritative structural totals.
+- Existing semantic dictionary ownership remains `active_development/data/dictionary.json`; existing authored-model census remains `active_development/3d/docs/model-census.json`.
 
 ## Minimal-knowledge rule
 
@@ -47,7 +55,7 @@ Only verified, reusable, actionable, traceable knowledge belongs here. Transient
 
 When a finding changes project-wide strategy or chronology, update `masterplan.md`. When it only clarifies current execution, keep the memory here and retain the detailed evidence elsewhere.
 
-A detailed findings document becomes a deletion candidate only after its unique knowledge has been distilled, references have been reconciled, evidence has a deliberate retention decision, and no active gate depends on the document.
+A detailed findings document becomes a deletion candidate only after its unique knowledge has been distilled, references have been reconciled, evidence has a deliberate retention decision, and no active gate depends on it.
 
 ## Canonical project guardrails
 
@@ -61,7 +69,7 @@ A detailed findings document becomes a deletion candidate only after its unique 
 
 ## Primary continuity sources
 
-`project-guide/HandOver.md` — latest project state and exact continuation point.
+`project-guide/HandOver.md` — latest whole-project state and exact continuation point.
 
 `project-guide/Endorsement.md` — chronological gate status.
 
@@ -71,7 +79,19 @@ A detailed findings document becomes a deletion candidate only after its unique 
 
 `project-guide/repository-governance/FINDINGS-TO-KNOWLEDGE.md` — knowledge promotion and safe deletion lifecycle.
 
-`project-guide/PROJECT-CURRENT-CANONICAL-MANIFEST.json` and `project-guide/PROJECT-CURRENT-CANONICAL-STATUS.md` — current canonical state.
+## Execution-system sources
+
+`MASTER_SKILL.md` — single canonical execution skill.
+
+`project-guide/repository-governance/EXECUTION-TRACE-AND-FILE-UPDATE.md` — E2 trace/update protocol.
+
+`scripts/session_logger.py` — local session trace helper.
+
+`project-guide/repository-governance/CENSUS-AND-INVENTORY.md` — E3 census protocol.
+
+`scripts/census.py` — source-first project census tool.
+
+`.agent/census/census.config.json` — census configuration.
 
 ## Browser verification entry points
 
@@ -89,7 +109,7 @@ A detailed findings document becomes a deletion candidate only after its unique 
 
 ## Session-start rule
 
-Start from current repository state. Read this file, then `HandOver.md`, `Endorsement.md`, the relevant masterplan section, and the detailed evidence for the active gate.
+Start from current repository state. Read this file, then `HandOver.md`, `Endorsement.md`, the relevant masterplan section, the applicable skill section, and the detailed evidence for the active gate.
 
 Do not reconstruct old history from nested ZIPs when a current canonical record exists.
 Do not repeat a disproven hypothesis without new evidence.
