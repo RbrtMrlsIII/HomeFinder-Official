@@ -2,7 +2,7 @@
 
 > Single live handover authority. Update this file after every execution gate.
 
-## CURRENT STATE — POST-T07 / P02 ACCEPTED / P03 ACCEPTED / P04.1–P04.2 ACCEPTED / E0–E6 EXECUTION-SYSTEM FOUNDATION / MR0 POST-T02 REBASELINE — 2026-09-01
+## CURRENT STATE — POST-T07 / P02 ACCEPTED / P03 ACCEPTED / P04.1–P04.2 ACCEPTED / E0–E7 EXECUTION-SYSTEM FOUNDATION / MR0 POST-T02 REBASELINE / E-SERIES CI INTEGRATION — 2026-09-01
 
 **Execution discipline:** Observe → Record → Understand → Classify → Align → Validate → Endorse → Advance.
 
@@ -12,7 +12,9 @@
 
 **P03:** ACCEPTED. Candidate-backed Chromium evidence previously established the H-03/H-07/H-08 selectable-camera contract. The approved candidate SHA-256 remains `f8a0bf7d0181155d342dfc97fad0679741e38fdcfda60982dfa3ee534eb81aed`.
 
-**Current track:** P04 Spatial / Visual Validation plus execution-system and project-lineage reconciliation.
+**Product/P-series delegation:** P01–P06 remain a separate product-development/validation track. P04.3–P04.6 and all later P-series runtime work are outside the E-series scope and are handed over to their designated development/validation teams. The E-series must not mutate or accept those gates.
+
+**Current product track:** P04 Spatial / Visual Validation. P04.0–P04.2 accepted; P04.3–P04.6 unendorsed.
 
 **P04.0 verdict:** BLOCKED by a test-harness/runtime-mount defect. The first focused P04 run targeted a GLB viewer route that did not exist in the checked-out repository. The missing viewer entrypoint and target manifest were subsequently added on the P04 line.
 
@@ -37,7 +39,7 @@
 9. Vercel project `home-finder-official` is linked to `RbrtMrlsIII/HomeFinder-Official`; E5 established that Vercel READY is deployment evidence, not browser/GLB proof.
 10. The main application-facing viewer remains the Sweet Home 3D JS Viewer and continues to use `master/HomeFinder.sh3d` as physical authority. The P04 GLB viewer is a separate validation surface.
 11. Temporary placeholder `.glb` files created during an attempted high-level GitHub contents upload were removed immediately. No corrupted binary remains in the clean branch; the failed attempt is preserved in Git history for auditability.
-12. A controlled draft PR #6 remains unmerged and is treated as a validation/evidence vehicle, not canonical integration.
+12. Controlled draft PR #6 remains unmerged and is treated as a validation/evidence vehicle, not canonical integration.
 13. GitHub-hosted P04 run `33450763010` completed with infrastructure setup successful and focused P04 assertions failed at the renderer-mount boundary; evidence artifacts were uploaded.
 14. The repair run `33451823171` likewise reached the focused runtime assertion layer and failed there; its artifact remains provenance evidence.
 15. The final in-flight workflow run created during workflow retirement, `33471269425`, also completed runner setup, Chromium installation, P04 execution, and evidence upload successfully except for focused application/runtime assertions. Its result is historical evidence, not a reason to resurrect another workflow.
@@ -73,23 +75,33 @@
 39. **E6 adopted capability:** `.agent/structural/structural-index.config.json` + `.agent/structural/STRUCTURAL-INDEX.json` + `scripts/structural-index.py` provide a derived navigation index over existing structural sources. `project-guide/repository-governance/STRUCTURAL-INTELLIGENCE.md` defines its boundaries. The index does not replace the semantic dictionary, authored-model census, contracts, SH3D, `MASTER_SKILL.md`, `HandOver.md`, or `Endorsement.md`.
 40. **E6 findings/validation:** `docs/architecture/E6-STRUCTURAL-INTELLIGENCE-FINDINGS-2026-09-01.md` and `.json` record eight classified findings and dispositions; `docs/architecture/E6-VALIDATION-2026-09-01.md` records source discovery, authority separation, relationship integrity, procedure-selection safety, and negative controls.
 
-### CI / execution-system reconciliation
+### E7 — CI / Execution-System Integration Reconciliation — 2026-09-01
 
-41. The repository's GitHub Actions surface has been intentionally cleared on the active P04 validation branch during CI reconciliation. Historical workflow runs remain evidence in GitHub; they are not current automation authorities.
-42. Retired workflow names include `homefinder-browser.yml`, `homefinder-p04.yml`, `AI_Key.yml`, and the temporary E7 workflow. They must not be resurrected from old archives without a new evidence-backed CI gate.
-43. The proven T01/T02 browser-verification mechanism remains the conceptual browser baseline. Any future CI implementation must first demonstrate why reuse/extension is insufficient and must have bounded trigger/ownership semantics.
-44. The last in-flight P04 run `33471269425` is classified as historical evidence: checkout, Node/npm, external Three.js reachability, Chromium installation, focused P04 execution, and artifact upload all reached their expected infrastructure stages; the application/runtime assertions failed. This confirms the runner failure and application failure are distinct evidence dimensions.
-45. No new browser workflow is currently authorized merely to make P04 green.
+41. **E7:** EXECUTED / VALIDATED / ENDORSED as an E-series-only gate. P01–P06 product work, P04 runtime acceptance, GLB promotion, and SH3D mutation were explicitly out of scope.
+42. The E-series receives one narrow governance-only GitHub Actions workflow on branch `e/execution-system-2026-09-01`: `.github/workflows/homefinder-execution-governance.yml`.
+43. The workflow is path-scoped, manually dispatchable, uses `contents: read`, and runs only the read-only E7 execution gate plus its self-test. It does not run Playwright, Chromium, P04 runtime validation, GLB loading, or repository mutation.
+44. GitHub Actions run `33475974141` (job `99755198477`) passed checkout, Python setup, execution-gate compilation, governance self-test, and the read-only execution gate with zero errors and zero warnings. This is the definitive E7 enforcement evidence.
+45. Two earlier E7 workflow runs exposed and were repaired as implementation defects: the endorsement parser was too literal, and a workflow assertion was self-referential. Neither represented a product/P-series failure. Their fixes are preserved in Git history and reflected in the final passing run.
+46. E7 findings are recorded in `docs/execution-system/E7-CI-INTEGRATION-FINDINGS-2026-09-01.md`; machine state is `docs/execution-system/E7-CI-INTEGRATION-2026-09-01.json`.
+47. E7 knowledge promotion: the durable rule is that execution-system automation is governance-only, read-only, narrow in trigger scope, and separate from P-series browser/product validation. Existing proven browser mechanisms remain the product-team baseline.
+48. The E7 session is `.agent/sessions/session-2026-09-01-180000-E-CI-INTEGRATION.json`; the session was created before E7 mutation, recorded the failed self-tests and corrective actions, and is to be closed only after continuity synchronization.
+
+### E-series branch boundary
+
+49. The execution-system branch is `e/execution-system-2026-09-01`. It was created from the MR0-rebaselined project state so further E-series work does not alter the P-series development branch.
+50. P-series development remains assigned to its designated development teams. The E-series only hands over the complete current project state and governs execution-system infrastructure.
+51. No product/runtime/SH3D/GLB acceptance change is authorized from the E-series branch.
 
 ### Current evidence / protected state
 
 - Approved GLB integrity: **verified 4/4**.
 - P04 binary promotion: **not completed**; no workaround promotion endorsed.
 - P04.3: **unchecked / blocked**.
-- Current isolation branch: `p04/glb-runtime-restored-2026-09-01`.
-- Current branch/PR ref state is maintained live in GitHub; this handover intentionally does not freeze transient commit counts.
-- `main` is protected from active P04/product mutation and was restored from the accidental MR0 continuity write.
+- Product/P-series branch: `p04/glb-runtime-restored-2026-09-01`.
+- E-series branch: `e/execution-system-2026-09-01`.
+- Current E-series GitHub validation run: `33475974141` — SUCCESS.
 - Controlled PR #6: draft/unmerged; validation vehicle only.
+- `main`: protected from active P04/product mutation and from E-series development changes unless a later explicit integration gate authorizes promotion.
 - Main SH3D viewer: unchanged.
 - Canonical physical authority: `master/HomeFinder.sh3d`.
 - Current P04 viewer entrypoint: `active_development/3d/glb-viewer/index.html`.
@@ -105,19 +117,20 @@
 - MR0 machine state: `docs/execution-system/MR0-POST-T02-LINEAGE-REBASELINE-2026-09-01.json`.
 - MR0 validation: `docs/execution-system/MR0-POST-T02-LINEAGE-REBASELINE-2026-09-01-VALIDATION.md`.
 - MR0 closure session: `.agent/sessions/session-2026-09-01-171800-MR0-CLOSURE.json`.
+- E7 findings: `docs/execution-system/E7-CI-INTEGRATION-FINDINGS-2026-09-01.md`.
+- E7 machine state: `docs/execution-system/E7-CI-INTEGRATION-2026-09-01.json`.
+- E7 governance workflow: `.github/workflows/homefinder-execution-governance.yml`.
+- E7 execution gate: `scripts/execution-gate.py`.
+- E7 session trace: `.agent/sessions/session-2026-09-01-180000-E-CI-INTEGRATION.json`.
 
 ### Required next gate
 
-1. Execute **CI / Execution-System Integration Reconciliation** as the next bounded gate.
-2. Do not advance to E8.
-3. Do not create a replacement browser workflow before reconciling the proven T01/T02 browser path against current needs.
-4. Do not reinterpret historical workflow failures as evidence against the proven runner without new evidence.
-5. Keep `master/HomeFinder.sh3d` and the main SH3D viewer untouched.
-6. Keep P04 renderer/GLB acceptance separate; do not weaken its assertions.
-7. Treat any future privileged automation as a separate security/governance gate.
-8. Whole-project `HandOver.md` remains mandatory at every gate.
-9. Before Classify on any non-trivial approach, perform the E4 anti-repeat search.
-10. Before any new product-development room/gate, verify that the masterplan pointer is the permitted next step from the current frozen lineage.
+1. Execute **E8 — Full Execution-System Integration** on `e/execution-system-2026-09-01` only.
+2. Do not merge E-series work into `main` or the P-series branch until E8 explicitly authorizes an integration disposition.
+3. Do not reopen or mutate P01–P06 product gates from E8.
+4. E8 must prove that E0–E7 capabilities work together without creating duplicate authorities.
+5. E8 must produce the mandatory whole-project `HandOver.md`, findings, machine-readable integration state, validation evidence, endorsement, knowledge assessment, and closed session trace.
+6. After E8 closure, generate the final whole-project E-series checkpoint ZIP from the reconciled E branch and record its exact hash/provenance.
 
 **Physical authority:** `master/HomeFinder.sh3d` remains protected and is not mutated by P04. GLBs remain derived artifacts. Security/authorization remain outside SH3D.
 
@@ -134,24 +147,6 @@
 - `.agent/census/` = machine-readable census configuration/output.
 - `.agent/knowledge/` = derived anti-repeat index.
 - `.agent/structural/` = derived structural intelligence index/configuration; never an authority replacement.
-- `docs/execution-system/MR0-POST-T02-LINEAGE-REBASELINE-2026-09-01.md` = MR0 human-readable findings.
-- `docs/execution-system/MR0-POST-T02-LINEAGE-REBASELINE-2026-09-01.json` = MR0 machine-readable state.
-- `docs/execution-system/MR0-POST-T02-LINEAGE-REBASELINE-2026-09-01-VALIDATION.md` = MR0 validation evidence.
-- `scripts/knowledge-search.py` = deterministic knowledge/anti-repeat search.
-- `project-guide/repository-governance/EXECUTION-TRACE-AND-FILE-UPDATE.md` = E2 trace/update protocol.
-- `project-guide/repository-governance/CENSUS-AND-INVENTORY.md` = E3 census protocol.
-- `project-guide/repository-governance/KNOWLEDGE-AND-ANTI-REPEAT.md` = E4 knowledge protocol.
-- `E5-CANONICAL-BUILD-PROVENANCE.md` = E5 provenance protocol.
-- `builds.json` = E5 machine-readable provenance registry.
-- `build-provenance.py` = E5 reproducible provenance helper.
-- `docs/provenance/E5-FINDINGS-2026-09-01.md` = E5 findings.
-- `docs/provenance/E5-VALIDATION-2026-09-01.md` = E5 validation evidence.
-- `project-guide/repository-governance/STRUCTURAL-INTELLIGENCE.md` = E6 structural-intelligence protocol.
-- `scripts/structural-index.py` = E6 derived structural-intelligence generator.
-- `docs/architecture/E6-STRUCTURAL-INTELLIGENCE-FINDINGS-2026-09-01.md` = E6 findings.
-- `docs/architecture/E6-VALIDATION-2026-09-01.md` = E6 validation evidence.
-- `docs/execution-system/E-SERIES-RECONCILIATION-2026-09-01.md` = whole E-series reconciliation findings.
-- `docs/execution-system/E-SERIES-RECONCILIATION-2026-09-01.json` = whole E-series reconciliation machine state.
-- `docs/execution-system/E-SERIES-RECONCILIATION-VALIDATION-2026-09-01.md` = whole E-series reconciliation validation evidence.
+- E-series findings/registries/validation remain in `docs/execution-system/` with per-gate ownership.
 
 Do not create another handover file.
