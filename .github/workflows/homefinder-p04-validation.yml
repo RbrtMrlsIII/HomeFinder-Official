@@ -1,0 +1,65 @@
+name: HomeFinder P04 Spatial Validation
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - p/series-execution-2026-09-01
+    paths:
+      - 'active_development/3d/glb-viewer/**'
+      - 'active_development/js/reference-3d/**'
+      - 'active_development/data/cinematic-3d-targets.json'
+      - 'active_development/tests/browser/**'
+      - 'active_development/assets/**'
+      - 'docs/p-series/**'
+      - 'project-guide/HandOver.md'
+      - 'project-guide/Endorsement.md'
+
+permissions:
+  contents: read
+
+jobs:
+  p04-browser:
+    name: Validate P04 spatial / visual runtime
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    container:
+      image: mcr.microsoft.com/playwright:v1.62.0-noble
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - name: Install browser-test dependencies
+        working-directory: active_development/tests/browser
+        run: npm ci --ignore-scripts
+      - name: Install Chromium browser and system dependencies
+        working-directory: active_development/tests/browser
+        run: npx playwright install chromium --with-deps
+      - name: Verify approved GLB artifacts are repository-backed
+        run: |
+          set -eu
+          for pair in \
+            'active_development/assets/t02/house1-mainhall-public-arrival.glb d3e1851fdf737dc59c4d4939b9aed6d6036c33d500a0bc2be0390130a91fc22d' \
+            'active_development/assets/t03/house1-kitchen-bedroom1-network.glb 83d1eadf8ac940c213618e5afdd5f7d96b71e7f17aa61a7582d3516f6271020c' \
+            'active_development/assets/t04/house1-basement-firstfloor-vertical-interface.glb 330b4afc1068554abab84ac985e30f5cd39ec16887ee2f036a42424f7ddd57a0' \
+            'active_development/assets/t05/house1-corridor-living-bedroom2-network.glb b71bc456b3fc1aaf4659926b2626da0d4bc61c47a8f495ff64043473d661f1e6'; do
+            set -- $pair
+            test -f "$1"
+            actual="$(sha256sum "$1" | cut -d' ' -f1)"
+            test "$actual" = "$2"
+          done
+      - name: Run P04 Chromium validation
+        working-directory: active_development/tests/browser
+        env:
+          CI: 'true'
+        run: npx playwright test specs/p04-spatial-visual.spec.mjs --project=chromium
+      - name: Upload P04 browser report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v5
+        with:
+          name: homefinder-p04-spatial-report
+          path: active_development/tests/browser/playwright-report/
+          retention-days: 14
