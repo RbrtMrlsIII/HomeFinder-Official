@@ -1,0 +1,1 @@
+P04.3 binary-promotion staging directory. Replace this marker with the exact approved T02 GLB at the canonical path. Do not use placeholder or Base64 content.
