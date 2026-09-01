@@ -131,8 +131,10 @@ def check_endorsement(text: str, errors: list[str]):
     e6_marked = "[x] ☑️ E6" in text or "## E6 endorsement note" in text
     if not e6_marked:
         errors.append("Endorsement ledger does not record E6 as endorsed")
-    if "[ ] E7 — Automated enforcement gates." not in text:
-        errors.append("Endorsement ledger must keep E7 pending until its closure")
+    e7_pending = "[ ] E7 — Automated enforcement gates." in text
+    e7_endorsed = "[x] ☑️ E7 —" in text
+    if not (e7_pending or e7_endorsed):
+        errors.append("Endorsement ledger does not record an E7 lifecycle state")
 
 
 def self_test() -> int:
