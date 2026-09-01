@@ -62,7 +62,9 @@
 - P04 binary promotion: **not completed**; no workaround promotion endorsed.
 - P04.3: **unchecked / blocked**.
 - Current isolation branch: `p04/glb-runtime-restored-2026-09-01`.
-- Controlled PR: `#6` (draft, unmerged).
+- Current P04 branch head: `9b4a60a39cc508ffb105fb5602e6ecc592b8f1eb`.
+- `main` head observed during E3: `986e39e5a0d641a24acde327766cf7f42e6f1577`.
+- Controlled PR: `#6` (draft, unmerged); GitHub reports 91 commits and 44 changed files on the PR, and the branch is 91 commits ahead / 3 commits behind `main` with a divergent merge base. This PR remains a validation vehicle; no merge is endorsed from the current state.
 - Main SH3D viewer: unchanged.
 - Current P04 viewer entrypoint: `active_development/3d/glb-viewer/index.html`.
 - Current target manifest: `active_development/data/cinematic-3d-targets.json`.
@@ -82,6 +84,7 @@
 5. The next execution-system gate after E3 is **E4 — Knowledge & Anti-Repeat System**.
 6. For every substantive session, create the session trace before mutation and classify each change by impact.
 7. Run the project-wide census from a checked-out repository when a real structural baseline is required; do not use a truncated remote API response as a substitute.
+8. Do not merge PR #6 or force-rewrite its history until the branch's intended ownership is explicitly reconciled. The current ahead/behind divergence is recorded, not silently resolved.
 
 **Physical authority:** `master/HomeFinder.sh3d` remains protected and is not mutated by P04. GLBs remain derived artifacts. Security/authorization remain outside SH3D.
 
