@@ -9,7 +9,7 @@
     {"path":"active_development/data/design-roots.json","domain":"FRONTEND","role":"DESIGN_ROOTS","authority":"RUNTIME_CONTRACT_SUPPORT","disciplines":["Frontend / UI","Architecture"]},
     {"path":"active_development/data/house-camera-rig.json","domain":"3D_SPATIAL","role":"CAMERA_RIG","authority":"SPATIAL_CONTRACT_SUPPORT","disciplines":["3D / Spatial","Frontend / UI","Testing / QA"]},
     {"path":"active_development/data/cinematic-3d-targets.json","domain":"3D_SPATIAL","role":"CINEMATIC_TARGETS","authority":"TARGET_CONTRACT","disciplines":["3D / Spatial","GLB / Web Graphics","Browser / Runtime"]},
-    {"path":"active_development/data/cinematic-assets.json","domain":"3D_GLb","role":"CINEMATIC_ASSETS","authority":"DERIVED_ASSET_MAPPING","disciplines":["GLB / Web Graphics","3D / Spatial"]},
+    {"path":"active_development/data/cinematic-assets.json","domain":"3D_GLB","role":"CINEMATIC_ASSETS","authority":"DERIVED_ASSET_MAPPING","disciplines":["GLB / Web Graphics","3D / Spatial"]},
     {"path":"active_development/data/cinematic-scenes.json","domain":"3D_SPATIAL","role":"CINEMATIC_SCENES","authority":"DERIVED_SCENE_MAPPING","disciplines":["3D / Spatial","Frontend / UI"]},
     {"path":"active_development/data/cinematic-worlds.json","domain":"3D_SPATIAL","role":"CINEMATIC_WORLDS","authority":"DERIVED_WORLD_MAPPING","disciplines":["3D / Spatial","Architecture"]},
     {"path":"project-guide/DOCUMENTATION-MAP.md","domain":"DOCUMENTATION","role":"DOCUMENT_ROUTING","authority":"ROUTING","disciplines":["Documentation / Knowledge","Operations / Whole-Project Handover"]},
