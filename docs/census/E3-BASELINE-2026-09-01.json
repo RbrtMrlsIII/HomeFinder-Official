@@ -1,0 +1,27 @@
+{
+  "schema": "HOMEFINDER-E3-BASELINE-1.0",
+  "date": "2026-09-01",
+  "phase": "E3",
+  "physical_authority": "master/HomeFinder.sh3d",
+  "detailed_3d_census": "active_development/3d/docs/model-census.json",
+  "verified_3d_counts": {
+    "levels": 7,
+    "room_polygon_count": 47,
+    "wall_count": 170,
+    "door_or_window_count": 86,
+    "furniture_element_count": 302,
+    "furniture_group_count": 8,
+    "light_count": 31,
+    "observer_camera_count": 15,
+    "house1_h_camera_count": 9,
+    "dimension_line_count": 58,
+    "polyline_count": 7,
+    "label_count": 7,
+    "text_element_count": 7
+  },
+  "project_wide_numeric_census": "PENDING_EXECUTION_FROM_CHECKED_OUT_REPOSITORY",
+  "reason": "GitHub recursive tree response was truncated; no incomplete API view is promoted as a full inventory baseline.",
+  "census_tool": "scripts/census.py",
+  "census_config": ".agent/census/census.config.json",
+  "semantic_dictionary_owner": "active_development/data/dictionary.json"
+}
