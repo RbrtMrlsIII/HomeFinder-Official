@@ -1,0 +1,42 @@
+{
+  "gate": "P04.3",
+  "date": "2026-09-01",
+  "source_archive": "HomeFinder_E8_PSeries_Clean_2026-09-01.zip",
+  "result": "BINARY_PROMOTION_PREFLIGHT_PASS",
+  "runtime_branch": "p04/glb-runtime-restored-2026-09-01",
+  "items": [
+    {
+      "source_in_checkpoint": "project/active_development/assets/t02/house1-mainhall-public-arrival.glb",
+      "canonical_runtime_path": "active_development/assets/t02/house1-mainhall-public-arrival.glb",
+      "bytes": 878952,
+      "expected_sha256": "d3e1851fdf737dc59c4d4939b9aed6d6036c33d500a0bc2be0390130a91fc22d",
+      "actual_sha256": "d3e1851fdf737dc59c4d4939b9aed6d6036c33d500a0bc2be0390130a91fc22d",
+      "sha256_matches": true
+    },
+    {
+      "source_in_checkpoint": "project/active_development/assets/t03/house1-kitchen-bedroom1-network.glb",
+      "canonical_runtime_path": "active_development/assets/t03/house1-kitchen-bedroom1-network.glb",
+      "bytes": 640304,
+      "expected_sha256": "83d1eadf8ac940c213618e5afdd5f7d96b71e7f17aa61a7582d3516f6271020c",
+      "actual_sha256": "83d1eadf8ac940c213618e5afdd5f7d96b71e7f17aa61a7582d3516f6271020c",
+      "sha256_matches": true
+    },
+    {
+      "source_in_checkpoint": "project/active_development/assets/t04/house1-basement-firstfloor-vertical-interface.glb",
+      "canonical_runtime_path": "active_development/assets/t04/house1-basement-firstfloor-vertical-interface.glb",
+      "bytes": 23192,
+      "expected_sha256": "330b4afc1068554abab84ac985e30f5cd39ec16887ee2f036a42424f7ddd57a0",
+      "actual_sha256": "330b4afc1068554abab84ac985e30f5cd39ec16887ee2f036a42424f7ddd57a0",
+      "sha256_matches": true
+    },
+    {
+      "source_in_checkpoint": "project/active_development/assets/t05/house1-corridor-living-bedroom2-network.glb",
+      "canonical_runtime_path": "active_development/assets/t05/house1-corridor-living-bedroom2-network.glb",
+      "bytes": 14968,
+      "expected_sha256": "b71bc456b3fc1aaf4659926b2626da0d4bc61c47a8f495ff64043473d661f1e6",
+      "actual_sha256": "b71bc456b3fc1aaf4659926b2626da0d4bc61c47a8f495ff64043473d661f1e6",
+      "sha256_matches": true
+    }
+  ],
+  "next_required": "Promote all four exact binary blobs to canonical runtime paths, then run fresh Chromium P04.3 validation."
+}
