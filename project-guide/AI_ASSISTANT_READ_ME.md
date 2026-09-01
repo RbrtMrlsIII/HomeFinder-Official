@@ -8,15 +8,15 @@ It is not a report archive, skill library, contract replacement, or historical d
 
 **Active track:** P04 Spatial / Visual Validation plus execution-system and project-lineage reconciliation.
 
-**Accepted:** P04.0, P04.1, P04.2; E0, E1, E2, E3, E4, E5, E6 execution-system milestones.
+**Accepted:** P04.0, P04.1, P04.2; E0, E1, E2, E3, E4, E5, E6 execution-system milestones; MR0 Post-T02 Masterplan & Execution-Lineage Rebaseline.
 
-**Current foundation gate:** MR0 — Post-T02 Masterplan & Execution-Lineage Rebaseline.
+**Current foundation status:** MR0 EXECUTED / VALIDATED / ENDORSED.
 
-**MR0 status:** REBASELINE IN PROGRESS. The canonical development chronology is being re-established before any further E-series automation advancement or new product-development room/gate.
+**Current execution-system gate:** CI / Execution-System Integration Reconciliation.
 
 **Canonical post-T02 lineage:** T02 → T03 → T04 → T05 → T06 → T07 (frozen) → post-T07 GLB track P01 → P02 → P03 → P04 → P05 → P06.
 
-**E-series relationship:** E0–E6 are retained execution-system capabilities, but they are an overlay on the development chronology. They must not reorder, reopen, replace, or authorize product-development gates by themselves. E7 and E8 are held until the lineage/CI reconciliation is complete.
+**E-series relationship:** E0–E6 are retained execution-system capabilities, but they are an overlay on the development chronology. They must not reorder, reopen, replace, or authorize product-development gates by themselves. E7 and E8 are held until CI/automation integration is reconciled.
 
 **Not endorsed:** P04.3, P04.4, P04.5, P04.6; E7; E8; any new product-development gate beyond the current permitted masterplan pointer.
 
@@ -137,7 +137,7 @@ A detailed findings document becomes a deletion candidate only after its unique 
 - Existing or historically proven GitHub/Vercel mechanisms must be inspected before new execution automation is added.
 - **T01/T02 proven browser verification is the default browser-execution baseline.** Do not create a second workflow for a new milestone without evidence of a materially different requirement.
 - **Do not let an E-series milestone become a replacement for the masterplan sequence.**
-- **Do not advance E7/E8 while MR0 or CI/automation reconciliation remains unresolved.**
+- **Do not advance E7/E8 while the CI/automation integration boundary remains unresolved.**
 
 ## Primary continuity sources
 
