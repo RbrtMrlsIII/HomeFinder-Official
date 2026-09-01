@@ -68,10 +68,12 @@ jobs:
         env:
           CI: 'true'
         run: npx playwright test specs/p04-screenshot-visual.spec.mjs --project=chromium
-      - name: Upload P04 visual review report
+      - name: Upload P04 visual review evidence
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v5
         with:
           name: homefinder-p04-visual-review
-          path: active_development/tests/browser/playwright-report/
+          path: |
+            active_development/tests/browser/playwright-report/
+            active_development/tests/browser/p04.4-evidence/
           retention-days: 14
