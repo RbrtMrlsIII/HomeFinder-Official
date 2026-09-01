@@ -26,6 +26,22 @@ Every gate has a mandatory whole-project `project-guide/HandOver.md` handover. F
 
 A finding is not permission to implement or delete. Resolve authority, consumers, impact, and evidence first.
 
+## GitHub binary-upload rule
+
+When a gate requires a binary artifact to be uploaded to GitHub, the AI assistant MUST tell the user explicitly that a manual GitHub upload is required whenever the available GitHub integration cannot safely upload the binary itself. The assistant MUST provide a step-by-step, branch-specific upload guide before asking the user to act.
+
+The guide MUST identify:
+
+1. the exact repository;
+2. the exact target branch;
+3. the exact destination directory/path for each binary;
+4. the exact filename(s) expected;
+5. the commit destination, with explicit warning not to commit to `main` when the work is isolated;
+6. any files that must not be renamed, deleted, or replaced;
+7. the precise point where the user must stop and report completion so the AI can verify the uploaded object before further work.
+
+Never instruct a user to invent a directory structure or upload into an unverified branch/path. First inspect the live repository tree and give directions from the actual current state. Never use placeholder Base64 such as `AAAA...`, fabricated binary content, or weakened checks as a substitute for a real binary upload. Binary integrity and expected hashes MUST be verified after upload before the artifact is treated as promoted.
+
 ## Proven mechanisms / anti-repeat rule
 
 HomeFinder already has proven execution mechanisms. Reuse them before inventing replacements.
