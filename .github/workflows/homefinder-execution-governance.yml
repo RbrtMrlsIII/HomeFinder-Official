@@ -1,0 +1,84 @@
+name: HomeFinder Execution Governance
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - e/execution-system-2026-09-01
+    paths:
+      - 'MASTER_SKILL.md'
+      - 'builds.json'
+      - 'build-provenance.py'
+      - 'scripts/execution-gate.py'
+      - 'scripts/session_logger.py'
+      - 'scripts/census.py'
+      - 'scripts/knowledge-search.py'
+      - 'scripts/structural-index.py'
+      - 'project-guide/AI_ASSISTANT_READ_ME.md'
+      - 'project-guide/HandOver.md'
+      - 'project-guide/Endorsement.md'
+      - 'project-guide/DOCUMENTATION-MAP.md'
+      - 'project-guide/masterplan.md'
+      - 'project-guide/repository-governance/**'
+      - '.agent/census/**'
+      - '.agent/knowledge/**'
+      - '.agent/structural/**'
+      - '.agent/sessions/**'
+      - 'docs/execution-system/**'
+      - 'docs/provenance/**'
+      - 'docs/architecture/**'
+  pull_request:
+    branches:
+      - e/execution-system-2026-09-01
+    paths:
+      - 'MASTER_SKILL.md'
+      - 'builds.json'
+      - 'build-provenance.py'
+      - 'scripts/execution-gate.py'
+      - 'scripts/session_logger.py'
+      - 'scripts/census.py'
+      - 'scripts/knowledge-search.py'
+      - 'scripts/structural-index.py'
+      - 'project-guide/AI_ASSISTANT_READ_ME.md'
+      - 'project-guide/HandOver.md'
+      - 'project-guide/Endorsement.md'
+      - 'project-guide/DOCUMENTATION-MAP.md'
+      - 'project-guide/masterplan.md'
+      - 'project-guide/repository-governance/**'
+      - '.agent/census/**'
+      - '.agent/knowledge/**'
+      - '.agent/structural/**'
+      - '.agent/sessions/**'
+      - 'docs/execution-system/**'
+      - 'docs/provenance/**'
+      - 'docs/architecture/**'
+
+permissions:
+  contents: read
+
+jobs:
+  execution-governance:
+    name: Validate HomeFinder execution-system invariants
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Compile execution gate
+        run: python -m py_compile scripts/execution-gate.py
+
+      - name: Run governance self-test
+        run: python scripts/execution-gate.py --self-test
+
+      - name: Run read-only execution gate
+        run: python scripts/execution-gate.py --json
+
+      - name: Confirm this workflow is governance-only
+        run: |
+          ! grep -E "playwright|chromium|p04-spatial|three-glb" .github/workflows/homefinder-execution-governance.yml
