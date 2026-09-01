@@ -108,7 +108,7 @@ A narrow import-map repair was subsequently committed on the P04 validation view
 - [x] ☑️ E2 — Execution trace & impact-aware file-update system.
 - [x] ☑️ E3 — Project-wide census & inventory foundation.
 - [x] ☑️ E4 — Knowledge & anti-repeat system.
-- [ ] E5 — Canonical artifact/build provenance.
+- [x] ☑️ E5 — Canonical artifact/build provenance.
 - [ ] E6 — Structural intelligence (dictionary, architecture, skill selection).
 - [ ] E7 — Automated enforcement gates.
 - [ ] E8 — Full execution-system integration.
@@ -146,6 +146,18 @@ E4 was executed and validated on the current P04 branch. `PRODUCT-KNOWLEDGE.md` 
 `project-guide/repository-governance/KNOWLEDGE-AND-ANTI-REPEAT.md` establishes the required pre-Classify search for non-trivial approaches and preserves the distinction between machine discovery and project authority. The helper was syntax-checked and behavior-checked with matching and unrelated queries.
 
 No duplicate Product Knowledge authority, second dictionary, second skill, or parallel handover was created. The whole-project `HandOver.md` and AI continuity were updated. P04 acceptance gates remain unchanged and unendorsed.
+
+## E5 endorsement note — 2026-09-01
+
+E5 was executed as a bounded promotion of the previously prepared provenance model. The live P04 branch now contains `E5-CANONICAL-BUILD-PROVENANCE.md`, `builds.json`, `build-provenance.py`, and `E5-BASELINE-2026-09-01.json`.
+
+The provenance model preserves strict evidence ordering: SOURCE → ARTIFACT GENERATED → BUILD VERIFIED → DEPLOYMENT READY → RUNTIME VALIDATED → ENDORSED. The recorded GitHub Actions artifact `33451823171` proves artifact upload, while its six focused P04 runtime failures remain failures; no application success is inferred from artifact availability.
+
+Existing HomeFinder source/artifact ownership was preserved. `master/HomeFinder.sh3d` remains protected physical authority, the existing GLB paths were not relocated, and no placeholder/base64 workaround was promoted as canonical runtime source. The prepared E5 handover addendum was not promoted because `project-guide/HandOver.md` remains the single handover authority.
+
+A machine-readable E5 promotion session was created before mutation at `.agent/sessions/session-2026-09-01-114800-E5-PROMOTION.json`. The whole-project `HandOver.md` was updated with E5 state and the next gate. No second skill, dictionary, or handover authority was created.
+
+E5 is endorsed as an execution-system capability. This endorsement does **not** endorse P04.3–P04.6, which remain unchecked and blocked pending fresh browser/GLB evidence.
 
 ## Session protocol
 1. Read `README.md`.
