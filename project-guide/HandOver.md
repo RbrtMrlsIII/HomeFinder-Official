@@ -2,7 +2,7 @@
 
 > Single live handover authority. Update this file after every execution gate.
 
-## CURRENT STATE — POST-T07 / P02 ACCEPTED / P03 ACCEPTED / P04.1–P04.2 ACCEPTED / P04.3 BLOCKED — 2026-09-01
+## CURRENT STATE — POST-T07 / P02 ACCEPTED / P03 ACCEPTED / P04.1–P04.2 ACCEPTED / E0–E1 EXECUTION-SYSTEM EVALUATION ACCEPTED — 2026-09-01
 
 **Execution discipline:** Observe → Record → Understand → Classify → Align → Validate → Endorse → Advance.
 
@@ -12,7 +12,7 @@
 
 **P03:** ACCEPTED. Candidate-backed Chromium evidence previously established the H-03/H-07/H-08 selectable-camera contract. The approved candidate SHA-256 remains `f8a0bf7d0181155d342dfc97fad0679741e38fdcfda60982dfa3ee534eb81aed`.
 
-**Current track:** P04 Spatial / Visual Validation.
+**Current track:** P04 Spatial / Visual Validation plus execution-system equalization.
 
 **P04.0 verdict:** BLOCKED by a test-harness/runtime-mount defect. The first focused P04 run targeted a GLB viewer route that did not exist in the checked-out repository. The missing viewer entrypoint and target manifest were subsequently added on the P04 line.
 
@@ -43,6 +43,13 @@
 15. The current investigation must treat the renderer-mount failure as a P04 implementation/runtime defect. Do not infer GLB corruption or Chromium installation failure from the result.
 16. Documentation continuity was reconciled: `README.md` is now the repository doorway; `DOCUMENTATION-MAP.md` defines document ownership; `AI_ASSISTANT_READ_ME.md` is continuity-only; `HandOver.md` is the live checkpoint; `Endorsement.md` remains the chronological ledger; skills, coding guidance, and product knowledge remain in their dedicated files.
 
+### Execution-system equalization — E0 / E1
+
+17. **E0:** Project-wide execution-system evaluation completed and validated. Universal Agent mechanisms were mapped against existing HomeFinder governance; duplicate governance architectures were rejected.
+18. **E1:** The single canonical `MASTER_SKILL.md` was promoted to v1.2 on this branch. It now covers equalized procedures for Product/Requirements, Architecture, Frontend/UI, Backend/API, Data/Storage, 3D/Spatial, GLB/Web Graphics, Browser/Runtime, Testing/QA, Security, CI/CD, Deployment/Hosting, Documentation/Knowledge, and Operations/Whole-Project Handover.
+19. E1 also formalized anti-repeat checking, impact-aware file updates, artifact/build provenance, census/structural-intelligence principles, Git history mutation governance, and the rule that handovers always describe the complete HomeFinder project state.
+20. No second permanent skill file was created. The live canonical skill remains `MASTER_SKILL.md`.
+
 ### Current evidence
 
 - Approved GLB integrity: **verified 4/4**.
@@ -54,6 +61,8 @@
 - Current P04 viewer entrypoint: `active_development/3d/glb-viewer/index.html`.
 - Current target manifest: `active_development/data/cinematic-3d-targets.json`.
 - Current documentation routing: `project-guide/DOCUMENTATION-MAP.md`.
+- E1 canonical execution skill: `MASTER_SKILL.md` v1.2.
+- E1 endorsement commit: `ca16345ad907805c1590adc66f676dfd4c370a62` records the endorsement-ledger update.
 
 ### Required next gate
 
@@ -63,16 +72,18 @@
 4. Do not rerun historical T01–T02 ZIP evidence as a substitute for current execution; use the accepted GitHub lineage and current repository state.
 5. Only after a fresh Chromium run reaches `data-renderer="three-glb"` and `data-glb-loaded="true"` should the camera/scale/coordinate assertions be evaluated as the next gate.
 6. Only after the resulting evidence passes may P04.3/P04.4/P04.5 be marked complete and a new endorsement decision recorded.
+7. The next execution-system gate after E1 is **E2 — Execution Trace & Impact-Aware File-Update System**. Do not install E2 automation until the canonical E1 skill promotion has been validated and recorded in continuity.
 
 **Physical authority:** `master/HomeFinder.sh3d` remains protected and is not mutated by P04. GLBs remain derived artifacts. Security/authorization remain outside SH3D.
 
 ## Mandatory continuity outputs
 
-- `project-guide/HandOver.md` = latest project state and continuation point.
+- `project-guide/HandOver.md` = latest whole-project state and continuation point.
 - `project-guide/Endorsement.md` = chronological execution ledger.
 - `project-guide/masterplan.md` = durable architecture/chronology.
 - `project-guide/AI_ASSISTANT_READ_ME.md` = current continuity only.
 - `project-guide/DOCUMENTATION-MAP.md` = documentation ownership and routing.
 - Existing `docs/` audits/contracts = detailed evidence.
+- `MASTER_SKILL.md` = single canonical execution skill.
 
 Do not create another handover file.
