@@ -10,5 +10,75 @@
     "FAILED",
     "BLOCKED"
   ],
-  "records": []
+  "endorsement_vocabulary": [
+    "PENDING",
+    "ENDORSED",
+    "REJECTED",
+    "DEFERRED",
+    "NOT_APPLICABLE"
+  ],
+  "records": [
+    {
+      "build_id": "github-actions-p04-run-33451823171",
+      "timestamp_utc": "2026-08-31T23:42:44Z",
+      "source_commit": "5c9903113010d88c6a91677dc3709552bc297ed0",
+      "branch": "p04/glb-runtime-restored-2026-09-01",
+      "gate": "P04.3",
+      "source_inputs": [
+        ".github/workflows/homefinder-p04.yml",
+        "P04 GLB viewer validation surface"
+      ],
+      "tooling": [
+        "GitHub Actions",
+        "Node",
+        "Chromium",
+        "Playwright",
+        "external Three.js CDN preflight"
+      ],
+      "artifact_paths": [
+        {
+          "path": "homefinder-p04-playwright-report",
+          "sha256": "d4e59131592c7af694b222726c603c3fa5683cf392cd1e876953632402cdec67",
+          "bytes": 2153255,
+          "github_artifact_id": 9780126370
+        }
+      ],
+      "result": "CI infrastructure succeeded; focused P04 browser validation failed at the renderer-mount assertion; evidence artifact upload succeeded.",
+      "validation_evidence": [
+        "github-actions-run:33451823171",
+        "job:99683217304",
+        "focused P04 suite: failure",
+        "artifact upload: success"
+      ],
+      "deployment_reference": null,
+      "status": "FAILED",
+      "endorsement_state": "DEFERRED",
+      "notes": "This record is provenance for a failed runtime-validation attempt. It is not application success and does not endorse P04.3."
+    },
+    {
+      "build_id": "vercel-deployment-dpl_5Fi2KT76WLu7zUFH1wcu3yPPU6Nj",
+      "timestamp_utc": "2026-09-01T03:51:43Z",
+      "source_commit": "d2149c79d8197d6ee7879f9ad677bd959808db7f",
+      "branch": "p04/glb-runtime-restored-2026-09-01",
+      "gate": "E5",
+      "source_inputs": [
+        "RbrtMrlsIII/HomeFinder-Official"
+      ],
+      "tooling": [
+        "Vercel Git deployment"
+      ],
+      "artifact_paths": [],
+      "result": "Vercel deployment reached READY for the current P04 branch commit.",
+      "validation_evidence": [
+        "Vercel deployment:dpl_5Fi2KT76WLu7zUFH1wcu3yPPU6Nj",
+        "Vercel READY state",
+        "Git ref:p04/glb-runtime-restored-2026-09-01",
+        "Git SHA:d2149c79d8197d6ee7879f9ad677bd959808db7f"
+      ],
+      "deployment_reference": "https://home-finder-official-5nkejgnvl-home-finder3.vercel.app",
+      "status": "DEPLOYMENT_READY",
+      "endorsement_state": "ENDORSED",
+      "notes": "Deployment READY is deployment provenance only. It does not prove browser/runtime/GLB success."
+    }
+  ]
 }
