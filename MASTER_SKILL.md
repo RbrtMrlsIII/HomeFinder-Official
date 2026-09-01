@@ -1,12 +1,12 @@
-# HomeFinder Engineering System — Master Skill v1.2
+# HomeFinder Engineering System — Master Skill v1.3
 
 **Status:** PROJECT-WIDE ACTIVE STANDARD  
 **Canonical role:** Single project execution skill for HomeFinder  
-**Scope:** Whole project; all disciplines, gates, changes, validations, handovers, and cleanup
+**Scope:** Whole project; all disciplines, gates, changes, validations, handovers, packaging, and cleanup
 
 ## 1. Authority and purpose
 
-This is the one canonical HomeFinder execution skill. It defines how the project is executed across product, architecture, implementation, verification, 3D/spatial, repository governance, continuity, knowledge promotion, and whole-project handover.
+This is the one canonical HomeFinder execution skill. It defines how the project is executed across product, architecture, implementation, verification, 3D/spatial, repository governance, continuity, knowledge promotion, checkpoint packaging, and whole-project handover.
 
 It does not replace authoritative project sources, contracts, manifests, ADRs, or user decisions. Discipline-specific documents remain in their canonical locations; this skill defines how they are used together.
 
@@ -79,6 +79,9 @@ Update canonical state, machine records, documentation, continuity, evidence ref
 15. Evidence must state exactly what passed, failed, and was not proven.
 16. Canonical documentation/state is updated in the same gate when required.
 17. Required checkpoint packages represent the whole project continuity state and contain no nested handoff archives.
+18. A whole-project checkpoint contains one physical copy of current project source. Historical evidence is retained by reference/index unless immutable binary retention is explicitly required.
+19. Never recursively embed a prior whole-project checkpoint inside a new whole-project checkpoint.
+20. Deduplicate identical project baselines before packaging; duplication is a packaging defect, not additional project completeness.
 
 ## 6. Discipline procedures
 
@@ -135,7 +138,7 @@ Observe authentication, authorization, input validation, file boundaries, secret
 ### CI / CD
 Observe triggers, jobs, dependencies, artifacts, branch context, permissions, and environment setup. Record which changes triggered which gates and what each run proves. Classify trigger/environment/build/test/artifact/deployment impact. Align workflow scope with gate intent. Validate positive and negative trigger behavior where appropriate. Endorse only when evidence matches the intended gate.
 
-**Do not:** let documentation-only activity masquerade as spatial-runtime evidence without an explicit gate reason.
+**Do not:** create duplicate workflow ownership merely because a new milestone needs validation.
 
 ### Deployment / Hosting
 Observe configuration, environment variables, domains, CDN, builds, runtime endpoints, and deployment identity. Record environment differences. Understand source/build/hosting/CDN boundaries. Align deployment with validated state. Validate actual user/runtime path. Endorse against deployment criteria.
@@ -148,7 +151,7 @@ Observe canonical documents, routing, status, evidence, duplicates, and stale ma
 **Do not:** preserve document volume as a proxy for knowledge.
 
 ### Operations / Whole-Project Handover
-A handover is always for the **complete HomeFinder project state**, never merely the current feature or discipline. It must account for or route to canonical sources for project direction; repository/Git state; branch/gate/PR/deployment state where applicable; architecture and authority; requirements/contracts; frontend/backend/data; 3D/SH3D/GLB/runtime; QA/CI; security; deployment; documentation/knowledge; skills; accepted/rejected/deferred/blocked/unresolved findings; evidence; protected boundaries; known non-repeatable lessons; exact next safe action; and recovery considerations.
+A handover is always for the **complete HomeFinder project state**, never merely the current feature or discipline. It must account for or route to canonical sources for project direction; repository/Git state; branch/gate/PR/deployment state where applicable; architecture and authority; requirements/contracts; frontend/backend/data; 3D/SH3D/GLB/runtime; QA/CI; security; deployment; documentation/knowledge; skills; accepted/rejected/deferred/blocked/unresolved findings; evidence; protected boundaries; known non-repeatable lessons; exact next safe action; recovery considerations; and checkpoint packaging state.
 
 Validate that another authorized executor can continue without private memory. Keep the handover concise and routed rather than duplicating canonical sources.
 
@@ -159,6 +162,21 @@ For add/move/rename/restructure/delete decisions identify producing discipline, 
 Before deletion: **confirm identity → classify → scan references → resolve historical role → identify replacement/knowledge promotion → record disposition → delete only when justified → validate.**
 
 Prefer one physical canonical artifact with multiple logical classifications over duplicated physical copies.
+
+### Checkpoint packaging and archive hygiene
+
+A clean whole-project checkpoint MUST:
+
+1. contain exactly one current project source baseline;
+2. exclude nested prior whole-project ZIPs and recursively embedded checkpoints;
+3. exclude duplicated copies of the same project baseline;
+4. keep historical evidence separate from current source authority;
+5. record omitted historical archives by filename, size, hash, and retention reason where practical;
+6. preserve essential machine-readable manifests and evidence indexes without copying their entire historical payload recursively;
+7. verify that every included current artifact has one canonical path;
+8. calculate and record the final checkpoint hash only after the package is complete.
+
+A packaging cleanup must not silently delete historical evidence. It removes redundant physical copies from the new package while retaining traceability to the original evidence package.
 
 ## 8. Knowledge and anti-repeat gate
 
@@ -219,6 +237,7 @@ Before advancing:
 - [ ] durable knowledge promoted where appropriate;
 - [ ] retention/deletion disposition recorded;
 - [ ] whole-project handover current and consistent;
+- [ ] checkpoint contains one project baseline and no recursive checkpoint archives;
 - [ ] exact next gate/action explicit;
 - [ ] no protected boundary silently weakened.
 
