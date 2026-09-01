@@ -77,10 +77,16 @@ A `☑️` means the item is fully implemented, verified, documented in `HandOve
 - [x] ☑️ P04.0 — Establish dedicated spatial/visual validation lane and preserve the blocked initial evidence.
 - [x] ☑️ P04.1 — Isolate missing viewer-entrypoint/test-harness failure and add repository-backed validation entrypoint.
 - [x] ☑️ P04.2 — Activate source-backed target manifest and runtime metadata contract.
-- [ ] P04.3 — Fresh Chromium validation of native WebGL2 target mount/camera/scale/elevation.
+- [ ] P04.3 — Fresh Chromium validation of the current P04 renderer mount, target, camera, scale, and elevation contract.
 - [ ] P04.4 — Visual review of fresh screenshots and T05 vertical normalization.
 - [ ] P04.5 — Actual derived GLB binary loading/correspondence verification when binary-safe runtime path is available.
 - [ ] P04.6 — Fresh P04 endorsement decision.
+
+### P04.3 evidence note — 2026-09-01
+
+A GitHub-hosted P04 run was executed on the clean validation branch. The runner, container, Node setup, external Three.js reachability, npm installation, and Chromium installation all passed. The focused P04 suite then failed 6/6 at the common `data-renderer="three-glb"` mount assertion; no target-specific camera or GLB-load assertion was reached. Screenshots and traces were uploaded.
+
+A narrow import-map repair was subsequently committed on the P04 validation viewer and a fresh GitHub run was triggered. The run remains evidence-only until its result is complete and independently reviewed. P04.3 therefore remains unchecked.
 
 ## H — Final integration
 - [ ] Phase 8 — Door animation / traversal integration.
@@ -90,15 +96,22 @@ A `☑️` means the item is fully implemented, verified, documented in `HandOve
 - [ ] Phase 12 — Production 3D development/polish.
 - [ ] Final production/deployment gate.
 
+## I — Documentation continuity
+- [x] ☑️ Establish repository documentation doorway and routing map.
+- [x] ☑️ Restrict `AI_ASSISTANT_READ_ME.md` to current continuity and source pointers.
+- [x] ☑️ Keep skills, coding guidance, product knowledge, detailed evidence, and historical material in their designated documents.
+- [x] ☑️ Record that accepted T01–T02 lineage is historical/accepted evidence and must not be rerun from inherited ZIP packages as a substitute for current execution.
+
 ## Session protocol
 1. Read `README.md`.
-2. Read `HandOver.md`.
-3. Read `Endorsement.md`.
-4. Inspect existing relevant audits/contracts.
-5. Choose the next applicable unchecked item.
-6. Make the smallest evidence-backed change.
-7. Verify it independently.
-8. Mark the completed item `☑️`.
-9. Update `HandOver.md`.
-10. Package only after all accepted changes are present.
-11. Do not create another handover file.
+2. Read `project-guide/AI_ASSISTANT_READ_ME.md`.
+3. Read `HandOver.md`.
+4. Read `Endorsement.md`.
+5. Inspect relevant audits/contracts and the document routing map.
+6. Choose the next applicable unchecked item.
+7. Make the smallest evidence-backed change.
+8. Verify it independently.
+9. Mark the completed item `☑️` only when implementation, verification, documentation, and checkpoint inclusion are complete.
+10. Update `HandOver.md`.
+11. Keep detailed evidence in its designated `docs/` location.
+12. Do not create another handover file.
