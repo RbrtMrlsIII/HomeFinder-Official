@@ -8,7 +8,7 @@ It is not a report archive, skill library, contract replacement, or historical d
 
 **Active track:** P04 Spatial / Visual Validation plus execution-system equalization.
 
-**Accepted:** P04.0, P04.1, P04.2; E0, E1, E2, E3 execution-system milestones.
+**Accepted:** P04.0, P04.1, P04.2; E0, E1, E2, E3, E4 execution-system milestones.
 
 **Not endorsed:** P04.3, P04.4, P04.5, P04.6.
 
@@ -44,6 +44,9 @@ Startup and handover are always **whole-project**, even when the active gate is 
 - E3 established `scripts/census.py`, `.agent/census/census.config.json`, and `project-guide/repository-governance/CENSUS-AND-INVENTORY.md`.
 - E3 must not invent full-project numeric counts from truncated remote API responses. Use the census from a checked-out repository for authoritative structural totals.
 - Existing semantic dictionary ownership remains `active_development/data/dictionary.json`; existing authored-model census remains `active_development/3d/docs/model-census.json`.
+- E4 established `.agent/knowledge/ANTI-REPEAT-INDEX.json`, `scripts/knowledge-search.py`, and `project-guide/repository-governance/KNOWLEDGE-AND-ANTI-REPEAT.md`.
+- E4 requires an anti-pattern/known-dead-end search before Classify for non-trivial approaches. A strong match is a stop-and-inspect signal, not automatic authority to reject a new approach.
+- E4 keeps `PRODUCT-KNOWLEDGE.md` as the durable-knowledge authority; the anti-repeat index is a derived machine index and must not become a competing knowledge source.
 
 ## Minimal-knowledge rule
 
@@ -55,7 +58,7 @@ Only verified, reusable, actionable, traceable knowledge belongs here. Transient
 
 When a finding changes project-wide strategy or chronology, update `masterplan.md`. When it only clarifies current execution, keep the memory here and retain the detailed evidence elsewhere.
 
-A detailed findings document becomes a deletion candidate only after its unique knowledge has been distilled, references have been reconciled, evidence has a deliberate retention decision, and no active gate depends on it.
+A detailed findings document becomes a deletion candidate only after its unique knowledge has been promoted, references have been reconciled, evidence has a deliberate retention decision, and no active gate depends on it.
 
 ## Canonical project guardrails
 
@@ -93,6 +96,12 @@ A detailed findings document becomes a deletion candidate only after its unique 
 
 `.agent/census/census.config.json` — census configuration.
 
+`project-guide/repository-governance/KNOWLEDGE-AND-ANTI-REPEAT.md` — E4 knowledge and anti-repeat protocol.
+
+`scripts/knowledge-search.py` — deterministic durable-knowledge search and anti-pattern gate helper.
+
+`.agent/knowledge/ANTI-REPEAT-INDEX.json` — derived anti-pattern trigger index.
+
 ## Browser verification entry points
 
 `.github/workflows/homefinder-browser.yml` — repository-wide browser verification.
@@ -110,6 +119,8 @@ A detailed findings document becomes a deletion candidate only after its unique 
 ## Session-start rule
 
 Start from current repository state. Read this file, then `HandOver.md`, `Endorsement.md`, the relevant masterplan section, the applicable skill section, and the detailed evidence for the active gate.
+
+Before Classify on a non-trivial approach, search durable knowledge for related anti-patterns and known dead ends. A match must be inspected against current evidence before proceeding.
 
 Do not reconstruct old history from nested ZIPs when a current canonical record exists.
 Do not repeat a disproven hypothesis without new evidence.
