@@ -6,7 +6,8 @@ configured JSON sources. The tool never mutates source artifacts.
 """
 from __future__ import annotations
 
-import argparse, json
+import argparse
+import json
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -27,12 +28,20 @@ def load_json(path: Path):
         return None
 
 
-def count_html(root: Path) -> int:
-    return sum(1 for p in root.rglob("*.html") if ".git" not in p.parts and "node_modules" not in p.parts)
+def is_excluded(path: Path, excluded: set[str]) -> bool:
+    return bool(excluded.intersection(path.parts))
 
 
-def count_files(root: Path, extensions: set[str]) -> int:
-    return sum(1 for p in root.rglob("*") if p.is_file() and p.suffix.lower() in extensions and ".git" not in p.parts)
+def count_html(root: Path, excluded: set[str]) -> int:
+    return sum(1 for p in root.rglob("*.html") if not is_excluded(p, excluded))
+
+
+def count_files(root: Path, extensions: set[str], excluded: set[str]) -> int:
+    return sum(
+        1
+        for p in root.rglob("*")
+        if p.is_file() and p.suffix.lower() in extensions and not is_excluded(p, excluded)
+    )
 
 
 def main() -> int:
@@ -46,7 +55,7 @@ def main() -> int:
     cfg = load_json(root / args.config) or {}
     excluded = set(cfg.get("exclude_dirs", [".git", "node_modules", "dist", "build"]))
 
-    all_files = [p for p in root.rglob("*") if p.is_file() and not excluded.intersection(p.parts)]
+    all_files = [p for p in root.rglob("*") if p.is_file() and not is_excluded(p, excluded)]
     tests = [p for p in all_files if "tests" in p.parts or p.name.startswith("test_")]
     workflows = [p for p in all_files if ".github" in p.parts and "workflows" in p.parts]
     sessions = [p for p in all_files if ".agent" in p.parts and "sessions" in p.parts and p.suffix == ".json"]
@@ -56,7 +65,11 @@ def main() -> int:
     forbidden_patterns = cfg.get("forbidden_globs", ["*.zip", "*.save", "*patch*"])
     forbidden = []
     for pattern in forbidden_patterns:
-        forbidden.extend(str(p.relative_to(root)) for p in root.rglob(pattern) if p.is_file() and not excluded.intersection(p.parts))
+        forbidden.extend(
+            str(p.relative_to(root))
+            for p in root.rglob(pattern)
+            if p.is_file() and not is_excluded(p, excluded)
+        )
 
     dictionary_path = root / cfg.get("dictionary_path", "active_development/data/dictionary.json")
     dictionary = load_json(dictionary_path) or {}
@@ -69,9 +82,9 @@ def main() -> int:
         "source_first": True,
         "counts": {
             "repository_files": len(all_files),
-            "ui_screens_html": count_html(root),
-            "models_3d": count_files(root, DEFAULT_EXTENSIONS["models_3d"]),
-            "textures": count_files(root, DEFAULT_EXTENSIONS["textures"]),
+            "ui_screens_html": count_html(root, excluded),
+            "models_3d": count_files(root, DEFAULT_EXTENSIONS["models_3d"], excluded),
+            "textures": count_files(root, DEFAULT_EXTENSIONS["textures"], excluded),
             "tests": len(tests),
             "ci_workflows": len(workflows),
             "session_traces": len(sessions),
