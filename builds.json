@@ -1,0 +1,14 @@
+{
+  "schema": "HOMEFINDER-BUILD-PROVENANCE-1.0",
+  "updated": "2026-09-01",
+  "status_vocabulary": [
+    "GENERATED",
+    "BUILD_VERIFIED",
+    "DEPLOYMENT_READY",
+    "RUNTIME_VALIDATED",
+    "ENDORSED",
+    "FAILED",
+    "BLOCKED"
+  ],
+  "records": []
+}
