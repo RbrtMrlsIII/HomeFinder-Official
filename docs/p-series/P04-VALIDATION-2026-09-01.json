@@ -1,0 +1,22 @@
+{
+  "schema":"HOMEFINDER-P04-VALIDATION-1.0",
+  "gate":"P04",
+  "status":"VALIDATION_HOLD",
+  "scope":"P-series only",
+  "accepted_prior_gates":["P01","P02","P03","P04.0","P04.1","P04.2"],
+  "active_gates":["P04.3","P04.4","P04.5","P04.6"],
+  "branch":"p/series-execution-2026-09-01",
+  "approved_glb_hashes":{"T02":"d3e1851fdf737dc59c4d4939b9aed6d6036c33d500a0bc2be0390130a91fc22d","T03":"83d1eadf8ac940c213618e5afdd5f7d96b71e7f17aa61a7582d3516f6271020c","T04":"330b4afc1068554abab84ac985e30f5cd39ec16887ee2f036a42424f7ddd57a0","T05":"b71bc456b3fc1aaf4659926b2626da0d4bc61c47a8f495ff64043473d661f1e6"},
+  "static_binary_integrity":"PASS_4_OF_4",
+  "repository_backed_binary_integrity":"FAIL_0_OF_4",
+  "github_browser_run":{"run_id":33480279339,"run_number":1,"conclusion":"failure","failure_stage":"repository-backed GLB availability gate"},
+  "browser_validation":"BLOCKED",
+  "p04_3":"BLOCKED_NOT_ENDORSED",
+  "p04_4":"BLOCKED_NOT_ENDORSED",
+  "p04_5":"BLOCKED_NOT_ENDORSED",
+  "p04_6":"HELD",
+  "p05":"HELD_NO_AUTHORITATIVE_SPEC_FOUND",
+  "p06":"HELD_NO_AUTHORITATIVE_SPEC_FOUND",
+  "protected":{"main":true,"master/HomeFinder.sh3d":true,"P01-P03":true},
+  "no_placeholder_or_mock_renderer":true
+}
