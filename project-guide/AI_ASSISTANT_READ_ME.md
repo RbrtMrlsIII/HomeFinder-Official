@@ -6,15 +6,19 @@ It is not a report archive, skill library, contract replacement, or historical d
 
 ## Current continuity — 2026-09-01
 
-**Active track:** P04 Spatial / Visual Validation plus execution-system reconciliation.
+**Active track:** P04 Spatial / Visual Validation plus execution-system and project-lineage reconciliation.
 
 **Accepted:** P04.0, P04.1, P04.2; E0, E1, E2, E3, E4, E5, E6 execution-system milestones.
 
-**Current execution-system gate:** CI / Execution-System Integration Reconciliation.
+**Current foundation gate:** MR0 — Post-T02 Masterplan & Execution-Lineage Rebaseline.
 
-**E-series reconciliation status:** PROGRAM RECONCILIATION REQUIRED. E0–E6 capabilities remain retained, but the program must integrate with existing HomeFinder architecture rather than creating competing execution or CI systems. E7 is not endorsed. E8 is held.
+**MR0 status:** REBASELINE IN PROGRESS. The canonical development chronology is being re-established before any further E-series automation advancement or new product-development room/gate.
 
-**Not endorsed:** P04.3, P04.4, P04.5, P04.6; E7; E8.
+**Canonical post-T02 lineage:** T02 → T03 → T04 → T05 → T06 → T07 (frozen) → post-T07 GLB track P01 → P02 → P03 → P04 → P05 → P06.
+
+**E-series relationship:** E0–E6 are retained execution-system capabilities, but they are an overlay on the development chronology. They must not reorder, reopen, replace, or authorize product-development gates by themselves. E7 and E8 are held until the lineage/CI reconciliation is complete.
+
+**Not endorsed:** P04.3, P04.4, P04.5, P04.6; E7; E8; any new product-development gate beyond the current permitted masterplan pointer.
 
 **Physical authority:** `master/HomeFinder.sh3d` remains the sole canonical SH3D source. The main application-facing viewer remains the Sweet Home 3D JS Viewer. The P04 GLB viewer is a separate validation surface and does not replace SH3D authority.
 
@@ -34,6 +38,28 @@ Startup and handover are always **whole-project**, even when the active gate is 
 
 Every gate must carry, as applicable and without exception to the whole-project handover requirement: findings, machine-readable state, validation evidence, endorsement state, knowledge-distillation assessment, and the current continuation point.
 
+## Masterplan lineage rule
+
+The **master development chronology outranks execution-system convenience**.
+
+The frozen post-T02 development lineage is:
+
+```text
+T02 → T03 → T04 → T05 → T06 → T07 (FROZEN)
+                                      ↓
+                     P01 → P02 → P03 → P04 → P05 → P06
+```
+
+The E-series is an execution-system overlay:
+
+```text
+E0 → E1 → E2 → E3 → E4 → E5 → E6 → E7 → E8
+```
+
+An E-series milestone may provide a capability, trace, census, memory, provenance, structure, or enforcement mechanism, but it does **not** become a competing product chronology and does not authorize reopening or reordering T02–T07 or P01–P06.
+
+When the lineage is uncertain, stop and rebaseline before introducing further automation or product transformations.
+
 ## Proven mechanisms and anti-repeat rule
 
 **HomeFinder already has proven execution mechanisms. Reuse them before inventing new ones.**
@@ -48,7 +74,7 @@ Do not create milestone-specific workflow clones merely because a gate has a dif
 
 A failed application assertion is not evidence that the runner or workflow infrastructure is defective. First separate infrastructure failure from application/runtime failure. Do not repeat a healthy runner through another workflow just because the application assertion failed.
 
-Historical T01/T02 browser evidence is therefore an anti-repeat reference. Do not rerun old successful workflows merely to recreate confidence already established. Reuse the proven mechanism for current validation when current evidence is actually required.
+Historical T01/T02 browser evidence is an anti-repeat reference. Do not rerun old successful workflows merely to recreate confidence already established. Reuse the proven mechanism for current validation when current evidence is actually required.
 
 ## Current P04 memory — do not repeat old experiments
 
@@ -74,16 +100,17 @@ The final in-flight P04 workflow run created during workflow retirement (`334712
 - E4 keeps `PRODUCT-KNOWLEDGE.md` as the durable-knowledge authority; the anti-repeat index is a derived machine index and must not become a competing knowledge source.
 - E5 established canonical artifact/build provenance across HomeFinder, GitHub Actions, and Vercel. `builds.json` records exact source commits, artifact identity, deployment identity, and evidence states without conflating deployment with runtime success.
 - E6 established a derived structural-intelligence index for cross-domain discovery and lineage. Existing domain-owned sources remain authorities; the index is navigation state only.
-- The E-series reconciliation found that HomeFinder already had a browser workflow and a P04-specific workflow. The P04-specific workflow was a redundant second browser execution path because the project's established browser verification mechanism already provided the proven execution foundation. Both obsolete active workflow definitions were retired rather than used to justify repeated validation infrastructure.
-- The scheduled `AI_Key.yml` workflow was also retired from the active repository surface during CI cleanup because direct scheduled `contents: write` automation was not part of the execution-system architecture and could mutate `main` outside the governed gate flow.
-- Do not create another workflow clone for P04 or a later milestone without a documented, evidence-backed materially different execution requirement.
-- Retired workflow YAMLs and their historical runs are evidence/history, not current automation authorities. Do not resurrect them from stale documentation or checkpoint archives.
+- **MR0 established that T02–T06 are frozen product-development lineage and must remain ahead of the execution-system overlay in authority and sequencing.**
+- **MR0 established that T07 is frozen and P01–P06 is a separate post-T07 GLB track.**
+- The E-series cannot outrun masterplan lineage. If development chronology or authority is uncertain, stop, record findings, and rebaseline before advancing enforcement or structural automation.
 
-## CI state after reconciliation
+## CI state after cleanup/rebaseline
 
-The active repository currently has **no `.github/workflows/` automation** on the clean P04 validation branch. This is an intentional clean slate after retiring redundant/ungoverned workflow definitions. The next CI design must be a dedicated bounded gate that first reconciles the proven T01/T02 browser execution model with the current P04/runtime requirements.
+The active clean P04 validation branch currently has **no `.github/workflows/` automation** after the workflow-retirement reconciliation. This is intentional. The retired YAML definitions are historical evidence, not current automation authorities.
 
-The old workflow runs remain visible in GitHub history. For example, run `33451823171` failed only at the focused P04 runtime assertions while setup and evidence upload succeeded; run `33471269425` was the final run triggered while `homefinder-p04.yml` was being deleted and likewise reached the focused runtime step before failing. These runs must be treated as evidence, not as active workflow ownership.
+The T01/T02 browser-verification path remains the proven conceptual baseline for future browser execution. A future CI implementation must first reconcile that proven path with current repository needs rather than creating a milestone-specific clone.
+
+The old workflow runs remain visible in GitHub history. Runs `33451823171` and `33471269425` both reached healthy runner setup, Chromium, focused P04 execution, and evidence upload; their failures occurred at the application/runtime assertion layer. These runs are evidence of runtime state, not permission to resurrect retired workflow definitions.
 
 ## Minimal-knowledge rule
 
@@ -109,6 +136,8 @@ A detailed findings document becomes a deletion candidate only after its unique 
 - E6 structural indexes are derived navigation state, never authority.
 - Existing or historically proven GitHub/Vercel mechanisms must be inspected before new execution automation is added.
 - **T01/T02 proven browser verification is the default browser-execution baseline.** Do not create a second workflow for a new milestone without evidence of a materially different requirement.
+- **Do not let an E-series milestone become a replacement for the masterplan sequence.**
+- **Do not advance E7/E8 while MR0 or CI/automation reconciliation remains unresolved.**
 
 ## Primary continuity sources
 
@@ -121,6 +150,14 @@ A detailed findings document becomes a deletion candidate only after its unique 
 `project-guide/DOCUMENTATION-MAP.md` — document ownership and routing.
 
 `project-guide/repository-governance/FINDINGS-TO-KNOWLEDGE.md` — knowledge promotion and safe deletion lifecycle.
+
+## Current rebaseline sources
+
+`docs/execution-system/MR0-POST-T02-LINEAGE-REBASELINE-2026-09-01.md` — human-readable post-T02 lineage findings and E-series rebaseline dispositions.
+
+`docs/execution-system/MR0-POST-T02-LINEAGE-REBASELINE-2026-09-01.json` — machine-readable lineage registry and protected boundaries.
+
+`docs/execution-system/MR0-POST-T02-LINEAGE-REBASELINE-2026-09-01-VALIDATION.md` — MR0 validation evidence.
 
 ## Execution-system sources
 
@@ -170,6 +207,14 @@ A detailed findings document becomes a deletion candidate only after its unique 
 
 `docs/execution-system/E-SERIES-RECONCILIATION-VALIDATION-2026-09-01.md` — whole E-series reconciliation validation evidence.
 
+## Existing automation status
+
+All previously active workflow YAMLs have been retired from the clean P04 branch during CI reconciliation. Historical runs remain available in GitHub and are evidence/history only.
+
+Do not resurrect `homefinder-browser.yml`, `homefinder-p04.yml`, `AI_Key.yml`, or any prior E7 workflow from stale documentation or checkpoint archives.
+
+Before any future workflow is created, inspect the proven T01/T02 browser execution lineage and produce evidence that reuse or extension is insufficient.
+
 ## Session-start rule
 
 Start from current repository state. Read this file, then `HandOver.md`, `Endorsement.md`, the relevant masterplan section, the applicable skill section, and the detailed evidence for the active gate.
@@ -179,6 +224,8 @@ Before Classify on a non-trivial approach, search durable knowledge for related 
 Before adding automation, inspect existing GitHub/Vercel automation ownership, triggers, and historical proof. **Do not create a duplicate workflow owner.**
 
 Before creating a new browser runner/workflow, explicitly check the proven T01/T02 browser-verification lineage and document why reuse or extension is insufficient.
+
+Before advancing an E milestone, verify that the corresponding masterplan development lineage is known, current, and not being bypassed by the execution-system layer.
 
 Do not reconstruct old history from nested ZIPs when a current canonical record exists.
 Do not repeat a disproven hypothesis without new evidence.
