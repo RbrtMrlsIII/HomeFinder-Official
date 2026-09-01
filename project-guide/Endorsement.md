@@ -106,7 +106,7 @@ A narrow import-map repair was subsequently committed on the P04 validation view
 - [x] ☑️ E0 — Project-wide execution-system evaluation.
 - [x] ☑️ E1 — Governance & skill equalization; promote one canonical `MASTER_SKILL.md` with equalized procedures and whole-project handover rules.
 - [x] ☑️ E2 — Execution trace & impact-aware file-update system.
-- [ ] E3 — Project-wide census & inventory foundation.
+- [x] ☑️ E3 — Project-wide census & inventory foundation.
 - [ ] E4 — Knowledge & anti-repeat system.
 - [ ] E5 — Canonical artifact/build provenance.
 - [ ] E6 — Structural intelligence (dictionary, architecture, skill selection).
@@ -128,6 +128,16 @@ E2 was executed and validated on the current P04 branch. A machine-readable sess
 The implementation preserves existing HomeFinder document ownership, avoids blanket document duplication, and keeps capability separate from authority. The whole-project `HandOver.md` was updated with the E2 state and next gate.
 
 The active P04 gates remain unchanged and unendorsed.
+
+## E3 endorsement note — 2026-09-01
+
+E3 was executed and validated on the current P04 branch. `scripts/census.py` is the source-first project census tool; `.agent/census/census.config.json` is its machine configuration; and `project-guide/repository-governance/CENSUS-AND-INVENTORY.md` defines inventory-before-transformation and derived-state boundaries.
+
+The existing `active_development/3d/docs/model-census.json` remains the detailed authored-model census, and `active_development/data/dictionary.json` remains the semantic dictionary owner. No duplicate dictionary or parallel census authority was created.
+
+The census tool passed syntax and deterministic synthetic-repository validation. The existing authored-model counts were recorded as an evidence-backed baseline anchor. Full project-wide numeric totals remain explicitly pending a checked-out repository run; incomplete remote API views were not promoted as full counts.
+
+The whole-project `HandOver.md`, AI continuity, documentation map, and masterplan were updated. The P04 acceptance gates remain unchanged and unendorsed.
 
 ## Session protocol
 1. Read `README.md`.
