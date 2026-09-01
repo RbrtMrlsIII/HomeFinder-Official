@@ -117,17 +117,13 @@ A narrow import-map repair was subsequently committed on the P04 validation view
 
 E1 was evaluated, validated, and promoted on the current P04 branch. The single canonical `MASTER_SKILL.md` now defines the project-wide execution lifecycle, equalized discipline procedures, anti-repeat behavior, impact-aware update principles, evidence boundaries, Git mutation governance, and whole-project handover requirements. No second permanent skill file was created.
 
-Live promotion commit: `8e35bbb68e3513cb507b19ac714a04bf8517609a`.
-
 The E1 endorsement does not endorse P04.3–P04.6; those remain governed by their existing unchecked acceptance gates.
 
 ## E2 endorsement note — 2026-09-01
 
 E2 was executed and validated on the current P04 branch. A machine-readable session record was created before substantive mutation. `scripts/session_logger.py` provides deterministic session start/action/close/verify operations, and `project-guide/repository-governance/EXECUTION-TRACE-AND-FILE-UPDATE.md` defines LOCAL, BOUNDED, and SYSTEMIC impact classes and their minimum complete canonical update chains.
 
-The implementation preserves existing HomeFinder document ownership, avoids blanket document duplication, and keeps capability separate from authority. The whole-project `HandOver.md` was updated with the E2 state and next gate.
-
-The active P04 gates remain unchanged and unendorsed.
+The implementation preserves existing HomeFinder document ownership, avoids blanket document duplication, and keeps capability separate from authority. The active P04 gates remain unchanged and unendorsed.
 
 ## E3 endorsement note — 2026-09-01
 
@@ -135,84 +131,67 @@ E3 was executed and validated on the current P04 branch. `scripts/census.py` is 
 
 The existing `active_development/3d/docs/model-census.json` remains the detailed authored-model census, and `active_development/data/dictionary.json` remains the semantic dictionary owner. No duplicate dictionary or parallel census authority was created.
 
-The census tool passed syntax and deterministic synthetic-repository validation. The existing authored-model counts were recorded as an evidence-backed baseline anchor. Full project-wide numeric totals remain explicitly pending a checked-out repository run; incomplete remote API views were not promoted as full counts.
-
-The whole-project `HandOver.md`, AI continuity, documentation map, and masterplan were updated. The P04 acceptance gates remain unchanged and unendorsed.
+The census tool passed syntax and deterministic synthetic-repository validation. Full project-wide numeric totals remain explicitly pending a checked-out repository run; incomplete remote API views were not promoted as full counts.
 
 ## E4 endorsement note — 2026-09-01
 
 E4 was executed and validated on the current P04 branch. `PRODUCT-KNOWLEDGE.md` remains the durable knowledge authority. `.agent/knowledge/ANTI-REPEAT-INDEX.json` is a derived machine index containing 11 high-value anti-pattern/dead-end triggers with canonical source pointers; `scripts/knowledge-search.py` deterministically searches that index and returns exit code 2 when an indexed anti-pattern matches under `--anti`.
 
-`project-guide/repository-governance/KNOWLEDGE-AND-ANTI-REPEAT.md` establishes the required pre-Classify search for non-trivial approaches and preserves the distinction between machine discovery and project authority. The helper was syntax-checked and behavior-checked with matching and unrelated queries.
-
-No duplicate Product Knowledge authority, second dictionary, second skill, or parallel handover was created. The whole-project `HandOver.md` and AI continuity were updated. P04 acceptance gates remain unchanged and unendorsed.
+`project-guide/repository-governance/KNOWLEDGE-AND-ANTI-REPEAT.md` establishes the required pre-Classify search for non-trivial approaches and preserves the distinction between machine discovery and project authority. No duplicate Product Knowledge authority, second dictionary, second skill, or parallel handover was created. P04 acceptance gates remain unchanged and unendorsed.
 
 ## E5 endorsement note — 2026-09-01
 
-E5 was re-executed as a complete, bounded provenance gate rather than relying on the earlier partial promotion attempt. The gate followed the HomeFinder process from whole-project observation through findings, classification, alignment, validation, endorsement, and advance.
+E5 was re-executed as a complete, bounded provenance gate. The canonical provenance specification, machine registry, helper, findings, validation evidence, and session trace are live on the P04 validation branch. The registry contains real cross-platform provenance for GitHub Actions and Vercel, each bound to the exact source commit and evidence state.
 
-The canonical provenance specification, machine registry, helper, findings, validation evidence, baseline, and session trace are live on the P04 validation branch. The registry contains real cross-platform records rather than an empty schema:
+GitHub Actions run `33451823171` failed focused P04 runtime validation but successfully uploaded artifact `9780126370` (`homefinder-p04-playwright-report`). Vercel deployment `dpl_5Fi2KT76WLu7zUFH1wcu3yPPU6Nj` reached `READY` for its exact source commit. Neither result is interpreted as P04 application success.
 
-- GitHub Actions run `33451823171` / job `99683217304` / artifact `9780126370`, source commit `5c9903113010d88c6a91677dc3709552bc297ed0`, failed focused P04 runtime validation with successful evidence-artifact upload, artifact SHA-256 `d4e59131592c7af694b222726c603c3fa5683cf392cd1e876953632402cdec67`.
-- Vercel deployment `dpl_5Fi2KT76WLu7zUFH1wcu3yPPU6Nj`, source commit `d2149c79d8197d6ee7879f9ad677bd959808db7f`, state `READY`.
+E5 corrected the earlier empty-registry and helper-schema closure defects. Existing source/artifact ownership was preserved, `master/HomeFinder.sh3d` remained untouched, no GLB workaround was promoted, and no second handover authority was created.
 
-The two source commits are intentionally preserved separately because provenance attaches to the exact source state that generated the evidence or deployment. Vercel READY is recorded as deployment provenance only; it does not endorse P04 runtime behavior.
-
-The initial helper-schema gap was corrected before closure so tooling and endorsement state are represented explicitly. The initial empty-registry closure defect was corrected by recording the real GitHub and Vercel evidence. `docs/provenance/E5-FINDINGS-2026-09-01.md` records the findings and dispositions, and `docs/provenance/E5-VALIDATION-2026-09-01.md` records the independent live-platform validation evidence.
-
-Knowledge-distillation assessment: no new durable project rule was identified beyond E1/E4 knowledge; E5 operationalizes existing evidence-separation and provenance principles into machine-readable state.
-
-The whole-project `HandOver.md` was synchronized. The E5 session `.agent/sessions/session-2026-09-01-114800-E5-PROMOTION.json` was created before substantive mutation and closed with `COMPLETED_VALIDATED_ENDORSED`.
-
-E5 is endorsed as an execution-system capability. This endorsement does **not** endorse P04.3–P04.6, which remain unchecked and blocked pending fresh browser/GLB evidence. PR #6 remains a draft/unmerged validation vehicle and no history rewrite was performed.
+E5 is endorsed as an execution-system capability. This endorsement does **not** endorse P04.3–P04.6, which remain unchecked and blocked pending fresh browser/GLB evidence. PR #6 remains draft/unmerged.
 
 ## E6 endorsement note — 2026-09-01
 
-E6 was executed using the full HomeFinder structural-intelligence reconciliation discipline. Startup established current whole-project state, the E4 anti-repeat index was checked before Classify, existing structural sources and their authority boundaries were inspected, and the demonstrated gap was narrowed to cross-domain discoverability rather than missing semantic or architectural authority.
+E6 was executed using the HomeFinder structural-intelligence reconciliation discipline. Startup established current whole-project state, the E4 anti-repeat index was checked before Classify, existing structural sources and their authority boundaries were inspected, and the demonstrated gap was narrowed to cross-domain discoverability rather than missing semantic or architectural authority.
 
-The adopted E6 capability is a **derived Structural Intelligence Index**. It records existing structural sources, their owners and authority roles, evidenced cross-source relationships, and procedure-selection hints that route back to the single canonical `MASTER_SKILL.md`.
+The adopted capability is a **derived Structural Intelligence Index**. Existing semantic, authored-model, contract, SH3D, skill, handover, and endorsement authorities remain unchanged.
 
-The E6 implementation consists of:
-- `.agent/structural/structural-index.config.json`
-- `.agent/structural/STRUCTURAL-INDEX.json`
-- `scripts/structural-index.py`
-- `project-guide/repository-governance/STRUCTURAL-INTELLIGENCE.md`
-- `docs/architecture/E6-STRUCTURAL-INTELLIGENCE-FINDINGS-2026-09-01.md`
-- `docs/architecture/E6-STRUCTURAL-INTELLIGENCE-FINDINGS-2026-09-01.json`
-- `docs/architecture/E6-VALIDATION-2026-09-01.md`
+E6 findings and validation record eight classified findings and the explicit decision not to replace existing architecture maps, create a second dictionary, create an autonomous skill universe, rewrite history, or mutate P04 runtime.
 
-The findings registry records eight findings with explicit classifications and dispositions. Existing `active_development/data/dictionary.json` ownership, `active_development/3d/docs/model-census.json` ownership, canonical contracts/manifests, `MASTER_SKILL.md`, `HandOver.md`, `Endorsement.md`, and `master/HomeFinder.sh3d` authority remain unchanged.
+E6 is endorsed as an execution-system capability. This endorsement does **not** endorse P04.3–P04.6 and does not authorize Git history reconciliation or P04 runtime mutation.
 
-Validation confirmed the adopted structural source set was directly observable on the current branch, the derived index uses explicit ownership/authority roles, the procedure-selection metadata does not create another skill system, and prohibited outcomes such as duplicate dictionaries, SH3D authority replacement, history rewriting, fabricated full-repository totals, and P04 runtime mutation were not performed. `scripts/structural-index.py` passed Python syntax validation.
+## E-Series program reconciliation note — 2026-09-01
 
-Architecture-map replacement, autonomous skill orchestration, structural-source consolidation, second dictionary creation, repository-history reconciliation, and P04 runtime work were deliberately deferred or rejected because current evidence did not justify them in E6.
+A program-level reconciliation established that HomeFinder's pre-existing execution mechanisms must be treated as baseline architecture, not as implementation material to be recreated by the E-series.
 
-Knowledge-distillation assessment: **new durable knowledge identified and retained in the E6 findings/continuity layer**. The stable rule is that HomeFinder has substantial domain-owned structural knowledge; the execution-system gap is primarily cross-domain discovery/lineage, so structural intelligence should remain a derived navigation layer rather than a new authority.
+The historical workflow definitions `homefinder-browser.yml`, `homefinder-p04.yml`, `AI_Key.yml`, and the temporary E7 workflow are no longer active on the clean P04 validation branch. Their historical runs and YAML versions remain evidence/history where retained by GitHub history.
 
-The whole-project `HandOver.md` was updated with E6 and the exact next gate. E6 is endorsed as an execution-system capability. This endorsement does **not** endorse P04.3–P04.6 and does not authorize Git history reconciliation or P04 runtime mutation.
+The E-series must not create duplicate workflow owners. The proven T01/T02 browser-validation model remains the default baseline for future browser execution. A new workflow requires evidence of a materially different execution requirement and a bounded reconciliation with the proven mechanism.
 
-## E-Series reconciliation note — 2026-09-01
+The final P04 retirement-triggered run `33471269425` reached all runner/Chromium/setup and evidence-upload stages and failed only at focused application/runtime assertions. This failure is evidence of P04 runtime state, not justification to recreate the workflow.
 
-A program-level reconciliation was executed after discovering that the E-series had been layering execution capabilities onto an already-automated HomeFinder repository without a sufficiently complete automation baseline.
+E7 remains **not endorsed** until CI/execution-system integration is reconciled. E8 remains held.
 
-The reconciliation established five pre-existing workflow/architecture facts that affect the E-series as a whole:
+## MR0 endorsement note — 2026-09-01
 
-1. `.github/workflows/homefinder-browser.yml` already owned repository/browser verification and runs on broad push/pull-request events.
-2. `.github/workflows/homefinder-p04.yml` already owned P04 spatial/visual verification with branch/PR scoping.
-3. `.github/workflows/AI_Key.yml` already existed as privileged scheduled/manual automation with `contents: write` and direct main-branch write behavior; it is outside E-series authority.
-4. Repeated documentation/E6 commits can therefore trigger product browser workflows and create failure noise unrelated to the documentation change.
-5. The E7 workflow introduced by the E-series duplicated CI orchestration and was removed rather than retained as a competing workflow owner.
+MR0 — Post-T02 Masterplan & Execution-Lineage Rebaseline — was executed as a whole-project foundation gate and is now **ENDORSED**.
 
-The E-series capability layers E0–E6 remain retained, but their program-level integration is not considered complete until the existing automation ownership and trigger boundaries are reconciled. E7 remains **not endorsed**. E8 remains **held**.
+MR0 established the canonical product-development lineage as:
 
-Reconciliation evidence is recorded in:
-- `docs/execution-system/E-SERIES-RECONCILIATION-2026-09-01.md`
-- `docs/execution-system/E-SERIES-RECONCILIATION-2026-09-01.json`
-- `docs/execution-system/E-SERIES-RECONCILIATION-VALIDATION-2026-09-01.md`
+`T02 → T03 → T04 → T05 → T06 → T07 (FROZEN) → P01 → P02 → P03 → P04 → P05 → P06`
 
-The whole-project `HandOver.md` was updated to carry the complete project state and the next bounded gate. No P04 runtime mutation, SH3D mutation, PR merge, or history rewrite was performed.
+T02–T06 remain frozen sequential development gates. T07 remains frozen. P01–P06 is a separate post-T07 GLB track. The E-series is an execution-system overlay and cannot reorder, reopen, replace, or authorize product-development gates by itself.
 
-**Reconciliation result:** executed, validated as a program-level finding set, **not an endorsement of E7/E8**. Next gate: **CI / Execution-System Integration Reconciliation**.
+MR0 dispositions are: E0 retain/rebaseline; E1 retain; E2 retain/extend; E3 retain/rebaseline; E4 retain/strengthen; E5 retain/rebaseline; E6 retain/hold-for-dependency-check; E7 hold; E8 hold.
+
+MR0 also promoted the durable anti-repeat rule that the T01/T02 browser-verification mechanism is the proven browser-execution baseline. A later milestone does not justify a workflow clone without evidence of a materially different requirement.
+
+MR0 validated that no product runtime, canonical SH3D, GLB binary, P04 acceptance gate, PR merge, or Git history was mutated by the rebaseline. A branch-targeting error that briefly placed an MR0 document on `main` was detected and corrected; main AI continuity was restored to its pre-MR0 state and the active MR0 package now resides on the P04 validation branch.
+
+MR0 evidence:
+- `docs/execution-system/MR0-POST-T02-LINEAGE-REBASELINE-2026-09-01.md`
+- `docs/execution-system/MR0-POST-T02-LINEAGE-REBASELINE-2026-09-01.json`
+- `docs/execution-system/MR0-POST-T02-LINEAGE-REBASELINE-2026-09-01-VALIDATION.md`
+- `.agent/sessions/session-2026-09-01-171800-MR0-CLOSURE.json`
 
 ## Session protocol
 1. Read `README.md`.
