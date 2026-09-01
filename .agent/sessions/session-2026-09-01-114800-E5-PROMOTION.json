@@ -1,21 +1,21 @@
 {
   "session_id": "2026-09-01-114800-E5-PROMOTION",
   "started_at": "2026-09-01T11:48:00+08:00",
-  "ended_at": "2026-09-01T11:55:00+08:00",
+  "ended_at": "2026-09-01T12:02:00+08:00",
   "agent_id": "ChatGPT",
-  "previous_checkpoint": "E5 whole-project checkpoint uploaded by user; live branch state re-verified before mutation",
+  "previous_checkpoint": "HomeFinder E5 checkpoint supplied by user; live branch state re-established before new E5 execution.",
   "current_milestone": "E5",
   "gate": "Canonical Artifact & Build Provenance",
   "status": "COMPLETED_VALIDATED_ENDORSED",
   "actions": [
-    {"timestamp":"2026-09-01T11:48:00+08:00","action":"Observe","detail":"Inspected uploaded E5 checkpoint and AGENT-GUIDELINES package."},
-    {"timestamp":"2026-09-01T11:49:00+08:00","action":"Record","detail":"Identified canonical repository RbrtMrlsIII/HomeFinder-Official and live branch p04/glb-runtime-restored-2026-09-01."},
-    {"timestamp":"2026-09-01T11:50:00+08:00","action":"Understand","detail":"Verified MASTER_SKILL.md v1.2 is live and E5 provenance files were absent before promotion."},
-    {"timestamp":"2026-09-01T11:51:00+08:00","action":"Classify","detail":"E5 promotion is SYSTEMIC execution-system documentation/state work; main and P04 runtime acceptance remain protected."},
-    {"timestamp":"2026-09-01T11:52:00+08:00","action":"Align","detail":"Promoted the prepared HomeFinder-native provenance specification, registry, helper, and baseline without relocating authoritative assets."},
-    {"timestamp":"2026-09-01T11:53:00+08:00","action":"Validate","detail":"Updated and synchronized the single whole-project HandOver and chronological Endorsement records; preserved the failed-runtime interpretation of CI artifact 33451823171."},
-    {"timestamp":"2026-09-01T11:54:00+08:00","action":"Endorse","detail":"E5 execution-system capability endorsed; P04.3-P04.6 remain unchecked and blocked."},
-    {"timestamp":"2026-09-01T11:55:00+08:00","action":"Advance","detail":"Next execution-system gate is E6 — Structural Intelligence; P04 remains a separate validation track."}
+    {"timestamp":"2026-09-01T11:48:00+08:00","action":"Observe","detail":"Read the supplied HomeFinder E5 checkpoint, execution-discipline guidance, universal-agent guidance, and live HomeFinder continuity/skill state."},
+    {"timestamp":"2026-09-01T11:50:00+08:00","action":"Record","detail":"Established live repository RbrtMrlsIII/HomeFinder-Official, branch p04/glb-runtime-restored-2026-09-01, draft PR #6, GitHub CI evidence, and linked Vercel project/deployment."},
+    {"timestamp":"2026-09-01T11:52:00+08:00","action":"Understand","detail":"Mapped provenance across exact source commits: GitHub artifact run 33451823171 from 5c990311..., and Vercel READY deployment dpl_5Fi2KT76... from d2149c79.... Preserved the distinction between artifact upload, deployment readiness, runtime validation, and endorsement."},
+    {"timestamp":"2026-09-01T11:54:00+08:00","action":"Classify","detail":"E5 is SYSTEMIC execution-system work; GitHub CI failure remains P04 evidence, Vercel READY remains deployment evidence, and SH3D/P04 acceptance boundaries remain protected."},
+    {"timestamp":"2026-09-01T11:56:00+08:00","action":"Align","detail":"Reconciled the provenance specification, machine registry, helper, baseline, findings, validation evidence, and existing HomeFinder artifact ownership model."},
+    {"timestamp":"2026-09-01T11:58:00+08:00","action":"Validate","detail":"Confirmed real GitHub artifact metadata, workflow job outcomes, artifact digest/size, Vercel project/deployment metadata, live provenance files, and protected-boundary conditions. Corrected the helper schema to include tooling and endorsement state."},
+    {"timestamp":"2026-09-01T12:00:00+08:00","action":"Endorse","detail":"E5 execution-system capability endorsed because findings, machine registry, validation evidence, and whole-project continuity are synchronized. No new durable project rule beyond E1/E4 knowledge was identified; E5 operationalizes those rules."},
+    {"timestamp":"2026-09-01T12:02:00+08:00","action":"Advance","detail":"E5 closed. Next execution-system gate is E6 — Structural Intelligence. P04.3-P04.6 remain separate and unendorsed."}
   ],
   "files_changed": [
     ".agent/sessions/session-2026-09-01-114800-E5-PROMOTION.json",
@@ -23,17 +23,29 @@
     "builds.json",
     "build-provenance.py",
     "E5-BASELINE-2026-09-01.json",
+    "docs/provenance/E5-FINDINGS-2026-09-01.md",
+    "docs/provenance/E5-VALIDATION-2026-09-01.md",
     "project-guide/HandOver.md",
     "project-guide/Endorsement.md"
   ],
   "validation": {
-    "live_files_promoted": true,
+    "github_workflow_run": 33451823171,
+    "github_workflow_conclusion": "failure",
+    "github_artifact_id": 9780126370,
+    "github_artifact_sha256": "d4e59131592c7af694b222726c603c3fa5683cf392cd1e876953632402cdec67",
+    "vercel_deployment_id": "dpl_5Fi2KT76WLu7zUFH1wcu3yPPU6Nj",
+    "vercel_ready": true,
+    "registry_populated": true,
+    "findings_recorded": true,
+    "validation_evidence_recorded": true,
+    "whole_project_handover_current": true,
+    "endorsement_recorded": true,
     "main_modified": false,
     "sh3d_modified": false,
     "p04_acceptance_modified": false,
-    "prepared_handover_addendum_promoted": false,
-    "e5_endorsement_recorded": true
+    "pr6_merged": false,
+    "history_rewritten": false
   },
-  "complete_trace": "Start: inspect E5 checkpoint and agent guidelines -> identify live repository/branch -> verify canonical skill and E5 absence -> classify promotion scope -> create session trace before mutation -> promote provenance specification/registry/helper/baseline -> update single whole-project HandOver -> update chronological Endorsement -> close trace -> endorse E5 -> advance to E6.",
-  "duration_seconds": 420
+  "complete_trace": "Start-before-mutation -> whole-project continuity read -> anti-repeat/disciplined evaluation -> GitHub/Vercel provenance observation -> findings and classifications -> schema/registry/helper alignment -> real provenance records -> validation evidence -> whole-project continuity -> endorsement -> close -> next gate E6.",
+  "duration_seconds": 840
 }
