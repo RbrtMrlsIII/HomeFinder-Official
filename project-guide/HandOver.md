@@ -56,10 +56,12 @@
 25. **E3 baseline:** `docs/census/E3-BASELINE-2026-09-01.md` and `.json` preserve only verified authored-model counts from the existing canonical 3D census; incomplete GitHub API tree views are not promoted as full project totals.
 26. **E4:** Machine-readable anti-repeat index, deterministic knowledge search, and explicit pre-Classify knowledge check are implemented. `PRODUCT-KNOWLEDGE.md` remains the durable knowledge authority; the anti-repeat index is derived navigation state only.
 27. **E4 anti-pattern coverage:** the index records 11 high-value HomeFinder dead ends/guardrails, including P04 module-resolution history, GLB availability, WalkMyPlan, SH3D authority, assertion weakening, invented spatial geometry, blanket documentation updates, incomplete census counts, duplicate dictionaries, and ungoverned history rewrites.
-28. **E5:** Canonical artifact/build provenance is now promoted to the live P04 validation branch. `E5-CANONICAL-BUILD-PROVENANCE.md` defines the state vocabulary and evidence boundary; `builds.json` is the machine-readable registry; `build-provenance.py` is the reproducible helper; and `E5-BASELINE-2026-09-01.json` records the real GitHub Actions artifact anchor without overstating its failed runtime validation.
-29. **E5 provenance rule:** SOURCE → ARTIFACT GENERATED → BUILD VERIFIED → DEPLOYMENT READY → RUNTIME VALIDATED → ENDORSED remains strictly evidence-gated. The existing four GLBs, `master/HomeFinder.sh3d`, browser evidence, and established artifact locations are not relocated.
-30. **E5 live promotion trace:** `.agent/sessions/session-2026-09-01-114800-E5-PROMOTION.json` was created before substantive E5 mutation and records the promotion session.
-31. No second skill, handover, dictionary, or parallel governance authority was created. The prepared E5 handover addendum was treated as source material only and was not promoted as a second handover file.
+28. **E5:** Canonical artifact/build provenance is implemented and validated across HomeFinder, GitHub Actions, and Vercel. `E5-CANONICAL-BUILD-PROVENANCE.md` defines strict state transitions; `builds.json` contains concrete GitHub CI and Vercel provenance records; `build-provenance.py` records tooling and endorsement state; and `E5-BASELINE-2026-09-01.json` records the final cross-platform evidence.
+29. **E5 GitHub provenance:** workflow run `33451823171` on source commit `5c9903113010d88c6a91677dc3709552bc297ed0` failed focused P04 runtime validation but successfully uploaded artifact `9780126370` (`homefinder-p04-playwright-report`) with SHA-256 `d4e59131592c7af694b222726c603c3fa5683cf392cd1e876953632402cdec67`. This is evidence provenance, not P04 success.
+30. **E5 Vercel provenance:** deployment `dpl_5Fi2KT76WLu7zUFH1wcu3yPPU6Nj` reached `READY` for source commit `d2149c79d8197d6ee7879f9ad677bd959808db7f` on the same P04 branch. READY is deployment evidence only, not runtime/GLB acceptance.
+31. **E5 findings/validation:** `docs/provenance/E5-FINDINGS-2026-09-01.md` records observations, classifications, dispositions, and the explicit knowledge-distillation assessment; `docs/provenance/E5-VALIDATION-2026-09-01.md` records GitHub and Vercel validation evidence and protected boundaries.
+32. **E5 session:** `.agent/sessions/session-2026-09-01-114800-E5-PROMOTION.json` was created before substantive mutation, records the full execution lifecycle, and is closed as `COMPLETED_VALIDATED_ENDORSED`.
+33. No second skill, handover, dictionary, or parallel governance authority was created. The prepared E5 handover addendum was treated as source material only and was not promoted as a second handover file.
 
 ### Current evidence
 
@@ -86,6 +88,8 @@
 - E5 provenance specification: `E5-CANONICAL-BUILD-PROVENANCE.md`.
 - E5 machine registry: `builds.json`.
 - E5 helper: `build-provenance.py`.
+- E5 findings: `docs/provenance/E5-FINDINGS-2026-09-01.md`.
+- E5 validation: `docs/provenance/E5-VALIDATION-2026-09-01.md`.
 - E5 baseline: `E5-BASELINE-2026-09-01.json`.
 - E5 promotion session: `.agent/sessions/session-2026-09-01-114800-E5-PROMOTION.json`.
 
@@ -122,5 +126,7 @@
 - `E5-CANONICAL-BUILD-PROVENANCE.md` = E5 provenance protocol.
 - `builds.json` = E5 machine-readable provenance registry.
 - `build-provenance.py` = E5 reproducible provenance helper.
+- `docs/provenance/E5-FINDINGS-2026-09-01.md` = E5 human-readable findings.
+- `docs/provenance/E5-VALIDATION-2026-09-01.md` = E5 validation evidence.
 
 Do not create another handover file.
