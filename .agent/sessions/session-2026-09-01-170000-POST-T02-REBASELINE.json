@@ -1,0 +1,23 @@
+{
+  "session_id": "2026-09-01-170000-POST-T02-REBASELINE",
+  "started_at": "2026-09-01T17:00:00+08:00",
+  "current_milestone": "MR0",
+  "gate": "Post-T02 Masterplan & Execution-Lineage Rebaseline",
+  "status": "IN_PROGRESS",
+  "discipline": "Observe → Record → Understand → Classify → Align → Validate → Endorse → Advance",
+  "scope": "Whole-project reconciliation of post-T02 development lineage against the E0-E7 execution-system layer.",
+  "actions": [
+    {"action":"Observe","detail":"Read current Masterplan, whole-project HandOver, Endorsement, AI continuity, and the aligned checkpoint archive."},
+    {"action":"Record","detail":"Established authoritative chronological anchors from T02 through T06 and separated post-T07 P01-P06 GLB work from the historical development sequence."},
+    {"action":"Understand","detail":"Confirmed T02-T06 are sequential controlled development gates with explicit frozen states and next-gate boundaries; E-series is an overlay and must not replace that chronology."},
+    {"action":"Classify","detail":"Program-level risk is FOUNDATION DRIFT: execution-system state had outrun the master development lineage and created automation/continuity assumptions not grounded in the chronological source."}
+  ],
+  "pre_mutation_note": "Session created before rebaseline mutations. No product runtime, SH3D, GLB binary, or P04 acceptance state is authorized to change in this gate.",
+  "next_steps": [
+    "Create MR0 findings and machine-readable lineage registry.",
+    "Define E-series dependency/rebaseline treatment against T02-T06 chronology.",
+    "Update masterplan, AI continuity, whole-project HandOver, and Endorsement.",
+    "Validate internal consistency and produce rebaseline checkpoint package.",
+    "Endorse MR0 only if all canonical records agree."
+  ]
+}
