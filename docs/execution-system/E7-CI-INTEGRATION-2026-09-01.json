@@ -1,0 +1,30 @@
+{
+  "gate":"E7",
+  "title":"CI / Execution-System Integration Reconciliation",
+  "status":"VALIDATION_PENDING",
+  "scope":"E-series only",
+  "product_development_out_of_scope":["P01-P06","P04.3-P04.6","SH3D","GLB promotion"],
+  "workflow":".github/workflows/homefinder-execution-governance.yml",
+  "workflow_contract":{
+    "governance_only":true,
+    "path_scoped":true,
+    "manual_dispatch":true,
+    "contents_permission":"read",
+    "browser_execution":false,
+    "p04_execution":false,
+    "repository_mutation":false
+  },
+  "required_invariants":[
+    "canonical MASTER_SKILL",
+    "whole-project HandOver",
+    "endorsement consistency",
+    "anti-repeat derived boundary",
+    "structural intelligence derived boundary",
+    "populated build provenance",
+    "no replacement SH3D authority"
+  ],
+  "negative_control":"execution gate must reject a structurally invalid authority state",
+  "observed_source_branch":"e/execution-system-2026-09-01",
+  "validation_run":null,
+  "endorsement":"PENDING"
+}
