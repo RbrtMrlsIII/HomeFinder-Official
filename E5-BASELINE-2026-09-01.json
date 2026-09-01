@@ -2,25 +2,52 @@
   "phase": "E5",
   "milestone": "Canonical Artifact & Build Provenance",
   "date": "2026-09-01",
+  "execution_process": ["Observe", "Record", "Understand", "Classify", "Align", "Validate", "Endorse", "Advance"],
   "validation": {
     "source_checkpoint_archive_present": true,
-    "source_checkpoint_sha256": "be8c2484c72c91106e885f5726552d091e2df36dbf24c3acc60f973e08ff0845",
     "provenance_schema_present": true,
     "provenance_helper_present": true,
     "status_vocabulary_complete": true,
-    "git_write_promoted_live": true,
+    "endorsement_vocabulary_complete": true,
+    "canonical_registry_populated": true,
+    "github_provenance_record_present": true,
+    "vercel_provenance_record_present": true,
     "live_files_verified": true,
-    "live_promotion_session": "2026-09-01-114800-E5-PROMOTION",
+    "whole_project_handover_current": true,
     "endorsement_recorded": true,
-    "reason": "E5 canonical files were promoted to the P04 validation branch, re-read from the live branch, and the whole-project handover and endorsement ledger were updated."
+    "session_trace_closed": true
   },
-  "evidence_anchor": {
-    "type": "github_actions_artifact",
+  "github": {
+    "repository": "RbrtMrlsIII/HomeFinder-Official",
+    "branch": "p04/glb-runtime-restored-2026-09-01",
+    "pr": 6,
     "run_id": 33451823171,
+    "run_conclusion": "failure",
+    "source_commit": "5c9903113010d88c6a91677dc3709552bc297ed0",
+    "job_id": 99683217304,
     "artifact_id": 9780126370,
     "artifact_name": "homefinder-p04-playwright-report",
+    "artifact_bytes": 2153255,
     "artifact_sha256": "d4e59131592c7af694b222726c603c3fa5683cf392cd1e876953632402cdec67",
-    "status": "FAILED_RUNTIME_VALIDATION_WITH_ARTIFACT_UPLOAD",
-    "interpretation": "Artifact upload succeeded; browser validation itself failed. This is provenance evidence, not application success."
-  }
+    "interpretation": "CI setup and evidence upload succeeded; focused P04 browser validation failed."
+  },
+  "vercel": {
+    "project_id": "prj_RAMdD7obaecLEPjD7cK12eFXYV3Q",
+    "project": "home-finder-official",
+    "deployment_id": "dpl_5Fi2KT76WLu7zUFH1wcu3yPPU6Nj",
+    "ready_state": "READY",
+    "source_commit": "d2149c79d8197d6ee7879f9ad677bd959808db7f",
+    "source_branch": "p04/glb-runtime-restored-2026-09-01",
+    "deployment_url": "https://home-finder-official-5nkejgnvl-home-finder3.vercel.app",
+    "interpretation": "Deployment READY proves deployment provenance for the recorded source commit; it does not prove browser/runtime/GLB success."
+  },
+  "protected_boundaries": {
+    "main_modified": false,
+    "sh3d_modified": false,
+    "p04_acceptance_assertions_weakened": false,
+    "glb_workaround_promoted": false,
+    "pr6_merged": false,
+    "history_rewritten": false
+  },
+  "next_gate": "E6 — Structural Intelligence"
 }
