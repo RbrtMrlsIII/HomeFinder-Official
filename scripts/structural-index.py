@@ -39,7 +39,7 @@ def main() -> int:
             'Architecture': ['UI_ROUTES_3D','FRONTEND','3D_SPATIAL','EXECUTION'],
             'Frontend / UI': ['FRONTEND','UI_3D','UI_ROUTES_3D'],
             '3D / Spatial': ['3D','3D_SPATIAL','UI_3D'],
-            'GLB / Web Graphics': ['3D','3D_GLb','3D_SPATIAL'],
+            'GLB / Web Graphics': ['3D','3D_GLB','3D_SPATIAL'],
             'Browser / Runtime': ['3D_SPATIAL','EXECUTION'],
             'Testing / QA': ['3D','3D_SPATIAL','UI_ROUTES_3D'],
             'Documentation / Knowledge': ['DOCUMENTATION','DATA','CONTINUITY'],
