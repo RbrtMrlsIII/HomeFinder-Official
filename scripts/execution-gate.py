@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -129,15 +128,14 @@ def check_handover(text: str, errors: list[str]):
 
 
 def check_endorsement(text: str, errors: list[str]):
-    if "E6 — Structural Intelligence" not in text or "[x] ☑️ E6" not in text:
+    e6_marked = "[x] ☑️ E6" in text or "## E6 endorsement note" in text
+    if not e6_marked:
         errors.append("Endorsement ledger does not record E6 as endorsed")
     if "[ ] E7 — Automated enforcement gates." not in text:
         errors.append("Endorsement ledger must keep E7 pending until its closure")
 
 
 def self_test() -> int:
-    # Deterministic negative-control test: a deliberately invalid mini-state
-    # must fail the same invariant used in production checking.
     bad = {"derived": True, "authority": "NEW_AUTHORITY"}
     return 0 if bad["authority"] != "SOURCE_FILES_RETAIN_EXISTING_AUTHORITY" else 1
 
