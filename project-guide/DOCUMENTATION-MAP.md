@@ -20,14 +20,25 @@ This file is a navigation index. It tells readers which document owns which kind
 | --- | --- |
 | `README.md` | High-level repository orientation and wiring to the project documents. |
 | `project-guide/AI_ASSISTANT_READ_ME.md` | Current verified continuity, active phase, latest state, next gate, and pointers. |
-| `project-guide/HandOver.md` | Single live checkpoint: findings, decisions, unresolved constraints, and continuation point. |
+| `project-guide/HandOver.md` | Single live whole-project checkpoint: findings, decisions, unresolved constraints, and continuation point. |
 | `project-guide/Endorsement.md` | Chronological gate ledger and acceptance state. |
 | `project-guide/masterplan.md` | Long-lived architecture, chronology, and institutional memory. |
-| `MASTER_SKILL.md` | Skills and agent procedures. |
+| `MASTER_SKILL.md` | Single canonical skill and discipline procedures. |
 | `CODING-INSTRUCTIONS.md` | Coding and implementation conventions. |
 | `PRODUCT-KNOWLEDGE.md` | Product and domain context. |
-| `docs/` | Detailed contracts, audits, manifests, and validation evidence. |
+| `docs/` | Detailed contracts, audits, manifests, reconciliation and validation evidence. |
+| `docs/census/` | Census baselines and census-specific evidence. |
 | `archive/` | Historical evidence that is no longer the live source. |
+| `.agent/sessions/` | Machine-readable execution-session traces. |
+| `.agent/census/` | Machine-readable census configuration and generated census state. |
+
+## Execution-system governance
+
+- `project-guide/repository-governance/EXECUTION-TRACE-AND-FILE-UPDATE.md` — E2 session trace and impact-aware update protocol.
+- `project-guide/repository-governance/CENSUS-AND-INVENTORY.md` — E3 source-first inventory protocol.
+- `scripts/session_logger.py` — canonical local session trace helper.
+- `scripts/census.py` — canonical source-first project census tool.
+- `.agent/census/census.config.json` — census configuration.
 
 ## Browser verification wiring
 
@@ -42,6 +53,6 @@ Existing browser verification surfaces must be discovered before creating anothe
 
 ## Continuity principle
 
-Current state is represented by the actual repository plus `HandOver.md` and `Endorsement.md`. Detailed history belongs in `masterplan.md`; detailed proof belongs in `docs/`; agent procedures belong in `MASTER_SKILL.md`; coding conventions belong in `CODING-INSTRUCTIONS.md`; product context belongs in `PRODUCT-KNOWLEDGE.md`.
+Current state is represented by the actual repository plus `HandOver.md` and `Endorsement.md`. Detailed history belongs in `masterplan.md`; detailed proof belongs in `docs/`; agent procedures belong in `MASTER_SKILL.md`; coding conventions belong in `CODING-INSTRUCTIONS.md`; product context belongs in `PRODUCT-KNOWLEDGE.md`; census evidence belongs in `docs/census/` and derived `.agent/census/` state.
 
 Do not use the continuity file as a duplicate of those sources.
