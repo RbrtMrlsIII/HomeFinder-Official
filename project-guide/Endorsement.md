@@ -107,7 +107,7 @@ A narrow import-map repair was subsequently committed on the P04 validation view
 - [x] ☑️ E1 — Governance & skill equalization; promote one canonical `MASTER_SKILL.md` with equalized procedures and whole-project handover rules.
 - [x] ☑️ E2 — Execution trace & impact-aware file-update system.
 - [x] ☑️ E3 — Project-wide census & inventory foundation.
-- [ ] E4 — Knowledge & anti-repeat system.
+- [x] ☑️ E4 — Knowledge & anti-repeat system.
 - [ ] E5 — Canonical artifact/build provenance.
 - [ ] E6 — Structural intelligence (dictionary, architecture, skill selection).
 - [ ] E7 — Automated enforcement gates.
@@ -138,6 +138,14 @@ The existing `active_development/3d/docs/model-census.json` remains the detailed
 The census tool passed syntax and deterministic synthetic-repository validation. The existing authored-model counts were recorded as an evidence-backed baseline anchor. Full project-wide numeric totals remain explicitly pending a checked-out repository run; incomplete remote API views were not promoted as full counts.
 
 The whole-project `HandOver.md`, AI continuity, documentation map, and masterplan were updated. The P04 acceptance gates remain unchanged and unendorsed.
+
+## E4 endorsement note — 2026-09-01
+
+E4 was executed and validated on the current P04 branch. `PRODUCT-KNOWLEDGE.md` remains the durable knowledge authority. `.agent/knowledge/ANTI-REPEAT-INDEX.json` is a derived machine index containing 11 high-value anti-pattern/dead-end triggers with canonical source pointers; `scripts/knowledge-search.py` deterministically searches that index and returns exit code 2 when an indexed anti-pattern matches under `--anti`.
+
+`project-guide/repository-governance/KNOWLEDGE-AND-ANTI-REPEAT.md` establishes the required pre-Classify search for non-trivial approaches and preserves the distinction between machine discovery and project authority. The helper was syntax-checked and behavior-checked with matching and unrelated queries.
+
+No duplicate Product Knowledge authority, second dictionary, second skill, or parallel handover was created. The whole-project `HandOver.md` and AI continuity were updated. P04 acceptance gates remain unchanged and unendorsed.
 
 ## Session protocol
 1. Read `README.md`.
