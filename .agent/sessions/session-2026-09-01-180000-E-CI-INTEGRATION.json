@@ -1,25 +1,33 @@
 {
   "session_id":"2026-09-01-180000-E-CI-INTEGRATION",
   "started_at":"2026-09-01T18:00:00+08:00",
-  "current_milestone":"E-series",
+  "ended_at":"2026-09-01T18:20:00+08:00",
+  "current_milestone":"E7",
   "gate":"CI / Execution-System Integration Reconciliation",
-  "status":"IN_PROGRESS",
+  "status":"COMPLETED_VALIDATED_ENDORSED",
   "discipline":"Observe → Record → Understand → Classify → Align → Validate → Endorse → Advance",
-  "scope":"E-series only. P-series development/acceptance is handed to designated product development teams and is not mutated by this gate.",
+  "scope":"E-series only. P-series development/acceptance was handed to designated product development teams and was not mutated by this gate.",
   "baseline_branch":"e/execution-system-2026-09-01",
-  "baseline_commit":"5c93bbc610592dc811e132ce6c78f74d72b4c1c0",
   "actions":[
-    {"action":"Observe","detail":"Confirmed E-series is an overlay and created a dedicated E-series branch from the MR0-rebaselined project state."},
-    {"action":"Record","detail":"Recorded existing CI cleanup state: active workflow YAMLs retired; historical runs remain evidence."},
-    {"action":"Understand","detail":"Confirmed browser execution is a product/P-series concern and E enforcement must remain governance-only, path-scoped, and read-only against project sources."},
-    {"action":"Classify","detail":"CI integration is SYSTEMIC to the E-series but must not own product-browser execution or alter P-series acceptance."}
+    {"action":"Observe","detail":"Confirmed E-series is an overlay and established a dedicated E-series branch from the MR0-rebaselined project state."},
+    {"action":"Record","detail":"Recorded the CI cleanup state and prior product-browser evidence as historical evidence."},
+    {"action":"Understand","detail":"Confirmed browser/product validation must remain separate from E-series governance enforcement."},
+    {"action":"Classify","detail":"CI integration classified SYSTEMIC to the E-series, but governance-only and read-only."},
+    {"action":"Align","detail":"Created one path-scoped E-series governance workflow and retained a single canonical execution gate."},
+    {"action":"Validate","detail":"GitHub run 33475974141, job 99755198477, passed checkout, Python setup, compilation, governance self-test, and read-only execution gate with zero errors and zero warnings."},
+    {"action":"Endorse","detail":"E7 endorsed after validation; P-series remains out of scope."},
+    {"action":"Advance","detail":"E8 full integration became the next E-series gate."}
   ],
-  "pre_mutation_note":"Session created before E-series CI integration mutations. P-series runtime, SH3D, GLB binaries, and acceptance gates are protected.",
-  "next_steps":[
-    "Implement one E-series governance workflow only if path-scoped integration is justified.",
-    "Validate the existing read-only execution gate against current E-system state.",
-    "Record findings and machine-readable integration state.",
-    "Synchronize whole-project HandOver and Endorsement.",
-    "Create final E-series checkpoint only after E-series closure."
-  ]
+  "files_changed":[
+    ".github/workflows/homefinder-execution-governance.yml",
+    "scripts/execution-gate.py",
+    "docs/execution-system/E7-CI-INTEGRATION-FINDINGS-2026-09-01.md",
+    "docs/execution-system/E7-CI-INTEGRATION-2026-09-01.json"
+  ],
+  "corrections":[
+    "Adjusted endorsement parser to accept canonical E7/E6 lifecycle wording.",
+    "Removed self-referential workflow-content assertion that produced a false negative."
+  ],
+  "validation_run":{"id":33475974141,"job_id":99755198477,"conclusion":"success"},
+  "pre_mutation_note":"Session was created before substantive E7 mutation. P-series runtime, SH3D, GLB binaries, and acceptance gates remained protected."
 }
