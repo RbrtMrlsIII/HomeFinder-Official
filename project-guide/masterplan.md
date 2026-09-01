@@ -9,8 +9,8 @@
 - **Current validation PR:** #6, draft/unmerged.
 - **Canonical physical authority:** `master/HomeFinder.sh3d`.
 - **Current P04 blocker:** approved GLB binaries are preserved as evidence but are not yet repository-backed at their required runtime paths.
-- **Execution-system milestones:** E0, E1, E2, E3, E4, E5, and E6 implemented/validated/endorsed on the current P04 line.
-- **Current execution-system gate:** E7 — Automated Enforcement.
+- **Execution-system milestones:** E0–E6 capability layers implemented/validated/endorsed individually; program-level E-series reconciliation is now active.
+- **Current execution-system gate:** CI / Execution-System Integration Reconciliation. E7 is not endorsed; E8 is held.
 
 This file is the compact project-wide policy/architecture document. Detailed historical execution records remain in Git history and designated evidence/archive locations. Do not reconstruct those records here.
 
@@ -271,7 +271,7 @@ HomeFinder succeeds when current architecture is provable, not merely visually c
 
 ## 13. Execution-System Equalization
 
-HomeFinder now extends the project discipline with an execution-system sequence:
+HomeFinder extends the project discipline with the following capability sequence, but existing repository automation is always part of the baseline:
 
 ```text
 E0 Project-wide evaluation
@@ -293,10 +293,32 @@ E7 Automated enforcement
 E8 Full integration
 ```
 
-### E0–E6 adopted principles
+### Program-level reconciliation rule
+
+The E-series must extend and integrate with existing HomeFinder automation, not create a parallel workflow universe.
+
+The current repository baseline includes:
+
+- `.github/workflows/homefinder-browser.yml` — existing browser verification owner.
+- `.github/workflows/homefinder-p04.yml` — existing P04 spatial/visual verification owner.
+- `.github/workflows/AI_Key.yml` — pre-existing privileged scheduled/manual automation, outside E-series authority.
+- Vercel deployment behavior already established under E5 provenance.
+
+The E7 workflow introduced during execution-system development was removed because it duplicated orchestration rather than integrating with these existing owners.
+
+The current unresolved CI questions are intentionally a separate bounded gate:
+
+- which E2–E6 checks belong in existing workflows;
+- which checks should be on-demand/manual;
+- which product workflows need path/branch trigger refinement;
+- how documentation-only changes avoid unnecessary product-browser execution;
+- how privileged automation remains outside execution-system authority;
+- how enforcement can fail closed without becoming another parallel governance layer.
+
+### E0–E6 retained principles
 
 - One canonical `MASTER_SKILL.md`; no parallel skill architecture.
-- Handover scope is always the complete HomeFinder project state.
+- Whole-project handover is mandatory at every gate.
 - Sessions are traceable from start through close.
 - File-update requirements are impact-aware: LOCAL, BOUNDED, SYSTEMIC.
 - Inventory is source-first and precedes transformation.
@@ -304,39 +326,16 @@ E8 Full integration
 - Census output is derived state and never overrides project authority.
 - Remote/incomplete API views are not promoted as full structural counts when a checked-out source census is required.
 - E5 provenance records exact source commits for GitHub artifacts and Vercel deployments and never equates deployment READY with runtime success.
-- E6 structural intelligence is a derived cross-reference layer; it does not replace domain-owned structural sources or canonical project authorities.
+- E6 structural intelligence is a derived cross-reference layer and does not replace domain-owned structural sources.
 
-### E0–E6 implementation owners
+### Current program state
 
-E3:
-- `scripts/census.py`
-- `.agent/census/census.config.json`
-- `project-guide/repository-governance/CENSUS-AND-INVENTORY.md`
-- `docs/census/`
+E0–E6 capabilities are retained as individually useful and endorsed milestone results. They are now subject to the program-level reconciliation documented in:
 
-E4:
-- `.agent/knowledge/ANTI-REPEAT-INDEX.json`
-- `scripts/knowledge-search.py`
-- `project-guide/repository-governance/KNOWLEDGE-AND-ANTI-REPEAT.md`
+- `docs/execution-system/E-SERIES-RECONCILIATION-2026-09-01.md`
+- `docs/execution-system/E-SERIES-RECONCILIATION-2026-09-01.json`
+- `docs/execution-system/E-SERIES-RECONCILIATION-VALIDATION-2026-09-01.md`
 
-E5:
-- `E5-CANONICAL-BUILD-PROVENANCE.md`
-- `builds.json`
-- `build-provenance.py`
-- `docs/provenance/`
+E7 is **not endorsed** until its enforcement capability is integrated with the existing automation architecture. E8 is held until E7 and the CI/automation boundary are stable.
 
-E6:
-- `.agent/structural/structural-index.config.json`
-- `.agent/structural/STRUCTURAL-INDEX.json`
-- `scripts/structural-index.py`
-- `project-guide/repository-governance/STRUCTURAL-INTELLIGENCE.md`
-- `docs/architecture/E6-STRUCTURAL-INTELLIGENCE-FINDINGS-2026-09-01.md`
-- `docs/architecture/E6-VALIDATION-2026-09-01.md`
-
-E6 outcome:
-
-HomeFinder already contains substantial domain-owned structural intelligence. The demonstrated missing capability was reliable cross-domain discovery and lineage. Therefore E6 adopts a derived structural navigation index and metadata-only procedure selection, while deferring autonomous orchestration, architecture-map replacement, structural-source consolidation, and any new semantic dictionary.
-
-The next execution-system gate is **E7 — Automated Enforcement**.
-
-E7 must enforce already-understood rules. It must not invent new governance or silently widen the scope of E6.
+The next bounded gate is **CI / Execution-System Integration Reconciliation**.
