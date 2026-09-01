@@ -9,7 +9,8 @@
 - **Current validation PR:** #6, draft/unmerged.
 - **Canonical physical authority:** `master/HomeFinder.sh3d`.
 - **Current P04 blocker:** approved GLB binaries are preserved as evidence but are not yet repository-backed at their required runtime paths.
-- **Execution-system milestones:** E0, E1, E2, E3 implemented/validated on the current P04 line.
+- **Execution-system milestones:** E0, E1, E2, E3, E4, E5, and E6 implemented/validated/endorsed on the current P04 line.
+- **Current execution-system gate:** E7 — Automated Enforcement.
 
 This file is the compact project-wide policy/architecture document. Detailed historical execution records remain in Git history and designated evidence/archive locations. Do not reconstruct those records here.
 
@@ -292,7 +293,7 @@ E7 Automated enforcement
 E8 Full integration
 ```
 
-### E0–E3 adopted principles
+### E0–E6 adopted principles
 
 - One canonical `MASTER_SKILL.md`; no parallel skill architecture.
 - Handover scope is always the complete HomeFinder project state.
@@ -302,12 +303,40 @@ E8 Full integration
 - Existing semantic dictionaries and detailed 3D census records keep ownership of the meanings they already define.
 - Census output is derived state and never overrides project authority.
 - Remote/incomplete API views are not promoted as full structural counts when a checked-out source census is required.
+- E5 provenance records exact source commits for GitHub artifacts and Vercel deployments and never equates deployment READY with runtime success.
+- E6 structural intelligence is a derived cross-reference layer; it does not replace domain-owned structural sources or canonical project authorities.
 
-E3 implementation owners:
+### E0–E6 implementation owners
 
+E3:
 - `scripts/census.py`
 - `.agent/census/census.config.json`
 - `project-guide/repository-governance/CENSUS-AND-INVENTORY.md`
 - `docs/census/`
 
-The next execution-system gate is **E4 — Knowledge & Anti-Repeat System**.
+E4:
+- `.agent/knowledge/ANTI-REPEAT-INDEX.json`
+- `scripts/knowledge-search.py`
+- `project-guide/repository-governance/KNOWLEDGE-AND-ANTI-REPEAT.md`
+
+E5:
+- `E5-CANONICAL-BUILD-PROVENANCE.md`
+- `builds.json`
+- `build-provenance.py`
+- `docs/provenance/`
+
+E6:
+- `.agent/structural/structural-index.config.json`
+- `.agent/structural/STRUCTURAL-INDEX.json`
+- `scripts/structural-index.py`
+- `project-guide/repository-governance/STRUCTURAL-INTELLIGENCE.md`
+- `docs/architecture/E6-STRUCTURAL-INTELLIGENCE-FINDINGS-2026-09-01.md`
+- `docs/architecture/E6-VALIDATION-2026-09-01.md`
+
+E6 outcome:
+
+HomeFinder already contains substantial domain-owned structural intelligence. The demonstrated missing capability was reliable cross-domain discovery and lineage. Therefore E6 adopts a derived structural navigation index and metadata-only procedure selection, while deferring autonomous orchestration, architecture-map replacement, structural-source consolidation, and any new semantic dictionary.
+
+The next execution-system gate is **E7 — Automated Enforcement**.
+
+E7 must enforce already-understood rules. It must not invent new governance or silently widen the scope of E6.
