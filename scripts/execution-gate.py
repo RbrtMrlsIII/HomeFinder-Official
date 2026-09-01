@@ -116,11 +116,11 @@ def check_handover(text: str, errors: list[str]):
     required = [
         "Current HandOver",
         "whole-project",
-        "E6",
         "E7",
+        "E8",
         "P04",
-        "Physical authority",
-        "Required next gate",
+        "master/HomeFinder.sh3d",
+        "Final E-series handover",
     ]
     for phrase in required:
         if phrase not in text:
@@ -167,7 +167,7 @@ def main() -> int:
         check_endorsement((ROOT / "project-guide/Endorsement.md").read_text(encoding="utf-8"), errors)
 
     result = {
-        "schema": "HOMEFINDER-EXECUTION-GATE-1.0",
+        "schema": "HOMEFINDER-EXECUTION-GATE-1.1",
         "gate": "E7",
         "status": "PASS" if not errors else "FAIL",
         "errors": errors,
