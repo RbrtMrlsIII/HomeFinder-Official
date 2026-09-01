@@ -21,21 +21,11 @@
     "job_id":99755973527,
     "head_sha":"665590308b4c98e367ab1c5890f51962629511f0",
     "conclusion":"success",
-    "checks":[
-      "compile execution checks",
-      "governance self-test",
-      "read-only execution gate",
-      "full E-series integration gate"
-    ],
+    "checks":["compile execution checks","governance self-test","read-only execution gate","full E-series integration gate"],
     "errors":0,
     "warnings":0
   },
-  "continuity_requirements":[
-    "whole-project HandOver",
-    "chronological Endorsement",
-    "closed E8 session trace",
-    "final whole-project checkpoint"
-  ],
+  "final_continuity_verified":true,
   "endorsement":"ENDORSED",
   "handover_note":"E-series complete; P01-P06 remains delegated product-development work and is not endorsed by E8."
 }
