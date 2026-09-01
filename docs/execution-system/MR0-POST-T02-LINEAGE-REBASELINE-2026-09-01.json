@@ -2,6 +2,7 @@
   "gate":"MR0",
   "title":"Post-T02 Masterplan & Execution-Lineage Rebaseline",
   "date":"2026-09-01",
+  "status":"EXECUTED_VALIDATED_ENDORSED",
   "canonical_development_lineage":[
     {"gate":"T02","status":"COMPLETE/FROZEN","next":"T03"},
     {"gate":"T03","status":"COMPLETE/FROZEN","next":"T04"},
@@ -13,31 +14,17 @@
   ],
   "execution_system_overlay":["E0","E1","E2","E3","E4","E5","E6","E7","E8"],
   "principle":"Execution-system milestones support and record the master development chronology; they do not replace or reorder it.",
-  "rebaseline_treatment":{
-    "E0":"retain/rebaseline",
-    "E1":"retain",
-    "E2":"retain/extend",
-    "E3":"retain/rebaseline",
-    "E4":"retain/strengthen",
-    "E5":"retain/rebaseline",
-    "E6":"retain/hold-for-dependency-check",
-    "E7":"hold",
-    "E8":"hold"
-  },
+  "rebaseline_treatment":{"E0":"retain/rebaseline","E1":"retain","E2":"retain/extend","E3":"retain/rebaseline","E4":"retain/strengthen","E5":"retain/rebaseline","E6":"retain/hold-for-dependency-check","E7":"hold","E8":"hold"},
   "durable_rules":[
     "T02-T06 are frozen post-T02 development lineage.",
     "T07 is frozen.",
     "Post-T07 P01-P06 is a separate controlled GLB track.",
     "The E-series is an execution-system overlay and cannot outrun product-development authority.",
     "The T01/T02 browser-verification mechanism is the proven default browser execution baseline.",
-    "A later E milestone does not authorize reopening an earlier product gate or changing physical authority."
+    "A later E milestone does not authorize reopening an earlier product gate or changing physical authority.",
+    "No new CI workflow may be created without evidence of a materially different execution requirement and reconciliation with the proven browser path."
   ],
-  "protected_boundaries":[
-    "main",
-    "master/HomeFinder.sh3d",
-    "P04.3-P04.6 acceptance",
-    "historical evidence",
-    "PR #6 history"
-  ],
-  "exit_status":"READY_FOR_VALIDATION"
+  "protected_boundaries":["main","master/HomeFinder.sh3d","P04.3-P04.6 acceptance","historical evidence","PR #6 history"],
+  "validation":{"masterplan_lineage_reconciled":true,"ai_continuity_reconciled":true,"handover_reconciled":true,"endorsement_reconciled":true,"product_runtime_mutated":false,"sh3d_mutated":false,"glb_binary_mutated":false,"p04_acceptance_changed":false,"history_rewritten":false},
+  "next_gate":"CI / Execution-System Integration Reconciliation"
 }
