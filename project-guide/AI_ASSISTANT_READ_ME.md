@@ -6,15 +6,17 @@ It is not a report archive, skill library, contract replacement, or historical d
 
 ## Current continuity — 2026-09-01
 
-**Active track:** P04 Spatial / Visual Validation plus execution-system equalization.
+**Active track:** P04 Spatial / Visual Validation plus execution-system reconciliation.
 
 **Accepted:** P04.0, P04.1, P04.2; E0, E1, E2, E3, E4, E5, E6 execution-system milestones.
 
-**Current execution-system gate:** E7 — Automated Enforcement.
+**Current execution-system gate:** CI / Execution-System Integration Reconciliation.
+
+**E-series reconciliation status:** PROGRAM RECONCILIATION REQUIRED. E0–E6 capabilities remain retained, but the program must integrate with existing HomeFinder automation rather than creating a competing workflow universe. E7 is not endorsed. E8 is held.
 
 **E6 status:** EXECUTED / VALIDATED / ENDORSED. The adopted capability is a derived Structural Intelligence Index for cross-domain discovery/lineage. Existing semantic, spatial, contract, and execution authorities remain unchanged.
 
-**Not endorsed:** P04.3, P04.4, P04.5, P04.6.
+**Not endorsed:** P04.3, P04.4, P04.5, P04.6; E7; E8.
 
 **Physical authority:** `master/HomeFinder.sh3d` remains the sole canonical SH3D source. The main application-facing viewer remains the Sweet Home 3D JS Viewer. The P04 GLB viewer is a separate validation surface and does not replace SH3D authority.
 
@@ -30,19 +32,20 @@ Use the project sequence for every change:
 
 Do not jump from a finding directly to implementation or deletion.
 
-Startup and handover are always **whole-project**, even when the active gate is narrow.
+Startup and handover are always **whole-project**, even when the active gate is narrow. `project-guide/HandOver.md` is mandatory at every gate.
 
 ## Current P04 memory — do not repeat old experiments
 
-- The dedicated GitHub Chromium environment is healthy: checkout, Node/npm, Three.js CDN reachability, browser dependencies, Chromium installation, and evidence upload all passed in the latest established run.
+- The dedicated GitHub Chromium environment is healthy: checkout, Node/npm, Three.js CDN reachability, browser dependencies, Chromium installation, and evidence upload all passed in the established P04 run.
 - The Three.js import-map/bootstrap repair has been effective enough for the stage to report `data-renderer="three-glb"`; do **not** reopen the old module-resolution hypothesis without new evidence.
-- The latest established P04 evidence still has `data-glb-loaded="false"` because the repository checkout does not contain the approved GLB binaries at the manifest target paths.
+- The established P04 evidence still has `data-glb-loaded="false"` because the repository checkout does not contain the approved GLB binaries at the manifest target paths.
 - Git history was checked for the canonical T02/T03/T04 GLB paths and returned no historical commits for those paths. There is therefore no Git-history restore to perform.
 - The four approved binaries remain preserved in the handoff evidence package with their recorded SHA-256 values. Binary repository promotion is the remaining P04 runtime prerequisite.
 - Do not weaken the P04 assertions, substitute placeholder geometry, or restore superseded WalkMyPlan architecture merely to make the browser suite green.
 
 ## Execution-system memory
 
+- E0 established the need for an execution-system layer, but the current reconciliation adds an important constraint: **existing repository automation is part of the baseline architecture**.
 - E1 established `MASTER_SKILL.md` v1.2 as the single canonical skill with equalized procedures for all major disciplines and whole-project handover.
 - E2 established `.agent/sessions/`, `scripts/session_logger.py`, and `project-guide/repository-governance/EXECUTION-TRACE-AND-FILE-UPDATE.md`.
 - E3 established `scripts/census.py`, `.agent/census/census.config.json`, and `project-guide/repository-governance/CENSUS-AND-INVENTORY.md`.
@@ -53,6 +56,8 @@ Startup and handover are always **whole-project**, even when the active gate is 
 - E4 keeps `PRODUCT-KNOWLEDGE.md` as the durable-knowledge authority; the anti-repeat index is a derived machine index and must not become a competing knowledge source.
 - E5 established canonical artifact/build provenance across HomeFinder, GitHub Actions, and Vercel. `builds.json` records exact source commits, artifact identity, deployment identity, and evidence states without conflating deployment with runtime success.
 - E6 established a derived structural-intelligence index for cross-domain discovery and lineage. Existing domain-owned sources remain authorities; the index is navigation state only.
+- E-series reconciliation found that `.github/workflows/homefinder-browser.yml` already owns broad browser verification, `.github/workflows/homefinder-p04.yml` owns P04 validation, and `.github/workflows/AI_Key.yml` is a separate privileged scheduled/manual workflow with write authority. Do not absorb the latter into E7.
+- The E7 workflow introduced during the first enforcement attempt was removed because it duplicated CI orchestration. Retained E7 work is the reusable read-only enforcement capability and procedure, awaiting integration into existing automation ownership.
 
 ## Minimal-knowledge rule
 
@@ -76,6 +81,7 @@ A detailed findings document becomes a deletion candidate only after its unique 
 - Historical artifacts are evidence until current status revalidates them.
 - Cleanup is an evidence-preserving engineering activity; no blind bulk deletion, renaming, or restructuring.
 - E6 structural indexes are derived navigation state, never authority.
+- Existing GitHub Actions and Vercel automation must be mapped before new execution automation is added.
 
 ## Primary continuity sources
 
@@ -115,9 +121,7 @@ A detailed findings document becomes a deletion candidate only after its unique 
 
 `build-provenance.py` — E5 provenance helper.
 
-`docs/provenance/E5-FINDINGS-2026-09-01.md` — E5 findings.
-
-`docs/provenance/E5-VALIDATION-2026-09-01.md` — E5 validation evidence.
+`docs/provenance/` — E5 findings/validation evidence.
 
 `project-guide/repository-governance/STRUCTURAL-INTELLIGENCE.md` — E6 structural-intelligence protocol.
 
@@ -133,25 +137,27 @@ A detailed findings document becomes a deletion candidate only after its unique 
 
 `docs/architecture/E6-VALIDATION-2026-09-01.md` — E6 validation evidence.
 
-## Browser verification entry points
+`docs/execution-system/E-SERIES-RECONCILIATION-2026-09-01.md` — whole E-series reconciliation findings.
+
+`docs/execution-system/E-SERIES-RECONCILIATION-2026-09-01.json` — whole E-series reconciliation machine state.
+
+`docs/execution-system/E-SERIES-RECONCILIATION-VALIDATION-2026-09-01.md` — whole E-series reconciliation validation evidence.
+
+## Existing automation owners
 
 `.github/workflows/homefinder-browser.yml` — repository-wide browser verification.
 
 `.github/workflows/homefinder-p04.yml` — dedicated P04 spatial/visual workflow.
 
-`active_development/tests/browser/package.json` — browser-test package.
-
-`active_development/tests/browser/playwright.config.mjs` — Chromium project/configuration.
-
-`active_development/tests/browser/server.mjs` — local test server.
-
-`active_development/tests/browser/specs/` — browser acceptance tests.
+`.github/workflows/AI_Key.yml` — pre-existing privileged scheduled/manual workflow; outside E-series authority and subject to separate security/governance review.
 
 ## Session-start rule
 
 Start from current repository state. Read this file, then `HandOver.md`, `Endorsement.md`, the relevant masterplan section, the applicable skill section, and the detailed evidence for the active gate.
 
 Before Classify on a non-trivial approach, search durable knowledge for related anti-patterns and known dead ends. A match must be inspected against current evidence before proceeding.
+
+Before adding automation, inspect existing GitHub/Vercel automation ownership and triggers. Do not create a duplicate workflow owner.
 
 Do not reconstruct old history from nested ZIPs when a current canonical record exists.
 Do not repeat a disproven hypothesis without new evidence.
