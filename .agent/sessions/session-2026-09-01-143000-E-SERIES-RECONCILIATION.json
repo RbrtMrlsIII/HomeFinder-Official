@@ -1,0 +1,45 @@
+{
+  "session_id":"2026-09-01-143000-E-SERIES-RECONCILIATION",
+  "started_at":"2026-09-01T14:30:00+08:00",
+  "current_scope":"E0-E8 execution-system program reconciliation",
+  "status":"IN_PROGRESS",
+  "execution_lifecycle":["Observe","Record","Understand","Classify","Align","Validate","Endorse","Advance"],
+  "startup_state":{
+    "canonical_skill":"MASTER_SKILL.md v1.2",
+    "active_branch":"p04/glb-runtime-restored-2026-09-01",
+    "p04_acceptance":"P04.3-P04.6 remain unchecked/blocked",
+    "protected_authority":"master/HomeFinder.sh3d",
+    "prior_execution_gates":"E0-E6 recorded as endorsed; E7 not endorsed"
+  },
+  "observe":{
+    "preexisting_workflows":[
+      ".github/workflows/homefinder-browser.yml",
+      ".github/workflows/homefinder-p04.yml",
+      ".github/workflows/AI_Key.yml"
+    ],
+    "introduced_execution_workflow":".github/workflows/homefinder-execution-gate.yml",
+    "preexisting_platforms":["GitHub Actions","Vercel"],
+    "current_evidence":"browser verification is triggered by broad push/PR events; P04 workflow also triggers on pull requests to main"
+  },
+  "record":{
+    "finding_ids":["ESR-001","ESR-002","ESR-003","ESR-004","ESR-005"],
+    "mandatory_outputs":["findings","machine-readable registry","validation evidence","whole-project handover/checkpoint"]
+  },
+  "understand":{
+    "summary":"The E-series is an execution-system capability program layered onto an already-automated repository. Several E capabilities overlap existing HomeFinder mechanisms, and the new E7 workflow duplicates CI orchestration. Broad existing browser triggers cause documentation-only commits to produce product-test runs and failure noise."
+  },
+  "classify":{
+    "ESR-001":"E-series must treat preexisting automation as part of baseline architecture.",
+    "ESR-002":"homefinder-execution-gate.yml is a duplicate orchestration layer and is not justified as a second workflow owner.",
+    "ESR-003":"homefinder-browser.yml has broad triggers; repeated documentation-triggered browser runs are a workflow-boundary issue, not proof of product regression.",
+    "ESR-004":"AI_Key.yml has independent scheduled GitHub write behavior and must remain outside E-series authority until separately reviewed.",
+    "ESR-005":"E0-E6 completion claims should be interpreted as milestone capabilities, while program-level integration remains unreconciled until the existing automation surface is fully mapped."
+  },
+  "planned_alignment":[
+    "remove only the redundant E7 workflow introduced by this program",
+    "retain existing browser/P04 workflow ownership",
+    "document the broad-trigger finding for a future bounded CI reconciliation",
+    "restate E7 as not endorsed until its enforcement design is integrated with the existing automation architecture"
+  ],
+  "files_changed":[".agent/sessions/session-2026-09-01-143000-E-SERIES-RECONCILIATION.json"]
+}
