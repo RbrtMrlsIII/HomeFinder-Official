@@ -3,14 +3,15 @@
 ## 0. Current Execution Pointer — 2026-09-01
 
 - **Project discipline:** Observe → Record → Understand → Classify → Align → Validate → Endorse → Advance.
+- **Post-T02 rebaseline:** MR0 completed and endorsed. Canonical development lineage is T02 → T03 → T04 → T05 → T06 → T07 (frozen) → post-T07 P01→P06.
 - **T07:** FROZEN.
 - **P04 Spatial / Visual Validation:** ACTIVE; P04.0–P04.2 accepted, P04.3–P04.6 not endorsed.
 - **Current P04 branch:** `p04/glb-runtime-restored-2026-09-01`.
 - **Current validation PR:** #6, draft/unmerged.
 - **Canonical physical authority:** `master/HomeFinder.sh3d`.
 - **Current P04 blocker:** approved GLB binaries are preserved as evidence but are not yet repository-backed at their required runtime paths.
-- **Execution-system milestones:** E0–E6 capability layers implemented/validated/endorsed individually; program-level E-series reconciliation is now active.
-- **Current execution-system gate:** CI / Execution-System Integration Reconciliation. E7 is not endorsed; E8 is held.
+- **Execution-system milestones:** E0–E6 capability layers retained; E7 and E8 held pending CI/execution-system reconciliation.
+- **Current execution-system gate:** CI / Execution-System Integration Reconciliation.
 
 This file is the compact project-wide policy/architecture document. Detailed historical execution records remain in Git history and designated evidence/archive locations. Do not reconstruct those records here.
 
@@ -200,6 +201,10 @@ Failure/retry artifacts should be diagnostic and retained deliberately.
 
 Production credentials must never be required for browser verification.
 
+### Proven mechanism rule
+
+The T01/T02 browser-verification path is the project's proven execution baseline. A new milestone does not justify a new browser workflow, runner, or test harness by itself. A materially different execution requirement must be demonstrated before a separate workflow is designed.
+
 ---
 
 ## 9. 3D / Navigation Guardrails
@@ -219,21 +224,26 @@ Production credentials must never be required for browser verification.
 The master chronology remains the source of sequencing; later visual work must not bypass unresolved earlier authority.
 
 ```text
-Repository / test authority
-        ↓
-Historical-path reconciliation
-        ↓
-UI / DOM / CSS / JS census
-        ↓
-Three-house semantic allocation
-        ↓
-SH3D reconciliation
-        ↓
-Camera / route certification
-        ↓
-Browser verification
-        ↓
-Production integration / polish
+T02
+ ↓
+T03
+ ↓
+T04
+ ↓
+T05
+ ↓
+T06
+ ↓
+T07 (FROZEN)
+ ↓
+P01 → P02 → P03 → P04 → P05 → P06
+```
+
+The execution-system sequence is an overlay:
+
+```text
+E0 → E1 → E2 → E3 → E4 → E5 → E6 → E7 → E8
+                 (supports the masterplan; never replaces it)
 ```
 
 Post-T07 GLB promotion remains a separate controlled track and must continue through its own evidence gates.
@@ -250,6 +260,8 @@ A new session starts from **current state**, not historical assumptions:
 4. this `masterplan.md`
 5. current authority contracts/manifests
 6. detailed evidence for the active gate
+
+Whole-project `HandOver.md` is mandatory at every gate. It is not an optional addendum.
 
 Do not duplicate history into the orientation layer. Do not delete detailed evidence until knowledge promotion and reconciliation are complete.
 
@@ -271,7 +283,7 @@ HomeFinder succeeds when current architecture is provable, not merely visually c
 
 ## 13. Execution-System Equalization
 
-HomeFinder extends the project discipline with the following capability sequence, but existing repository automation is always part of the baseline:
+HomeFinder extends the project discipline with the following capability sequence, but the masterplan remains primary:
 
 ```text
 E0 Project-wide evaluation
@@ -293,49 +305,58 @@ E7 Automated enforcement
 E8 Full integration
 ```
 
-### Program-level reconciliation rule
+### Program-level integration rule
 
-The E-series must extend and integrate with existing HomeFinder automation, not create a parallel workflow universe.
+The E-series must extend existing HomeFinder architecture and proven mechanisms rather than create parallel governance, workflow, or authority systems.
 
-The current repository baseline includes:
+MR0 — Post-T02 Masterplan & Execution-Lineage Rebaseline — is now endorsed. It established the canonical post-T02 lineage as T02→T03→T04→T05→T06→T07(frozen)→P01…P06 and classified E0–E8 as an overlay.
 
-- `.github/workflows/homefinder-browser.yml` — existing browser verification owner.
-- `.github/workflows/homefinder-p04.yml` — existing P04 spatial/visual verification owner.
-- `.github/workflows/AI_Key.yml` — pre-existing privileged scheduled/manual automation, outside E-series authority.
-- Vercel deployment behavior already established under E5 provenance.
+E0–E6 remain individually endorsed capabilities, subject to the corrected lineage and integration boundaries. E7 remains **not endorsed** until CI/execution integration is reconciled. E8 remains held.
 
-The E7 workflow introduced during execution-system development was removed because it duplicated orchestration rather than integrating with these existing owners.
+The current CI state is intentionally a clean slate: no active `.github/workflows/` automation remains on the current clean P04 validation branch after the workflow-retirement reconciliation. Historical workflow runs are evidence only. A future CI design must first reconcile the proven T01/T02 browser-validation model with current product requirements before introducing any new workflow owner.
 
-The current unresolved CI questions are intentionally a separate bounded gate:
+The pre-existing privileged `AI_Key.yml` design is also no longer an active workflow on the clean branch and remains a historical/security finding requiring its own explicit review before any privileged automation is reintroduced.
 
-- which E2–E6 checks belong in existing workflows;
-- which checks should be on-demand/manual;
-- which product workflows need path/branch trigger refinement;
-- how documentation-only changes avoid unnecessary product-browser execution;
-- how privileged automation remains outside execution-system authority;
-- how enforcement can fail closed without becoming another parallel governance layer.
+## 14. MR0 — Post-T02 Masterplan & Execution-Lineage Rebaseline
 
-### E0–E6 retained principles
+**Status: COMPLETE / VALIDATED / ENDORSED — 2026-09-01**
 
-- One canonical `MASTER_SKILL.md`; no parallel skill architecture.
-- Whole-project handover is mandatory at every gate.
-- Sessions are traceable from start through close.
-- File-update requirements are impact-aware: LOCAL, BOUNDED, SYSTEMIC.
-- Inventory is source-first and precedes transformation.
-- Existing semantic dictionaries and detailed 3D census records keep ownership of the meanings they already define.
-- Census output is derived state and never overrides project authority.
-- Remote/incomplete API views are not promoted as full structural counts when a checked-out source census is required.
-- E5 provenance records exact source commits for GitHub artifacts and Vercel deployments and never equates deployment READY with runtime success.
-- E6 structural intelligence is a derived cross-reference layer and does not replace domain-owned structural sources.
+MR0 was executed as a whole-project foundation gate. It reconstructed the canonical post-T02 development lineage from the masterplan and reconciled the E-series against it.
 
-### Current program state
+### Canonical lineage
 
-E0–E6 capabilities are retained as individually useful and endorsed milestone results. They are now subject to the program-level reconciliation documented in:
+`T02 → T03 → T04 → T05 → T06 → T07 (FROZEN) → P01 → P02 → P03 → P04 → P05 → P06`
 
-- `docs/execution-system/E-SERIES-RECONCILIATION-2026-09-01.md`
-- `docs/execution-system/E-SERIES-RECONCILIATION-2026-09-01.json`
-- `docs/execution-system/E-SERIES-RECONCILIATION-VALIDATION-2026-09-01.md`
+T02–T06 are frozen sequential development gates. T07 is frozen. P01–P06 is the separate post-T07 GLB track.
 
-E7 is **not endorsed** until its enforcement capability is integrated with the existing automation architecture. E8 is held until E7 and the CI/automation boundary are stable.
+### E-series treatment
 
-The next bounded gate is **CI / Execution-System Integration Reconciliation**.
+| E milestone | MR0 disposition |
+|---|---|
+| E0 | retain / rebaseline |
+| E1 | retain |
+| E2 | retain / extend |
+| E3 | retain / rebaseline |
+| E4 | retain / strengthen |
+| E5 | retain / rebaseline |
+| E6 | retain / hold for dependency check |
+| E7 | hold |
+| E8 | hold |
+
+### Durable rules
+
+- Masterplan development lineage outranks execution-system convenience.
+- T02–T06 are frozen development lineage and must remain visible to future AI sessions.
+- T07 is frozen; P01–P06 is a separate post-T07 GLB track.
+- E-series capabilities support the masterplan but cannot outrun product authority.
+- Proven T01/T02 browser verification is the default browser-execution baseline.
+- A later execution-system milestone does not authorize reopening an earlier product gate or changing physical authority.
+- A new CI workflow requires evidence of a materially different execution requirement and reconciliation with the proven browser path.
+
+Evidence:
+- `docs/execution-system/MR0-POST-T02-LINEAGE-REBASELINE-2026-09-01.md`
+- `docs/execution-system/MR0-POST-T02-LINEAGE-REBASELINE-2026-09-01.json`
+- `docs/execution-system/MR0-POST-T02-LINEAGE-REBASELINE-2026-09-01-VALIDATION.md`
+- `.agent/sessions/session-2026-09-01-171800-MR0-CLOSURE.json`
+
+MR0 did not mutate product runtime, canonical SH3D, GLB binaries, P04 acceptance criteria, or Git history. `main` remains separated from active MR0 gate artifacts; active rebaseline material lives on the P04 validation branch.
