@@ -10,6 +10,7 @@ on:
       - 'builds.json'
       - 'build-provenance.py'
       - 'scripts/execution-gate.py'
+      - 'scripts/execution-system-integration.py'
       - 'scripts/session_logger.py'
       - 'scripts/census.py'
       - 'scripts/knowledge-search.py'
@@ -35,6 +36,7 @@ on:
       - 'builds.json'
       - 'build-provenance.py'
       - 'scripts/execution-gate.py'
+      - 'scripts/execution-system-integration.py'
       - 'scripts/session_logger.py'
       - 'scripts/census.py'
       - 'scripts/knowledge-search.py'
@@ -70,11 +72,15 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Compile execution gate
-        run: python -m py_compile scripts/execution-gate.py
+      - name: Compile execution checks
+        run: |
+          python -m py_compile scripts/execution-gate.py scripts/execution-system-integration.py
 
       - name: Run governance self-test
         run: python scripts/execution-gate.py --self-test
 
       - name: Run read-only execution gate
         run: python scripts/execution-gate.py --json
+
+      - name: Run full E-series integration gate
+        run: python scripts/execution-system-integration.py
