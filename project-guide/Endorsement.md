@@ -149,15 +149,22 @@ No duplicate Product Knowledge authority, second dictionary, second skill, or pa
 
 ## E5 endorsement note — 2026-09-01
 
-E5 was executed as a bounded promotion of the previously prepared provenance model. The live P04 branch now contains `E5-CANONICAL-BUILD-PROVENANCE.md`, `builds.json`, `build-provenance.py`, and `E5-BASELINE-2026-09-01.json`.
+E5 was re-executed as a complete, bounded provenance gate rather than relying on the earlier partial promotion attempt. The gate followed the HomeFinder process from whole-project observation through findings, classification, alignment, validation, endorsement, and advance.
 
-The provenance model preserves strict evidence ordering: SOURCE → ARTIFACT GENERATED → BUILD VERIFIED → DEPLOYMENT READY → RUNTIME VALIDATED → ENDORSED. The recorded GitHub Actions artifact `33451823171` proves artifact upload, while its six focused P04 runtime failures remain failures; no application success is inferred from artifact availability.
+The canonical provenance specification, machine registry, helper, findings, validation evidence, baseline, and session trace are live on the P04 validation branch. The registry now contains real cross-platform records rather than an empty schema:
 
-Existing HomeFinder source/artifact ownership was preserved. `master/HomeFinder.sh3d` remains protected physical authority, the existing GLB paths were not relocated, and no placeholder/base64 workaround was promoted as canonical runtime source. The prepared E5 handover addendum was not promoted because `project-guide/HandOver.md` remains the single handover authority.
+- GitHub Actions run `33451823171` / job `99683217304` / artifact `9780126370`, source commit `5c9903113010d88c6a91677dc3709552bc297ed0`, failed focused P04 runtime validation with successful evidence-artifact upload, artifact SHA-256 `d4e59131592c7af694b222726c603c3fa5683cf392cd1e876953632402cdec67`.
+- Vercel deployment `dpl_5Fi2KT76WLu7zUFH1wcu3yPPU6Nj`, source commit `d2149c79d8197d6ee7879f9ad677bd959808db7f`, state `READY`.
 
-A machine-readable E5 promotion session was created before mutation at `.agent/sessions/session-2026-09-01-114800-E5-PROMOTION.json`. The whole-project `HandOver.md` was updated with E5 state and the next gate. No second skill, dictionary, or handover authority was created.
+The two source commits are intentionally preserved separately because provenance attaches to the exact source state that generated the evidence or deployment. Vercel READY is recorded as deployment provenance only; it does not endorse P04 runtime behavior.
 
-E5 is endorsed as an execution-system capability. This endorsement does **not** endorse P04.3–P04.6, which remain unchecked and blocked pending fresh browser/GLB evidence.
+The initial helper-schema gap was corrected before closure so tooling and endorsement state are represented explicitly. The initial empty-registry closure defect was corrected by recording the real GitHub and Vercel evidence. `docs/provenance/E5-FINDINGS-2026-09-01.md` records the findings and dispositions, and `docs/provenance/E5-VALIDATION-2026-09-01.md` records the independent live-platform validation evidence.
+
+Knowledge-distillation assessment: no new durable project rule was identified beyond E1/E4 knowledge; E5 operationalizes existing evidence-separation and provenance principles into machine-readable state.
+
+The whole-project `HandOver.md` was synchronized. The E5 session `.agent/sessions/session-2026-09-01-114800-E5-PROMOTION.json` was created before substantive mutation and closed with `COMPLETED_VALIDATED_ENDORSED`.
+
+E5 is endorsed as an execution-system capability. This endorsement does **not** endorse P04.3–P04.6, which remain unchecked and blocked pending fresh browser/GLB evidence. PR #6 remains a draft/unmerged validation vehicle and no history rewrite was performed.
 
 ## Session protocol
 1. Read `README.md`.
