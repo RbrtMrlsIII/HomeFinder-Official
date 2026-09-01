@@ -1,7 +1,7 @@
 {
   "session_id":"2026-09-01-181500-E8-INTEGRATION",
   "started_at":"2026-09-01T18:15:00+08:00",
-  "ended_at":"2026-09-01T18:23:00+08:00",
+  "ended_at":"2026-09-01T18:25:00+08:00",
   "current_milestone":"E8",
   "gate":"Full Execution-System Integration",
   "status":"COMPLETED_VALIDATED_ENDORSED",
@@ -14,7 +14,7 @@
     {"action":"Understand","detail":"E8 must prove the capabilities operate as one non-duplicative execution system without taking ownership of product/P-series runtime validation."},
     {"action":"Classify","detail":"E8 integration is SYSTEMIC to the E-series; validation remains read-only and authority-preserving."},
     {"action":"Align","detail":"Added one deterministic E8 integration verifier under the existing E-series governance workflow; no second workflow owner created."},
-    {"action":"Validate","detail":"GitHub run 33476234720, job 99755973527, passed compilation, E7 self-test, E7 read-only gate, and full E8 integration gate."},
+    {"action":"Validate","detail":"GitHub final governance run 33476867050, job 99757835221, passed compilation, E7 self-test, E7 read-only gate, and full E8 integration gate."},
     {"action":"Endorse","detail":"Synchronized final whole-project HandOver and Endorsement, updated masterplan and AI continuity, and recorded E8 as endorsed."},
     {"action":"Advance","detail":"E-series complete; P01-P06 handed over to designated product-development teams."}
   ],
@@ -35,7 +35,7 @@
     "docs/execution-system/E7-VALIDATION-TRIGGER.md",
     "docs/execution-system/E7-VALIDATION-TRIGGER-2.md"
   ],
-  "validation_run":{"id":33476234720,"job_id":99755973527,"conclusion":"success"},
-  "post_closure_revalidation_required":true,
+  "validation_run":{"id":33476867050,"job_id":99757835221,"conclusion":"success"},
+  "post_closure_revalidation_required":false,
   "pre_mutation_note":"Session was created before substantive E8 mutation. P-series runtime, canonical SH3D, GLB binaries, main branch, and PR #6 remained protected."
 }
