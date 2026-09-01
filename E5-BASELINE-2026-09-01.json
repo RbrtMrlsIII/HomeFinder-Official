@@ -1,0 +1,24 @@
+{
+  "phase": "E5",
+  "milestone": "Canonical Artifact & Build Provenance",
+  "date": "2026-09-01",
+  "validation": {
+    "source_checkpoint_archive_present": true,
+    "source_checkpoint_sha256": "be8c2484c72c91106e885f5726552d091e2df36dbf24c3acc60f973e08ff0845",
+    "provenance_schema_present": true,
+    "provenance_helper_present": true,
+    "status_vocabulary_complete": true,
+    "git_write_promoted_live": true,
+    "live_promotion_session": "2026-09-01-114800-E5-PROMOTION",
+    "reason": "E5 canonical files were promoted to the P04 validation branch and live-file verification is required before endorsement."
+  },
+  "evidence_anchor": {
+    "type": "github_actions_artifact",
+    "run_id": 33451823171,
+    "artifact_id": 9780126370,
+    "artifact_name": "homefinder-p04-playwright-report",
+    "artifact_sha256": "d4e59131592c7af694b222726c603c3fa5683cf392cd1e876953632402cdec67",
+    "status": "FAILED_RUNTIME_VALIDATION_WITH_ARTIFACT_UPLOAD",
+    "interpretation": "Artifact upload succeeded; browser validation itself failed. This is provenance evidence, not application success."
+  }
+}
