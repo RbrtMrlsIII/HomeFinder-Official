@@ -54,7 +54,8 @@
 23. **E3 configuration:** `.agent/census/census.config.json` owns exclusions, semantic dictionary location, and configured forbidden-file patterns.
 24. **E3 protocol:** `project-guide/repository-governance/CENSUS-AND-INVENTORY.md` defines inventory-before-transformation and the authority boundary for census outputs.
 25. **E3 baseline:** `docs/census/E3-BASELINE-2026-09-01.md` and `.json` preserve only verified authored-model counts from the existing canonical 3D census; incomplete GitHub API tree views are not promoted as full project totals.
-26. No second skill, handover, dictionary, or parallel governance authority was created.
+26. The E3 census tool's exclusion semantics were corrected so configured excluded directories are honored consistently for repository, HTML, model, texture, and forbidden-file counts.
+27. No second skill, handover, dictionary, or parallel governance authority was created.
 
 ### Current evidence
 
@@ -62,9 +63,9 @@
 - P04 binary promotion: **not completed**; no workaround promotion endorsed.
 - P04.3: **unchecked / blocked**.
 - Current isolation branch: `p04/glb-runtime-restored-2026-09-01`.
-- Current P04 branch head at final E3 handover update: `eca455903872d8a00726988edf53e2c17a1d90c8`.
-- `main` head observed during E3: `986e39e5a0d641a24acde327766cf7f42e6f1577`.
-- Controlled PR: `#6` (draft, unmerged); GitHub reports 91 commits and 44 changed files on the PR, and the branch is 91 commits ahead / 3 commits behind `main` with a divergent merge base. This PR remains a validation vehicle; no merge is endorsed from the current state.
+- Current branch/PR ref state is maintained live in GitHub; this handover intentionally does not freeze a transient commit-count/HEAD snapshot.
+- `main` was not modified by E3.
+- Controlled PR: `#6` (draft, unmerged). The branch remains a validation vehicle and must not be merged or history-rewritten without an explicit GitHub branch-ownership/reconciliation gate.
 - Main SH3D viewer: unchanged.
 - Current P04 viewer entrypoint: `active_development/3d/glb-viewer/index.html`.
 - Current target manifest: `active_development/data/cinematic-3d-targets.json`.
@@ -84,7 +85,7 @@
 5. The next execution-system gate after E3 is **E4 — Knowledge & Anti-Repeat System**.
 6. For every substantive session, create the session trace before mutation and classify each change by impact.
 7. Run the project-wide census from a checked-out repository when a real structural baseline is required; do not use a truncated remote API response as a substitute.
-8. Do not merge PR #6 or force-rewrite its history until the branch's intended ownership is explicitly reconciled. The current ahead/behind divergence is recorded, not silently resolved.
+8. Do not merge PR #6 or force-rewrite its history until the branch's intended ownership is explicitly reconciled.
 
 **Physical authority:** `master/HomeFinder.sh3d` remains protected and is not mutated by P04. GLBs remain derived artifacts. Security/authorization remain outside SH3D.
 
