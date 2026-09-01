@@ -50,6 +50,8 @@ The 2026-09-01 uploaded checkpoint grew to more than 30 MB compressed because it
 
 A clean checkpoint must retain one current project baseline, omit nested whole-project archives and duplicated baseline trees, keep historical evidence traceable by an evidence/retention index, and record the final package hash after assembly.
 
+The clean local checkpoint produced by this reconciliation is `HomeFinder_E8_PSeries_Clean_2026-09-01.zip` (10,498,000 bytes compressed; SHA-256 `944690768e96cf9078497eb7adb57def7dd4abb6b286ca51e5f6a08fb2265956`).
+
 No historical evidence is being silently deleted from its original source package; redundant physical copies are removed only from the new checkpoint.
 
 ## Required next action
