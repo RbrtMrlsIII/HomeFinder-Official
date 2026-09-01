@@ -1,7 +1,7 @@
 {
   "gate":"E7",
   "title":"CI / Execution-System Integration Reconciliation",
-  "status":"VALIDATION_PENDING",
+  "status":"EXECUTED_VALIDATED_ENDORSED",
   "scope":"E-series only",
   "product_development_out_of_scope":["P01-P06","P04.3-P04.6","SH3D","GLB promotion"],
   "workflow":".github/workflows/homefinder-execution-governance.yml",
@@ -23,8 +23,18 @@
     "populated build provenance",
     "no replacement SH3D authority"
   ],
-  "negative_control":"execution gate must reject a structurally invalid authority state",
+  "negative_control":"execution gate self-test rejected an intentionally invalid authority state",
   "observed_source_branch":"e/execution-system-2026-09-01",
-  "validation_run":null,
-  "endorsement":"PENDING"
+  "validation_run":{
+    "run_id":33475974141,
+    "run_number":5,
+    "head_sha":"790ffb8f9d7adf9d03c54dc41f81f162e1d9b07a",
+    "conclusion":"success",
+    "job_id":99755198477,
+    "checks":["compile execution gate","governance self-test","read-only execution gate"],
+    "errors":0,
+    "warnings":0
+  },
+  "endorsement":"ENDORSED",
+  "next_gate":"E8 — Full Execution-System Integration"
 }
