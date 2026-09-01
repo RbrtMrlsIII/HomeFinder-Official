@@ -1,9 +1,9 @@
 {
   "gate":"E8",
   "title":"Full Execution-System Integration",
-  "status":"EXECUTED_VALIDATED_PENDING_FINAL_CONTINUITY",
+  "status":"EXECUTED_VALIDATED_ENDORSED",
   "scope":"E-series only",
-  "validated_chain":["E0","E1","E2","E3","E4","E5","E6","E7"],
+  "validated_chain":["E0","E1","E2","E3","E4","E5","E6","E7","E8"],
   "masterplan_authority":"MR0-rebased product chronology remains superior to E-series overlay",
   "product_scope_touched":false,
   "p_series_touched":false,
@@ -36,6 +36,6 @@
     "closed E8 session trace",
     "final whole-project checkpoint"
   ],
-  "endorsement":"PENDING_FINAL_CONTINUITY",
-  "next_action":"Synchronize final whole-project continuity, close session, generate final E-series checkpoint ZIP"
+  "endorsement":"ENDORSED",
+  "handover_note":"E-series complete; P01-P06 remains delegated product-development work and is not endorsed by E8."
 }
