@@ -1,0 +1,19 @@
+{
+  "schema":"HOMEFINDER-E6-FINDINGS-1.0",
+  "phase":"E6",
+  "status":"VALIDATED",
+  "findings":[
+    {"id":"E6-F01","classification":"PROTECTED / SEMANTIC / AUTHORITATIVE","disposition":"RETAIN","subject":"semantic dictionary","owner":"active_development/data/dictionary.json"},
+    {"id":"E6-F02","classification":"PROTECTED / 3D / AUTHORITATIVE-FOR-OWNED-CENSUS","disposition":"RETAIN","subject":"authored model census","owner":"active_development/3d/docs/model-census.json"},
+    {"id":"E6-F03","classification":"DERIVED / CROSS-DOMAIN STRUCTURAL EVIDENCE","disposition":"RETAIN_AND_INDEX","subject":"UI/3D code-reality mapping","owner":"active_development/data/house-ui-ux-code-reality-map.json"},
+    {"id":"E6-F04","classification":"CURRENT / DERIVED_OR_CONTRACTUAL","disposition":"RETAIN_AND_INDEX","subject":"design/camera/cinematic structural records","owner":"active_development/data/"},
+    {"id":"E6-F05","classification":"SYSTEMIC / DERIVED / STRUCTURAL-INTELLIGENCE-GAP","disposition":"ADOPT_MINIMAL_DERIVED_INDEX","subject":"cross-domain structural discoverability"},
+    {"id":"E6-F06","classification":"SYSTEMIC / DERIVED / IMPLEMENTATION-RISK","disposition":"DEFER","subject":"new architecture-map generator"},
+    {"id":"E6-F07","classification":"DERIVED / EXECUTION-SUPPORT","disposition":"ADOPT_METADATA_ONLY","subject":"procedure/source selection hints"},
+    {"id":"E6-F08","classification":"PROTECTED / CENSUS-CONSTRAINT","disposition":"RETAIN_E3_RULE","subject":"remote API completeness limitation"}
+  ],
+  "adoption":"Derived structural index is the only new persistent capability justified by E6 evidence.",
+  "rejected":["second semantic dictionary","replacement architecture authority","generic build migration","automatic skill generation","remote-derived full counts","history rewrite","P04 runtime mutation"],
+  "knowledge_promotion":"HomeFinder has sufficient domain-owned structural sources; the execution gap is cross-reference/discoverability, not missing semantic or architectural authority.",
+  "source_of_truth":"docs/architecture/E6-STRUCTURAL-INTELLIGENCE-FINDINGS-2026-09-01.md"
+}
