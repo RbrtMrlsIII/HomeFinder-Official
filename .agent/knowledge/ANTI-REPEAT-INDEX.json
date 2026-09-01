@@ -1,0 +1,21 @@
+{
+  "schema": "HOMEFINDER-ANTI-REPEAT-INDEX-1.0",
+  "authority": "PRODUCT-KNOWLEDGE.md",
+  "derived": true,
+  "purpose": "Machine-readable index of durable anti-patterns and known dead ends; content authority remains PRODUCT-KNOWLEDGE.md and endorsed continuity records.",
+  "updated": "2026-09-01",
+  "pre_classify_required": true,
+  "entries": [
+    {"id":"p04-module-resolution","kind":"disproven-hypothesis","trigger":["bare ESM three import","module resolution","import map"],"rule":"Do not reopen the old Three.js module-resolution hypothesis without new evidence.","source":"project-guide/AI_ASSISTANT_READ_ME.md"},
+    {"id":"p04-glb-unavailability","kind":"known-blocker","trigger":["GLB load","data-glb-loaded","repository-backed GLB"],"rule":"Treat missing canonical GLB binaries as the current P04 blocker; do not weaken assertions or substitute unrelated geometry.","source":"project-guide/AI_ASSISTANT_READ_ME.md"},
+    {"id":"walkmyplan-resurrection","kind":"architecture-dead-end","trigger":["WalkMyPlan","legacy spatial runtime"],"rule":"Do not restore superseded WalkMyPlan architecture to make current tests pass.","source":"PRODUCT-KNOWLEDGE.md"},
+    {"id":"sh3d-authority-replacement","kind":"authority-violation","trigger":["replace SH3D","GLB authority","derived model as source"],"rule":"Do not promote a derived representation to replace master/HomeFinder.sh3d authority without an explicit endorsed architecture decision.","source":"MASTER_SKILL.md"},
+    {"id":"http200-is-success","kind":"verification-dead-end","trigger":["HTTP 200","static availability","browser success"],"rule":"HTTP/static availability is not application success; validate intended runtime markers and behavior.","source":"MASTER_SKILL.md"},
+    {"id":"assertion-weakening","kind":"verification-dead-end","trigger":["weaken test","remove assertion","make CI green"],"rule":"Do not weaken meaningful acceptance assertions to conceal upstream failures.","source":"MASTER_SKILL.md"},
+    {"id":"invented-spatial-geometry","kind":"spatial-dead-end","trigger":["invent geometry","placeholder geometry","calculated center"],"rule":"Use actual source geometry/coordinates and evidence; never invent spatial truth to satisfy a renderer.","source":"MASTER_SKILL.md"},
+    {"id":"blanket-document-updates","kind":"governance-antipattern","trigger":["update every document","duplicate docs","mass documentation update"],"rule":"Update the minimum complete canonical set determined by impact; do not mechanically touch every document.","source":"project-guide/repository-governance/EXECUTION-TRACE-AND-FILE-UPDATE.md"},
+    {"id":"remote-count-fabrication","kind":"census-antipattern","trigger":["remote API count","partial tree count","invent totals"],"rule":"Do not promote incomplete remote API views as full project census totals; run the census from a checked-out repository.","source":"project-guide/repository-governance/CENSUS-AND-INVENTORY.md"},
+    {"id":"duplicate-dictionary","kind":"architecture-antipattern","trigger":["new dictionary","duplicate registry","second semantic dictionary"],"rule":"Preserve active HomeFinder dictionary ownership and create structural indexes only when a real ownership gap exists.","source":"project-guide/DOCUMENTATION-MAP.md"},
+    {"id":"history-rewrite-without-reconciliation","kind":"git-antipattern","trigger":["force push","squash","rewrite history"],"rule":"Treat history rewriting as a separate Git/branch-reconciliation gate; never silently rewrite main or a shared validation branch.","source":"MASTER_SKILL.md"}
+  ]
+}
