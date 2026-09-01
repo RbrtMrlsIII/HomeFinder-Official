@@ -62,7 +62,7 @@
 - P04 binary promotion: **not completed**; no workaround promotion endorsed.
 - P04.3: **unchecked / blocked**.
 - Current isolation branch: `p04/glb-runtime-restored-2026-09-01`.
-- Current P04 branch head: `9b4a60a39cc508ffb105fb5602e6ecc592b8f1eb`.
+- Current P04 branch head at final E3 handover update: `eca455903872d8a00726988edf53e2c17a1d90c8`.
 - `main` head observed during E3: `986e39e5a0d641a24acde327766cf7f42e6f1577`.
 - Controlled PR: `#6` (draft, unmerged); GitHub reports 91 commits and 44 changed files on the PR, and the branch is 91 commits ahead / 3 commits behind `main` with a divergent merge base. This PR remains a validation vehicle; no merge is endorsed from the current state.
 - Main SH3D viewer: unchanged.
