@@ -1,6 +1,6 @@
 # HomeFinder — AI Assistant Continuity
 
-This is the **small, current orientation layer for AI-assisted sessions**. Its purpose is to prevent already-resolved investigations, wrong architectural assumptions, and obsolete experiments from being repeated.
+This is the **small, current orientation layer for AI-assisted sessions**. Its purpose is to prevent already-resolved investigations, wrong architectural assumptions, obsolete experiments, and duplicate automation from being repeated.
 
 It is not a report archive, skill library, contract replacement, or historical diary. Detailed evidence stays in its owning document. See `project-guide/repository-governance/FINDINGS-TO-KNOWLEDGE.md` for the promotion/deletion lifecycle.
 
@@ -12,9 +12,7 @@ It is not a report archive, skill library, contract replacement, or historical d
 
 **Current execution-system gate:** CI / Execution-System Integration Reconciliation.
 
-**E-series reconciliation status:** PROGRAM RECONCILIATION REQUIRED. E0–E6 capabilities remain retained, but the program must integrate with existing HomeFinder automation rather than creating a competing workflow universe. E7 is not endorsed. E8 is held.
-
-**E6 status:** EXECUTED / VALIDATED / ENDORSED. The adopted capability is a derived Structural Intelligence Index for cross-domain discovery/lineage. Existing semantic, spatial, contract, and execution authorities remain unchanged.
+**E-series reconciliation status:** PROGRAM RECONCILIATION REQUIRED. E0–E6 capabilities remain retained, but the program must integrate with existing HomeFinder architecture rather than creating competing execution or CI systems. E7 is not endorsed. E8 is held.
 
 **Not endorsed:** P04.3, P04.4, P04.5, P04.6; E7; E8.
 
@@ -32,7 +30,25 @@ Use the project sequence for every change:
 
 Do not jump from a finding directly to implementation or deletion.
 
-Startup and handover are always **whole-project**, even when the active gate is narrow. `project-guide/HandOver.md` is mandatory at every gate.
+Startup and handover are always **whole-project**, even when the active gate is narrow. `project-guide/HandOver.md` is mandatory at every gate and is the single whole-project handover authority.
+
+Every gate must carry, as applicable and without exception to the whole-project handover requirement: findings, machine-readable state, validation evidence, endorsement state, knowledge-distillation assessment, and the current continuation point.
+
+## Proven mechanisms and anti-repeat rule
+
+**HomeFinder already has proven execution mechanisms. Reuse them before inventing new ones.**
+
+The HomeFinder browser-verification path used for the established T01/T02 lineage is the proven browser-execution baseline. A later milestone does **not** by itself justify a new browser workflow, test harness, runner, or validation path.
+
+Before creating or changing automation:
+
+`existing mechanism → historical proof → actual limitation → evidence of materially different requirement → bounded change`
+
+Do not create milestone-specific workflow clones merely because a gate has a different name. A new workflow requires evidence that the established mechanism cannot satisfy the new execution requirement.
+
+A failed application assertion is not evidence that the runner or workflow infrastructure is defective. First separate infrastructure failure from application/runtime failure. Do not repeat a healthy runner through another workflow just because the application assertion failed.
+
+Historical T01/T02 browser evidence is therefore an anti-repeat reference. Do not rerun old successful workflows merely to recreate confidence already established. Reuse the proven mechanism for current validation when current evidence is actually required.
 
 ## Current P04 memory — do not repeat old experiments
 
@@ -43,21 +59,31 @@ Startup and handover are always **whole-project**, even when the active gate is 
 - The four approved binaries remain preserved in the handoff evidence package with their recorded SHA-256 values. Binary repository promotion is the remaining P04 runtime prerequisite.
 - Do not weaken the P04 assertions, substitute placeholder geometry, or restore superseded WalkMyPlan architecture merely to make the browser suite green.
 
+The final in-flight P04 workflow run created during workflow retirement (`33471269425`) completed with infrastructure setup, Chromium installation, P04 execution, and evidence upload successful except for the focused application/runtime assertions. Treat its failure as historical evidence of the P04 runtime state, not as justification to resurrect another browser workflow.
+
 ## Execution-system memory
 
-- E0 established the need for an execution-system layer, but the current reconciliation adds an important constraint: **existing repository automation is part of the baseline architecture**.
+- E0 established the need for an execution-system layer, but the program reconciliation adds an important constraint: **existing repository automation is part of the baseline architecture**.
 - E1 established `MASTER_SKILL.md` v1.2 as the single canonical skill with equalized procedures for all major disciplines and whole-project handover.
 - E2 established `.agent/sessions/`, `scripts/session_logger.py`, and `project-guide/repository-governance/EXECUTION-TRACE-AND-FILE-UPDATE.md`.
 - E3 established `scripts/census.py`, `.agent/census/census.config.json`, and `project-guide/repository-governance/CENSUS-AND-INVENTORY.md`.
 - E3 must not invent full-project numeric counts from truncated remote API responses. Use the census from a checked-out repository for authoritative structural totals.
 - Existing semantic dictionary ownership remains `active_development/data/dictionary.json`; existing authored-model census remains `active_development/3d/docs/model-census.json`.
 - E4 established `.agent/knowledge/ANTI-REPEAT-INDEX.json`, `scripts/knowledge-search.py`, and `project-guide/repository-governance/KNOWLEDGE-AND-ANTI-REPEAT.md`.
-- E4 requires an anti-pattern/known-dead-end search before Classify for non-trivial approaches. A strong match is a stop-and-inspect signal, not automatic authority to reject a new approach.
+- E4 requires an anti-pattern/known-dead-end search before Classify for non-trivial approaches. A match must be inspected against current evidence before proceeding.
 - E4 keeps `PRODUCT-KNOWLEDGE.md` as the durable-knowledge authority; the anti-repeat index is a derived machine index and must not become a competing knowledge source.
 - E5 established canonical artifact/build provenance across HomeFinder, GitHub Actions, and Vercel. `builds.json` records exact source commits, artifact identity, deployment identity, and evidence states without conflating deployment with runtime success.
 - E6 established a derived structural-intelligence index for cross-domain discovery and lineage. Existing domain-owned sources remain authorities; the index is navigation state only.
-- E-series reconciliation found that `.github/workflows/homefinder-browser.yml` already owns broad browser verification, `.github/workflows/homefinder-p04.yml` owns P04 validation, and `.github/workflows/AI_Key.yml` is a separate privileged scheduled/manual workflow with write authority. Do not absorb the latter into E7.
-- The E7 workflow introduced during the first enforcement attempt was removed because it duplicated CI orchestration. Retained E7 work is the reusable read-only enforcement capability and procedure, awaiting integration into existing automation ownership.
+- The E-series reconciliation found that HomeFinder already had a browser workflow and a P04-specific workflow. The P04-specific workflow was a redundant second browser execution path because the project's established browser verification mechanism already provided the proven execution foundation. Both obsolete active workflow definitions were retired rather than used to justify repeated validation infrastructure.
+- The scheduled `AI_Key.yml` workflow was also retired from the active repository surface during CI cleanup because direct scheduled `contents: write` automation was not part of the execution-system architecture and could mutate `main` outside the governed gate flow.
+- Do not create another workflow clone for P04 or a later milestone without a documented, evidence-backed materially different execution requirement.
+- Retired workflow YAMLs and their historical runs are evidence/history, not current automation authorities. Do not resurrect them from stale documentation or checkpoint archives.
+
+## CI state after reconciliation
+
+The active repository currently has **no `.github/workflows/` automation** on the clean P04 validation branch. This is an intentional clean slate after retiring redundant/ungoverned workflow definitions. The next CI design must be a dedicated bounded gate that first reconciles the proven T01/T02 browser execution model with the current P04/runtime requirements.
+
+The old workflow runs remain visible in GitHub history. For example, run `33451823171` failed only at the focused P04 runtime assertions while setup and evidence upload succeeded; run `33471269425` was the final run triggered while `homefinder-p04.yml` was being deleted and likewise reached the focused runtime step before failing. These runs must be treated as evidence, not as active workflow ownership.
 
 ## Minimal-knowledge rule
 
@@ -81,7 +107,8 @@ A detailed findings document becomes a deletion candidate only after its unique 
 - Historical artifacts are evidence until current status revalidates them.
 - Cleanup is an evidence-preserving engineering activity; no blind bulk deletion, renaming, or restructuring.
 - E6 structural indexes are derived navigation state, never authority.
-- Existing GitHub Actions and Vercel automation must be mapped before new execution automation is added.
+- Existing or historically proven GitHub/Vercel mechanisms must be inspected before new execution automation is added.
+- **T01/T02 proven browser verification is the default browser-execution baseline.** Do not create a second workflow for a new milestone without evidence of a materially different requirement.
 
 ## Primary continuity sources
 
@@ -143,21 +170,15 @@ A detailed findings document becomes a deletion candidate only after its unique 
 
 `docs/execution-system/E-SERIES-RECONCILIATION-VALIDATION-2026-09-01.md` — whole E-series reconciliation validation evidence.
 
-## Existing automation owners
-
-`.github/workflows/homefinder-browser.yml` — repository-wide browser verification.
-
-`.github/workflows/homefinder-p04.yml` — dedicated P04 spatial/visual workflow.
-
-`.github/workflows/AI_Key.yml` — pre-existing privileged scheduled/manual workflow; outside E-series authority and subject to separate security/governance review.
-
 ## Session-start rule
 
 Start from current repository state. Read this file, then `HandOver.md`, `Endorsement.md`, the relevant masterplan section, the applicable skill section, and the detailed evidence for the active gate.
 
 Before Classify on a non-trivial approach, search durable knowledge for related anti-patterns and known dead ends. A match must be inspected against current evidence before proceeding.
 
-Before adding automation, inspect existing GitHub/Vercel automation ownership and triggers. Do not create a duplicate workflow owner.
+Before adding automation, inspect existing GitHub/Vercel automation ownership, triggers, and historical proof. **Do not create a duplicate workflow owner.**
+
+Before creating a new browser runner/workflow, explicitly check the proven T01/T02 browser-verification lineage and document why reuse or extension is insufficient.
 
 Do not reconstruct old history from nested ZIPs when a current canonical record exists.
 Do not repeat a disproven hypothesis without new evidence.
