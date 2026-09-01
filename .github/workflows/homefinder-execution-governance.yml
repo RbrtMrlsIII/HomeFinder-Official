@@ -81,4 +81,7 @@ jobs:
 
       - name: Confirm this workflow is governance-only
         run: |
-          ! grep -E "playwright|chromium|p04-spatial|three-glb" .github/workflows/homefinder-execution-governance.yml
+          if grep -Eqi "playwright|chromium|p04-spatial|three-glb" .github/workflows/homefinder-execution-governance.yml; then
+            echo "ERROR: governance workflow contains product/browser execution references"
+            exit 1
+          fi
