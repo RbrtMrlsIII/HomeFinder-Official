@@ -7,8 +7,37 @@
   "gate": "Knowledge & Anti-Repeat System",
   "branch": "p04/glb-runtime-restored-2026-09-01",
   "next_gate": "E5 — Canonical Artifact & Build Provenance",
-  "actions": [],
-  "files_changed": [],
-  "validation": [],
+  "actions": [
+    {"action":"Established whole-project continuity before mutation.","impact":"SYSTEMIC"},
+    {"action":"Inspected PRODUCT-KNOWLEDGE.md, FINDINGS-TO-KNOWLEDGE.md, MASTER_SKILL.md, dictionary ownership, E3 census, and current P04 continuity.","impact":"SYSTEMIC"},
+    {"action":"Created derived machine-readable .agent/knowledge/ANTI-REPEAT-INDEX.json with 11 high-value anti-pattern/dead-end triggers and canonical source pointers.","impact":"SYSTEMIC"},
+    {"action":"Created scripts/knowledge-search.py with deterministic search, scoring, and --anti gate behavior.","impact":"BOUNDED"},
+    {"action":"Created project-guide/repository-governance/KNOWLEDGE-AND-ANTI-REPEAT.md defining the pre-Classify knowledge check and authority boundary.","impact":"SYSTEMIC"},
+    {"action":"Created docs/knowledge/E4-BASELINE-2026-09-01.md documenting the E4 evidence boundary and validation.","impact":"BOUNDED"},
+    {"action":"Updated AI continuity and Documentation Map to route E4 knowledge-system ownership without creating duplicate authorities.","impact":"BOUNDED"},
+    {"action":"Updated whole-project HandOver and complete chronological Endorsement ledger for E4.","impact":"SYSTEMIC"},
+    {"action":"Validated the search helper with syntax checking and representative matching/unrelated query behavior.","impact":"BOUNDED"}
+  ],
+  "files_changed": [
+    ".agent/sessions/session-2026-09-01-031500-E4.json",
+    ".agent/knowledge/ANTI-REPEAT-INDEX.json",
+    "scripts/knowledge-search.py",
+    "project-guide/repository-governance/KNOWLEDGE-AND-ANTI-REPEAT.md",
+    "docs/knowledge/E4-BASELINE-2026-09-01.md",
+    "project-guide/AI_ASSISTANT_READ_ME.md",
+    "project-guide/HandOver.md",
+    "project-guide/Endorsement.md",
+    "project-guide/DOCUMENTATION-MAP.md"
+  ],
+  "validation": [
+    "Canonical durable knowledge owner remains PRODUCT-KNOWLEDGE.md.",
+    "Anti-repeat index is explicitly derived and cannot override canonical knowledge.",
+    "Search helper reports a strong indexed anti-pattern match with exit code 2 under --anti.",
+    "Unrelated query returns exit code 0.",
+    "Whole-project HandOver and complete Endorsement ledger were updated.",
+    "P04 acceptance gates remain unchanged and unendorsed.",
+    "PR #6 remains a draft, unmerged validation vehicle.",
+    "No duplicate skill, dictionary, Product Knowledge, or handover authority was created."
+  ],
   "complete_trace": true
 }
