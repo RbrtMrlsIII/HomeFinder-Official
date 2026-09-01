@@ -1,21 +1,22 @@
 {
   "session_id": "2026-09-01-114800-E5-PROMOTION",
   "started_at": "2026-09-01T11:48:00+08:00",
-  "ended_at": "2026-09-01T12:02:00+08:00",
+  "ended_at": "2026-09-01T12:07:00+08:00",
   "agent_id": "ChatGPT",
-  "previous_checkpoint": "HomeFinder E5 checkpoint supplied by user; live branch state re-established before new E5 execution.",
+  "previous_checkpoint": "HomeFinder E5 checkpoint supplied by user; live branch state re-established before re-execution.",
   "current_milestone": "E5",
   "gate": "Canonical Artifact & Build Provenance",
   "status": "COMPLETED_VALIDATED_ENDORSED",
   "actions": [
-    {"timestamp":"2026-09-01T11:48:00+08:00","action":"Observe","detail":"Read the supplied HomeFinder E5 checkpoint, execution-discipline guidance, universal-agent guidance, and live HomeFinder continuity/skill state."},
-    {"timestamp":"2026-09-01T11:50:00+08:00","action":"Record","detail":"Established live repository RbrtMrlsIII/HomeFinder-Official, branch p04/glb-runtime-restored-2026-09-01, draft PR #6, GitHub CI evidence, and linked Vercel project/deployment."},
-    {"timestamp":"2026-09-01T11:52:00+08:00","action":"Understand","detail":"Mapped provenance across exact source commits: GitHub artifact run 33451823171 from 5c990311..., and Vercel READY deployment dpl_5Fi2KT76... from d2149c79.... Preserved the distinction between artifact upload, deployment readiness, runtime validation, and endorsement."},
-    {"timestamp":"2026-09-01T11:54:00+08:00","action":"Classify","detail":"E5 is SYSTEMIC execution-system work; GitHub CI failure remains P04 evidence, Vercel READY remains deployment evidence, and SH3D/P04 acceptance boundaries remain protected."},
-    {"timestamp":"2026-09-01T11:56:00+08:00","action":"Align","detail":"Reconciled the provenance specification, machine registry, helper, baseline, findings, validation evidence, and existing HomeFinder artifact ownership model."},
-    {"timestamp":"2026-09-01T11:58:00+08:00","action":"Validate","detail":"Confirmed real GitHub artifact metadata, workflow job outcomes, artifact digest/size, Vercel project/deployment metadata, live provenance files, and protected-boundary conditions. Corrected the helper schema to include tooling and endorsement state."},
-    {"timestamp":"2026-09-01T12:00:00+08:00","action":"Endorse","detail":"E5 execution-system capability endorsed because findings, machine registry, validation evidence, and whole-project continuity are synchronized. No new durable project rule beyond E1/E4 knowledge was identified; E5 operationalizes those rules."},
-    {"timestamp":"2026-09-01T12:02:00+08:00","action":"Advance","detail":"E5 closed. Next execution-system gate is E6 — Structural Intelligence. P04.3-P04.6 remain separate and unendorsed."}
+    {"timestamp":"2026-09-01T11:48:00+08:00","action":"Observe","detail":"Read the supplied E5 checkpoint, Universal Agent guidance, HomeFinder execution discipline, canonical skill, handover, endorsement, and current repository state."},
+    {"timestamp":"2026-09-01T11:50:00+08:00","action":"Record","detail":"Established live repository/branch/PR, GitHub Actions artifact provenance, and linked Vercel project/deployments."},
+    {"timestamp":"2026-09-01T11:52:00+08:00","action":"Understand","detail":"Separated exact source commits for evidence: GitHub run 33451823171 from 5c990311... and Vercel READY deployment from d2149c79..., later synchronized E5 handover deployment from 34801d96...."},
+    {"timestamp":"2026-09-01T11:54:00+08:00","action":"Classify","detail":"Classified E5 as SYSTEMIC execution-system work; retained P04 runtime failure as P04 evidence and Vercel READY as deployment evidence only; protected SH3D and acceptance boundaries."},
+    {"timestamp":"2026-09-01T11:56:00+08:00","action":"Align","detail":"Reconciled the E5 specification, findings, machine registry, helper, baseline, validation evidence, handover, endorsement ledger, and session trace."},
+    {"timestamp":"2026-09-01T11:58:00+08:00","action":"Validate","detail":"Verified GitHub workflow/job/artifact metadata, exact artifact digest and size, Vercel project/deployment metadata, live repository files, helper-schema alignment, and protected boundaries. Corrected the initial empty-registry and helper-schema defects."},
+    {"timestamp":"2026-09-01T12:00:00+08:00","action":"Endorse","detail":"E5 provenance capability endorsed after the mandatory findings, machine state, validation evidence, and whole-project handover were synchronized. Knowledge-distillation assessment concluded no new durable rule beyond E1/E4; E5 operationalizes those rules."},
+    {"timestamp":"2026-09-01T12:03:00+08:00","action":"Advance","detail":"Recorded the current Vercel BUILDING deployment separately from prior READY E5 deployments; did not claim READY for an in-flight deployment."},
+    {"timestamp":"2026-09-01T12:07:00+08:00","action":"Close","detail":"Closed E5 session after final live-read verification of the canonical provenance registry and documentation. Next execution-system gate: E6 — Structural Intelligence."}
   ],
   "files_changed": [
     ".agent/sessions/session-2026-09-01-114800-E5-PROMOTION.json",
@@ -33,8 +34,9 @@
     "github_workflow_conclusion": "failure",
     "github_artifact_id": 9780126370,
     "github_artifact_sha256": "d4e59131592c7af694b222726c603c3fa5683cf392cd1e876953632402cdec67",
-    "vercel_deployment_id": "dpl_5Fi2KT76WLu7zUFH1wcu3yPPU6Nj",
-    "vercel_ready": true,
+    "vercel_ready_deployment": "dpl_9R4XniaZgWKZxnq6jmpsayzRJj5j",
+    "vercel_ready_source_commit": "34801d96c5db22507c4a95443eb7f0216fbca654",
+    "vercel_current_observation": {"deployment":"dpl_CaC3CH1dTLgmRWw6YZW6A9eXTnha","source_commit":"3dffb3478713d056fe22dd2997fe2ea712ef5224","state":"BUILDING"},
     "registry_populated": true,
     "findings_recorded": true,
     "validation_evidence_recorded": true,
@@ -46,6 +48,6 @@
     "pr6_merged": false,
     "history_rewritten": false
   },
-  "complete_trace": "Start-before-mutation -> whole-project continuity read -> anti-repeat/disciplined evaluation -> GitHub/Vercel provenance observation -> findings and classifications -> schema/registry/helper alignment -> real provenance records -> validation evidence -> whole-project continuity -> endorsement -> close -> next gate E6.",
-  "duration_seconds": 840
+  "complete_trace": "Start-before-mutation -> whole-project discipline read -> anti-repeat/reconciliation -> GitHub/Vercel observation -> findings -> classification -> alignment -> canonical registry population -> validation -> whole-project handover -> endorsement -> current Vercel lifecycle recorded -> final live-read -> close -> E6 next gate.",
+  "duration_seconds": 1140
 }
