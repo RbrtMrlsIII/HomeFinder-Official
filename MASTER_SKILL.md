@@ -1,1683 +1,225 @@
-# HomeFinder Engineering System
-## Master Skill v1.0
-
----
+# HomeFinder Engineering System — Master Skill v1.2
 
-# 00. PURPOSE AND AUTHORITY
+**Status:** PROJECT-WIDE ACTIVE STANDARD  
+**Canonical role:** Single project execution skill for HomeFinder  
+**Scope:** Whole project; all disciplines, gates, changes, validations, handovers, and cleanup
 
-This is the unified engineering skill for the HomeFinder project.
+## 1. Authority and purpose
 
-It combines repository intelligence, architecture, development,
-verification, reconstruction, tooling, and continuity procedures into
-one coordinated operating system.
+This is the one canonical HomeFinder execution skill. It defines how the project is executed across product, architecture, implementation, verification, 3D/spatial, repository governance, continuity, knowledge promotion, and whole-project handover.
 
-It helps an AI:
+It does not replace authoritative project sources, contracts, manifests, ADRs, or user decisions. Discipline-specific documents remain in their canonical locations; this skill defines how they are used together.
 
-- understand HomeFinder
-- inspect the repository
-- reconstruct architecture
-- classify artifacts
-- trace dependencies
-- reconcile contracts
-- develop features
-- investigate bugs
-- verify behavior
-- analyze 3D/spatial systems
-- maintain repository integrity
-- perform controlled cleanup
-- preserve historical lineage
-- create repository-analysis tooling
-- maintain session continuity
-
-This skill operates under:
+Never create parallel copies of this skill for individual disciplines.
 
-1. HomeFinder Master Project Knowledge
-2. HomeFinder Master Custom Instructions
-3. explicit user decisions
-4. current repository evidence
+## 2. Non-negotiable execution lifecycle
 
-This skill does not override those authorities.
+Every substantive execution follows:
 
----
+**Observe → Record → Understand → Classify → Align → Validate → Endorse → Advance**
 
-# 01. CORE OPERATING MODEL
+After decision:
 
-Use:
+**Endorse / Reject / Defer → Distill durable knowledge → Update continuity → Retain necessary evidence → Archive/Delete justified redundancy → Advance**
 
-OBSERVE
-→ UNDERSTAND
-→ CLASSIFY
-→ MAP
-→ PLAN
-→ IMPLEMENT / MIGRATE
-→ VERIFY
-→ RECONCILE
-→ RECORD
-→ CONTINUE
+Precise states are required: **PROPOSED, OBSERVED, DERIVED, VERIFIED, ENDORSED, FROZEN, DEFERRED, SUPERSEDED, HISTORICAL, UNRESOLVED, BLOCKED, REJECTED.**
 
-Do not jump directly from request to mass change when investigation is
-required.
+Never describe a proposal as executed, execution as validated, or validation as endorsed without evidence.
 
-Scale investigation to risk and scope.
-
-For low-risk read-only work, keep the process lightweight.
-For high-risk changes, establish stronger evidence before acting.
+## 3. Startup: whole-project continuity first
 
----
+Before mutation, establish the complete current HomeFinder state. Read the newest endorsed project-wide checkpoint/status, current `HandOver.md`, `Endorsement.md`, execution discipline records, masterplan, relevant contracts, this skill, required supporting guides, and `AI_ASSISTANT_READ_ME.md`.
 
-# 02. ENGINEERING ORCHESTRATION
+Identify authority, branch, active gate, accepted lineage, blockers, deferred work, protected boundaries, consumers, and already-proven evidence. Stop on unexplained drift, conflicting authority, missing context, or endorsement contradiction.
 
-## Purpose
+A bounded gate may change one area; startup and handover remain project-wide.
 
-Determine:
+## 4. Universal procedure
 
-- what the user is actually asking
-- what engineering problem is involved
-- what must be known first
-- which system modes are required
-- what order minimizes risk
+### Observe
+Inspect actual source, runtime, repository, contracts, tests, deployment, or evidence. Do not infer implementation from names alone.
 
-## Request Classification
+### Record
+Record the smallest useful human-readable finding and machine state with provenance.
 
-Classify requests as one or more of:
+### Understand
+Determine intent, authority, ownership, dependencies, consumers, constraints, failure mode, and evidence role.
 
-- discovery
-- architecture
-- implementation
-- bug investigation
-- verification
-- contract work
-- security work
-- Firebase/database work
-- frontend/UI work
-- 3D/spatial work
-- integration work
-- repository cleanup
-- migration
-- historical reconstruction
-- tooling
-- documentation
-- mixed-domain work
+### Classify
+Classify discipline, owner, impact, state, authority role, evidence role, scope, current/historical status, and cross-discipline impact.
 
-The wording of a request is not necessarily its real engineering
-category.
+### Align
+Reconcile contracts, interfaces, paths, schemas, identifiers, ownership, naming, architecture, and consumers before mutation.
 
-Example:
+### Validate
+Validate changed source and affected consumers using deterministic evidence. Separate environment failures from application failures.
 
-"Move this file"
+### Endorse
+A designated authority accepts, rejects, or defers. Passing tests do not automatically create endorsement.
 
-may require:
+### Advance
+Update canonical state, machine records, documentation, continuity, evidence references, and the whole-project handover before entering the next gate.
 
-Artifact Classification
-+
-Reference Tracing
-+
-Architecture Mapping
-+
-Cleanup / Reconstruction
-+
-Verification
+## 5. Cross-cutting baseline
 
-## Dependency-Aware Ordering
+1. `master/HomeFinder.sh3d` and other actually authoritative sources remain authoritative; derivatives corroborate only.
+2. Preserve accepted lineage and start from the latest consolidated checkpoint.
+3. Use source-first census; registries corroborate actual source.
+4. Keep active work bounded to the gate; discoveries outside scope become recorded future targets.
+5. One new physical 3D target may be ACTIVE unless an endorsed architecture changes that rule.
+6. Sequential gates cannot bypass a frozen predecessor.
+7. Use actual source coordinates and transform semantics; never silently substitute calculated centers.
+8. Keep distinct identity dimensions separate: source IDs, semantic IDs, physical elevation, house ownership, spatial IDs, etc.
+9. Presentation never invents authorization semantics.
+10. Physical traversal requires evidenced openings/circulation; logical routing remains distinct from geometry.
+11. Record multiple logical POVs individually where source behavior requires them.
+12. Record responsive behavior when viewport changes camera, FOV, visibility, layout, or interaction.
+13. Synchronize DOM/CSS/JS/camera/3D choreography through explicit contracts where applicable.
+14. GLB/KTX2/other runtime assets are derived and never replace SH3D authority.
+15. Evidence must state exactly what passed, failed, and was not proven.
+16. Canonical documentation/state is updated in the same gate when required.
+17. Required checkpoint packages represent the whole project continuity state and contain no nested handoff archives.
 
-Prefer:
+## 6. Discipline procedures
 
-DISCOVERY
-→ CLASSIFICATION
-→ DEPENDENCY ANALYSIS
-→ ARCHITECTURE / CONTRACT
-→ IMPLEMENTATION OR MIGRATION
-→ VERIFICATION
-→ RECONCILIATION
+### Product / Requirements
+Observe behavior, journeys, acceptance criteria, constraints, and non-goals. Record ambiguities and contradictions. Understand user intent and acceptance boundaries. Classify functional, non-functional, UX, policy, deferred, and unresolved requirements. Align with architecture, contracts, data, UI, and spatial behavior. Validate observable acceptance criteria. Endorse only when behavior and boundary are unambiguous. Distill durable product decisions.
 
-Skip completed stages only when trustworthy existing evidence already
-establishes the required facts.
+**Do not:** invent product behavior to unblock engineering.
 
-## Risk Levels
+### Architecture
+Observe modules, data flow, boundaries, contracts, ownership, dependencies, and existing patterns. Record findings. Understand why current structure exists. Classify local, cross-domain, migration, compatibility, and architectural impact. Align with authority and ownership. Validate integration points and affected consumers. Endorse only when boundaries and ownership remain explicit. Update architecture records.
 
-### LOW
+**Do not:** redefine another discipline's authority to fix a local symptom.
 
-- read-only inspection
-- searches
-- inventories
-- reports
-- analysis
+### Frontend / UI
+Observe rendered UI, components, routes, state, styles, accessibility, responsiveness, and runtime output. Record visual/interaction/state findings. Understand data/state ownership and user flow. Classify presentation, state, routing, binding, accessibility, or cross-domain impact. Align with product, backend, data, 3D, and security contracts. Validate affected viewports and interactions. Endorse against explicit acceptance criteria.
 
-### MODERATE
+**Do not:** use visual polish to conceal functional or contract failures.
 
-- localized implementation
-- test changes
-- configuration changes
-- limited restructuring
+### Backend / API
+Observe routes, handlers, schemas, persistence, validation, authorization, errors, and consumers. Record request/response semantics. Understand ownership, consistency, compatibility, and lifecycle. Classify contract/data/security/performance/compatibility impact. Align API behavior with canonical contracts. Validate happy paths, invalid input, authorization, and consumers. Endorse only when contract behavior is proven.
 
-### HIGH
+**Do not:** change API semantics merely to satisfy one client.
 
-- renaming
-- moving
-- deleting
-- schema migration
-- authentication changes
-- security-rule changes
-- major architectural changes
-- bulk repository operations
+### Data / Storage
+Observe schemas, storage paths, migrations, fixtures, indexes, permissions, provenance, and authority declarations. Record shape/integrity/lifecycle findings. Understand authoritative versus derived, cached, fixture, and historical data. Classify source/derived/cache/fixture/migration/historical roles. Align schemas and identifiers. Validate integrity, compatibility, permissions, and migration safety. Endorse only with authority-preserving evidence.
 
-Higher-risk work requires stronger evidence and validation.
+**Do not:** promote a generated export or cache to authority without endorsement.
 
----
+### 3D / Spatial
+Observe SH3D/source XML, spatial census, rooms, objects, levels, cameras, coordinates, and consumers. Record findings with source provenance. Understand units, coordinates, IDs, house ownership, and spatial authority. Classify source-model, derived-geometry, camera, transform, interaction, traversal, and presentation impacts. Align derived artifacts with authoritative source. Validate extraction, transforms, scale, orientation, target IDs, containment, adjacency, and consumers. Endorse only when source and derived behavior agree.
 
-# 03. REPOSITORY ARCHAEOLOGY MODE
+**Do not:** mutate authoritative SH3D to make a derivative pass.
 
-## Purpose
+### GLB / Web Graphics
+Observe provenance, hashes, canonical paths, import logic, renderer state, target IDs, and binary availability. Keep binary evidence separate from module/CDN evidence. Align approved binaries with canonical runtime paths. Validate network, module resolution, binary availability, parsing/loading, target binding, scale, coordinate state, and renderer state. Endorse only when approved binaries actually load and assertions pass.
 
-Understand the physical repository before making substantial changes.
+**Do not:** weaken tests, invent geometry, substitute unrelated models, or resurrect deferred functionality for green CI.
 
-Default behavior:
+### Browser / Runtime
+Observe server behavior, browser configuration, network, console errors, runtime markers, and application state. Record infrastructure versus application failures separately. Classify environment, dependency, routing, runtime, and application impact. Align browser configuration with supported contracts. Validate actual runtime markers. Endorse only on intended browser behavior.
 
-READ-ONLY
+**Do not:** treat HTTP 200 or static availability as application success.
 
-## Initial Archive Handling
+### Testing / QA
+Observe test definitions, fixtures, logs, traces, screenshots, CI context, and outputs. Record exact assertions and scope. Understand what each test proves and cannot prove. Classify evidence type. Align tests with acceptance gates and contracts. Validate changed source and consumers, preserving meaningful negative tests. Endorse only when evidence is sufficient and reproducible.
 
-When receiving a project archive:
+**Do not:** weaken assertions because an upstream dependency is missing.
 
-1. preserve the original
-2. create a safe working extraction/copy
-3. inspect the working copy
-4. do not mutate the original archive
-5. preserve important durable findings inside the project repository
+### Security
+Observe authentication, authorization, input validation, file boundaries, secrets handling, exposed surfaces, and access paths. Record security findings. Understand trust boundaries and threat surfaces. Classify confidentiality, integrity, authorization, injection, exposure, and operational impact. Align with security contracts. Validate allowed and denied cases, boundaries, permissions, and secret handling. Endorse when required security evidence exists.
 
-Never assume historical file counts remain current.
+**Do not:** weaken security boundaries to make functional tests pass.
 
-## Inventory
+### CI / CD
+Observe triggers, jobs, dependencies, artifacts, branch context, permissions, and environment setup. Record which changes triggered which gates and what each run proves. Classify trigger/environment/build/test/artifact/deployment impact. Align workflow scope with gate intent. Validate positive and negative trigger behavior where appropriate. Endorse only when evidence matches the intended gate.
 
-Record where appropriate:
+**Do not:** let documentation-only activity masquerade as spatial-runtime evidence without an explicit gate reason.
 
-- path
-- filename
-- extension
-- size
-- SHA-256
-- parent directory
-- top-level directory
-- probable role
-- unusual characteristics
+### Deployment / Hosting
+Observe configuration, environment variables, domains, CDN, builds, runtime endpoints, and deployment identity. Record environment differences. Understand source/build/hosting/CDN boundaries. Align deployment with validated state. Validate actual user/runtime path. Endorse against deployment criteria.
 
-## Structural Inspection
+**Do not:** equate source validation with production validation.
 
-Identify:
+### Documentation / Knowledge
+Observe canonical documents, routing, status, evidence, duplicates, and stale material. Record gaps and knowledge candidates. Understand policy versus contract, evidence, history, continuity, and implementation guidance. Classify before editing/moving/archive/delete. Align each durable fact with one canonical owner. Validate links, references, consistency, and machine state. Promote verified, reusable, stable, actionable knowledge.
 
-- root artifacts
-- major directories
-- nested structures
-- frontend
-- backend
-- database/Firebase
-- verification
-- documentation
-- contracts
-- configuration
-- historical records
-- 3D/spatial artifacts
-- generated outputs
-- tooling
+**Do not:** preserve document volume as a proxy for knowledge.
 
-Directory names are evidence, not automatic proof of canonical
-architecture.
+### Operations / Whole-Project Handover
+A handover is always for the **complete HomeFinder project state**, never merely the current feature or discipline. It must account for or route to canonical sources for project direction; repository/Git state; branch/gate/PR/deployment state where applicable; architecture and authority; requirements/contracts; frontend/backend/data; 3D/SH3D/GLB/runtime; QA/CI; security; deployment; documentation/knowledge; skills; accepted/rejected/deferred/blocked/unresolved findings; evidence; protected boundaries; known non-repeatable lessons; exact next safe action; and recovery considerations.
 
-## Historical Signals
+Validate that another authorized executor can continue without private memory. Keep the handover concise and routed rather than duplicating canonical sources.
 
-Investigate names containing:
+## 7. Repository governance
 
-- patch
-- phase
-- checkpoint
-- repair
-- foundation
-- final
-- historical
-- old
-- backup
-- archive
-- temporary
-- generated
+For add/move/rename/restructure/delete decisions identify producing discipline, consumers, authority role, historical role, test/CI impact, documentation impact, and whole-project handover impact. Make the smallest justified mutation, validate references and consumers, then update canonical state.
 
-These are investigation signals, not deletion instructions.
+Before deletion: **confirm identity → classify → scan references → resolve historical role → identify replacement/knowledge promotion → record disposition → delete only when justified → validate.**
 
-## Baseline Deliverables
+Prefer one physical canonical artifact with multiple logical classifications over duplicated physical copies.
 
-For formal baseline work, produce appropriate records such as:
+## 8. Knowledge and anti-repeat gate
 
-phase-01/
-- baseline-manifest.csv
-- directory-tree.txt
-- phase-01-report.md
-- execution-checklist.md
+Before Classify for a non-trivial approach, check current durable knowledge for known anti-patterns, disproven hypotheses, dead ends, gotchas, and protected boundaries. If a proposed approach repeats a known failed path, stop and record why before proceeding.
 
-Adapt the location if an existing canonical project structure already
-serves the same purpose.
+A finding is not durable knowledge merely because it is documented. Durable knowledge must be verified, reusable, stable, actionable, and traceable.
 
----
+Optimize for: **minimal repository footprint + increasing institutional knowledge.**
 
-# 04. ARTIFACT CLASSIFICATION MODE
+## 9. Session and update protocol
 
-## Purpose
+Every substantive session starts a trace before mutation and records start state, actions, changed files, validation, decisions, and end state. Update canonical records according to impact; do not mechanically touch every document for every change.
 
-Determine what an artifact actually represents.
+A change is complete only when its affected consumers, machine state, canonical documentation, knowledge impact, and whole-project continuity state are addressed.
 
-Never classify from extension or filename alone.
+## 10. Artifact/build provenance
 
-## Lifecycle Classes
+Buildable outputs must have canonical ownership and provenance sufficient to identify source state, timestamp, gate, inputs, status, artifacts, and validation. Do not relocate HomeFinder assets merely to imitate a generic build directory.
 
-An artifact may be:
+## 11. Census and structural intelligence
 
-- current
-- historical
-- superseded
-- deprecated
-- generated
-- temporary
-- unresolved
+Inventory before transformation. A HomeFinder census may cover product, UI, routes, backend, data, security, 3D/spatial, cameras, GLB, browser, tests, CI/CD, documentation, contracts, knowledge, and builds. Existing canonical dictionaries remain authoritative for their owned semantics; do not create duplicate dictionaries.
 
-## Functional Classes
+Architecture maps and structural indexes are derived views, not new authorities.
 
-Possible roles:
+## 12. Git history mutation
 
-- implementation
-- configuration
-- contract
-- documentation
-- verification
-- fixture
-- tooling
-- data
-- asset
-- model
-- manifest
-- report
+History rewriting is itself a bounded architectural operation. Before squash/force-update/low-level Git mutation: establish source branch/current commit; preserve a recoverable reference; establish desired tree and parent(s); validate the tree; perform mutation with an authorized repository executor; rerun gates; verify branch/PR/CI; update continuity and endorsement.
 
-## Domain Classes
+Do not rewrite `main` merely to clean an experimental branch without separate authorization.
 
-Possible domains:
+## 13. Evidence and acceptance
 
-- frontend
-- backend
-- database
-- Firebase
-- security
-- authentication
-- routes/navigation
-- 3D/spatial
-- integrations
-- contracts
-- verification
-- documentation
-- findings
-- reconciliation
-- checkpoints
-- archive
-- configuration
+Every completed gate produces:
 
-An artifact may have multiple logical classifications.
+1. human-readable findings;
+2. machine-readable state;
+3. validation/test evidence;
+4. **whole-project** handover/checkpoint.
 
-## Authority
+Knowledge-distillation is assessed explicitly: promote when durable knowledge exists; otherwise record that no new durable knowledge was identified.
 
-When evidence permits, classify an artifact as:
+Evidence types remain distinct: source, deterministic/unit/integration, browser/runtime, visual QA, CI, deployment, and historical evidence.
 
-- authoritative
-- canonical candidate
-- derived
-- supporting
-- historical
-- generated
-- unknown
+## 14. Final pre-advance checklist
 
-Do not infer authority merely from:
+Before advancing:
 
-- filename
-- location
-- timestamp
-- numerical prefix
-- words such as "final"
+- [ ] current whole-project state established;
+- [ ] authority explicit;
+- [ ] active gate and scope explicit;
+- [ ] affected consumers known;
+- [ ] proposal/execution/validation/endorsement not conflated;
+- [ ] source and consumer validation complete;
+- [ ] failures classified rather than hidden;
+- [ ] machine state updated;
+- [ ] canonical documentation updated;
+- [ ] durable knowledge promoted where appropriate;
+- [ ] retention/deletion disposition recorded;
+- [ ] whole-project handover current and consistent;
+- [ ] exact next gate/action explicit;
+- [ ] no protected boundary silently weakened.
 
-## Verification Classification
-
-A test-looking artifact may actually be:
-
-- executable test
-- executable verifier
-- helper
-- fixture
-- output
-- report
-- historical evidence
-- documentation
-- duplicate
-- unknown
-
-Do not create a new test merely because an artifact is ambiguous.
-
-## Duplicate Classification
-
-Potential duplicates must be classified as:
-
-- exact duplicate
-- near duplicate
-- historical copy
-- generated copy
-- superseded
-- independent
-- supporting
-- canonical candidate
-- unresolved
-
-Never delete merely because content appears duplicated.
-
----
-
-# 05. REFERENCE TRACING MODE
-
-## Purpose
-
-Determine what depends on an artifact before changing it.
-
-## Search Targets
-
-Inspect references across:
-
-- `.js`
-- `.mjs`
-- `.ts`
-- `.json`
-- `.md`
-- `.html`
-- `.css`
-- `.csv`
-- shell scripts
-- configuration
-- manifests
-- imports
-- exports
-- routes
-- dynamic paths
-
-## Reference Types
-
-Classify references as:
-
-- direct
-- indirect
-- dynamic
-- documentation
-- historical
-- generated
-- external
-
-## Dynamic References
-
-Pay attention to:
-
-- template literals
-- string concatenation
-- environment variables
-- path resolution
-- globbing
-- dynamic imports
-- runtime route construction
-- registry lookup
-
-Static search is not proof that dynamic references do not exist.
-
-## Migration Impact
-
-Before a rename or move, determine:
-
-OLD PATH
-→ REFERENCES
-→ CONSUMERS
-→ DEPENDENCIES
-→ DOCUMENTATION
-→ CONFIGURATION
-→ HISTORICAL IMPACT
-→ UNKNOWN REFERENCES
-→ RISK
-
-No high-impact migration should proceed while critical dependencies
-remain unresolved.
-
----
-
-# 06. ARCHITECTURE MAPPING MODE
-
-## Purpose
-
-Reconstruct how HomeFinder actually works.
-
-Always distinguish:
-
-CURRENT ARCHITECTURE
-INTENDED ARCHITECTURE
-PROPOSED ARCHITECTURE
-
-## Major Domains
-
-Investigate as supported by evidence:
-
-- frontend/UI
-- application logic
-- backend
-- database
-- Firebase
-- authentication
-- authorization
-- security
-- routes/navigation
-- 3D/spatial
-- integrations
-- contracts
-- configuration
-- verification
-- tooling
-
-Do not invent missing architecture.
-
-## Dependency Mapping
-
-For important components determine:
-
-- upstream dependencies
-- downstream consumers
-- shared dependencies
-- external dependencies
-- runtime dependencies
-- build dependencies
-- verification dependencies
-- cycles
-
-Do not automatically refactor detected cycles.
-
-## Ownership
-
-For important artifacts determine:
-
-WHAT SYSTEM DEFINES IT?
-WHAT SYSTEM MAINTAINS IT?
-WHAT SYSTEM CONSUMES IT?
-
-Physical location is not automatically ownership.
-
-## Authority Model
-
-Prefer:
-
-SOURCE OF TRUTH
-→ DERIVED REPRESENTATIONS
-→ CONSUMERS
-→ VERIFIERS
-
-Distinguish:
-
-- canonical
-- derived
-- cached
-- runtime
-- historical
-- supporting
-
-## Frontend Architecture
-
-Inspect:
-
-- entry points
-- initialization
-- components
-- state
-- services
-- API access
-- authentication state
-- routes
-- data fetching
-- error handling
-- loading states
-- configuration
-
-Determine how UI obtains and mutates application data.
-
-## Backend Architecture
-
-Inspect:
-
-- entry points
-- services
-- handlers
-- business logic
-- validation
-- authorization
-- configuration
-- external calls
-
-Determine where important business rules are enforced.
-
-## Firebase / Database Architecture
-
-Map:
-
-APPLICATION
-→ DATA ACCESS
-→ DATABASE
-→ SECURITY RULES
-
-Determine:
-
-- collections/tables
-- document structures
-- fields
-- relationships
-- rules
-- access boundaries
-- validation
-- migration assumptions
-
-Database structure may be a shared architectural contract, not merely
-a backend implementation detail.
-
-## Authentication / Authorization
-
-Keep authentication and authorization conceptually separate.
-
-Determine:
-
-- where identity is established
-- where identity is stored
-- where permissions are evaluated
-- where access is enforced
-
-UI visibility is not authorization.
-
-## Navigation
-
-Map relationships among:
-
-- application routes
-- UI routes
-- backend endpoints
-- property identifiers
-- spatial identifiers
-- navigation state
-- deep links
-
-## Integrations
-
-For external services determine:
-
-- boundary
-- credentials/configuration
-- data flow
-- transformations
-- error handling
-- retries
-- verification
-
-Distinguish:
-
-HomeFinder-owned data
-from
-external data
-from
-transformed data.
-
-## Architecture Record
-
-For important systems, record:
-
-SYSTEM:
-PURPOSE:
-PRIMARY COMPONENTS:
-DEPENDENCIES:
-DATA FLOW:
-CONTROL FLOW:
-SOURCE OF TRUTH:
-DERIVED REPRESENTATIONS:
-OWNERSHIP:
-SECURITY BOUNDARIES:
-VERIFICATION:
-CROSS-DOMAIN CONNECTIONS:
-ARCHITECTURAL RISKS:
-CONFIDENCE:
-
----
-
-# 07. CONTRACT RECONCILIATION MODE
-
-## Purpose
-
-Compare intended contracts with actual implementation.
-
-Potential contracts include:
-
-- API contracts
-- database contracts
-- Firebase structures
-- security rules
-- authentication contracts
-- route contracts
-- frontend/backend assumptions
-- shared identifiers
-- data schemas
-
-## Comparison
-
-Classify findings as:
-
-MATCH
-MISMATCH
-MISSING
-EXTRA
-AMBIGUOUS
-UNVERIFIED
-
-## Shared Concepts
-
-For important shared concepts determine:
-
-- where defined
-- who owns it
-- who consumes it
-- format
-- validation
-- verification
-
-Examples include:
-
-- user ID
-- property ID
-- listing ID
-- room ID
-- route ID
-- spatial ID
-- status
-- timestamps
-
-## Contract Change Gate
-
-Before changing a shared contract determine:
-
-- consumers
-- compatibility
-- migration impact
-- verification
-- recovery/rollback implications
-
-Never change a shared contract as though it were an isolated file.
-
----
-
-# 08. 3D / SPATIAL ANALYSIS MODE
-
-## Purpose
-
-Analyze HomeFinder's physical and spatial architecture.
-
-Potential artifacts include:
-
-- `.sh3d`
-- spatial data
-- room structures
-- doors
-- portals
-- coordinates
-- cameras
-- levels
-- navigation structures
-
-## Spatial Pipeline
-
-Distinguish:
-
-PHYSICAL MODEL
-→ SPATIAL DATA
-→ RUNTIME REPRESENTATION
-→ NAVIGATION
-→ UI
-
-Determine the source of truth at each stage.
-
-Do not "correct" spatial information based only on visual intuition.
-
-## Spatial Relationships
-
-Investigate:
-
-- rooms
-- doors
-- portals
-- coordinates
-- cameras
-- levels
-- paths
-- properties
-- identifiers
-
-Record physical/runtime discrepancies rather than silently correcting
-them.
-
----
-
-# 09. FEATURE DEVELOPMENT MODE
-
-## Purpose
-
-Implement new HomeFinder functionality safely.
-
-Workflow:
-
-REQUIREMENT
-→ EXISTING FUNCTIONALITY
-→ ARCHITECTURE
-→ CONTRACT
-→ DEPENDENCIES
-→ DESIGN
-→ IMPLEMENTATION
-→ VERIFICATION
-→ REGRESSION CHECK
-→ DOCUMENTATION
-
-## Before Coding
-
-Determine:
-
-- whether the feature already partially exists
-- where it belongs
-- which contracts it affects
-- which components consume it
-- security implications
-- existing verification
-
-## Implementation
-
-Prefer:
-
-- smallest coherent change
-- existing abstractions
-- established conventions
-- compatibility
-- explicit error handling
-- secure boundaries
-
-Avoid unnecessary rewrites.
-
-## Completion
-
-A feature is not complete merely because code exists.
-
-Use:
-
-IMPLEMENTED
-+
-VERIFIED
-+
-RECONCILED
-
----
-
-# 10. BUG INVESTIGATION MODE
-
-## Purpose
-
-Find root causes instead of repeatedly treating symptoms.
-
-Workflow:
-
-SYMPTOM
-→ REPRODUCE
-→ TRACE
-→ ISOLATE
-→ ROOT CAUSE
-→ MINIMAL FIX
-→ REGRESSION TEST
-→ VALIDATE
-
-## Cause Confidence
-
-Classify causes as:
-
-- confirmed
-- probable
-- possible
-- unrelated
-
-Do not present hypotheses as confirmed root causes.
-
-## Fix Philosophy
-
-Prefer the smallest fix that resolves the actual cause while
-preserving architecture.
-
-Do not rewrite entire subsystems merely because a localized defect
-exists.
-
----
-
-# 11. VERIFICATION ENGINEERING MODE
-
-## Purpose
-
-Use HomeFinder's existing verification ecosystem effectively.
-
-## First Inspect Existing Verification
-
-Look for:
-
-- MJS verifiers
-- integration verification
-- contract verification
-- security verification
-- data verification
-- 3D verification
-- route verification
-- regression checks
-
-Do not automatically create Python tests.
-
-Do not create duplicate verification systems.
-
-## Verification Types
-
-Distinguish:
-
-- static validation
-- structural validation
-- unit-style verification
-- integration verification
-- contract verification
-- runtime validation
-- regression validation
-
-Never describe one type as another.
-
-## Coverage
-
-For important changes determine:
-
-WHAT CHANGED?
-WHAT VERIFIES IT?
-WHAT IS NOT VERIFIED?
-
-## Failure Handling
-
-If verification fails:
-
-STOP
-→ RECORD FAILURE
-→ IDENTIFY IMPACT
-→ INVESTIGATE
-→ FIX OR ESCALATE
-→ RE-VERIFY
-
-Do not stack uncertain changes on a failed validation state.
-
----
-
-# 12. CLEANUP / RECONSTRUCTION MODE
-
-## Purpose
-
-Perform controlled repository cleanup without destroying information.
-
-Workflow:
-
-OBSERVE
-→ CLASSIFY
-→ MAP
-→ PROPOSE
-→ REFERENCE CHECK
-→ MIGRATION MANIFEST
-→ AUTHORIZATION
-→ MIGRATE
-→ VERIFY
-→ RECONCILE
-
-## Prohibited
-
-Never automatically:
-
-- bulk rename
-- bulk move
-- flatten
-- delete historical artifacts
-- duplicate artifacts into every logical category
-- create parallel test systems
-- rewrite architecture for cosmetic reasons
-
-## Canonical Migration Record
-
-For each approved migration record:
-
-OLD PATH
-→ NEW PATH
-→ CATEGORY
-→ REASON
-→ REFERENCES
-→ CONFLICT LEVEL
-→ LINEAGE
-→ VALIDATION
-→ STATUS
-
-## Physical vs Logical Classification
-
-Prefer:
-
-ONE PHYSICAL CANONICAL ARTIFACT
-+
-MULTIPLE LOGICAL CLASSIFICATIONS
-
-rather than duplicate physical copies.
-
----
-
-# 13. RECONCILIATION / LINEAGE MODE
-
-## Purpose
-
-Maintain the relationship between current architecture and project
-history.
-
-## Identity Model
-
-Prefer:
-
-CURRENT CANONICAL IDENTITY
-+
-HISTORICAL LINEAGE
-
-Do not erase historical evidence merely to achieve clean naming.
-
-## Historical Artifacts
-
-Classify whether an artifact is:
-
-- historical evidence
-- superseded implementation
-- current implementation
-- generated output
-- unresolved alternative
-- lineage record
-
-Do not automatically execute or delete historical artifacts.
-
-## Reconciliation
-
-After significant migration or restructuring compare:
-
-OLD STATE
-→ CHANGE
-→ NEW STATE
-
-Verify where applicable:
-
-- references
-- structure
-- hashes
-- contracts
-- verification
-- documentation
-- lineage
-
----
-
-# 14. PYTHON ANALYSIS TOOLING MODE
-
-## Purpose
-
-Use Python as a repository-analysis instrument, not as an automatic
-replacement for the existing project verification ecosystem.
-
-Typical tools may include:
-
-- inventory
-- classifier
-- reference scanner
-- duplicate detector
-- batch mapper
-- category mapper
-- naming candidate generator
-- migration manifest generator
-- reconciliation validator
-- report generator
-
-## Dictionary / Index Design
-
-Use compact dictionary/index structures when useful for:
-
-- file records
-- artifact identity
-- category mappings
-- dependency mappings
-- references
-- verification coverage
-- lineage
-- migration candidates
-- conflicts
-
-Prefer structured machine-readable intermediate data over repeated
-manual parsing.
-
-## Default Safety
-
-Analysis tools should be:
-
-- read-only
-- deterministic
-- reproducible
-- narrowly scoped
-- reusable
-- documented
-
-## Mutation Gate
-
-Mutation-capable tooling must follow:
-
-ANALYSIS
-→ CANDIDATE MANIFEST
-→ REVIEW
-→ AUTHORIZATION
-→ EXECUTION
-→ VALIDATION
-
-Never hide bulk mutation inside an analysis script.
-
----
-
-# 15. REPOSITORY HYGIENE
-
-Repository cleanliness is an ongoing engineering responsibility, not
-a one-time cleanup event.
-
-Continuously watch for:
-
-- accidental files
-- debug artifacts
-- temporary outputs
-- duplicate implementations
-- abandoned experiments
-- obsolete generated files
-- stale documentation
-- unexplained directories
-- orphaned scripts
-- unused migration artifacts
-- accidental build outputs
-
-Before removing anything:
-
-CHECK
-→ CLASSIFY
-→ TRACE
-→ CONFIRM
-→ REMOVE OR PRESERVE WITH PURPOSE
-
-Do not delete merely because something looks messy.
-
-A clean repository should make artifact purpose understandable.
-
----
-
-# 16. DEVELOPMENT FIELD COVERAGE
-
-HomeFinder development must not become narrowly focused on repository
-cleanup.
-
-When relevant, consider the full development surface:
-
-- product behavior
-- frontend/UI
-- backend/services
-- database/data
-- Firebase
-- authentication
-- authorization
-- security
-- search/discovery
-- property/listing concepts
-- routes/navigation
-- 3D/spatial behavior
-- integrations
-- configuration
-- performance
-- accessibility
-- responsive behavior
-- error handling
-- observability
-- testing/verification
-- documentation
-- deployment/build concerns
-- repository architecture
-
-A cleanup task should not accidentally ignore active product
-development.
-
-A feature task should not accidentally ignore repository integrity.
-
----
-
-# 17. DOCUMENTATION AND CONTINUITY
-
-Documentation should preserve durable knowledge, not create noise.
-
-Record important:
-
-- architecture
-- decisions
-- contracts
-- findings
-- verification
-- lineage
-- risks
-- assumptions
-- migration evidence
-- unresolved questions
-
-## Session Continuity
-
-At the end of substantial work record:
-
-PHASE:
-OBJECTIVE:
-WORK COMPLETED:
-FILES CHANGED:
-FILES UNCHANGED:
-DISCOVERIES:
-VALIDATION:
-DECISIONS:
-UNRESOLVED:
-RISKS:
-NEXT ACTION:
-
-Important continuity evidence should live inside the project repository,
-not only inside the conversation or temporary workspace.
-
----
-
-# 18. CHANGE VALIDATION GATE
-
-After meaningful implementation or migration:
-
-CHANGE
-→ REFERENCE CHECK
-→ STRUCTURAL CHECK
-→ CONTRACT CHECK
-→ TEST / VERIFICATION
-→ DOCUMENTATION CHECK
-→ RECONCILIATION
-
-Not every change requires every check.
-
-The AI must deliberately determine which checks apply.
-
----
-
-# 19. STATUS DISCIPLINE
-
-Use precise status terms:
-
-- DISCOVERED
-- ANALYZED
-- PROPOSED
-- AUTHORIZED
-- IMPLEMENTED
-- PARTIALLY IMPLEMENTED
-- STATICALLY VALIDATED
-- BEHAVIORALLY VALIDATED
-- RUNTIME VALIDATED
-- BLOCKED
-- UNVERIFIED
-- CONFLICTED
-- DEFERRED
-
-Do not use:
-
-- done
-- fixed
-- perfect
-- fully verified
-- production ready
-
-unless evidence actually supports the claim.
-
----
-
-# 20. EVIDENCE AND CONFIDENCE
-
-For significant findings use:
-
-### CONFIRMED
-
-Directly demonstrated.
-
-### STRONGLY INDICATED
-
-Supported by multiple evidence sources.
-
-### INFERRED
-
-Reasonable interpretation.
-
-### UNKNOWN
-
-Insufficient evidence.
-
-Never upgrade confidence merely because a hypothesis seems likely.
-
----
-
-# 21. ARCHITECTURAL CHANGE GATE
-
-Before introducing a new:
-
-- framework
-- library
-- abstraction
-- service
-- directory
-- registry
-- test system
-- configuration mechanism
-
-answer:
-
-WHAT EXISTS?
-WHY?
-WHAT PROBLEM REMAINS?
-DOES AN EXISTING MECHANISM SOLVE IT?
-WHAT DEPENDS ON IT?
-WHAT WILL IT COST TO MAINTAIN?
-HOW WILL IT BE VERIFIED?
-
-Prefer extension over parallel architecture when appropriate.
-
----
-
-# 22. MULTI-DOMAIN CHANGE
-
-When a change crosses domains, explicitly map the impact.
-
-Example:
-
-PROPERTY SEARCH
-
-may affect:
-
-UI
-↓
-APPLICATION LOGIC
-↓
-BACKEND
-↓
-DATABASE
-↓
-SECURITY
-↓
-ROUTES
-↓
-VERIFICATION
-
-Another example:
-
-PROPERTY LOCATION
-
-may affect:
-
-DATABASE
-+
-ROUTES
-+
-3D
-+
-NAVIGATION
-+
-UI
-+
-VERIFICATION
-
-Do not assume a change is local merely because only one file initially
-appears relevant.
-
----
-
-# 23. DOMAIN-SPECIFIC SAFETY
-
-## Security
-
-Treat authentication, authorization, user data, database rules,
-credentials, and external APIs as security-sensitive.
-
-## Data
-
-Treat schema and stored-data changes as high-impact.
-
-## Spatial
-
-Treat physical/spatial authority as evidence-based.
-
-## Frontend
-
-Consider accessibility, responsive behavior, loading, errors,
-empty states, and interaction states.
-
-## Performance
-
-Consider database, network, rendering, memory, and repeated work
-without prematurely optimizing.
-
----
-
-# 24. OUTPUT ARTIFACT DISCIPLINE
-
-Create durable artifacts only when they provide future value.
-
-Potential artifacts include:
-
-- manifests
-- architecture maps
-- dependency maps
-- contract reports
-- verification matrices
-- migration manifests
-- reconciliation records
-- lineage records
-- decision records
-- findings
-- continuity reports
-
-Avoid generating many near-identical reports.
-
-Prefer one authoritative record over several redundant summaries.
-
----
-
-# 25. EXECUTION CHECKPOINTS
-
-For substantial work, maintain explicit checkpoint state.
-
-A checkpoint should identify:
-
-- current phase
-- completed work
-- validated work
-- pending work
-- blocked work
-- changed files
-- evidence location
-- known risks
-- next recommended action
-
-Suggested conceptual progression:
-
-CP-01 Repository Baseline
-CP-02 Verification Reconnaissance
-CP-03 Content-Level Classification
-CP-04 Dependency / Reference Mapping
-CP-05 Architecture Reconstruction
-CP-06 Contract and Architecture Reconciliation
-CP-06B Architecture Before Migration
-CP-07 Canonical Naming Migration
-CP-08 Repository Architecture Migration
-CP-09 Reconciliation System
-CP-10 Archive / Lineage
-CP-11 Reference / Documentation Reconciliation
-CP-12 Repository Integrity Validation
-
-These are planning labels only.
-
-Never claim a checkpoint was executed unless it actually was.
-
----
-
-# 26. SUGGESTIVE EXECUTION ORDER
-
-When the user gives a broad task without specifying the exact
-sequence, suggest a chronological execution order based on
-dependencies and risk.
-
-The suggested order is not authorization.
-
-For example:
-
-1. establish baseline
-2. inspect existing structures
-3. classify artifacts
-4. trace dependencies
-5. reconstruct architecture
-6. reconcile contracts
-7. design change
-8. implement
-9. verify
-10. reconcile documentation/lineage
-11. validate final state
-
-If the user specifies another order, follow the user's order unless it
-would create an unacceptable integrity or safety risk; explain the
-conflict before changing course.
-
----
-
-# 27. STOP CONDITIONS
-
-Stop and ask the user when:
-
-- authoritative sources conflict
-- source of truth cannot be determined
-- destructive action lacks authorization
-- migration impact is unclear
-- critical dependencies cannot be resolved
-- external consumers may be affected
-- security implications are uncertain
-- data integrity may be compromised
-- historical/current identity cannot be separated
-- verification produces contradictory evidence
-
-Use:
-
-STOP
-→ RECORD
-→ EXPLAIN
-→ ASK
-
-Do not silently guess.
-
----
-
-# 28. RESPONSE FORMAT
-
-For substantial work:
-
-## Understanding
-
-What the request actually means.
-
-## Evidence
-
-What has actually been established.
-
-## Plan
-
-Smallest appropriate sequence.
-
-## Execution
-
-What was actually performed.
-
-## Validation
-
-What was actually checked.
-
-## Result
-
-Current state.
-
-## Remaining
-
-Unresolved issues, risks, or limitations.
-
-## Next
-
-Recommended next action.
-
-Do not use this format mechanically for trivial requests.
-
----
-
-# 29. NO HIDDEN EXECUTION
-
-Always distinguish:
-
-PLANNED
-PROPOSED
-AUTHORIZED
-EXECUTED
-VALIDATED
-
-A planned checkpoint is not an executed checkpoint.
-
-A generated migration manifest is not a completed migration.
-
-A passing static check is not necessarily runtime verification.
-
-Never imply an operation occurred when only its plan was created.
-
----
-
-# 30. EFFICIENCY AND TOKEN DISCIPLINE
-
-Use the minimum investigation necessary to establish sufficient
-confidence for the requested operation.
-
-For simple tasks:
-
-inspect narrowly.
-
-For complex tasks:
-
-build durable structured evidence.
-
-Do not repeatedly rediscover established facts.
-
-Do not load large unrelated files into context.
-
-Prefer:
-
-TARGETED SEARCH
-→ RELEVANT EVIDENCE
-→ COMPACT MODEL
-→ ACTION
-
-Use summaries, manifests, dictionaries, indexes, and checkpoint
-records to avoid repeatedly consuming context on the same information.
-
-Correctness outranks token savings.
-
-Never omit critical evidence merely to reduce context usage.
-
----
-
-# 31. ENGINEERING DECISION RECORD
-
-For meaningful architectural or migration decisions, record:
-
-DECISION:
-CONTEXT:
-EVIDENCE:
-OPTIONS:
-SELECTED OPTION:
-REASON:
-IMPACT:
-TRADE-OFFS:
-VALIDATION:
-REVERSIBILITY:
-USER AUTHORITY:
-DATE / CHECKPOINT:
-
-Do not create a decision record for every trivial coding choice.
-
----
-
-# 32. COMPLETION DEFINITION
-
-Substantial engineering work should generally reach:
-
-IMPLEMENTATION
-+
-VERIFICATION
-+
-RECONCILIATION
-+
-CONTINUITY
-
-Where one component is intentionally absent, explicitly state why.
-
-Example:
-
-IMPLEMENTED
-+
-STATICALLY VALIDATED
-+
-RUNTIME VALIDATION PENDING
-
-is preferable to falsely saying:
-
-COMPLETE
-
----
-
-# 33. FINAL ENGINEERING GATE
-
-Before declaring substantial work complete, ask:
-
-1. Did we understand the actual problem?
-2. Did we inspect existing architecture?
-3. Did we reuse existing mechanisms where appropriate?
-4. Did we identify affected dependencies?
-5. Did we preserve authoritative artifacts?
-6. Did we avoid unnecessary duplication?
-7. Did we verify the change appropriately?
-8. Did we reconcile documentation/contracts where necessary?
-9. Did we leave the repository understandable?
-10. Did we record enough information for the next session?
-11. Are unresolved risks explicitly recorded?
-12. Is the actual state accurately represented?
-
-If important answers are no or unknown, do not falsely declare
-completion.
-
----
-
-# 34. HOMEFINDER ENGINEERING PRINCIPLE
-
-The objective is not maximum code output.
-
-The objective is a system that becomes progressively:
-
-- more understandable
-- more reliable
-- more verifiable
-- more maintainable
-- more coherent
-- more recoverable
-- more traceable
-
-The preferred engineering cycle is:
-
-UNDERSTAND
-→ CHANGE CAREFULLY
-→ VERIFY
-→ RECONCILE
-→ RECORD
-→ IMPROVE
-
-When uncertain:
-
-PRESERVE
-→ RECORD
-→ INVESTIGATE
-→ ASK
-
----
-
-# END OF SKILL
+**Advance only when the evidence supports the state being claimed.**
