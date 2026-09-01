@@ -25,20 +25,25 @@ This file is a navigation index. It tells readers which document owns which kind
 | `project-guide/masterplan.md` | Long-lived architecture, chronology, and institutional memory. |
 | `MASTER_SKILL.md` | Single canonical skill and discipline procedures. |
 | `CODING-INSTRUCTIONS.md` | Coding and implementation conventions. |
-| `PRODUCT-KNOWLEDGE.md` | Product and domain context. |
+| `PRODUCT-KNOWLEDGE.md` | Product and domain context and durable engineering knowledge. |
 | `docs/` | Detailed contracts, audits, manifests, reconciliation and validation evidence. |
 | `docs/census/` | Census baselines and census-specific evidence. |
+| `docs/knowledge/` | Knowledge-system and knowledge-distillation evidence. |
 | `archive/` | Historical evidence that is no longer the live source. |
 | `.agent/sessions/` | Machine-readable execution-session traces. |
 | `.agent/census/` | Machine-readable census configuration and generated census state. |
+| `.agent/knowledge/` | Derived machine indexes for durable-knowledge discovery; never an authority replacement. |
 
 ## Execution-system governance
 
 - `project-guide/repository-governance/EXECUTION-TRACE-AND-FILE-UPDATE.md` — E2 session trace and impact-aware update protocol.
 - `project-guide/repository-governance/CENSUS-AND-INVENTORY.md` — E3 source-first inventory protocol.
+- `project-guide/repository-governance/KNOWLEDGE-AND-ANTI-REPEAT.md` — E4 durable-knowledge and anti-repeat protocol.
 - `scripts/session_logger.py` — canonical local session trace helper.
 - `scripts/census.py` — canonical source-first project census tool.
+- `scripts/knowledge-search.py` — deterministic durable-knowledge and anti-pattern search helper.
 - `.agent/census/census.config.json` — census configuration.
+- `.agent/knowledge/ANTI-REPEAT-INDEX.json` — derived anti-pattern trigger index.
 
 ## Browser verification wiring
 
@@ -53,6 +58,6 @@ Existing browser verification surfaces must be discovered before creating anothe
 
 ## Continuity principle
 
-Current state is represented by the actual repository plus `HandOver.md` and `Endorsement.md`. Detailed history belongs in `masterplan.md`; detailed proof belongs in `docs/`; agent procedures belong in `MASTER_SKILL.md`; coding conventions belong in `CODING-INSTRUCTIONS.md`; product context belongs in `PRODUCT-KNOWLEDGE.md`; census evidence belongs in `docs/census/` and derived `.agent/census/` state.
+Current state is represented by the actual repository plus `HandOver.md` and `Endorsement.md`. Detailed history belongs in `masterplan.md`; detailed proof belongs in `docs/`; agent procedures belong in `MASTER_SKILL.md`; coding conventions belong in `CODING-INSTRUCTIONS.md`; product context and durable knowledge belong in `PRODUCT-KNOWLEDGE.md`; census evidence belongs in `docs/census/` and derived `.agent/census/` state; anti-repeat discovery belongs in derived `.agent/knowledge/` state backed by `PRODUCT-KNOWLEDGE.md`.
 
 Do not use the continuity file as a duplicate of those sources.
