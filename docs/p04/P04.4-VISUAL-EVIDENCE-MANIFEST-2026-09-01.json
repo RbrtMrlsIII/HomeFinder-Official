@@ -1,0 +1,20 @@
+{
+  "schema": "HOMEFINDER-P04.4-VISUAL-EVIDENCE-1.0",
+  "generated": "2026-09-01",
+  "pr": 9,
+  "run": 33505472807,
+  "targets": [
+    {"target":"T02 Main Hall","file":"t02-main-hall.png","disposition":"ACCEPTABLE"},
+    {"target":"T03 Kitchen","file":"t03-kitchen.png","disposition":"ACCEPTABLE"},
+    {"target":"T03 Bedroom #1","file":"t03-bedroom1.png","disposition":"FINDING"},
+    {"target":"T04 Staircase","file":"t04-staircase.png","disposition":"BLOCKED_FINDING"},
+    {"target":"T05 Level 1 Interior","file":"t05-level1-interior.png","disposition":"FINDING"}
+  ],
+  "gate_disposition": "OPEN_NOT_ENDORSED",
+  "authority": "master/HomeFinder.sh3d",
+  "notes": [
+    "data-glb-loaded=true is runtime evidence, not visual acceptance.",
+    "No camera or geometry was invented to improve the screenshots.",
+    "P04.5 and P04.6 remain separate gates."
+  ]
+}

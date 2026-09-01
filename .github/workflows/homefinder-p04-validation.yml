@@ -63,15 +63,17 @@ jobs:
             actual="$(sha256sum "$1" | cut -d' ' -f1)"
             test "$actual" = "$2"
           done
-      - name: Run P04 Chromium validation
+      - name: Run P04.4 screenshot / visual review
         working-directory: active_development/tests/browser
         env:
           CI: 'true'
-        run: npx playwright test specs/p04-spatial-visual.spec.mjs --project=chromium
-      - name: Upload P04 browser report
+        run: npx playwright test specs/p04-screenshot-visual.spec.mjs --project=chromium
+      - name: Upload P04 visual review evidence
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v5
         with:
-          name: homefinder-p04-spatial-report
-          path: active_development/tests/browser/playwright-report/
+          name: homefinder-p04-visual-review
+          path: |
+            active_development/tests/browser/playwright-report/
+            active_development/tests/browser/p04.4-evidence/
           retention-days: 14

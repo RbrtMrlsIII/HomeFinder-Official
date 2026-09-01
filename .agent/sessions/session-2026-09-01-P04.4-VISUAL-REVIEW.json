@@ -1,0 +1,12 @@
+{
+  "session_id":"2026-09-01-P04.4-VISUAL-REVIEW",
+  "status":"COMPLETED_VALIDATED_PENDING_ENDORSEMENT",
+  "milestone":"P04.4",
+  "gate":"Fresh screenshot / visual review",
+  "branch":"p04.4/screenshot-visual-review-2026-09-01",
+  "predecessor":"P04.3 accepted",
+  "actions":["Captured five fresh Chromium screenshots using the existing P04 GLB viewer.","Reviewed visual framing independently of runtime load assertions.","Recorded T04 blank-stage and T05 poor-framing findings without inventing camera values.","Recorded T03 Bedroom #1 as limited framing.","Synchronized whole-project handover and endorsement to keep P04.4 open."],
+  "validation":{"github_workflow":"success","vercel":"later READY preview after rate-limit failure","visual_evidence_count":5},
+  "disposition":"P04.4 OPEN / NOT ENDORSED",
+  "next_gate":"Source-backed T04/T05 viewpoint reconciliation, then P04.5 correspondence review"
+}
