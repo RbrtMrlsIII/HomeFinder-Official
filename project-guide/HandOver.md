@@ -8,25 +8,41 @@
 
 **Execution-system:** E0–E8 complete, validated, and endorsed as the execution-system overlay. No further E-series gate is required.
 
-**Active product gate:** P04.3 → P04.4 → P04.5 → P04.6.
+**Active product gate:** P04.4 → P04.5 → P04.6.
 
-**Accepted:** P01, P02, P03, P04.0, P04.1, P04.2.
+**Accepted:** P01, P02, P03, P04.0, P04.1, P04.2, **P04.3**.
 
-**Unendorsed/blocked:** P04.3, P04.4, P04.5.
+**Unendorsed/blocked:** P04.4, P04.5.
 
-**Held:** P04.6 pending the fresh acceptance evidence and endorsement decision; P05/P06 held because no authoritative acceptance specification was found and no requirements are to be invented.
+**Held:** P04.6 pending fresh acceptance evidence and endorsement decision; P05/P06 held because no authoritative acceptance specification was found and no requirements are to be invented.
 
-## P04 evidence boundary
+## P04.3 acceptance evidence
 
-The final whole-project evidence package contains the four approved GLBs. Static SHA-256 and GLB v2 structural checks pass 4/4.
+P04.3 was validated on the isolated branch `p04.3/binary-promotion-2026-09-01` by GitHub Actions run **33503413059** / job **99841751786**.
 
-The live P-series branch does not yet contain those approved binary objects at the canonical runtime paths. The real Chromium validation therefore fails closed at binary availability rather than substituting placeholders, mocks, or invented geometry.
+The workflow passed every step:
 
-The next P04 unlock remains:
+- repository checkout;
+- Node setup;
+- browser-test dependency installation;
+- Chromium installation;
+- exact SHA-256 verification of all four approved repository-backed GLBs;
+- the existing `specs/p04-spatial-visual.spec.mjs` Chromium validation;
+- browser report upload.
 
-**binary-safe promotion of the exact four approved GLBs into the canonical repository paths → fresh real Chromium validation → screenshot review → P04.3/P04.4/P04.5 evidence review → P04.6 endorsement decision.**
+The P04 test covers renderer mounting, default target loading, `data-glb-loaded=true`, source-backed camera/scale/elevation propagation for T04, and successful switching/loading across all declared P04 targets. The generated browser report artifact is `homefinder-p04-spatial-report`, artifact ID `9798642846`, with SHA-256 digest `453dae772a323ef014022148546ea4af99121ccf34d54c09179825259fe10654`.
 
-P04.1 is already accepted. It is not an outstanding gate.
+**P04.3 disposition: ACCEPTED.** This acceptance is limited to the validated P04.3 renderer/target/camera/scale/elevation and real repository-backed GLB loading evidence. It does not pre-accept P04.4, P04.5, or P04.6.
+
+## P04.4 / P04.5 boundary
+
+P04.4 remains open for fresh screenshot/visual review.
+
+P04.5 remains open for explicit GLB binary browser-loading/correspondence review beyond the P04.3 gate evidence where required by the acceptance ledger.
+
+The next permitted gate is therefore:
+
+**P04.4 fresh screenshot/visual review → P04.5 GLB correspondence review → P04.6 fresh P04 endorsement decision.**
 
 ## Protected authority
 
@@ -42,7 +58,7 @@ The main application-facing viewer remains the Sweet Home 3D JS viewer. The P04 
 
 E0–E8 are complete and endorsed. E7/E8 are governance/integration capabilities only and do not endorse P04 runtime behavior or later product work.
 
-The canonical execution skill is `MASTER_SKILL.md` v1.3. The skill now requires checkpoint packages to contain one project baseline, forbids recursive checkpoint embedding, and requires explicit historical-evidence retention indexing.
+The canonical execution skill is `MASTER_SKILL.md` v1.3. The skill now requires checkpoint packages to contain one project baseline, forbids recursive checkpoint embedding, requires explicit historical-evidence retention indexing, and requires guided user instructions for manual binary uploads when the available GitHub integration cannot safely upload them.
 
 ## Checkpoint packaging reconciliation
 
@@ -56,9 +72,9 @@ No historical evidence is being silently deleted from its original source packag
 
 ## Required next action
 
-Continue with P04.3 using the current product evidence. Do not reopen E0–E8. Do not invent P05/P06 requirements. Do not weaken P04 assertions. Do not mutate `master/HomeFinder.sh3d` to make a derivative or browser check pass.
+Continue with P04.4 using the accepted P04.3 evidence as its predecessor. Do not reopen E0–E8. Do not invent P05/P06 requirements. Do not weaken P04 assertions. Do not mutate `master/HomeFinder.sh3d` to make a derivative or browser check pass.
 
-Before any non-trivial implementation, perform the E4 anti-repeat search. Before binary promotion, verify exact SHA-256 correspondence. Before packaging, run the source-first census and duplicate-baseline check.
+Before packaging, run the source-first census and duplicate-baseline check.
 
 ## Continuity sources
 
@@ -69,3 +85,4 @@ Before any non-trivial implementation, perform the E4 anti-repeat search. Before
 - `MASTER_SKILL.md` — canonical project execution skill v1.3.
 - `CODING-INSTRUCTIONS.md` — project-specific coding guidance, subordinate to the canonical skill and current authority.
 - `project-guide/skills/CHECKPOINT-PACKAGING-AND-CONTINUITY.md` — packaging/continuity operating procedure.
+- `project-guide/P04-3-ACCEPTANCE-EVIDENCE-2026-09-01.json` — machine-readable P04.3 validation evidence.
