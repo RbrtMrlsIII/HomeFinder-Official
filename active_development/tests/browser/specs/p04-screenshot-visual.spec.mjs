@@ -25,7 +25,7 @@ test.describe('P04.4 fresh screenshot / visual review', () => {
       await expect(stage).toHaveAttribute('data-target-id', id);
       await expect(stage).toHaveAttribute('data-glb-loaded', 'true', { timeout: 60000 });
       await expect(page.locator('canvas.hf-cinematic-3d-canvas')).toBeVisible();
-      await page.screenshot({ path: `playwright-report/p04.4-${filename}`, fullPage: true });
+      await page.screenshot({ path: `p04.4-evidence/${filename}`, fullPage: true });
     }
 
     expect(errors).toEqual([]);
