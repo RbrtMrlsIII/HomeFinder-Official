@@ -102,6 +102,25 @@ A narrow import-map repair was subsequently committed on the P04 validation view
 - [x] ☑️ Keep skills, coding guidance, product knowledge, detailed evidence, and historical material in their designated documents.
 - [x] ☑️ Record that accepted T01–T02 lineage is historical/accepted evidence and must not be rerun from inherited ZIP packages as a substitute for current execution.
 
+## J — Execution-System Equalization
+- [x] ☑️ E0 — Project-wide execution-system evaluation.
+- [x] ☑️ E1 — Governance & skill equalization; promote one canonical `MASTER_SKILL.md` with equalized procedures and whole-project handover rules.
+- [ ] E2 — Execution trace & impact-aware file-update system.
+- [ ] E3 — Project-wide census & inventory foundation.
+- [ ] E4 — Knowledge & anti-repeat system.
+- [ ] E5 — Canonical artifact/build provenance.
+- [ ] E6 — Structural intelligence (dictionary, architecture mapping, skill selection).
+- [ ] E7 — Automated enforcement gates.
+- [ ] E8 — Full execution-system integration.
+
+## E1 endorsement note — 2026-09-01
+
+E1 was evaluated, validated, and promoted on the current P04 branch. The single canonical `MASTER_SKILL.md` now defines the project-wide execution lifecycle, equalized discipline procedures, anti-repeat behavior, impact-aware update principles, evidence boundaries, Git mutation governance, and whole-project handover requirements. No second permanent skill file was created.
+
+Live promotion commit: `8e35bbb68e3513cb507b19ac714a04bf8517609a`.
+
+The E1 endorsement does not endorse P04.3–P04.6; those remain governed by their existing unchecked acceptance gates.
+
 ## Session protocol
 1. Read `README.md`.
 2. Read `project-guide/AI_ASSISTANT_READ_ME.md`.
