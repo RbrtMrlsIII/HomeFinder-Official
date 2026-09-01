@@ -29,21 +29,28 @@ This file is a navigation index. It tells readers which document owns which kind
 | `docs/` | Detailed contracts, audits, manifests, reconciliation and validation evidence. |
 | `docs/census/` | Census baselines and census-specific evidence. |
 | `docs/knowledge/` | Knowledge-system and knowledge-distillation evidence. |
+| `docs/provenance/` | Artifact/build/deployment provenance findings and validation evidence. |
+| `docs/architecture/` | Structural/architecture findings and derived-intelligence validation evidence. |
 | `archive/` | Historical evidence that is no longer the live source. |
 | `.agent/sessions/` | Machine-readable execution-session traces. |
 | `.agent/census/` | Machine-readable census configuration and generated census state. |
 | `.agent/knowledge/` | Derived machine indexes for durable-knowledge discovery; never an authority replacement. |
+| `.agent/structural/` | Derived structural-intelligence configuration and index; never an authority replacement. |
 
 ## Execution-system governance
 
 - `project-guide/repository-governance/EXECUTION-TRACE-AND-FILE-UPDATE.md` — E2 session trace and impact-aware update protocol.
 - `project-guide/repository-governance/CENSUS-AND-INVENTORY.md` — E3 source-first inventory protocol.
 - `project-guide/repository-governance/KNOWLEDGE-AND-ANTI-REPEAT.md` — E4 durable-knowledge and anti-repeat protocol.
+- `project-guide/repository-governance/STRUCTURAL-INTELLIGENCE.md` — E6 derived structural-intelligence protocol.
 - `scripts/session_logger.py` — canonical local session trace helper.
 - `scripts/census.py` — canonical source-first project census tool.
 - `scripts/knowledge-search.py` — deterministic durable-knowledge and anti-pattern search helper.
+- `scripts/structural-index.py` — deterministic E6 derived structural-intelligence generator.
 - `.agent/census/census.config.json` — census configuration.
 - `.agent/knowledge/ANTI-REPEAT-INDEX.json` — derived anti-pattern trigger index.
+- `.agent/structural/structural-index.config.json` — E6 structural-source configuration.
+- `.agent/structural/STRUCTURAL-INDEX.json` — E6 derived structural index.
 
 ## Browser verification wiring
 
@@ -58,6 +65,6 @@ Existing browser verification surfaces must be discovered before creating anothe
 
 ## Continuity principle
 
-Current state is represented by the actual repository plus `HandOver.md` and `Endorsement.md`. Detailed history belongs in `masterplan.md`; detailed proof belongs in `docs/`; agent procedures belong in `MASTER_SKILL.md`; coding conventions belong in `CODING-INSTRUCTIONS.md`; product context and durable knowledge belong in `PRODUCT-KNOWLEDGE.md`; census evidence belongs in `docs/census/` and derived `.agent/census/` state; anti-repeat discovery belongs in derived `.agent/knowledge/` state backed by `PRODUCT-KNOWLEDGE.md`.
+Current state is represented by the actual repository plus `HandOver.md` and `Endorsement.md`. Detailed history belongs in `masterplan.md`; detailed proof belongs in `docs/`; agent procedures belong in `MASTER_SKILL.md`; coding conventions belong in `CODING-INSTRUCTIONS.md`; product context and durable knowledge belong in `PRODUCT-KNOWLEDGE.md`; census evidence belongs in `docs/census/` and derived `.agent/census/` state; anti-repeat discovery belongs in derived `.agent/knowledge/` state backed by `PRODUCT-KNOWLEDGE.md`; structural intelligence belongs in derived `.agent/structural/` state backed by the source files it indexes.
 
 Do not use the continuity file as a duplicate of those sources.
