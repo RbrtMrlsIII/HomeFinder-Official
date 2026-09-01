@@ -7,16 +7,24 @@ T02–T06 frozen. T07 frozen. P01–P03 accepted. P04.0–P04.2 accepted.
 - [x] P04.0 — dedicated spatial/visual validation lane
 - [x] P04.1 — repository-backed viewer entrypoint/test-harness correction
 - [x] P04.2 — source-backed target manifest/runtime metadata contract
-- [ ] P04.3 — fresh Chromium renderer/target/camera/scale/elevation validation
+- [x] P04.3 — fresh Chromium renderer/target/camera/scale/elevation validation with repository-backed GLBs
 - [ ] P04.4 — fresh screenshot/visual review
-- [ ] P04.5 — actual GLB binary browser loading/correspondence verification
+- [ ] P04.5 — explicit GLB binary browser-loading/correspondence review
 - [ ] P04.6 — fresh P04 endorsement
 
 ## Current P04 disposition — 2026-09-01
 
-P04 remains in validation hold.
+P04.3 is accepted on the basis of fresh GitHub Actions Chromium evidence from run **33503413059** / job **99841751786**.
 
-Static verification of the four approved GLBs passes 4/4 in the whole-project checkpoint. The live Git branch does not contain those binary objects at the canonical runtime paths, so the real Chromium workflow fails closed at binary availability.
+The gate verified the exact four approved repository-backed GLBs by SHA-256, mounted the Three GLB renderer, loaded the default target, propagated the source-backed T04 camera/scale/elevation contract, and switched across all declared P04 targets with `data-glb-loaded=true`. The run completed successfully and uploaded the browser report artifact `homefinder-p04-spatial-report` (artifact ID `9798642846`, digest `sha256:453dae772a323ef014022148546ea4af99121ccf34d54c09179825259fe10654`).
+
+**P04.3 disposition: ACCEPTED.** This endorsement is limited to the validated P04.3 runtime gate. It does not endorse P04.4, P04.5, or P04.6.
+
+P04.4 remains open for fresh screenshot/visual review.
+
+P04.5 remains open for explicit GLB binary browser-loading/correspondence review where required by the acceptance contract.
+
+P04.6 remains the final fresh P04 endorsement decision gate.
 
 P05 and P06 are held because the repository does not provide authoritative acceptance specifications for those gates. No requirements are invented.
 
@@ -41,7 +49,8 @@ E0–E8 are executed, validated, and endorsed as an execution-system capability 
 - [x] Add checkpoint packaging/continuity operating procedure under `project-guide/skills/`.
 - [x] Synchronize `HandOver.md` with E0–E8 completion and current P04 boundary.
 - [x] Record the distinction between P04.1 accepted and P04.3/P04.4/P04.5 unendorsed.
-- [ ] Promote any P04 binary/runtime changes into canonical product state without fresh acceptance evidence.
+- [x] Add guided GitHub binary-upload instructions to `AI_ASSISTANT_READ_ME.md`.
+- [ ] Promote any P04.4/P04.5/P04.6 changes into canonical product state without fresh acceptance evidence.
 
 ## Session protocol
 1. Read `README.md`.
