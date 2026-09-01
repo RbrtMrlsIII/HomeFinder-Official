@@ -2,7 +2,7 @@
 
 > Single live handover authority. Update this file after every execution gate.
 
-## CURRENT STATE — POST-T07 / P02 ACCEPTED / P03 ACCEPTED / P04.1–P04.2 ACCEPTED / E0–E4 EXECUTION-SYSTEM FOUNDATION — 2026-09-01
+## CURRENT STATE — POST-T07 / P02 ACCEPTED / P03 ACCEPTED / P04.1–P04.2 ACCEPTED / E0–E5 EXECUTION-SYSTEM FOUNDATION — 2026-09-01
 
 **Execution discipline:** Observe → Record → Understand → Classify → Align → Validate → Endorse → Advance.
 
@@ -43,7 +43,7 @@
 15. The current investigation must treat the renderer-mount failure as a P04 implementation/runtime defect. Do not infer GLB corruption or Chromium installation failure from the result.
 16. Documentation continuity remains routed through `README.md`, `project-guide/DOCUMENTATION-MAP.md`, `project-guide/AI_ASSISTANT_READ_ME.md`, `project-guide/HandOver.md`, `project-guide/Endorsement.md`, `MASTER_SKILL.md`, `CODING-INSTRUCTIONS.md`, `PRODUCT-KNOWLEDGE.md`, and detailed `docs/` evidence.
 
-### Execution-system equalization — E0 / E1 / E2 / E3 / E4
+### Execution-system equalization — E0 / E1 / E2 / E3 / E4 / E5
 
 17. **E0:** Project-wide execution-system evaluation completed and validated. Universal Agent mechanisms were mapped against existing HomeFinder governance; duplicate governance architectures were rejected.
 18. **E1:** The single canonical `MASTER_SKILL.md` was promoted to v1.2. It covers equalized procedures for Product/Requirements, Architecture, Frontend/UI, Backend/API, Data/Storage, 3D/Spatial, GLB/Web Graphics, Browser/Runtime, Testing/QA, Security, CI/CD, Deployment/Hosting, Documentation/Knowledge, and Operations/Whole-Project Handover.
@@ -56,7 +56,10 @@
 25. **E3 baseline:** `docs/census/E3-BASELINE-2026-09-01.md` and `.json` preserve only verified authored-model counts from the existing canonical 3D census; incomplete GitHub API tree views are not promoted as full project totals.
 26. **E4:** Machine-readable anti-repeat index, deterministic knowledge search, and explicit pre-Classify knowledge check are implemented. `PRODUCT-KNOWLEDGE.md` remains the durable knowledge authority; the anti-repeat index is derived navigation state only.
 27. **E4 anti-pattern coverage:** the index records 11 high-value HomeFinder dead ends/guardrails, including P04 module-resolution history, GLB availability, WalkMyPlan, SH3D authority, assertion weakening, invented spatial geometry, blanket documentation updates, incomplete census counts, duplicate dictionaries, and ungoverned history rewrites.
-28. No second skill, handover, dictionary, or parallel governance authority was created.
+28. **E5:** Canonical artifact/build provenance is now promoted to the live P04 validation branch. `E5-CANONICAL-BUILD-PROVENANCE.md` defines the state vocabulary and evidence boundary; `builds.json` is the machine-readable registry; `build-provenance.py` is the reproducible helper; and `E5-BASELINE-2026-09-01.json` records the real GitHub Actions artifact anchor without overstating its failed runtime validation.
+29. **E5 provenance rule:** SOURCE → ARTIFACT GENERATED → BUILD VERIFIED → DEPLOYMENT READY → RUNTIME VALIDATED → ENDORSED remains strictly evidence-gated. The existing four GLBs, `master/HomeFinder.sh3d`, browser evidence, and established artifact locations are not relocated.
+30. **E5 live promotion trace:** `.agent/sessions/session-2026-09-01-114800-E5-PROMOTION.json` was created before substantive E5 mutation and records the promotion session.
+31. No second skill, handover, dictionary, or parallel governance authority was created. The prepared E5 handover addendum was treated as source material only and was not promoted as a second handover file.
 
 ### Current evidence
 
@@ -65,7 +68,7 @@
 - P04.3: **unchecked / blocked**.
 - Current isolation branch: `p04/glb-runtime-restored-2026-09-01`.
 - Current branch/PR ref state is maintained live in GitHub; this handover intentionally does not freeze a transient commit-count/HEAD snapshot.
-- `main` was not modified by E4.
+- `main` was not modified by E5.
 - Controlled PR: `#6` (draft, unmerged). The branch remains a validation vehicle and must not be merged or history-rewritten without an explicit GitHub branch-ownership/reconciliation gate.
 - Main SH3D viewer: unchanged.
 - Current P04 viewer entrypoint: `active_development/3d/glb-viewer/index.html`.
@@ -80,6 +83,11 @@
 - E4 search tool: `scripts/knowledge-search.py`.
 - E4 protocol: `project-guide/repository-governance/KNOWLEDGE-AND-ANTI-REPEAT.md`.
 - E4 evidence: `docs/knowledge/E4-BASELINE-2026-09-01.md`.
+- E5 provenance specification: `E5-CANONICAL-BUILD-PROVENANCE.md`.
+- E5 machine registry: `builds.json`.
+- E5 helper: `build-provenance.py`.
+- E5 baseline: `E5-BASELINE-2026-09-01.json`.
+- E5 promotion session: `.agent/sessions/session-2026-09-01-114800-E5-PROMOTION.json`.
 
 ### Required next gate
 
@@ -87,7 +95,7 @@
 2. Keep `master/HomeFinder.sh3d` and the main SH3D viewer untouched.
 3. Do not rerun historical T01–T02 ZIP evidence as a substitute for current execution.
 4. Only after fresh Chromium reaches `data-renderer="three-glb"` and `data-glb-loaded="true"` should the remaining P04 assertions advance.
-5. The next execution-system gate after E4 is **E5 — Canonical Artifact & Build Provenance**.
+5. The next execution-system gate after E5 is **E6 — Structural Intelligence**.
 6. For every substantive session, create the session trace before mutation and classify each change by impact.
 7. Run the project-wide census from a checked-out repository when a real structural baseline is required; do not use a truncated remote API response as a substitute.
 8. Do not merge PR #6 or force-rewrite its history until the branch's intended ownership is explicitly reconciled.
@@ -111,5 +119,8 @@
 - `project-guide/repository-governance/EXECUTION-TRACE-AND-FILE-UPDATE.md` = E2 trace/update protocol.
 - `project-guide/repository-governance/CENSUS-AND-INVENTORY.md` = E3 census protocol.
 - `project-guide/repository-governance/KNOWLEDGE-AND-ANTI-REPEAT.md` = E4 knowledge protocol.
+- `E5-CANONICAL-BUILD-PROVENANCE.md` = E5 provenance protocol.
+- `builds.json` = E5 machine-readable provenance registry.
+- `build-provenance.py` = E5 reproducible provenance helper.
 
 Do not create another handover file.
