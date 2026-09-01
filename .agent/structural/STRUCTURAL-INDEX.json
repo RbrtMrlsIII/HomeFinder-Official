@@ -1,0 +1,50 @@
+{
+  "schema":"HOMEFINDER-STRUCTURAL-INDEX-1.0",
+  "generated":"2026-09-01",
+  "derived":true,
+  "authority":"SOURCE_FILES_RETAIN_EXISTING_AUTHORITY",
+  "source_state":"REMOTE_BRANCH_OBSERVATION",
+  "sources":[
+    {"path":"active_development/data/dictionary.json","domain":"DATA","role":"SEMANTIC_DICTIONARY","authority":"LEXICAL","state":"PRESENT","owner":"active_development/data/dictionary.json"},
+    {"path":"active_development/3d/docs/model-census.json","domain":"3D","role":"AUTHORED_MODEL_CENSUS","authority":"3D_INVENTORY","state":"PRESENT","owner":"active_development/3d/docs/model-census.json"},
+    {"path":"active_development/data/house-ui-ux-code-reality-map.json","domain":"UI_3D","role":"CODE_REALITY_MAP","authority":"DERIVED","state":"PRESENT","owner":"active_development/data/house-ui-ux-code-reality-map.json"},
+    {"path":"active_development/data/feature-wiring-matrix.json","domain":"UI_ROUTES_3D","role":"FEATURE_WIRING","authority":"DERIVED","state":"PRESENT","owner":"active_development/data/feature-wiring-matrix.json"},
+    {"path":"active_development/data/design-roots.json","domain":"FRONTEND","role":"DESIGN_ROOTS","authority":"RUNTIME_CONTRACT_SUPPORT","state":"PRESENT","owner":"active_development/data/design-roots.json"},
+    {"path":"active_development/data/house-camera-rig.json","domain":"3D_SPATIAL","role":"CAMERA_RIG","authority":"SPATIAL_CONTRACT_SUPPORT","state":"PRESENT","owner":"active_development/data/house-camera-rig.json"},
+    {"path":"active_development/data/cinematic-3d-targets.json","domain":"3D_SPATIAL","role":"CINEMATIC_TARGETS","authority":"TARGET_CONTRACT","state":"PRESENT","owner":"active_development/data/cinematic-3d-targets.json"},
+    {"path":"active_development/data/cinematic-assets.json","domain":"3D_GLB","role":"CINEMATIC_ASSETS","authority":"DERIVED_ASSET_MAPPING","state":"PRESENT","owner":"active_development/data/cinematic-assets.json"},
+    {"path":"active_development/data/cinematic-scenes.json","domain":"3D_SPATIAL","role":"CINEMATIC_SCENES","authority":"DERIVED_SCENE_MAPPING","state":"PRESENT","owner":"active_development/data/cinematic-scenes.json"},
+    {"path":"active_development/data/cinematic-worlds.json","domain":"3D_SPATIAL","role":"CINEMATIC_WORLDS","authority":"DERIVED_WORLD_MAPPING","state":"PRESENT","owner":"active_development/data/cinematic-worlds.json"},
+    {"path":"project-guide/DOCUMENTATION-MAP.md","domain":"DOCUMENTATION","role":"DOCUMENT_ROUTING","authority":"ROUTING","state":"PRESENT","owner":"project-guide/DOCUMENTATION-MAP.md"},
+    {"path":"MASTER_SKILL.md","domain":"EXECUTION","role":"CANONICAL_EXECUTION_SKILL","authority":"PROJECT_EXECUTION","state":"PRESENT","owner":"MASTER_SKILL.md"},
+    {"path":"project-guide/HandOver.md","domain":"CONTINUITY","role":"WHOLE_PROJECT_HANDOVER","authority":"CURRENT_CONTINUITY","state":"PRESENT","owner":"project-guide/HandOver.md"},
+    {"path":"project-guide/Endorsement.md","domain":"CONTINUITY","role":"ENDORSEMENT_LEDGER","authority":"GATE_STATUS","state":"PRESENT","owner":"project-guide/Endorsement.md"}
+  ],
+  "relations":[
+    {"from":"active_development/data/house-ui-ux-code-reality-map.json","to":"active_development/data/feature-wiring-matrix.json","kind":"CROSS_REFERENCE"},
+    {"from":"active_development/data/house-ui-ux-code-reality-map.json","to":"active_development/3d/docs/model-census.json","kind":"SPATIAL_INVENTORY_SUPPORT"},
+    {"from":"active_development/data/feature-wiring-matrix.json","to":"active_development/data/house-camera-rig.json","kind":"CAMERA_BINDING_SUPPORT"},
+    {"from":"active_development/data/cinematic-3d-targets.json","to":"active_development/data/cinematic-assets.json","kind":"ASSET_TARGET_MAPPING"},
+    {"from":"project-guide/DOCUMENTATION-MAP.md","to":"listed-sources","kind":"ROUTING"},
+    {"from":"MASTER_SKILL.md","to":"listed-sources","kind":"EXECUTION_PROCEDURE_CONTEXT"}
+  ],
+  "procedure_selection":{
+    "Product / Requirements":["PRODUCT","DATA","DOCUMENTATION"],
+    "Architecture":["UI_ROUTES_3D","FRONTEND","3D_SPATIAL","EXECUTION"],
+    "Frontend / UI":["FRONTEND","UI_3D","UI_ROUTES_3D"],
+    "3D / Spatial":["3D","3D_SPATIAL","UI_3D"],
+    "GLB / Web Graphics":["3D","3D_GLB","3D_SPATIAL"],
+    "Browser / Runtime":["3D_SPATIAL","EXECUTION"],
+    "Testing / QA":["3D","3D_SPATIAL","UI_ROUTES_3D"],
+    "Documentation / Knowledge":["DOCUMENTATION","DATA","CONTINUITY"],
+    "Operations / Whole-Project Handover":["CONTINUITY","EXECUTION","DOCUMENTATION"]
+  },
+  "boundary_checks":{
+    "duplicate_semantic_dictionary":false,
+    "duplicate_execution_skill":false,
+    "replacement_of_sh3d_authority":false,
+    "new_handover_authority":false,
+    "numeric_full_repo_census_claim":false,
+    "history_rewrite":false
+  }
+}
