@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """HomeFinder E8 full execution-system integration verifier.
 
-Read-only. Verifies that the E0-E7 capability chain is present, mutually
+Read-only. Verifies that the E0-E8 capability chain is present, mutually
 compatible, and still subordinate to the master development chronology.
 """
 from __future__ import annotations
@@ -20,6 +20,7 @@ EXPECTED_FILES = {
     "E5": ["builds.json", "build-provenance.py", "E5-CANONICAL-BUILD-PROVENANCE.md"],
     "E6": ["scripts/structural-index.py", ".agent/structural/STRUCTURAL-INDEX.json"],
     "E7": ["scripts/execution-gate.py", ".github/workflows/homefinder-execution-governance.yml"],
+    "E8": ["scripts/execution-system-integration.py", "docs/execution-system/E8-FULL-INTEGRATION-2026-09-01.json"],
 }
 
 
@@ -54,14 +55,18 @@ def main() -> int:
 
     for phrase, label in [
         ("whole-project", "whole-project handover contract"),
-        ("E7", "E7 handover state"),
+        ("E8", "E8 handover state"),
         ("E-series branch", "E-series branch boundary"),
     ]:
         if phrase not in handover:
             errors.append(f"HandOver missing {label}")
 
-    if "[x] ☑️ E7" not in endorsement or "[ ] E8 — Full execution-system integration." not in endorsement:
-        errors.append("Endorsement does not show E7 endorsed and E8 as current integration target")
+    if "[x] ☑️ E7" not in endorsement:
+        errors.append("Endorsement does not show E7 endorsed")
+    e8_pending = "[ ] E8 — Full execution-system integration." in endorsement
+    e8_endorsed = "[x] ☑️ E8 — Full Execution-System Integration." in endorsement
+    if not (e8_pending or e8_endorsed):
+        errors.append("Endorsement does not record an E8 lifecycle state")
 
     if "T02 → T03 → T04 → T05 → T06 → T07" not in masterplan:
         errors.append("masterplan chronology anchor missing")
@@ -86,15 +91,22 @@ def main() -> int:
     if e7.get("workflow_contract", {}).get("repository_mutation") is not False:
         errors.append("E7 workflow is not explicitly repository-read-only")
 
-    if (ROOT / ".github/workflows/homefinder-execution-governance.yml").is_file():
-        workflow = read(".github/workflows/homefinder-execution-governance.yml")
-        if "permissions:\n  contents: read" not in workflow:
-            errors.append("E7 workflow does not declare contents: read")
-        if "playwright" in workflow.lower() or "chromium" in workflow.lower() or "p04-spatial" in workflow.lower():
-            errors.append("E7 workflow contains product/browser execution vocabulary")
+    e8 = load_json("docs/execution-system/E8-FULL-INTEGRATION-2026-09-01.json")
+    if e8.get("status") != "EXECUTED_VALIDATED_ENDORSED":
+        errors.append("E8 machine state is not endorsed")
+    if e8.get("workflow_owner_count") != 1:
+        errors.append("E8 reports more than one execution-system workflow owner")
+    if e8.get("product_scope_touched") is not False or e8.get("p_series_touched") is not False:
+        errors.append("E8 integration must not touch product/P-series scope")
+
+    workflow = read(".github/workflows/homefinder-execution-governance.yml") if (ROOT / ".github/workflows/homefinder-execution-governance.yml").is_file() else ""
+    if "permissions:\n  contents: read" not in workflow:
+        errors.append("E7/E8 governance workflow does not declare contents: read")
+    if "playwright" in workflow.lower() or "chromium" in workflow.lower() or "p04-spatial" in workflow.lower():
+        errors.append("E-series governance workflow contains product/browser execution vocabulary")
 
     report = {
-        "schema": "HOMEFINDER-E8-INTEGRATION-1.0",
+        "schema": "HOMEFINDER-E8-INTEGRATION-1.1",
         "gate": "E8",
         "status": "PASS" if not errors else "FAIL",
         "errors": errors,
