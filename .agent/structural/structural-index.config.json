@@ -1,0 +1,28 @@
+{
+  "schema":"HOMEFINDER-STRUCTURAL-INDEX-CONFIG-1.0",
+  "authority_boundary":"All listed sources remain authoritative only for the meaning explicitly owned by that source.",
+  "sources":[
+    {"path":"active_development/data/dictionary.json","domain":"DATA","role":"SEMANTIC_DICTIONARY","authority":"LEXICAL","disciplines":["Product / Requirements","Documentation / Knowledge","Data / Storage"]},
+    {"path":"active_development/3d/docs/model-census.json","domain":"3D","role":"AUTHORED_MODEL_CENSUS","authority":"3D_INVENTORY","disciplines":["3D / Spatial","GLB / Web Graphics","Testing / QA"]},
+    {"path":"active_development/data/house-ui-ux-code-reality-map.json","domain":"UI_3D","role":"CODE_REALITY_MAP","authority":"DERIVED","disciplines":["Frontend / UI","3D / Spatial","Architecture","Documentation / Knowledge"]},
+    {"path":"active_development/data/feature-wiring-matrix.json","domain":"UI_ROUTES_3D","role":"FEATURE_WIRING","authority":"DERIVED","disciplines":["Frontend / UI","Architecture","Testing / QA"]},
+    {"path":"active_development/data/design-roots.json","domain":"FRONTEND","role":"DESIGN_ROOTS","authority":"RUNTIME_CONTRACT_SUPPORT","disciplines":["Frontend / UI","Architecture"]},
+    {"path":"active_development/data/house-camera-rig.json","domain":"3D_SPATIAL","role":"CAMERA_RIG","authority":"SPATIAL_CONTRACT_SUPPORT","disciplines":["3D / Spatial","Frontend / UI","Testing / QA"]},
+    {"path":"active_development/data/cinematic-3d-targets.json","domain":"3D_SPATIAL","role":"CINEMATIC_TARGETS","authority":"TARGET_CONTRACT","disciplines":["3D / Spatial","GLB / Web Graphics","Browser / Runtime"]},
+    {"path":"active_development/data/cinematic-assets.json","domain":"3D_GLb","role":"CINEMATIC_ASSETS","authority":"DERIVED_ASSET_MAPPING","disciplines":["GLB / Web Graphics","3D / Spatial"]},
+    {"path":"active_development/data/cinematic-scenes.json","domain":"3D_SPATIAL","role":"CINEMATIC_SCENES","authority":"DERIVED_SCENE_MAPPING","disciplines":["3D / Spatial","Frontend / UI"]},
+    {"path":"active_development/data/cinematic-worlds.json","domain":"3D_SPATIAL","role":"CINEMATIC_WORLDS","authority":"DERIVED_WORLD_MAPPING","disciplines":["3D / Spatial","Architecture"]},
+    {"path":"project-guide/DOCUMENTATION-MAP.md","domain":"DOCUMENTATION","role":"DOCUMENT_ROUTING","authority":"ROUTING","disciplines":["Documentation / Knowledge","Operations / Whole-Project Handover"]},
+    {"path":"MASTER_SKILL.md","domain":"EXECUTION","role":"CANONICAL_EXECUTION_SKILL","authority":"PROJECT_EXECUTION","disciplines":["all"]},
+    {"path":"project-guide/HandOver.md","domain":"CONTINUITY","role":"WHOLE_PROJECT_HANDOVER","authority":"CURRENT_CONTINUITY","disciplines":["Operations / Whole-Project Handover"]},
+    {"path":"project-guide/Endorsement.md","domain":"CONTINUITY","role":"ENDORSEMENT_LEDGER","authority":"GATE_STATUS","disciplines":["Operations / Whole-Project Handover"]}
+  ],
+  "relations":[
+    {"from":"active_development/data/house-ui-ux-code-reality-map.json","to":"active_development/data/feature-wiring-matrix.json","kind":"CROSS_REFERENCE"},
+    {"from":"active_development/data/house-ui-ux-code-reality-map.json","to":"active_development/3d/docs/model-census.json","kind":"SPATIAL_INVENTORY_SUPPORT"},
+    {"from":"active_development/data/feature-wiring-matrix.json","to":"active_development/data/house-camera-rig.json","kind":"CAMERA_BINDING_SUPPORT"},
+    {"from":"active_development/data/cinematic-3d-targets.json","to":"active_development/data/cinematic-assets.json","kind":"ASSET_TARGET_MAPPING"},
+    {"from":"project-guide/DOCUMENTATION-MAP.md","to":"all-listed-sources","kind":"ROUTING"},
+    {"from":"MASTER_SKILL.md","to":"all-listed-sources","kind":"EXECUTION_PROCEDURE_CONTEXT"}
+  ]
+}
