@@ -9,8 +9,10 @@
     "provenance_helper_present": true,
     "status_vocabulary_complete": true,
     "git_write_promoted_live": true,
+    "live_files_verified": true,
     "live_promotion_session": "2026-09-01-114800-E5-PROMOTION",
-    "reason": "E5 canonical files were promoted to the P04 validation branch and live-file verification is required before endorsement."
+    "endorsement_recorded": true,
+    "reason": "E5 canonical files were promoted to the P04 validation branch, re-read from the live branch, and the whole-project handover and endorsement ledger were updated."
   },
   "evidence_anchor": {
     "type": "github_actions_artifact",
