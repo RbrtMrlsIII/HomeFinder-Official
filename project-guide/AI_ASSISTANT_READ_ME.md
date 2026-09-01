@@ -8,11 +8,11 @@ It is not a report archive, skill library, contract replacement, or historical d
 
 **Active track:** P04 Spatial / Visual Validation plus execution-system equalization.
 
-**Accepted:** P04.0, P04.1, P04.2; E0, E1, E2, E3, E4, E5 execution-system milestones.
+**Accepted:** P04.0, P04.1, P04.2; E0, E1, E2, E3, E4, E5, E6 execution-system milestones.
 
-**Current execution-system gate:** E6 — Structural Intelligence Reconciliation.
+**Current execution-system gate:** E7 — Automated Enforcement.
 
-**E6 status:** EXECUTED / VALIDATED / ENDORSEMENT PENDING until the final whole-project continuity checkpoint is synchronized. The only adopted E6 implementation is a derived structural intelligence index; existing semantic, spatial, contract, and execution authorities remain unchanged.
+**E6 status:** EXECUTED / VALIDATED / ENDORSED. The adopted capability is a derived Structural Intelligence Index for cross-domain discovery/lineage. Existing semantic, spatial, contract, and execution authorities remain unchanged.
 
 **Not endorsed:** P04.3, P04.4, P04.5, P04.6.
 
@@ -52,8 +52,7 @@ Startup and handover are always **whole-project**, even when the active gate is 
 - E4 requires an anti-pattern/known-dead-end search before Classify for non-trivial approaches. A strong match is a stop-and-inspect signal, not automatic authority to reject a new approach.
 - E4 keeps `PRODUCT-KNOWLEDGE.md` as the durable-knowledge authority; the anti-repeat index is a derived machine index and must not become a competing knowledge source.
 - E5 established canonical artifact/build provenance across HomeFinder, GitHub Actions, and Vercel. `builds.json` records exact source commits, artifact identity, deployment identity, and evidence states without conflating deployment with runtime success.
-- E6 established `.agent/structural/structural-index.config.json`, `.agent/structural/STRUCTURAL-INDEX.json`, `scripts/structural-index.py`, and `project-guide/repository-governance/STRUCTURAL-INTELLIGENCE.md` as a derived structural-navigation capability.
-- E6 does not replace `active_development/data/dictionary.json`, `active_development/3d/docs/model-census.json`, contracts, manifests, `MASTER_SKILL.md`, `HandOver.md`, `Endorsement.md`, or SH3D authority.
+- E6 established a derived structural-intelligence index for cross-domain discovery and lineage. Existing domain-owned sources remain authorities; the index is navigation state only.
 
 ## Minimal-knowledge rule
 
@@ -122,13 +121,15 @@ A detailed findings document becomes a deletion candidate only after its unique 
 
 `project-guide/repository-governance/STRUCTURAL-INTELLIGENCE.md` — E6 structural-intelligence protocol.
 
-`scripts/structural-index.py` — E6 derived structural index generator.
+`scripts/structural-index.py` — E6 derived structural-intelligence generator.
 
 `.agent/structural/structural-index.config.json` — E6 source configuration.
 
 `.agent/structural/STRUCTURAL-INDEX.json` — E6 derived structural index.
 
 `docs/architecture/E6-STRUCTURAL-INTELLIGENCE-FINDINGS-2026-09-01.md` — E6 findings.
+
+`docs/architecture/E6-STRUCTURAL-INTELLIGENCE-FINDINGS-2026-09-01.json` — E6 machine-readable findings.
 
 `docs/architecture/E6-VALIDATION-2026-09-01.md` — E6 validation evidence.
 
