@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-01",
+  "source_archive": {
+    "name": "HomeFinder.zip",
+    "compressed_bytes": 32962098,
+    "uncompressed_bytes": 59401785,
+    "entries": 3855
+  },
+  "finding": "recursive baseline duplication under nested _base paths",
+  "clean_checkpoint": {
+    "name": "HomeFinder_E8_PSeries_Clean_2026-09-01.zip",
+    "compressed_bytes": 10498000,
+    "entries": 1285,
+    "sha256": "944690768e96cf9078497eb7adb57def7dd4abb6b286ca51e5f6a08fb2265956",
+    "sh3d_count": 1,
+    "glb_count": 4,
+    "nested_zip_count": 0,
+    "base_path_count": 0
+  },
+  "state": {
+    "E0-E8": "complete/validated/endorsed",
+    "P04.1": "accepted",
+    "P04.3": "blocked/unendorsed",
+    "P04.4": "blocked/unendorsed",
+    "P04.5": "blocked/unendorsed",
+    "P04.6": "held",
+    "P05": "held",
+    "P06": "held"
+  },
+  "protected": ["master/HomeFinder.sh3d", "main", "P04 assertions", "historical Git lineage"],
+  "retention": "Original source archive retained as historical evidence; redundant physical copies omitted from the clean checkpoint."
+}
