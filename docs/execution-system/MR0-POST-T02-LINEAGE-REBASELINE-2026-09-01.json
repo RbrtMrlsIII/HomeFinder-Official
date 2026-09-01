@@ -1,0 +1,43 @@
+{
+  "gate":"MR0",
+  "title":"Post-T02 Masterplan & Execution-Lineage Rebaseline",
+  "date":"2026-09-01",
+  "canonical_development_lineage":[
+    {"gate":"T02","status":"COMPLETE/FROZEN","next":"T03"},
+    {"gate":"T03","status":"COMPLETE/FROZEN","next":"T04"},
+    {"gate":"T04","status":"COMPLETE/FROZEN","next":"T05"},
+    {"gate":"T05","status":"COMPLETE/FROZEN","next":"T06"},
+    {"gate":"T06","status":"COMPLETE/FROZEN","next":"T07"},
+    {"gate":"T07","status":"FROZEN","next":"Post-T07 GLB track"},
+    {"track":"Post-T07 GLB","sequence":["P01","P02","P03","P04","P05","P06"]}
+  ],
+  "execution_system_overlay":["E0","E1","E2","E3","E4","E5","E6","E7","E8"],
+  "principle":"Execution-system milestones support and record the master development chronology; they do not replace or reorder it.",
+  "rebaseline_treatment":{
+    "E0":"retain/rebaseline",
+    "E1":"retain",
+    "E2":"retain/extend",
+    "E3":"retain/rebaseline",
+    "E4":"retain/strengthen",
+    "E5":"retain/rebaseline",
+    "E6":"retain/hold-for-dependency-check",
+    "E7":"hold",
+    "E8":"hold"
+  },
+  "durable_rules":[
+    "T02-T06 are frozen post-T02 development lineage.",
+    "T07 is frozen.",
+    "Post-T07 P01-P06 is a separate controlled GLB track.",
+    "The E-series is an execution-system overlay and cannot outrun product-development authority.",
+    "The T01/T02 browser-verification mechanism is the proven default browser execution baseline.",
+    "A later E milestone does not authorize reopening an earlier product gate or changing physical authority."
+  ],
+  "protected_boundaries":[
+    "main",
+    "master/HomeFinder.sh3d",
+    "P04.3-P04.6 acceptance",
+    "historical evidence",
+    "PR #6 history"
+  ],
+  "exit_status":"READY_FOR_VALIDATION"
+}
