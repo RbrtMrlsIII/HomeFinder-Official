@@ -106,7 +106,7 @@ A narrow import-map repair was subsequently committed on the P04 validation view
 - [x] ☑️ E0 — Project-wide execution-system evaluation.
 - [x] ☑️ E1 — Governance & skill equalization; promote one canonical `MASTER_SKILL.md` with equalized procedures and whole-project handover rules.
 - [x] ☑️ E2 — Execution trace & impact-aware file-update system.
-- [x] ☑️ E3 — Project-wide census & inventory foundation.
+- [x] ☑️ E3 — Project-wide census / inventory foundation.
 - [x] ☑️ E4 — Knowledge & anti-repeat system.
 - [x] ☑️ E5 — Canonical artifact/build provenance.
 - [x] ☑️ E6 — Structural intelligence reconciliation and derived structural navigation index.
@@ -190,6 +190,29 @@ Architecture-map replacement, autonomous skill orchestration, structural-source 
 Knowledge-distillation assessment: **new durable knowledge identified and retained in the E6 findings/continuity layer**. The stable rule is that HomeFinder has substantial domain-owned structural knowledge; the execution-system gap is primarily cross-domain discovery/lineage, so structural intelligence should remain a derived navigation layer rather than a new authority.
 
 The whole-project `HandOver.md` was updated with E6 and the exact next gate. E6 is endorsed as an execution-system capability. This endorsement does **not** endorse P04.3–P04.6 and does not authorize Git history reconciliation or P04 runtime mutation.
+
+## E-Series reconciliation note — 2026-09-01
+
+A program-level reconciliation was executed after discovering that the E-series had been layering execution capabilities onto an already-automated HomeFinder repository without a sufficiently complete automation baseline.
+
+The reconciliation established five pre-existing workflow/architecture facts that affect the E-series as a whole:
+
+1. `.github/workflows/homefinder-browser.yml` already owned repository/browser verification and runs on broad push/pull-request events.
+2. `.github/workflows/homefinder-p04.yml` already owned P04 spatial/visual verification with branch/PR scoping.
+3. `.github/workflows/AI_Key.yml` already existed as privileged scheduled/manual automation with `contents: write` and direct main-branch write behavior; it is outside E-series authority.
+4. Repeated documentation/E6 commits can therefore trigger product browser workflows and create failure noise unrelated to the documentation change.
+5. The E7 workflow introduced by the E-series duplicated CI orchestration and was removed rather than retained as a competing workflow owner.
+
+The E-series capability layers E0–E6 remain retained, but their program-level integration is not considered complete until the existing automation ownership and trigger boundaries are reconciled. E7 remains **not endorsed**. E8 remains **held**.
+
+Reconciliation evidence is recorded in:
+- `docs/execution-system/E-SERIES-RECONCILIATION-2026-09-01.md`
+- `docs/execution-system/E-SERIES-RECONCILIATION-2026-09-01.json`
+- `docs/execution-system/E-SERIES-RECONCILIATION-VALIDATION-2026-09-01.md`
+
+The whole-project `HandOver.md` was updated to carry the complete project state and the next bounded gate. No P04 runtime mutation, SH3D mutation, PR merge, or history rewrite was performed.
+
+**Reconciliation result:** executed, validated as a program-level finding set, **not an endorsement of E7/E8**. Next gate: **CI / Execution-System Integration Reconciliation**.
 
 ## Session protocol
 1. Read `README.md`.
