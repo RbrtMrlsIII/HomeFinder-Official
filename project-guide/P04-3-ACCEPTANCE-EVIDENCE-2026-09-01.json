@@ -1,0 +1,43 @@
+{
+  "gate": "P04.3",
+  "date": "2026-09-01",
+  "status": "accepted",
+  "branch": "p04.3/binary-promotion-2026-09-01",
+  "base_branch": "p/series-execution-2026-09-01",
+  "workflow": {
+    "name": "HomeFinder P04 Spatial Validation",
+    "run_id": 33503413059,
+    "job_id": 99841751786,
+    "conclusion": "success",
+    "artifact": {
+      "name": "homefinder-p04-spatial-report",
+      "id": 9798642846,
+      "digest": "sha256:453dae772a323ef014022148546ea4af99121ccf34d54c09179825259fe10654"
+    }
+  },
+  "checks": {
+    "repository_backed_glbs": "pass 4/4",
+    "chromium_install": "pass",
+    "renderer_mount": "pass",
+    "default_target_load": "pass",
+    "source_backed_t04_camera_scale_elevation": "pass",
+    "all_declared_p04_targets_load": "pass",
+    "browser_report_upload": "pass"
+  },
+  "approved_glbs": [
+    {"gate":"T02","path":"active_development/assets/t02/house1-mainhall-public-arrival.glb","sha256":"d3e1851fdf737dc59c4d4939b9aed6d6036c33d500a0bc2be0390130a91fc22d"},
+    {"gate":"T03","path":"active_development/assets/t03/house1-kitchen-bedroom1-network.glb","sha256":"83d1eadf8ac940c213618e5afdd5f7d96b71e7f17aa61a7582d3516f6271020c"},
+    {"gate":"T04","path":"active_development/assets/t04/house1-basement-firstfloor-vertical-interface.glb","sha256":"330b4afc1068554abab84ac985e30f5cd39ec16887ee2f036a42424f7ddd57a0"},
+    {"gate":"T05","path":"active_development/assets/t05/house1-corridor-living-bedroom2-network.glb","sha256":"b71bc456b3fc1aaf4659926b2626da0d4bc61c47a8f495ff64043473d661f1e6"}
+  ],
+  "boundary": {
+    "P04.3": "accepted",
+    "P04.4": "open",
+    "P04.5": "open",
+    "P04.6": "held pending fresh endorsement decision",
+    "SH3D": "protected",
+    "main": "protected",
+    "E0-E8": "complete/validated/endorsed"
+  },
+  "next_gate": "P04.4"
+}
