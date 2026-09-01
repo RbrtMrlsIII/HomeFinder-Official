@@ -1,8 +1,8 @@
 {
   "session_id": "2026-09-01-031500-E4",
   "started_at": "2026-09-01T03:15:00Z",
-  "ended_at": null,
-  "status": "OPEN",
+  "ended_at": "2026-09-01T03:36:00Z",
+  "status": "COMPLETED_VALIDATED",
   "milestone": "E4",
   "gate": "Knowledge & Anti-Repeat System",
   "branch": "p04/glb-runtime-restored-2026-09-01",
@@ -16,7 +16,8 @@
     {"action":"Created docs/knowledge/E4-BASELINE-2026-09-01.md documenting the E4 evidence boundary and validation.","impact":"BOUNDED"},
     {"action":"Updated AI continuity and Documentation Map to route E4 knowledge-system ownership without creating duplicate authorities.","impact":"BOUNDED"},
     {"action":"Updated whole-project HandOver and complete chronological Endorsement ledger for E4.","impact":"SYSTEMIC"},
-    {"action":"Validated the search helper with syntax checking and representative matching/unrelated query behavior.","impact":"BOUNDED"}
+    {"action":"Validated the search helper with syntax checking and representative matching/unrelated query behavior.","impact":"BOUNDED"},
+    {"action":"Closed the session only after all canonical E4 records were synchronized.","impact":"SYSTEMIC"}
   ],
   "files_changed": [
     ".agent/sessions/session-2026-09-01-031500-E4.json",
