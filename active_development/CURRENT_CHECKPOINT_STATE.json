@@ -13,7 +13,7 @@
   "role_visibility_hardening": "frozen",
   "physical_runtime_routes": 0,
   "canonical_scene": "master/HomeFinder.sh3d",
-  "next_allowed_operation": "Run the committed Playwright + Chromium suite in the intended CI environment, classify any failures, then close 5.5G.6L or record a blocker.",
+  "next_allowed_operation": "Resolve the T07-E camera-option runtime contract mismatch, then rerun the hardened CI browser gate and classify the result before endorsement.",
   "5_5G6C": {
     "status": "applied_and_frozen",
     "broker_top_level_profile": false,
@@ -43,7 +43,7 @@
   },
   "5_5G6G": {
     "status": "canonical_three_house_promoted",
-    "canonical_sha256": "2463bbf41a92012bbd81b66ea957c993075f5a2bf6db8a43e676b0c832b0e58c",
+    "canonical_sha256": "2463bb41a92012bbd81b66ea957c993075f5a2bf6db8a43e676b0c832b0e58c",
     "houses_present": [
       "House 1",
       "House 2",
@@ -81,12 +81,12 @@
     }
   },
   "5_5G6L": {
-    "status": "implementation_complete_browser_execution_pending",
+    "status": "browser_validation_blocked_t07e_runtime_contract_mismatch",
     "approved_stack": "Playwright Test + Chromium + reproducible CI",
     "browser_targets": [
       "chromium"
     ],
-    "critical_scope": "role × house navigation, role preservation, authorization, forbidden direct House 2 ↔ House 3 traversal",
+    "critical_scope": "role × house navigation, role preservation, authorization, forbidden direct House 2 ↔ House 3 traversal, T07-E endorsed presentation-camera binding",
     "implementation_files": [
       "active_development/tests/browser/package.json",
       "active_development/tests/browser/package-lock.json",
@@ -94,6 +94,8 @@
       "active_development/tests/browser/server.mjs",
       "active_development/tests/browser/specs/browser-health.spec.mjs",
       "active_development/tests/browser/specs/inter-house-navigation.spec.mjs",
+      "active_development/tests/browser/specs/p04-spatial-visual-validation.spec.mjs",
+      "active_development/tests/browser/specs/t07-e-controlled-presentation.spec.mjs",
       ".github/workflows/homefinder-browser.yml"
     ],
     "architecture_guide": "project-guide/browser-verification/5.5G6L-browser-verification-architecture.md",
@@ -104,7 +106,21 @@
     "continuity_record": "docs/SESSION_CONTINUITY_5.5G6L_IMPLEMENTATION.md",
     "local_mjs_regression": "4/4 PASS",
     "local_playwright_execution": "blocked_by_registry_and_browser_environment",
-    "ci_execution": "pending",
+    "ci_execution": {
+      "latest_run": 33729859227,
+      "latest_run_commit": "9ff45ce45981bfdfce5a024891aadf8965477a2d",
+      "latest_result": "24_passed_1_failed",
+      "p04_glb_runtime_assertions": "4/4 PASS",
+      "t07e_runtime_camera_option_binding": "FAIL; expected HF H-03/H-07/H-08 options were not exposed by runtime selector",
+      "status": "blocked"
+    },
+    "governance_hardening": {
+      "agent_start_guide": "AGENT_START_HERE.md",
+      "ci_rules": "docs/execution-system/CI_EXECUTION_RULES.md",
+      "workflow_preflight": "enabled",
+      "diagnostic_artifacts_committed": false,
+      "ci_playwright_artifact_upload": "removed from hardened workflow; diagnostics remain project-ZIP evidence"
+    },
     "production_credentials_used": false,
     "sh3d_changed": false
   }
