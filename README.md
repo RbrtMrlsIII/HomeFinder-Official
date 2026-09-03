@@ -6,6 +6,12 @@ HomeFinder is a web application with an authored 3D presentation environment. Th
 
 For AI-assisted work, begin with:
 
+`AGENT_START_HERE.md`
+
+It is the mandatory execution doorway for substantive agent sessions. It routes the agent to the canonical project skill, continuity records, active gate, and CI execution rules before any mutation.
+
+Then read:
+
 `project-guide/AI_ASSISTANT_READ_ME.md`
 
 That file is the current continuity index. It tells the agent what is active now and where the detailed source material lives.
@@ -19,6 +25,7 @@ For the full document-routing model, read:
 | Document | What belongs here | What does not belong here |
 | --- | --- | --- |
 | `README.md` | Repository doorway, document map, high-level state | Detailed gate history, skills, coding procedure, product doctrine, test logs |
+| `AGENT_START_HERE.md` | Mandatory startup, no-commit gate, red-CI handling, handover minimum | Project state authority or product rules |
 | `project-guide/AI_ASSISTANT_READ_ME.md` | Current continuity, active phase, latest verified state, next gate, pointers | Skills, coding instructions, product rules, security guidance, long historical narratives |
 | `project-guide/HandOver.md` | Single live checkpoint and exact continuation point | Permanent historical archive or a second handover |
 | `project-guide/Endorsement.md` | Chronological execution and acceptance ledger | Detailed evidence or replacement for HandOver |
@@ -27,6 +34,7 @@ For the full document-routing model, read:
 | `MASTER_SKILL.md` | Agent skills and operating procedures | Project-state continuity |
 | `CODING-INSTRUCTIONS.md` | Coding conventions and implementation guidance | Current checkpoint state |
 | `PRODUCT-KNOWLEDGE.md` | Product/domain context | Agent procedure or gate status |
+| `docs/execution-system/CI_EXECUTION_RULES.md` | CI preflight, retry discipline, evidence boundaries, workflow governance | Product or runtime implementation |
 | `docs/` | Detailed contracts, audits, manifests, reconciliation and validation evidence | A duplicate continuity authority |
 | `archive/` | Historical evidence | Current source of truth |
 
@@ -46,23 +54,26 @@ The main application-facing 3D viewer remains the Sweet Home 3D JS Viewer. The P
 
 The repository already contains browser verification infrastructure. Inspect it before creating another workflow or harness:
 
-- `.github/workflows/homefinder-browser.yml` — repository-wide browser verification.
+- `.github/workflows/homefinder-browser.yml` — repository-wide browser verification with deterministic governance preflight.
 - `.github/workflows/homefinder-p04.yml` — dedicated P04 spatial/visual validation.
 - `active_development/tests/browser/package.json` — Playwright package definition.
 - `active_development/tests/browser/playwright.config.mjs` — browser project and harness configuration.
 - `active_development/tests/browser/server.mjs` — browser test server.
 - `active_development/tests/browser/specs/` — browser acceptance tests.
 
+The browser workflow is intentionally strict: missing canonical assets and tracked diagnostic artifacts are preflight failures; red tests are evidence to classify, not reasons to weaken assertions.
+
 ## Session continuity
 
 Use this order for a new session:
 
-1. `README.md`
-2. `project-guide/AI_ASSISTANT_READ_ME.md`
-3. `project-guide/HandOver.md`
-4. `project-guide/Endorsement.md`
-5. the relevant `docs/` evidence/contracts
-6. `project-guide/masterplan.md` when durable architecture or historical context is needed
-7. the dedicated skill/coding/product files when their subject is relevant
+1. `AGENT_START_HERE.md`
+2. `README.md`
+3. `project-guide/AI_ASSISTANT_READ_ME.md`
+4. `project-guide/HandOver.md`
+5. `project-guide/Endorsement.md`
+6. the relevant `docs/` evidence/contracts
+7. `project-guide/masterplan.md` when durable architecture or historical context is needed
+8. the dedicated skill/coding/product files when their subject is relevant
 
 At every checkpoint, the actual repository state, `HandOver.md`, and `Endorsement.md` must agree.
