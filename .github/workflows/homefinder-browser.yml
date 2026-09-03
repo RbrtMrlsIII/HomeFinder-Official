@@ -2,29 +2,99 @@ name: HomeFinder Browser Verification
 
 on:
   push:
+    paths:
+      - 'active_development/**'
+      - 'master/HomeFinder.sh3d'
+      - '.github/workflows/homefinder-browser.yml'
+      - 'package.json'
+      - 'package-lock.json'
   pull_request:
+    paths:
+      - 'active_development/**'
+      - 'master/HomeFinder.sh3d'
+      - '.github/workflows/homefinder-browser.yml'
+      - 'package.json'
+      - 'package-lock.json'
+  workflow_dispatch:
 
 permissions:
   contents: read
 
+concurrency:
+  group: homefinder-browser-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
 env:
   EXPECTED_P03_SHA256: f8a0bf7d0181155d342dfc97fad0679741e38fdcfda60982dfa3ee534eb81aed
   P03_BRANCH: reconcile/p03-camera-contract-2026-08-31
+  EXPECTED_PRE_P03_SHA256: 2463bb41a92012bbd81b66ea957c993075f5a2bf6db8a43e676b0c832b0e58c
+  EXPECTED_T02_GLb_SHA256: d3e1851fdf737dc59c4d4939b9aed6d6036c33d500a0bc2be0390130a91fc22d
+  EXPECTED_T03_GLb_SHA256: 83d1eadf8ac940c213618e5afdd5f7d96b71e7f17aa61a7582d3516f6271020c
+  EXPECTED_T04_GLb_SHA256: 330b4afc1068554abab84ac985e30f5cd39ec16887ee2f036a42424f7ddd57a0
+  EXPECTED_T05_GLb_SHA256: b71bc456b3fc1aaf4659926b2626da0d4bc61c47a8f495ff64043473d661f1e6
 
 jobs:
   browser:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     container:
-      image: mcr.microsoft.com/playwright:v1.62.0-noble
+      image: mcr.microsoft.com/playwright@sha256:baed2032d533817f3dbe6425de795788430ba345e819a1201337009ba17c9d07
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
 
       - name: Setup Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@249970729cb0ef3589644e289664e5dc5ba9c38
         with:
-          node-version: 22
+          node-version: 22.23.2
+          check-latest: false
+
+      - name: CI governance preflight
+        run: |
+          set -eu
+          echo "Testing commit: $(git rev-parse HEAD)"
+          echo "Branch/ref: ${GITHUB_REF_NAME}"
+          test -z "$(git status --porcelain)"
+
+          for required in \
+            MASTER_SKILL.md \
+            CODING-INSTRUCTIONS.md \
+            AGENT_START_HERE.md \
+            docs/execution-system/CI_EXECUTION_RULES.md \
+            active_development/CURRENT_CHECKPOINT_STATE.json \
+            active_development/tests/browser/package-lock.json \
+            active_development/tests/browser/playwright.config.mjs \
+            active_development/tests/browser/server.mjs; do
+            test -f "$required" || { echo "Missing required governance/runtime file: $required"; exit 1; }
+          done
+
+          while read -r path expected; do
+            test -f "$path" || { echo "Missing canonical runtime asset: $path"; exit 1; }
+            actual="$(sha256sum "$path" | cut -d' ' -f1)"
+            echo "$path SHA-256: $actual"
+            test "$actual" = "$expected" || { echo "Hash mismatch: $path"; exit 1; }
+          done <<'EOF'
+          active_development/assets/t02/house1-mainhall-public-arrival.glb d3e1851fdf737dc59c4d4939b9aed6d6036c33d500a0bc2be0390130a91fc22d
+          active_development/assets/t03/house1-kitchen-bedroom1-network.glb 83d1eadf8ac940c213618e5afdd5f7d96b71e7f17aa61a7582d3516f6271020c
+          active_development/assets/t04/house1-basement-firstfloor-vertical-interface.glb 330b4afc1068554abab84ac985e30f5cd39ec16887ee2f036a42424f7ddd57a0
+          active_development/assets/t05/house1-corridor-living-bedroom2-network.glb b71bc456b3fc1aaf4659926b2626da0d4bc61c47a8f495ff64043473d661f1e6
+          EOF
+
+          duplicates="$(find active_development/3d/glb-viewer -type f -name '*.glb' -print 2>/dev/null || true)"
+          if [ -n "$duplicates" ]; then
+            echo "Unexpected duplicate GLB copies under active_development/3d/glb-viewer:"
+            printf '%s\n' "$duplicates"
+            exit 1
+          fi
+
+          prohibited="$(git ls-files | grep -E '(^|/)(playwright-report|test-results|user-ci-screenshots)(/|$)|\.(trace|webm|har)$' || true)"
+          if [ -n "$prohibited" ]; then
+            echo "Prohibited generated diagnostics are tracked in Git:"
+            printf '%s\n' "$prohibited"
+            exit 1
+          fi
+
+          echo "CI governance preflight: PASS"
 
       - name: Install browser-test dependencies
         working-directory: active_development/tests/browser
@@ -41,7 +111,7 @@ jobs:
           current="$(sha256sum master/HomeFinder.sh3d | cut -d' ' -f1)"
           if [ "$current" = "$EXPECTED_P03_SHA256" ]; then
             echo "P03 candidate model already active: $current"
-          elif [ "$current" = "2463bbf41a92012bbd81b66ea957c993075f5a2bf6db8a43e676b0c832b0e58c" ]; then
+          elif [ "$current" = "$EXPECTED_PRE_P03_SHA256" ]; then
             python3 active_development/tests/browser/promote-p03-camera-candidate.py
             candidate="$(sha256sum master/HomeFinder.sh3d.p03-candidate | cut -d' ' -f1)"
             echo "P03 candidate SHA-256: $candidate"
@@ -63,7 +133,7 @@ jobs:
           echo "Browser model SHA-256: $current"
           if [ "$current" = "$EXPECTED_P03_SHA256" ]; then
             echo "P03 candidate model active"
-          elif [ "$current" = "2463bbf41a92012bbd81b66ea957c993075f5a2bf6db8a43e676b0c832b0e58c" ]; then
+          elif [ "$current" = "$EXPECTED_PRE_P03_SHA256" ]; then
             echo "Canonical pre-candidate model active"
           else
             exit 1
@@ -75,10 +145,9 @@ jobs:
           CI: 'true'
         run: npx playwright test --project=chromium
 
-      - name: Upload Playwright report
-        if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v5
-        with:
-          name: homefinder-playwright-report
-          path: active_development/tests/browser/playwright-report/
-          retention-days: 14
+      - name: Emit failure classification guidance
+        if: ${{ failure() }}
+        run: |
+          echo "CI FAILED — classify before retrying."
+          echo "Required classification: environment | dependency | repository-artifact | contract-mismatch | application-defect | flaky | test-defect | governance-drift"
+          echo "Do not weaken tests, delete assertions, substitute assets, or blindly re-run."
