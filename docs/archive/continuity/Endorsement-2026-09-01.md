@@ -1,17 +1,3 @@
-# HISTORICAL — not current instruction
-
-**Frozen 2026-09-29** during HF-REVIVAL-001 (Issue #10).
-
-This file is preserved as evidence of the chronological endorsement ledger
-through 5.5G.6H. Unchecked 5.5G.6I items remain historical queue, not the
-current slice, unless `Masterplan/NEXT_SLICES.md` names them.
-
-Current routing: `AI_ASSISTANT_READ_ME.md` → `Masterplan/NEXT_SLICES.md`.
-
-A copy also lives at `docs/archive/continuity/Endorsement-2026-09-01.md`.
-
----
-
 # HomeFinder — Endorsement
 
 > Chronological execution map and progress ledger for all development layers.
