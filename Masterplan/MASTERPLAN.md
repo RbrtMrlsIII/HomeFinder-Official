@@ -54,7 +54,7 @@ phone/ID verification. Presentation and SH3D must not.
 - [x] ☑️ Broker surfaces constrained to Broker HQ (profile, market, map live in House 2).
 - [x] ☑️ Government housing remains guest-visible.
 
-**Open — new evidence required (Issue HF-BE-001):**
+**Open — new evidence required (Issue #12 HF-BE-001):**
 
 - [ ] Audit PH 12-digit phone (`639XXXXXXXXX`) against live Firebase Auth + `users/{uid}` writes.
 - [ ] Audit timeout penalties, banned-account handling, and account-creation abuse controls against actual rules/functions — not docs.
@@ -74,7 +74,7 @@ Cloud Functions own trusted mutations and projections. Client UI must not impers
 - [x] ☑️ Firestore rules and indexes live under `active_development/firebase/` (not under docs).
 - [x] ☑️ Functions exist: public-profile projection, broker-HQ discovery projection, KYC contracts, tiers.
 
-**Open — new evidence required (Issue HF-BE-002):**
+**Open — new evidence required (Issue #13 HF-BE-002):**
 
 - [ ] Re-verify security rules/authorization boundaries against the current role model with a fresh rules test.
 - [ ] Re-verify listings/wanted durability and public-profile projection on the live named database.
@@ -87,7 +87,7 @@ Cloud Functions own trusted mutations and projections. Client UI must not impers
 Supabase is the **trusted server/storage boundary** (KYC signed URLs, listing image upload, storage SQL).
 It must consume Firebase identity. It is **not** HomeFinder domain authority.
 
-**Open — new evidence required (Issue HF-BE-003):**
+**Open — new evidence required (Issue #14 HF-BE-003):**
 
 - [ ] Census live Edge functions vs `active_development/supabase/functions/` (replace stale census).
 - [ ] Prove KYC upload/read is admin-gated and seeker/owner cannot self-escalate.
@@ -100,7 +100,7 @@ It must consume Firebase identity. It is **not** HomeFinder domain authority.
 PayPal owns provider subscription state. Cloudflare owns DNS/WAF/TLS when an executable Worker exists.
 MapLibre is presentation only.
 
-**Open — new evidence required (Issue HF-BE-004):**
+**Open — new evidence required (Issue #15 HF-BE-004):**
 
 - [ ] Preserve: real PayPal provider state ≠ admin smoke-test entitlement. Smoke-test must not overwrite provider state.
 - [ ] Preserve: webhook processing/processed/failed, retry-safe, no duplicate side effects.
@@ -122,7 +122,7 @@ Walking never changes role.
 - [x] ☑️ No direct House 2 ↔ House 3 portal in the canonical model.
 - [x] ☑️ Single SH3D authority; noncanonical SH3Ds have no runtime dependency.
 
-**Open — new evidence required (Issue HF-3D-001). Unfrozen; not the current slice:**
+**Open — new evidence required (Issue #16 HF-3D-001). Unfrozen; not the current slice:**
 
 - [ ] Identify and prove House 1 ↔ House 2 physical portal, clearance, camera continuity; promote runtime route only if evidence passes.
 - [ ] Identify and prove House 1 ↔ House 3 physical portal, clearance, camera continuity; promote runtime route only if evidence passes.
@@ -141,7 +141,7 @@ Logical destinations ≠ physical doors. Role chrome is application state.
 - [x] ☑️ Save Property / Wanted Listings counterpart logic (package).
 - [x] ☑️ Grok preview: market, listing detail, wanted, finance, saved, orbit home, FPS walk, Broker HQ application gate (workspace; not `main`).
 
-**Open — new evidence required (Issue HF-FE-001):**
+**Open — new evidence required (Issue #17 HF-FE-001):**
 
 - [ ] Reconcile logical intent → semantic destination → physical zone → eligible portal → route/camera.
 - [ ] Keep logical destinations distinct from physical doors.
@@ -158,7 +158,7 @@ Old freeze-era suites are historical. New evidence replaces them; they are not d
 
 - [x] ☑️ Historical UI/DOM census, WalkMyPlan test migration, and failure classification exist as archive.
 
-**Open — new evidence required (Issue HF-QA-001):**
+**Open — new evidence required (Issue #18 HF-QA-001):**
 
 - [ ] Authority-chain check PASSes on the exact Draft-PR head (includes `tools.md`).
 - [ ] Grok preview: listings render; Broker HQ role-gated; no House 2↔3 door in the walk world.
@@ -172,7 +172,7 @@ Old freeze-era suites are historical. New evidence replaces them; they are not d
 
 - [x] ☑️ Vercel production URL retired. Do not restore `home-finder-official.vercel.app`. No `vercel.json` in this package.
 - [x] ☑️ GitHub Pages named as public live-site target; landing + workflow on revival branch.
-- [ ] GitHub Pages runtime-proven on `main` (Issue HF-OPS-001 — owner enables `github-pages` environment).
+- [ ] GitHub Pages runtime-proven on `main` (Issue #19 HF-OPS-001 — owner enables `github-pages` environment).
 - [ ] Do not deploy Firebase Hosting while web/3D integration is incomplete.
 - [ ] Grok App Builder deploy is not HomeFinder production.
 
@@ -180,7 +180,7 @@ Old freeze-era suites are historical. New evidence replaces them; they are not d
 
 ## 9 — Polish (after 1–8 have current evidence)
 
-Issue HF-POLISH-001. Not the current slice.
+Issue #20 HF-POLISH-001. Not the current slice.
 
 - [ ] Door animation / traversal integration.
 - [ ] Responsive spatial/UI integration.
