@@ -3,6 +3,10 @@
 **Agents:** open `AI_ASSISTANT_READ_ME.md`, then `Masterplan/NEXT_SLICES.md`.
 Do **not** start from `project-guide/HandOver.md` — that ledger is HISTORICAL.
 
+**Public live site (canonical):** https://RbrtMrlsIII.github.io/HomeFinder-Official/  
+**Vercel is not a production acceptance target.** The former
+`home-finder-official.vercel.app` URL is retired.
+
 Docs: `docs/md`, `docs/csv`, `docs/json`  
 Integrations: `docs/md/firebase|supabase|cloudflare|paypal`  
 App: `active_development/` (`firestore.rules` stays under `firebase/`)  
@@ -36,6 +40,7 @@ Future sessions preserve this behavior (the former Flashlight Method maps here):
 8. Do not delete old runtime/navigation code until replacement is reconciled.
 9. House 2 ↔ House 3 direct physical traversal is forbidden.
 10. Draft-PR-first. No auto-merge. `main` changes through governed PRs only.
+11. Do not restore Vercel as production.
 
 Companions (not current ledgers): `CODING-INSTRUCTIONS.md`, `MASTER_SKILL.md`,
 `PRODUCT-KNOWLEDGE.md`, bannered files under `project-guide/`.
@@ -43,9 +48,9 @@ Companions (not current ledgers): `CODING-INSTRUCTIONS.md`, `MASTER_SKILL.md`,
 ## Current execution state
 
 See `Masterplan/NEXT_SLICES.md`. As of 2026-09-29 the current slice is
-**HF-REVIVAL-001** (Issue #10): restore the public product while Vercel is 404
-and install this authority chain. Physical portal certification (5.5G.6I)
-is **not** the current slice.
+**HF-REVIVAL-001** (Issue #10): restore the public product, retire Vercel,
+install this authority chain, and host the public live site on GitHub Pages.
+Physical portal certification (5.5G.6I) is **not** the current slice.
 
 ## SESSION CONTINUITY
 

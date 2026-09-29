@@ -4,8 +4,8 @@
 what HomeFinder is, what must remain true, which responsibilities are distinct,
 how they connect, and which boundaries cannot be silently crossed.
 
-Implementation, UI, deployment, Grok workspace, Vercel, Firebase, SH3D, branch,
-skill, tool, or documentation conventions MUST NOT override it.
+Implementation, UI, deployment, Grok workspace, GitHub Pages, Firebase, SH3D,
+branch, skill, tool, or documentation conventions MUST NOT override it.
 
 This is HomeFinder law, not a copy of TeamAi product meaning. The *authority
 shape* is adapted from TeamAi: one Product Law, one wiring map, one Masterplan,
@@ -34,7 +34,8 @@ and walk the space before you decide.
 | Application / backend | Identity, session, role, authorization, listings durability, payments, bans | Physical room geometry |
 | SH3D / spatial presentation | Physical rooms, walls, doors, cameras, walkable presentation | Role, session, authorization |
 | Product Law | Meaning and protected invariants | Runtime bits |
-| Grok App Builder workspace | Public-product revival while Vercel is dark | Canonical `main`, SH3D mutation |
+| GitHub Pages | Canonical public live-site validation target | Product meaning, SH3D mutation |
+| Grok App Builder workspace | Public-product revival vehicle | Canonical `main`, SH3D mutation, production hosting |
 | GitHub `main` | Canonical accepted package | Unreviewed revival drafts |
 
 Physical movement **never** changes authenticated identity, role, or session.
@@ -69,6 +70,8 @@ government URLs.
 - Historical SH3D filenames and hashes may remain in evidence documents.
 - Current-state manifests must name the live file and its current hash.
 - Runtime routes are promoted only after physical evidence passes.
+- A GitHub Pages **delivery copy** of the file is allowed. That copy is not a
+  second authority and must not be edited independently.
 - Firebase Hosting remains undeployed until web/3D integration is independently
   proven.
 
@@ -79,13 +82,32 @@ government URLs.
 `specified ≠ implemented ≠ verified ≠ runtime-proven ≠ completed ≠ accepted`
 
 A passing test proves only the contract it exercises. Screenshots, CI, Grok
-preview, Vercel, and model commentary are evidence. They do not independently
-change Product Law or close an Issue.
+preview, GitHub Pages HTTP status, and model commentary are evidence. They do
+not independently change Product Law or close an Issue.
 
-The public live URL `https://home-finder-official.vercel.app` was observed
-**404 DEPLOYMENT_NOT_FOUND** on 2026-09-29. That fact is runtime evidence of
-outage. Restoring a Grok preview does **not** restore Vercel, GitHub Pages, or
-Firebase Hosting.
+---
+
+## 5.1 Public live-site hosting (Vercel retired)
+
+**Vercel is not a production acceptance target.**
+
+The former URL `https://home-finder-official.vercel.app` was observed
+**404 DEPLOYMENT_NOT_FOUND** on 2026-09-29 and is **retired**. Do not restore
+it. Do not add `vercel.json` or `.vercel/` to this package. Do not treat a
+Grok App Builder deploy as HomeFinder production.
+
+The canonical public live-site validation target is GitHub Pages, matching the
+TeamAi delivery pattern (not TeamAi product meaning):
+
+`https://RbrtMrlsIII.github.io/HomeFinder-Official/`
+
+Preserve the `HomeFinder-Official` path casing in recorded evidence. Browser
+hostname lowercasing is normal URL handling.
+
+GitHub Pages is **specified** as production hosting. It is **implemented** on
+the revival branch (landing + Pages workflow). It is **not runtime-proven**
+until a default-branch Pages deploy returns HTTP 200 with this landing, and
+**not accepted** until a governed merge plus owner review.
 
 ---
 
@@ -110,6 +132,7 @@ Forbidden as **current** instruction:
 - `OBSOLETE_FILES.md`
 - Numbered/dated handover replacements
 - Treating `project-guide/masterplan.md` as a second current Masterplan
+- Treating Vercel as the live site
 
 Historical copies belong in `docs/archive/` (and may remain at their original
 paths **only** with an explicit HISTORICAL banner). Historical evidence never
@@ -141,6 +164,7 @@ overrides current configuration.
 6. Distinguish source, generated, historical, and temporary artifacts.
 7. UI/DOM counts are not room/object counts.
 8. A Grok workspace must not silently become a second repository authority.
+9. Do not restore Vercel as HomeFinder production.
 
 ---
 

@@ -16,17 +16,22 @@ Do not start from `project-guide/HandOver.md`. That path is HISTORICAL.
 
 ## 2026-09-29 CURRENT SESSION STATE
 
-- Connected GitHub login: `teamaiofficialph` (Grok connector). Owner of the
-  package remains `RbrtMrlsIII`. Push: yes. Admin: no.
+- Connected GitHub login: `teamaiofficialph` (Grok connector). Collaborators
+  with write: `Tenaj36`. Owner of the package remains `RbrtMrlsIII`.
+  Push: yes. Admin: no.
 - Repo: `RbrtMrlsIII/HomeFinder-Official`
 - Current slice: Issue #10 HF-REVIVAL-001
 - Branch: `governance/revival-orucaveam-2026-09-29`
+- Draft PR: #11
 - `main` HEAD at session start: `1a101c8bcb62d71c4275c6cd3c2edca9dfb8a2ee`
-- Public URL `https://home-finder-official.vercel.app` → 404 DEPLOYMENT_NOT_FOUND
+- **Vercel retired.** `https://home-finder-official.vercel.app` → 404.
+  Do not restore.
+- Canonical public live-site target:
+  `https://RbrtMrlsIII.github.io/HomeFinder-Official/`
 - Open PRs #6 and #9: spatial-validation vehicles, not this slice
-- `master/HomeFinder.sh3d`: protected, unmodified
+- `master/HomeFinder.sh3d`: protected, unmodified source
 - Grok App Builder workspace: public product revival (market, wanted, walk,
-  broker HQ gate). Implemented in preview. Not `main`. Not Vercel.
+  broker HQ gate). Implemented in preview. Not `main`. Not production.
 
 ## Current truth
 
@@ -34,8 +39,9 @@ Do not start from `project-guide/HandOver.md`. That path is HISTORICAL.
 |---|---|
 | Authority chain specified | specified + implemented on revival branch |
 | Historical HandOver/Endorsement retired as live ledgers | implemented on revival branch |
+| Vercel removed from production | specified + implemented on revival branch (law, landing, workflow, verifier) |
+| GitHub Pages public live site | specified + implemented on revival branch; not runtime-proven; not accepted |
 | Public Grok catalog | implemented in workspace; preview-verified this session if smoke passes |
-| Vercel public site restored | **not implemented** (404) |
 | SH3D portal certification 5.5G.6I | not started; not this slice |
 | Accepted on `main` | not accepted |
 
@@ -50,3 +56,4 @@ Historical files stay at `project-guide/HandOver.md` and
 
 Grok workspace ≠ GitHub `main`. Do not copy the TanStack revival app over the
 SH3D package. Do not let the SH3D package block the public revival preview.
+Do not treat a Grok platform deploy as HomeFinder production hosting.

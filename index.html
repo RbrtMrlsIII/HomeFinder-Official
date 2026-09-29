@@ -3,17 +3,90 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=/active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/HomeFinderViewer.html">
-  <title>HomeFinder 3D</title>
+  <title>HomeFinder — Philippines rentals and spaces</title>
+  <meta name="description" content="Find a place that fits a life. Walk the three-house world before you decide. Production lives on GitHub Pages — Vercel is not a production host.">
+  <meta name="theme-color" content="#5B4030">
+  <style>
+    :root {
+      --bg: #f3ece0;
+      --card: #fffdf8;
+      --fg: #2c2621;
+      --muted: #6b5c4c;
+      --primary: #5b4030;
+      --accent: #c4a574;
+      --border: #e2d8c7;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 "Segoe UI", system-ui, sans-serif; }
+    a { color: var(--primary); }
+    header, main, footer { width: min(1080px, calc(100% - 2rem)); margin-inline: auto; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem 0; }
+    .brand { font-family: Georgia, serif; font-size: 1.35rem; font-weight: 700; text-decoration: none; color: var(--fg); }
+    nav { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    nav a { text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+    .hero { padding: 3rem 0 2rem; }
+    h1 { font-family: Georgia, serif; font-size: clamp(2rem, 6vw, 3.4rem); line-height: 1.12; margin: 0.4rem 0 1rem; font-weight: 600; }
+    .kicker { letter-spacing: 0.16em; text-transform: uppercase; font-size: 0.72rem; color: var(--muted); }
+    .lede { max-width: 38rem; color: var(--muted); }
+    .cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 1.15rem; border-radius: 8px; text-decoration: none; font-weight: 600; }
+    .btn-primary { background: var(--primary); color: #f7f3ec; }
+    .btn-ghost { background: var(--card); color: var(--fg); border: 1px solid var(--border); }
+    .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin: 2rem 0 3rem; }
+    article { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.25rem; }
+    article h2 { font-family: Georgia, serif; font-size: 1.2rem; margin: 0.35rem 0; }
+    .note { font-size: 0.92rem; color: var(--muted); border-top: 1px solid var(--border); padding: 1.5rem 0 3rem; }
+    footer { color: var(--muted); font-size: 0.9rem; padding-bottom: 2.5rem; }
+  </style>
 </head>
 <body>
+  <header>
+    <a class="brand" href="./">HomeFinder</a>
+    <nav>
+      <a href="active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/HomeFinderViewer.html">3D home</a>
+      <a href="https://github.com/RbrtMrlsIII/HomeFinder-Official">Package</a>
+      <a href="https://github.com/RbrtMrlsIII/HomeFinder-Official/issues/10">Issue #10</a>
+    </nav>
+  </header>
   <main>
-    <h1>HomeFinder 3D</h1>
-    <p>Opening the HomeFinder 3D viewer…</p>
-    <p><a href="/active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/HomeFinderViewer.html">Open HomeFinder 3D</a></p>
+    <section class="hero">
+      <p class="kicker">Philippines · Rentals & spaces</p>
+      <h1>Find a place that fits your life.</h1>
+      <p class="lede">Bedspaces, homes, offices, retail, and warehouses — with people you can trust. Walk the three-house world before you decide. House 1 is public. Brokers work in House 2. Seekers and owners in House 3. There is no direct door between House 2 and House 3.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/HomeFinderViewer.html">Walk the canonical 3D home</a>
+        <a class="btn btn-ghost" href="https://github.com/RbrtMrlsIII/HomeFinder-Official">Open the governed package</a>
+      </div>
+    </section>
+    <section class="grid">
+      <article>
+        <p class="kicker">House 1</p>
+        <h2>Public hub</h2>
+        <p>Guests enter here. Featured listings and government housing programs stay visible without a walkable government role.</p>
+      </article>
+      <article>
+        <p class="kicker">House 2</p>
+        <h2>Broker HQ</h2>
+        <p>Broker market, map, and profile stay in operations. Identity never changes because you walked through a door.</p>
+      </article>
+      <article>
+        <p class="kicker">House 3</p>
+        <h2>Seeker & owner</h2>
+        <p>Saved properties and wanted posts live here. Cross-house travel always returns through House 1.</p>
+      </article>
+    </section>
+    <p class="note">
+      <strong>Production host:</strong> this GitHub Pages site
+      (<code>https://RbrtMrlsIII.github.io/HomeFinder-Official/</code>).
+      Vercel is not a production acceptance target. The former URL
+      <code>home-finder-official.vercel.app</code> is retired after
+      <code>404 DEPLOYMENT_NOT_FOUND</code>. Firebase Hosting remains undeployed
+      until web/3D integration is independently proven.
+      <code>specified ≠ implemented ≠ verified ≠ runtime-proven ≠ accepted</code>.
+    </p>
   </main>
-  <script>
-    window.location.replace('/active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/HomeFinderViewer.html');
-  </script>
+  <footer>
+    HomeFinder Official · governed by Product Law · Draft-PR-first · no auto-merge
+  </footer>
 </body>
 </html>

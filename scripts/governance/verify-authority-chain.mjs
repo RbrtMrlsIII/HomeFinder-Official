@@ -25,16 +25,47 @@ const required = [
   "skills/orucaveam/SKILL.md",
   "skills/session-start/SKILL.md",
   ".github/pull_request_template.md",
+  ".github/workflows/github-pages.yml",
   "master/HomeFinder.sh3d",
+  "index.html",
+  "404.html",
 ];
 
 for (const rel of required) {
   if (!existsSync(resolve(root, rel))) errors.push(`missing required file: ${rel}`);
 }
 
+if (existsSync(resolve(root, "vercel.json")) || existsSync(resolve(root, ".vercel"))) {
+  errors.push("Vercel production config is forbidden (vercel.json / .vercel)");
+}
+
 const law = read("Product_Law/PRODUCT_LAW.md");
 if (law && !/highest product authority/i.test(law)) {
   errors.push("PRODUCT_LAW.md must declare itself the highest product authority");
+}
+if (law && !/github\.io\/HomeFinder-Official/i.test(law)) {
+  errors.push("PRODUCT_LAW.md must name GitHub Pages as the canonical public live site");
+}
+if (law && !/Vercel is not a production/i.test(law)) {
+  errors.push("PRODUCT_LAW.md must retire Vercel as a production acceptance target");
+}
+
+const pages = read(".github/workflows/github-pages.yml");
+if (pages && /preset:\s*vercel|vercel\.app/i.test(pages) && !/not Vercel/i.test(pages)) {
+  errors.push("github-pages.yml must not deploy HomeFinder production to Vercel");
+}
+
+const index = read("index.html");
+if (index) {
+  if (!/GitHub Pages/i.test(index)) {
+    errors.push("index.html must identify GitHub Pages as the public live site");
+  }
+  if (!/Vercel is not a production/i.test(index)) {
+    errors.push("index.html must state that Vercel is not production");
+  }
+  if (/http-equiv=["']refresh["'][^>]*vercel/i.test(index)) {
+    errors.push("index.html must not meta-refresh to Vercel");
+  }
 }
 
 const slices = read("Masterplan/NEXT_SLICES.md");

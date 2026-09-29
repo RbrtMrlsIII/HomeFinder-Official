@@ -14,10 +14,12 @@ snapshot, and present on the accepted checkpoint. Partial work stays unchecked.
 - [x] ☑️ Install Product Law / Wiring / Masterplan / Next Slices / Policy / Skill wiring (revival branch).
 - [x] ☑️ Banner `project-guide/HandOver.md` and `Endorsement.md` as HISTORICAL (revival branch).
 - [x] ☑️ Name Issue #10 as the single current slice.
-- [x] ☑️ Record Vercel 404 as runtime evidence; do not claim production restore.
-- [x] ☑️ Keep `master/HomeFinder.sh3d` unmodified.
+- [x] ☑️ Retire Vercel as a production acceptance target (revival branch).
+- [x] ☑️ Name GitHub Pages as the canonical public live-site target (revival branch).
+- [x] ☑️ Keep `master/HomeFinder.sh3d` unmodified as source.
 - [ ] Draft PR opened; remains Draft until exact-head governance check passes.
 - [ ] Human review + merge to `main` (owner). Not this agent session's acceptance.
+- [ ] GitHub Pages default-branch deploy HTTP 200 (runtime-proven). Owner must enable the `github-pages` environment.
 
 ## A — Authority / foundations (historical, retained)
 
@@ -66,7 +68,8 @@ snapshot, and present on the accepted checkpoint. Partial work stays unchecked.
 ## F — Frontend / public product revival
 
 - [ ] Grok preview market/wanted/finance/walk restored (this session: implemented in workspace).
-- [ ] Vercel production URL returns a HomeFinder document (not 404).
+- [x] ☑️ Vercel production URL retired (do not restore). Former invariant obsolete by owner order 2026-09-29.
+- [ ] GitHub Pages public landing + 3D viewer path served from `main` (runtime-proven).
 - [ ] 5.5G.7 — Reconcile logical destinations with canonical physical model.
 
 ## G — Backend / deployment readiness

@@ -24,7 +24,7 @@ an Issue number here as authority.
 | Verification & CI/Browser | Tests, governance integrity, browser evidence, promotion evidence |
 | Documentation, Knowledge & Session | Session snapshot, PRODUCT-KNOWLEDGE, skill routing |
 | Recovery, History & Reconciliation | Archives, original zip/package, historical hashes, restoration |
-| Delivery & Operations | Vercel, Firebase Hosting, Grok preview as revival vehicle only |
+| Delivery & Operations | GitHub Pages public live site; Grok preview as revival vehicle only; Vercel retired; Firebase Hosting undeployed |
 
 ## Canonical field companions
 
@@ -37,6 +37,7 @@ an Issue number here as authority.
 | Durable concepts | `PRODUCT-KNOWLEDGE.md` |
 | Skill routing | `docs/SKILL_WIRING.md` |
 | Protected model | `master/HomeFinder.sh3d` |
+| Public live site | `index.html` + `.github/workflows/github-pages.yml` |
 | Historical continuity | `docs/archive/continuity/` and bannered `project-guide/` files |
 
 ## Authority boundaries
@@ -44,9 +45,16 @@ an Issue number here as authority.
 - Presentation code must not self-attest identity or authorization.
 - SH3D must not grant roles.
 - Grok App Builder must not mutate `master/HomeFinder.sh3d`.
-- Vercel 404 is delivery evidence, not a license to fork Product Law.
+- Vercel is not a production acceptance target.
+- GitHub Pages is the public live-site validation reference only. It does not
+  create product authority or authorize SH3D mutation.
 - PRs #6 and #9 remain spatial-validation vehicles under Recovery / Spatial.
   They are not the current public-revival slice.
+
+## Live delivery reference
+
+Canonical public live-site validation target:
+`https://RbrtMrlsIII.github.io/HomeFinder-Official/`
 
 ## No parallel authority
 

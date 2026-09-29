@@ -12,7 +12,8 @@ reviewer slots, OpenRouter sequences, or Seat/Firestore commerce workflows.
 `O → R → U → C → A → V → E → A → M`
 
 - **O — Objective:** exact authorized outcome.
-- **R — Restrictions:** protected boundaries (SH3D, House 2↔3, no auto-merge).
+- **R — Restrictions:** protected boundaries (SH3D, House 2↔3, no auto-merge,
+  Vercel is not production).
 - **U — User Authority:** owner decision and explicit permission.
 - **C — Canonical Authority:** Product Law, then current slice, then owning Issue.
 - **A — Action:** smallest coherent change.
@@ -39,6 +40,17 @@ keep a second named execution doctrine.
 - `docs/archive/` is historical storage.
 - Active `HandOver.md`, active `Endorsement.md`, a parallel Skill namespace, and
   `OBSOLETE_FILES.md` are forbidden as current instruction.
+
+## Canonical public live-site validation
+
+For public live website testing, use only
+`https://RbrtMrlsIII.github.io/HomeFinder-Official/`.
+Preserve the `HomeFinder-Official` path casing in recorded evidence. Browser
+hostname lowercasing is normal URL handling.
+
+**Vercel and guessed/retired routes are not live acceptance targets.**
+Grok preview is revival evidence, not production acceptance. Public live-site
+validation is evidence only and does not change Product Law or promotion status.
 
 ## PR discipline
 
@@ -79,3 +91,17 @@ Then: `warning → authority reconciliation → implementation → replacement
 validation → verification → evidence → session update`.
 
 Never weaken a validator merely to obtain green CI.
+
+## 2026-09-29 Vercel production retirement
+
+```text
+VALIDATION CHANGE WARNING
+Protected old invariant: Canonical public live URL is https://home-finder-official.vercel.app
+Authorized new rule: Vercel is not a production acceptance target. Canonical public live-site validation is GitHub Pages https://RbrtMrlsIII.github.io/HomeFinder-Official/
+Why the old invariant is obsolete: Vercel returns 404 DEPLOYMENT_NOT_FOUND; owner authorized remove Vercel from production on 2026-09-29.
+Replacement invariant: GitHub Pages is the public live-site validation target. Firebase Hosting remains undeployed until web/3D integration is independently proven. Grok App Builder is a revival vehicle, not GitHub main.
+Implementation impact: index.html landing, github-pages.yml, Product Law §5.1, no vercel.json
+Validation impact: authority-chain forbids vercel.json and requires the Pages URL in Product Law
+Evidence/browser impact: Pages HTTP 200 is runtime proof only after merge + owner-enabled github-pages environment
+Residual uncertainty: Pages environment enablement requires repository admin (RbrtMrlsIII); teamaiofficialph has write, not admin
+```
