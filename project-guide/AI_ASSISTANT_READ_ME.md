@@ -1,3 +1,12 @@
+# HISTORICAL — not current instruction
+
+**Frozen 2026-09-29** during HF-REVIVAL-001 (Issue #10).
+
+The live session snapshot is the repository-root `AI_ASSISTANT_READ_ME.md`.
+This project-guide file is retained as a deeper historical orientation manual.
+
+---
+
 # HomeFinder — AI Assistant Continuity
 
 This is the **small, current orientation layer for AI-assisted sessions**. Its purpose is to prevent already-resolved investigations, wrong architectural assumptions, and obsolete experiments from being repeated.
