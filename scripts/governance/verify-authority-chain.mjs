@@ -20,6 +20,7 @@ const required = [
   "Masterplan/MASTERPLAN.md",
   "Masterplan/NEXT_SLICES.md",
   "POLICY.md",
+  "tools.md",
   "docs/SKILL_WIRING.md",
   "AI_ASSISTANT_READ_ME.md",
   "skills/orucaveam/SKILL.md",
@@ -29,6 +30,7 @@ const required = [
   "master/HomeFinder.sh3d",
   "index.html",
   "404.html",
+  "docs/evidence/2026-09-29-revival-unfreeze.md",
 ];
 
 for (const rel of required) {
@@ -66,6 +68,27 @@ if (index) {
   if (/http-equiv=["']refresh["'][^>]*vercel/i.test(index)) {
     errors.push("index.html must not meta-refresh to Vercel");
   }
+}
+
+const plan = read("Masterplan/MASTERPLAN.md");
+if (plan) {
+  if (!/Backend · identity/i.test(plan)) {
+    errors.push("MASTERPLAN.md must keep chronological backend identity section");
+  }
+  if (!/Frontend · public product/i.test(plan)) {
+    errors.push("MASTERPLAN.md must keep frontend public product after backend");
+  }
+  if (!/Validation unfreeze/i.test(plan)) {
+    errors.push("MASTERPLAN.md must record the validation unfreeze");
+  }
+}
+
+const tools = read("tools.md");
+if (tools && !/RETIRED as HomeFinder production/i.test(tools)) {
+  errors.push("tools.md must retire Vercel as HomeFinder production");
+}
+if (tools && !/Firebase Authentication/i.test(tools)) {
+  errors.push("tools.md must name Firebase Authentication as identity authority");
 }
 
 const slices = read("Masterplan/NEXT_SLICES.md");

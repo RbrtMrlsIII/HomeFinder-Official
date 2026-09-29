@@ -17,14 +17,16 @@ an Issue number here as authority.
 | Field | Purpose |
 |---|---|
 | Product & Governance | Product meaning, protected invariants, authority chain, PR discipline |
-| Spatial / 3D | Canonical SH3D, three-house topology, cameras, portals, walk presentation |
-| Frontend & Experience | Public product UI, role chrome, market, wanted, finance, broker HQ |
 | Backend, Identity & Security | Auth, session, role, listings durability, bans, phone/ID verification |
 | Application Integration & Contracts | Firebase, Supabase, Cloudflare, PayPal, government URLs |
+| Spatial / 3D | Canonical SH3D, three-house topology, cameras, portals, walk presentation |
+| Frontend & Experience | Public product UI, role chrome, market, wanted, finance, broker HQ |
 | Verification & CI/Browser | Tests, governance integrity, browser evidence, promotion evidence |
 | Documentation, Knowledge & Session | Session snapshot, PRODUCT-KNOWLEDGE, skill routing |
 | Recovery, History & Reconciliation | Archives, original zip/package, historical hashes, restoration |
 | Delivery & Operations | GitHub Pages public live site; Grok preview as revival vehicle only; Vercel retired; Firebase Hosting undeployed |
+
+Field order in this table is the execution order: backend before frontend.
 
 ## Canonical field companions
 
@@ -33,11 +35,13 @@ an Issue number here as authority.
 | Ordered checklist | `Masterplan/MASTERPLAN.md` |
 | Current slice | `Masterplan/NEXT_SLICES.md` |
 | Execution policy | `POLICY.md` |
+| Tool registry | `tools.md` |
 | Session snapshot | `AI_ASSISTANT_READ_ME.md` |
 | Durable concepts | `PRODUCT-KNOWLEDGE.md` |
 | Skill routing | `docs/SKILL_WIRING.md` |
 | Protected model | `master/HomeFinder.sh3d` |
 | Public live site | `index.html` + `.github/workflows/github-pages.yml` |
+| New evidence | `docs/evidence/` |
 | Historical continuity | `docs/archive/continuity/` and bannered `project-guide/` files |
 
 ## Authority boundaries
@@ -50,6 +54,7 @@ an Issue number here as authority.
   create product authority or authorize SH3D mutation.
 - PRs #6 and #9 remain spatial-validation vehicles under Recovery / Spatial.
   They are not the current public-revival slice.
+- Validations are unfrozen. New evidence replaces freeze-era green.
 
 ## Live delivery reference
 

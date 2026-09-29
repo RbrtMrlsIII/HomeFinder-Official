@@ -7,7 +7,8 @@ product authority.
 |---|---|
 | Start of session / recovery / “where are we” | `skills/session-start/SKILL.md` |
 | Any implementation or PR | `skills/orucaveam/SKILL.md` |
-| Spatial / SH3D / portals / cameras | Product Law §3–4, then deferred 5.5G.6I items — no separate Skill yet |
+| Tool choice / Firebase / Supabase / PayPal / Pages / Vercel | `tools.md` then Product Law §2 and §5.1 |
+| Spatial / SH3D / portals / cameras | Product Law §3–4, then MASTERPLAN §5 (unfrozen; new evidence) |
 | Public revival UI in Grok workspace | `AGENTS.project.md` in the Grok workspace |
 
 Add a Skill only when a procedure will be reused. Do not grow a parallel

@@ -29,15 +29,17 @@ keep a second named execution doctrine.
 
 - `Product_Law/PRODUCT_LAW.md` is the single product authority.
 - `Product_Law/WIRING.md` owns field purposes only.
-- `Masterplan/MASTERPLAN.md` is the ordered checklist.
+- `Masterplan/MASTERPLAN.md` is the ordered checklist (backend → frontend → polish).
 - `Masterplan/NEXT_SLICES.md` is exactly one current slice with six required
   sections: Role, Current Slice, Status, Objective, Dependencies, Verification.
+- `tools.md` is the operational tool registry.
 - `docs/SKILL_WIRING.md` owns Skill routing.
 - Reusable procedures live only under `skills/**/SKILL.md`.
 - `AI_ASSISTANT_READ_ME.md` owns current session, recovery, and validation-change
   guidance.
 - `PRODUCT-KNOWLEDGE.md` owns durable validated concepts only.
 - `docs/archive/` is historical storage.
+- `docs/evidence/` holds **new** evidence after the 2026-09-29 unfreeze.
 - Active `HandOver.md`, active `Endorsement.md`, a parallel Skill namespace, and
   `OBSOLETE_FILES.md` are forbidden as current instruction.
 
@@ -59,7 +61,7 @@ validation is evidence only and does not change Product Law or promotion status.
 - **Ready for review** is a promotion action after exact-head substantive
   validation succeeds. It is not merge authorization.
 - **Auto-merge is not used or relied upon.**
-- A PR may contain multiple related commits.
+- A PR may contain multiple commits.
 - One slice is not required to equal one PR or one merge.
 - `main` changes through governed PRs only.
 
@@ -70,6 +72,9 @@ validation is evidence only and does not change Product Law or promotion status.
 Public live-site validation uses only the URL named in Product Law. Guessed
 routes are not acceptance targets. Grok preview is revival evidence, not
 production acceptance.
+
+Validations are **unfrozen**. Historical freeze-era green is not current proof.
+Classify tests as retained, obsolete, or replaced before changing assertions.
 
 ## Validation-change protocol
 
@@ -103,5 +108,19 @@ Replacement invariant: GitHub Pages is the public live-site validation target. F
 Implementation impact: index.html landing, github-pages.yml, Product Law §5.1, no vercel.json
 Validation impact: authority-chain forbids vercel.json and requires the Pages URL in Product Law
 Evidence/browser impact: Pages HTTP 200 is runtime proof only after merge + owner-enabled github-pages environment
-Residual uncertainty: Pages environment enablement requires repository admin (RbrtMrlsIII); teamaiofficialph has write, not admin
+Residual uncertainty: Pages environment enablement requires repository admin (RbrtMrlsIII); Tenaj36 and teamaiofficialph have write, not admin
+```
+
+## 2026-09-29 validation unfreeze
+
+```text
+VALIDATION CHANGE WARNING
+Protected old invariant: 5.5G.6C protected-logic freeze and Endorsement.md checklists are live blockers
+Authorized new rule: Validations are unfrozen. Produce new evidence. Historical freeze/Endorsement remain evidence, not current instruction.
+Why the old invariant is obsolete: Owner authorized revival, chronological masterplan rebuild, and new evidence on 2026-09-29.
+Replacement invariant: Classify tests as retained, obsolete, or replaced before changing assertions. Never weaken a validator to obtain green CI.
+Implementation impact: MASTERPLAN rebuilt backend→frontend→polish; tools.md; docs/evidence/; gap Issues
+Validation impact: authority-chain requires tools.md and a backend-first MASTERPLAN
+Evidence/browser impact: Grok preview is revival evidence; Pages HTTP 200 waits on owner enablement
+Residual uncertainty: live Firebase/Supabase/PayPal and SH3D portal proof are successor slices
 ```
