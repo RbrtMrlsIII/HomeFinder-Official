@@ -41,7 +41,7 @@ Do not start from `project-guide/HandOver.md`. That path is HISTORICAL.
   courtyard is orbit-only; walk mode is FPS on `/walk`. Not `main`. Not
   production.
 - Successor gap Issues (not this slice) track backend identity, data,
-  Supabase, PayPal/Cloudflare, portals, frontend physical binding, Pages
+  Supabase, PayPal (Supabase Edge bridge; Cloudflare retired 2026-10-04), portals, frontend physical binding, Pages
   enablement, QA unfreeze, and polish.
 
 ## Current truth

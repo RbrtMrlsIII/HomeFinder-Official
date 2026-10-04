@@ -124,3 +124,17 @@ Validation impact: authority-chain requires tools.md and a backend-first MASTERP
 Evidence/browser impact: Grok preview is revival evidence; Pages HTTP 200 waits on owner enablement
 Residual uncertainty: live Firebase/Supabase/PayPal and SH3D portal proof are successor slices
 ```
+
+## 2026-10-04 Cloudflare retirement; Supabase Edge bridge
+
+```text
+VALIDATION CHANGE WARNING
+Protected old invariant: Cloudflare owns DNS/WAF/TLS when an executable Worker exists; the PayPal + Cloudflare edge contract and its tests
+Authorized new rule: Cloudflare is not used by HomeFinder. Supabase Edge Functions are the single trusted path connecting Firebase (identity + domain state) and PayPal (provider state), end to end.
+Why the old invariant is obsolete: Project owner decision on 2026-10-04. tools.md already recorded Cloudflare as dormant until an executable Worker exists.
+Replacement invariant: Firebase ID token -> Edge Function -> PayPal API/webhook (signature-verified, idempotent) -> Firestore entitlement through a scoped service account. Provider state != admin smoke-test. Browser approval never grants entitlement. Secrets live only in Edge secrets, never git.
+Implementation impact: tools.md, MASTERPLAN sections 3-4, WIRING, AI_ASSISTANT_READ_ME; Issues #15 #21 #22 #24 #25
+Validation impact: paypal-cloudflare-contract, patch-26-paypal-cloudflare-hardening, patch-12-integration-hardening must be classified retained/obsolete/replaced (Issue #25); replacement Edge-bridge contract tests are added under #15. Archive evidence is not deleted. No assertion is weakened to obtain green CI.
+Evidence/browser impact: none until the bridge is proven in PayPal Sandbox
+Residual uncertainty: Supabase project of record (#21); HomeFinder webhook registration at PayPal; retirement timing of the Cloud Function webhook
+```
