@@ -18,7 +18,7 @@ an Issue number here as authority.
 |---|---|
 | Product & Governance | Product meaning, protected invariants, authority chain, PR discipline |
 | Backend, Identity & Security | Auth, session, role, listings durability, bans, phone/ID verification |
-| Application Integration & Contracts | Firebase, Supabase, Cloudflare, PayPal, government URLs |
+| Application Integration & Contracts | Firebase, Supabase (Edge bridge to PayPal), PayPal, government URLs (Cloudflare retired 2026-10-04) |
 | Spatial / 3D | Canonical SH3D, three-house topology, cameras, portals, walk presentation |
 | Frontend & Experience | Public product UI, role chrome, market, wanted, finance, broker HQ |
 | Verification & CI/Browser | Tests, governance integrity, browser evidence, promotion evidence |
