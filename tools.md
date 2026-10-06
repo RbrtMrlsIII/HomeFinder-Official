@@ -59,9 +59,17 @@ legacy `main` redirect page — `github-pages.yml` is on the revival branch only
 
 **Status:** ACTIVE as a **revival vehicle** only.
 
-**Do:** walkable public catalog, preview evidence, localStorage demo persistence.
+**Do:** preview catalog pages, preview evidence, localStorage demo persistence.
 **Don't:** become a second repository authority; mutate `master/HomeFinder.sh3d`;
-count as HomeFinder production hosting; enable Auth/DB in this slice.
+count as HomeFinder production hosting; enable Auth/DB in this slice; present its walk as the
+product's navigation.
+
+Its `/walk` page is a three.js **stand-in** (free WASD walk through three clay houses), not the
+product's presentation. The product's presentation is the **nine canonical H-series camera points
+of view** (H-01 … H-09) embedded in `master/HomeFinder.sh3d` and bound in
+`active_development/3d/app/homefinder-viewer.js` (`docs/g1/5.5G6E-canonical-camera-reconciliation.md`).
+Camera selection is presentation-only. Free walking and physical traversal between houses are not
+specified and remain unproven (#16).
 
 Its scaffold carries Better Auth, PGlite/Neon, and Vercel build output. None of
 those is HomeFinder authority; none may be copied into this package.
