@@ -382,18 +382,26 @@ service cloud.firestore {
 
       // New self-service profiles may only establish identity/profile bootstrap
       // fields. Security/verification/projection authority fields are server-owned.
+      // `resource` is null on create, so the allowed-key check reads the incoming
+      // document's own keys (never diff against resource.data). idVerification may
+      // only be the neutral registration default {status: 'none'}; any other KYC
+      // state is server-owned.
       allow create: if isOwnerOf(uid)
         && canonicalRoleValue(request.resource.data.get("canonicalRole", request.resource.data.get("accountType", "seeker"))) in ['owner', 'seeker']
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+        && canonicalRoleValue(request.resource.data.get("accountType", "seeker")) in ['owner', 'seeker']
+        && request.resource.data.keys().hasOnly([
           'firstName', 'surname', 'middleInitial', 'suffix', 'email', 'phone',
           'phoneDigits', 'address', 'gender', 'accountType', 'canonicalRole',
           'createdAt', 'provider', 'displayName', 'profileComplete', 'status',
-          'privacy', 'avatarUrl'
+          'privacy', 'avatarUrl', 'idVerification'
         ])
         && request.resource.data.get('status', 'active') == 'active'
         && profileInputLimits()
         && !request.resource.data.get('verified', false)
-        && !request.resource.data.get('prcVerified', false);
+        && !request.resource.data.get('prcVerified', false)
+        && (!('idVerification' in request.resource.data)
+            || (request.resource.data.idVerification.keys().hasOnly(['status'])
+                && request.resource.data.idVerification.get('status', 'none') == 'none'));
 
       // Foundation Repair 08: generic users/{uid} updates are no longer a
       // Moderator write surface. Current Moderator UI is read-oriented for

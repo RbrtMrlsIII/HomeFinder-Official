@@ -116,13 +116,13 @@ test('PAYMENT.SALE.COMPLETED is acknowledged and never grants an entitlement', a
   assert.equal(await h.get('subscriptionEntitlements', b.uid), null);
 });
 
-test('GAP: PAYMENT.SALE.COMPLETED must resolve the subscription from billing_agreement_id, not the sale id',
-  h.gap('#28', 'resource.id is the SALE id on sale events; the code prefers it, finds no binding, and never notifies'),
-  async () => {
-    const b = await bound();
-    await h.deliver(h.saleEvent(b.subId));
-    assert.ok((await h.notifications(b.uid)).some((n) => n.type === 'subscription_payment_received'));
-  });
+test('PAYMENT.SALE.COMPLETED resolves the subscription from billing_agreement_id and notifies', async () => {
+  const b = await bound();
+  const res = await h.deliver(h.saleEvent(b.subId));
+  assert.equal(res.statusCode, 200);
+  assert.ok((await h.notifications(b.uid)).some((n) => n.type === 'subscription_payment_received'));
+  assert.equal(await h.get('subscriptionEntitlements', b.uid), null);
+});
 
 test('PayPal lookup failure -> ledger failed + 400; a retry succeeds with attemptCount 2', async () => {
   const b = await bound();
@@ -142,37 +142,81 @@ test('PayPal lookup failure -> ledger failed + 400; a retry succeeds with attemp
   assert.equal((await h.get('subscriptionEntitlements', b.uid)).active, true);
 });
 
-test('characterization: an event for an unbound subscription is acknowledged with no effect', async () => {
+test('an event for a HomeFinder subscription that is not bound yet fails (non-2xx) so PayPal retries it', async () => {
   const subId = h.newSubId();
   h.mock.subscriptions.set(subId, h.sub(subId));
+  const evt = h.event('BILLING.SUBSCRIPTION.ACTIVATED', subId);
+  const res = await h.deliver(evt);
+  assert.equal(res.statusCode, 400);
+  const ledger = await h.get('paypalWebhookEvents', evt.id);
+  assert.equal(ledger.status, 'failed');
+  assert.match(ledger.lastError, /not bound/);
+});
+
+test("after the binding is recorded, PayPal's retry of the same event activates the entitlement", async () => {
+  const uid = h.newUid();
+  const subId = h.newSubId();
+  await h.seedUser(uid);
+  h.mock.subscriptions.set(subId, h.sub(subId));
+  const evt = h.event('BILLING.SUBSCRIPTION.ACTIVATED', subId);
+  assert.equal((await h.deliver(evt)).statusCode, 400); // arrives before the binding exists
+  await h.seedMapping(subId, uid); // recordSubscriptionApproval binds it
+  const retry = await h.deliver(evt);
+  assert.equal(retry.statusCode, 200);
+  assert.equal((await h.get('subscriptionEntitlements', uid)).active, true);
+  const ledger = await h.get('paypalWebhookEvents', evt.id);
+  assert.equal(ledger.status, 'processed');
+  assert.equal(ledger.attemptCount, 2);
+});
+
+test('an unbound event for another plan on the same PayPal app is acknowledged and ignored', async () => {
+  const subId = h.newSubId();
+  h.mock.subscriptions.set(subId, h.sub(subId, { plan_id: 'P-ANOTHER-PRODUCT' }));
   const evt = h.event('BILLING.SUBSCRIPTION.ACTIVATED', subId);
   const res = await h.deliver(evt);
   assert.equal(res.statusCode, 200);
   assert.equal((await h.get('paypalWebhookEvents', evt.id)).status, 'processed');
 });
 
-test('GAP: an event that arrives before its subscription is bound must not be acknowledged as processed',
-  h.gap('#28', 'ACTIVATED can beat recordSubscriptionApproval; a 200 + "processed" ledger loses it for good'),
-  async () => {
-    const subId = h.newSubId();
-    h.mock.subscriptions.set(subId, h.sub(subId));
-    const evt = h.event('BILLING.SUBSCRIPTION.ACTIVATED', subId);
-    const res = await h.deliver(evt);
-    const ledger = await h.get('paypalWebhookEvents', evt.id);
-    assert.ok(res.statusCode >= 400 || ledger.status !== 'processed',
-      `unbound event was acknowledged: HTTP ${res.statusCode}, ledger ${ledger.status}`);
-  });
+test('an unbound event for a subscription PayPal does not know is acknowledged and ignored', async () => {
+  const evt = h.event('BILLING.SUBSCRIPTION.CANCELLED', h.newSubId()); // no mock subscription -> 404
+  const res = await h.deliver(evt);
+  assert.equal(res.statusCode, 200);
+  assert.equal((await h.get('paypalWebhookEvents', evt.id)).status, 'processed');
+});
 
-test('GAP: a duplicate that arrives while the first delivery is still "processing" must not be processed twice',
-  h.gap('#28', 'first-delivery ledger entry has no processingStartedAt, so every concurrent duplicate looks stale'),
-  async () => {
-    const b = await bound();
-    const evt = h.event('BILLING.SUBSCRIPTION.ACTIVATED', b.subId);
-    // Exactly what the webhook's first transaction writes before processing starts:
-    await h.db.collection('paypalWebhookEvents').doc(evt.id).set({
-      eventType: evt.event_type, status: 'processing', attemptCount: 1, receivedAt: h.Timestamp.now()
-    });
-    const res = await h.deliver(evt);
-    assert.equal(res.body, 'duplicate');
-    assert.equal(await h.get('subscriptionEntitlements', b.uid), null);
+test('an unbound event of an unhandled type is acknowledged without a subscription lookup', async () => {
+  const before = h.mock.calls.length;
+  const res = await h.deliver(h.event('BILLING.SUBSCRIPTION.CREATED', h.newSubId()));
+  assert.equal(res.statusCode, 200);
+  const lookups = h.mock.calls.slice(before).filter((c) => c.includes('/v1/billing/subscriptions/'));
+  assert.deepEqual(lookups, []);
+});
+
+test('the first delivery records processingStartedAt, so a concurrent duplicate is not mistaken for a stale one', async () => {
+  const b = await bound();
+  const evt = h.event('BILLING.SUBSCRIPTION.ACTIVATED', b.subId);
+  await h.deliver(evt);
+  const ledger = await h.get('paypalWebhookEvents', evt.id);
+  assert.ok(ledger.processingStartedAt, 'ledger entry has no processingStartedAt');
+});
+
+test('a duplicate that arrives while a fresh "processing" entry exists is not processed again', async () => {
+  const b = await bound();
+  const evt = h.event('BILLING.SUBSCRIPTION.ACTIVATED', b.subId);
+  await h.db.collection('paypalWebhookEvents').doc(evt.id).set({
+    eventType: evt.event_type, status: 'processing', attemptCount: 1,
+    receivedAt: h.Timestamp.now(), processingStartedAt: h.Timestamp.now()
   });
+  const res = await h.deliver(evt);
+  assert.equal(res.body, 'duplicate');
+  assert.equal(await h.get('subscriptionEntitlements', b.uid), null);
+});
+
+test('concurrent deliveries of the same event produce exactly one activation notice', async () => {
+  const b = await bound();
+  const evt = h.event('BILLING.SUBSCRIPTION.ACTIVATED', b.subId);
+  await Promise.all([h.deliver(evt), h.deliver(evt), h.deliver(evt)]);
+  const sent = (await h.notifications(b.uid)).filter((n) => n.type === 'subscription_activated');
+  assert.equal(sent.length, 1);
+});
