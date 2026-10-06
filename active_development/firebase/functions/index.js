@@ -2824,8 +2824,10 @@ exports.paypalSubscriptionWebhook = onRequest(
       if (!eventId || !/^[A-Za-z0-9._:-]{1,200}$/.test(eventId)) { res.status(400).send("Invalid event id"); return; }
 
       const eventRef = db.collection("paypalWebhookEvents").doc(eventId);
-      let shouldProcess = false;
-      await db.runTransaction(async transaction => {
+      // The decision is the transaction's return value. A closure variable would keep a
+      // value from an attempt that was aborted and retried, so a concurrent duplicate
+      // could be processed as if it were the first delivery.
+      const shouldProcess = await db.runTransaction(async transaction => {
         const snap = await transaction.get(eventRef);
         if (!snap.exists) {
           transaction.create(eventRef, {
@@ -2835,16 +2837,15 @@ exports.paypalSubscriptionWebhook = onRequest(
             receivedAt:admin.firestore.FieldValue.serverTimestamp(),
             processingStartedAt:admin.firestore.FieldValue.serverTimestamp()
           });
-          shouldProcess = true;
-          return;
+          return true;
         }
         const state = snap.data()?.status;
-        if (state === "processed") return;
+        if (state === "processed") return false;
         if (state === "processing") {
           const startedAt = snap.data()?.processingStartedAt;
           const startedMillis = startedAt?.toMillis ? startedAt.toMillis() : 0;
           const stale = !startedMillis || (Date.now() - startedMillis) > (10 * 60 * 1000);
-          if (!stale) return;
+          if (!stale) return false;
         }
         transaction.set(eventRef, {
           status:"processing",
@@ -2852,7 +2853,7 @@ exports.paypalSubscriptionWebhook = onRequest(
           processingStartedAt:admin.firestore.FieldValue.serverTimestamp(),
           lastRetryAt:admin.firestore.FieldValue.serverTimestamp()
         }, {merge:true});
-        shouldProcess = true;
+        return true;
       });
       if (!shouldProcess) { res.status(200).send("duplicate"); return; }
 
