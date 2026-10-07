@@ -4,24 +4,27 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    paths:
+      - index.html
+      - 404.html
+      - active_development/3d/**
+      - master/**
+      - scripts/pages/**
+      - .github/workflows/github-pages.yml
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: true
+  group: pages-${{ github.event_name == 'pull_request' && github.ref || 'live' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
-  deploy:
-    name: Deploy HomeFinder public site (not Vercel)
+  build:
+    name: Build and verify the Pages artifact
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout
@@ -57,7 +60,19 @@ jobs:
             exit 1
           fi
 
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Unit-test the Pages scripts
+        run: node --test scripts/pages/pages.test.mjs
+
+      - name: Verify the artifact and serve it under /HomeFinder-Official/
+        run: node scripts/pages/smoke-dist.mjs dist
+
       - name: Configure GitHub Pages
+        if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
 
       - name: Upload Pages artifact
@@ -65,6 +80,36 @@ jobs:
         with:
           path: dist
 
+  deploy:
+    name: Deploy HomeFinder public site (not Vercel)
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  verify-live:
+    name: Probe the live site (HTTP 200 and the revival landing)
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Probe the deployed site
+        run: node scripts/pages/probe.mjs "${{ needs.deploy.outputs.page_url }}"
