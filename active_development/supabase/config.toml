@@ -9,3 +9,9 @@ verify_jwt = false
 
 [functions.upload-listing-image]
 verify_jwt = false
+
+[functions.paypal-record-approval]
+verify_jwt = false
+
+[functions.paypal-webhook]
+verify_jwt = false
