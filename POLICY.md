@@ -138,3 +138,17 @@ Validation impact: paypal-cloudflare-contract, patch-26-paypal-cloudflare-harden
 Evidence/browser impact: none until the bridge is proven in PayPal Sandbox
 Residual uncertainty: Supabase project of record (#21); HomeFinder webhook registration at PayPal; retirement timing of the Cloud Function webhook
 ```
+
+## 2026-10-06 Protected-logic re-baseline (fixes #28 and #29)
+
+```text
+VALIDATION CHANGE WARNING
+Protected old invariant: docs/contracts/5.5G6C-protected-logic-freeze.json hashes for active_development/firebase/functions/index.js and active_development/firebase/firestore.rules
+Authorized new rule: both files may change through a Draft PR with emulator evidence; the lock is re-baselined to the reviewed content and keeps guarding against unreviewed edits.
+Why the old invariant is obsolete: The owner lifted the freeze on 2026-09-29. The files changed to repair #28 (subscription path) and #29 (registration rule), both proven on the emulator; the lock's own repair_policy allows this with explicit evidence.
+Replacement invariant: the secretless emulator suite (active_development/tests/emulator/) is the behavioral oracle for these files; the lock pins the re-baselined hashes and records the previous ones.
+Implementation impact: docs/contracts/5.5G6C-protected-logic-freeze.json (two hashes, a rebaselines entry)
+Validation impact: verify/contracts/protected-logic-freeze.mjs passes again; no assertion is weakened and no test is deleted. None of the protected rules (roles, routes, suspension, phone format) changes.
+Evidence/browser impact: docs/evidence/2026-10-05-fixes-28-29.md
+Residual uncertainty: deployed rules and functions are unverified (#23); re-baselining deploys nothing.
+```

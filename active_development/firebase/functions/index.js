@@ -2575,6 +2575,13 @@ function requireHomeFinderAdmin(request) {
   }
 }
 
+/** A live PayPal entitlement is provider state. Admin smoke-test grants must leave it alone. */
+function isLiveProviderEntitlement(ent) {
+  if (!ent || ent.source !== "paypal" || ent.active !== true) return false;
+  const endsAt = ent.endsAt && typeof ent.endsAt.toMillis === "function" ? ent.endsAt.toMillis() : null;
+  return endsAt === null || endsAt > Date.now();
+}
+
 exports.grantAdminSubscription = onCallActive(async request => {
   requireHomeFinderAdmin(request);
   const uid = String(request.data?.uid || "").trim();
@@ -2607,17 +2614,23 @@ exports.grantAdminSubscription = onCallActive(async request => {
   const auditRef = db.collection("adminSubscriptionAudit").doc();
 
   await db.runTransaction(async tx => {
+    // Reads come first. Provider state wins: a smoke-test grant is recorded in the
+    // grant layer but never overwrites a live PayPal entitlement.
+    const entitlementSnap = await tx.get(entitlementRef);
+    const providerLive = isLiveProviderEntitlement(entitlementSnap.exists ? entitlementSnap.data() : null);
     tx.set(grantRef, grant, {merge:true});
-    tx.set(entitlementRef, {
-      active: true,
-      source: "admin_smoke_test",
-      planId: ADMIN_SUBSCRIPTION_PLAN_ID,
-      startsAt: now,
-      endsAt: ends,
-      grantedBy: request.auth.uid,
-      grantReason: reason,
-      updatedAt: now
-    }, {merge:true});
+    if (!providerLive) {
+      tx.set(entitlementRef, {
+        active: true,
+        source: "admin_smoke_test",
+        planId: ADMIN_SUBSCRIPTION_PLAN_ID,
+        startsAt: now,
+        endsAt: ends,
+        grantedBy: request.auth.uid,
+        grantReason: reason,
+        updatedAt: now
+      }, {merge:true});
+    }
     tx.set(auditRef, {
       action: "grant",
       targetUid: uid,
@@ -2626,6 +2639,7 @@ exports.grantAdminSubscription = onCallActive(async request => {
       startsAt: now,
       endsAt: ends,
       reason,
+      providerEntitlementLive: providerLive,
       createdAt: now
     });
   });
@@ -2653,6 +2667,9 @@ exports.revokeAdminSubscription = onCallActive(async request => {
   const previous = grantSnap.exists ? grantSnap.data() : {};
 
   await db.runTransaction(async tx => {
+    // Revoking a smoke-test grant never switches off a live PayPal entitlement.
+    const entitlementSnap = await tx.get(entitlementRef);
+    const providerLive = isLiveProviderEntitlement(entitlementSnap.exists ? entitlementSnap.data() : null);
     tx.set(grantRef, {
       active:false,
       source:"admin_smoke_test",
@@ -2662,15 +2679,17 @@ exports.revokeAdminSubscription = onCallActive(async request => {
       revokeReason:reason,
       updatedAt:now
     }, {merge:true});
-    tx.set(entitlementRef, {
-      active:false,
-      source:"admin_smoke_test",
-      planId:previous.planId || ADMIN_SUBSCRIPTION_PLAN_ID,
-      revokedAt:now,
-      revokedBy:request.auth.uid,
-      revokeReason:reason,
-      updatedAt:now
-    }, {merge:true});
+    if (!providerLive) {
+      tx.set(entitlementRef, {
+        active:false,
+        source:"admin_smoke_test",
+        planId:previous.planId || ADMIN_SUBSCRIPTION_PLAN_ID,
+        revokedAt:now,
+        revokedBy:request.auth.uid,
+        revokeReason:reason,
+        updatedAt:now
+      }, {merge:true});
+    }
     tx.set(auditRef, {
       action:"revoke",
       targetUid:uid,
@@ -2679,6 +2698,7 @@ exports.revokeAdminSubscription = onCallActive(async request => {
       previousStartsAt:previous.startsAt || null,
       previousEndsAt:previous.endsAt || null,
       reason,
+      providerEntitlementLive:providerLive,
       createdAt:now
     });
   });
@@ -2700,22 +2720,45 @@ exports.recordSubscriptionApproval = onCall(
     if (sub.plan_id !== PAYPAL_SUBSCRIPTION_PLAN_ID) throw new HttpsError("failed-precondition","Unexpected HomeFinder subscription plan.");
 
     // A subscription ID alone must not be enough to attach another user's
-    // PayPal subscription to the current Firebase account. When both sides
-    // expose an email, require an exact case-insensitive match. If PayPal does
-    // not expose an email, keep the subscription pending for webhook/provider
-    // verification rather than granting from the browser callback.
+    // PayPal subscription to the current Firebase account. The account is proven
+    // either by custom_id (set to the Firebase uid when the subscription is created
+    // and unchangeable afterwards) or by an exact case-insensitive email match.
+    // Without proof the subscription is neither bound nor granted from this callback.
     const firebaseEmail = String(request.auth.token?.email || request.auth.email || "").trim().toLowerCase();
     const paypalEmail = String(sub.subscriber?.email_address || "").trim().toLowerCase();
-    if (firebaseEmail && paypalEmail && firebaseEmail !== paypalEmail) {
+    const customId = String(sub.custom_id || "").trim();
+    if (customId && customId !== uid) {
+      throw new HttpsError("permission-denied","This PayPal subscription was created for a different HomeFinder account.");
+    }
+    const proofByCustomId = customId !== "" && customId === uid;
+    const proofByEmail = !!firebaseEmail && !!paypalEmail && firebaseEmail === paypalEmail;
+    if (!proofByCustomId && firebaseEmail && paypalEmail && !proofByEmail) {
       throw new HttpsError("permission-denied","The PayPal subscriber does not match the signed-in HomeFinder account.");
     }
+    if (!proofByCustomId && !proofByEmail) {
+      await createUserNotification(uid,{
+        type:"subscription_pending",
+        message:"PayPal approved your subscription, but HomeFinder could not match it to this account automatically. Support will verify it before enabling premium benefits.",
+        source:"paypal"
+      });
+      return {status:"pending_verification",subscriptionId};
+    }
 
-    await db.collection("paypalSubscriptions").doc(subscriptionId).set({
-      uid, planId:sub.plan_id, status:sub.status, provider:"paypal",
-      subscriberEmail:sub.subscriber?.email_address || null,
-      paypalPayerId:sub.subscriber?.payer_id || null,
-      lastVerifiedAt:admin.firestore.FieldValue.serverTimestamp()
-    }, {merge:true});
+    // Bind once: an existing binding to another account is never re-pointed.
+    const bindingRef = db.collection("paypalSubscriptions").doc(subscriptionId);
+    await db.runTransaction(async tx => {
+      const bindingSnap = await tx.get(bindingRef);
+      const boundUid = bindingSnap.exists ? bindingSnap.data()?.uid : null;
+      if (boundUid && boundUid !== uid) {
+        throw new HttpsError("already-exists","This PayPal subscription is already linked to another HomeFinder account.");
+      }
+      tx.set(bindingRef, {
+        uid, planId:sub.plan_id, status:sub.status, provider:"paypal",
+        subscriberEmail:sub.subscriber?.email_address || null,
+        paypalPayerId:sub.subscriber?.payer_id || null,
+        lastVerifiedAt:admin.firestore.FieldValue.serverTimestamp()
+      }, {merge:true});
+    });
 
     if (sub.status === "ACTIVE") {
       await activateSubscriptionForUid(uid, sub, "BILLING.SUBSCRIPTION.ACTIVATED");
@@ -2743,6 +2786,31 @@ async function deactivateSubscriptionEntitlement(uid, eventType) {
   }, {merge:true});
 }
 
+const HANDLED_SUBSCRIPTION_EVENTS = new Set([
+  "BILLING.SUBSCRIPTION.ACTIVATED",
+  "BILLING.SUBSCRIPTION.CANCELLED",
+  "BILLING.SUBSCRIPTION.SUSPENDED",
+  "BILLING.SUBSCRIPTION.EXPIRED",
+  "BILLING.SUBSCRIPTION.PAYMENT.FAILED",
+  "PAYMENT.SALE.COMPLETED"
+]);
+
+/**
+ * The PayPal application may serve other plans or products. Only HomeFinder's own
+ * plan needs a binding; everything else is acknowledged and ignored.
+ */
+async function classifySubscriptionPlan(subscriptionId) {
+  const id = String(subscriptionId || "").trim();
+  if (!/^I-[A-Z0-9]+$/i.test(id)) return "foreign";
+  try {
+    const sub = await getPayPalSubscription(id);
+    return sub.plan_id === PAYPAL_SUBSCRIPTION_PLAN_ID ? "homefinder" : "foreign";
+  } catch (error) {
+    if (/\(404\)/.test(String(error?.message || ""))) return "foreign";
+    throw error;
+  }
+}
+
 exports.paypalSubscriptionWebhook = onRequest(
   {secrets:[paypalSubscriptionClientSecret,paypalSubscriptionWebhookId]},
   async (req,res) => {
@@ -2756,26 +2824,28 @@ exports.paypalSubscriptionWebhook = onRequest(
       if (!eventId || !/^[A-Za-z0-9._:-]{1,200}$/.test(eventId)) { res.status(400).send("Invalid event id"); return; }
 
       const eventRef = db.collection("paypalWebhookEvents").doc(eventId);
-      let shouldProcess = false;
-      await db.runTransaction(async transaction => {
+      // The decision is the transaction's return value. A closure variable would keep a
+      // value from an attempt that was aborted and retried, so a concurrent duplicate
+      // could be processed as if it were the first delivery.
+      const shouldProcess = await db.runTransaction(async transaction => {
         const snap = await transaction.get(eventRef);
         if (!snap.exists) {
           transaction.create(eventRef, {
             eventType:event.event_type || null,
             status:"processing",
             attemptCount:1,
-            receivedAt:admin.firestore.FieldValue.serverTimestamp()
+            receivedAt:admin.firestore.FieldValue.serverTimestamp(),
+            processingStartedAt:admin.firestore.FieldValue.serverTimestamp()
           });
-          shouldProcess = true;
-          return;
+          return true;
         }
         const state = snap.data()?.status;
-        if (state === "processed") return;
+        if (state === "processed") return false;
         if (state === "processing") {
           const startedAt = snap.data()?.processingStartedAt;
           const startedMillis = startedAt?.toMillis ? startedAt.toMillis() : 0;
           const stale = !startedMillis || (Date.now() - startedMillis) > (10 * 60 * 1000);
-          if (!stale) return;
+          if (!stale) return false;
         }
         transaction.set(eventRef, {
           status:"processing",
@@ -2783,19 +2853,29 @@ exports.paypalSubscriptionWebhook = onRequest(
           processingStartedAt:admin.firestore.FieldValue.serverTimestamp(),
           lastRetryAt:admin.firestore.FieldValue.serverTimestamp()
         }, {merge:true});
-        shouldProcess = true;
+        return true;
       });
       if (!shouldProcess) { res.status(200).send("duplicate"); return; }
 
       const resource = event.resource || {};
+      const type = String(event.event_type || "");
+      // Sale-style events carry their own id in resource.id and name the subscription
+      // in billing_agreement_id; subscription events carry the subscription id in resource.id.
       const subscriptionId =
-        resource.id ||
         resource.billing_agreement_id ||
         resource.supplementary_data?.related_ids?.subscription_id ||
+        resource.id ||
         null;
       const mapping = subscriptionId ? await db.collection("paypalSubscriptions").doc(String(subscriptionId)).get() : null;
       const uid = mapping?.exists ? mapping.data()?.uid : null;
-      const type = String(event.event_type || "");
+
+      // A HomeFinder subscription that is not bound to an account yet must not be
+      // acknowledged: fail the delivery so PayPal retries after the binding exists.
+      if (!uid && subscriptionId && HANDLED_SUBSCRIPTION_EVENTS.has(type)) {
+        if ((await classifySubscriptionPlan(subscriptionId)) === "homefinder") {
+          throw new Error("HomeFinder subscription is not bound to an account yet; PayPal should retry.");
+        }
+      }
 
       if (uid && type === "BILLING.SUBSCRIPTION.ACTIVATED") {
         const sub = await getPayPalSubscription(String(subscriptionId));
