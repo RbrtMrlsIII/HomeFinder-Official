@@ -43,11 +43,30 @@
     "active_development/js/broker-hq.js": "eb6dc94fea475761fe9f3b39104c7cb31382cfeaecf39a6aab0049252e3709bb",
     "active_development/profile.html": "019b1ba5115bfd227e117f02bedd8533f08e1215bd48685597a8d159900a5561",
     "active_development/broker-hq.html": "3f2e10898d6c03cc048eacbbbae0770ea05710bf4c7782d74bf2fa6b3ee12ce1",
-    "active_development/firebase/functions/index.js": "5f37fb71717766c38f957fc3873ccb1f43369d3b6c0b1b67a267e84708665f57",
-    "active_development/firebase/firestore.rules": "8610fd1722e02d2ed14d2801060dcf46d64c008aa205a859da372671baf8832a",
+    "active_development/firebase/functions/index.js": "2d1974f1c9aee0712921a2b40b8ec50b77e113af0bb02309050d1c6c671a68fd",
+    "active_development/firebase/firestore.rules": "3bc1a671c120bea9ff42d2f9c9d78f88be787f3442d5f8415c80e04dd633e76d",
     "docs/json/3d-contract.json": "0a1ae4ecb77541d392416b43c5efe7e69ccf59e2c47a404369c00d62ab987413",
     "docs/g1/5.5G6-house-topology-contract.json": "0c6ca160956cf44e8d3e0c4795d3e8acfd52ad3c8a9628570eaabd096a7f671e"
   },
   "freeze_generated_at": "2026-08-28",
-  "promotion_note": "5.5G.6G canonical promotion retained; 5.5G.6I reconciles post-promotion 3D/topology hash drift without weakening protected rules."
+  "promotion_note": "5.5G.6G canonical promotion retained; 5.5G.6I reconciles post-promotion 3D/topology hash drift without weakening protected rules.",
+  "rebaselines": [
+    {
+      "date": "2026-10-06",
+      "files": [
+        "active_development/firebase/functions/index.js",
+        "active_development/firebase/firestore.rules"
+      ],
+      "previous_hashes": {
+        "active_development/firebase/functions/index.js": "5f37fb71717766c38f957fc3873ccb1f43369d3b6c0b1b67a267e84708665f57",
+        "active_development/firebase/firestore.rules": "8610fd1722e02d2ed14d2801060dcf46d64c008aa205a859da372671baf8832a"
+      },
+      "reason": "Defect repairs against evidence: the users/{uid} creation rule (#29) and the subscription path (#28). No protected rule is weakened.",
+      "evidence": [
+        "docs/evidence/2026-10-05-fixes-28-29.md",
+        "active_development/tests/emulator/"
+      ],
+      "authorization": "Owner unfreeze of 2026-09-29 (POLICY.md); repair_policy: update only with explicit evidence and a new checkpoint."
+    }
+  ]
 }
