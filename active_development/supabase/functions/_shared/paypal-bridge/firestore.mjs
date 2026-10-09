@@ -91,6 +91,9 @@ function autoId() {
  * getToken: async () => OAuth access token (production) or 'owner' (emulator).
  * baseUrl: https://firestore.googleapis.com in production, http://127.0.0.1:8080 for the emulator.
  */
+/**
+ * @param {{ projectId: string, databaseId?: string, baseUrl?: string, getToken: () => Promise<string>, fetchImpl?: typeof fetch }} options
+ */
 export function createFirestore({ projectId, databaseId = 'homefinder', baseUrl = 'https://firestore.googleapis.com', getToken, fetchImpl = fetch }) {
   const dbPath = `projects/${projectId}/databases/${databaseId}`;
   const root = `${baseUrl.replace(/\/+$/, '')}/v1/${dbPath}`;

@@ -4,6 +4,9 @@
 export const SANDBOX_API = 'https://api-m.sandbox.paypal.com';
 export const LIVE_API = 'https://api-m.paypal.com';
 
+/**
+ * @param {{ apiBase?: string, clientId?: string, clientSecret?: string, webhookId?: string, fetchImpl?: typeof fetch }} [options]
+ */
 export function createPayPal({ apiBase = SANDBOX_API, clientId, clientSecret, webhookId, fetchImpl = fetch } = {}) {
   const base = String(apiBase).replace(/\/+$/, '');
   let cached = null;
