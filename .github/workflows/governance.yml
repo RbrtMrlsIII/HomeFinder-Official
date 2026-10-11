@@ -1,0 +1,33 @@
+name: Governance Integrity
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  authority-chain:
+    name: authority-chain
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify HomeFinder authority chain
+        run: node scripts/governance/verify-authority-chain.mjs
+
+  no-auto-merge:
+    name: no-auto-merge
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Forbid auto-merge
+        env:
+          AUTO_MERGE: ${{ github.event.pull_request.auto_merge }}
+        run: |
+          if [ "$AUTO_MERGE" != "" ] && [ "$AUTO_MERGE" != "null" ]; then
+            echo "Auto-merge is forbidden on HomeFinder product changes."
+            exit 1
+          fi
+          echo "No auto-merge enabled."

@@ -1,0 +1,70 @@
+name: GitHub Pages public live site
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy HomeFinder public site (not Vercel)
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Forbid Vercel production config
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -f vercel.json ] || [ -d .vercel ]; then
+            echo "Vercel production config is forbidden on HomeFinder." >&2
+            exit 1
+          fi
+
+      - name: Prepare Pages dist
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf dist
+          mkdir -p dist/master dist/active_development
+          cp index.html 404.html dist/
+          cp -R active_development/3d dist/active_development/3d
+          # Delivery copy of the protected model. Do not mutate the source file.
+          cp master/HomeFinder.sh3d dist/master/HomeFinder.sh3d
+          test -f dist/index.html
+          test -f dist/404.html
+          test -f dist/active_development/3d/viewer/SweetHome3DJSViewer-7.5.2/HomeFinderViewer.html
+          test -f dist/master/HomeFinder.sh3d
+          grep -q 'GitHub Pages' dist/index.html
+          grep -q 'Vercel is not a production' dist/index.html
+          if grep -qi 'http-equiv="refresh"' dist/index.html; then
+            echo "index.html must not auto-redirect the public live site" >&2
+            exit 1
+          fi
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

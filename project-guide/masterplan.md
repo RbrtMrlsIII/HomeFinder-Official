@@ -1,3 +1,12 @@
+# HISTORICAL as current instruction — file retained as architecture evidence
+
+**Frozen 2026-09-29** during HF-REVIVAL-001 (Issue #10).
+
+The current ordered checklist is `Masterplan/MASTERPLAN.md`. The current slice
+is `Masterplan/NEXT_SLICES.md`. This long-form chronology remains evidence.
+
+---
+
 # HomeFinder Masterplan — Project Handover & Execution Authority
 
 > **Purpose:** persistent orientation for future AI-assisted sessions. Read this file and `AI_ASSISTANT_READ_ME.md` before making architectural, repository, UI, backend, or 3D changes.

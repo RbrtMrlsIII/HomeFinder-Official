@@ -1,49 +1,65 @@
 # HomeFinder package
 
-**Agents:** open `project-guide/AI_ASSISTANT_READ_ME.md` first.
+**Agents:** open `AI_ASSISTANT_READ_ME.md`, then `Masterplan/NEXT_SLICES.md`.
+Do **not** start from `project-guide/HandOver.md` — that ledger is HISTORICAL.
+
+**Public live site (canonical):** https://RbrtMrlsIII.github.io/HomeFinder-Official/  
+**Vercel is not a production acceptance target.** The former
+`home-finder-official.vercel.app` URL is retired.
 
 Docs: `docs/md`, `docs/csv`, `docs/json`  
 Integrations: `docs/md/firebase|supabase|cloudflare|paypal`  
 App: `active_development/` (`firestore.rules` stays under `firebase/`)  
-3D: `master/HomeFinder.sh3d`
+3D: `master/HomeFinder.sh3d` (protected)
 
-## Engineering Execution Discipline — Flashlight Method
+## Authority chain (TeamAi-adapted)
 
-Future sessions must preserve this execution behavior:
+```
+Product_Law/PRODUCT_LAW.md
+  → Product_Law/WIRING.md
+  → Masterplan/MASTERPLAN.md
+  → Masterplan/NEXT_SLICES.md     ← exactly one current slice
+  → POLICY.md (ORUCAVEAM)
+  → docs/SKILL_WIRING.md → skills/**/SKILL.md
+  → owning Issue / Draft PR
+```
 
-1. Read `project-guide/AI_ASSISTANT_READ_ME.md`, `project-guide/masterplan.md`, active contracts, spatial-authority documents, and latest checkpoint/audit manifests before changes.
-2. Work chronologically and execute only the next approved gate unless evidence requires a documented branch.
-3. Use one bounded hypothesis at a time; inspect evidence before repairing or promoting anything.
-4. Classify failures before fixing them; distinguish current contracts from historical/superseded expectations.
-5. Protect `master/HomeFinder.sh3d` until candidate reconciliation gates are passed.
-6. Prefer repairing useful staged work over rebuilding it; preserve originals as evidence.
+`specified ≠ implemented ≠ verified ≠ runtime-proven ≠ completed ≠ accepted`.
+
+## Engineering execution — ORUCAVEAM
+
+Future sessions preserve this behavior (the former Flashlight Method maps here):
+
+1. Read Product Law, current slice, and the session snapshot before changes.
+2. Execute only the current slice unless evidence requires a documented branch.
+3. One bounded hypothesis at a time; inspect evidence before repairing.
+4. Classify failures before fixing; distinguish current contracts from historical ones.
+5. Protect `master/HomeFinder.sh3d` until candidate reconciliation gates pass.
+6. Prefer repairing useful staged work over rebuilding it.
 7. Do not pursue green tests at the expense of the current architecture.
-8. Do not delete old runtime/navigation code until replacement responsibility is reconciled, proven, and documented.
-9. Before every checkpoint, verify all previously accepted development is present plus the current changes.
-10. Update `project-guide/masterplan.md`, `project-guide/AI_ASSISTANT_READ_ME.md`, README execution discipline, reports, manifests, and relevant census artifacts.
-11. End every gate with findings, verdict, unresolved constraints, checkpoint, and exactly the next recommended gate.
-12. Never equate UI/page/DOM counts with room/object counts. Physical anchors may serve multiple logical UI states.
-13. Adapt MASTER_SKILL.md.
-14. Visit PRODUCT-KNOWLEDGE.md.
-15. Please be guided by CODING-INSTRUCTIONS.md.
+8. Do not delete old runtime/navigation code until replacement is reconciled.
+9. House 2 ↔ House 3 direct physical traversal is forbidden.
+10. Draft-PR-first. No auto-merge. `main` changes through governed PRs only.
+11. Do not restore Vercel as production.
 
+Companions (not current ledgers): `CODING-INSTRUCTIONS.md`, `MASTER_SKILL.md`,
+`PRODUCT-KNOWLEDGE.md`, bannered files under `project-guide/`.
 
+## Current execution state
 
-## Current execution state — G1.5
+See `Masterplan/NEXT_SLICES.md`. As of 2026-09-29 the current slice is
+**HF-REVIVAL-001** (Issue #10): restore the public product, retire Vercel,
+install this authority chain, and host the public live site on GitHub Pages.
+Physical portal certification (5.5G.6I) is **not** the current slice.
 
-Semantic room/container reconciliation is complete. Physical route validation remains blocked. No runtime, canonical SH3D, or F3 candidate changes were made. Next gate: bind physical doors against semantically eligible spaces and logical navigation contracts.
+## SESSION CONTINUITY
 
-## SESSION CONTINUITY — REQUIRED
+HomeFinder no longer uses live `HandOver.md` / `Endorsement.md` ledgers.
 
-HomeFinder uses exactly two live continuity files:
+- Current session: `AI_ASSISTANT_READ_ME.md`
+- Current slice: `Masterplan/NEXT_SLICES.md`
+- Historical ledgers: `project-guide/HandOver.md`, `project-guide/Endorsement.md`
+  (HISTORICAL banners) and `docs/archive/continuity/`
 
-### `project-guide/Endorsement.md`
-The chronological execution map and progress ledger for backend, security, frontend, testing, 3D, spatial, integration, and deployment work. A task is marked `☑️` only after implementation, verification, documentation, and checkpoint inclusion are complete.
-
-### `project-guide/HandOver.md`
-The single current-state handover. It must contain the latest findings, results, fixes, decisions, protected rules, checkpoint state, and next continuation point. Never create numbered, dated, or gate-specific handover replacements.
-
-### Mandatory session order
-New sessions must read `README.md`, then `project-guide/HandOver.md`, then `project-guide/Endorsement.md`, then relevant existing audits/contracts. Consult `project-guide/masterplan.md` and `project-guide/AI_ASSISTANT_READ_ME.md` when deeper architectural or assistant guidance is needed.
-
-At checkpoint time, `project-guide/Endorsement.md`, `project-guide/HandOver.md`, and the actual project files must agree. Partial work stays unchecked. Detailed evidence belongs in existing `docs/` audit locations rather than new handover files.
+At checkpoint time, the session snapshot, NEXT_SLICES, and the actual files
+must agree. Partial work stays unchecked.

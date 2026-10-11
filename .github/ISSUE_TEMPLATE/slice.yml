@@ -1,0 +1,35 @@
+name: Execution slice
+description: Propose or continue a single current-slice item. Does not replace NEXT_SLICES.md until accepted.
+title: "HF-SLICE — "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: Exact authorized outcome.
+    validations:
+      required: true
+  - type: textarea
+    id: restrictions
+    attributes:
+      label: Restrictions
+      description: SH3D, House 2↔3, no auto-merge, historical evidence, and other boundaries.
+    validations:
+      required: true
+  - type: textarea
+    id: proof
+    attributes:
+      label: Proof target
+      description: specified / implemented / verified / runtime-proven / accepted grades you will claim.
+    validations:
+      required: true
+  - type: checkboxes
+    id: chain
+    attributes:
+      label: Authority
+      options:
+        - label: I will not create a second current slice or a live HandOver.md
+          required: true
+        - label: I will start substantive work as a Draft PR
+          required: true
