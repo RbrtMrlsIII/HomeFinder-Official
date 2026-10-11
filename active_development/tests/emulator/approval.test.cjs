@@ -1,6 +1,8 @@
 'use strict';
 const { test, after } = require('node:test');
 const assert = require('node:assert/strict');
+const path = require('node:path');
+const { pathToFileURL } = require('node:url');
 const h = require('./helpers.cjs');
 
 after(() => h.assertNoUnmockedNetwork(assert));
@@ -125,4 +127,17 @@ test('the owner can repeat their own approval (idempotent)', async () => {
   h.mock.subscriptions.set(subId, h.sub(subId));
   assert.equal((await approve(owner, subId, 'buyer@example.test')).status, 'active');
   assert.equal((await approve(owner, subId, 'buyer@example.test')).status, 'active');
+});
+
+test('contract: the request the frontend builds is accepted by the server as proof of the account', async () => {
+  const requestModule = pathToFileURL(path.join(__dirname, '..', '..', 'js', 'subscription-request.js')).href;
+  const { buildSubscriptionRequest } = await import(requestModule);
+  const uid = await user();
+  const request = buildSubscriptionRequest(uid);
+  assert.equal(request.plan_id, h.PLAN_ID, 'frontend and Cloud Function disagree on the plan id');
+  const subId = h.newSubId();
+  h.mock.subscriptions.set(subId, h.sub(subId, { custom_id: request.custom_id })); // PayPal returns custom_id unchanged
+  const out = await approve(uid, subId, 'unrelated-address@example.test');
+  assert.equal(out.status, 'active');
+  assert.equal((await h.get('paypalSubscriptions', subId)).uid, uid);
 });

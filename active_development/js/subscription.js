@@ -7,6 +7,7 @@ import {
   PAYPAL_SUBSCRIPTION_SETUP_FEE_PHP, PAYPAL_SUBSCRIPTION_FREE_MONTHS,
   PAYPAL_SUBSCRIPTION_ANNUAL_PHP
 } from "./payment-config.js";
+import { buildSubscriptionRequest } from "./subscription-request.js";
 
 const functions = getFunctions(app);
 const recordSubscriptionApproval = httpsCallable(functions, "recordSubscriptionApproval");
@@ -38,7 +39,7 @@ export async function mountSubscriptionButton(containerSelector) {
   return window.paypal.Buttons({
     style: { shape:"rect", color:"gold", layout:"vertical", label:"subscribe" },
     createSubscription(data, actions) {
-      return actions.subscription.create({ plan_id: PAYPAL_SUBSCRIPTION_PLAN_ID });
+      return actions.subscription.create(buildSubscriptionRequest(user.uid));
     },
     async onApprove(data) {
       const result = await recordSubscriptionApproval({

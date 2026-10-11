@@ -140,7 +140,7 @@ PayPal owns provider subscription state. MapLibre is presentation only.
 
 - [ ] `paypal-record-approval` Edge function: Firebase-token authenticated; verifies the subscription with PayPal; binds subscription → uid.
 - [ ] `paypal-webhook` Edge function: public endpoint; PayPal signature verification; idempotency ledger; subscription → uid → entitlement.
-- [ ] The six subscription-path defects (#28) are fixed in the Cloud Function path and proven on the emulator; a seventh, a retry-unsafe webhook ledger transaction, was found and fixed on the way. **Not deployed.** The Edge port must reproduce each fix and pass the same suite in `active_development/tests/emulator/`. Follow-up: pass `custom_id` = uid when the PayPal subscription is created.
+- [ ] The six subscription-path defects (#28) are fixed in the Cloud Function path and proven on the emulator; a seventh, a retry-unsafe webhook ledger transaction, was found and fixed on the way. **Not deployed.** The Edge port must reproduce each fix and pass the same suite in `active_development/tests/emulator/`. The frontend now passes `custom_id` = uid when it creates the subscription (`js/subscription-request.js`, tested against the server's proof rule); not deployed.
 - [ ] Make the PayPal API base configurable (sandbox by default); the current code is hard-wired to the live host.
 - [ ] Port the entitlement transition logic as pure functions; reuse the existing PayPal tests as the oracle; keep the Cloud Function path until parity is proven, then retire it.
 - [ ] Register the HomeFinder webhook (PayPal Sandbox first). Today the only webhook on the connected PayPal app targets a TeamAi Supabase function.
