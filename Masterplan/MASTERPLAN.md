@@ -12,7 +12,7 @@ snapshot, and present on the **accepted** checkpoint. Partial work stays uncheck
 `specified ≠ implemented ≠ verified ≠ runtime-proven ≠ completed ≠ accepted`
 
 **Chronology:** governance → backend identity → durable data → trusted edge →
-payments/network → spatial model → frontend product → new evidence → delivery →
+payments bridge → spatial model → frontend product → new evidence → delivery →
 polish. Do not invert this order to chase a green UI.
 
 **Validation unfreeze (2026-09-29):** the 5.5G.6C protected-logic freeze and the
@@ -20,8 +20,23 @@ historical Endorsement ledger are **not live blockers**. Produce **new** evidenc
 for each remaining item. Do not weaken validators to obtain green CI. Classify
 old tests as retained, obsolete, or replaced before changing assertions.
 
-Owning Issues for remaining work are listed beside the open items. They are
-**not** the current slice unless `NEXT_SLICES.md` names them.
+**Reconciled 2026-10-04.** The live census and a fresh test baseline are in
+`docs/evidence/2026-10-04-reconciliation-census.md`. Only what that evidence
+changes is edited below; retained ☑️ items are untouched.
+
+Owning Issues are listed beside open items. They are **not** the current slice
+unless `NEXT_SLICES.md` names them.
+
+---
+
+## Owner decisions
+
+| ID | Decision | State |
+|---|---|---|
+| D0 | **Cloudflare is retired.** Supabase Edge Functions connect Firebase and PayPal end to end. | Decided 2026-10-04 (project owner). Docs and tests follow in #25. |
+| D1 | Supabase project of record: restore the dedicated HomeFinder project (recommended) or reuse TeamAi's. | **Open** · #21 |
+| D2 | Frontend of record and what GitHub Pages serves: package pages (recommended first) or the Grok app. | **Open** · #26 |
+| D3 | Firebase evidence path: rules-emulator tests plus an owner-run census (recommended). | **Open** · #23 |
 
 ---
 
@@ -36,7 +51,8 @@ Owning Issues for remaining work are listed beside the open items. They are
 - [x] ☑️ Rebuild this checklist chronologically (backend → frontend → polish) and adopt `tools.md`.
 - [ ] Draft PR #11 remains Draft until exact-head governance check passes on the new head.
 - [ ] Human review + merge to `main` (owner). Not this agent session's acceptance.
-- [ ] GitHub Pages default-branch deploy HTTP 200 (runtime-proven). Owner must enable the `github-pages` environment.
+- [ ] Review the reconciliation PR stacked on #11 (this file, `tools.md`, the evidence census).
+- [ ] Classify and retire Cloudflare across docs, contracts, and tests without deleting history (#25).
 
 ---
 
@@ -54,17 +70,21 @@ phone/ID verification. Presentation and SH3D must not.
 - [x] ☑️ Broker surfaces constrained to Broker HQ (profile, market, map live in House 2).
 - [x] ☑️ Government housing remains guest-visible.
 
-**Open — new evidence required (Issue #12 HF-BE-001):**
+**Open — new evidence required (Issue #12 HF-BE-001; #23, #24):**
 
 - [ ] Audit PH 12-digit phone (`639XXXXXXXXX`) against live Firebase Auth + `users/{uid}` writes.
 - [ ] Audit timeout penalties, banned-account handling, and account-creation abuse controls against actual rules/functions — not docs.
 - [ ] Prove logout cache-clear and authorization-source separation with a fresh test, not the freeze-era suite.
+- [ ] Replace the hard-coded bootstrap admin UID with a role-document or custom-claim path; keep it only as documented break-glass. It appears in 7 files (rules, Cloud Functions, three KYC-contract copies, `js/admin-uid.js`, one verify script).
+- [ ] Registration abuse gate without Cloudflare: Firebase App Check or Edge rate limiting (#24).
+- [ ] Firebase proof path: rules-emulator suite plus owner-run census (D3, #23).
 
 ---
 
 ## 2 — Backend · durable listings and profiles
 
-Firebase project `homefinder-official`, named database `homefinder`.
+Firebase project `homefinder-official`, named database `homefinder`
+(35 `match` blocks in `firestore.rules`).
 Canonical collections: `propertyListings`, `wantedListings`, `users`, `publicProfiles`.
 Cloud Functions own trusted mutations and projections. Client UI must not impersonate server authority.
 
@@ -74,39 +94,57 @@ Cloud Functions own trusted mutations and projections. Client UI must not impers
 - [x] ☑️ Firestore rules and indexes live under `active_development/firebase/` (not under docs).
 - [x] ☑️ Functions exist: public-profile projection, broker-HQ discovery projection, KYC contracts, tiers.
 
-**Open — new evidence required (Issue #13 HF-BE-002):**
+**Open — new evidence required (Issue #13 HF-BE-002; #23):**
 
 - [ ] Re-verify security rules/authorization boundaries against the current role model with a fresh rules test.
 - [ ] Re-verify listings/wanted durability and public-profile projection on the live named database.
 - [ ] Do not treat Grok `localStorage` (`homefinder.revival.v1`) as listing truth.
+- [ ] Compare the 37 exported Cloud Functions with the deployed set (owner-run census) and confirm the project's billing plan supports them.
+- [ ] Negative rules tests: contracts, points ledger, notifications, tier/boost/KYC fields are not client-writable.
 
 ---
 
 ## 3 — Backend · trusted edge (Supabase)
 
-Supabase is the **trusted server/storage boundary** (KYC signed URLs, listing image upload, storage SQL).
-It must consume Firebase identity. It is **not** HomeFinder domain authority.
+Supabase is the **trusted server/storage boundary**: KYC signed URLs, listing image
+upload, storage SQL, and (D0) the Firebase↔PayPal bridge. It must consume Firebase
+identity. It is **not** HomeFinder domain authority.
 
-**Open — new evidence required (Issue #14 HF-BE-003):**
+**Open — new evidence required (Issue #14 HF-BE-003; #21, #24):**
 
-- [ ] Census live Edge functions vs `active_development/supabase/functions/` (replace stale census).
+- [ ] Choose and restore the project of record (D1). The repo defaults to `hdeqixswsscyvmziinxt`, which is **paused with no DNS record** (2026-10-04).
+- [ ] Live function census equals the tree. Live has 2 of 3 (`get-kyc-signed-url`, `upload-kyc-document`); `upload-listing-image` is not deployed.
+- [ ] Read `SUPABASE_URL` from configuration, not a hard-coded default.
 - [ ] Prove KYC upload/read is admin-gated and seeker/owner cannot self-escalate.
-- [ ] Prove listing-image upload cannot write property documents.
+- [ ] Prove listing-image upload cannot write property documents (source read: no Firestore write path; not runtime-proven).
+- [ ] Harden per #24: CORS allowlist, suspension parity, one KYC signing path, error hygiene, rate limits.
 
 ---
 
-## 4 — Backend · payments and network edge
+## 4 — Backend · payments bridge (Supabase Edge ↔ Firebase ↔ PayPal)
 
-PayPal owns provider subscription state. Cloudflare owns DNS/WAF/TLS when an executable Worker exists.
-MapLibre is presentation only.
+**D0:** Cloudflare is retired. Supabase Edge Functions are the only trusted path
+between Firebase and PayPal. Firebase ID token in → PayPal API/webhook verified →
+entitlement truth written to Firestore through a scoped service account.
+PayPal owns provider subscription state. MapLibre is presentation only.
 
-**Open — new evidence required (Issue #15 HF-BE-004):**
+**Preserve (existing invariants):**
 
-- [ ] Preserve: real PayPal provider state ≠ admin smoke-test entitlement. Smoke-test must not overwrite provider state.
-- [ ] Preserve: webhook processing/processed/failed, retry-safe, no duplicate side effects.
-- [ ] Preserve: browser approval callback identifies a subscription; it does not grant entitlement.
-- [ ] Do not invent a Cloudflare Worker or guess DNS/TLS values.
-- [ ] Secrets never in git.
+- [ ] Real PayPal provider state ≠ admin smoke-test entitlement. Smoke-test must not overwrite provider state.
+- [ ] Webhook processing/processed/failed, retry-safe, no duplicate side effects.
+- [ ] Browser approval callback identifies a subscription; it does not grant entitlement.
+- [ ] Secrets never in git. Edge secrets only.
+
+**Build — new evidence required (Issue #15 HF-BE-004; #22 HF-BE-005):**
+
+- [ ] `paypal-record-approval` Edge function: Firebase-token authenticated; verifies the subscription with PayPal; binds subscription → uid.
+- [ ] `paypal-webhook` Edge function: public endpoint; PayPal signature verification; idempotency ledger; subscription → uid → entitlement.
+- [ ] Port the entitlement transition logic as pure functions; reuse the existing PayPal tests as the oracle; keep the Cloud Function path until parity is proven, then retire it.
+- [ ] Register the HomeFinder webhook (PayPal Sandbox first). Today the only webhook on the connected PayPal app targets a TeamAi Supabase function.
+- [ ] Sandbox end-to-end proof: approve → webhook → entitlement; replay-safe; cancel / suspend / expire / payment-failed.
+- [ ] Boost and Help payments server-verified (#22).
+- [ ] Owner PayPal hygiene: the connected account is **LIVE**; one extra ACTIVE plan is unused; plan names say "Monthly" for a yearly plan.
+- [ ] Keep plan facts in sync: ₱499.99 setup, 3 months free, ₱4,999.99/year; plan `P-4NX50080BD8317322NKDAODA` was ACTIVE on 2026-10-04.
 
 ---
 
@@ -134,6 +172,9 @@ Walking never changes role.
 ## 6 — Frontend · public product
 
 Logical destinations ≠ physical doors. Role chrome is application state.
+The product wiring (Firebase, Supabase, PayPal) lives in the package pages:
+12 HTML pages and 123 JS modules in `active_development/`. The Grok app is a
+preview vehicle with mock data.
 
 **Retained / this revival vehicle:**
 
@@ -141,12 +182,16 @@ Logical destinations ≠ physical doors. Role chrome is application state.
 - [x] ☑️ Save Property / Wanted Listings counterpart logic (package).
 - [x] ☑️ Grok preview: market, listing detail, wanted, finance, saved, orbit home, FPS walk, Broker HQ application gate (workspace; not `main`).
 
-**Open — new evidence required (Issue #17 HF-FE-001):**
+**Open — new evidence required (Issue #17 HF-FE-001; #26 HF-FE-002):**
 
+- [ ] Owner decides the frontend of record and what Pages serves (D2).
+- [ ] Audit package JS imports and `fetch` URLs for `/HomeFinder-Official/` sub-path hosting before publishing product pages.
+- [ ] Quarantine the Grok scaffold's Better Auth / PGlite / Neon and Vercel build output; none may become authority.
 - [ ] Reconcile logical intent → semantic destination → physical zone → eligible portal → route/camera.
 - [ ] Keep logical destinations distinct from physical doors.
 - [ ] Validate role-specific visibility against protected contracts (broker HQ vs seeker/owner vs guest).
 - [ ] Validate responsive UI against spatial presentation density.
+- [ ] Prove each surface in the feature ledger below on the chosen frontend.
 
 ---
 
@@ -154,25 +199,39 @@ Logical destinations ≠ physical doors. Role chrome is application state.
 
 Old freeze-era suites are historical. New evidence replaces them; they are not deleted.
 
+**Baseline 2026-10-04 (Node 20, no browser):**
+
+- `verify/**`: 17 of 18 pass (static contract checks). The failure is a stale path to `docs/contracts/data/canonical-data.json`.
+- `active_development/tests` (94 files): 52 pass from the repo root; **74 pass from `active_development/`**, the cwd these tests assume. The other 20: 17 missing or moved files, 1 missing dictionary index, 1 assertion drift, 1 test-source defect (invalid regex).
+
 **Retained:**
 
 - [x] ☑️ Historical UI/DOM census, WalkMyPlan test migration, and failure classification exist as archive.
 
-**Open — new evidence required (Issue #18 HF-QA-001):**
+**Open — new evidence required (Issue #18 HF-QA-001; #23, #25):**
 
+- [ ] Run the suite from the package root in CI; classify the 20 failures retained / obsolete / replaced before touching assertions.
 - [ ] Authority-chain check PASSes on the exact Draft-PR head (includes `tools.md`).
 - [ ] Grok preview: listings render; Broker HQ role-gated; no House 2↔3 door in the walk world.
-- [ ] GitHub Pages HTTP 200 with the revival landing after `main` deploy (runtime-proven).
-- [ ] Classify package `verify/**` tests as retained / obsolete / replaced before changing assertions.
+- [ ] Rules-emulator suite for the role model, phone index, suspension, and subscription collections (#23).
+- [ ] Edge-bridge contract tests added; Cloudflare-named tests reclassified (#25).
+- [ ] Playwright browser specs run against the Pages URL; screenshots are evidence, not closure.
 - [ ] Never weaken a validator merely to obtain green CI.
 
 ---
 
 ## 8 — Delivery
 
-- [x] ☑️ Vercel production URL retired. Do not restore `home-finder-official.vercel.app`. No `vercel.json` in this package.
+- [x] ☑️ Vercel production URL retired. Do not restore `home-finder-official.vercel.app` (404 re-observed 2026-10-04). No `vercel.json` in this package.
 - [x] ☑️ GitHub Pages named as public live-site target; landing + workflow on revival branch.
-- [ ] GitHub Pages runtime-proven on `main` (Issue #19 HF-OPS-001 — owner enables `github-pages` environment).
+
+**Observed 2026-10-04:** Pages source is GitHub Actions (`build_type: workflow`), status built,
+`github-pages` environment exists. The URL returns HTTP 200 but serves the **legacy `main`
+redirect page**: `github-pages.yml` exists only on the revival branch.
+
+- [ ] Put the workflow on `main` (merge PR #11 or a workflow-only PR), then probe for HTTP 200 **and** the revival landing (Issue #19 HF-OPS-001).
+- [ ] Owner: update the repository homepage field (still the retired Vercel URL).
+- [ ] Decide what the artifact serves beyond landing + 3D viewer (D2, #26).
 - [ ] Do not deploy Firebase Hosting while web/3D integration is incomplete.
 - [ ] Grok App Builder deploy is not HomeFinder production.
 
@@ -185,6 +244,55 @@ Issue #20 HF-POLISH-001. Not the current slice.
 - [ ] Door animation / traversal integration.
 - [ ] Responsive spatial/UI integration.
 - [ ] End-to-end frontend ↔ spatial ↔ backend validation on accepted hosting.
-- [ ] Repository cleanup (no bulk delete of archive).
+- [ ] Repository cleanup (no bulk delete of archive; 14 stale branches, `.cp07-backup` files).
 - [ ] Production 3D polish against the canonical SH3D.
 - [ ] Final production/deployment gate (owner).
+
+---
+
+## Feature ledger (package)
+
+Named in source files and functions; behavior is **not** verified. Each row must
+earn evidence in its phase.
+
+| Surface | Feature | Authority | Phase |
+|---|---|---|---|
+| Public | Home/discovery, government housing (guest-visible), guides, privacy/terms | static + government URLs | 6 |
+| Account | Register/login, PH phone, session, logout cache clear | Firebase Authentication + `users`, `phoneIndex` | 1 |
+| Roles | Seeker, owner, broker; admin, moderator, staff | `canonicalRole` in Firestore, rules + Functions | 1 |
+| Market | Search/filter, pins + radius + cooldown, map | `propertyListings`, `listingStats` | 2, 6 |
+| Listings | Create/edit, per-tier image caps, images | Functions + Supabase `listing-images` | 2, 3 |
+| Wanted / saved | Post, save, match notifications | `wantedListings`, Functions | 2 |
+| Contracts | Create, agree/decline, confirm, renew, expire | `contracts`, Functions | 2 |
+| Messaging | Conversations, notifications | `conversations`, `notifications/{uid}/items` | 2 |
+| Trust | Reviews, ratings, commendations, reports, blocks | Firestore + Functions | 2 |
+| Tiers / points | Perks, tier progression, points ledger | `tiers.js`, points ledger | 2 |
+| KYC | ID / broker-licence upload, admin review | Supabase private bucket + Firestore reference index | 3 |
+| Subscription | Annual plan (₱499.99 setup, 3 months free, ₱4,999.99/yr) | PayPal → Edge bridge → `subscriptionEntitlements` | 4 |
+| Boosts / help | 10 Boost packages, ₱99.99 listing help | PayPal Hosted Buttons → `boostOrders` | 4 |
+| Broker HQ | Discovery, workspace, service radius | Functions (`brokerHQDiscoveryProjection`) | 2, 6 |
+| Operations | Admin (users, KYC, orders, reports, tickets, grants), moderator, staff | rules + Functions | 1, 6 |
+| Spatial | Three-house world, portals, camera | `master/HomeFinder.sh3d` | 5 |
+
+---
+
+## Issue index
+
+| Issue | Phase | Topic |
+|---|---|---|
+| #10 / PR #11 | 0 | HF-REVIVAL-001 governance revival |
+| #12 | 1 | HF-BE-001 identity, session, PH phone, bans |
+| #13 | 2 | HF-BE-002 Firestore listings/wanted durability |
+| #14 | 3 | HF-BE-003 Supabase KYC/storage trusted edge |
+| #15 | 4 | HF-BE-004 PayPal ↔ Firebase via Supabase Edge bridge |
+| #16 | 5 | HF-3D-001 House 1↔2 and 1↔3 portal certification |
+| #17 | 6 | HF-FE-001 logical destinations vs physical model |
+| #18 | 7 | HF-QA-001 unfrozen validation |
+| #19 | 8 | HF-OPS-001 GitHub Pages runtime proof |
+| #20 | 9 | HF-POLISH-001 polish and cleanup |
+| #21 | 3 | HF-OPS-002 Supabase project of record (D1) |
+| #22 | 4 | HF-BE-005 Boost/Help payment verification |
+| #23 | 1, 2, 7 | HF-BE-006 Firebase evidence path (D3) |
+| #24 | 1, 3 | HF-SEC-001 Edge and registration hardening |
+| #25 | 0, 7 | HF-GOV-001 Cloudflare retirement (D0) |
+| #26 | 6, 8 | HF-FE-002 frontend of record and Pages delivery (D2) |
