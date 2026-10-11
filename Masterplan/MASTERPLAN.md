@@ -163,6 +163,13 @@ Walking never changes role.
 - [x] ☑️ No direct House 2 ↔ House 3 portal in the canonical model.
 - [x] ☑️ Single SH3D authority; noncanonical SH3Ds have no runtime dependency.
 
+**Presentation model (historical evidence, G6E):** the product presents the house through **nine
+canonical H-series camera points of view** (H-01 hero, H-02 discovery, H-03 property display,
+H-04 map, H-05 government desk, H-06 mission, H-07 guide, H-08 safety, H-09 contact) embedded in
+`master/HomeFinder.sh3d` and bound in `active_development/3d/app/homefinder-viewer.js`. H-04 is
+presentation-only (no containing room). Camera selection never authorizes roles, auth, KYC,
+payments, or physical traversal. Free walking is not part of this model.
+
 **Open — new evidence required (Issue #16 HF-3D-001). Unfrozen; not the current slice:**
 
 - [ ] Identify and prove House 1 ↔ House 2 physical portal, clearance, camera continuity; promote runtime route only if evidence passes.
@@ -183,7 +190,7 @@ preview vehicle with mock data.
 
 - [x] ☑️ Government accessibility for guests and authenticated roles (package).
 - [x] ☑️ Save Property / Wanted Listings counterpart logic (package).
-- [x] ☑️ Grok preview: market, listing detail, wanted, finance, saved, orbit home, FPS walk, Broker HQ application gate (workspace; not `main`).
+- [x] ☑️ Grok preview: market, listing detail, wanted, finance, saved, orbit home, FPS walk, Broker HQ application gate (workspace; not `main`). The walk is a preview stand-in, not the product's presentation (see §5).
 
 **Open — new evidence required (Issue #17 HF-FE-001; #26 HF-FE-002):**
 
