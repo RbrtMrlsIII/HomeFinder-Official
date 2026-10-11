@@ -56,6 +56,7 @@ test('admin grant writes the grant, the entitlement, an audit entry and a notifi
   const audit = await auditFor(t);
   assert.equal(audit.length, 1);
   assert.equal(audit[0].action, 'grant');
+  assert.equal(audit[0].providerEntitlementLive, false);
   assert.ok((await h.notifications(t)).some((n) => n.type === 'subscription_admin_grant'));
 });
 
@@ -71,22 +72,46 @@ test('admin revoke deactivates the grant and entitlement and audits it', async (
   assert.ok((await h.notifications(t)).some((n) => n.type === 'subscription_admin_revoke'));
 });
 
-test('GAP: an admin smoke-test grant must not overwrite a live PayPal entitlement',
-  h.gap('#28', 'grant merges source:"admin_smoke_test" over the PayPal entitlement (provider state is overwritten)'),
-  async () => {
-    const t = await target();
-    await h.seedPayPalEntitlement(t, h.newSubId());
-    await grant(h.ADMIN_UID, { uid: t, reason: 'smoke test', days: 7 });
-    const ent = await h.get('subscriptionEntitlements', t);
-    assert.equal(ent.source, 'paypal');
-  });
+test('an admin smoke-test grant does not overwrite a live PayPal entitlement', async () => {
+  const t = await target();
+  const subId = h.newSubId();
+  await h.seedPayPalEntitlement(t, subId);
+  await grant(h.ADMIN_UID, { uid: t, reason: 'smoke test', days: 7 });
+  const ent = await h.get('subscriptionEntitlements', t);
+  assert.equal(ent.source, 'paypal');
+  assert.equal(ent.subscriptionId, subId);
+  assert.equal((await h.get('subscriptionAdminGrants', t)).active, true); // the grant layer still records it
+  const audit = await auditFor(t);
+  assert.equal(audit.length, 1);
+  assert.equal(audit[0].providerEntitlementLive, true);
+});
 
-test('GAP: an admin smoke-test revoke must not deactivate a live PayPal entitlement',
-  h.gap('#28', 'revoke sets active:false on subscriptionEntitlements even when PayPal still bills the user'),
-  async () => {
-    const t = await target();
-    await h.seedPayPalEntitlement(t, h.newSubId());
-    await revoke(h.ADMIN_UID, { uid: t, reason: 'cleanup' });
-    const ent = await h.get('subscriptionEntitlements', t);
-    assert.equal(ent.active, true);
+test('an admin smoke-test revoke does not deactivate a live PayPal entitlement', async () => {
+  const t = await target();
+  await h.seedPayPalEntitlement(t, h.newSubId());
+  await grant(h.ADMIN_UID, { uid: t, reason: 'smoke test', days: 7 });
+  await revoke(h.ADMIN_UID, { uid: t, reason: 'cleanup' });
+  const ent = await h.get('subscriptionEntitlements', t);
+  assert.equal(ent.active, true);
+  assert.equal(ent.source, 'paypal');
+  assert.equal((await h.get('subscriptionAdminGrants', t)).active, false);
+  assert.deepEqual((await auditFor(t)).map((a) => a.action).sort(), ['grant', 'revoke']);
+});
+
+test('a grant takes effect when the PayPal entitlement is no longer live', async () => {
+  const t = await target();
+  await h.db.collection('subscriptionEntitlements').doc(t).set({ active: false, source: 'paypal', provider: 'paypal', subscriptionId: h.newSubId() });
+  await grant(h.ADMIN_UID, { uid: t, reason: 'smoke test', days: 7 });
+  const ent = await h.get('subscriptionEntitlements', t);
+  assert.equal(ent.active, true);
+  assert.equal(ent.source, 'admin_smoke_test');
+});
+
+test('an expired PayPal entitlement is not treated as live', async () => {
+  const t = await target();
+  await h.db.collection('subscriptionEntitlements').doc(t).set({
+    active: true, source: 'paypal', endsAt: h.Timestamp.fromMillis(Date.now() - 86400000)
   });
+  await grant(h.ADMIN_UID, { uid: t, reason: 'smoke test', days: 7 });
+  assert.equal((await h.get('subscriptionEntitlements', t)).source, 'admin_smoke_test');
+});

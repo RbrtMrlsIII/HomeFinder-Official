@@ -69,36 +69,60 @@ test('a not-yet-ACTIVE subscription binds and stays pending (no entitlement)', a
   assert.ok((await h.notifications(uid)).some((n) => n.type === 'subscription_pending'));
 });
 
-test('GAP: when PayPal exposes no subscriber email, an ACTIVE subscription must stay pending',
-  h.gap('#28', 'code comment says "keep pending" but the code activates; only a subscription id is proven'),
-  async () => {
-    const uid = await user();
-    const subId = h.newSubId();
-    h.mock.subscriptions.set(subId, h.sub(subId, { subscriber: { payer_id: 'PAYERX' } }));
-    const out = await approve(uid, subId, 'buyer@example.test');
-    assert.equal(out.status, 'pending_verification');
-    assert.equal(await h.get('subscriptionEntitlements', uid), null);
-  });
+test('when PayPal exposes no subscriber email, an ACTIVE subscription stays pending and is not bound', async () => {
+  const uid = await user();
+  const subId = h.newSubId();
+  h.mock.subscriptions.set(subId, h.sub(subId, { subscriber: { payer_id: 'PAYERX' } }));
+  const out = await approve(uid, subId, 'buyer@example.test');
+  assert.equal(out.status, 'pending_verification');
+  assert.equal(await h.get('subscriptionEntitlements', uid), null);
+  assert.equal(await h.get('paypalSubscriptions', subId), null);
+  assert.ok((await h.notifications(uid)).some((n) => n.type === 'subscription_pending'));
+});
 
-test('GAP: an account with no email must not claim an ACTIVE subscription by id alone',
-  h.gap('#28', 'identity check is skipped when the Firebase account has no email (phone-only accounts)'),
-  async () => {
-    const uid = await user();
-    const subId = h.newSubId();
-    h.mock.subscriptions.set(subId, h.sub(subId));
-    const out = await approve(uid, subId, undefined).catch((e) => ({ status: `rejected:${e.code}` }));
-    assert.notEqual(out.status, 'active');
-    assert.equal(await h.get('subscriptionEntitlements', uid), null);
-  });
+test('an account with no email cannot claim an ACTIVE subscription by id alone', async () => {
+  const uid = await user();
+  const subId = h.newSubId();
+  h.mock.subscriptions.set(subId, h.sub(subId));
+  const out = await approve(uid, subId, undefined);
+  assert.equal(out.status, 'pending_verification');
+  assert.equal(await h.get('subscriptionEntitlements', uid), null);
+  assert.equal(await h.get('paypalSubscriptions', subId), null);
+});
 
-test('GAP: a subscription already bound to one account cannot be re-bound by another',
-  h.gap('#28', 'paypalSubscriptions/{id} is overwritten with merge:true, so the mapping can be hijacked'),
-  async () => {
-    const owner = await user();
-    const thief = await user();
-    const subId = h.newSubId();
-    h.mock.subscriptions.set(subId, h.sub(subId));
-    await approve(owner, subId, 'buyer@example.test');
-    await approve(thief, subId, undefined).catch(() => {});
-    assert.equal((await h.get('paypalSubscriptions', subId)).uid, owner);
-  });
+test('custom_id equal to the caller proves the account even when the emails differ', async () => {
+  const uid = await user();
+  const subId = h.newSubId();
+  h.mock.subscriptions.set(subId, h.sub(subId, { custom_id: uid }));
+  const out = await approve(uid, subId, 'a-different-address@example.test');
+  assert.equal(out.status, 'active');
+  assert.equal((await h.get('paypalSubscriptions', subId)).uid, uid);
+});
+
+test('custom_id naming another account is rejected and nothing is bound', async () => {
+  const uid = await user();
+  const subId = h.newSubId();
+  h.mock.subscriptions.set(subId, h.sub(subId, { custom_id: 'smoke_u_SOMEONEELSE' }));
+  await assert.rejects(approve(uid, subId, 'buyer@example.test'), code('permission-denied'));
+  assert.equal(await h.get('paypalSubscriptions', subId), null);
+  assert.equal(await h.get('subscriptionEntitlements', uid), null);
+});
+
+test('a subscription already bound to one account cannot be re-bound, even by a caller whose email matches', async () => {
+  const owner = await user();
+  const thief = await user();
+  const subId = h.newSubId();
+  h.mock.subscriptions.set(subId, h.sub(subId));
+  await approve(owner, subId, 'buyer@example.test');
+  await assert.rejects(approve(thief, subId, 'buyer@example.test'), code('already-exists'));
+  assert.equal((await h.get('paypalSubscriptions', subId)).uid, owner);
+  assert.equal(await h.get('subscriptionEntitlements', thief), null);
+});
+
+test('the owner can repeat their own approval (idempotent)', async () => {
+  const owner = await user();
+  const subId = h.newSubId();
+  h.mock.subscriptions.set(subId, h.sub(subId));
+  assert.equal((await approve(owner, subId, 'buyer@example.test')).status, 'active');
+  assert.equal((await approve(owner, subId, 'buyer@example.test')).status, 'active');
+});

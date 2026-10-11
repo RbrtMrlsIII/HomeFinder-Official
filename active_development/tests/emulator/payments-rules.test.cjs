@@ -68,8 +68,6 @@ test('admins (bootstrap uid and role document) read entitlements, grants and aud
   }
 });
 
-const NEW_PROFILE = { firstName: 'M', surname: 'X', email: 'm@example.test', createdAt: new Date() };
-
 test('positive control: an owner may edit an allowed profile field', async () => {
   const db = env.authenticatedContext('alice').firestore();
   await assertSucceeds(updateDoc(doc(db, 'users/alice'), { firstName: 'Alicia' }));
@@ -81,14 +79,60 @@ test('an owner cannot write a subscription state or an admin role onto their own
   await assertFails(updateDoc(doc(db, 'users/alice'), { canonicalRole: 'admin' }));
 });
 
-test('GAP: a new account can create its own profile (registration)',
-  { todo: '#29: the users/{uid} create rule reads resource.data, which is null on create, so every self-create is denied' },
-  async () => {
-    const db = env.authenticatedContext('newbie').firestore();
-    await assertSucceeds(setDoc(doc(db, 'users/newbie'), { ...NEW_PROFILE, canonicalRole: 'seeker', accountType: 'seeker' }));
-  });
+// The exact shape js/auth.js writes on registration (register page -> saveUserProfile).
+const REGISTRATION = () => ({
+  email: 'new@example.test', accountType: 'seeker', canonicalRole: 'seeker',
+  idVerification: { status: 'none' }, status: 'active', profileComplete: false,
+  createdAt: new Date().toISOString(), phoneDigits: '', displayName: ''
+});
+const asUser = (uid) => env.authenticatedContext(uid).firestore();
+const createProfile = (uid, data, options) => setDoc(doc(asUser(uid), `users/${uid}`), data, options);
 
-test('a new account cannot self-create as admin (holds today only because every self-create is denied)', async () => {
-  const db = env.authenticatedContext('mallory').firestore();
-  await assertFails(setDoc(doc(db, 'users/mallory'), { ...NEW_PROFILE, canonicalRole: 'admin', accountType: 'admin' }));
+test('registration: a new account can create its own seeker profile (the exact payload js/auth.js writes)', async () => {
+  await assertSucceeds(createProfile('reg_seeker', REGISTRATION()));
+});
+
+test('registration: merge:true, the real write mode, also works for a first save', async () => {
+  await assertSucceeds(createProfile('reg_merge', REGISTRATION(), { merge: true }));
+});
+
+test('registration: an owner profile can be created', async () => {
+  await assertSucceeds(createProfile('reg_owner', { ...REGISTRATION(), accountType: 'owner', canonicalRole: 'owner' }));
+});
+
+test('registration: cannot create a profile for another uid', async () => {
+  await assertFails(setDoc(doc(asUser('mallory'), 'users/victim'), REGISTRATION()));
+});
+
+for (const role of ['admin', 'broker', 'moderator', 'staff']) {
+  test(`registration: ${role} cannot be self-assigned at creation`, async () => {
+    await assertFails(createProfile(`reg_${role}`, { ...REGISTRATION(), accountType: role, canonicalRole: role }));
+  });
+}
+
+test('registration: accountType cannot carry a privileged role even when canonicalRole says seeker', async () => {
+  await assertFails(createProfile('reg_mixed', { ...REGISTRATION(), accountType: 'admin' }));
+});
+
+for (const [name, extra] of Object.entries({
+  verified: { verified: true },
+  prcVerified: { prcVerified: true },
+  subscription: { subscription: { status: 'active' } },
+  suspended: { suspended: true },
+  'unknown field': { tier: 'platinum' },
+  'non-active status': { status: 'banned' }
+})) {
+  test(`registration: a server-owned or unknown field is refused at creation (${name})`, async () => {
+    await assertFails(createProfile(`reg_x_${name.replace(/\W/g, '')}`, { ...REGISTRATION(), ...extra }));
+  });
+}
+
+for (const status of ['pending', 'approved', 'verified']) {
+  test(`registration: KYC state cannot be pre-set to ${status}`, async () => {
+    await assertFails(createProfile(`reg_kyc_${status}`, { ...REGISTRATION(), idVerification: { status } }));
+  });
+}
+
+test('registration: idVerification cannot carry extra keys', async () => {
+  await assertFails(createProfile('reg_kyc_extra', { ...REGISTRATION(), idVerification: { status: 'none', verifiedAt: 'x' } }));
 });
