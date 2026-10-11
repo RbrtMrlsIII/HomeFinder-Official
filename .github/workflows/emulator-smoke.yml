@@ -1,0 +1,49 @@
+name: Emulator smoke (secretless)
+
+# Runs the PayPal webhook / approval / admin-grant / payment-rules smoke tests on the
+# local Firestore emulator. It uses NO secrets and NO Firebase credentials by design;
+# the harness refuses to start if any credential variable is present.
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'active_development/firebase/**'
+      - 'active_development/tests/emulator/**'
+      - '.github/workflows/emulator-smoke.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: emulator-smoke-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  smoke:
+    name: Emulator smoke tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Install Cloud Functions dependencies
+        working-directory: active_development/firebase/functions
+        run: npm install --no-audit --no-fund
+      - name: Install smoke-test dependencies
+        working-directory: active_development/tests/emulator
+        run: npm ci --no-audit --no-fund
+      - name: Run emulator smoke tests (no credentials)
+        working-directory: active_development/tests/emulator
+        run: >
+          npx --yes firebase-tools@13 emulators:exec
+          --only firestore --project demo-homefinder-smoke
+          --config firebase.emulator.json --non-interactive "npm test"

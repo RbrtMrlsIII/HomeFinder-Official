@@ -1,0 +1,12 @@
+{
+  "name": "homefinder-emulator-smoke",
+  "private": true,
+  "description": "Secretless emulator smoke tests for the PayPal webhook, subscription approval, admin grants and payment-collection rules. No credentials are ever used.",
+  "scripts": {
+    "test": "node --test --test-reporter=spec webhook.test.cjs approval.test.cjs grants.test.cjs payments-rules.test.cjs"
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "^3.0.4",
+    "firebase": "^10.14.1"
+  }
+}

@@ -75,7 +75,8 @@ phone/ID verification. Presentation and SH3D must not.
 - [ ] Audit PH 12-digit phone (`639XXXXXXXXX`) against live Firebase Auth + `users/{uid}` writes.
 - [ ] Audit timeout penalties, banned-account handling, and account-creation abuse controls against actual rules/functions — not docs.
 - [ ] Prove logout cache-clear and authorization-source separation with a fresh test, not the freeze-era suite.
-- [ ] Replace the hard-coded bootstrap admin UID with a role-document or custom-claim path; keep it only as documented break-glass. It appears in 7 files (rules, Cloud Functions, three KYC-contract copies, `js/admin-uid.js`, one verify script).
+- [ ] Replace the hard-coded bootstrap admin UID with a role-document or custom-claim path; keep it only as documented break-glass. It appears in 7 files (rules, Cloud Functions, three KYC-contract copies, `js/admin-uid.js`, one verify script); the moderator and staff bootstrap UIDs are hard-coded in the rules as well.
+- [ ] Fix `users/{uid}` creation: the repo rules deny **every** client self-create (emulator-proven; live rules unverified) (#29).
 - [ ] Registration abuse gate without Cloudflare: Firebase App Check or Edge rate limiting (#24).
 - [ ] Firebase proof path: rules-emulator suite plus owner-run census (D3, #23).
 
@@ -139,6 +140,8 @@ PayPal owns provider subscription state. MapLibre is presentation only.
 
 - [ ] `paypal-record-approval` Edge function: Firebase-token authenticated; verifies the subscription with PayPal; binds subscription → uid.
 - [ ] `paypal-webhook` Edge function: public endpoint; PayPal signature verification; idempotency ledger; subscription → uid → entitlement.
+- [ ] Fix the six emulator-proven defects in the port: binding hijack, email-less identity proof, unbound-event loss, duplicate-while-processing, grants vs provider state, sale-event id (#28). The secretless suite in `active_development/tests/emulator/` is the oracle.
+- [ ] Make the PayPal API base configurable (sandbox by default); the current code is hard-wired to the live host.
 - [ ] Port the entitlement transition logic as pure functions; reuse the existing PayPal tests as the oracle; keep the Cloud Function path until parity is proven, then retire it.
 - [ ] Register the HomeFinder webhook (PayPal Sandbox first). Today the only webhook on the connected PayPal app targets a TeamAi Supabase function.
 - [ ] Sandbox end-to-end proof: approve → webhook → entitlement; replay-safe; cancel / suspend / expire / payment-failed.
@@ -204,6 +207,8 @@ Old freeze-era suites are historical. New evidence replaces them; they are not d
 - `verify/**`: 17 of 18 pass (static contract checks). The failure is a stale path to `docs/contracts/data/canonical-data.json`.
 - `active_development/tests` (94 files): 52 pass from the repo root; **74 pass from `active_development/`**, the cwd these tests assume. The other 20: 17 missing or moved files, 1 missing dictionary index, 1 assertion drift, 1 test-source defect (invalid regex).
 
+**Emulator smoke (secretless, 2026-10-04):** 40 tests — 31 pass, 0 fail, 9 `GAP:` todo (#28, #29). It runs the real Cloud Function handlers and the real rules on the local Firestore emulator with PayPal mocked, and refuses to start if any credential is present. CI runs it with no secrets (`emulator-smoke.yml`).
+
 **Retained:**
 
 - [x] ☑️ Historical UI/DOM census, WalkMyPlan test migration, and failure classification exist as archive.
@@ -213,9 +218,10 @@ Old freeze-era suites are historical. New evidence replaces them; they are not d
 - [ ] Run the suite from the package root in CI; classify the 20 failures retained / obsolete / replaced before touching assertions.
 - [ ] Authority-chain check PASSes on the exact Draft-PR head (includes `tools.md`).
 - [ ] Grok preview: listings render; Broker HQ role-gated; no House 2↔3 door in the walk world.
-- [ ] Rules-emulator suite for the role model, phone index, suspension, and subscription collections (#23).
+- [ ] Rules-emulator suite for the role model, phone index, suspension, and subscription collections (#23). The payment collections are covered; the rest is open.
 - [ ] Edge-bridge contract tests added; Cloudflare-named tests reclassified (#25).
 - [ ] Playwright browser specs run against the Pages URL; screenshots are evidence, not closure.
+- [ ] Remove each `GAP:` marker as its defect is fixed; never weaken an assertion to do it.
 - [ ] Never weaken a validator merely to obtain green CI.
 
 ---
@@ -296,3 +302,5 @@ earn evidence in its phase.
 | #24 | 1, 3 | HF-SEC-001 Edge and registration hardening |
 | #25 | 0, 7 | HF-GOV-001 Cloudflare retirement (D0) |
 | #26 | 6, 8 | HF-FE-002 frontend of record and Pages delivery (D2) |
+| #28 | 4 | HF-BE-007 subscription-path defects proven on the emulator |
+| #29 | 1 | HF-BE-008 repo rules deny every `users/{uid}` self-create |
