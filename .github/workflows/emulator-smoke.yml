@@ -9,6 +9,8 @@ on:
   pull_request:
     paths:
       - 'active_development/firebase/**'
+      - 'active_development/supabase/**'
+      - 'active_development/js/subscription*.js'
       - 'active_development/tests/emulator/**'
       - '.github/workflows/emulator-smoke.yml'
 
@@ -46,4 +48,4 @@ jobs:
         run: >
           npx --yes firebase-tools@13 emulators:exec
           --only firestore --project demo-homefinder-smoke
-          --config firebase.emulator.json --non-interactive "npm test"
+          --config firebase.emulator.json --non-interactive "npm run test:all"

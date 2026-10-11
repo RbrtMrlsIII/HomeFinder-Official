@@ -138,11 +138,11 @@ PayPal owns provider subscription state. MapLibre is presentation only.
 
 **Build — new evidence required (Issue #15 HF-BE-004; #22 HF-BE-005):**
 
-- [ ] `paypal-record-approval` Edge function: Firebase-token authenticated; verifies the subscription with PayPal; binds subscription → uid.
-- [ ] `paypal-webhook` Edge function: public endpoint; PayPal signature verification; idempotency ledger; subscription → uid → entitlement.
+- [ ] `paypal-record-approval` Edge function: built in the repo and emulator-proven against the shared suite (Firebase-token auth, CORS allowlist, suspension parity, proof by `custom_id` or email, bind once); **not deployed**.
+- [ ] `paypal-webhook` Edge function: built and emulator-proven (signature verification, concurrency-safe ledger, unbound events retried); **not deployed**.
 - [ ] The six subscription-path defects (#28) are fixed in the Cloud Function path and proven on the emulator; a seventh, a retry-unsafe webhook ledger transaction, was found and fixed on the way. **Not deployed.** The Edge port must reproduce each fix and pass the same suite in `active_development/tests/emulator/`. The frontend now passes `custom_id` = uid when it creates the subscription (`js/subscription-request.js`, tested against the server's proof rule); not deployed.
-- [ ] Make the PayPal API base configurable (sandbox by default); the current code is hard-wired to the live host.
-- [ ] Port the entitlement transition logic as pure functions; reuse the existing PayPal tests as the oracle; keep the Cloud Function path until parity is proven, then retire it.
+- [ ] The PayPal API base is configurable in the Edge bridge and defaults to the sandbox; the Cloud Function path is still hard-wired to the live host.
+- [ ] The entitlement logic is ported and the shared suite runs against both implementations (`HF_IMPL`). Keep the Cloud Function path until the Edge bridge is proven in PayPal Sandbox, then retire it.
 - [ ] Register the HomeFinder webhook (PayPal Sandbox first). Today the only webhook on the connected PayPal app targets a TeamAi Supabase function.
 - [ ] Sandbox end-to-end proof: approve → webhook → entitlement; replay-safe; cancel / suspend / expire / payment-failed.
 - [ ] Boost and Help payments server-verified (#22).

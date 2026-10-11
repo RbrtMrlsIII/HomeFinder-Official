@@ -138,7 +138,7 @@ Edge bridge reaches parity (#15), then retire them.
 Not domain authority. Must consume Firebase identity.
 
 Functions in tree: `upload-kyc-document`, `get-kyc-signed-url`, `upload-listing-image`.
-Planned (#15): `paypal-record-approval`, `paypal-webhook`.
+In tree, not deployed (#15): `paypal-record-approval`, `paypal-webhook` (shared code in `functions/_shared/paypal-bridge/`).
 
 **Live 2026-10-04 (Composio, read-only):**
 HomeFinder project `hdeqixswsscyvmziinxt` is **INACTIVE (paused)** and its API host has no DNS record.

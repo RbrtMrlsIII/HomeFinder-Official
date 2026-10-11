@@ -12,6 +12,7 @@ const path = require('node:path');
 const fs = require('node:fs');
 const crypto = require('node:crypto');
 const { createRequire } = require('node:module');
+const { pathToFileURL } = require('node:url');
 
 const PROJECT = process.env.GCLOUD_PROJECT || 'demo-homefinder-smoke';
 if (!/^demo-/.test(PROJECT)) throw new Error(`Refusing to run: project "${PROJECT}" is not a demo- project.`);
@@ -40,6 +41,7 @@ const PLAN_ID = pick(/const PAYPAL_SUBSCRIPTION_PLAN_ID = "([^"]+)"/, 'plan id')
 const ADMIN_UID = pick(/const HOMEFINDER_ADMIN_UID = "([^"]+)"/, 'admin uid');
 
 /* ---- PayPal network mock (the only network the code under test may use) ---- */
+const realFetch = global.fetch; // the Edge bridge's Firestore REST calls (local emulator only) use this, never the mock
 const mock = { verify: 'SUCCESS', failLookup: false, subscriptions: new Map(), calls: [], unmocked: [] };
 global.fetch = async (url, init = {}) => {
   const u = String(url);
@@ -110,13 +112,77 @@ function makeRes() {
   };
   return res;
 }
+/* ---- implementation under test: the Cloud Functions (default) or the Supabase Edge bridge ---- */
+const IMPL = (process.env.HF_IMPL || 'cloudfn').toLowerCase();
+if (!['cloudfn', 'edge'].includes(IMPL)) throw new Error(`HF_IMPL must be "cloudfn" or "edge", got "${IMPL}"`);
+
+let edgePromise = null;
+function loadEdge() {
+  edgePromise ||= (async () => {
+    const dir = path.join(__dirname, '..', '..', 'supabase', 'functions', '_shared', 'paypal-bridge');
+    const load = (file) => import(pathToFileURL(path.join(dir, file)).href);
+    const [firestore, paypal, core, http] = await Promise.all([load('firestore.mjs'), load('paypal.mjs'), load('core.mjs'), load('http.mjs')]);
+    const deps = {
+      // Firestore REST goes to the local emulator only; PayPal goes to the in-process mock.
+      fs: firestore.createFirestore({ projectId: PROJECT, databaseId: 'homefinder', baseUrl: `http://${EMULATOR_HOST}`, getToken: async () => 'owner', fetchImpl: realFetch }),
+      paypal: paypal.createPayPal({ apiBase: 'https://api-m.paypal.com', clientId: 'smoke-client-id', clientSecret: 'smoke-not-a-real-secret', webhookId: 'WH-SMOKE-NOT-REAL', fetchImpl: (...args) => global.fetch(...args) }),
+      planId: core.HOMEFINDER_PLAN_ID,
+      now: () => new Date(),
+      allowedOrigins: ['https://rbrtmrlsiii.github.io'],
+      verifyIdToken: async (token) => {
+        const [prefix, uid, email] = String(token).split('|');
+        if (prefix !== 'smoke' || !uid) throw new Error('bad token');
+        return { uid, email: email || '' };
+      }
+    };
+    return { deps, firestore, paypal, core, http, handleApprovalRequest: http.handleApprovalRequest, handleWebhookRequest: http.handleWebhookRequest, HOMEFINDER_PLAN_ID: core.HOMEFINDER_PLAN_ID };
+  })();
+  return edgePromise;
+}
+
+/** Request double: undici would drop the forbidden Origin header from a real Request. */
+const fakeRequest = ({ method = 'POST', headers = {}, body } = {}) => {
+  const text = body === undefined ? '' : typeof body === 'string' ? body : JSON.stringify(body);
+  return { method, headers: new Headers(headers), async json() { return JSON.parse(text); }, async text() { return text; } };
+};
+const webhookHeaders = () => ({
+  'paypal-auth-algo': 'SHA256withRSA',
+  'paypal-cert-url': 'https://api.paypal.com/smoke-cert.pem',
+  'paypal-transmission-id': `tx-${rid()}`,
+  'paypal-transmission-sig': 'smoke-sig',
+  'paypal-transmission-time': new Date().toISOString()
+});
+
 async function deliver(evt, opts = {}) {
   mock.verify = opts.verify || 'SUCCESS';
+  if (IMPL === 'edge') {
+    const edge = await loadEdge();
+    const method = opts.method || 'POST';
+    const raw = opts.rawBody !== undefined ? opts.rawBody : JSON.stringify(evt);
+    const response = await edge.handleWebhookRequest(fakeRequest({ method, headers: webhookHeaders(), body: method === 'GET' ? undefined : raw }), edge.deps);
+    return { statusCode: response.status, body: await response.text() };
+  }
   const res = makeRes();
   await Promise.all([Promise.resolve(fns.paypalSubscriptionWebhook(makeReq(evt, opts), res)), res.done]);
   return res;
 }
 const callable = (fn, uid, data, token = {}) => fn.run({ auth: uid ? { uid, token } : undefined, data });
+
+/** recordSubscriptionApproval as the signed-in user uid (null = signed out) whose token carries email. */
+async function approve(uid, subscriptionId, email) {
+  if (IMPL === 'cloudfn') return callable(fns.recordSubscriptionApproval, uid, { subscriptionId }, email ? { email } : {});
+  const edge = await loadEdge();
+  const headers = { 'content-type': 'application/json' };
+  if (uid) headers.authorization = `Bearer smoke|${uid}|${email || ''}`;
+  const response = await edge.handleApprovalRequest(fakeRequest({ method: 'POST', headers, body: { subscriptionId } }), edge.deps);
+  const body = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    const error = new Error(body?.error?.message || 'request failed');
+    error.code = body?.error?.code;
+    throw error;
+  }
+  return body;
+}
 
 /* ---- Firestore helpers (Admin SDK against the emulator) ---- */
 const get = async (col, id) => { const s = await db.collection(col).doc(id).get(); return s.exists ? s.data() : null; };
@@ -133,6 +199,6 @@ const gap = (issue, why) => ({ todo: `${issue}: ${why}` });
 
 module.exports = {
   PLAN_ID, ADMIN_UID, mock, fns, db, Timestamp, newUid, newSubId, sub, event, saleEvent,
-  deliver, callable, get, notifications, seedUser, seedMapping, seedPayPalEntitlement,
+  deliver, callable, approve, loadEdge, fakeRequest, IMPL, get, notifications, seedUser, seedMapping, seedPayPalEntitlement,
   assertNoUnmockedNetwork, gap, EMULATOR_HOST
 };

@@ -3,7 +3,9 @@
   "private": true,
   "description": "Secretless emulator smoke tests for the PayPal webhook, subscription approval, admin grants and payment-collection rules. No credentials are ever used.",
   "scripts": {
-    "test": "node --test --test-reporter=spec webhook.test.cjs approval.test.cjs grants.test.cjs payments-rules.test.cjs"
+    "test": "node --test --test-reporter=spec webhook.test.cjs approval.test.cjs grants.test.cjs payments-rules.test.cjs edge-http.test.cjs",
+    "test:edge": "HF_IMPL=edge node --test --test-reporter=spec webhook.test.cjs approval.test.cjs",
+    "test:all": "npm test && npm run test:edge"
   },
   "devDependencies": {
     "@firebase/rules-unit-testing": "^3.0.4",

@@ -7,8 +7,7 @@ const h = require('./helpers.cjs');
 
 after(() => h.assertNoUnmockedNetwork(assert));
 
-const approve = (uid, subscriptionId, email) =>
-  h.callable(h.fns.recordSubscriptionApproval, uid, { subscriptionId }, email ? { email } : {});
+const approve = h.approve; // routes to the Cloud Function or the Edge bridge (HF_IMPL)
 const code = (c) => (e) => e && e.code === c;
 
 async function user(extra = {}) {
