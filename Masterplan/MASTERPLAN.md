@@ -101,6 +101,7 @@ Cloud Functions own trusted mutations and projections. Client UI must not impers
 - [ ] Re-verify listings/wanted durability and public-profile projection on the live named database.
 - [ ] Do not treat Grok `localStorage` (`homefinder.revival.v1`) as listing truth.
 - [ ] Compare the 37 exported Cloud Functions with the deployed set (owner-run census) and confirm the project's billing plan supports them.
+- [ ] Owner-run census with `scripts/census/` (counts and dates only, plus a deployed-rules drift check): the real-data reference for #12, #13 and #23. Not yet run (D3).
 - [ ] Negative rules tests: contracts, points ledger, notifications, tier/boost/KYC fields are not client-writable.
 
 ---

@@ -1,0 +1,14 @@
+{
+  "name": "homefinder-census",
+  "private": true,
+  "type": "module",
+  "description": "Owner-run, read-only census of the HomeFinder Firestore (counts and dates only) and a deployed-rules drift check.",
+  "scripts": {
+    "census": "node firestore-census.mjs",
+    "rules-drift": "node rules-drift.mjs"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.7.0",
+    "google-auth-library": "^9.15.0"
+  }
+}
