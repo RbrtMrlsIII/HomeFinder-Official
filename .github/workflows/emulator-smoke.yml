@@ -10,6 +10,7 @@ on:
     paths:
       - 'active_development/firebase/**'
       - 'active_development/supabase/**'
+      - 'scripts/census/**'
       - 'active_development/js/subscription*.js'
       - 'active_development/tests/emulator/**'
       - '.github/workflows/emulator-smoke.yml'
@@ -43,6 +44,8 @@ jobs:
       - name: Install smoke-test dependencies
         working-directory: active_development/tests/emulator
         run: npm ci --no-audit --no-fund
+      - name: Unit-test the census scripts
+        run: node --test scripts/census/rules-drift.test.mjs
       - name: Run emulator smoke tests (no credentials)
         working-directory: active_development/tests/emulator
         run: >

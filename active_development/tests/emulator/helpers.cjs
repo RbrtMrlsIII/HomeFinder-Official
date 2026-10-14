@@ -67,6 +67,7 @@ const admin = fnReq('firebase-admin');
 const { getFirestore, Timestamp } = fnReq('firebase-admin/firestore');
 const fns = require(FN_INDEX);
 const db = getFirestore(admin.app(), 'homefinder');
+const dbFor = (databaseId) => getFirestore(admin.app(), databaseId);
 
 /* ---- builders ---- */
 const rid = () => crypto.randomBytes(5).toString('hex').toUpperCase();
@@ -198,7 +199,7 @@ const assertNoUnmockedNetwork = (assert) => assert.deepEqual(mock.unmocked, [], 
 const gap = (issue, why) => ({ todo: `${issue}: ${why}` });
 
 module.exports = {
-  PLAN_ID, ADMIN_UID, mock, fns, db, Timestamp, newUid, newSubId, sub, event, saleEvent,
+  PLAN_ID, ADMIN_UID, mock, fns, db, dbFor, Timestamp, newUid, newSubId, sub, event, saleEvent,
   deliver, callable, approve, loadEdge, fakeRequest, IMPL, get, notifications, seedUser, seedMapping, seedPayPalEntitlement,
   assertNoUnmockedNetwork, gap, EMULATOR_HOST
 };
